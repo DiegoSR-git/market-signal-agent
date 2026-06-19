@@ -1,28 +1,38 @@
 alerts:
-  # Producción: Telegram solo si score BTC >= 70.
-  # En prueba, ejecuta python agent.py --force
   btc_alert_score: 70
   cooldown_hours: 6
+
+reports:
+  send_daily: true
+  send_weekly: true
+  send_healthcheck: true
+  send_backtest: false
 
 btc:
   enabled: true
   history_days: 365
+  backtest_days: 1500
   enable_mvrv: true
 
   levels:
-    - name: "Orden 1 - soporte 52k"
+    - id: btc_52000
+      name: "Orden 1 - soporte 52k"
       price_eur: 52000
       amount_eur: 1500
-    - name: "Orden 2 - soporte 50k"
+    - id: btc_50000
+      name: "Orden 2 - soporte 50k"
       price_eur: 50000
       amount_eur: 2000
-    - name: "Orden 3 - barrido 48.5k"
+    - id: btc_48500
+      name: "Orden 3 - barrido 48.5k"
       price_eur: 48500
       amount_eur: 2000
-    - name: "Orden 4 - realized zone"
+    - id: btc_46700
+      name: "Orden 4 - realized zone"
       price_eur: 46700
       amount_eur: 2500
-    - name: "Orden 5 - capitulación"
+    - id: btc_44000
+      name: "Orden 5 - capitulación"
       price_eur: 44000
       amount_eur: 2000
 
@@ -31,44 +41,50 @@ btc:
     retest_low_eur: 55000
     retest_high_eur: 56500
 
+  crisis_levels:
+    capitulation_eur: 40000
+    crisis_eur: 35200
+
   thresholds:
-    # RSI
     rsi_daily_deep_buy: 28
     rsi_daily_buy: 35
     rsi_daily_confirm: 50
-
-    # Drawdown
     drawdown_30d_buy_pct: -15
     drawdown_90d_buy_pct: -25
-
-    # ETF flows, US$ millones
+    distance_sma200_deep_discount: -20
+    distance_sma200_discount: -5
+    distance_sma200_overheat: 25
+    volatility_spike_ratio: 1.5
     etf_total_green_musd: 100
     etf_total_strong_musd: 300
     ibit_green_musd: 100
     ibit_strong_musd: 150
     etf_block_musd: -300
     ibit_block_musd: -150
-
-    # Sentimiento
+    etf_stale_warning_days: 4
     fear_extreme: 25
     fear_buy: 40
     greed_block: 75
-
-    # Funding BTCUSDT
     funding_negative_count_buy: 3
     funding_overheated: 0.0002
-
-    # CoinMetrics MVRV current, no Z-score
+    oi_flush_24h_pct: -8
+    oi_overheat_24h_pct: 10
     mvrv_current_deep_buy: 1.05
     mvrv_current_buy: 1.35
     mvrv_current_hot: 2.8
 
+macro:
+  enabled: true
+  symbols:
+    spy: SPY
+    qqq: QQQ
+    vix: ^VIX
+    dxy: DX-Y.NYB
+    us10y: ^TNX
+
 stocks:
   enabled: true
   max_items_per_run: 10
-
-  # Stooq symbols. Para USA puedes usar ticker simple y el agente añade .us.
-  # Para otros mercados, usa símbolo Stooq exacto.
   watchlist:
     - SPY
     - QQQ
@@ -80,7 +96,6 @@ stocks:
     - AMZN
     - NVDA
     - META
-
   thresholds:
     min_drawdown_pct: -10
     max_rsi_daily: 35
