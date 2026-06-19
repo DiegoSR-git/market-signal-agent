@@ -22,6 +22,7 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_CHAT_IDS: ${{ vars.TELEGRAM_CHAT_IDS }}
           GITHUB_TOKEN: ${{ github.token }}
           ETF_DATE: ${{ vars.ETF_DATE }}
           ETF_TOTAL_MUSD: ${{ vars.ETF_TOTAL_MUSD }}
