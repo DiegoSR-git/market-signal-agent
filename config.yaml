@@ -7,7 +7,16 @@ reports:
   send_weekly: true
   send_healthcheck: true
   send_backtest: false
+ai_summary:
+  enabled: true
+  provider: github_models
+  model: openai/gpt-4.1-mini
+  max_output_tokens: 450
+  temperature: 0.2
 
+  send_in_signal_alerts: false
+  send_in_daily_report: true
+  send_in_weekly_report: true
 btc:
   enabled: true
   history_days: 365
