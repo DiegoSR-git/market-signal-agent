@@ -2,8 +2,17 @@ name: Market Signal Agent
 
 on:
   workflow_dispatch:
+    inputs:
+      force:
+        description: "Force Telegram alert for testing"
+        required: false
+        default: "false"
   schedule:
+    # Dos veces por hora, evitando el minuto 00
     - cron: "17,47 * * * *"
+
+permissions:
+  contents: write
 
 jobs:
   run-agent:
@@ -12,6 +21,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -25,5 +36,25 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          ALPHA_VANTAGE_API_KEY: ${{ secrets.ALPHA_VANTAGE_API_KEY }}
-        run: python agent.py
+
+          # Opcional: variables manuales para ETF flows si Farside da 403 en GitHub hosted runners.
+          ETF_DATE: ${{ vars.ETF_DATE }}
+          ETF_TOTAL_MUSD: ${{ vars.ETF_TOTAL_MUSD }}
+          ETF_IBIT_MUSD: ${{ vars.ETF_IBIT_MUSD }}
+        run: |
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            python agent.py --force
+          else
+            python agent.py
+          fi
+
+      - name: Persist anti-spam state
+        if: always()
+        run: |
+          if [ -f state.json ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add state.json
+            git diff --cached --quiet || git commit -m "Update agent state [skip ci]"
+            git push || true
+          fi
