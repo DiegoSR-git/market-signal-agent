@@ -125,6 +125,7 @@ def btc_signal(config):
     price = get_btc_price_eur()
     prices_df = get_btc_daily_prices(days=120)
     rsi_daily = calculate_rsi(prices_df["price"])
+    rsi_text = f"{rsi_daily:.1f}" if rsi_daily is not None else "N/A"
 
     try:
         etf = get_latest_etf_flows()
@@ -208,7 +209,7 @@ def btc_signal(config):
 
 <b>Score:</b> {score}/100
 <b>Precio BTC/EUR:</b> {price:,.0f} €
-<b>RSI diario:</b> {rsi_daily:.1f if rsi_daily is not None else "N/A"}
+<b>RSI diario:</b> {rsi_text}
 
 <b>ETF flows Farside:</b>
 Fecha: {etf.get("date")}
