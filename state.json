@@ -1,8 +1,84 @@
 {
   "last_alerts": {
+    "btc::SCORE_WATCH::\ud83d\udfe1 BTC WATCH": "2026-06-19T11:15:01.403204+00:00",
     "btc::none::\u26aa SIN SE\u00d1AL": "2026-06-19T10:54:58.472290+00:00",
     "btc::none::\ud83d\udfe1 BTC WATCH": "2026-06-19T10:51:22.737931+00:00",
-    "stocks::opportunities": "2026-06-19T10:55:02.238612+00:00"
+    "stocks::opportunities": "2026-06-19T11:15:04.393202+00:00"
   },
-  "last_run_utc": "2026-06-19T10:55:02.238636+00:00"
+  "last_run_utc": "2026-06-19T11:15:04.393229+00:00",
+  "last_snapshot": {
+    "btc": {
+      "etf_total": null,
+      "fear": 14,
+      "ibit": null,
+      "oi_24h": null,
+      "price": 54465.0,
+      "regime": "RISK_ON",
+      "rsi": 34.979690494851866,
+      "score": 56,
+      "sma200": 65972.7150790051,
+      "status": "\ud83d\udfe1 BTC WATCH",
+      "time_utc": "2026-06-19T11:15:01.054563+00:00"
+    },
+    "stocks": {
+      "opportunities": 1,
+      "time_utc": "2026-06-19T11:15:04.058496+00:00",
+      "top": [
+        {
+          "dist200": -15.940964512536048,
+          "drawdown": -30.009041494605228,
+          "price": 379.3999938964844,
+          "reasons": [
+            "Drawdown 52s -30.0%",
+            "RSI diario 34.9"
+          ],
+          "rsi": 34.91202083998046,
+          "score": 50,
+          "symbol": "MSFT"
+        }
+      ]
+    }
+  },
+  "orders": {
+    "btc_44000": {
+      "amount_eur": 2000,
+      "first_triggered_utc": null,
+      "last_triggered_utc": null,
+      "name": "Orden 5 - capitulaci\u00f3n",
+      "price_eur": 44000,
+      "times_seen": 0
+    },
+    "btc_46700": {
+      "amount_eur": 2500,
+      "first_triggered_utc": null,
+      "last_triggered_utc": null,
+      "name": "Orden 4 - realized zone",
+      "price_eur": 46700,
+      "times_seen": 0
+    },
+    "btc_48500": {
+      "amount_eur": 2000,
+      "first_triggered_utc": null,
+      "last_triggered_utc": null,
+      "name": "Orden 3 - barrido 48.5k",
+      "price_eur": 48500,
+      "times_seen": 0
+    },
+    "btc_50000": {
+      "amount_eur": 2000,
+      "first_triggered_utc": null,
+      "last_triggered_utc": null,
+      "name": "Orden 2 - soporte 50k",
+      "price_eur": 50000,
+      "times_seen": 0
+    },
+    "btc_52000": {
+      "amount_eur": 1500,
+      "first_triggered_utc": null,
+      "last_triggered_utc": null,
+      "name": "Orden 1 - soporte 52k",
+      "price_eur": 52000,
+      "times_seen": 0
+    }
+  }
 }
