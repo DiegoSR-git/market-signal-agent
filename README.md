@@ -159,3 +159,17 @@ Esta versión lo gestiona así:
 - ETF flows: Farside si funciona; si no, usa variables manuales `ETF_DATE`, `ETF_TOTAL_MUSD`, `ETF_IBIT_MUSD`.
 
 El healthcheck marca ETF y derivados como datos opcionales. Si BTC, histórico, Fear & Greed y macro funcionan, el agente puede operar correctamente aunque ETF esté degradado.
+
+
+## Fix Pages y Backtest CoinGecko
+
+Esta versión corrige dos puntos de producción:
+
+1. GitHub Pages:
+   - El dashboard se escribe en `docs/dashboard.html` y también en `docs/index.html`.
+   - La URL raíz de Pages necesita `index.html`.
+
+2. Backtest:
+   - CoinGecko free puede devolver 401 para rangos largos como 1500 días.
+   - El backtest usa por defecto 365 días para evitar ese bloqueo.
+   - El weekly workflow marca el backtest como `continue-on-error: true` para que un fallo opcional no rompa todo el weekly report.

@@ -43,6 +43,7 @@ CONFIG_FILE = os.getenv("CONFIG_FILE", "config.yaml")
 STATE_FILE = Path(os.getenv("STATE_FILE", "state.json"))
 REPORT_DIR = Path(os.getenv("REPORT_DIR", "docs"))
 DASHBOARD_FILE = REPORT_DIR / "dashboard.html"
+INDEX_FILE = REPORT_DIR / "index.html"
 SIGNAL_LOG_FILE = Path(os.getenv("SIGNAL_LOG_FILE", "signals_log.csv"))
 HTTP_TIMEOUT = 25
 
@@ -280,15 +281,35 @@ def get_btc_price_eur():
 
 
 def get_btc_daily_prices(days=365):
-    data = request_json("https://api.coingecko.com/api/v3/coins/bitcoin/market_chart", {"vs_currency": "eur", "days": days, "interval": "daily"})
+    """
+    CoinGecko public/free puede devolver 401 si pides rangos largos.
+    Para producción gratis, limitamos por defecto a 365 días.
+    Ajustable con COINGECKO_MAX_DAYS.
+    """
+    requested_days = int(days)
+    max_free_days = int(os.getenv("COINGECKO_MAX_DAYS", "365"))
+    effective_days = min(requested_days, max_free_days)
+
+    if requested_days != effective_days:
+        print(
+            f"CoinGecko free mode: requested {requested_days} days, "
+            f"using {effective_days} days to avoid 401."
+        )
+
+    data = request_json(
+        "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart",
+        params={"vs_currency": "eur", "days": effective_days, "interval": "daily"},
+    )
     prices = data.get("prices", [])
     if not prices:
         raise RuntimeError("CoinGecko returned no historical prices")
+
     df = pd.DataFrame(prices, columns=["timestamp", "price"])
     df["date"] = pd.to_datetime(df["timestamp"], unit="ms", utc=True).dt.date
-    df = df.drop_duplicates("date", keep="last")
+    df = df.drop_duplicates(subset=["date"], keep="last")
     df["price"] = pd.to_numeric(df["price"], errors="coerce")
-    return df.dropna(subset=["price"])[["date", "price"]].reset_index(drop=True)
+    df = df.dropna(subset=["price"])
+    return df[["date", "price"]].reset_index(drop=True)
 
 
 def get_fear_and_greed():
@@ -1195,28 +1216,78 @@ def generate_dashboard(config, state):
 <div class="card"><h2>Bolsa / ETFs</h2><table><thead><tr><th>Símbolo</th><th>Score</th><th>RSI</th><th>DD52s</th><th>Dist. SMA200</th></tr></thead><tbody>{stock_rows or '<tr><td colspan="5">Sin oportunidades</td></tr>'}</tbody></table></div>
 </body></html>"""
     DASHBOARD_FILE.write_text(html_doc, encoding="utf-8")
-    print(f"Dashboard written to {DASHBOARD_FILE}")
+    INDEX_FILE.write_text(html_doc, encoding="utf-8")
+    print(f"Dashboard written to {DASHBOARD_FILE} and {INDEX_FILE}")
 
 
 def backtest_btc(config):
-    threshold = float(config["btc"]["thresholds"].get("rsi_daily_buy", 35))
-    df = get_btc_daily_prices(days=int(config["btc"].get("backtest_days", 1500)))
+    """
+    Backtest simple gratuito:
+    - Señal RSI < threshold
+    - Retornos forward 30D/90D
+
+    Nota: CoinGecko free puede limitar históricos largos. El agente usa
+    COINGECKO_MAX_DAYS=365 por defecto para evitar 401.
+    """
+    btc_cfg = config["btc"]
+    threshold = float(btc_cfg["thresholds"].get("rsi_daily_buy", 35))
+
+    requested_days = int(btc_cfg.get("backtest_days", 365))
+    max_free_days = int(os.getenv("COINGECKO_MAX_DAYS", "365"))
+    effective_days = min(requested_days, max_free_days)
+
+    try:
+        df = get_btc_daily_prices(days=effective_days)
+    except Exception as ex:
+        return f"""
+<b>🧪 BTC BACKTEST BASELINE</b>
+
+No disponible ahora.
+Motivo: {e(ex)}
+
+El resto del weekly report sigue siendo válido.
+Hora: {utc_now().strftime("%Y-%m-%d %H:%M UTC")}
+""".strip()
+
     df["rsi"] = calculate_rsi_series(df["price"], 14)
     df["ret_30d"] = df["price"].shift(-30) / df["price"] - 1
     df["ret_90d"] = df["price"].shift(-90) / df["price"] - 1
-    sig = df[df["rsi"] <= threshold].dropna(subset=["ret_30d", "ret_90d"])
-    if sig.empty: return "<b>BACKTEST BTC</b>\n\nSin señales históricas."
-    return f"""<b>🧪 BTC BACKTEST BASELINE</b>
+
+    signals = df[df["rsi"] <= threshold].copy()
+    signals = signals.dropna(subset=["ret_30d", "ret_90d"])
+
+    if signals.empty:
+        return f"""
+<b>🧪 BTC BACKTEST BASELINE</b>
 
 Regla: RSI diario <= {threshold:.1f}
-Señales: {len(sig)}
-Win rate 30D: {(sig['ret_30d'] > 0).mean()*100:.1f}%
-Retorno medio 30D: {sig['ret_30d'].mean()*100:+.1f}%
-Win rate 90D: {(sig['ret_90d'] > 0).mean()*100:.1f}%
-Retorno medio 90D: {sig['ret_90d'].mean()*100:+.1f}%
+Ventana usada: {effective_days} días
+Señales evaluables: 0
+
+No hay suficientes señales cerradas con retorno 30D/90D en la ventana gratuita actual.
+Hora: {utc_now().strftime("%Y-%m-%d %H:%M UTC")}
+""".strip()
+
+    win30 = (signals["ret_30d"] > 0).mean() * 100
+    win90 = (signals["ret_90d"] > 0).mean() * 100
+    avg30 = signals["ret_30d"].mean() * 100
+    avg90 = signals["ret_90d"].mean() * 100
+    n = len(signals)
+
+    return f"""
+<b>🧪 BTC BACKTEST BASELINE</b>
+
+Regla: RSI diario <= {threshold:.1f}
+Ventana usada: {effective_days} días
+Señales: {n}
+Win rate 30D: {win30:.1f}%
+Retorno medio 30D: {avg30:+.1f}%
+Win rate 90D: {win90:.1f}%
+Retorno medio 90D: {avg90:+.1f}%
 
 Nota: baseline técnico. No incluye ETF, funding, OI ni macro.
-Hora: {utc_now().strftime('%Y-%m-%d %H:%M UTC')}"""
+Hora: {utc_now().strftime("%Y-%m-%d %H:%M UTC")}
+""".strip()
 
 
 def run_backtest(config, state, force=False):
