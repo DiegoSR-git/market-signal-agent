@@ -98,24 +98,60 @@ def parse_number(x):
 
 def get_latest_etf_flows():
     """
-    Farside does not provide a simple official free API here.
-    This scrapes the public HTML table.
-    If the layout changes, this function may need adjustment.
+    Lee la tabla pública de Farside.
+    Si Farside cambia la estructura HTML, devuelve N/A sin romper el bot.
     """
-    tables = pd.read_html(FARSIDE_URL)
-    df = tables[0]
+    urls = [
+        "https://farside.co.uk/btc/",
+        "https://farside.co.uk/bitcoin-etf-flow-all-data/",
+    ]
 
-    # Remove final total row if present
-    df = df[df["Date"].astype(str).str.lower() != "total"]
+    last_error = None
 
-    latest = df.iloc[-1].to_dict()
+    for url in urls:
+        try:
+            tables = pd.read_html(url)
 
-    result = {
-        "date": str(latest.get("Date")),
-        "ibit": parse_number(latest.get("IBIT")),
-        "total": parse_number(latest.get("Total")),
+            for df in tables:
+                # Normalizar nombres de columnas
+                df.columns = [str(c).strip() for c in df.columns]
+
+                if "Date" not in df.columns:
+                    continue
+
+                possible_ibit_cols = [c for c in df.columns if "IBIT" in c.upper()]
+                possible_total_cols = [c for c in df.columns if "TOTAL" in c.upper()]
+
+                if not possible_ibit_cols or not possible_total_cols:
+                    continue
+
+                ibit_col = possible_ibit_cols[0]
+                total_col = possible_total_cols[0]
+
+                df = df[df["Date"].astype(str).str.lower() != "total"]
+                df = df.dropna(subset=["Date"])
+
+                # Última fila válida
+                latest = df.iloc[-1].to_dict()
+
+                return {
+                    "date": str(latest.get("Date")),
+                    "ibit": parse_number(latest.get(ibit_col)),
+                    "total": parse_number(latest.get(total_col)),
+                }
+
+        except Exception as e:
+            last_error = str(e)
+            continue
+
+    print(f"Farside parse error: {last_error}")
+
+    return {
+        "date": "N/A",
+        "ibit": None,
+        "total": None,
+        "error": last_error,
     }
-    return result
 
 
 def btc_signal(config):
@@ -231,7 +267,9 @@ Total: {etf_total if etf_total is not None else "N/A"} M$
         send_telegram(message)
     else:
         print(message)
-
+        
+    send_telegram(message)
+    print(message)
 
 def main():
     config = load_config()
