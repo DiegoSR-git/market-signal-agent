@@ -195,8 +195,6 @@ def btc_signal(config):
         actions.append("Preparar Fase B / Lump Sum reactivo si ETF confirma.")
 
     # Clasificación
-    send_telegram(message)
-    print(message)
     
     if score >= 85:
         status = "🟢 BTC STRONG BUY"
@@ -229,6 +227,8 @@ Total: {etf_total if etf_total is not None else "N/A"} M$
 """.strip()
 
     # Para evitar ruido: solo enviar si score >= 55
+    send_telegram(message)
+    print(message)
     if score >= 55:
         send_telegram(message)
     else:
