@@ -34,6 +34,7 @@ from bs4 import BeautifulSoup
 
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+TELEGRAM_CHAT_IDS = os.getenv("TELEGRAM_CHAT_IDS")
 
 ETF_DATE_ENV = os.getenv("ETF_DATE")
 ETF_TOTAL_MUSD_ENV = os.getenv("ETF_TOTAL_MUSD")
@@ -166,24 +167,69 @@ def append_signal_log(row):
         writer.writerow({k: row.get(k, "") for k in fieldnames})
 
 
+def get_telegram_chat_ids():
+    """
+    Soporta:
+    - TELEGRAM_CHAT_ID: un solo chat principal
+    - TELEGRAM_CHAT_IDS: varios chats separados por coma
+
+    Ejemplo:
+      TELEGRAM_CHAT_IDS = 123456789,987654321,555444333
+    """
+    chat_ids = []
+
+    if TELEGRAM_CHAT_IDS:
+        chat_ids.extend(
+            x.strip()
+            for x in TELEGRAM_CHAT_IDS.split(",")
+            if x.strip()
+        )
+
+    if TELEGRAM_CHAT_ID:
+        chat_ids.append(TELEGRAM_CHAT_ID.strip())
+
+    # Quitar duplicados preservando orden
+    unique = []
+    for chat_id in chat_ids:
+        if chat_id not in unique:
+            unique.append(chat_id)
+
+    return unique
+
+
 def send_telegram(message, buttons=None):
-    if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
+    chat_ids = get_telegram_chat_ids()
+
+    if not TELEGRAM_BOT_TOKEN or not chat_ids:
         print("Telegram secrets missing. Message would be:")
         print(message)
         return
-    payload = {
-        "chat_id": TELEGRAM_CHAT_ID,
-        "text": message,
-        "parse_mode": "HTML",
-        "disable_web_page_preview": True,
-    }
-    if buttons:
-        payload["reply_markup"] = {
-            "inline_keyboard": [[{"text": b["text"], "url": b["url"]} for b in row] for row in buttons]
-        }
-    r = requests.post(f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage", json=payload, timeout=HTTP_TIMEOUT)
-    r.raise_for_status()
 
+    url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+
+    for chat_id in chat_ids:
+        payload = {
+            "chat_id": chat_id,
+            "text": message,
+            "parse_mode": "HTML",
+            "disable_web_page_preview": True,
+        }
+
+        if buttons:
+            payload["reply_markup"] = {
+                "inline_keyboard": [
+                    [{"text": b["text"], "url": b["url"]} for b in row]
+                    for row in buttons
+                ]
+            }
+
+        try:
+            r = requests.post(url, json=payload, timeout=HTTP_TIMEOUT)
+            r.raise_for_status()
+            print(f"Telegram sent to {chat_id}")
+        except Exception as ex:
+            # No rompe el envío al resto de chats si uno falla
+            print(f"Telegram error for chat_id {chat_id}: {ex}")
 
 def default_buttons():
     return [

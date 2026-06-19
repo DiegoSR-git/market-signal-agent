@@ -161,15 +161,60 @@ Esta versión lo gestiona así:
 El healthcheck marca ETF y derivados como datos opcionales. Si BTC, histórico, Fear & Greed y macro funcionan, el agente puede operar correctamente aunque ETF esté degradado.
 
 
-## Fix Pages y Backtest CoinGecko
+## Enviar Telegram a varios chats
 
-Esta versión corrige dos puntos de producción:
+Esta versión soporta envío simple a varios `chat_id`.
 
-1. GitHub Pages:
-   - El dashboard se escribe en `docs/dashboard.html` y también en `docs/index.html`.
-   - La URL raíz de Pages necesita `index.html`.
+### Configuración
 
-2. Backtest:
-   - CoinGecko free puede devolver 401 para rangos largos como 1500 días.
-   - El backtest usa por defecto 365 días para evitar ese bloqueo.
-   - El weekly workflow marca el backtest como `continue-on-error: true` para que un fallo opcional no rompa todo el weekly report.
+Mantén tu chat principal como secret:
+
+```text
+TELEGRAM_CHAT_ID
+```
+
+Y añade una variable nueva en:
+
+```text
+Settings → Secrets and variables → Actions → Variables
+```
+
+Nombre:
+
+```text
+TELEGRAM_CHAT_IDS
+```
+
+Valor, separado por comas:
+
+```text
+123456789,987654321,555444333
+```
+
+Cada amigo debe abrir el bot en Telegram y enviar:
+
+```text
+/start
+```
+
+Después obtén los IDs con:
+
+```text
+https://api.telegram.org/botTU_TOKEN/getUpdates
+```
+
+El bot enviará los mismos mensajes a todos los chats configurados. Si un chat falla, no rompe el envío a los demás.
+
+### Importante
+
+Esta es la versión simple: todos reciben lo mismo.
+
+Recibirán:
+- señales fuertes
+- daily report
+- weekly report
+- healthcheck
+
+Si más adelante quieres separar admin/amigos, se puede añadir:
+- `TELEGRAM_ADMIN_CHAT_IDS`
+- `TELEGRAM_SUBSCRIBER_CHAT_IDS`
