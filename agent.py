@@ -469,10 +469,22 @@ def get_latest_etf_flows():
 # FREE STOCK/ETF SCANNER — STOOQ
 # =============================================================================
 
+def yahoo_symbol(symbol: str):
+    """
+    Normaliza tickers para Yahoo Finance.
+    SPY, QQQ, AAPL funcionan directamente.
+    Si en config tienes spy.us, lo convierte a SPY.
+    """
+    s = symbol.strip()
+    if s.lower().endswith(".us"):
+        s = s[:-3]
+    return s.upper()
+
+
 def stooq_symbol(symbol: str):
     """
+    Normaliza tickers para Stooq.
     Stooq suele usar .us para acciones/ETFs USA.
-    En config puedes escribir directamente spy.us o qqq.us si quieres.
     """
     s = symbol.strip().lower()
     if "." in s:
@@ -480,26 +492,122 @@ def stooq_symbol(symbol: str):
     return f"{s}.us"
 
 
-def get_stooq_history(symbol: str):
-    url = "https://stooq.com/q/d/l/"
-    params = {"s": stooq_symbol(symbol), "i": "d"}
+def get_yahoo_history(symbol: str, range_days="2y"):
+    """
+    Yahoo Finance chart API gratuita, sin API key.
+    Fuente principal para acciones/ETFs.
+    """
+    yf_symbol = yahoo_symbol(symbol)
+
+    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{yf_symbol}"
+    params = {
+        "range": range_days,
+        "interval": "1d",
+        "includePrePost": "false",
+        "events": "div,splits",
+    }
+
+    headers = {
+        "User-Agent": "Mozilla/5.0",
+        "Accept": "application/json",
+    }
+
     try:
-        r = requests.get(url, params=params, timeout=HTTP_TIMEOUT)
+        r = requests.get(url, params=params, headers=headers, timeout=HTTP_TIMEOUT)
+        print(f"Yahoo HTTP {r.status_code} for {symbol} -> {yf_symbol}")
         r.raise_for_status()
+
+        data = r.json()
+        result = data.get("chart", {}).get("result")
+
+        if not result:
+            raise RuntimeError(f"No Yahoo chart result for {symbol}")
+
+        result = result[0]
+        timestamps = result.get("timestamp", [])
+        quote = result.get("indicators", {}).get("quote", [{}])[0]
+        closes = quote.get("close", [])
+
+        if not timestamps or not closes:
+            raise RuntimeError(f"No Yahoo timestamps/closes for {symbol}")
+
+        df = pd.DataFrame({
+            "date": pd.to_datetime(timestamps, unit="s", utc=True).date,
+            "close": closes,
+        })
+
+        df["close"] = pd.to_numeric(df["close"], errors="coerce")
+        df = df.dropna(subset=["close"])
+        df = df.drop_duplicates(subset=["date"], keep="last")
+        df = df.sort_values("date").reset_index(drop=True)
+
+        if len(df) < 60:
+            raise RuntimeError(f"Insufficient Yahoo data for {symbol}: {len(df)} rows")
+
+        return df
+
+    except Exception as e:
+        print(f"Yahoo error for {symbol}: {e}")
+        return None
+
+
+def get_stooq_history(symbol: str):
+    """
+    Stooq fallback.
+    Cambio importante: usar URL sin slash final.
+    Algunas ejecuciones devuelven 404 con /q/d/l/ desde GitHub.
+    """
+    url = "https://stooq.com/q/d/l"
+    params = {"s": stooq_symbol(symbol), "i": "d"}
+
+    headers = {
+        "User-Agent": "Mozilla/5.0",
+        "Accept": "text/csv,text/plain,*/*",
+    }
+
+    try:
+        r = requests.get(url, params=params, headers=headers, timeout=HTTP_TIMEOUT)
+        print(f"Stooq HTTP {r.status_code} for {symbol} -> {r.url}")
+        r.raise_for_status()
+
         text = r.text.strip()
-        if "No data" in text or len(text) < 50:
-            raise RuntimeError("No Stooq data")
+
+        if "No data" in text or len(text) < 50 or "Date,Open,High,Low,Close" not in text:
+            raise RuntimeError("No valid Stooq CSV data")
 
         from io import StringIO
         df = pd.read_csv(StringIO(text))
         df.columns = [c.lower() for c in df.columns]
-        df["date"] = pd.to_datetime(df["date"], errors="coerce")
+
+        df["date"] = pd.to_datetime(df["date"], errors="coerce").dt.date
         df["close"] = pd.to_numeric(df["close"], errors="coerce")
+
         df = df.dropna(subset=["date", "close"])
-        return df.sort_values("date").reset_index(drop=True)
+        df = df.drop_duplicates(subset=["date"], keep="last")
+        df = df.sort_values("date").reset_index(drop=True)
+
+        if len(df) < 60:
+            raise RuntimeError(f"Insufficient Stooq data for {symbol}: {len(df)} rows")
+
+        return df
+
     except Exception as e:
         print(f"Stooq error for {symbol}: {e}")
         return None
+
+
+def get_stock_history(symbol: str):
+    """
+    Cadena robusta gratuita:
+    1) Yahoo Finance chart API
+    2) Stooq CSV fallback
+    """
+    df = get_yahoo_history(symbol)
+
+    if df is not None:
+        return df
+
+    return get_stooq_history(symbol)
 
 
 def scan_stocks(config):
@@ -518,7 +626,7 @@ def scan_stocks(config):
     opportunities = []
 
     for symbol in watchlist[:max_items]:
-        df = get_stooq_history(symbol)
+        df = get_stock_history(symbol)
         if df is None or len(df) < 220:
             continue
 
