@@ -1,20 +1,15 @@
-name: Market Signal Agent
+name: Daily Market Brief
 
 on:
   workflow_dispatch:
-    inputs:
-      force:
-        description: "Force Telegram alert for testing"
-        required: false
-        default: "false"
   schedule:
-    - cron: "17,47 * * * *"
+    - cron: "35 21 * * *"
 
 permissions:
   contents: write
 
 jobs:
-  run-agent:
+  daily:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,24 +19,19 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install -r requirements.txt
-      - name: Run signal agent
+      - name: Send daily report
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           ETF_DATE: ${{ vars.ETF_DATE }}
           ETF_TOTAL_MUSD: ${{ vars.ETF_TOTAL_MUSD }}
           ETF_IBIT_MUSD: ${{ vars.ETF_IBIT_MUSD }}
-        run: |
-          if [ "${{ github.event.inputs.force }}" = "true" ]; then
-            python agent.py --mode signal --force
-          else
-            python agent.py --mode signal
-          fi
+        run: python agent.py --mode daily --force
       - name: Persist state and dashboard
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add state.json signals_log.csv docs/dashboard.html || true
-          git diff --cached --quiet || git commit -m "Update agent state/dashboard [skip ci]"
+          git diff --cached --quiet || git commit -m "Update daily report state [skip ci]"
           git push || true
