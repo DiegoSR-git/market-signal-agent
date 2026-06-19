@@ -97,60 +97,46 @@ def parse_number(x):
 
 
 def get_latest_etf_flows():
-    """
-    Lee la tabla pública de Farside.
-    Si Farside cambia la estructura HTML, devuelve N/A sin romper el bot.
-    """
     urls = [
         "https://farside.co.uk/btc/",
         "https://farside.co.uk/bitcoin-etf-flow-all-data/",
     ]
-
-    last_error = None
 
     for url in urls:
         try:
             tables = pd.read_html(url)
 
             for df in tables:
-                # Normalizar nombres de columnas
                 df.columns = [str(c).strip() for c in df.columns]
 
                 if "Date" not in df.columns:
                     continue
 
-                possible_ibit_cols = [c for c in df.columns if "IBIT" in c.upper()]
-                possible_total_cols = [c for c in df.columns if "TOTAL" in c.upper()]
+                ibit_cols = [c for c in df.columns if "IBIT" in c.upper()]
+                total_cols = [c for c in df.columns if "TOTAL" in c.upper()]
 
-                if not possible_ibit_cols or not possible_total_cols:
+                if not ibit_cols or not total_cols:
                     continue
-
-                ibit_col = possible_ibit_cols[0]
-                total_col = possible_total_cols[0]
 
                 df = df[df["Date"].astype(str).str.lower() != "total"]
                 df = df.dropna(subset=["Date"])
 
-                # Última fila válida
                 latest = df.iloc[-1].to_dict()
+
 
                 return {
                     "date": str(latest.get("Date")),
-                    "ibit": parse_number(latest.get(ibit_col)),
-                    "total": parse_number(latest.get(total_col)),
+                    "ibit": parse_number(latest.get(ibit_cols[0])),
+                    "total": parse_number(latest.get(total_cols[0])),
                 }
 
         except Exception as e:
-            last_error = str(e)
-            continue
-
-    print(f"Farside parse error: {last_error}")
+            print(f"Farside error with {url}: {e}")
 
     return {
         "date": "N/A",
         "ibit": None,
         "total": None,
-        "error": last_error,
     }
 
 
