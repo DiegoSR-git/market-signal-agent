@@ -1,7 +1,13 @@
+alerts:
+  # Producción: Telegram solo si score BTC >= 70.
+  # En prueba, ejecuta python agent.py --force
+  btc_alert_score: 70
+  cooldown_hours: 6
+
 btc:
   enabled: true
-  symbol: bitcoin
-  currency: eur
+  history_days: 365
+  enable_mvrv: true
 
   levels:
     - name: "Orden 1 - soporte 52k"
@@ -26,8 +32,16 @@ btc:
     retest_high_eur: 56500
 
   thresholds:
+    # RSI
+    rsi_daily_deep_buy: 28
     rsi_daily_buy: 35
     rsi_daily_confirm: 50
+
+    # Drawdown
+    drawdown_30d_buy_pct: -15
+    drawdown_90d_buy_pct: -25
+
+    # ETF flows, US$ millones
     etf_total_green_musd: 100
     etf_total_strong_musd: 300
     ibit_green_musd: 100
@@ -35,16 +49,40 @@ btc:
     etf_block_musd: -300
     ibit_block_musd: -150
 
+    # Sentimiento
+    fear_extreme: 25
+    fear_buy: 40
+    greed_block: 75
+
+    # Funding BTCUSDT
+    funding_negative_count_buy: 3
+    funding_overheated: 0.0002
+
+    # CoinMetrics MVRV current, no Z-score
+    mvrv_current_deep_buy: 1.05
+    mvrv_current_buy: 1.35
+    mvrv_current_hot: 2.8
+
 stocks:
-  enabled: false
+  enabled: true
+  max_items_per_run: 10
+
+  # Stooq symbols. Para USA puedes usar ticker simple y el agente añade .us.
+  # Para otros mercados, usa símbolo Stooq exacto.
   watchlist:
-    - QQQ
     - SPY
-    - IWDA
+    - QQQ
+    - IWM
+    - DIA
     - AAPL
     - MSFT
     - GOOGL
     - AMZN
     - NVDA
-    - ASML
     - META
+
+  thresholds:
+    min_drawdown_pct: -10
+    max_rsi_daily: 35
+    require_close_above_sma20: false
+    alert_score: 50
