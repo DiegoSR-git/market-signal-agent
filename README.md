@@ -89,3 +89,54 @@ Settings → Pages → Deploy from branch → main → /docs
 ## Nota sobre Farside
 
 Farside puede devolver 403 desde GitHub-hosted runners. Por eso el agente soporta variables manuales de ETF flows. Si quieres scraping automático de Farside, usa self-hosted runner desde tu ordenador.
+
+
+## GitHub Models / Resumen IA
+
+Esta versión incluye resumen en lenguaje natural usando GitHub Models directamente desde GitHub Actions.
+
+No necesitas una API key externa. El workflow usa:
+
+```yaml
+GITHUB_TOKEN: ${{ github.token }}
+```
+
+y permisos:
+
+```yaml
+permissions:
+  contents: write
+  models: read
+```
+
+Configuración por defecto en `config.yaml`:
+
+```yaml
+ai_summary:
+  enabled: true
+  provider: github_models
+  model: openai/gpt-4.1-mini
+  send_in_signal_alerts: false
+  send_in_daily_report: true
+  send_in_weekly_report: true
+```
+
+Recomendación: deja `send_in_signal_alerts: false` para no gastar cuota gratuita cada 30 minutos. La IA se usará en el reporte diario y semanal.
+
+Para probar:
+
+```text
+Actions → Daily Market Brief → Run workflow
+```
+
+El mensaje de Telegram incluirá un bloque:
+
+```text
+🧠 Resumen IA:
+1) Diagnóstico...
+2) Lectura BTC...
+3) Lectura institucional/ETF...
+4) Riesgo principal...
+5) Acción operativa...
+6) Confianza...
+```
