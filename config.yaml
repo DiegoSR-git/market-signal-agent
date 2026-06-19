@@ -1,1 +1,50 @@
-config.yaml
+btc:
+  enabled: true
+  symbol: bitcoin
+  currency: eur
+
+  levels:
+    - name: "Orden 1 - soporte 52k"
+      price_eur: 52000
+      amount_eur: 1500
+    - name: "Orden 2 - soporte 50k"
+      price_eur: 50000
+      amount_eur: 2000
+    - name: "Orden 3 - barrido 48.5k"
+      price_eur: 48500
+      amount_eur: 2000
+    - name: "Orden 4 - realized zone"
+      price_eur: 46700
+      amount_eur: 2500
+    - name: "Orden 5 - capitulación"
+      price_eur: 44000
+      amount_eur: 2000
+
+  rebound:
+    reclaim_price_eur: 56500
+    retest_low_eur: 55000
+    retest_high_eur: 56500
+
+  thresholds:
+    rsi_daily_buy: 35
+    rsi_daily_confirm: 50
+    etf_total_green_musd: 100
+    etf_total_strong_musd: 300
+    ibit_green_musd: 100
+    ibit_strong_musd: 150
+    etf_block_musd: -300
+    ibit_block_musd: -150
+
+stocks:
+  enabled: false
+  watchlist:
+    - QQQ
+    - SPY
+    - IWDA
+    - AAPL
+    - MSFT
+    - GOOGL
+    - AMZN
+    - NVDA
+    - ASML
+    - META
