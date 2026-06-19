@@ -81,19 +81,22 @@ def calculate_rsi(series: pd.Series, period=14):
 
 
 def parse_number(x):
-    if pd.isna(x):
+    if x is None:
         return 0.0
 
     s = str(x).strip()
 
-    if s in ["-", "", "nan", "None"]:
+    if s in ["-", "", "nan", "None", "N/A"]:
         return 0.0
 
     negative = s.startswith("(") and s.endswith(")")
-    s = s.replace("(", "").replace(")", "")
+
+    s = s.replace("(", "")
+    s = s.replace(")", "")
     s = s.replace(",", "")
     s = s.replace("$", "")
     s = s.replace("M", "")
+    s = s.replace("−", "-")
     s = s.strip()
 
     try:
@@ -105,97 +108,122 @@ def parse_number(x):
 
 def get_latest_etf_flows():
     """
-    Parser robusto para Farside.
-    No depende de pd.read_html(), porque Farside no siempre expone la tabla
-    como <table> HTML estándar en GitHub Actions.
+    Parser robusto para Farside BTC ETF flows.
+    Orden real de columnas en Farside:
+    Total, IBIT, FBTC, BITB, ARKB, BTCO, EZBC, BRRR, HODL, BTCW, MSBT, GBTC, BTC
     """
 
-    url = "https://farside.co.uk/bitcoin-etf-flow-all-data/"
+    urls = [
+        "https://farside.co.uk/btc/",
+        "https://farside.co.uk/bitcoin-etf-flow-all-data/",
+    ]
 
     headers = {
         "User-Agent": (
             "Mozilla/5.0 (X11; Linux x86_64) "
             "AppleWebKit/537.36 (KHTML, like Gecko) "
             "Chrome/120.0 Safari/537.36"
-        )
+        ),
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     }
 
-    try:
-        r = requests.get(url, headers=headers, timeout=30)
-        r.raise_for_status()
+    date_regex = re.compile(r"\b\d{2} [A-Za-z]{3} \d{4}\b")
+    number_regex = re.compile(r"\(?-?\d{1,3}(?:,\d{3})*(?:\.\d+)?\)?|\(?-?\d+(?:\.\d+)?\)?")
 
-        soup = BeautifulSoup(r.text, "html.parser")
-        text = soup.get_text("\n")
+    last_error = None
 
-        # Normalizar líneas
-        lines = [
-            line.replace("\xa0", " ").strip()
-            for line in text.splitlines()
-            if line.replace("\xa0", " ").strip()
-        ]
+    for url in urls:
+        try:
+            r = requests.get(url, headers=headers, timeout=30)
+            print(f"Farside HTTP {r.status_code} from {url}")
+            r.raise_for_status()
 
-        # Columnas esperadas en Farside All Data:
-        # Date, IBIT, FBTC, BITB, ARKB, BTCO, EZBC, BRRR, HODL,
-        # BTCW, MSBT, GBTC, BTC, Total
-        value_count = 13
+            soup = BeautifulSoup(r.text, "html.parser")
+            text = soup.get_text(" ")
 
-        date_pattern = re.compile(r"^\d{1,2} [A-Za-z]{3} \d{4}$")
+            # Normalización fuerte
+            text = text.replace("\xa0", " ")
+            text = re.sub(r"\s+", " ", text)
 
-        rows = []
-        i = 0
+            # Buscar todas las fechas tipo 18 Jun 2026
+            matches = list(date_regex.finditer(text))
 
-        while i < len(lines):
-            if date_pattern.match(lines[i]):
-                date = lines[i]
-                values = lines[i + 1 : i + 1 + value_count]
+            if not matches:
+                print("Farside parser: no date matches found")
+                print("Farside text sample:", text[:500])
+                continue
 
-                if len(values) == value_count:
+            rows = []
+
+            for idx, match in enumerate(matches):
+                date = match.group(0)
+
+                start = match.end()
+                end = matches[idx + 1].start() if idx + 1 < len(matches) else len(text)
+
+                block = text[start:end]
+
+                # Cortar antes de secciones resumen si aparecen
+                if any(x in block for x in ["Average", "Maximum", "Minimum", "Source:"]):
+                    block = block.split("Average")[0]
+                    block = block.split("Maximum")[0]
+                    block = block.split("Minimum")[0]
+                    block = block.split("Source:")[0]
+
+                nums = number_regex.findall(block)
+
+                # Necesitamos al menos 13 valores:
+                # Total, IBIT, FBTC, BITB, ARKB, BTCO, EZBC, BRRR, HODL, BTCW, MSBT, GBTC, BTC
+                if len(nums) >= 13:
+                    values = nums[:13]
+
                     row = {
                         "date": date,
-                        "ibit": parse_number(values[0]),
-                        "fbtc": parse_number(values[1]),
-                        "bitb": parse_number(values[2]),
-                        "arkb": parse_number(values[3]),
-                        "btco": parse_number(values[4]),
-                        "ezbc": parse_number(values[5]),
-                        "brrr": parse_number(values[6]),
-                        "hodl": parse_number(values[7]),
-                        "btcw": parse_number(values[8]),
-                        "msbt": parse_number(values[9]),
-                        "gbtc": parse_number(values[10]),
-                        "btc": parse_number(values[11]),
-                        "total": parse_number(values[12]),
+                        "total": parse_number(values[0]),
+                        "ibit": parse_number(values[1]),
+                        "fbtc": parse_number(values[2]),
+                        "bitb": parse_number(values[3]),
+                        "arkb": parse_number(values[4]),
+                        "btco": parse_number(values[5]),
+                        "ezbc": parse_number(values[6]),
+                        "brrr": parse_number(values[7]),
+                        "hodl": parse_number(values[8]),
+                        "btcw": parse_number(values[9]),
+                        "msbt": parse_number(values[10]),
+                        "gbtc": parse_number(values[11]),
+                        "btc": parse_number(values[12]),
                     }
+
                     rows.append(row)
 
-                i += 1 + value_count
-            else:
-                i += 1
+            if not rows:
+                print("Farside parser: dates found but no valid rows")
+                print("Farside text sample:", text[:1000])
+                continue
 
-        if not rows:
-            print("Farside parser: no daily rows found")
+            latest = rows[-1]
+
+            print(
+                f"Farside latest parsed: date={latest['date']}, "
+                f"IBIT={latest['ibit']}, Total={latest['total']}"
+            )
+
             return {
-                "date": "N/A",
-                "ibit": None,
-                "total": None,
+                "date": latest["date"],
+                "ibit": latest["ibit"],
+                "total": latest["total"],
             }
 
-        latest = rows[-1]
+        except Exception as e:
+            last_error = str(e)
+            print(f"Farside error with {url}: {e}")
 
-        return {
-            "date": latest["date"],
-            "ibit": latest["ibit"],
-            "total": latest["total"],
-        }
-
-    except Exception as e:
-        print(f"Farside parser error: {e}")
-        return {
-            "date": "N/A",
-            "ibit": None,
-            "total": None,
-        }
-
+    return {
+        "date": "N/A",
+        "ibit": None,
+        "total": None,
+        "error": last_error,
+    }
 
 def btc_signal(config):
     btc_cfg = config["btc"]
