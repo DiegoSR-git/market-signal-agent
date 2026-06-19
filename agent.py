@@ -42,7 +42,7 @@ ETF_IBIT_MUSD_ENV = os.getenv("ETF_IBIT_MUSD")
 CONFIG_FILE = os.getenv("CONFIG_FILE", "config.yaml")
 STATE_FILE = Path(os.getenv("STATE_FILE", "state.json"))
 REPORT_DIR = Path(os.getenv("REPORT_DIR", "docs"))
-DASHBOARD_FILE = REPORT_DIR / "index.html"
+DASHBOARD_FILE = REPORT_DIR / "dashboard.html"
 SIGNAL_LOG_FILE = Path(os.getenv("SIGNAL_LOG_FILE", "signals_log.csv"))
 HTTP_TIMEOUT = 25
 
