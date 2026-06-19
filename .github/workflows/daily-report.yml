@@ -8,6 +8,7 @@ on:
 permissions:
   contents: write
   models: read
+  contents: write
 
 jobs:
   daily:
@@ -34,6 +35,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add state.json signals_log.csv docs/dashboard.html || true
+          git add state.json signals_log.csv docs/dashboard.html docs/index.html || true
           git diff --cached --quiet || git commit -m "Update daily report state [skip ci]"
           git push || true
