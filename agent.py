@@ -302,42 +302,236 @@ def get_fear_and_greed():
 
 
 def get_binance_funding(limit=8):
+    """
+    Funding BTCUSDT con cadena gratuita de fallback:
+    1) Binance Futures
+    2) Bybit v5
+    3) OKX public
+
+    Binance puede devolver 451 desde GitHub-hosted runners.
+    """
+    errors = []
+
+    # 1) Binance
     try:
-        data = request_json("https://fapi.binance.com/fapi/v1/fundingRate", {"symbol": "BTCUSDT", "limit": limit})
+        data = request_json(
+            "https://fapi.binance.com/fapi/v1/fundingRate",
+            params={"symbol": "BTCUSDT", "limit": limit},
+        )
         rates = [float(x["fundingRate"]) for x in data]
+        latest = rates[-1] if rates else None
+        avg_5 = sum(rates[-5:]) / min(len(rates), 5) if rates else None
+        negative_count = sum(1 for r in rates[-5:] if r < 0)
         return {
-            "latest": rates[-1] if rates else None,
-            "avg_5": sum(rates[-5:]) / min(len(rates), 5) if rates else None,
-            "negative_count_5": sum(1 for r in rates[-5:] if r < 0),
+            "latest": latest,
+            "avg_5": avg_5,
+            "negative_count_5": negative_count,
+            "source": "binance_futures",
         }
     except Exception as ex:
+        errors.append(f"Binance funding: {ex}")
         print(f"Binance funding error: {ex}")
-        return {"latest": None, "avg_5": None, "negative_count_5": None, "error": str(ex)}
 
+    # 2) Bybit
+    try:
+        data = request_json(
+            "https://api.bybit.com/v5/market/funding/history",
+            params={"category": "linear", "symbol": "BTCUSDT", "limit": limit},
+        )
+        rows = data.get("result", {}).get("list", [])
+        rows = sorted(rows, key=lambda x: int(x.get("fundingRateTimestamp", 0)))
+        rates = [float(x["fundingRate"]) for x in rows if x.get("fundingRate") is not None]
+        latest = rates[-1] if rates else None
+        avg_5 = sum(rates[-5:]) / min(len(rates), 5) if rates else None
+        negative_count = sum(1 for r in rates[-5:] if r < 0)
+        return {
+            "latest": latest,
+            "avg_5": avg_5,
+            "negative_count_5": negative_count,
+            "source": "bybit",
+        }
+    except Exception as ex:
+        errors.append(f"Bybit funding: {ex}")
+        print(f"Bybit funding error: {ex}")
+
+    # 3) OKX
+    try:
+        data = request_json(
+            "https://www.okx.com/api/v5/public/funding-rate-history",
+            params={"instId": "BTC-USDT-SWAP", "limit": limit},
+        )
+        rows = data.get("data", [])
+        rows = sorted(rows, key=lambda x: int(x.get("fundingTime", 0)))
+        rates = [float(x["fundingRate"]) for x in rows if x.get("fundingRate") is not None]
+        latest = rates[-1] if rates else None
+        avg_5 = sum(rates[-5:]) / min(len(rates), 5) if rates else None
+        negative_count = sum(1 for r in rates[-5:] if r < 0)
+        return {
+            "latest": latest,
+            "avg_5": avg_5,
+            "negative_count_5": negative_count,
+            "source": "okx",
+        }
+    except Exception as ex:
+        errors.append(f"OKX funding: {ex}")
+        print(f"OKX funding error: {ex}")
+
+    return {
+        "latest": None,
+        "avg_5": None,
+        "negative_count_5": None,
+        "source": "unavailable",
+        "error": " | ".join(errors),
+    }
 
 def get_binance_open_interest():
-    try:
-        data = request_json("https://fapi.binance.com/fapi/v1/openInterest", {"symbol": "BTCUSDT"})
-        return {"open_interest": float(data.get("openInterest")), "time": data.get("time"), "source": "binance_futures"}
-    except Exception as ex:
-        print(f"Binance OI current error: {ex}")
-        return {"open_interest": None, "source": "binance_futures", "error": str(ex)}
+    """
+    Open Interest actual con fallback gratuito:
+    1) Binance Futures
+    2) Bybit v5
+    3) OKX public
 
+    Devuelve una cifra comparable dentro de cada fuente, no entre fuentes.
+    """
+    errors = []
+
+    # 1) Binance
+    try:
+        data = request_json(
+            "https://fapi.binance.com/fapi/v1/openInterest",
+            params={"symbol": "BTCUSDT"},
+        )
+        return {
+            "open_interest": float(data.get("openInterest")),
+            "time": data.get("time"),
+            "source": "binance_futures",
+        }
+    except Exception as ex:
+        errors.append(f"Binance OI current: {ex}")
+        print(f"Binance OI current error: {ex}")
+
+    # 2) Bybit current from latest historical OI point
+    try:
+        data = request_json(
+            "https://api.bybit.com/v5/market/open-interest",
+            params={
+                "category": "linear",
+                "symbol": "BTCUSDT",
+                "intervalTime": "1h",
+                "limit": 2,
+            },
+        )
+        rows = data.get("result", {}).get("list", [])
+        rows = sorted(rows, key=lambda x: int(x.get("timestamp", 0)))
+        latest = rows[-1]
+        return {
+            "open_interest": float(latest.get("openInterest")),
+            "time": latest.get("timestamp"),
+            "source": "bybit",
+        }
+    except Exception as ex:
+        errors.append(f"Bybit OI current: {ex}")
+        print(f"Bybit OI current error: {ex}")
+
+    # 3) OKX current
+    try:
+        data = request_json(
+            "https://www.okx.com/api/v5/public/open-interest",
+            params={"instType": "SWAP", "uly": "BTC-USDT"},
+        )
+        rows = data.get("data", [])
+        if not rows:
+            raise RuntimeError("OKX returned no OI rows")
+        latest = rows[0]
+        oi = latest.get("oiCcy") or latest.get("oi")
+        return {
+            "open_interest": float(oi),
+            "time": latest.get("ts"),
+            "source": "okx",
+        }
+    except Exception as ex:
+        errors.append(f"OKX OI current: {ex}")
+        print(f"OKX OI current error: {ex}")
+
+    return {
+        "open_interest": None,
+        "source": "unavailable",
+        "error": " | ".join(errors),
+    }
 
 def get_binance_open_interest_hist(period="1h", limit=30):
+    """
+    Historical OI con fallback:
+    1) Binance Futures
+    2) Bybit v5
+
+    OKX se usa solo para OI actual en get_binance_open_interest.
+    """
+    errors = []
+
+    # 1) Binance
     try:
-        data = request_json("https://fapi.binance.com/futures/data/openInterestHist", {"symbol": "BTCUSDT", "period": period, "limit": limit})
+        data = request_json(
+            "https://fapi.binance.com/futures/data/openInterestHist",
+            params={"symbol": "BTCUSDT", "period": period, "limit": limit},
+        )
         if not data:
-            return {"latest": None, "change_24h": None, "change_recent": None}
+            raise RuntimeError("Binance returned no OI history")
+
         vals = [float(x["sumOpenInterest"]) for x in data]
         latest = vals[-1]
-        prev24 = vals[-25] if len(vals) >= 25 else vals[0]
-        prevrecent = vals[-7] if len(vals) >= 7 else vals[0]
-        return {"latest": latest, "change_24h": pct_change(latest, prev24), "change_recent": pct_change(latest, prevrecent), "source": "binance_futures"}
-    except Exception as ex:
-        print(f"Binance OI hist error: {ex}")
-        return {"latest": None, "change_24h": None, "change_recent": None, "error": str(ex)}
+        prev_24 = vals[-25] if len(vals) >= 25 else vals[0]
+        prev_recent = vals[-7] if len(vals) >= 7 else vals[0]
 
+        return {
+            "latest": latest,
+            "change_24h": pct_change(latest, prev_24),
+            "change_recent": pct_change(latest, prev_recent),
+            "source": "binance_futures",
+        }
+    except Exception as ex:
+        errors.append(f"Binance OI hist: {ex}")
+        print(f"Binance OI hist error: {ex}")
+
+    # 2) Bybit
+    try:
+        data = request_json(
+            "https://api.bybit.com/v5/market/open-interest",
+            params={
+                "category": "linear",
+                "symbol": "BTCUSDT",
+                "intervalTime": period,
+                "limit": limit,
+            },
+        )
+        rows = data.get("result", {}).get("list", [])
+        rows = sorted(rows, key=lambda x: int(x.get("timestamp", 0)))
+        vals = [float(x["openInterest"]) for x in rows if x.get("openInterest") is not None]
+
+        if not vals:
+            raise RuntimeError("Bybit returned no OI history")
+
+        latest = vals[-1]
+        prev_24 = vals[-25] if len(vals) >= 25 else vals[0]
+        prev_recent = vals[-7] if len(vals) >= 7 else vals[0]
+
+        return {
+            "latest": latest,
+            "change_24h": pct_change(latest, prev_24),
+            "change_recent": pct_change(latest, prev_recent),
+            "source": "bybit",
+        }
+    except Exception as ex:
+        errors.append(f"Bybit OI hist: {ex}")
+        print(f"Bybit OI hist error: {ex}")
+
+    return {
+        "latest": None,
+        "change_24h": None,
+        "change_recent": None,
+        "source": "unavailable",
+        "error": " | ".join(errors),
+    }
 
 def get_coinmetrics_mvrv():
     for metric in ["CapMVRVCur", "CapMVRVFreeFloat"]:
@@ -795,26 +989,112 @@ def run_stock_signal(config, state, force=False):
 
 def healthcheck(config):
     checks = []
-    def record(name, ok, detail): checks.append((name, ok, detail))
-    try: p, src = get_btc_price_eur(); record("BTC price", True, f"{p:.0f} EUR via {src}")
-    except Exception as ex: record("BTC price", False, str(ex))
-    try: df = get_btc_daily_prices(30); record("BTC history", len(df)>10, f"{len(df)} rows")
-    except Exception as ex: record("BTC history", False, str(ex))
-    try: fg = get_fear_and_greed(); record("Fear & Greed", fg.get("value") is not None, str(fg))
-    except Exception as ex: record("Fear & Greed", False, str(ex))
-    try: f = get_binance_funding(); record("Binance funding", f.get("latest") is not None, str(f))
-    except Exception as ex: record("Binance funding", False, str(ex))
-    try: oi = get_binance_open_interest(); record("Binance OI", oi.get("open_interest") is not None, str(oi))
-    except Exception as ex: record("Binance OI", False, str(ex))
-    try: etf = get_latest_etf_flows(); record("ETF flows", etf.get("available", False), str(etf))
-    except Exception as ex: record("ETF flows", False, str(ex))
-    try: macro = macro_snapshot(config); record("Macro Yahoo", any(v.get("price") is not None for v in macro.values()), str({k: v.get("price") for k, v in macro.items()}))
-    except Exception as ex: record("Macro Yahoo", False, str(ex))
-    ok_count = sum(1 for _, ok, _ in checks if ok)
-    status = "✅ HEALTHCHECK OK" if ok_count == len(checks) else "⚠️ HEALTHCHECK WARNING"
-    lines = [f"{'✅' if ok else '❌'} {name}: {e(detail)}" for name, ok, detail in checks]
-    return f"<b>{status}</b>\n\n{chr(10).join(lines)}\n\n<b>Hora:</b> {utc_now().strftime('%Y-%m-%d %H:%M UTC')}"
 
+    def record(name, ok, detail, required=True):
+        checks.append(
+            {
+                "name": name,
+                "ok": bool(ok),
+                "detail": str(detail),
+                "required": bool(required),
+            }
+        )
+
+    try:
+        p, src = get_btc_price_eur()
+        record("BTC price", True, f"{p:.0f} EUR via {src}", required=True)
+    except Exception as ex:
+        record("BTC price", False, str(ex), required=True)
+
+    try:
+        df = get_btc_daily_prices(30)
+        record("BTC history", len(df) > 10, f"{len(df)} rows", required=True)
+    except Exception as ex:
+        record("BTC history", False, str(ex), required=True)
+
+    try:
+        fg = get_fear_and_greed()
+        detail = (
+            f"{fg.get('value')} / {fg.get('classification')}"
+            if fg.get("value") is not None
+            else fg.get("error", "N/A")
+        )
+        record("Fear & Greed", fg.get("value") is not None, detail, required=True)
+    except Exception as ex:
+        record("Fear & Greed", False, str(ex), required=True)
+
+    try:
+        f = get_binance_funding()
+        detail = (
+            f"{f.get('source')} latest={fmt_float(f.get('latest'), 6)} "
+            f"avg5={fmt_float(f.get('avg_5'), 6)} neg5={f.get('negative_count_5')}"
+        )
+        record("Derivatives funding", f.get("latest") is not None, detail, required=False)
+    except Exception as ex:
+        record("Derivatives funding", False, str(ex), required=False)
+
+    try:
+        oi = get_binance_open_interest()
+        detail = f"{oi.get('source')} OI={fmt_float(oi.get('open_interest'), 0)}"
+        record("Derivatives OI", oi.get("open_interest") is not None, detail, required=False)
+    except Exception as ex:
+        record("Derivatives OI", False, str(ex), required=False)
+
+    try:
+        etf = get_latest_etf_flows()
+        detail = (
+            f"{etf.get('source')} date={etf.get('date')} "
+            f"total={fmt_musd(etf.get('total'))} IBIT={fmt_musd(etf.get('ibit'))}"
+        )
+        # ETF es opcional porque Farside bloquea GitHub Actions. Usa variables manuales si lo quieres OK.
+        record("ETF flows", etf.get("available", False), detail, required=False)
+    except Exception as ex:
+        record("ETF flows", False, str(ex), required=False)
+
+    try:
+        macro = macro_snapshot(config)
+        ok = any(v.get("price") is not None for v in macro.values())
+        detail = ", ".join(
+            f"{k}={fmt_float(v.get('price'), 2)}"
+            for k, v in macro.items()
+            if v.get("price") is not None
+        )
+        record("Macro Yahoo", ok, detail or "N/A", required=True)
+    except Exception as ex:
+        record("Macro Yahoo", False, str(ex), required=True)
+
+    required_checks = [c for c in checks if c["required"]]
+    optional_checks = [c for c in checks if not c["required"]]
+
+    required_ok = all(c["ok"] for c in required_checks)
+    optional_ok = all(c["ok"] for c in optional_checks)
+
+    if required_ok and optional_ok:
+        status = "✅ HEALTHCHECK OK"
+    elif required_ok and not optional_ok:
+        status = "🟡 HEALTHCHECK OK — optional data degraded"
+    else:
+        status = "⚠️ HEALTHCHECK WARNING"
+
+    lines = []
+    for c in checks:
+        if c["ok"]:
+            icon = "✅"
+        elif c["required"]:
+            icon = "❌"
+        else:
+            icon = "⚪"
+
+        label = "" if c["required"] else " (opcional)"
+        lines.append(f"{icon} {e(c['name'])}{label}: {e(c['detail'])}")
+
+    return f"""
+<b>{status}</b>
+
+{chr(10).join(lines)}
+
+<b>Hora:</b> {utc_now().strftime("%Y-%m-%d %H:%M UTC")}
+""".strip()
 
 def run_healthcheck(config, state, force=False):
     msg = healthcheck(config); print(msg)

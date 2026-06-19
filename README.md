@@ -140,3 +140,22 @@ El mensaje de Telegram incluirá un bloque:
 5) Acción operativa...
 6) Confianza...
 ```
+
+
+## Producción: Binance 451 y Farside 403
+
+En GitHub Actions pueden aparecer bloqueos por IP/región:
+
+```text
+Binance 451
+Farside 403
+```
+
+Esta versión lo gestiona así:
+
+- Funding: Binance → Bybit → OKX.
+- Open Interest actual: Binance → Bybit → OKX.
+- Open Interest histórico: Binance → Bybit.
+- ETF flows: Farside si funciona; si no, usa variables manuales `ETF_DATE`, `ETF_TOTAL_MUSD`, `ETF_IBIT_MUSD`.
+
+El healthcheck marca ETF y derivados como datos opcionales. Si BTC, histórico, Fear & Greed y macro funcionan, el agente puede operar correctamente aunque ETF esté degradado.
