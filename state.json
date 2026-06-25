@@ -1,38 +1,78 @@
 {
   "last_alerts": {
+    "btc::ORDER_52000::\ud83d\udfe2 BTC STRONG BUY": "2026-06-25T14:00:33.862203+00:00",
     "btc::SCORE_WATCH::\ud83d\udfe1 BTC WATCH": "2026-06-19T11:18:57.373865+00:00",
     "btc::none::\u26aa SIN SE\u00d1AL": "2026-06-19T10:54:58.472290+00:00",
     "btc::none::\ud83d\udfe1 BTC WATCH": "2026-06-19T10:51:22.737931+00:00",
     "stocks::opportunities": "2026-06-25T11:14:03.601334+00:00"
   },
-  "last_run_utc": "2026-06-25T13:06:21.497995+00:00",
+  "last_run_utc": "2026-06-25T14:00:37.135031+00:00",
   "last_snapshot": {
     "btc": {
       "etf_total": null,
       "fear": 12,
       "ibit": null,
       "oi_24h": null,
-      "price": 53877.0,
+      "price": 51225.0,
       "regime": "RISK_ON",
-      "rsi": 35.96425794245489,
-      "score": 41,
-      "sma200": 65303.8811770602,
-      "status": "\u26aa SIN SE\u00d1AL",
-      "time_utc": "2026-06-25T13:06:18.765521+00:00"
+      "rsi": 29.59855168364183,
+      "score": 92,
+      "sma200": 65290.83972089088,
+      "status": "\ud83d\udfe2 BTC STRONG BUY",
+      "time_utc": "2026-06-25T14:00:33.511276+00:00"
     },
     "stocks": {
-      "opportunities": 1,
-      "time_utc": "2026-06-25T13:06:21.497949+00:00",
+      "opportunities": 4,
+      "time_utc": "2026-06-25T14:00:37.134977+00:00",
       "top": [
         {
-          "dist200": -18.66766116745279,
-          "drawdown": -32.580665501293446,
-          "price": 365.4599914550781,
+          "dist200": 3.682075926168338,
+          "drawdown": -11.438775950832625,
+          "price": 279.1449890136719,
           "reasons": [
-            "Drawdown 52s -32.6%",
-            "RSI diario 32.4"
+            "Drawdown 52s -11.4%",
+            "RSI diario 34.5",
+            "Precio sobre SMA200"
           ],
-          "rsi": 32.43939529898333,
+          "rsi": 34.487176581516394,
+          "score": 60,
+          "symbol": "AAPL"
+        },
+        {
+          "dist200": 8.133574469891446,
+          "drawdown": -15.844961423634196,
+          "price": 338.82501220703125,
+          "reasons": [
+            "Drawdown 52s -15.8%",
+            "RSI diario 34.0",
+            "Precio sobre SMA200"
+          ],
+          "rsi": 34.049551654213076,
+          "score": 60,
+          "symbol": "GOOGL"
+        },
+        {
+          "dist200": -2.324869037186328,
+          "drawdown": -17.311537662503696,
+          "price": 227.38499450683594,
+          "reasons": [
+            "Drawdown 52s -17.3%",
+            "RSI diario 33.8",
+            "Cerca de SMA200 desde abajo"
+          ],
+          "rsi": 33.82920525187046,
+          "score": 60,
+          "symbol": "AMZN"
+        },
+        {
+          "dist200": -20.385427165096104,
+          "drawdown": -34.10814325645811,
+          "price": 357.17999267578125,
+          "reasons": [
+            "Drawdown 52s -34.1%",
+            "RSI diario 29.9"
+          ],
+          "rsi": 29.905313509061784,
           "score": 50,
           "symbol": "MSFT"
         }
@@ -74,11 +114,11 @@
     },
     "btc_52000": {
       "amount_eur": 1500,
-      "first_triggered_utc": null,
-      "last_triggered_utc": null,
+      "first_triggered_utc": "2026-06-25T14:00:33.510806+00:00",
+      "last_triggered_utc": "2026-06-25T14:00:33.510841+00:00",
       "name": "Orden 1 - soporte 52k",
       "price_eur": 52000,
-      "times_seen": 0
+      "times_seen": 1
     }
   }
 }
