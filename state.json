@@ -7,49 +7,74 @@
     "btc::none::\ud83d\udfe1 BTC WATCH": "2026-06-19T10:51:22.737931+00:00",
     "stocks::opportunities": "2026-06-25T17:29:30.237791+00:00"
   },
-  "last_run_utc": "2026-06-25T18:30:08.216943+00:00",
+  "last_run_utc": "2026-06-25T19:26:57.900508+00:00",
   "last_snapshot": {
     "btc": {
       "etf_total": null,
       "fear": 12,
       "ibit": null,
       "oi_24h": null,
-      "price": 52375.0,
+      "price": 52030.0,
       "regime": "RISK_ON",
-      "rsi": 32.018964875690216,
-      "score": 64,
-      "sma200": 65296.40943391504,
-      "status": "\ud83d\udfe1 BTC WATCH",
-      "time_utc": "2026-06-25T18:30:05.492053+00:00"
+      "rsi": 31.289809306753,
+      "score": 80,
+      "sma200": 65294.82223612881,
+      "status": "\ud83d\udfe0 BTC PARTIAL BUY",
+      "time_utc": "2026-06-25T19:26:55.173147+00:00"
     },
     "stocks": {
-      "opportunities": 2,
-      "time_utc": "2026-06-25T18:30:08.216895+00:00",
+      "opportunities": 4,
+      "time_utc": "2026-06-25T19:26:57.900468+00:00",
       "top": [
         {
-          "dist200": 3.73934809002312,
-          "drawdown": -11.38960121311241,
-          "price": 279.29998779296875,
+          "dist200": 3.0520603615353803,
+          "drawdown": -11.979698065754917,
+          "price": 277.44000244140625,
           "reasons": [
-            "Drawdown 52s -11.4%",
-            "RSI diario 34.6",
+            "Drawdown 52s -12.0%",
+            "RSI diario 33.5",
             "Precio sobre SMA200"
           ],
-          "rsi": 34.58227739292688,
+          "rsi": 33.474575479819165,
           "score": 60,
           "symbol": "AAPL"
         },
         {
-          "dist200": -20.285520306591,
-          "drawdown": -34.025125896901066,
-          "price": 357.6300048828125,
+          "dist200": -2.267157859076585,
+          "drawdown": -17.26244141521487,
+          "price": 227.52000427246094,
           "reasons": [
-            "Drawdown 52s -34.0%",
-            "RSI diario 30.0"
+            "Drawdown 52s -17.3%",
+            "RSI diario 33.9",
+            "Cerca de SMA200 desde abajo"
           ],
-          "rsi": 30.032821686319593,
+          "rsi": 33.90214737688957,
+          "score": 60,
+          "symbol": "AMZN"
+        },
+        {
+          "dist200": -21.29349000251105,
+          "drawdown": -34.86265767021064,
+          "price": 353.0899963378906,
+          "reasons": [
+            "Drawdown 52s -34.9%",
+            "RSI diario 28.8"
+          ],
+          "rsi": 28.794231743830053,
           "score": 50,
           "symbol": "MSFT"
+        },
+        {
+          "dist200": -16.140448840547815,
+          "drawdown": -30.88354183148734,
+          "price": 546.02001953125,
+          "reasons": [
+            "Drawdown 52s -30.9%",
+            "RSI diario 34.9"
+          ],
+          "rsi": 34.860027737951796,
+          "score": 50,
+          "symbol": "META"
         }
       ]
     }
