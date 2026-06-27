@@ -5,26 +5,26 @@
     "btc::SCORE_WATCH::\ud83d\udfe1 BTC WATCH": "2026-06-19T11:18:57.373865+00:00",
     "btc::none::\u26aa SIN SE\u00d1AL": "2026-06-19T10:54:58.472290+00:00",
     "btc::none::\ud83d\udfe1 BTC WATCH": "2026-06-19T10:51:22.737931+00:00",
-    "stocks::opportunities": "2026-06-27T04:12:35.536817+00:00"
+    "stocks::opportunities": "2026-06-27T10:58:02.486970+00:00"
   },
-  "last_run_utc": "2026-06-27T09:59:37.423527+00:00",
+  "last_run_utc": "2026-06-27T10:58:02.486991+00:00",
   "last_snapshot": {
     "btc": {
       "etf_total": null,
       "fear": 15,
       "ibit": null,
       "oi_24h": null,
-      "price": 52969.0,
+      "price": 52946.0,
       "regime": "RISK_ON",
-      "rsi": 34.590227134761705,
+      "rsi": 34.48739141407721,
       "score": 56,
-      "sma200": 65053.866524599354,
+      "sma200": 65053.77165306192,
       "status": "\ud83d\udfe1 BTC WATCH",
-      "time_utc": "2026-06-27T09:59:33.079990+00:00"
+      "time_utc": "2026-06-27T10:57:58.825338+00:00"
     },
     "stocks": {
-      "opportunities": 2,
-      "time_utc": "2026-06-27T09:59:37.423480+00:00",
+      "opportunities": 4,
+      "time_utc": "2026-06-27T10:58:01.974272+00:00",
       "top": [
         {
           "dist200": 2.2058084916122045,
@@ -40,17 +40,41 @@
           "symbol": "AAPL"
         },
         {
-          "dist200": 7.499529585467579,
-          "drawdown": -16.20137630019195,
-          "price": 337.3900146484375,
+          "dist200": -2.48516802559543,
+          "drawdown": -17.447906262568146,
+          "price": 227.00999450683594,
           "reasons": [
-            "Drawdown 52s -16.2%",
-            "RSI diario 33.3",
-            "Precio sobre SMA200"
+            "Drawdown 52s -17.4%",
+            "RSI diario 33.6",
+            "Cerca de SMA200 desde abajo"
           ],
-          "rsi": 33.26585982617708,
+          "rsi": 33.62823979075611,
           "score": 60,
-          "symbol": "GOOGL"
+          "symbol": "AMZN"
+        },
+        {
+          "dist200": -21.351220287095472,
+          "drawdown": -34.910623756161144,
+          "price": 352.8299865722656,
+          "reasons": [
+            "Drawdown 52s -34.9%",
+            "RSI diario 28.7"
+          ],
+          "rsi": 28.72638244884675,
+          "score": 50,
+          "symbol": "MSFT"
+        },
+        {
+          "dist200": -16.62222308314939,
+          "drawdown": -31.282279099090193,
+          "price": 542.8699951171875,
+          "reasons": [
+            "Drawdown 52s -31.3%",
+            "RSI diario 34.1"
+          ],
+          "rsi": 34.145263288810455,
+          "score": 50,
+          "symbol": "META"
         }
       ]
     }
