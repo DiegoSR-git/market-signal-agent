@@ -34,6 +34,7 @@ INDEX_FILE = DOCS_DIR / "index.html"
 HTTP_TIMEOUT = 25
 DEFAULT_CONNECT_TIMEOUT = 6
 DEFAULT_READ_TIMEOUT = 12
+TELEGRAM_MAX_MESSAGE_CHARS = 3900
 SESSION = requests.Session()
 REQUEST_CACHE = {}
 SOURCE_STATE = {
@@ -130,6 +131,31 @@ def get_telegram_chat_ids():
     for x in ids:
         if x not in out: out.append(x)
     return out
+
+def split_telegram_message(message, max_chars=TELEGRAM_MAX_MESSAGE_CHARS):
+    if len(message) <= max_chars:
+        return [message]
+
+    chunks, current = [], []
+    current_len = 0
+    for block in message.split("\n\n"):
+        block_len = len(block) + (2 if current else 0)
+        if current and current_len + block_len > max_chars:
+            chunks.append("\n\n".join(current))
+            current, current_len = [], 0
+        if len(block) > max_chars:
+            for i in range(0, len(block), max_chars):
+                if current:
+                    chunks.append("\n\n".join(current))
+                    current, current_len = [], 0
+                chunks.append(block[i:i + max_chars])
+        else:
+            current.append(block)
+            current_len += block_len
+    if current:
+        chunks.append("\n\n".join(current))
+    return chunks
+
 def send_telegram(message, buttons=None):
     ids = get_telegram_chat_ids()
     if not TELEGRAM_BOT_TOKEN or not ids:
@@ -137,14 +163,20 @@ def send_telegram(message, buttons=None):
         return
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     for chat_id in ids:
-        payload = {"chat_id":chat_id, "text":message, "parse_mode":"HTML", "disable_web_page_preview":True}
-        if buttons:
-            payload["reply_markup"] = {"inline_keyboard":[[{"text":b["text"], "url":b["url"]} for b in row] for row in buttons]}
-        try:
-            r = requests.post(url, json=payload, timeout=HTTP_TIMEOUT); r.raise_for_status()
-            log(f"Telegram sent to {chat_id}")
-        except Exception as ex:
-            log(f"Telegram error for {chat_id}: {ex}")
+        chunks = split_telegram_message(message)
+        for idx, chunk in enumerate(chunks):
+            payload = {"chat_id":chat_id, "text":chunk, "parse_mode":"HTML", "disable_web_page_preview":True}
+            if buttons and idx == 0:
+                payload["reply_markup"] = {"inline_keyboard":[[{"text":b["text"], "url":b["url"]} for b in row] for row in buttons]}
+            try:
+                r = SESSION.post(url, json=payload, timeout=http_timeout(read=20))
+                if not r.ok:
+                    log(f"Telegram response for {chat_id}: HTTP {r.status_code} {r.text[:500]}")
+                r.raise_for_status()
+                suffix = f" part {idx + 1}/{len(chunks)}" if len(chunks) > 1 else ""
+                log(f"Telegram sent to {chat_id}{suffix}")
+            except Exception as ex:
+                log(f"Telegram error for {chat_id}: {ex}")
 
 def append_log(row):
     LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -365,14 +397,35 @@ def json_safe(obj):
     if isinstance(obj, (str,int,float,bool)) or obj is None: return obj
     try: return float(obj)
     except Exception: return str(obj)
-def compact_articles(articles, max_items=12):
-    return [{"id":i+1,"title":a.get("title"),"source":a.get("source"),"domain":a.get("domain"),"published":a.get("published"),"url":a.get("url")} for i,a in enumerate(articles[:max_items])]
-def build_ai_payload(companies_data):
+def compact_articles(articles, max_items=4):
+    out = []
+    for i, a in enumerate(articles[:max_items]):
+        out.append({
+            "id": i + 1,
+            "title": clean_text(a.get("title"))[:180],
+            "source": clean_text(a.get("source"))[:60],
+            "domain": clean_text(a.get("domain"))[:60],
+            "published": a.get("published"),
+        })
+    return out
+
+def compact_market(market):
+    return {
+        "price": market.get("price"),
+        "rsi": market.get("rsi"),
+        "perf_20d": market.get("perf_20d"),
+        "perf_60d": market.get("perf_60d"),
+        "status": market.get("status"),
+    }
+
+def build_ai_payload(companies_data, config):
+    max_ai_articles = int(config.get("ai", {}).get("max_articles_per_company", 4))
     return {"as_of_utc":iso_now(), "companies":[{
-        "company":x["company"], "ticker":x["ticker"], "market":x["market"],
-        "articles":compact_articles(x["articles"]), "manual_event_hint":x["company_config"].get("manual_event_hint"),
-        "event_keywords":x["company_config"].get("event_keywords", []),
-        "product_keywords":x["company_config"].get("product_keywords", [])
+        "company":x["company"], "ticker":x["ticker"], "market":compact_market(x["market"]),
+        "articles":compact_articles(x["articles"], max_items=max_ai_articles),
+        "manual_event_hint":x["company_config"].get("manual_event_hint"),
+        "event_keywords":x["company_config"].get("event_keywords", [])[:4],
+        "product_keywords":x["company_config"].get("product_keywords", [])[:6]
     } for x in companies_data]}
 
 def call_github_models(prompt, config):
@@ -400,7 +453,7 @@ def call_github_models(prompt, config):
     return json.loads(text)
 
 def ai_analyze(companies_data, config):
-    payload = build_ai_payload(companies_data)
+    payload = build_ai_payload(companies_data, config)
     prompt = f"""
 Analiza este JSON para detectar oportunidades públicas de inversión tipo "buy the rumor" alrededor de eventos corporativos, noticias recientes, lanzamientos, rumores de producto, guidance, contratos o catalizadores de mercado.
 
