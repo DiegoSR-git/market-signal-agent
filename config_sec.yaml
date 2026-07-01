@@ -1,0 +1,50 @@
+agent:
+  key: sec_filing
+  name: SEC Insider & Filing Agent
+  state_file: sec_filing_state.json
+  snapshot_file: sec_filing_snapshot.json
+  log_file: sec_filing_log.csv
+  dashboard_file: docs/sec_filing_dashboard.html
+
+alerts:
+  min_score_to_alert: 75
+  max_alerts: 5
+  cooldown_hours: 12
+
+http:
+  user_agent: market-signal-agent sec-filing contact@example.com
+  connect_timeout: 6
+  read_timeout: 14
+  retries: 1
+  retry_delay_seconds: 1
+
+ai:
+  enabled: true
+  model: openai/gpt-4.1-mini
+  timeout_seconds: 45
+  max_output_tokens: 700
+  max_events: 8
+  temperature: 0.15
+
+sec:
+  user_agent: market-signal-agent sec-filing contact@example.com
+  forms: [4, 8-K, 10-Q, 10-K, 13D, 13G, 13F-HR]
+  lookback_days: 14
+  max_companies_per_run: 12
+  parse_form4_details: true
+  max_form4_detail_fetches: 5
+  request_delay_seconds: 0.25
+
+companies:
+  - {ticker: AAPL, name: Apple, cik: "320193"}
+  - {ticker: MSFT, name: Microsoft, cik: "789019"}
+  - {ticker: NVDA, name: Nvidia, cik: "1045810"}
+  - {ticker: AMZN, name: Amazon, cik: "1018724"}
+  - {ticker: GOOGL, name: Alphabet, cik: "1652044"}
+  - {ticker: META, name: Meta Platforms, cik: "1326801"}
+  - {ticker: TSLA, name: Tesla, cik: "1318605"}
+  - {ticker: PLTR, name: Palantir, cik: "1321655"}
+  - {ticker: AMD, name: Advanced Micro Devices, cik: "2488"}
+  - {ticker: AVGO, name: Broadcom, cik: "1730168"}
+  - {ticker: ORCL, name: Oracle, cik: "1341439"}
+  - {ticker: CRM, name: Salesforce, cik: "1108524"}

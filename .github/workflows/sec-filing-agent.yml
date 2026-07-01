@@ -1,0 +1,51 @@
+name: SEC Insider & Filing Agent
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Force Telegram alert for testing"
+        required: false
+        default: "false"
+  schedule:
+    # GitHub cron uses UTC. These map to 08:30 and 22:30 Europe/Madrid during CEST, weekdays.
+    - cron: "30 6,20 * * 1-5"
+
+permissions:
+  contents: write
+  models: read
+
+jobs:
+  sec-filing-agent:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Run SEC filing agent
+        env:
+          PYTHONUNBUFFERED: "1"
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_CHAT_IDS: ${{ vars.TELEGRAM_CHAT_IDS }}
+          GITHUB_TOKEN: ${{ github.token }}
+          SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT }}
+        run: |
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            python -u sec_filing_agent.py --force
+          else
+            python -u sec_filing_agent.py
+          fi
+      - name: Persist SEC filing state
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sec_filing_state.json sec_filing_snapshot.json sec_filing_log.csv docs/sec_filing_dashboard.html docs/index.html || true
+          git diff --cached --quiet || git commit -m "Update SEC filing agent state [skip ci]"
+          git push || true

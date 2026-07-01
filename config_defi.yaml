@@ -1,0 +1,29 @@
+agent:
+  key: defi_liquidity
+  name: DeFi / Stablecoin Liquidity Agent
+  state_file: defi_liquidity_state.json
+  snapshot_file: defi_liquidity_snapshot.json
+  log_file: defi_liquidity_log.csv
+  dashboard_file: docs/defi_liquidity_dashboard.html
+
+alerts:
+  min_score_to_alert: 72
+  max_alerts: 6
+  cooldown_hours: 12
+
+http:
+  user_agent: market-signal-agent defi-liquidity
+  connect_timeout: 6
+  read_timeout: 14
+  retries: 1
+  retry_delay_seconds: 1
+
+ai:
+  enabled: true
+  model: openai/gpt-4.1-mini
+  timeout_seconds: 45
+  max_output_tokens: 700
+  max_events: 8
+  temperature: 0.15
+
+chains: [Ethereum, Solana, Base, Arbitrum, BSC, Avalanche, Optimism]

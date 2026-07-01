@@ -1,0 +1,43 @@
+agent:
+  key: sector_rotation
+  name: Sector Rotation Agent
+  state_file: sector_rotation_state.json
+  snapshot_file: sector_rotation_snapshot.json
+  log_file: sector_rotation_log.csv
+  dashboard_file: docs/sector_rotation_dashboard.html
+
+alerts:
+  min_score_to_alert: 72
+  max_alerts: 7
+  cooldown_hours: 12
+
+http:
+  user_agent: market-signal-agent sector-rotation
+  connect_timeout: 6
+  read_timeout: 12
+  retries: 1
+  retry_delay_seconds: 1
+
+ai:
+  enabled: true
+  model: openai/gpt-4.1-mini
+  timeout_seconds: 45
+  max_output_tokens: 700
+  max_events: 10
+  temperature: 0.15
+
+tickers:
+  - {symbol: SPY, name: S&P 500}
+  - {symbol: QQQ, name: Nasdaq 100}
+  - {symbol: IWM, name: Small caps}
+  - {symbol: SMH, name: Semiconductors}
+  - {symbol: XLK, name: Technology}
+  - {symbol: XLF, name: Financials}
+  - {symbol: XLE, name: Energy}
+  - {symbol: XLV, name: Health care}
+  - {symbol: XLI, name: Industrials}
+  - {symbol: XLY, name: Consumer discretionary}
+  - {symbol: XLP, name: Consumer staples}
+  - {symbol: XLU, name: Utilities}
+  - {symbol: GLD, name: Gold}
+  - {symbol: TLT, name: Long bonds}
