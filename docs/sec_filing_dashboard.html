@@ -1,1 +1,517 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>SEC Insider & Filing Agent</title></head><body><h1>SEC Insider & Filing Agent</h1><p>Dashboard inicial. Se actualizara con datos reales cuando se ejecute el workflow.</p><p><a href="index.html">Volver al resumen</a></p></body></html>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SEC Insider &amp; Filing Agent</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090d14;
+      --panel: #111821;
+      --panel-2: #0d131b;
+      --line: #263241;
+      --text: #e7edf5;
+      --muted: #9aa7b7;
+      --green: #3ddc97;
+      --yellow: #f7c948;
+      --red: #ff6b6b;
+      --blue: #5aa9ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.45;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .shell { width: min(1420px, calc(100% - 40px)); margin: 0 auto; padding: 28px 0 44px; }
+    .topbar { display: flex; justify-content: space-between; gap: 18px; align-items: flex-start; margin-bottom: 24px; }
+    h1 { margin: 0; font-size: clamp(30px, 4vw, 54px); letter-spacing: 0; line-height: 1.02; }
+    h2 { margin: 0 0 12px; font-size: 18px; }
+    h3 { margin: 0; font-size: 15px; color: var(--muted); font-weight: 650; }
+    .muted { color: var(--muted); }
+    .nav { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+    .btn { border: 1px solid var(--line); background: #18212c; color: var(--text); padding: 9px 12px; border-radius: 8px; font-weight: 700; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
+    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; min-width: 0; }
+    .span-3 { grid-column: span 3; }
+    .span-4 { grid-column: span 4; }
+    .span-5 { grid-column: span 5; }
+    .span-7 { grid-column: span 7; }
+    .span-8 { grid-column: span 8; }
+    .span-12 { grid-column: span 12; }
+    .metric { font-size: 34px; line-height: 1.05; font-weight: 800; margin: 8px 0 4px; }
+    .submetric { color: var(--muted); font-size: 13px; }
+    .pill { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; padding: 4px 9px; font-size: 12px; font-weight: 800; color: var(--muted); }
+    .pill.hot { color: var(--green); border-color: rgba(61, 220, 151, .35); background: rgba(61, 220, 151, .08); }
+    .pill.watch { color: var(--yellow); border-color: rgba(247, 201, 72, .35); background: rgba(247, 201, 72, .08); }
+    .pill.quiet { color: var(--muted); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 10px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+    td { font-size: 14px; }
+    tr:last-child td { border-bottom: 0; }
+    .table-wrap { overflow-x: auto; }
+    .company { font-weight: 800; }
+    .reason { color: var(--muted); font-size: 12px; margin-top: 3px; max-width: 520px; }
+    .status-line { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .bar { height: 8px; background: #1a2430; border-radius: 999px; overflow: hidden; margin-top: 10px; }
+    .bar > span { display: block; height: 100%; background: var(--green); width: var(--w); }
+    footer { color: var(--muted); font-size: 12px; margin-top: 20px; }
+    @media (max-width: 980px) {
+      .span-3, .span-4, .span-5, .span-7, .span-8 { grid-column: span 12; }
+      .topbar { display: block; }
+      .nav { justify-content: flex-start; margin-top: 16px; }
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+  <div class="topbar">
+    <div>
+      <h1>SEC Insider &amp; Filing Agent</h1>
+      <div class="muted">Premium research automation. Public data only. Not personalized financial advice.</div>
+    </div>
+    <nav class="nav">
+      <a class="btn" href="index.html">Resumen</a>
+      <a class="btn" href="https://github.com/DiegoSR-git/market-signal-agent/actions">Actions</a>
+    </nav>
+  </div>
+  <section class="grid">
+    <div class="card span-3"><h3>Eventos</h3><div class="metric">69</div><div class="submetric">analizados en la ultima ejecucion</div></div>
+    <div class="card span-3"><h3>High</h3><div class="metric">0</div><div class="submetric">score >= 80</div></div>
+    <div class="card span-3"><h3>Medium</h3><div class="metric">68</div><div class="submetric">score 65-79</div></div>
+    <div class="card span-3"><h3>Actualizado</h3><div class="metric" style="font-size:20px">2026-07-01 12:25 UTC</div><div class="submetric">UTC</div></div>
+    <div class="card span-12">
+      <h2>AI Research Brief</h2>
+      <p>Se han publicado múltiples formularios 4 de insiders para TSLA, AMD, AAPL y NVDA, indicando actividad relevante que debe ser monitoreada. Las acciones muestran reacciones recientes en precio y volumen, con variaciones significativas en rendimiento a corto y mediano plazo. Es recomendable vigilar la evolución de estos indicadores y la posible influencia de las transacciones internas en el mercado.</p>
+      <div class="submetric">Watch: Volumen y relación con promedio de 20 días para detectar cambios inusuales en TSLA y AMD.; Evolución del RSI y medias móviles para identificar posibles señales de sobrecompra o soporte en AAPL y NVDA.; Rendimiento a 5, 20 y 60 días para evaluar tendencias y volatilidad reciente en todas las acciones mencionadas.</div>
+      <div class="submetric">Risks: La ausencia de compras o ventas reportadas en algunos formularios 4 puede limitar la interpretación del impacto real de las transacciones internas.; La falta de rompimientos técnicos (breakouts) en medias móviles sugiere que las tendencias actuales podrían ser temporales o sujetas a reversión.; La concentración de reportes en fechas similares puede generar volatilidad adicional y requiere atención para evitar decisiones basadas en movimientos especulativos.</div>
+    </div>
+    <div class="card span-12">
+      <h2>Ranking</h2>
+      <div class="table-wrap"><table><thead><tr><th>Activo</th><th>Score</th><th>Nivel</th><th>Lectura</th><th>Fuente</th></tr></thead><tbody><tr>
+          <td><div class="company">TSLA</div><div class="muted">TSLA 4 filing</div></td>
+          <td><span class="pill watch">78/100</span></td>
+          <td>medium</td>
+          <td>Tesla published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-17; insider transaction filing; price reacting recently</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1318605/000110465926075213/xslF345X06/tm2618092-2_4seq1.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">AMD</div><div class="muted">AMD 4 filing</div></td>
+          <td><span class="pill watch">78/100</span></td>
+          <td>medium</td>
+          <td>Advanced Micro Devices published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-17; insider transaction filing; price reacting recently</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/2488/000000248826000113/xslF345X06/wk-form4_1781727739.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">AMD</div><div class="muted">AMD 4 filing</div></td>
+          <td><span class="pill watch">78/100</span></td>
+          <td>medium</td>
+          <td>Advanced Micro Devices published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-17; insider transaction filing; price reacting recently</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/2488/000000248826000111/xslF345X06/wk-form4_1781727461.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">AAPL</div><div class="muted">AAPL 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Apple published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-17; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/320193/000114036126025622/xslF345X06/form4.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">AAPL</div><div class="muted">AAPL 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Apple published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-17; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/320193/000114036126025620/xslF345X06/form4.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">NVDA</div><div class="muted">NVDA 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Nvidia published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-29; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1045810/000119903926000009/xslF345X06/wk-form4_1782767219.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">NVDA</div><div class="muted">NVDA 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Nvidia published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-29; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1045810/000172529226000004/xslF345X06/wk-form4_1782767179.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">NVDA</div><div class="muted">NVDA 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Nvidia published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-29; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1045810/000119765226000007/xslF345X06/wk-form4_1782767137.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">NVDA</div><div class="muted">NVDA 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Nvidia published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-29; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1045810/000176867026000004/xslF345X06/wk-form4_1782767093.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">NVDA</div><div class="muted">NVDA 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Nvidia published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-29; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1045810/000128411626000004/xslF345X06/wk-form4_1782767057.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">NVDA</div><div class="muted">NVDA 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Nvidia published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-29; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1045810/000119765026000002/xslF345X06/wk-form4_1782767025.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">NVDA</div><div class="muted">NVDA 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Nvidia published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-29; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1045810/000121988826000002/xslF345X06/wk-form4_1782766973.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">NVDA</div><div class="muted">NVDA 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Nvidia published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-29; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1045810/000181822426000006/xslF345X06/wk-form4_1782766926.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">NVDA</div><div class="muted">NVDA 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Nvidia published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-29; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1045810/000119764726000003/xslF345X06/wk-form4_1782766872.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">NVDA</div><div class="muted">NVDA 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Nvidia published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-23; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1045810/000119903926000007/xslF345X06/wk-form4_1782247316.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">NVDA</div><div class="muted">NVDA 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Nvidia published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-23; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1045810/000169684126000008/xslF345X06/wk-form4_1782209038.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">NVDA</div><div class="muted">NVDA 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Nvidia published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-23; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1045810/000128385426000008/xslF345X06/wk-form4_1782208976.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">NVDA</div><div class="muted">NVDA 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Nvidia published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-23; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1045810/000158867026000012/xslF345X06/wk-form4_1782208938.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">NVDA</div><div class="muted">NVDA 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Nvidia published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-23; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1045810/000134784226000013/xslF345X06/wk-form4_1782208887.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">NVDA</div><div class="muted">NVDA 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Nvidia published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-23; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1045810/000119764926000010/xslF345X06/wk-form4_1782208834.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">NVDA</div><div class="muted">NVDA 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Nvidia published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-18; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1045810/000119764926000008/xslF345X06/wk-form4_1781816696.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">GOOGL 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Alphabet published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-30; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1652044/000119312526290710/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">GOOGL 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Alphabet published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-29; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1652044/000119312526289028/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">GOOGL 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Alphabet published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-29; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1652044/000119312526289019/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">GOOGL 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Alphabet published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-29; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1652044/000119312526289015/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">GOOGL 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Alphabet published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-29; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1652044/000119312526289012/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">GOOGL 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Alphabet published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-29; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1652044/000119312526289009/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">GOOGL 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Alphabet published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-29; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1652044/000119312526289007/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">GOOGL 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Alphabet published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-18; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1652044/000119312526276126/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">GOOGL 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Alphabet published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-18; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1652044/000119312526276118/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">GOOGL 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Alphabet published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-18; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1652044/000119312526276114/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">GOOGL 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Alphabet published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-18; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1652044/000119312526276111/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">GOOGL 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Alphabet published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-18; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1652044/000119312526276104/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">GOOGL 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Alphabet published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-18; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1652044/000119312526276099/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">GOOGL 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Alphabet published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-18; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1652044/000119312526274740/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">GOOGL 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Alphabet published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-17; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1652044/000119312526274733/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">GOOGL 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Alphabet published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-17; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1652044/000119312526274732/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">GOOGL 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Alphabet published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-17; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1652044/000119312526274731/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">GOOGL 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Alphabet published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-17; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1652044/000119312526274730/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">GOOGL 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Alphabet published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-17; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1652044/000119312526274729/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">GOOGL 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Alphabet published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-17; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1652044/000119312526274727/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">META</div><div class="muted">META 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Meta Platforms published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-17; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1326801/000095010326009177/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">META</div><div class="muted">META 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Meta Platforms published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-17; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1326801/000095010326009174/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">META</div><div class="muted">META 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Meta Platforms published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-17; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1326801/000095010326009173/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">META</div><div class="muted">META 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Meta Platforms published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-17; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1326801/000095010326009172/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">META</div><div class="muted">META 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Meta Platforms published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-17; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1326801/000095010326009171/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">META</div><div class="muted">META 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Meta Platforms published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-17; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1326801/000095010326009170/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">META</div><div class="muted">META 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Meta Platforms published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-17; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1326801/000095010326009169/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">META</div><div class="muted">META 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Meta Platforms published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-17; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1326801/000095010326009168/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">META</div><div class="muted">META 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Meta Platforms published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-17; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1326801/000095010326009167/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">META</div><div class="muted">META 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Meta Platforms published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-17; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1326801/000095010326009166/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">META</div><div class="muted">META 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Meta Platforms published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-17; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1326801/000095010326009165/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">META</div><div class="muted">META 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Meta Platforms published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-17; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1326801/000095010326009164/xslF345X06/ownership.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">PLTR</div><div class="muted">PLTR 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Palantir published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-17; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1321655/000182395226000016/xslF345X06/wk-form4_1781740835.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">AVGO</div><div class="muted">AVGO 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Broadcom published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-29; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1730168/000173016826000064/xslF345X06/wk-form4_1782775021.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">AVGO</div><div class="muted">AVGO 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Broadcom published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-26; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1730168/000110465926078348/xslF345X06/tm2619044-1_4seq1.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">AVGO</div><div class="muted">AVGO 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Broadcom published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-18; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1730168/000173016826000062/xslF345X06/wk-form4_1781817132.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">AVGO</div><div class="muted">AVGO 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Broadcom published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-17; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1730168/000173016826000060/xslF345X06/wk-form4_1781735747.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">ORCL</div><div class="muted">ORCL 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Oracle published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-26; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1341439/000134143926000064/xslF345X06/form4.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">CRM</div><div class="muted">CRM 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Salesforce published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-23; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1108524/000110852426000152/xslF345X06/form4.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">CRM</div><div class="muted">CRM 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Salesforce published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-23; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1108524/000110852426000150/xslF345X06/form4.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">CRM</div><div class="muted">CRM 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Salesforce published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-23; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1108524/000110852426000148/xslF345X06/form4.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">CRM</div><div class="muted">CRM 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Salesforce published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-23; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1108524/000110852426000146/xslF345X06/form4.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">CRM</div><div class="muted">CRM 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Salesforce published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-23; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1108524/000110852426000144/xslF345X06/form4.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">CRM</div><div class="muted">CRM 4 filing</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Salesforce published 4. Monitor filing details and price reaction.<div class="reason">SEC form 4; filed 2026-06-23; insider transaction filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1108524/000110852426000142/xslF345X06/form4.xml">source</a></td>
+        </tr><tr>
+          <td><div class="company">NVDA</div><div class="muted">NVDA 8-K filing</div></td>
+          <td><span class="pill watch">67/100</span></td>
+          <td>medium</td>
+          <td>Nvidia published 8-K. Monitor filing details and price reaction.<div class="reason">SEC form 8-K; filed 2026-06-30; material event filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1045810/000104581026000056/nvda-20260624.htm">source</a></td>
+        </tr><tr>
+          <td><div class="company">NVDA</div><div class="muted">NVDA 8-K filing</div></td>
+          <td><span class="pill watch">67/100</span></td>
+          <td>medium</td>
+          <td>Nvidia published 8-K. Monitor filing details and price reaction.<div class="reason">SEC form 8-K; filed 2026-06-18; material event filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1045810/000119312526275783/d48176d8k.htm">source</a></td>
+        </tr><tr>
+          <td><div class="company">AVGO</div><div class="muted">AVGO 8-K filing</div></td>
+          <td><span class="pill watch">67/100</span></td>
+          <td>medium</td>
+          <td>Broadcom published 8-K. Monitor filing details and price reaction.<div class="reason">SEC form 8-K; filed 2026-06-18; material event filing</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1730168/000119312526275077/d149683d8k.htm">source</a></td>
+        </tr><tr>
+          <td><div class="company">ORCL</div><div class="muted">ORCL 10-K filing</div></td>
+          <td><span class="pill quiet">45/100</span></td>
+          <td>watch</td>
+          <td>Oracle published 10-K. Monitor filing details and price reaction.<div class="reason">SEC form 10-K; filed 2026-06-22</div></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1341439/000119312526277521/orcl-20260531.htm">source</a></td>
+        </tr></tbody></table></div>
+    </div>
+  </section>
+  <footer>Generado: 2026-07-01 12:25 UTC. Fuente: config_sec.yaml.</footer>
+</div>
+</body>
+</html>
