@@ -1,0 +1,50 @@
+name: Sector Rotation Agent
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Force Telegram alert for testing"
+        required: false
+        default: "false"
+  schedule:
+    # GitHub cron uses UTC. These map to 08:40 and 22:40 Europe/Madrid during CEST, weekdays.
+    - cron: "40 6,20 * * 1-5"
+
+permissions:
+  contents: write
+  models: read
+
+jobs:
+  sector-rotation-agent:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Run sector rotation agent
+        env:
+          PYTHONUNBUFFERED: "1"
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_CHAT_IDS: ${{ vars.TELEGRAM_CHAT_IDS }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            python -u sector_rotation_agent.py --force
+          else
+            python -u sector_rotation_agent.py
+          fi
+      - name: Persist sector rotation state
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sector_rotation_state.json sector_rotation_snapshot.json sector_rotation_log.csv docs/sector_rotation_dashboard.html docs/index.html || true
+          git diff --cached --quiet || git commit -m "Update sector rotation agent state [skip ci]"
+          git push || true

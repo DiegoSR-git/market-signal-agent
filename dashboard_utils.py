@@ -223,6 +223,23 @@ def render_home_dashboard(
         </tr>"""
         for row in signal_rows
     )
+    premium_dashboards = [
+        ("SEC Filings", "sec_filing_dashboard.html", "Insiders, 8-K, 10-Q, 10-K, 13D/G y 13F"),
+        ("Macro Regime", "macro_regime_dashboard.html", "Risk-on, risk-off, defensivos y liquidez"),
+        ("Sector Rotation", "sector_rotation_dashboard.html", "Ranking de sectores, ETFs y fuerza relativa"),
+        ("DeFi Liquidity", "defi_liquidity_dashboard.html", "TVL y liquidez crypto por cadenas"),
+        ("Earnings Catalyst", "earnings_catalyst_dashboard.html", "Vigilancia pre/post earnings"),
+        ("CFTC Positioning", "cftc_positioning_dashboard.html", "Commitment of Traders semanal"),
+        ("Unusual Volume", "unusual_volume_dashboard.html", "Volumen anormal y rupturas tecnicas"),
+        ("Altcoins", "altcoin_fundamentals_dashboard.html", "Fundamentales publicos de altcoins"),
+    ]
+    premium_links = "".join(
+        f"""<tr>
+          <td><a href="{esc(href)}">{esc(label)}</a></td>
+          <td>{esc(description)}</td>
+        </tr>"""
+        for label, href, description in premium_dashboards
+    )
 
     body = f"""<div class="shell">
   <div class="topbar">
@@ -233,6 +250,7 @@ def render_home_dashboard(
     <nav class="nav">
       <a class="btn" href="dashboard.html">BTC</a>
       <a class="btn" href="event_rumor_dashboard.html">Event Rumor</a>
+      <a class="btn" href="macro_regime_dashboard.html">Premium</a>
       <a class="btn" href="https://github.com/DiegoSR-git/market-signal-agent">GitHub</a>
     </nav>
   </div>
@@ -278,6 +296,10 @@ def render_home_dashboard(
     <div class="card span-5">
       <h2>Últimas Señales BTC</h2>
       <div class="table-wrap"><table><thead><tr><th>Hora</th><th>Activo</th><th>Tipo</th><th>Score</th><th>Precio</th><th>Estado</th></tr></thead><tbody>{signal_rows_html or '<tr><td colspan="6">Sin señales registradas</td></tr>'}</tbody></table></div>
+    </div>
+    <div class="card span-12">
+      <h2>Premium Research Agents</h2>
+      <div class="table-wrap"><table><thead><tr><th>Dashboard</th><th>Cobertura</th></tr></thead><tbody>{premium_links}</tbody></table></div>
     </div>
   </section>
   <footer>Generado: {utc_now_label()}. Datos procedentes de <code>state.json</code>, <code>signals_log.csv</code>, <code>event_rumor_snapshot.json</code> y <code>event_rumor_log.csv</code>.</footer>

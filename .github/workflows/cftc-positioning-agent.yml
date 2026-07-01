@@ -1,0 +1,50 @@
+name: CFTC Positioning Agent
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Force Telegram alert for testing"
+        required: false
+        default: "false"
+  schedule:
+    # GitHub cron uses UTC. This maps to Saturday 08:30 Europe/Madrid during CEST.
+    - cron: "30 6 * * 6"
+
+permissions:
+  contents: write
+  models: read
+
+jobs:
+  cftc-positioning-agent:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Run CFTC positioning agent
+        env:
+          PYTHONUNBUFFERED: "1"
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_CHAT_IDS: ${{ vars.TELEGRAM_CHAT_IDS }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            python -u cftc_positioning_agent.py --force
+          else
+            python -u cftc_positioning_agent.py
+          fi
+      - name: Persist CFTC positioning state
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cftc_positioning_state.json cftc_positioning_snapshot.json cftc_positioning_log.csv docs/cftc_positioning_dashboard.html docs/index.html || true
+          git diff --cached --quiet || git commit -m "Update CFTC positioning agent state [skip ci]"
+          git push || true

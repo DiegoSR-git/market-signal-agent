@@ -1,0 +1,50 @@
+name: Altcoin Fundamentals Agent
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Force Telegram alert for testing"
+        required: false
+        default: "false"
+  schedule:
+    # GitHub cron uses UTC. This maps to 09:05 Europe/Madrid during CEST.
+    - cron: "5 7 * * *"
+
+permissions:
+  contents: write
+  models: read
+
+jobs:
+  altcoin-fundamentals-agent:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Run altcoin fundamentals agent
+        env:
+          PYTHONUNBUFFERED: "1"
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_CHAT_IDS: ${{ vars.TELEGRAM_CHAT_IDS }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            python -u altcoin_fundamentals_agent.py --force
+          else
+            python -u altcoin_fundamentals_agent.py
+          fi
+      - name: Persist altcoin fundamentals state
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add altcoin_fundamentals_state.json altcoin_fundamentals_snapshot.json altcoin_fundamentals_log.csv docs/altcoin_fundamentals_dashboard.html docs/index.html || true
+          git diff --cached --quiet || git commit -m "Update altcoin fundamentals agent state [skip ci]"
+          git push || true

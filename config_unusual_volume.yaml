@@ -1,0 +1,47 @@
+agent:
+  key: unusual_volume
+  name: Unusual Volume Agent
+  state_file: unusual_volume_state.json
+  snapshot_file: unusual_volume_snapshot.json
+  log_file: unusual_volume_log.csv
+  dashboard_file: docs/unusual_volume_dashboard.html
+
+alerts:
+  min_score_to_alert: 75
+  max_alerts: 8
+  cooldown_hours: 12
+
+http:
+  user_agent: market-signal-agent unusual-volume
+  connect_timeout: 6
+  read_timeout: 12
+  retries: 1
+  retry_delay_seconds: 1
+
+ai:
+  enabled: true
+  model: openai/gpt-4.1-mini
+  timeout_seconds: 45
+  max_output_tokens: 700
+  max_events: 10
+  temperature: 0.15
+
+unusual_volume:
+  min_volume_ratio: 2.0
+
+watchlist:
+  - {symbol: AAPL, name: Apple}
+  - {symbol: MSFT, name: Microsoft}
+  - {symbol: NVDA, name: Nvidia}
+  - {symbol: AMD, name: Advanced Micro Devices}
+  - {symbol: AVGO, name: Broadcom}
+  - {symbol: ARM, name: Arm Holdings}
+  - {symbol: SMCI, name: Super Micro Computer}
+  - {symbol: PLTR, name: Palantir}
+  - {symbol: TSLA, name: Tesla}
+  - {symbol: COIN, name: Coinbase}
+  - {symbol: MSTR, name: MicroStrategy}
+  - {symbol: HOOD, name: Robinhood}
+  - {symbol: SPY, name: S&P 500 ETF}
+  - {symbol: QQQ, name: Nasdaq 100 ETF}
+  - {symbol: SMH, name: Semiconductor ETF}

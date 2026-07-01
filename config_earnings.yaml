@@ -1,0 +1,43 @@
+agent:
+  key: earnings_catalyst
+  name: Earnings Catalyst Agent
+  state_file: earnings_catalyst_state.json
+  snapshot_file: earnings_catalyst_snapshot.json
+  log_file: earnings_catalyst_log.csv
+  dashboard_file: docs/earnings_catalyst_dashboard.html
+
+alerts:
+  min_score_to_alert: 70
+  max_alerts: 6
+  cooldown_hours: 24
+
+http:
+  user_agent: market-signal-agent earnings-catalyst
+  connect_timeout: 6
+  read_timeout: 12
+  retries: 1
+  retry_delay_seconds: 1
+
+ai:
+  enabled: true
+  model: openai/gpt-4.1-mini
+  timeout_seconds: 45
+  max_output_tokens: 700
+  max_events: 8
+  temperature: 0.15
+
+earnings:
+  lookahead_days: 21
+
+# Manual v1 calendar. Update dates as they are confirmed.
+companies:
+  - {ticker: NVDA, name: Nvidia, earnings_date: null}
+  - {ticker: AMD, name: Advanced Micro Devices, earnings_date: null}
+  - {ticker: MSFT, name: Microsoft, earnings_date: null}
+  - {ticker: AAPL, name: Apple, earnings_date: null}
+  - {ticker: AMZN, name: Amazon, earnings_date: null}
+  - {ticker: GOOGL, name: Alphabet, earnings_date: null}
+  - {ticker: META, name: Meta Platforms, earnings_date: null}
+  - {ticker: TSLA, name: Tesla, earnings_date: null}
+  - {ticker: PLTR, name: Palantir, earnings_date: null}
+  - {ticker: AVGO, name: Broadcom, earnings_date: null}

@@ -1,0 +1,38 @@
+agent:
+  key: cftc_positioning
+  name: CFTC Positioning Agent
+  state_file: cftc_positioning_state.json
+  snapshot_file: cftc_positioning_snapshot.json
+  log_file: cftc_positioning_log.csv
+  dashboard_file: docs/cftc_positioning_dashboard.html
+
+alerts:
+  min_score_to_alert: 65
+  max_alerts: 7
+  cooldown_hours: 72
+
+http:
+  user_agent: market-signal-agent cftc-positioning
+  connect_timeout: 6
+  read_timeout: 18
+  retries: 1
+  retry_delay_seconds: 1
+
+ai:
+  enabled: true
+  model: openai/gpt-4.1-mini
+  timeout_seconds: 45
+  max_output_tokens: 700
+  max_events: 8
+  temperature: 0.15
+
+cftc:
+  legacy_csv_url: https://www.cftc.gov/dea/newcot/deafut.txt
+  markets:
+    - {symbol: ES, name: S&P 500, match: ["E-MINI S&P 500", "S&P 500"]}
+    - {symbol: NQ, name: Nasdaq 100, match: ["NASDAQ-100", "E-MINI NASDAQ"]}
+    - {symbol: GC, name: Gold, match: ["GOLD"]}
+    - {symbol: CL, name: Crude Oil, match: ["CRUDE OIL"]}
+    - {symbol: DX, name: Dollar Index, match: ["U.S. DOLLAR INDEX", "DOLLAR INDEX"]}
+    - {symbol: ZN, name: 10Y Treasuries, match: ["10-YEAR U.S. TREASURY", "TREASURY NOTES"]}
+    - {symbol: BTC, name: Bitcoin Futures, match: ["BITCOIN"]}

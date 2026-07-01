@@ -1,0 +1,38 @@
+agent:
+  key: altcoin_fundamentals
+  name: Altcoin Fundamentals Agent
+  state_file: altcoin_fundamentals_state.json
+  snapshot_file: altcoin_fundamentals_snapshot.json
+  log_file: altcoin_fundamentals_log.csv
+  dashboard_file: docs/altcoin_fundamentals_dashboard.html
+
+alerts:
+  min_score_to_alert: 72
+  max_alerts: 8
+  cooldown_hours: 24
+
+http:
+  user_agent: market-signal-agent altcoin-fundamentals
+  connect_timeout: 6
+  read_timeout: 14
+  retries: 1
+  retry_delay_seconds: 1
+
+ai:
+  enabled: true
+  model: openai/gpt-4.1-mini
+  timeout_seconds: 45
+  max_output_tokens: 700
+  max_events: 10
+  temperature: 0.15
+
+coins:
+  - {symbol: ETH, name: Ethereum, coingecko_id: ethereum, defillama_name: Ethereum}
+  - {symbol: SOL, name: Solana, coingecko_id: solana, defillama_name: Solana}
+  - {symbol: AAVE, name: Aave, coingecko_id: aave, defillama_name: AAVE}
+  - {symbol: LINK, name: Chainlink, coingecko_id: chainlink, defillama_name: Chainlink}
+  - {symbol: UNI, name: Uniswap, coingecko_id: uniswap, defillama_name: Uniswap}
+  - {symbol: ARB, name: Arbitrum, coingecko_id: arbitrum, defillama_name: Arbitrum}
+  - {symbol: OP, name: Optimism, coingecko_id: optimism, defillama_name: Optimism}
+  - {symbol: AVAX, name: Avalanche, coingecko_id: avalanche-2, defillama_name: Avalanche}
+  - {symbol: NEAR, name: NEAR Protocol, coingecko_id: near, defillama_name: NEAR}

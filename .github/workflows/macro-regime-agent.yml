@@ -1,0 +1,50 @@
+name: Macro Regime Agent
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Force Telegram alert for testing"
+        required: false
+        default: "false"
+  schedule:
+    # GitHub cron uses UTC. These map to 08:35 and 22:35 Europe/Madrid during CEST.
+    - cron: "35 6,20 * * *"
+
+permissions:
+  contents: write
+  models: read
+
+jobs:
+  macro-regime-agent:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Run macro regime agent
+        env:
+          PYTHONUNBUFFERED: "1"
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_CHAT_IDS: ${{ vars.TELEGRAM_CHAT_IDS }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            python -u macro_regime_agent.py --force
+          else
+            python -u macro_regime_agent.py
+          fi
+      - name: Persist macro regime state
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add macro_regime_state.json macro_regime_snapshot.json macro_regime_log.csv docs/macro_regime_dashboard.html docs/index.html || true
+          git diff --cached --quiet || git commit -m "Update macro regime agent state [skip ci]"
+          git push || true

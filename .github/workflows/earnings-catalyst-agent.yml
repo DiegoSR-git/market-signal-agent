@@ -1,0 +1,50 @@
+name: Earnings Catalyst Agent
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Force Telegram alert for testing"
+        required: false
+        default: "false"
+  schedule:
+    # GitHub cron uses UTC. This maps to 08:50 Europe/Madrid during CEST, weekdays.
+    - cron: "50 6 * * 1-5"
+
+permissions:
+  contents: write
+  models: read
+
+jobs:
+  earnings-catalyst-agent:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Run earnings catalyst agent
+        env:
+          PYTHONUNBUFFERED: "1"
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_CHAT_IDS: ${{ vars.TELEGRAM_CHAT_IDS }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            python -u earnings_catalyst_agent.py --force
+          else
+            python -u earnings_catalyst_agent.py
+          fi
+      - name: Persist earnings catalyst state
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add earnings_catalyst_state.json earnings_catalyst_snapshot.json earnings_catalyst_log.csv docs/earnings_catalyst_dashboard.html docs/index.html || true
+          git diff --cached --quiet || git commit -m "Update earnings catalyst agent state [skip ci]"
+          git push || true
