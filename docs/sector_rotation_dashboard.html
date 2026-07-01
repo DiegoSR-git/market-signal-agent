@@ -1,1 +1,187 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Sector Rotation Agent</title></head><body><h1>Sector Rotation Agent</h1><p>Dashboard inicial. Se actualizara con datos reales cuando se ejecute el workflow.</p><p><a href="index.html">Volver al resumen</a></p></body></html>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sector Rotation Agent</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090d14;
+      --panel: #111821;
+      --panel-2: #0d131b;
+      --line: #263241;
+      --text: #e7edf5;
+      --muted: #9aa7b7;
+      --green: #3ddc97;
+      --yellow: #f7c948;
+      --red: #ff6b6b;
+      --blue: #5aa9ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.45;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .shell { width: min(1420px, calc(100% - 40px)); margin: 0 auto; padding: 28px 0 44px; }
+    .topbar { display: flex; justify-content: space-between; gap: 18px; align-items: flex-start; margin-bottom: 24px; }
+    h1 { margin: 0; font-size: clamp(30px, 4vw, 54px); letter-spacing: 0; line-height: 1.02; }
+    h2 { margin: 0 0 12px; font-size: 18px; }
+    h3 { margin: 0; font-size: 15px; color: var(--muted); font-weight: 650; }
+    .muted { color: var(--muted); }
+    .nav { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+    .btn { border: 1px solid var(--line); background: #18212c; color: var(--text); padding: 9px 12px; border-radius: 8px; font-weight: 700; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
+    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; min-width: 0; }
+    .span-3 { grid-column: span 3; }
+    .span-4 { grid-column: span 4; }
+    .span-5 { grid-column: span 5; }
+    .span-7 { grid-column: span 7; }
+    .span-8 { grid-column: span 8; }
+    .span-12 { grid-column: span 12; }
+    .metric { font-size: 34px; line-height: 1.05; font-weight: 800; margin: 8px 0 4px; }
+    .submetric { color: var(--muted); font-size: 13px; }
+    .pill { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; padding: 4px 9px; font-size: 12px; font-weight: 800; color: var(--muted); }
+    .pill.hot { color: var(--green); border-color: rgba(61, 220, 151, .35); background: rgba(61, 220, 151, .08); }
+    .pill.watch { color: var(--yellow); border-color: rgba(247, 201, 72, .35); background: rgba(247, 201, 72, .08); }
+    .pill.quiet { color: var(--muted); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 10px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+    td { font-size: 14px; }
+    tr:last-child td { border-bottom: 0; }
+    .table-wrap { overflow-x: auto; }
+    .company { font-weight: 800; }
+    .reason { color: var(--muted); font-size: 12px; margin-top: 3px; max-width: 520px; }
+    .status-line { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .bar { height: 8px; background: #1a2430; border-radius: 999px; overflow: hidden; margin-top: 10px; }
+    .bar > span { display: block; height: 100%; background: var(--green); width: var(--w); }
+    footer { color: var(--muted); font-size: 12px; margin-top: 20px; }
+    @media (max-width: 980px) {
+      .span-3, .span-4, .span-5, .span-7, .span-8 { grid-column: span 12; }
+      .topbar { display: block; }
+      .nav { justify-content: flex-start; margin-top: 16px; }
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+  <div class="topbar">
+    <div>
+      <h1>Sector Rotation Agent</h1>
+      <div class="muted">Premium research automation. Public data only. Not personalized financial advice.</div>
+    </div>
+    <nav class="nav">
+      <a class="btn" href="index.html">Resumen</a>
+      <a class="btn" href="https://github.com/DiegoSR-git/market-signal-agent/actions">Actions</a>
+    </nav>
+  </div>
+  <section class="grid">
+    <div class="card span-3"><h3>Eventos</h3><div class="metric">14</div><div class="submetric">analizados en la ultima ejecucion</div></div>
+    <div class="card span-3"><h3>High</h3><div class="metric">3</div><div class="submetric">score >= 80</div></div>
+    <div class="card span-3"><h3>Medium</h3><div class="metric">1</div><div class="submetric">score 65-79</div></div>
+    <div class="card span-3"><h3>Actualizado</h3><div class="metric" style="font-size:20px">2026-07-01 21:11 UTC</div><div class="submetric">UTC</div></div>
+    <div class="card span-12">
+      <h2>AI Research Brief</h2>
+      <p>Los sectores de salud (XLV), finanzas (XLF) e industriales (XLI) muestran fortaleza relativa significativa frente al SPY, con RSI elevados y rendimientos positivos en 20 días. Se recomienda monitorear la persistencia de esta rotación para evaluar posibles cambios en la tendencia sectorial. Sectores como tecnología (QQQ) y bonos largos (TLT) presentan debilidad relativa, lo que sugiere vigilancia ante posibles ajustes.</p>
+      <div class="submetric">Watch: Persistencia de la fortaleza relativa en XLV, XLF y XLI para confirmar tendencia.; Volúmenes y RSI en niveles altos que podrían indicar sobrecompra en sectores fuertes.; Debilidad relativa y rendimiento negativo en QQQ y TLT que requieren seguimiento para detectar reversión.</div>
+      <div class="submetric">Risks: RSI elevados en sectores fuertes pueden anticipar correcciones técnicas.; Volúmenes inferiores al promedio en algunos activos podrían limitar la confirmación de movimientos.; Rotaciones sectoriales pueden ser volátiles; mantener control de riesgo ante posibles cambios abruptos.</div>
+    </div>
+    <div class="card span-12">
+      <h2>Ranking</h2>
+      <div class="table-wrap"><table><thead><tr><th>Activo</th><th>Score</th><th>Nivel</th><th>Lectura</th><th>Fuente</th></tr></thead><tbody><tr>
+          <td><div class="company">XLV</div><div class="muted">XLV rotation watch</div></td>
+          <td><span class="pill hot">100/100</span></td>
+          <td>high</td>
+          <td>Health care is showing relative strength/weakness vs SPY. Monitor rotation persistence.<div class="reason">20D +9.0%; relative vs SPY +10.8%; RSI 66.4</div></td>
+          <td><a href="https://finance.yahoo.com/quote/XLV">source</a></td>
+        </tr><tr>
+          <td><div class="company">XLF</div><div class="muted">XLF rotation watch</div></td>
+          <td><span class="pill hot">87/100</span></td>
+          <td>high</td>
+          <td>Financials is showing relative strength/weakness vs SPY. Monitor rotation persistence.<div class="reason">20D +6.5%; relative vs SPY +8.3%; RSI 68.5</div></td>
+          <td><a href="https://finance.yahoo.com/quote/XLF">source</a></td>
+        </tr><tr>
+          <td><div class="company">XLI</div><div class="muted">XLI rotation watch</div></td>
+          <td><span class="pill hot">82/100</span></td>
+          <td>high</td>
+          <td>Industrials is showing relative strength/weakness vs SPY. Monitor rotation persistence.<div class="reason">20D +5.3%; relative vs SPY +7.1%; RSI 59.6</div></td>
+          <td><a href="https://finance.yahoo.com/quote/XLI">source</a></td>
+        </tr><tr>
+          <td><div class="company">IWM</div><div class="muted">IWM rotation watch</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medium</td>
+          <td>Small caps is showing relative strength/weakness vs SPY. Monitor rotation persistence.<div class="reason">20D +2.6%; relative vs SPY +4.4%; RSI 61.1</div></td>
+          <td><a href="https://finance.yahoo.com/quote/IWM">source</a></td>
+        </tr><tr>
+          <td><div class="company">XLY</div><div class="muted">XLY rotation watch</div></td>
+          <td><span class="pill quiet">64/100</span></td>
+          <td>watch</td>
+          <td>Consumer discretionary is showing relative strength/weakness vs SPY. Monitor rotation persistence.<div class="reason">20D +0.4%; relative vs SPY +2.2%; RSI 54.5</div></td>
+          <td><a href="https://finance.yahoo.com/quote/XLY">source</a></td>
+        </tr><tr>
+          <td><div class="company">XLP</div><div class="muted">XLP rotation watch</div></td>
+          <td><span class="pill quiet">62/100</span></td>
+          <td>watch</td>
+          <td>Consumer staples is showing relative strength/weakness vs SPY. Monitor rotation persistence.<div class="reason">20D +1.8%; relative vs SPY +3.6%; RSI 46.7</div></td>
+          <td><a href="https://finance.yahoo.com/quote/XLP">source</a></td>
+        </tr><tr>
+          <td><div class="company">XLU</div><div class="muted">XLU rotation watch</div></td>
+          <td><span class="pill quiet">62/100</span></td>
+          <td>watch</td>
+          <td>Utilities is showing relative strength/weakness vs SPY. Monitor rotation persistence.<div class="reason">20D +2.0%; relative vs SPY +3.8%; RSI 47.9</div></td>
+          <td><a href="https://finance.yahoo.com/quote/XLU">source</a></td>
+        </tr><tr>
+          <td><div class="company">SPY</div><div class="muted">SPY rotation watch</div></td>
+          <td><span class="pill quiet">53/100</span></td>
+          <td>watch</td>
+          <td>S&amp;P 500 is showing relative strength/weakness vs SPY. Monitor rotation persistence.<div class="reason">20D -1.8%; relative vs SPY +0.0%; RSI 54.2</div></td>
+          <td><a href="https://finance.yahoo.com/quote/SPY">source</a></td>
+        </tr><tr>
+          <td><div class="company">TLT</div><div class="muted">TLT rotation watch</div></td>
+          <td><span class="pill quiet">52/100</span></td>
+          <td>watch</td>
+          <td>Long bonds is showing relative strength/weakness vs SPY. Monitor rotation persistence.<div class="reason">20D -0.2%; relative vs SPY +1.7%; RSI 45.1</div></td>
+          <td><a href="https://finance.yahoo.com/quote/TLT">source</a></td>
+        </tr><tr>
+          <td><div class="company">QQQ</div><div class="muted">QQQ rotation watch</div></td>
+          <td><span class="pill quiet">50/100</span></td>
+          <td>watch</td>
+          <td>Nasdaq 100 is showing relative strength/weakness vs SPY. Monitor rotation persistence.<div class="reason">20D -2.8%; relative vs SPY -1.0%; RSI 52.4</div></td>
+          <td><a href="https://finance.yahoo.com/quote/QQQ">source</a></td>
+        </tr><tr>
+          <td><div class="company">SMH</div><div class="muted">SMH rotation watch</div></td>
+          <td><span class="pill quiet">50/100</span></td>
+          <td>watch</td>
+          <td>Semiconductors is showing relative strength/weakness vs SPY. Monitor rotation persistence.<div class="reason">20D -1.9%; relative vs SPY -0.0%; RSI 51.9</div></td>
+          <td><a href="https://finance.yahoo.com/quote/SMH">source</a></td>
+        </tr><tr>
+          <td><div class="company">XLK</div><div class="muted">XLK rotation watch</div></td>
+          <td><span class="pill quiet">35/100</span></td>
+          <td>watch</td>
+          <td>Technology is showing relative strength/weakness vs SPY. Monitor rotation persistence.<div class="reason">20D -6.4%; relative vs SPY -4.5%; RSI 52.0</div></td>
+          <td><a href="https://finance.yahoo.com/quote/XLK">source</a></td>
+        </tr><tr>
+          <td><div class="company">GLD</div><div class="muted">GLD rotation watch</div></td>
+          <td><span class="pill quiet">20/100</span></td>
+          <td>watch</td>
+          <td>Gold is showing relative strength/weakness vs SPY. Monitor rotation persistence.<div class="reason">20D -10.0%; relative vs SPY -8.2%; RSI 35.3</div></td>
+          <td><a href="https://finance.yahoo.com/quote/GLD">source</a></td>
+        </tr><tr>
+          <td><div class="company">XLE</div><div class="muted">XLE rotation watch</div></td>
+          <td><span class="pill quiet">19/100</span></td>
+          <td>watch</td>
+          <td>Energy is showing relative strength/weakness vs SPY. Monitor rotation persistence.<div class="reason">20D -8.9%; relative vs SPY -7.1%; RSI 33.2</div></td>
+          <td><a href="https://finance.yahoo.com/quote/XLE">source</a></td>
+        </tr></tbody></table></div>
+    </div>
+  </section>
+  <footer>Generado: 2026-07-01 21:11 UTC. Fuente: config_sector_rotation.yaml.</footer>
+</div>
+</body>
+</html>
