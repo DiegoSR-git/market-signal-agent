@@ -83,6 +83,14 @@ news:
 
 `use_gdelt` queda desactivado por defecto porque GDELT suele responder con `429 Too Many Requests` o timeouts cuando se amplía el universo de empresas. Si quieres un barrido más profundo, actívalo puntualmente y el agente aplicará timeout, backoff y límite de errores por ejecución.
 
+Telegram no envía necesariamente todas las empresas analizadas. El número de empresas escaneadas lo controla `news.max_companies_per_run`, y el número máximo de oportunidades enviadas en un mensaje lo controla `alerts.max_alerts`:
+
+```yaml
+alerts:
+  min_score_to_alert: 70
+  max_alerts: 10
+```
+
 Para probar sin enviar Telegram:
 
 ```bash
