@@ -111,8 +111,17 @@ Para evitar errores de tamaño en GitHub Models, la IA recibe un resumen compact
 
 ```yaml
 ai:
-  max_articles_per_company: 4
+  model: openai/gpt-5-mini
+  fallback_model: openai/gpt-4.1-mini
+  max_companies_for_ai: 6
+  max_articles_per_company: 3
+  retry_max_companies_for_ai: 4
+  retry_max_articles_per_company: 2
+  timeout_seconds: 90
+  retry_with_smaller_payload: true
 ```
+
+El agente calcula primero un score local para todas las empresas, ordena las mejores candidatas y solo manda a la IA el top configurado en `max_companies_for_ai`. Si el modelo principal falla, tarda demasiado o está limitado, hace un segundo intento con `fallback_model` y un payload más pequeño. Si también falla, el flujo continúa con scoring por reglas y Telegram/dashboard siguen funcionando.
 
 Si Telegram devuelve `400 Bad Request`, revisa el log del workflow: el agente imprime ahora la respuesta real de Telegram. Los mensajes largos se dividen automáticamente en varias partes para respetar el límite de Telegram.
 

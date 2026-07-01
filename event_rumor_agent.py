@@ -418,8 +418,8 @@ def compact_market(market):
         "status": market.get("status"),
     }
 
-def build_ai_payload(companies_data, config):
-    max_ai_articles = int(config.get("ai", {}).get("max_articles_per_company", 4))
+def build_ai_payload(companies_data, config, max_articles_per_company=None):
+    max_ai_articles = int(max_articles_per_company or config.get("ai", {}).get("max_articles_per_company", 4))
     return {"as_of_utc":iso_now(), "companies":[{
         "company":x["company"], "ticker":x["ticker"], "market":compact_market(x["market"]),
         "articles":compact_articles(x["articles"], max_items=max_ai_articles),
@@ -428,13 +428,13 @@ def build_ai_payload(companies_data, config):
         "product_keywords":x["company_config"].get("product_keywords", [])[:6]
     } for x in companies_data]}
 
-def call_github_models(prompt, config):
+def call_github_models(prompt, config, model=None, timeout_seconds=None):
     ai = config.get("ai", {})
     if not ai.get("enabled", True): raise RuntimeError("AI disabled")
     if not GITHUB_MODELS_TOKEN: raise RuntimeError("Missing GITHUB_TOKEN")
     headers = {"Accept":"application/vnd.github+json","Authorization":f"Bearer {GITHUB_MODELS_TOKEN}","X-GitHub-Api-Version":"2026-03-10","Content-Type":"application/json"}
     body = {
-        "model": ai.get("model","openai/gpt-4.1-mini"),
+        "model": model or ai.get("model","openai/gpt-4.1-mini"),
         "messages": [
             {"role":"system", "content":"Eres un analista financiero cuantitativo. Usa solo el JSON. No inventes fechas ni rumores."},
             {"role":"user", "content":prompt}
@@ -442,7 +442,8 @@ def call_github_models(prompt, config):
         "temperature": float(ai.get("temperature",0.15)),
         "max_tokens": int(ai.get("max_output_tokens",2200)),
     }
-    r = SESSION.post(GITHUB_MODELS_ENDPOINT, headers=headers, json=body, timeout=http_timeout(read=45))
+    read_timeout = float(timeout_seconds or ai.get("timeout_seconds", 90))
+    r = SESSION.post(GITHUB_MODELS_ENDPOINT, headers=headers, json=body, timeout=http_timeout(read=read_timeout))
     r.raise_for_status()
     text = r.json()["choices"][0]["message"]["content"].strip()
     text = re.sub(r"^```json\s*","",text); text = re.sub(r"^```\s*","",text); text = re.sub(r"\s*```$","",text)
@@ -452,9 +453,15 @@ def call_github_models(prompt, config):
             text = match.group(0)
     return json.loads(text)
 
-def ai_analyze(companies_data, config):
-    payload = build_ai_payload(companies_data, config)
-    prompt = f"""
+def rank_for_ai(companies_data):
+    ranked = []
+    for item in companies_data:
+        score, reasons = fallback_event_score(item["company_config"], item["articles"], item["market"])
+        ranked.append({**item, "_pre_ai_score": score, "_pre_ai_reasons": reasons})
+    return sorted(ranked, key=lambda x: x["_pre_ai_score"], reverse=True)
+
+def build_ai_prompt(payload):
+    return f"""
 Analiza este JSON para detectar oportunidades públicas de inversión tipo "buy the rumor" alrededor de eventos corporativos, noticias recientes, lanzamientos, rumores de producto, guidance, contratos o catalizadores de mercado.
 
 Devuelve SOLO JSON válido:
@@ -491,10 +498,46 @@ Reglas:
 JSON de entrada:
 {json.dumps(json_safe(payload), ensure_ascii=False, indent=2)}
 """.strip()
-    try: return call_github_models(prompt, config)
-    except Exception as ex:
-        log(f"AI analyze error: {ex}")
+
+def ai_analyze(companies_data, config):
+    ai_cfg = config.get("ai", {})
+    if not ai_cfg.get("enabled", True):
         return {"companies":[]}
+
+    ranked = rank_for_ai(companies_data)
+    max_companies = int(ai_cfg.get("max_companies_for_ai", 6))
+    max_articles = int(ai_cfg.get("max_articles_per_company", 3))
+    selected = ranked[:max_companies]
+    if not selected:
+        return {"companies":[]}
+
+    attempts = [{
+        "label": "primary",
+        "model": ai_cfg.get("model", "openai/gpt-4.1-mini"),
+        "companies": selected,
+        "max_articles": max_articles,
+    }]
+
+    fallback_model = ai_cfg.get("fallback_model")
+    if ai_cfg.get("retry_with_smaller_payload", True):
+        retry_count = int(ai_cfg.get("retry_max_companies_for_ai", min(4, max_companies)))
+        retry_articles = int(ai_cfg.get("retry_max_articles_per_company", min(2, max_articles)))
+        attempts.append({
+            "label": "fallback",
+            "model": fallback_model or ai_cfg.get("model", "openai/gpt-4.1-mini"),
+            "companies": ranked[:retry_count],
+            "max_articles": retry_articles,
+        })
+
+    for attempt in attempts:
+        try:
+            payload = build_ai_payload(attempt["companies"], config, max_articles_per_company=attempt["max_articles"])
+            prompt = build_ai_prompt(payload)
+            log(f"AI analyze {attempt['label']}: model={attempt['model']} companies={len(attempt['companies'])} articles/company={attempt['max_articles']}")
+            return call_github_models(prompt, config, model=attempt["model"])
+        except Exception as ex:
+            log(f"AI analyze {attempt['label']} error: {ex}")
+    return {"companies":[]}
 
 def merge_ai_results(companies_data, ai_output):
     if not isinstance(ai_output, dict):
