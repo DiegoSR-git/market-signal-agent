@@ -1,1 +1,161 @@
-[]
+[
+  {
+    "agent": "macro_regime",
+    "ai_brief": "El régimen macro actual es mixto, con señales divergentes en proxies clave como acciones, crédito y duración. Se observa un desempeño moderado en índices principales y bonos, con algunos activos mostrando rupturas técnicas. Es recomendable monitorear la confirmación en diferentes clases de activos para ajustar estrategias de riesgo.",
+    "ai_risk_notes": [
+      "La divergencia en el desempeño de proxies puede generar volatilidad y señales contradictorias en el mercado.",
+      "Volúmenes inferiores al promedio en varios activos sugieren menor convicción en movimientos recientes, aumentando la incertidumbre."
+    ],
+    "ai_watch_items": [
+      "Confirmar la evolución de los proxies de crédito (HYG, LQD) y duración (TLT) para validar el régimen mixto.",
+      "Vigilar la actividad y volumen en índices de acciones (SPY, QQQ, IWM) para detectar posibles cambios de tendencia.",
+      "Observar el comportamiento del dólar (UUP) y oro (GLD) como indicadores de riesgo y refugio."
+    ],
+    "asset": "MARKET",
+    "level": "watch",
+    "metrics": {
+      "proxies": {
+        "GLD": {
+          "breakout_20d": false,
+          "breakout_50d": false,
+          "perf_20d": -10.426495128288693,
+          "perf_5d": -2.369342273897601,
+          "perf_60d": -14.212523755575956,
+          "price": 368.3800048828125,
+          "rsi": 33.107007183664905,
+          "sma20": 387.0299987792969,
+          "sma50": 408.83219848632814,
+          "status": "ok",
+          "symbol": "GLD",
+          "volume": 5287100.0,
+          "volume_20d_avg": 8358490.0,
+          "volume_ratio": 0.6325424807590845
+        },
+        "HYG": {
+          "breakout_20d": true,
+          "breakout_50d": false,
+          "perf_20d": 0.1628317745185015,
+          "perf_5d": 0.1252015408568008,
+          "perf_60d": 0.5153389576305845,
+          "price": 79.97000122070312,
+          "rsi": 52.18415510000871,
+          "sma20": 79.8255012512207,
+          "sma50": 79.96980087280274,
+          "status": "ok",
+          "symbol": "HYG",
+          "volume": 38046900.0,
+          "volume_20d_avg": 33483400.0,
+          "volume_ratio": 1.1362914160449655
+        },
+        "IWM": {
+          "breakout_20d": true,
+          "breakout_50d": true,
+          "perf_20d": 3.969133083480214,
+          "perf_5d": 1.7371003506648552,
+          "perf_60d": 19.5630626902529,
+          "price": 300.45001220703125,
+          "rsi": 63.06120092887508,
+          "sma20": 292.40350036621095,
+          "sma50": 285.6804010009766,
+          "status": "ok",
+          "symbol": "IWM",
+          "volume": 23156800.0,
+          "volume_20d_avg": 30283025.0,
+          "volume_ratio": 0.7646792221054535
+        },
+        "LQD": {
+          "breakout_20d": false,
+          "breakout_50d": false,
+          "perf_20d": 0.12852234394218343,
+          "perf_5d": 0.14690664524374952,
+          "perf_60d": -0.04582390991497709,
+          "price": 109.06999969482422,
+          "rsi": 51.26658797156422,
+          "sma20": 108.90500030517578,
+          "sma50": 108.85140014648438,
+          "status": "ok",
+          "symbol": "LQD",
+          "volume": 32664000.0,
+          "volume_20d_avg": 28406085.0,
+          "volume_ratio": 1.1498944680338736
+        },
+        "QQQ": {
+          "breakout_20d": false,
+          "breakout_50d": false,
+          "perf_20d": -0.853591553392985,
+          "perf_5d": 3.1878370660294975,
+          "perf_60d": 25.884654005420526,
+          "price": 736.4000244140625,
+          "rsi": 56.646860529064114,
+          "sma20": 723.7340057373046,
+          "sma50": 706.2166015625,
+          "status": "ok",
+          "symbol": "QQQ",
+          "volume": 41926000.0,
+          "volume_20d_avg": 53261540.0,
+          "volume_ratio": 0.7871721320863047
+        },
+        "SPY": {
+          "breakout_20d": false,
+          "breakout_50d": false,
+          "perf_20d": -1.5516596141316952,
+          "perf_5d": 1.7980318621180214,
+          "perf_60d": 13.866398315365336,
+          "price": 746.77001953125,
+          "rsi": 54.95516756924804,
+          "sma20": 742.239501953125,
+          "sma50": 735.87080078125,
+          "status": "ok",
+          "symbol": "SPY",
+          "volume": 55540700.0,
+          "volume_20d_avg": 63559990.0,
+          "volume_ratio": 0.8738311632836947
+        },
+        "TLT": {
+          "breakout_20d": false,
+          "breakout_50d": false,
+          "perf_20d": 1.1114975250662296,
+          "perf_5d": 0.25522184279800353,
+          "perf_60d": -0.42631955603059657,
+          "price": 86.41999816894531,
+          "rsi": 52.88854623174784,
+          "sma20": 86.05649948120117,
+          "sma50": 85.66440002441406,
+          "status": "ok",
+          "symbol": "TLT",
+          "volume": 31027300.0,
+          "volume_20d_avg": 25207850.0,
+          "volume_ratio": 1.2308586412565927
+        },
+        "UUP": {
+          "breakout_20d": false,
+          "breakout_50d": false,
+          "perf_20d": 2.341497165601636,
+          "perf_5d": -0.1406007537948839,
+          "perf_60d": 1.9741537150440358,
+          "price": 28.40999984741211,
+          "rsi": 68.02780389539356,
+          "sma20": 28.14550018310547,
+          "sma50": 27.79340019226074,
+          "status": "ok",
+          "symbol": "UUP",
+          "volume": 1484200.0,
+          "volume_20d_avg": 2146095.0,
+          "volume_ratio": 0.6915816867380056
+        }
+      },
+      "regime": "mixed"
+    },
+    "reasons": [
+      "SPY 20D -1.6%",
+      "QQQ 20D -0.9%",
+      "HYG 20D +0.2%",
+      "TLT 20D +1.1%"
+    ],
+    "score": 41,
+    "source": "https://finance.yahoo.com",
+    "summary": "Current proxy basket points to mixed. Watch confirmation across credit, duration and dollar proxies.",
+    "time_utc": "2026-07-01T12:31:36.852367+00:00",
+    "title": "Macro regime: mixed"
+  }
+]
