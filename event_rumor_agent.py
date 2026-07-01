@@ -30,6 +30,17 @@ LOG_FILE = Path(os.getenv("EVENT_LOG_FILE", "event_rumor_log.csv"))
 DOCS_DIR = Path(os.getenv("EVENT_DOCS_DIR", "docs"))
 DASHBOARD_FILE = DOCS_DIR / "event_rumor_dashboard.html"
 HTTP_TIMEOUT = 25
+DEFAULT_CONNECT_TIMEOUT = 6
+DEFAULT_READ_TIMEOUT = 12
+SESSION = requests.Session()
+REQUEST_CACHE = {}
+SOURCE_STATE = {
+    "gdelt": {"errors": 0, "disabled_until": 0},
+    "google_news": {"errors": 0, "disabled_until": 0},
+}
+
+def log(message):
+    print(message, flush=True)
 
 def utc_now(): return datetime.now(timezone.utc)
 def iso_now(): return utc_now().isoformat()
@@ -53,18 +64,40 @@ def fmt_date(v):
     return d.isoformat() if d else "N/A"
 def fmt_pct(x, decimals=1): return "N/A" if x is None else f"{x:+.{decimals}f}%"
 def fmt_float(x, decimals=2): return "N/A" if x is None else f"{x:.{decimals}f}"
+def http_timeout(connect=DEFAULT_CONNECT_TIMEOUT, read=DEFAULT_READ_TIMEOUT):
+    return (float(connect), float(read))
+def cache_key(url, params):
+    return url + "?" + json.dumps(params or {}, sort_keys=True, ensure_ascii=False)
+def source_available(source):
+    return time.time() >= SOURCE_STATE.get(source, {}).get("disabled_until", 0)
+def source_backoff(source, seconds, reason):
+    rec = SOURCE_STATE.setdefault(source, {"errors": 0, "disabled_until": 0})
+    rec["errors"] += 1
+    rec["disabled_until"] = max(rec.get("disabled_until", 0), time.time() + max(0, seconds))
+    log(f"{source} paused for {seconds}s: {reason}")
 
-def request_json(url, params=None, headers=None, timeout=HTTP_TIMEOUT):
+def request_json(url, params=None, headers=None, timeout=None, cache=True):
     headers = headers or {"User-Agent":"event-rumor-agent/1.0"}
-    r = requests.get(url, params=params, headers=headers, timeout=timeout)
-    print(f"HTTP {r.status_code} {r.url[:160]}")
+    key = cache_key(url, params)
+    if cache and key in REQUEST_CACHE:
+        return REQUEST_CACHE[key]
+    r = SESSION.get(url, params=params, headers=headers, timeout=timeout or http_timeout())
+    log(f"HTTP {r.status_code} {r.url[:160]}")
     r.raise_for_status()
-    return r.json()
-def request_text(url, params=None, headers=None, timeout=HTTP_TIMEOUT):
+    data = r.json()
+    if cache:
+        REQUEST_CACHE[key] = data
+    return data
+def request_text(url, params=None, headers=None, timeout=None, cache=True):
     headers = headers or {"User-Agent":"Mozilla/5.0"}
-    r = requests.get(url, params=params, headers=headers, timeout=timeout)
-    print(f"HTTP {r.status_code} {r.url[:160]}")
+    key = cache_key(url, params)
+    if cache and key in REQUEST_CACHE:
+        return REQUEST_CACHE[key]
+    r = SESSION.get(url, params=params, headers=headers, timeout=timeout or http_timeout())
+    log(f"HTTP {r.status_code} {r.url[:160]}")
     r.raise_for_status()
+    if cache:
+        REQUEST_CACHE[key] = r.text
     return r.text
 
 def load_config():
@@ -98,7 +131,7 @@ def get_telegram_chat_ids():
 def send_telegram(message, buttons=None):
     ids = get_telegram_chat_ids()
     if not TELEGRAM_BOT_TOKEN or not ids:
-        print("Telegram not configured. Message would be:\n", message)
+        log("Telegram not configured. Message would be:\n" + message)
         return
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     for chat_id in ids:
@@ -107,9 +140,9 @@ def send_telegram(message, buttons=None):
             payload["reply_markup"] = {"inline_keyboard":[[{"text":b["text"], "url":b["url"]} for b in row] for row in buttons]}
         try:
             r = requests.post(url, json=payload, timeout=HTTP_TIMEOUT); r.raise_for_status()
-            print(f"Telegram sent to {chat_id}")
+            log(f"Telegram sent to {chat_id}")
         except Exception as ex:
-            print(f"Telegram error for {chat_id}: {ex}")
+            log(f"Telegram error for {chat_id}: {ex}")
 
 def append_log(row):
     LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -138,7 +171,7 @@ def get_yahoo_history(symbol, range_days="6mo"):
         df["close"] = pd.to_numeric(df["close"], errors="coerce")
         return df.dropna(subset=["close"]).sort_values("date").reset_index(drop=True)
     except Exception as ex:
-        print(f"Yahoo error {symbol}: {ex}")
+        log(f"Yahoo error {symbol}: {ex}")
         return None
 def calculate_rsi(series, period=14):
     if series is None or len(series) < period+2: return None
@@ -181,10 +214,12 @@ def dedupe_articles(articles):
     return out
 
 def google_news_rss(query, max_items=10):
+    if not source_available("google_news"):
+        return []
     url = "https://news.google.com/rss/search"
     params = {"q":query, "hl":"en-US", "gl":"US", "ceid":"US:en"}
     try:
-        xml = request_text(url, params=params)
+        xml = request_text(url, params=params, timeout=http_timeout(read=8))
         root = ET.fromstring(xml)
         items = []
         for item in root.findall(".//item")[:max_items]:
@@ -200,14 +235,19 @@ def google_news_rss(query, max_items=10):
             items.append({"title":title,"url":link,"published":pub_iso,"source":source,"domain":source,"origin":"google_news_rss","snippet":title})
         return items
     except Exception as ex:
-        print(f"Google RSS error {query}: {ex}")
+        source_backoff("google_news", 30, ex)
         return []
 
-def gdelt_search(query, max_items=10, timespan="30d"):
+def gdelt_search(query, max_items=10, timespan="30d", timeout_seconds=8, backoff_seconds=180, max_errors=2):
+    if not source_available("gdelt"):
+        return []
+    if SOURCE_STATE["gdelt"]["errors"] >= max_errors:
+        source_backoff("gdelt", backoff_seconds, "error budget exhausted")
+        return []
     url = "https://api.gdeltproject.org/api/v2/doc/doc"
     params = {"query":query, "mode":"ArtList", "format":"json", "maxrecords":max_items, "timespan":timespan, "sort":"HybridRel"}
     try:
-        data = request_json(url, params=params)
+        data = request_json(url, params=params, timeout=http_timeout(read=timeout_seconds))
         out = []
         for a in data.get("articles", [])[:max_items]:
             out.append({
@@ -216,38 +256,63 @@ def gdelt_search(query, max_items=10, timespan="30d"):
                 "origin":"gdelt", "snippet":clean_text(a.get("title"))
             })
         return out
+    except requests.HTTPError as ex:
+        status = ex.response.status_code if ex.response is not None else None
+        if status == 429:
+            source_backoff("gdelt", backoff_seconds, "429 Too Many Requests")
+        else:
+            source_backoff("gdelt", 20, ex)
+        return []
     except Exception as ex:
-        print(f"GDELT error {query}: {ex}")
+        source_backoff("gdelt", 30, ex)
         return []
 
-def build_queries(company):
+def build_queries(company, max_queries=8):
     name, ticker = company["name"], company["ticker"]
+    year = utc_now().year
     queries, seen = [], set()
-    for term in company.get("event_keywords", [])[:5]:
-        queries += [f'"{term}" "{name}" 2026 date developer conference product event',
+    for term in company.get("event_keywords", [])[:3]:
+        queries += [f'"{term}" "{name}" {year} date developer conference product event',
                     f'"{term}" "{ticker}" rumors AI product launch']
-    for term in company.get("product_keywords", [])[:8]:
-        queries += [f'"{name}" "{term}" rumor launch event 2026',
+    for term in company.get("product_keywords", [])[:4]:
+        queries += [f'"{name}" "{term}" rumor launch event {year}',
                     f'"{ticker}" "{term}" analyst expectations']
-    queries += [f'"{name}" developer conference 2026 rumors Bloomberg The Verge analyst',
+    queries += [f'"{name}" developer conference {year} rumors Bloomberg The Verge analyst',
                 f'"{name}" product event AI rumors stock expectations']
     out = []
     for q in queries:
-        if q not in seen: seen.add(q); out.append(q)
+        if q not in seen:
+            seen.add(q); out.append(q)
+        if len(out) >= max_queries:
+            break
     return out
 
 def fetch_company_news(company, config):
     ncfg = config.get("news", {})
     max_articles = int(ncfg.get("max_articles_per_company", 30))
     max_per_query = int(ncfg.get("max_articles_per_query", 5))
+    max_queries = int(ncfg.get("max_queries_per_company", 8))
+    request_delay = float(ncfg.get("request_delay_seconds", 0.4))
     timespan = ncfg.get("gdelt_timespan", "30d")
+    gdelt_timeout = float(ncfg.get("gdelt_timeout_seconds", 8))
+    gdelt_backoff = int(ncfg.get("gdelt_backoff_seconds", 180))
+    gdelt_max_errors = int(ncfg.get("gdelt_max_errors_per_run", 2))
     articles = []
-    for q in build_queries(company):
-        if ncfg.get("use_google_news_rss", True): articles.extend(google_news_rss(q, max_items=max_per_query))
-        if ncfg.get("use_gdelt", True): articles.extend(gdelt_search(q, max_items=max_per_query, timespan=timespan))
+    for q in build_queries(company, max_queries=max_queries):
+        if ncfg.get("use_google_news_rss", True):
+            articles.extend(google_news_rss(q, max_items=max_per_query))
+        if ncfg.get("use_gdelt", False):
+            articles.extend(gdelt_search(
+                q,
+                max_items=max_per_query,
+                timespan=timespan,
+                timeout_seconds=gdelt_timeout,
+                backoff_seconds=gdelt_backoff,
+                max_errors=gdelt_max_errors,
+            ))
         articles = dedupe_articles(articles)
         if len(articles) >= max_articles: break
-        time.sleep(0.25)
+        time.sleep(request_delay)
     return dedupe_articles(articles)[:max_articles]
 
 def count_keyword_hits(articles, keywords):
@@ -322,16 +387,20 @@ def call_github_models(prompt, config):
         "temperature": float(ai.get("temperature",0.15)),
         "max_tokens": int(ai.get("max_output_tokens",2200)),
     }
-    r = requests.post(GITHUB_MODELS_ENDPOINT, headers=headers, json=body, timeout=60)
+    r = SESSION.post(GITHUB_MODELS_ENDPOINT, headers=headers, json=body, timeout=http_timeout(read=45))
     r.raise_for_status()
     text = r.json()["choices"][0]["message"]["content"].strip()
     text = re.sub(r"^```json\s*","",text); text = re.sub(r"^```\s*","",text); text = re.sub(r"\s*```$","",text)
+    if not text.startswith("{"):
+        match = re.search(r"\{.*\}", text, flags=re.S)
+        if match:
+            text = match.group(0)
     return json.loads(text)
 
 def ai_analyze(companies_data, config):
     payload = build_ai_payload(companies_data)
     prompt = f"""
-Analiza este JSON para detectar oportunidades públicas "buy the rumor" alrededor de eventos corporativos.
+Analiza este JSON para detectar oportunidades públicas de inversión tipo "buy the rumor" alrededor de eventos corporativos, noticias recientes, lanzamientos, rumores de producto, guidance, contratos o catalizadores de mercado.
 
 Devuelve SOLO JSON válido:
 {{
@@ -347,6 +416,7 @@ Devuelve SOLO JSON válido:
       "trading_window_start": "YYYY-MM-DD or null",
       "trading_window_end": "YYYY-MM-DD or null",
       "window_status": "inside_window|before_window|after_event|unknown",
+      "opportunity_type": "event_window|product_rumor|earnings_setup|contract_rumor|momentum_watch|none",
       "summary": "máximo 2 frases, directo y accionable",
       "sources_used": [1, 2, 3],
       "ai_confidence": "low|medium|high"
@@ -360,7 +430,7 @@ Reglas:
 - trading_window_start = event_date - 21 días.
 - trading_window_end = event_date.
 - Rumores concretos: producto, IA, hardware, software, modelo, partner, guidance.
-- No recomiendes compra directa; describe vigilancia y ventana.
+- No ejecutes compra ni prometas rentabilidad; describe la oportunidad, catalizador, riesgos y ventana de vigilancia.
 - Español.
 
 JSON de entrada:
@@ -368,10 +438,12 @@ JSON de entrada:
 """.strip()
     try: return call_github_models(prompt, config)
     except Exception as ex:
-        print(f"AI analyze error: {ex}")
+        log(f"AI analyze error: {ex}")
         return {"companies":[]}
 
 def merge_ai_results(companies_data, ai_output):
+    if not isinstance(ai_output, dict):
+        ai_output = {"companies": []}
     ai_by_ticker = {str(x.get("ticker","")).upper():x for x in ai_output.get("companies", []) if x.get("ticker")}
     results = []
     for item in companies_data:
@@ -386,6 +458,7 @@ def merge_ai_results(companies_data, ai_output):
             "event_date": ai.get("event_date"), "date_confidence":ai.get("date_confidence","unknown"),
             "days_until_event": days_until(ai.get("event_date")), "trading_window_start":ai.get("trading_window_start"),
             "trading_window_end":ai.get("trading_window_end"), "window_status":ai.get("window_status","unknown"),
+            "opportunity_type": ai.get("opportunity_type", "none"),
             "rumors":ai.get("rumors", []), "market_sentiment":ai.get("market_sentiment","unknown"),
             "summary":ai.get("summary") or "Sin resumen IA concluyente.", "ai_confidence":ai.get("ai_confidence","low"),
             "score_reasons":reasons, "market":item["market"], "articles":item["articles"]
@@ -419,9 +492,11 @@ def build_message(results, config, force=False):
             f"Días al evento: {e(r['days_until_event'])}",
             f"Ventana 3 semanas: {e(fmt_date(r['trading_window_start']))} → {e(fmt_date(r['trading_window_end']))}",
             f"Estado ventana: {e(r['window_status'])}",
+            f"Oportunidad: {e(r.get('opportunity_type', 'none'))}",
             f"Sentimiento: {e(r['market_sentiment'])}",
             f"Precio: {fmt_float(m.get('price'),2)} | RSI: {fmt_float(m.get('rsi'),1)} | 20D: {fmt_pct(m.get('perf_20d'))}",
             f"Rumores: {e(rumors)}",
+            f"Señales: {e('; '.join(r.get('score_reasons', [])[:3]) or 'N/A')}",
             f"Resumen: {e(r['summary'])}",
             ""
         ]
@@ -432,19 +507,31 @@ def generate_dashboard(results):
     rows = []
     for r in results:
         m = r.get("market", {}); rumors = "; ".join(r.get("rumors", [])[:3])
-        rows.append(f"<tr><td>{e(r['ticker'])}</td><td>{e(r['company'])}</td><td>{r['score']}</td><td>{e(r['event_name'])}</td><td>{e(fmt_date(r['event_date']))}</td><td>{e(r['days_until_event'])}</td><td>{e(r['window_status'])}</td><td>{fmt_float(m.get('price'),2)}</td><td>{fmt_float(m.get('rsi'),1)}</td><td>{fmt_pct(m.get('perf_20d'))}</td><td>{e(rumors)}</td></tr>")
-    html_doc = f"""<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Event Rumor Watch</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>body{{font-family:system-ui;margin:28px;background:#0b0f19;color:#e5e7eb}}table{{width:100%;border-collapse:collapse}}th,td{{border-bottom:1px solid #273449;padding:10px;text-align:left;vertical-align:top}}th{{background:#111827}}.card{{background:#111827;border:1px solid #273449;border-radius:14px;padding:18px}}</style></head><body><h1>Event Rumor Watch</h1><p>Actualizado: {e(utc_now().strftime('%Y-%m-%d %H:%M UTC'))}</p><div class="card">Monitor de eventos corporativos, filtraciones públicas y ventanas buy-the-rumor.</div><table><thead><tr><th>Ticker</th><th>Empresa</th><th>Score</th><th>Evento</th><th>Fecha</th><th>Días</th><th>Ventana</th><th>Precio</th><th>RSI</th><th>20D</th><th>Rumores</th></tr></thead><tbody>{''.join(rows) if rows else '<tr><td colspan="11">Sin datos</td></tr>'}</tbody></table></body></html>"""
+        rows.append(f"<tr><td>{e(r['ticker'])}</td><td>{e(r['company'])}</td><td>{r['score']}</td><td>{e(r.get('opportunity_type', 'none'))}</td><td>{e(r['event_name'])}</td><td>{e(fmt_date(r['event_date']))}</td><td>{e(r['days_until_event'])}</td><td>{e(r['window_status'])}</td><td>{fmt_float(m.get('price'),2)}</td><td>{fmt_float(m.get('rsi'),1)}</td><td>{fmt_pct(m.get('perf_20d'))}</td><td>{e(rumors)}</td></tr>")
+    html_doc = f"""<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Event Rumor Watch</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>body{{font-family:system-ui;margin:28px;background:#0b0f19;color:#e5e7eb}}table{{width:100%;border-collapse:collapse}}th,td{{border-bottom:1px solid #273449;padding:10px;text-align:left;vertical-align:top}}th{{background:#111827}}.card{{background:#111827;border:1px solid #273449;border-radius:14px;padding:18px}}</style></head><body><h1>Event Rumor Watch</h1><p>Actualizado: {e(utc_now().strftime('%Y-%m-%d %H:%M UTC'))}</p><div class="card">Monitor de oportunidades públicas por noticias, rumores, eventos corporativos y ventanas buy-the-rumor.</div><table><thead><tr><th>Ticker</th><th>Empresa</th><th>Score</th><th>Oportunidad</th><th>Evento</th><th>Fecha</th><th>Días</th><th>Ventana</th><th>Precio</th><th>RSI</th><th>20D</th><th>Rumores</th></tr></thead><tbody>{''.join(rows) if rows else '<tr><td colspan="12">Sin datos</td></tr>'}</tbody></table></body></html>"""
     DASHBOARD_FILE.write_text(html_doc, encoding="utf-8")
 
 def collect_all(config):
     data = []
-    for company in config.get("companies", []):
+    ncfg = config.get("news", {})
+    max_companies = int(ncfg.get("max_companies_per_run", len(config.get("companies", []))))
+    for company in config.get("companies", [])[:max_companies]:
         ticker = company["ticker"].upper(); name = company["name"]
-        print(f"\n=== Collecting {ticker} / {name} ===")
-        data.append({"ticker":ticker, "company":name, "company_config":company, "market":market_snapshot(ticker), "articles":fetch_company_news(company, config)})
+        log(f"\n=== Collecting {ticker} / {name} ===")
+        try:
+            data.append({"ticker":ticker, "company":name, "company_config":company, "market":market_snapshot(ticker), "articles":fetch_company_news(company, config)})
+        except Exception as ex:
+            log(f"Company collection error for {ticker}: {ex}")
+            data.append({
+                "ticker": ticker,
+                "company": name,
+                "company_config": company,
+                "market": {"ticker": ticker, "price": None, "rsi": None, "perf_20d": None, "perf_60d": None, "status": "error"},
+                "articles": [],
+            })
     return data
 
-def run(config, state, force=False):
+def run(config, state, force=False, dry_run=False):
     companies_data = collect_all(config)
     results = merge_ai_results(companies_data, ai_analyze(companies_data, config))
     SNAPSHOT_FILE.write_text(json.dumps(results, indent=2, ensure_ascii=False), encoding="utf-8")
@@ -453,7 +540,10 @@ def run(config, state, force=False):
         append_log({"time_utc":utc_now().strftime("%Y-%m-%d %H:%M:%S"), "ticker":r["ticker"], "company":r["company"], "score":r["score"], "event_name":r["event_name"], "event_date":fmt_date(r["event_date"]), "days_until_event":r["days_until_event"], "status":r["window_status"], "summary":r["summary"]})
     message, buttons = build_message(results, config, force=force)
     if not message:
-        print("No event rumor alerts above threshold.")
+        log("No event rumor alerts above threshold.")
+        return results
+    if dry_run:
+        log("Dry run enabled. Message would be:\n" + message)
         return results
     acfg = config.get("alerts", {}); cooldown = int(acfg.get("cooldown_hours",12)); threshold = int(acfg.get("min_score_to_alert",70))
     top_keys = [f"{r['ticker']}:{r.get('event_date')}:{r['score']}" for r in results if r["score"] >= threshold]
@@ -461,15 +551,19 @@ def run(config, state, force=False):
     if force or should_send_alert(state, key, cooldown):
         send_telegram(message, buttons=buttons); mark_alert_sent(state, key)
     else:
-        print(f"Suppressed by cooldown: {key}")
+        log(f"Suppressed by cooldown: {key}")
     return results
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--force", action="store_true")
+    parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--max-companies", type=int, default=None)
     args = parser.parse_args()
     config = load_config(); state = load_state()
-    try: run(config, state, force=args.force)
+    if args.max_companies is not None:
+        config.setdefault("news", {})["max_companies_per_run"] = args.max_companies
+    try: run(config, state, force=args.force, dry_run=args.dry_run)
     finally: save_state(state)
 
 if __name__ == "__main__":
