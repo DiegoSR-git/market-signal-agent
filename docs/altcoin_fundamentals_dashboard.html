@@ -1,1 +1,157 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Altcoin Fundamentals Agent</title></head><body><h1>Altcoin Fundamentals Agent</h1><p>Dashboard inicial. Se actualizara con datos reales cuando se ejecute el workflow.</p><p><a href="index.html">Volver al resumen</a></p></body></html>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Altcoin Fundamentals Agent</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090d14;
+      --panel: #111821;
+      --panel-2: #0d131b;
+      --line: #263241;
+      --text: #e7edf5;
+      --muted: #9aa7b7;
+      --green: #3ddc97;
+      --yellow: #f7c948;
+      --red: #ff6b6b;
+      --blue: #5aa9ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.45;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .shell { width: min(1420px, calc(100% - 40px)); margin: 0 auto; padding: 28px 0 44px; }
+    .topbar { display: flex; justify-content: space-between; gap: 18px; align-items: flex-start; margin-bottom: 24px; }
+    h1 { margin: 0; font-size: clamp(30px, 4vw, 54px); letter-spacing: 0; line-height: 1.02; }
+    h2 { margin: 0 0 12px; font-size: 18px; }
+    h3 { margin: 0; font-size: 15px; color: var(--muted); font-weight: 650; }
+    .muted { color: var(--muted); }
+    .nav { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+    .btn { border: 1px solid var(--line); background: #18212c; color: var(--text); padding: 9px 12px; border-radius: 8px; font-weight: 700; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
+    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; min-width: 0; }
+    .span-3 { grid-column: span 3; }
+    .span-4 { grid-column: span 4; }
+    .span-5 { grid-column: span 5; }
+    .span-7 { grid-column: span 7; }
+    .span-8 { grid-column: span 8; }
+    .span-12 { grid-column: span 12; }
+    .metric { font-size: 34px; line-height: 1.05; font-weight: 800; margin: 8px 0 4px; }
+    .submetric { color: var(--muted); font-size: 13px; }
+    .pill { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; padding: 4px 9px; font-size: 12px; font-weight: 800; color: var(--muted); }
+    .pill.hot { color: var(--green); border-color: rgba(61, 220, 151, .35); background: rgba(61, 220, 151, .08); }
+    .pill.watch { color: var(--yellow); border-color: rgba(247, 201, 72, .35); background: rgba(247, 201, 72, .08); }
+    .pill.quiet { color: var(--muted); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 10px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+    td { font-size: 14px; }
+    tr:last-child td { border-bottom: 0; }
+    .table-wrap { overflow-x: auto; }
+    .company { font-weight: 800; }
+    .reason { color: var(--muted); font-size: 12px; margin-top: 3px; max-width: 520px; }
+    .status-line { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .bar { height: 8px; background: #1a2430; border-radius: 999px; overflow: hidden; margin-top: 10px; }
+    .bar > span { display: block; height: 100%; background: var(--green); width: var(--w); }
+    footer { color: var(--muted); font-size: 12px; margin-top: 20px; }
+    @media (max-width: 980px) {
+      .span-3, .span-4, .span-5, .span-7, .span-8 { grid-column: span 12; }
+      .topbar { display: block; }
+      .nav { justify-content: flex-start; margin-top: 16px; }
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+  <div class="topbar">
+    <div>
+      <h1>Altcoin Fundamentals Agent</h1>
+      <div class="muted">Premium research automation. Public data only. Not personalized financial advice.</div>
+    </div>
+    <nav class="nav">
+      <a class="btn" href="index.html">Resumen</a>
+      <a class="btn" href="https://github.com/DiegoSR-git/market-signal-agent/actions">Actions</a>
+    </nav>
+  </div>
+  <section class="grid">
+    <div class="card span-3"><h3>Eventos</h3><div class="metric">9</div><div class="submetric">analizados en la ultima ejecucion</div></div>
+    <div class="card span-3"><h3>High</h3><div class="metric">0</div><div class="submetric">score >= 80</div></div>
+    <div class="card span-3"><h3>Medium</h3><div class="metric">1</div><div class="submetric">score 65-79</div></div>
+    <div class="card span-3"><h3>Actualizado</h3><div class="metric" style="font-size:20px">2026-07-01 12:24 UTC</div><div class="submetric">UTC</div></div>
+    <div class="card span-12">
+      <h2>AI Research Brief</h2>
+      <p>Las métricas fundamentales de varias altcoins muestran tendencias mixtas con predominancia de caídas en 30 días y ausencia de TVL, lo que limita la evaluación completa del valor bloqueado. AAVE destaca con incrementos positivos en 7 y 30 días, mientras que otros activos como AVAX, ARB y ETH presentan retrocesos significativos. Se recomienda monitorear la evolución del volumen y cambios porcentuales para anticipar posibles ajustes en el mercado.</p>
+      <div class="submetric">Watch: Evolución del volumen de negociación para detectar cambios en el interés del mercado.; Variaciones porcentuales en 7 y 30 días para identificar tendencias de corto y mediano plazo.; Ausencia de TVL que limita la evaluación del valor bloqueado y puede afectar la interpretación del fundamental.</div>
+      <div class="submetric">Risks: La falta de datos de TVL puede ocultar riesgos asociados a la liquidez y uso real de las plataformas.; Las caídas significativas en 30 días en activos clave sugieren volatilidad y posibles presiones bajistas.</div>
+    </div>
+    <div class="card span-12">
+      <h2>Ranking</h2>
+      <div class="table-wrap"><table><thead><tr><th>Activo</th><th>Score</th><th>Nivel</th><th>Lectura</th><th>Fuente</th></tr></thead><tbody><tr>
+          <td><div class="company">AAVE</div><div class="muted">AAVE fundamentals watch</div></td>
+          <td><span class="pill watch">75/100</span></td>
+          <td>medium</td>
+          <td>Aave shows public market/fundamental metrics to monitor. Memecoin-style signals are excluded.<div class="reason">7D +15.8%; 30D +6.1%; TVL unavailable</div></td>
+          <td><a href="https://www.coingecko.com/en/coins/aave">source</a></td>
+        </tr><tr>
+          <td><div class="company">SOL</div><div class="muted">SOL fundamentals watch</div></td>
+          <td><span class="pill quiet">61/100</span></td>
+          <td>watch</td>
+          <td>Solana shows public market/fundamental metrics to monitor. Memecoin-style signals are excluded.<div class="reason">7D +6.7%; 30D -7.8%; TVL unavailable</div></td>
+          <td><a href="https://www.coingecko.com/en/coins/solana">source</a></td>
+        </tr><tr>
+          <td><div class="company">AVAX</div><div class="muted">AVAX fundamentals watch</div></td>
+          <td><span class="pill quiet">52/100</span></td>
+          <td>watch</td>
+          <td>Avalanche shows public market/fundamental metrics to monitor. Memecoin-style signals are excluded.<div class="reason">7D +2.8%; 30D -25.0%; TVL unavailable</div></td>
+          <td><a href="https://www.coingecko.com/en/coins/avalanche-2">source</a></td>
+        </tr><tr>
+          <td><div class="company">ARB</div><div class="muted">ARB fundamentals watch</div></td>
+          <td><span class="pill quiet">47/100</span></td>
+          <td>watch</td>
+          <td>Arbitrum shows public market/fundamental metrics to monitor. Memecoin-style signals are excluded.<div class="reason">7D -1.9%; 30D -24.0%; TVL unavailable</div></td>
+          <td><a href="https://www.coingecko.com/en/coins/arbitrum">source</a></td>
+        </tr><tr>
+          <td><div class="company">UNI</div><div class="muted">UNI fundamentals watch</div></td>
+          <td><span class="pill quiet">45/100</span></td>
+          <td>watch</td>
+          <td>Uniswap shows public market/fundamental metrics to monitor. Memecoin-style signals are excluded.<div class="reason">7D -6.9%; 30D -8.0%; TVL unavailable</div></td>
+          <td><a href="https://www.coingecko.com/en/coins/uniswap">source</a></td>
+        </tr><tr>
+          <td><div class="company">OP</div><div class="muted">OP fundamentals watch</div></td>
+          <td><span class="pill quiet">42/100</span></td>
+          <td>watch</td>
+          <td>Optimism shows public market/fundamental metrics to monitor. Memecoin-style signals are excluded.<div class="reason">7D -7.0%; 30D -18.7%; TVL unavailable</div></td>
+          <td><a href="https://www.coingecko.com/en/coins/optimism">source</a></td>
+        </tr><tr>
+          <td><div class="company">NEAR</div><div class="muted">NEAR fundamentals watch</div></td>
+          <td><span class="pill quiet">38/100</span></td>
+          <td>watch</td>
+          <td>NEAR Protocol shows public market/fundamental metrics to monitor. Memecoin-style signals are excluded.<div class="reason">7D -9.4%; 30D -23.6%; TVL unavailable</div></td>
+          <td><a href="https://www.coingecko.com/en/coins/near">source</a></td>
+        </tr><tr>
+          <td><div class="company">LINK</div><div class="muted">LINK fundamentals watch</div></td>
+          <td><span class="pill quiet">33/100</span></td>
+          <td>watch</td>
+          <td>Chainlink shows public market/fundamental metrics to monitor. Memecoin-style signals are excluded.<div class="reason">7D -5.6%; 30D -20.0%; TVL unavailable</div></td>
+          <td><a href="https://www.coingecko.com/en/coins/chainlink">source</a></td>
+        </tr><tr>
+          <td><div class="company">ETH</div><div class="muted">ETH fundamentals watch</div></td>
+          <td><span class="pill quiet">32/100</span></td>
+          <td>watch</td>
+          <td>Ethereum shows public market/fundamental metrics to monitor. Memecoin-style signals are excluded.<div class="reason">7D -6.5%; 30D -20.8%; TVL unavailable</div></td>
+          <td><a href="https://www.coingecko.com/en/coins/ethereum">source</a></td>
+        </tr></tbody></table></div>
+    </div>
+  </section>
+  <footer>Generado: 2026-07-01 12:24 UTC. Fuente: config_altcoins.yaml.</footer>
+</div>
+</body>
+</html>
