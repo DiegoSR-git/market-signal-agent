@@ -52,6 +52,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add event_rumor_state.json event_rumor_snapshot.json event_rumor_log.csv docs/event_rumor_dashboard.html || true
+          git add event_rumor_state.json event_rumor_snapshot.json event_rumor_log.csv docs/event_rumor_dashboard.html docs/index.html || true
           git diff --cached --quiet || git commit -m "Update event rumor agent state [skip ci]"
           git push || true
