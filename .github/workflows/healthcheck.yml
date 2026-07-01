@@ -3,7 +3,8 @@ name: Agent Healthcheck
 on:
   workflow_dispatch:
   schedule:
-    - cron: "10 8 * * *"
+    # GitHub cron uses UTC. 06:00 UTC = 08:00 Europe/Madrid during CEST.
+    - cron: "0 6 * * *"
 
 permissions:
   contents: write

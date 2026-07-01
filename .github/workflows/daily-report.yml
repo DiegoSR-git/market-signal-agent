@@ -3,7 +3,9 @@ name: Daily Market Brief
 on:
   workflow_dispatch:
   schedule:
-    - cron: "35 21 * * *"
+    # GitHub cron uses UTC. These map to 08:25 and 22:25 Europe/Madrid during CEST.
+    - cron: "25 6 * * *"
+    - cron: "25 20 * * *"
 
 permissions:
   contents: write
