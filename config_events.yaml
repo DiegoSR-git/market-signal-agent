@@ -1,0 +1,64 @@
+alerts:
+  min_score_to_alert: 70
+  max_alerts: 5
+  cooldown_hours: 12
+
+news:
+  use_google_news_rss: true
+  use_gdelt: true
+  gdelt_timespan: 45d
+  max_articles_per_company: 28
+  max_articles_per_query: 4
+
+ai:
+  enabled: true
+  provider: github_models
+  model: openai/gpt-4.1-mini
+  max_output_tokens: 2200
+  temperature: 0.15
+
+companies:
+  - name: Meta Platforms
+    ticker: META
+    manual_event_hint:
+      name: Meta Connect
+      date: null
+    event_keywords: [Meta Connect, Connect developer conference, Meta AI event, Meta product event]
+    product_keywords: [AI glasses, Ray-Ban, Orion, Quest, Llama, mixed reality, smart glasses, metaverse, headset]
+    trusted_domains: [bloomberg.com, theverge.com, reuters.com, cnbc.com, wsj.com, ft.com, techcrunch.com, uploadvr.com]
+
+  - name: Microsoft
+    ticker: MSFT
+    manual_event_hint:
+      name: Microsoft Ignite
+      date: null
+    event_keywords: [Microsoft Ignite, Microsoft Build, Microsoft AI event, Microsoft Copilot event]
+    product_keywords: [Copilot, Azure AI, OpenAI, Windows AI, Surface, agents, enterprise AI, data center]
+    trusted_domains: [bloomberg.com, theverge.com, reuters.com, cnbc.com, wsj.com, ft.com, techcrunch.com, windowscentral.com]
+
+  - name: Amazon
+    ticker: AMZN
+    manual_event_hint:
+      name: AWS re:Invent
+      date: null
+    event_keywords: [AWS re:Invent, Amazon devices event, AWS AI event, Amazon product event]
+    product_keywords: [Trainium, Bedrock, Alexa, Anthropic, AI chips, agents, cloud AI, AWS]
+    trusted_domains: [bloomberg.com, theverge.com, reuters.com, cnbc.com, wsj.com, ft.com, techcrunch.com, siliconangle.com]
+
+  - name: Alphabet
+    ticker: GOOGL
+    manual_event_hint:
+      name: Google Cloud Next / Made by Google
+      date: null
+    event_keywords: [Google Cloud Next, Made by Google, Google I/O, Google AI event]
+    product_keywords: [Gemini, TPU, Pixel, Android, Google Cloud, AI agents, Search AI, DeepMind]
+    trusted_domains: [bloomberg.com, theverge.com, reuters.com, cnbc.com, wsj.com, ft.com, techcrunch.com, 9to5google.com]
+
+  - name: Nvidia
+    ticker: NVDA
+    manual_event_hint:
+      name: Nvidia GTC / SIGGRAPH
+      date: null
+    event_keywords: [Nvidia GTC, Nvidia SIGGRAPH, Nvidia AI event, Nvidia product launch]
+    product_keywords: [Blackwell, Rubin, CUDA, AI chips, data center, GPU, networking, inference]
+    trusted_domains: [bloomberg.com, theverge.com, reuters.com, cnbc.com, wsj.com, ft.com, techcrunch.com, semianalysis.com]
