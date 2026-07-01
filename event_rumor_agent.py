@@ -16,6 +16,7 @@ from datetime import datetime, timezone, timedelta
 from urllib.parse import quote_plus
 from email.utils import parsedate_to_datetime
 import pandas as pd
+from dashboard_utils import render_event_dashboard, render_home_dashboard
 
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
@@ -29,6 +30,7 @@ SNAPSHOT_FILE = Path(os.getenv("EVENT_SNAPSHOT_FILE", "event_rumor_snapshot.json
 LOG_FILE = Path(os.getenv("EVENT_LOG_FILE", "event_rumor_log.csv"))
 DOCS_DIR = Path(os.getenv("EVENT_DOCS_DIR", "docs"))
 DASHBOARD_FILE = DOCS_DIR / "event_rumor_dashboard.html"
+INDEX_FILE = DOCS_DIR / "index.html"
 HTTP_TIMEOUT = 25
 DEFAULT_CONNECT_TIMEOUT = 6
 DEFAULT_READ_TIMEOUT = 12
@@ -510,12 +512,8 @@ def build_message(results, config, force=False):
 
 def generate_dashboard(results):
     DOCS_DIR.mkdir(parents=True, exist_ok=True)
-    rows = []
-    for r in results:
-        m = r.get("market", {}); rumors = "; ".join(r.get("rumors", [])[:3])
-        rows.append(f"<tr><td>{e(r['ticker'])}</td><td>{e(r['company'])}</td><td>{r['score']}</td><td>{e(r.get('opportunity_type', 'none'))}</td><td>{e(r['event_name'])}</td><td>{e(fmt_date(r['event_date']))}</td><td>{e(r['days_until_event'])}</td><td>{e(r['window_status'])}</td><td>{fmt_float(m.get('price'),2)}</td><td>{fmt_float(m.get('rsi'),1)}</td><td>{fmt_pct(m.get('perf_20d'))}</td><td>{e(rumors)}</td></tr>")
-    html_doc = f"""<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Event Rumor Watch</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>body{{font-family:system-ui;margin:28px;background:#0b0f19;color:#e5e7eb}}table{{width:100%;border-collapse:collapse}}th,td{{border-bottom:1px solid #273449;padding:10px;text-align:left;vertical-align:top}}th{{background:#111827}}.card{{background:#111827;border:1px solid #273449;border-radius:14px;padding:18px}}</style></head><body><h1>Event Rumor Watch</h1><p>Actualizado: {e(utc_now().strftime('%Y-%m-%d %H:%M UTC'))}</p><div class="card">Monitor de oportunidades públicas por noticias, rumores, eventos corporativos y ventanas buy-the-rumor.</div><table><thead><tr><th>Ticker</th><th>Empresa</th><th>Score</th><th>Oportunidad</th><th>Evento</th><th>Fecha</th><th>Días</th><th>Ventana</th><th>Precio</th><th>RSI</th><th>20D</th><th>Rumores</th></tr></thead><tbody>{''.join(rows) if rows else '<tr><td colspan="12">Sin datos</td></tr>'}</tbody></table></body></html>"""
-    DASHBOARD_FILE.write_text(html_doc, encoding="utf-8")
+    render_event_dashboard(results, DASHBOARD_FILE)
+    render_home_dashboard(INDEX_FILE)
 
 def collect_all(config):
     data = []
@@ -541,9 +539,9 @@ def run(config, state, force=False, dry_run=False):
     companies_data = collect_all(config)
     results = merge_ai_results(companies_data, ai_analyze(companies_data, config))
     SNAPSHOT_FILE.write_text(json.dumps(results, indent=2, ensure_ascii=False), encoding="utf-8")
-    generate_dashboard(results)
     for r in results:
         append_log({"time_utc":utc_now().strftime("%Y-%m-%d %H:%M:%S"), "ticker":r["ticker"], "company":r["company"], "score":r["score"], "event_name":r["event_name"], "event_date":fmt_date(r["event_date"]), "days_until_event":r["days_until_event"], "status":r["window_status"], "summary":r["summary"]})
+    generate_dashboard(results)
     message, buttons = build_message(results, config, force=force)
     if not message:
         log("No event rumor alerts above threshold.")

@@ -31,6 +31,7 @@ from datetime import datetime, timezone, timedelta
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
+from dashboard_utils import render_home_dashboard
 
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
@@ -1262,7 +1263,7 @@ def generate_dashboard(config, state):
 <div class="card"><h2>Bolsa / ETFs</h2><table><thead><tr><th>Símbolo</th><th>Score</th><th>RSI</th><th>DD52s</th><th>Dist. SMA200</th></tr></thead><tbody>{stock_rows or '<tr><td colspan="5">Sin oportunidades</td></tr>'}</tbody></table></div>
 </body></html>"""
     DASHBOARD_FILE.write_text(html_doc, encoding="utf-8")
-    INDEX_FILE.write_text(html_doc, encoding="utf-8")
+    render_home_dashboard(INDEX_FILE)
     print(f"Dashboard written to {DASHBOARD_FILE} and {INDEX_FILE}")
 
 
