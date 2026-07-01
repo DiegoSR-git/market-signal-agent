@@ -38,6 +38,14 @@ Opcional para varios chats:
 TELEGRAM_CHAT_IDS
 ```
 
+Formato:
+
+```text
+179969946,509757180
+```
+
+Cada chat incluido debe haber abierto el bot y enviado `/start`; si no, Telegram responderá con `chat not found` o `Bad Request`.
+
 GitHub Models funciona con:
 
 ```yaml
@@ -98,6 +106,15 @@ python event_rumor_agent.py --dry-run --force --max-companies 3
 ```
 
 Para ampliar el universo, añade bloques en `companies`. El agente ya incluye una lista más amplia de mega-cap tech, semiconductores, software enterprise y nombres de crecimiento, pero solo procesa `max_companies_per_run` en cada ejecución para mantener controladas las peticiones.
+
+Para evitar errores de tamaño en GitHub Models, la IA recibe un resumen compacto de titulares sin URLs largas:
+
+```yaml
+ai:
+  max_articles_per_company: 4
+```
+
+Si Telegram devuelve `400 Bad Request`, revisa el log del workflow: el agente imprime ahora la respuesta real de Telegram. Los mensajes largos se dividen automáticamente en varias partes para respetar el límite de Telegram.
 
 ## Nota
 
