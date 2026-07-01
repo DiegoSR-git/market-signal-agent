@@ -483,7 +483,13 @@ def build_message(results, config, force=False):
     top = [r for r in results if r["score"] >= threshold]
     top = (results[:max_alerts] if force and not top else top[:max_alerts])
     if not top: return None, []
-    lines = ["<b>🕵️ EVENT RUMOR WATCH</b>", f"<b>Hora:</b> {utc_now().strftime('%Y-%m-%d %H:%M UTC')}", ""]
+    candidate_count = len([r for r in results if force or r["score"] >= threshold])
+    lines = [
+        "<b>🕵️ EVENT RUMOR WATCH</b>",
+        f"<b>Hora:</b> {utc_now().strftime('%Y-%m-%d %H:%M UTC')}",
+        f"<b>Mostrando:</b> {len(top)} de {candidate_count} candidatas (límite max_alerts={max_alerts})",
+        "",
+    ]
     for r in top:
         m = r.get("market", {}); rumors = "; ".join(r.get("rumors", [])[:3]) or "Sin rumores concretos extraídos"
         lines += [
