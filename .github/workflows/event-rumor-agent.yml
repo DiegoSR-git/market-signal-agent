@@ -8,7 +8,9 @@ on:
         required: false
         default: "false"
   schedule:
-    - cron: "20 7,13,20 * * 1-5"
+    # GitHub cron uses UTC. These map to 08:15 and 22:15 Europe/Madrid during CEST.
+    - cron: "15 6 * * *"
+    - cron: "15 20 * * *"
 
 permissions:
   contents: write
