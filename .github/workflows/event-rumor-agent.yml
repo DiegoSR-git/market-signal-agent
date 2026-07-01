@@ -17,6 +17,7 @@ permissions:
 jobs:
   event-rumor-agent:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
       - name: Checkout repo
@@ -34,6 +35,7 @@ jobs:
 
       - name: Run event rumor agent
         env:
+          PYTHONUNBUFFERED: "1"
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TELEGRAM_CHAT_IDS: ${{ vars.TELEGRAM_CHAT_IDS }}

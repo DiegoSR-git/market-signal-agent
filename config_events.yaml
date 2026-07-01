@@ -5,10 +5,18 @@ alerts:
 
 news:
   use_google_news_rss: true
-  use_gdelt: true
+  # GDELT es útil, pero se limita por 429/timeouts con muchas consultas.
+  # Activalo solo para barridos puntuales o si Google News devuelve poca cobertura.
+  use_gdelt: false
   gdelt_timespan: 45d
-  max_articles_per_company: 28
-  max_articles_per_query: 4
+  gdelt_timeout_seconds: 8
+  gdelt_backoff_seconds: 180
+  gdelt_max_errors_per_run: 2
+  max_companies_per_run: 12
+  max_queries_per_company: 6
+  max_articles_per_company: 24
+  max_articles_per_query: 3
+  request_delay_seconds: 0.4
 
 ai:
   enabled: true
@@ -18,6 +26,7 @@ ai:
   temperature: 0.15
 
 companies:
+  # Mega-cap tech / AI platforms
   - name: Meta Platforms
     ticker: META
     manual_event_hint:
@@ -26,6 +35,15 @@ companies:
     event_keywords: [Meta Connect, Connect developer conference, Meta AI event, Meta product event]
     product_keywords: [AI glasses, Ray-Ban, Orion, Quest, Llama, mixed reality, smart glasses, metaverse, headset]
     trusted_domains: [bloomberg.com, theverge.com, reuters.com, cnbc.com, wsj.com, ft.com, techcrunch.com, uploadvr.com]
+
+  - name: Apple
+    ticker: AAPL
+    manual_event_hint:
+      name: WWDC / Apple product events
+      date: null
+    event_keywords: [WWDC, Apple event, iPhone event, Apple AI event]
+    product_keywords: [Apple Intelligence, iPhone, Vision Pro, Siri, M-series, services, wearables, foldable]
+    trusted_domains: [bloomberg.com, reuters.com, cnbc.com, wsj.com, ft.com, theverge.com, macrumors.com, 9to5mac.com]
 
   - name: Microsoft
     ticker: MSFT
@@ -54,6 +72,7 @@ companies:
     product_keywords: [Gemini, TPU, Pixel, Android, Google Cloud, AI agents, Search AI, DeepMind]
     trusted_domains: [bloomberg.com, theverge.com, reuters.com, cnbc.com, wsj.com, ft.com, techcrunch.com, 9to5google.com]
 
+  # Semiconductors / AI infrastructure
   - name: Nvidia
     ticker: NVDA
     manual_event_hint:
@@ -62,3 +81,113 @@ companies:
     event_keywords: [Nvidia GTC, Nvidia SIGGRAPH, Nvidia AI event, Nvidia product launch]
     product_keywords: [Blackwell, Rubin, CUDA, AI chips, data center, GPU, networking, inference]
     trusted_domains: [bloomberg.com, theverge.com, reuters.com, cnbc.com, wsj.com, ft.com, techcrunch.com, semianalysis.com]
+
+  - name: Advanced Micro Devices
+    ticker: AMD
+    manual_event_hint:
+      name: AMD AI / Computex / Advancing AI
+      date: null
+    event_keywords: [AMD Advancing AI, AMD Computex, AMD product launch, AMD AI event]
+    product_keywords: [MI400, MI350, Instinct, EPYC, Ryzen AI, GPU, AI accelerator, data center]
+    trusted_domains: [bloomberg.com, reuters.com, cnbc.com, wsj.com, ft.com, theverge.com, techcrunch.com, tomshardware.com]
+
+  - name: Broadcom
+    ticker: AVGO
+    manual_event_hint:
+      name: Broadcom earnings / AI infrastructure updates
+      date: null
+    event_keywords: [Broadcom earnings, Broadcom AI event, Broadcom investor day]
+    product_keywords: [AI networking, custom silicon, ASIC, VMware, Ethernet, data center, accelerator]
+    trusted_domains: [bloomberg.com, reuters.com, cnbc.com, wsj.com, ft.com, semianalysis.com, theinformation.com]
+
+  - name: Taiwan Semiconductor Manufacturing
+    ticker: TSM
+    manual_event_hint:
+      name: TSMC earnings / technology symposium
+      date: null
+    event_keywords: [TSMC earnings, TSMC technology symposium, TSMC investor conference]
+    product_keywords: [N2, A16, CoWoS, advanced packaging, AI chips, capacity, Nvidia, Apple]
+    trusted_domains: [bloomberg.com, reuters.com, cnbc.com, wsj.com, ft.com, digitimes.com, nikkei.com]
+
+  - name: Arm Holdings
+    ticker: ARM
+    manual_event_hint:
+      name: Arm earnings / product roadmap
+      date: null
+    event_keywords: [Arm earnings, Arm product launch, Arm AI event]
+    product_keywords: [AI chips, CPU, data center, smartphone, licensing, Nvidia, custom silicon]
+    trusted_domains: [bloomberg.com, reuters.com, cnbc.com, wsj.com, ft.com, theverge.com, techcrunch.com]
+
+  # Enterprise software / AI monetization
+  - name: Oracle
+    ticker: ORCL
+    manual_event_hint:
+      name: Oracle CloudWorld / earnings
+      date: null
+    event_keywords: [Oracle CloudWorld, Oracle earnings, Oracle AI event]
+    product_keywords: [OCI, cloud, AI infrastructure, database, Nvidia, data center, backlog]
+    trusted_domains: [bloomberg.com, reuters.com, cnbc.com, wsj.com, ft.com, siliconangle.com]
+
+  - name: Salesforce
+    ticker: CRM
+    manual_event_hint:
+      name: Dreamforce / Salesforce AI updates
+      date: null
+    event_keywords: [Dreamforce, Salesforce earnings, Salesforce AI event]
+    product_keywords: [Agentforce, Data Cloud, AI agents, Slack, CRM, enterprise AI]
+    trusted_domains: [bloomberg.com, reuters.com, cnbc.com, wsj.com, ft.com, techcrunch.com]
+
+  - name: Palantir Technologies
+    ticker: PLTR
+    manual_event_hint:
+      name: AIPCon / earnings
+      date: null
+    event_keywords: [Palantir AIPCon, Palantir earnings, Palantir AI event]
+    product_keywords: [AIP, government contracts, commercial AI, defense, enterprise AI, bootcamp]
+    trusted_domains: [bloomberg.com, reuters.com, cnbc.com, wsj.com, ft.com, defenseone.com]
+
+  - name: Adobe
+    ticker: ADBE
+    manual_event_hint:
+      name: Adobe MAX / earnings
+      date: null
+    event_keywords: [Adobe MAX, Adobe earnings, Adobe AI event]
+    product_keywords: [Firefly, creative AI, Acrobat AI, generative AI, Creative Cloud]
+    trusted_domains: [bloomberg.com, reuters.com, cnbc.com, wsj.com, ft.com, theverge.com]
+
+  # Consumer growth / event-driven names
+  - name: Tesla
+    ticker: TSLA
+    manual_event_hint:
+      name: Tesla product / AI / robotaxi events
+      date: null
+    event_keywords: [Tesla event, Tesla robotaxi event, Tesla AI event, Tesla earnings]
+    product_keywords: [robotaxi, FSD, Optimus, Model Y, Cybercab, energy storage, autonomy]
+    trusted_domains: [bloomberg.com, reuters.com, cnbc.com, wsj.com, ft.com, electrek.co, teslarati.com]
+
+  - name: Netflix
+    ticker: NFLX
+    manual_event_hint:
+      name: Netflix earnings / upfronts
+      date: null
+    event_keywords: [Netflix earnings, Netflix upfront, Netflix product event]
+    product_keywords: [advertising, games, live sports, subscribers, price increase, content slate]
+    trusted_domains: [bloomberg.com, reuters.com, cnbc.com, wsj.com, ft.com, variety.com, hollywoodreporter.com]
+
+  - name: Spotify
+    ticker: SPOT
+    manual_event_hint:
+      name: Spotify earnings / product updates
+      date: null
+    event_keywords: [Spotify earnings, Spotify product launch, Spotify AI event]
+    product_keywords: [AI DJ, audiobooks, podcasting, price increase, subscribers, marketplace]
+    trusted_domains: [bloomberg.com, reuters.com, cnbc.com, wsj.com, ft.com, theverge.com]
+
+  - name: Shopify
+    ticker: SHOP
+    manual_event_hint:
+      name: Shopify Editions / earnings
+      date: null
+    event_keywords: [Shopify Editions, Shopify earnings, Shopify AI event]
+    product_keywords: [Sidekick, commerce AI, payments, logistics, merchants, enterprise]
+    trusted_domains: [bloomberg.com, reuters.com, cnbc.com, wsj.com, ft.com, techcrunch.com]
