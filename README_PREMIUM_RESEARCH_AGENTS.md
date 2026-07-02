@@ -16,6 +16,7 @@ No ejecutan ordenes, no usan informacion privilegiada y no generan asesoramiento
 | Posicionamiento CFTC | `cftc_positioning_agent.py` | `config_cftc.yaml` | `docs/cftc_positioning_dashboard.html` |
 | Volumen inusual | `unusual_volume_agent.py` | `config_unusual_volume.yaml` | `docs/unusual_volume_dashboard.html` |
 | Fundamentales altcoin | `altcoin_fundamentals_agent.py` | `config_altcoins.yaml` | `docs/altcoin_fundamentals_dashboard.html` |
+| Intradia salida mismo dia | `intraday_cashout_agent.py` | `config_intraday_cashout.yaml` | `docs/intraday_cashout_dashboard.html` |
 
 ## Probar en local
 
@@ -28,7 +29,10 @@ python -u earnings_catalyst_agent.py --dry-run --force
 python -u cftc_positioning_agent.py --dry-run --force
 python -u unusual_volume_agent.py --dry-run --force
 python -u altcoin_fundamentals_agent.py --dry-run --force
+python -u intraday_cashout_agent.py --dry-run --force
 ```
+
+El agente intradia no descarga nuevas fuentes de mercado: cruza los snapshots ya generados por el resto de scripts y prioriza ideas liquidas para una operativa de manana con salida antes del cierre. El plan muestra precio de referencia, objetivo, stop orientativo, fuentes que coinciden y riesgos. Es investigacion automatizada, no asesoramiento financiero personalizado.
 
 ## Probar en GitHub Actions
 

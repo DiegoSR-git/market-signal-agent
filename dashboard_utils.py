@@ -98,6 +98,7 @@ PREMIUM_DASHBOARDS = [
     ("Posicionamiento CFTC", "cftc_positioning_dashboard.html", "Commitment of Traders semanal", "cftc_positioning_snapshot.json"),
     ("Volumen inusual", "unusual_volume_dashboard.html", "Volumen anormal y rupturas tecnicas", "unusual_volume_snapshot.json"),
     ("Fundamentales altcoin", "altcoin_fundamentals_dashboard.html", "Fundamentales publicos de altcoins", "altcoin_fundamentals_snapshot.json"),
+    ("Intradia salida mismo dia", "intraday_cashout_dashboard.html", "Ideas para entrada por la manana y salida antes del cierre", "intraday_cashout_snapshot.json"),
 ]
 
 
@@ -285,6 +286,7 @@ def render_opportunities_dashboard(output_path="docs/opportunities.html", min_sc
     <nav class="nav">
       <a class="btn" href="index.html">Resumen</a>
       <a class="btn" href="dashboard.html">BTC</a>
+      <a class="btn" href="intraday_cashout_dashboard.html">Intradia</a>
       <a class="btn" href="event_rumor_dashboard.html">Rumores</a>
       <a class="btn" href="https://github.com/DiegoSR-git/market-signal-agent/actions">Actions</a>
     </nav>
@@ -525,6 +527,7 @@ def render_home_dashboard(
     </div>
     <nav class="nav">
       <a class="btn primary" href="opportunities.html">Oportunidades Claras</a>
+      <a class="btn" href="intraday_cashout_dashboard.html">Intradia</a>
       <a class="btn" href="dashboard.html">BTC</a>
       <a class="btn" href="event_rumor_dashboard.html">Event Rumor</a>
       <a class="btn" href="macro_regime_dashboard.html">Research Premium</a>
