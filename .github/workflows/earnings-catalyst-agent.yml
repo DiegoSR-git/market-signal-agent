@@ -45,6 +45,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add earnings_catalyst_state.json earnings_catalyst_snapshot.json earnings_catalyst_log.csv docs/earnings_catalyst_dashboard.html docs/index.html || true
+          git add earnings_catalyst_state.json earnings_catalyst_snapshot.json earnings_catalyst_log.csv docs/earnings_catalyst_dashboard.html docs/index.html docs/opportunities.html || true
           git diff --cached --quiet || git commit -m "Update earnings catalyst agent state [skip ci]"
           git push || true

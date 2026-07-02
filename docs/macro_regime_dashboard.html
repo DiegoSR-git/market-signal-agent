@@ -3,41 +3,45 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Macro Regime Agent</title>
+  <title>Regimen macro</title>
   <style>
     :root {
       color-scheme: dark;
-      --bg: #090d14;
-      --panel: #111821;
+      --bg: #080b10;
+      --panel: #101720;
       --panel-2: #0d131b;
-      --line: #263241;
-      --text: #e7edf5;
-      --muted: #9aa7b7;
-      --green: #3ddc97;
-      --yellow: #f7c948;
-      --red: #ff6b6b;
-      --blue: #5aa9ff;
+      --panel-3: #151f2a;
+      --line: #263545;
+      --text: #eef4fb;
+      --muted: #9eacbb;
+      --green: #42d392;
+      --yellow: #f4c95d;
+      --red: #ff6f61;
+      --blue: #69b7ff;
+      --cyan: #57d6d1;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      background: var(--bg);
+      background: radial-gradient(circle at top left, rgba(87, 214, 209, .08), transparent 34rem), var(--bg);
       color: var(--text);
       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.45;
     }
     a { color: var(--blue); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .shell { width: min(1420px, calc(100% - 40px)); margin: 0 auto; padding: 28px 0 44px; }
-    .topbar { display: flex; justify-content: space-between; gap: 18px; align-items: flex-start; margin-bottom: 24px; }
+    .shell { width: min(1440px, calc(100% - 40px)); margin: 0 auto; padding: 28px 0 44px; }
+    .topbar { display: flex; justify-content: space-between; gap: 18px; align-items: flex-start; margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
     h1 { margin: 0; font-size: clamp(30px, 4vw, 54px); letter-spacing: 0; line-height: 1.02; }
     h2 { margin: 0 0 12px; font-size: 18px; }
     h3 { margin: 0; font-size: 15px; color: var(--muted); font-weight: 650; }
     .muted { color: var(--muted); }
     .nav { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
-    .btn { border: 1px solid var(--line); background: #18212c; color: var(--text); padding: 9px 12px; border-radius: 8px; font-weight: 700; }
+    .btn { border: 1px solid var(--line); background: #172231; color: var(--text); padding: 9px 12px; border-radius: 8px; font-weight: 750; display: inline-flex; align-items: center; justify-content: center; min-height: 38px; }
+    .btn.primary { border-color: rgba(66, 211, 146, .45); background: rgba(66, 211, 146, .12); color: var(--green); }
+    .btn.compact { min-height: 32px; padding: 6px 9px; font-size: 12px; }
     .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
-    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; min-width: 0; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,.025), transparent), var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; min-width: 0; box-shadow: 0 14px 30px rgba(0,0,0,.18); }
     .span-3 { grid-column: span 3; }
     .span-4 { grid-column: span 4; }
     .span-5 { grid-column: span 5; }
@@ -45,7 +49,9 @@
     .span-8 { grid-column: span 8; }
     .span-12 { grid-column: span 12; }
     .metric { font-size: 34px; line-height: 1.05; font-weight: 800; margin: 8px 0 4px; }
+    .metric.small { font-size: 20px; }
     .submetric { color: var(--muted); font-size: 13px; }
+    .intro { color: var(--muted); max-width: 920px; margin: 0 0 14px; }
     .pill { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; padding: 4px 9px; font-size: 12px; font-weight: 800; color: var(--muted); }
     .pill.hot { color: var(--green); border-color: rgba(61, 220, 151, .35); background: rgba(61, 220, 151, .08); }
     .pill.watch { color: var(--yellow); border-color: rgba(247, 201, 72, .35); background: rgba(247, 201, 72, .08); }
@@ -58,6 +64,11 @@
     .table-wrap { overflow-x: auto; }
     .company { font-weight: 800; }
     .reason { color: var(--muted); font-size: 12px; margin-top: 3px; max-width: 520px; }
+    .details { margin-top: 8px; color: var(--muted); }
+    .details summary { cursor: pointer; color: var(--blue); font-weight: 750; font-size: 12px; }
+    .detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 10px; padding: 12px; background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; }
+    .detail-grid strong { color: var(--text); display: block; margin-bottom: 4px; font-size: 12px; text-transform: uppercase; }
+    .detail-grid p { margin: 0; font-size: 13px; }
     .status-line { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
     .bar { height: 8px; background: #1a2430; border-radius: 999px; overflow: hidden; margin-top: 10px; }
     .bar > span { display: block; height: 100%; background: var(--green); width: var(--w); }
@@ -66,6 +77,7 @@
       .span-3, .span-4, .span-5, .span-7, .span-8 { grid-column: span 12; }
       .topbar { display: block; }
       .nav { justify-content: flex-start; margin-top: 16px; }
+      .detail-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -73,37 +85,46 @@
 <div class="shell">
   <div class="topbar">
     <div>
-      <h1>Macro Regime Agent</h1>
-      <div class="muted">Premium research automation. Public data only. Not personalized financial advice.</div>
+      <h1>Regimen macro</h1>
+      <div class="muted">Risk-on, risk-off, defensivos y liquidez. Datos públicos, lectura automatizada y revisión humana recomendada.</div>
     </div>
     <nav class="nav">
+      <a class="btn primary" href="opportunities.html">Oportunidades Claras</a>
       <a class="btn" href="index.html">Resumen</a>
       <a class="btn" href="https://github.com/DiegoSR-git/market-signal-agent/actions">Actions</a>
     </nav>
   </div>
   <section class="grid">
-    <div class="card span-3"><h3>Eventos</h3><div class="metric">1</div><div class="submetric">analizados en la ultima ejecucion</div></div>
-    <div class="card span-3"><h3>High</h3><div class="metric">0</div><div class="submetric">score >= 80</div></div>
-    <div class="card span-3"><h3>Medium</h3><div class="metric">0</div><div class="submetric">score 65-79</div></div>
-    <div class="card span-3"><h3>Actualizado</h3><div class="metric" style="font-size:20px">2026-07-02 07:45 UTC</div><div class="submetric">UTC</div></div>
-    <div class="card span-12">
-      <h2>AI Research Brief</h2>
+    <div class="card span-3"><h3>Eventos</h3><div class="metric">1</div><div class="submetric">lecturas disponibles</div></div>
+    <div class="card span-3"><h3>Alto</h3><div class="metric">0</div><div class="submetric">score >= 80</div></div>
+    <div class="card span-3"><h3>Medio</h3><div class="metric">0</div><div class="submetric">score 65-79</div></div>
+    <div class="card span-3"><h3>Actualizado</h3><div class="metric small">2026-07-02 09:50 UTC</div><div class="submetric">UTC</div></div>
+<div class="card span-12">
+      <h2>Resumen IA</h2>
       <p>El régimen macro actual muestra señales mixtas con desempeño negativo en proxies clave de crédito y duración. Se recomienda monitorear la confirmación en indicadores de crédito, duración y dólar. La volatilidad y la falta de rupturas técnicas sugieren precaución en la toma de decisiones.</p>
-      <div class="submetric">Watch: Evolución del rendimiento a 20 días de SPY y QQQ, ambos con caídas superiores al 1.8%; Comportamiento de los proxies de crédito HYG y LQD, con rendimientos negativos y sin rupturas técnicas; Confirmación del breakout en UUP como indicador del dólar y su impacto en el régimen macro</div>
-      <div class="submetric">Risks: Riesgo de consolidación o reversión debido a la falta de rupturas técnicas en la mayoría de proxies; Volumen de negociación inferior al promedio en proxies clave, lo que puede limitar la liquidez y aumentar la volatilidad; Posible impacto negativo de la debilidad en activos de crédito y duración sobre la estabilidad del mercado</div>
+      <div class="submetric">Vigilar: Evolución del rendimiento a 20 días de SPY y QQQ, ambos con caídas superiores al 1.8%; Comportamiento de los proxies de crédito HYG y LQD, con rendimientos negativos y sin rupturas técnicas; Confirmación del breakout en UUP como indicador del dólar y su impacto en el régimen macro</div>
+      <div class="submetric">Riesgos: Riesgo de consolidación o reversión debido a la falta de rupturas técnicas en la mayoría de proxies; Volumen de negociación inferior al promedio en proxies clave, lo que puede limitar la liquidez y aumentar la volatilidad; Posible impacto negativo de la debilidad en activos de crédito y duración sobre la estabilidad del mercado</div>
     </div>
     <div class="card span-12">
-      <h2>Ranking</h2>
-      <div class="table-wrap"><table><thead><tr><th>Activo</th><th>Score</th><th>Nivel</th><th>Lectura</th><th>Fuente</th></tr></thead><tbody><tr>
-          <td><div class="company">MARKET</div><div class="muted">Macro regime: mixed</div></td>
+      <h2>Detalle Del Agente</h2>
+      <p class="intro">Cada fila incluye una lectura breve y un bloque desplegable con motivos, métricas y fuente. El objetivo es ayudarte a decidir qué merece investigación adicional.</p>
+      <div class="table-wrap"><table><thead><tr><th>Activo</th><th>Score</th><th>Nivel</th><th>Detalle</th></tr></thead><tbody><tr>
+          <td><div class="company">MARKET</div><div class="muted">Regimen macro: mixed</div></td>
           <td><span class="pill quiet">36/100</span></td>
           <td>watch</td>
-          <td>Current proxy basket points to mixed. Watch confirmation across credit, duration and dollar proxies.<div class="reason">SPY 20D -1.8%; QQQ 20D -2.8%; HYG 20D -0.4%; TLT 20D -0.2%</div></td>
-          <td><a href="https://finance.yahoo.com">source</a></td>
+          <td>La cesta de proxies apunta a mixed. Vigilar confirmacion en credito, duracion y dolar.<div class="reason">SPY 20D -1.8%; QQQ 20D -2.8%; HYG 20D -0.4%; TLT 20D -0.2%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>La cesta de proxies apunta a mixed. Vigilar confirmacion en credito, duracion y dolar.</p></div>
+        <div><strong>Motivos</strong><p>SPY 20D -1.8%; QQQ 20D -2.8%; HYG 20D -0.4%; TLT 20D -0.2%; Evolución del rendimiento a 20 días de SPY y QQQ, ambos con caídas superiores al 1.8%</p></div>
+        <div><strong>Métricas</strong><p>Regime: mixed; Proxies: GLD: Breakout 20d: no, Breakout 50d: no, Perf 20d: -10.04, Perf 5d: 1.28, Perf 60d: -13.34, Price: 370.60, HYG: Breakout 20d: no, Breakout 50d: no, Perf 20d: -0.39, Perf 5d: -0.33, Perf 60d: -0.14, Price: 79.59, IWM: Breakout 20d: no, Breakout 50d: no, Perf 20d: 2.63, Perf 5d: 0.89, Perf 60d: 18.61, Price: 299.32, LQD: Breakout 20d: no, Breakout 50d: no, Perf 20d: -0.42, Perf 5d: -0.87, Perf 60d: -0.45, Price: 108.46, QQQ: Breakout 20d: no, Breakout 50d: no, Perf 20d: -2.81, Perf 5d: 2.05, Perf 60d: 23.22, Price: 725.17, SPY: Breakout 20d: no, Breakout 50d: no, Perf 20d: -1.82, Perf 5d: 1.71, Perf 60d: 13.18, Price: 745.76</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
         </tr></tbody></table></div>
     </div>
   </section>
-  <footer>Generado: 2026-07-02 07:45 UTC. Fuente: config_macro.yaml.</footer>
+  <footer>Generado: 2026-07-02 09:50 UTC. Investigación automatizada con datos públicos; no es asesoramiento financiero personalizado.</footer>
 </div>
 </body>
 </html>

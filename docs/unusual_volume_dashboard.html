@@ -3,41 +3,45 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Unusual Volume Agent</title>
+  <title>Volumen inusual</title>
   <style>
     :root {
       color-scheme: dark;
-      --bg: #090d14;
-      --panel: #111821;
+      --bg: #080b10;
+      --panel: #101720;
       --panel-2: #0d131b;
-      --line: #263241;
-      --text: #e7edf5;
-      --muted: #9aa7b7;
-      --green: #3ddc97;
-      --yellow: #f7c948;
-      --red: #ff6b6b;
-      --blue: #5aa9ff;
+      --panel-3: #151f2a;
+      --line: #263545;
+      --text: #eef4fb;
+      --muted: #9eacbb;
+      --green: #42d392;
+      --yellow: #f4c95d;
+      --red: #ff6f61;
+      --blue: #69b7ff;
+      --cyan: #57d6d1;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      background: var(--bg);
+      background: radial-gradient(circle at top left, rgba(87, 214, 209, .08), transparent 34rem), var(--bg);
       color: var(--text);
       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.45;
     }
     a { color: var(--blue); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .shell { width: min(1420px, calc(100% - 40px)); margin: 0 auto; padding: 28px 0 44px; }
-    .topbar { display: flex; justify-content: space-between; gap: 18px; align-items: flex-start; margin-bottom: 24px; }
+    .shell { width: min(1440px, calc(100% - 40px)); margin: 0 auto; padding: 28px 0 44px; }
+    .topbar { display: flex; justify-content: space-between; gap: 18px; align-items: flex-start; margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
     h1 { margin: 0; font-size: clamp(30px, 4vw, 54px); letter-spacing: 0; line-height: 1.02; }
     h2 { margin: 0 0 12px; font-size: 18px; }
     h3 { margin: 0; font-size: 15px; color: var(--muted); font-weight: 650; }
     .muted { color: var(--muted); }
     .nav { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
-    .btn { border: 1px solid var(--line); background: #18212c; color: var(--text); padding: 9px 12px; border-radius: 8px; font-weight: 700; }
+    .btn { border: 1px solid var(--line); background: #172231; color: var(--text); padding: 9px 12px; border-radius: 8px; font-weight: 750; display: inline-flex; align-items: center; justify-content: center; min-height: 38px; }
+    .btn.primary { border-color: rgba(66, 211, 146, .45); background: rgba(66, 211, 146, .12); color: var(--green); }
+    .btn.compact { min-height: 32px; padding: 6px 9px; font-size: 12px; }
     .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
-    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; min-width: 0; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,.025), transparent), var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; min-width: 0; box-shadow: 0 14px 30px rgba(0,0,0,.18); }
     .span-3 { grid-column: span 3; }
     .span-4 { grid-column: span 4; }
     .span-5 { grid-column: span 5; }
@@ -45,7 +49,9 @@
     .span-8 { grid-column: span 8; }
     .span-12 { grid-column: span 12; }
     .metric { font-size: 34px; line-height: 1.05; font-weight: 800; margin: 8px 0 4px; }
+    .metric.small { font-size: 20px; }
     .submetric { color: var(--muted); font-size: 13px; }
+    .intro { color: var(--muted); max-width: 920px; margin: 0 0 14px; }
     .pill { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; padding: 4px 9px; font-size: 12px; font-weight: 800; color: var(--muted); }
     .pill.hot { color: var(--green); border-color: rgba(61, 220, 151, .35); background: rgba(61, 220, 151, .08); }
     .pill.watch { color: var(--yellow); border-color: rgba(247, 201, 72, .35); background: rgba(247, 201, 72, .08); }
@@ -58,6 +64,11 @@
     .table-wrap { overflow-x: auto; }
     .company { font-weight: 800; }
     .reason { color: var(--muted); font-size: 12px; margin-top: 3px; max-width: 520px; }
+    .details { margin-top: 8px; color: var(--muted); }
+    .details summary { cursor: pointer; color: var(--blue); font-weight: 750; font-size: 12px; }
+    .detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 10px; padding: 12px; background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; }
+    .detail-grid strong { color: var(--text); display: block; margin-bottom: 4px; font-size: 12px; text-transform: uppercase; }
+    .detail-grid p { margin: 0; font-size: 13px; }
     .status-line { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
     .bar { height: 8px; background: #1a2430; border-radius: 999px; overflow: hidden; margin-top: 10px; }
     .bar > span { display: block; height: 100%; background: var(--green); width: var(--w); }
@@ -66,6 +77,7 @@
       .span-3, .span-4, .span-5, .span-7, .span-8 { grid-column: span 12; }
       .topbar { display: block; }
       .nav { justify-content: flex-start; margin-top: 16px; }
+      .detail-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -73,121 +85,228 @@
 <div class="shell">
   <div class="topbar">
     <div>
-      <h1>Unusual Volume Agent</h1>
-      <div class="muted">Premium research automation. Public data only. Not personalized financial advice.</div>
+      <h1>Volumen inusual</h1>
+      <div class="muted">Volumen anormal y rupturas tecnicas. Datos públicos, lectura automatizada y revisión humana recomendada.</div>
     </div>
     <nav class="nav">
+      <a class="btn primary" href="opportunities.html">Oportunidades Claras</a>
       <a class="btn" href="index.html">Resumen</a>
       <a class="btn" href="https://github.com/DiegoSR-git/market-signal-agent/actions">Actions</a>
     </nav>
   </div>
   <section class="grid">
-    <div class="card span-3"><h3>Eventos</h3><div class="metric">15</div><div class="submetric">analizados en la ultima ejecucion</div></div>
-    <div class="card span-3"><h3>High</h3><div class="metric">0</div><div class="submetric">score >= 80</div></div>
-    <div class="card span-3"><h3>Medium</h3><div class="metric">0</div><div class="submetric">score 65-79</div></div>
-    <div class="card span-3"><h3>Actualizado</h3><div class="metric" style="font-size:20px">2026-07-02 07:59 UTC</div><div class="submetric">UTC</div></div>
-    <div class="card span-12">
-      <h2>AI Research Brief</h2>
+    <div class="card span-3"><h3>Eventos</h3><div class="metric">15</div><div class="submetric">lecturas disponibles</div></div>
+    <div class="card span-3"><h3>Alto</h3><div class="metric">0</div><div class="submetric">score >= 80</div></div>
+    <div class="card span-3"><h3>Medio</h3><div class="metric">0</div><div class="submetric">score 65-79</div></div>
+    <div class="card span-3"><h3>Actualizado</h3><div class="metric small">2026-07-02 09:50 UTC</div><div class="submetric">UTC</div></div>
+<div class="card span-12">
+      <h2>Resumen IA</h2>
       <p>Se identifican movimientos y volúmenes inusuales en varias acciones tecnológicas que requieren vigilancia continua. Algunos activos muestran incrementos recientes en volumen y precio, mientras otros presentan disminuciones significativas. Es recomendable monitorear la evolución para gestionar riesgos ante posibles volatilidades.</p>
-      <div class="submetric">Watch: PLTR con volumen 1.4x promedio y aumento de 10.8% en 5 días.; TSLA con aumento de precio del 13.3% en 5 días y volumen cercano al promedio.; ARM con volumen muy bajo (0.4x promedio) y caída del 6% en 5 días.</div>
-      <div class="submetric">Risks: Volúmenes inferiores al promedio pueden indicar menor liquidez y mayor volatilidad, como en ARM y AVGO.; Rendimientos negativos recientes en activos como SMCI y MSTR sugieren precaución ante posibles tendencias bajistas.</div>
+      <div class="submetric">Vigilar: PLTR con volumen 1.4x promedio y aumento de 10.8% en 5 días.; TSLA con aumento de precio del 13.3% en 5 días y volumen cercano al promedio.; ARM con volumen muy bajo (0.4x promedio) y caída del 6% en 5 días.</div>
+      <div class="submetric">Riesgos: Volúmenes inferiores al promedio pueden indicar menor liquidez y mayor volatilidad, como en ARM y AVGO.; Rendimientos negativos recientes en activos como SMCI y MSTR sugieren precaución ante posibles tendencias bajistas.</div>
     </div>
     <div class="card span-12">
-      <h2>Ranking</h2>
-      <div class="table-wrap"><table><thead><tr><th>Activo</th><th>Score</th><th>Nivel</th><th>Lectura</th><th>Fuente</th></tr></thead><tbody><tr>
-          <td><div class="company">SMCI</div><div class="muted">SMCI unusual volume</div></td>
-          <td><span class="pill quiet">62/100</span></td>
+      <h2>Detalle Del Agente</h2>
+      <p class="intro">Cada fila incluye una lectura breve y un bloque desplegable con motivos, métricas y fuente. El objetivo es ayudarte a decidir qué merece investigación adicional.</p>
+      <div class="table-wrap"><table><thead><tr><th>Activo</th><th>Score</th><th>Nivel</th><th>Detalle</th></tr></thead><tbody><tr>
+          <td><div class="company">SMCI</div><div class="muted">SMCI volumen inusual</div></td>
+          <td><span class="pill watch">62/100</span></td>
           <td>watch</td>
-          <td>Super Micro Computer has abnormal volume or technical movement to monitor.<div class="reason">volume 0.7x avg; 5D -14.8%</div></td>
-          <td><a href="https://finance.yahoo.com/quote/SMCI">source</a></td>
+          <td>Super Micro Computer presenta volumen anormal o movimiento tecnico a vigilar.<div class="reason">volume 0.7x avg; 5D -14.8%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>Super Micro Computer presenta volumen anormal o movimiento tecnico a vigilar.</p></div>
+        <div><strong>Motivos</strong><p>volume 0.7x avg; 5D -14.8%; PLTR con volumen 1.4x promedio y aumento de 10.8% en 5 días.; TSLA con aumento de precio del 13.3% en 5 días y volumen cercano al promedio.; ARM con volumen muy bajo (0.4x promedio) y caída del 6% en 5 días.</p></div>
+        <div><strong>Métricas</strong><p>Price: 27.65; Rsi: 40.38; Perf 5d: -14.79; Perf 20d: -44.89; Perf 60d: 25.40; Volume ratio: 0.68; Volume: 51621000.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/SMCI">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
         </tr><tr>
-          <td><div class="company">PLTR</div><div class="muted">PLTR unusual volume</div></td>
-          <td><span class="pill quiet">62/100</span></td>
+          <td><div class="company">PLTR</div><div class="muted">PLTR volumen inusual</div></td>
+          <td><span class="pill watch">62/100</span></td>
           <td>watch</td>
-          <td>Palantir has abnormal volume or technical movement to monitor.<div class="reason">volume 1.4x avg; 5D +10.8%</div></td>
-          <td><a href="https://finance.yahoo.com/quote/PLTR">source</a></td>
+          <td>Palantir presenta volumen anormal o movimiento tecnico a vigilar.<div class="reason">volume 1.4x avg; 5D +10.8%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>Palantir presenta volumen anormal o movimiento tecnico a vigilar.</p></div>
+        <div><strong>Motivos</strong><p>volume 1.4x avg; 5D +10.8%; PLTR con volumen 1.4x promedio y aumento de 10.8% en 5 días.; TSLA con aumento de precio del 13.3% en 5 días y volumen cercano al promedio.; ARM con volumen muy bajo (0.4x promedio) y caída del 6% en 5 días.</p></div>
+        <div><strong>Métricas</strong><p>Price: 125.73; Rsi: 48.37; Perf 5d: 10.78; Perf 20d: -17.38; Perf 60d: -15.01; Volume ratio: 1.37; Volume: 58390700.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/PLTR">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
         </tr><tr>
-          <td><div class="company">TSLA</div><div class="muted">TSLA unusual volume</div></td>
-          <td><span class="pill quiet">62/100</span></td>
+          <td><div class="company">TSLA</div><div class="muted">TSLA volumen inusual</div></td>
+          <td><span class="pill watch">62/100</span></td>
           <td>watch</td>
-          <td>Tesla has abnormal volume or technical movement to monitor.<div class="reason">volume 0.8x avg; 5D +13.3%</div></td>
-          <td><a href="https://finance.yahoo.com/quote/TSLA">source</a></td>
+          <td>Tesla presenta volumen anormal o movimiento tecnico a vigilar.<div class="reason">volume 0.8x avg; 5D +13.3%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>Tesla presenta volumen anormal o movimiento tecnico a vigilar.</p></div>
+        <div><strong>Motivos</strong><p>volume 0.8x avg; 5D +13.3%; PLTR con volumen 1.4x promedio y aumento de 10.8% en 5 días.; TSLA con aumento de precio del 13.3% en 5 días y volumen cercano al promedio.; ARM con volumen muy bajo (0.4x promedio) y caída del 6% en 5 días.</p></div>
+        <div><strong>Métricas</strong><p>Price: 425.30; Rsi: 58.24; Perf 5d: 13.25; Perf 20d: 0.37; Perf 60d: 20.54; Volume ratio: 0.83; Volume: 39967100.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/TSLA">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
         </tr><tr>
-          <td><div class="company">HOOD</div><div class="muted">HOOD unusual volume</div></td>
-          <td><span class="pill quiet">62/100</span></td>
+          <td><div class="company">HOOD</div><div class="muted">HOOD volumen inusual</div></td>
+          <td><span class="pill watch">62/100</span></td>
           <td>watch</td>
-          <td>Robinhood has abnormal volume or technical movement to monitor.<div class="reason">volume 0.8x avg; 5D +11.8%</div></td>
-          <td><a href="https://finance.yahoo.com/quote/HOOD">source</a></td>
+          <td>Robinhood presenta volumen anormal o movimiento tecnico a vigilar.<div class="reason">volume 0.8x avg; 5D +11.8%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>Robinhood presenta volumen anormal o movimiento tecnico a vigilar.</p></div>
+        <div><strong>Motivos</strong><p>volume 0.8x avg; 5D +11.8%; PLTR con volumen 1.4x promedio y aumento de 10.8% en 5 días.; TSLA con aumento de precio del 13.3% en 5 días y volumen cercano al promedio.; ARM con volumen muy bajo (0.4x promedio) y caída del 6% en 5 días.</p></div>
+        <div><strong>Métricas</strong><p>Price: 108.65; Rsi: 64.37; Perf 5d: 11.79; Perf 20d: 23.24; Perf 60d: 55.70; Volume ratio: 0.84; Volume: 28019900.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/HOOD">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
         </tr><tr>
-          <td><div class="company">COIN</div><div class="muted">COIN unusual volume</div></td>
-          <td><span class="pill quiet">60/100</span></td>
+          <td><div class="company">COIN</div><div class="muted">COIN volumen inusual</div></td>
+          <td><span class="pill watch">60/100</span></td>
           <td>watch</td>
-          <td>Coinbase has abnormal volume or technical movement to monitor.<div class="reason">volume 1.3x avg; 5D +6.1%</div></td>
-          <td><a href="https://finance.yahoo.com/quote/COIN">source</a></td>
+          <td>Coinbase presenta volumen anormal o movimiento tecnico a vigilar.<div class="reason">volume 1.3x avg; 5D +6.1%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>Coinbase presenta volumen anormal o movimiento tecnico a vigilar.</p></div>
+        <div><strong>Motivos</strong><p>volume 1.3x avg; 5D +6.1%; PLTR con volumen 1.4x promedio y aumento de 10.8% en 5 días.; TSLA con aumento de precio del 13.3% en 5 días y volumen cercano al promedio.; ARM con volumen muy bajo (0.4x promedio) y caída del 6% en 5 días.</p></div>
+        <div><strong>Métricas</strong><p>Price: 159.24; Rsi: 47.03; Perf 5d: 6.08; Perf 20d: -8.48; Perf 60d: -8.90; Volume ratio: 1.34; Volume: 11929500.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/COIN">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
         </tr><tr>
-          <td><div class="company">ARM</div><div class="muted">ARM unusual volume</div></td>
-          <td><span class="pill quiet">54/100</span></td>
+          <td><div class="company">ARM</div><div class="muted">ARM volumen inusual</div></td>
+          <td><span class="pill watch">54/100</span></td>
           <td>watch</td>
-          <td>Arm Holdings has abnormal volume or technical movement to monitor.<div class="reason">volume 0.4x avg; 5D -6.0%</div></td>
-          <td><a href="https://finance.yahoo.com/quote/ARM">source</a></td>
+          <td>Arm Holdings presenta volumen anormal o movimiento tecnico a vigilar.<div class="reason">volume 0.4x avg; 5D -6.0%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>Arm Holdings presenta volumen anormal o movimiento tecnico a vigilar.</p></div>
+        <div><strong>Motivos</strong><p>volume 0.4x avg; 5D -6.0%; PLTR con volumen 1.4x promedio y aumento de 10.8% en 5 días.; TSLA con aumento de precio del 13.3% en 5 días y volumen cercano al promedio.; ARM con volumen muy bajo (0.4x promedio) y caída del 6% en 5 días.</p></div>
+        <div><strong>Métricas</strong><p>Price: 337.47; Rsi: 48.81; Perf 5d: -6.02; Perf 20d: -16.20; Perf 60d: 126.84; Volume ratio: 0.44; Volume: 5047500.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/ARM">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
         </tr><tr>
-          <td><div class="company">MSFT</div><div class="muted">MSFT unusual volume</div></td>
-          <td><span class="pill quiet">53/100</span></td>
+          <td><div class="company">MSFT</div><div class="muted">MSFT volumen inusual</div></td>
+          <td><span class="pill watch">53/100</span></td>
           <td>watch</td>
-          <td>Microsoft has abnormal volume or technical movement to monitor.<div class="reason">volume 1.0x avg; 5D +5.1%</div></td>
-          <td><a href="https://finance.yahoo.com/quote/MSFT">source</a></td>
+          <td>Microsoft presenta volumen anormal o movimiento tecnico a vigilar.<div class="reason">volume 1.0x avg; 5D +5.1%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>Microsoft presenta volumen anormal o movimiento tecnico a vigilar.</p></div>
+        <div><strong>Motivos</strong><p>volume 1.0x avg; 5D +5.1%; PLTR con volumen 1.4x promedio y aumento de 10.8% en 5 días.; TSLA con aumento de precio del 13.3% en 5 días y volumen cercano al promedio.; ARM con volumen muy bajo (0.4x promedio) y caída del 6% en 5 días.</p></div>
+        <div><strong>Métricas</strong><p>Price: 384.28; Rsi: 46.94; Perf 5d: 5.15; Perf 20d: -12.92; Perf 60d: 3.06; Volume ratio: 0.98; Volume: 47966000.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/MSFT">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
         </tr><tr>
-          <td><div class="company">AMD</div><div class="muted">AMD unusual volume</div></td>
-          <td><span class="pill quiet">51/100</span></td>
+          <td><div class="company">AMD</div><div class="muted">AMD volumen inusual</div></td>
+          <td><span class="pill watch">51/100</span></td>
           <td>watch</td>
-          <td>Advanced Micro Devices has abnormal volume or technical movement to monitor.<div class="reason">volume 0.9x avg; 5D +4.1%</div></td>
-          <td><a href="https://finance.yahoo.com/quote/AMD">source</a></td>
+          <td>Advanced Micro Devices presenta volumen anormal o movimiento tecnico a vigilar.<div class="reason">volume 0.9x avg; 5D +4.1%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>Advanced Micro Devices presenta volumen anormal o movimiento tecnico a vigilar.</p></div>
+        <div><strong>Motivos</strong><p>volume 0.9x avg; 5D +4.1%; PLTR con volumen 1.4x promedio y aumento de 10.8% en 5 días.; TSLA con aumento de precio del 13.3% en 5 días y volumen cercano al promedio.; ARM con volumen muy bajo (0.4x promedio) y caída del 6% en 5 días.</p></div>
+        <div><strong>Métricas</strong><p>Price: 540.88; Rsi: 56.48; Perf 5d: 4.07; Perf 20d: 3.71; Perf 60d: 145.65; Volume ratio: 0.88; Volume: 28186200.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/AMD">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
         </tr><tr>
-          <td><div class="company">AVGO</div><div class="muted">AVGO unusual volume</div></td>
-          <td><span class="pill quiet">50/100</span></td>
+          <td><div class="company">AVGO</div><div class="muted">AVGO volumen inusual</div></td>
+          <td><span class="pill watch">50/100</span></td>
           <td>watch</td>
-          <td>Broadcom has abnormal volume or technical movement to monitor.<div class="reason">volume 0.6x avg; 5D -3.3%</div></td>
-          <td><a href="https://finance.yahoo.com/quote/AVGO">source</a></td>
+          <td>Broadcom presenta volumen anormal o movimiento tecnico a vigilar.<div class="reason">volume 0.6x avg; 5D -3.3%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>Broadcom presenta volumen anormal o movimiento tecnico a vigilar.</p></div>
+        <div><strong>Motivos</strong><p>volume 0.6x avg; 5D -3.3%; PLTR con volumen 1.4x promedio y aumento de 10.8% en 5 días.; TSLA con aumento de precio del 13.3% en 5 días y volumen cercano al promedio.; ARM con volumen muy bajo (0.4x promedio) y caída del 6% en 5 días.</p></div>
+        <div><strong>Métricas</strong><p>Price: 369.34; Rsi: 42.00; Perf 5d: -3.33; Perf 20d: -23.31; Perf 60d: 17.46; Volume ratio: 0.65; Volume: 23652000.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/AVGO">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
         </tr><tr>
-          <td><div class="company">MSTR</div><div class="muted">MSTR unusual volume</div></td>
-          <td><span class="pill quiet">50/100</span></td>
+          <td><div class="company">MSTR</div><div class="muted">MSTR volumen inusual</div></td>
+          <td><span class="pill watch">50/100</span></td>
           <td>watch</td>
-          <td>MicroStrategy has abnormal volume or technical movement to monitor.<div class="reason">volume 1.2x avg; 5D -0.8%</div></td>
-          <td><a href="https://finance.yahoo.com/quote/MSTR">source</a></td>
+          <td>MicroStrategy presenta volumen anormal o movimiento tecnico a vigilar.<div class="reason">volume 1.2x avg; 5D -0.8%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>MicroStrategy presenta volumen anormal o movimiento tecnico a vigilar.</p></div>
+        <div><strong>Motivos</strong><p>volume 1.2x avg; 5D -0.8%; PLTR con volumen 1.4x promedio y aumento de 10.8% en 5 días.; TSLA con aumento de precio del 13.3% en 5 días y volumen cercano al promedio.; ARM con volumen muy bajo (0.4x promedio) y caída del 6% en 5 días.</p></div>
+        <div><strong>Métricas</strong><p>Price: 93.39; Rsi: 35.35; Perf 5d: -0.79; Perf 20d: -31.37; Perf 60d: -26.86; Volume ratio: 1.21; Volume: 34244400.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/MSTR">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
         </tr><tr>
-          <td><div class="company">SPY</div><div class="muted">SPY unusual volume</div></td>
+          <td><div class="company">SPY</div><div class="muted">SPY volumen inusual</div></td>
           <td><span class="pill quiet">48/100</span></td>
           <td>watch</td>
-          <td>S&amp;P 500 ETF has abnormal volume or technical movement to monitor.<div class="reason">volume 0.7x avg; 5D +1.7%</div></td>
-          <td><a href="https://finance.yahoo.com/quote/SPY">source</a></td>
+          <td>S&amp;P 500 ETF presenta volumen anormal o movimiento tecnico a vigilar.<div class="reason">volume 0.7x avg; 5D +1.7%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>S&amp;P 500 ETF presenta volumen anormal o movimiento tecnico a vigilar.</p></div>
+        <div><strong>Motivos</strong><p>volume 0.7x avg; 5D +1.7%</p></div>
+        <div><strong>Métricas</strong><p>Price: 745.76; Rsi: 54.23; Perf 5d: 1.71; Perf 20d: -1.82; Perf 60d: 13.18; Volume ratio: 0.73; Volume: 46886600.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/SPY">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
         </tr><tr>
-          <td><div class="company">QQQ</div><div class="muted">QQQ unusual volume</div></td>
+          <td><div class="company">QQQ</div><div class="muted">QQQ volumen inusual</div></td>
           <td><span class="pill quiet">48/100</span></td>
           <td>watch</td>
-          <td>Nasdaq 100 ETF has abnormal volume or technical movement to monitor.<div class="reason">volume 0.7x avg; 5D +2.0%</div></td>
-          <td><a href="https://finance.yahoo.com/quote/QQQ">source</a></td>
+          <td>Nasdaq 100 ETF presenta volumen anormal o movimiento tecnico a vigilar.<div class="reason">volume 0.7x avg; 5D +2.0%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>Nasdaq 100 ETF presenta volumen anormal o movimiento tecnico a vigilar.</p></div>
+        <div><strong>Motivos</strong><p>volume 0.7x avg; 5D +2.0%</p></div>
+        <div><strong>Métricas</strong><p>Price: 725.17; Rsi: 52.43; Perf 5d: 2.05; Perf 20d: -2.81; Perf 60d: 23.22; Volume ratio: 0.75; Volume: 40258000.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/QQQ">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
         </tr><tr>
-          <td><div class="company">AAPL</div><div class="muted">AAPL unusual volume</div></td>
+          <td><div class="company">AAPL</div><div class="muted">AAPL volumen inusual</div></td>
           <td><span class="pill quiet">46/100</span></td>
           <td>watch</td>
-          <td>Apple has abnormal volume or technical movement to monitor.<div class="reason">volume 0.7x avg; 5D +0.4%</div></td>
-          <td><a href="https://finance.yahoo.com/quote/AAPL">source</a></td>
+          <td>Apple presenta volumen anormal o movimiento tecnico a vigilar.<div class="reason">volume 0.7x avg; 5D +0.4%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>Apple presenta volumen anormal o movimiento tecnico a vigilar.</p></div>
+        <div><strong>Motivos</strong><p>volume 0.7x avg; 5D +0.4%</p></div>
+        <div><strong>Métricas</strong><p>Price: 294.38; Rsi: 50.97; Perf 5d: 0.44; Perf 20d: -6.61; Perf 60d: 13.72; Volume ratio: 0.74; Volume: 50109500.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/AAPL">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
         </tr><tr>
-          <td><div class="company">NVDA</div><div class="muted">NVDA unusual volume</div></td>
+          <td><div class="company">NVDA</div><div class="muted">NVDA volumen inusual</div></td>
           <td><span class="pill quiet">46/100</span></td>
           <td>watch</td>
-          <td>Nvidia has abnormal volume or technical movement to monitor.<div class="reason">volume 0.9x avg; 5D -0.7%</div></td>
-          <td><a href="https://finance.yahoo.com/quote/NVDA">source</a></td>
+          <td>Nvidia presenta volumen anormal o movimiento tecnico a vigilar.<div class="reason">volume 0.9x avg; 5D -0.7%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>Nvidia presenta volumen anormal o movimiento tecnico a vigilar.</p></div>
+        <div><strong>Motivos</strong><p>volume 0.9x avg; 5D -0.7%</p></div>
+        <div><strong>Métricas</strong><p>Price: 197.58; Rsi: 43.26; Perf 5d: -0.71; Perf 20d: -11.33; Perf 60d: 11.22; Volume ratio: 0.92; Volume: 145771900.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/NVDA">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
         </tr><tr>
-          <td><div class="company">SMH</div><div class="muted">SMH unusual volume</div></td>
+          <td><div class="company">SMH</div><div class="muted">SMH volumen inusual</div></td>
           <td><span class="pill quiet">46/100</span></td>
           <td>watch</td>
-          <td>Semiconductor ETF has abnormal volume or technical movement to monitor.<div class="reason">volume 1.1x avg; 5D +0.2%</div></td>
-          <td><a href="https://finance.yahoo.com/quote/SMH">source</a></td>
+          <td>Semiconductor ETF presenta volumen anormal o movimiento tecnico a vigilar.<div class="reason">volume 1.1x avg; 5D +0.2%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>Semiconductor ETF presenta volumen anormal o movimiento tecnico a vigilar.</p></div>
+        <div><strong>Motivos</strong><p>volume 1.1x avg; 5D +0.2%</p></div>
+        <div><strong>Métricas</strong><p>Price: 620.46; Rsi: 51.94; Perf 5d: 0.25; Perf 20d: -1.86; Perf 60d: 56.69; Volume ratio: 1.05; Volume: 13305700.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/SMH">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
         </tr></tbody></table></div>
     </div>
   </section>
-  <footer>Generado: 2026-07-02 07:59 UTC. Fuente: config_unusual_volume.yaml.</footer>
+  <footer>Generado: 2026-07-02 09:50 UTC. Investigación automatizada con datos públicos; no es asesoramiento financiero personalizado.</footer>
 </div>
 </body>
 </html>

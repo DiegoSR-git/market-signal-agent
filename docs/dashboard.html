@@ -1,6 +1,128 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Market Signal Agent</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>body{font-family:system-ui;margin:32px;background:#0b0f19;color:#e5e7eb}.card{background:#111827;border:1px solid #273449;border-radius:14px;padding:20px;margin:18px 0}table{width:100%;border-collapse:collapse}td,th{border-bottom:1px solid #273449;padding:10px;text-align:left}.score{font-size:42px;font-weight:800}.muted{color:#9ca3af}</style></head><body>
-<h1>Market Signal Agent Dashboard</h1><p class="muted">Actualizado: 2026-07-02 07:39 UTC</p>
-<div class="card"><h2>BTC</h2><div class="score">31/100</div><p><b>Estado:</b> ⚪ SIN SEÑAL</p><p><b>Precio:</b> 52,766 €</p><p><b>Regime:</b> RISK_ON</p><p><b>RSI:</b> 38.7 | <b>SMA200:</b> 64,406 €</p><p><b>Fear:</b> 19 | <b>ETF total:</b> N/A | <b>IBIT:</b> N/A | <b>OI 24h:</b> N/A</p></div>
-<div class="card"><h2>Órdenes BTC</h2><table><thead><tr><th>ID</th><th>Precio</th><th>Importe</th><th>Estado</th><th>Veces</th></tr></thead><tbody><tr><td>btc_52000</td><td>52,000 €</td><td>1,500 €</td><td>Tocada</td><td>30</td></tr><tr><td>btc_50000</td><td>50,000 €</td><td>2,000 €</td><td>Pendiente</td><td>0</td></tr><tr><td>btc_48500</td><td>48,500 €</td><td>2,000 €</td><td>Pendiente</td><td>0</td></tr><tr><td>btc_46700</td><td>46,700 €</td><td>2,500 €</td><td>Pendiente</td><td>0</td></tr><tr><td>btc_44000</td><td>44,000 €</td><td>2,000 €</td><td>Pendiente</td><td>0</td></tr></tbody></table></div>
-<div class="card"><h2>Bolsa / ETFs</h2><table><thead><tr><th>Símbolo</th><th>Score</th><th>RSI</th><th>DD52s</th><th>Dist. SMA200</th></tr></thead><tbody><tr><td>GOOGL</td><td>50</td><td>50.3</td><td>-10.3%</td><td>+14.4%</td></tr><tr><td>AMZN</td><td>50</td><td>47.8</td><td>-12.1%</td><td>+3.8%</td></tr><tr><td>META</td><td>50</td><td>58.5</td><td>-22.4%</td><td>-5.3%</td></tr></tbody></table></div>
-</body></html>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel BTC Y Mercado</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #080b10;
+      --panel: #101720;
+      --panel-2: #0d131b;
+      --panel-3: #151f2a;
+      --line: #263545;
+      --text: #eef4fb;
+      --muted: #9eacbb;
+      --green: #42d392;
+      --yellow: #f4c95d;
+      --red: #ff6f61;
+      --blue: #69b7ff;
+      --cyan: #57d6d1;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top left, rgba(87, 214, 209, .08), transparent 34rem), var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.45;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .shell { width: min(1440px, calc(100% - 40px)); margin: 0 auto; padding: 28px 0 44px; }
+    .topbar { display: flex; justify-content: space-between; gap: 18px; align-items: flex-start; margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+    h1 { margin: 0; font-size: clamp(30px, 4vw, 54px); letter-spacing: 0; line-height: 1.02; }
+    h2 { margin: 0 0 12px; font-size: 18px; }
+    h3 { margin: 0; font-size: 15px; color: var(--muted); font-weight: 650; }
+    .muted { color: var(--muted); }
+    .nav { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+    .btn { border: 1px solid var(--line); background: #172231; color: var(--text); padding: 9px 12px; border-radius: 8px; font-weight: 750; display: inline-flex; align-items: center; justify-content: center; min-height: 38px; }
+    .btn.primary { border-color: rgba(66, 211, 146, .45); background: rgba(66, 211, 146, .12); color: var(--green); }
+    .btn.compact { min-height: 32px; padding: 6px 9px; font-size: 12px; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,.025), transparent), var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; min-width: 0; box-shadow: 0 14px 30px rgba(0,0,0,.18); }
+    .span-3 { grid-column: span 3; }
+    .span-4 { grid-column: span 4; }
+    .span-5 { grid-column: span 5; }
+    .span-7 { grid-column: span 7; }
+    .span-8 { grid-column: span 8; }
+    .span-12 { grid-column: span 12; }
+    .metric { font-size: 34px; line-height: 1.05; font-weight: 800; margin: 8px 0 4px; }
+    .metric.small { font-size: 20px; }
+    .submetric { color: var(--muted); font-size: 13px; }
+    .intro { color: var(--muted); max-width: 920px; margin: 0 0 14px; }
+    .pill { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; padding: 4px 9px; font-size: 12px; font-weight: 800; color: var(--muted); }
+    .pill.hot { color: var(--green); border-color: rgba(61, 220, 151, .35); background: rgba(61, 220, 151, .08); }
+    .pill.watch { color: var(--yellow); border-color: rgba(247, 201, 72, .35); background: rgba(247, 201, 72, .08); }
+    .pill.quiet { color: var(--muted); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 10px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+    td { font-size: 14px; }
+    tr:last-child td { border-bottom: 0; }
+    .table-wrap { overflow-x: auto; }
+    .company { font-weight: 800; }
+    .reason { color: var(--muted); font-size: 12px; margin-top: 3px; max-width: 520px; }
+    .details { margin-top: 8px; color: var(--muted); }
+    .details summary { cursor: pointer; color: var(--blue); font-weight: 750; font-size: 12px; }
+    .detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 10px; padding: 12px; background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; }
+    .detail-grid strong { color: var(--text); display: block; margin-bottom: 4px; font-size: 12px; text-transform: uppercase; }
+    .detail-grid p { margin: 0; font-size: 13px; }
+    .status-line { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .bar { height: 8px; background: #1a2430; border-radius: 999px; overflow: hidden; margin-top: 10px; }
+    .bar > span { display: block; height: 100%; background: var(--green); width: var(--w); }
+    footer { color: var(--muted); font-size: 12px; margin-top: 20px; }
+    @media (max-width: 980px) {
+      .span-3, .span-4, .span-5, .span-7, .span-8 { grid-column: span 12; }
+      .topbar { display: block; }
+      .nav { justify-content: flex-start; margin-top: 16px; }
+      .detail-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+  <div class="topbar">
+    <div>
+      <h1>Panel BTC Y Mercado</h1>
+      <div class="muted">Seguimiento de BTC, órdenes planificadas y oportunidades técnicas en bolsa/ETFs.</div>
+    </div>
+    <nav class="nav">
+      <a class="btn primary" href="opportunities.html">Oportunidades Claras</a>
+      <a class="btn" href="index.html">Resumen</a>
+      <a class="btn" href="event_rumor_dashboard.html">Rumores</a>
+      <a class="btn" href="https://github.com/DiegoSR-git/market-signal-agent/actions">Actions</a>
+    </nav>
+  </div>
+  <section class="grid">
+    <div class="card span-4">
+      <h3>Score BTC</h3>
+      <div class="metric">31/100</div>
+      <div class="submetric">⚪ SIN SEÑAL</div>
+    </div>
+    <div class="card span-4">
+      <h3>Precio</h3>
+      <div class="metric">52,766 €</div>
+      <div class="submetric">RSI 38.7 · SMA200 64,406 €</div>
+    </div>
+    <div class="card span-4">
+      <h3>Contexto</h3>
+      <div class="metric small">RISK_ON</div>
+      <div class="submetric">Miedo 19 · ETF N/A · OI 24h N/A</div>
+    </div>
+    <div class="card span-7">
+      <h2>Órdenes BTC</h2>
+      <p class="intro">Plan de niveles y tramos configurados. La tabla muestra qué órdenes se han tocado y cuántas veces han aparecido en las ejecuciones del agente.</p>
+      <div class="table-wrap"><table><thead><tr><th>ID</th><th>Precio</th><th>Importe</th><th>Estado</th><th>Veces</th></tr></thead><tbody><tr><td>btc_52000</td><td>52,000 €</td><td>1,500 €</td><td>Tocada</td><td>30</td></tr><tr><td>btc_50000</td><td>50,000 €</td><td>2,000 €</td><td>Pendiente</td><td>0</td></tr><tr><td>btc_48500</td><td>48,500 €</td><td>2,000 €</td><td>Pendiente</td><td>0</td></tr><tr><td>btc_46700</td><td>46,700 €</td><td>2,500 €</td><td>Pendiente</td><td>0</td></tr><tr><td>btc_44000</td><td>44,000 €</td><td>2,000 €</td><td>Pendiente</td><td>0</td></tr></tbody></table></div>
+    </div>
+    <div class="card span-5">
+      <h2>Bolsa / ETFs</h2>
+      <p class="intro">Candidatas técnicas detectadas por score, RSI, drawdown y distancia a SMA200.</p>
+      <div class="table-wrap"><table><thead><tr><th>Símbolo</th><th>Score</th><th>RSI</th><th>DD52s</th><th>Dist. SMA200</th></tr></thead><tbody><tr><td>GOOGL</td><td>50</td><td>50.3</td><td>-10.3%</td><td>+14.4%</td></tr><tr><td>AMZN</td><td>50</td><td>47.8</td><td>-12.1%</td><td>+3.8%</td></tr><tr><td>META</td><td>50</td><td>58.5</td><td>-22.4%</td><td>-5.3%</td></tr></tbody></table></div>
+    </div>
+  </section>
+  <footer>Actualizado: 2026-07-02 09:50 UTC. Investigación automatizada con datos públicos; no es asesoramiento financiero personalizado.</footer>
+</div>
+</body>
+</html>

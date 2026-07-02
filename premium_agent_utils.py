@@ -16,7 +16,7 @@ import pandas as pd
 import requests
 import yaml
 
-from dashboard_utils import render_page, render_home_dashboard
+from dashboard_utils import detail_block, render_page, render_home_dashboard, render_opportunities_dashboard
 
 
 GITHUB_MODELS_ENDPOINT = os.getenv(
@@ -889,12 +889,13 @@ class PremiumResearchAgent:
             reasons = "; ".join(str(x) for x in event.get("reasons", [])[:4])
             source = event.get("source")
             source_html = f'<a href="{esc(source)}">fuente</a>' if source else "N/A"
+            details = detail_block(event.get("summary"), event.get("reasons", []), event.get("metrics", {}), source)
             rows.append(
                 f"""<tr>
           <td><div class="company">{esc(event.get('asset'))}</div><div class="muted">{esc(event.get('title'))}</div></td>
           <td><span class="pill {'hot' if event.get('score', 0) >= 80 else 'watch' if event.get('score', 0) >= 65 else 'quiet'}">{esc(event.get('score'))}/100</span></td>
           <td>{esc(event.get('level'))}</td>
-          <td>{esc(event.get('summary'))}<div class="reason">{esc(reasons)}</div></td>
+          <td>{esc(event.get('summary'))}<div class="reason">{esc(reasons)}</div>{details}</td>
           <td>{source_html}</td>
         </tr>"""
             )
@@ -915,6 +916,7 @@ class PremiumResearchAgent:
       <div class="muted">Investigacion automatizada premium. Solo datos publicos. No es asesoramiento financiero personalizado.</div>
     </div>
     <nav class="nav">
+      <a class="btn primary" href="opportunities.html">Oportunidades Claras</a>
       <a class="btn" href="index.html">Resumen</a>
       <a class="btn" href="https://github.com/DiegoSR-git/market-signal-agent/actions">Actions</a>
     </nav>
@@ -927,6 +929,7 @@ class PremiumResearchAgent:
     {ai_html}
     <div class="card span-12">
       <h2>Ranking</h2>
+      <p class="intro">Este panel prioriza eventos detectados por el agente. Revisa el detalle desplegable de cada fila para entender la tesis, los motivos de score, las métricas clave y la fuente antes de tomar decisiones.</p>
       <div class="table-wrap"><table><thead><tr><th>Activo</th><th>Score</th><th>Nivel</th><th>Lectura</th><th>Fuente</th></tr></thead><tbody>{''.join(rows) if rows else '<tr><td colspan="5">Sin datos</td></tr>'}</tbody></table></div>
     </div>
   </section>
@@ -935,6 +938,7 @@ class PremiumResearchAgent:
         self.dashboard_file.write_text(render_page(self.name, body), encoding="utf-8")
         try:
             render_home_dashboard("docs/index.html")
+            render_opportunities_dashboard("docs/opportunities.html")
         except Exception as ex:
             log(f"Actualizacion del panel principal omitida: {ex}")
 

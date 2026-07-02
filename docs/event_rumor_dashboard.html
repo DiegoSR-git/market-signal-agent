@@ -3,41 +3,45 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Event Rumor Watch</title>
+  <title>Radar De Rumores Y Eventos</title>
   <style>
     :root {
       color-scheme: dark;
-      --bg: #090d14;
-      --panel: #111821;
+      --bg: #080b10;
+      --panel: #101720;
       --panel-2: #0d131b;
-      --line: #263241;
-      --text: #e7edf5;
-      --muted: #9aa7b7;
-      --green: #3ddc97;
-      --yellow: #f7c948;
-      --red: #ff6b6b;
-      --blue: #5aa9ff;
+      --panel-3: #151f2a;
+      --line: #263545;
+      --text: #eef4fb;
+      --muted: #9eacbb;
+      --green: #42d392;
+      --yellow: #f4c95d;
+      --red: #ff6f61;
+      --blue: #69b7ff;
+      --cyan: #57d6d1;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      background: var(--bg);
+      background: radial-gradient(circle at top left, rgba(87, 214, 209, .08), transparent 34rem), var(--bg);
       color: var(--text);
       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.45;
     }
     a { color: var(--blue); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .shell { width: min(1420px, calc(100% - 40px)); margin: 0 auto; padding: 28px 0 44px; }
-    .topbar { display: flex; justify-content: space-between; gap: 18px; align-items: flex-start; margin-bottom: 24px; }
+    .shell { width: min(1440px, calc(100% - 40px)); margin: 0 auto; padding: 28px 0 44px; }
+    .topbar { display: flex; justify-content: space-between; gap: 18px; align-items: flex-start; margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
     h1 { margin: 0; font-size: clamp(30px, 4vw, 54px); letter-spacing: 0; line-height: 1.02; }
     h2 { margin: 0 0 12px; font-size: 18px; }
     h3 { margin: 0; font-size: 15px; color: var(--muted); font-weight: 650; }
     .muted { color: var(--muted); }
     .nav { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
-    .btn { border: 1px solid var(--line); background: #18212c; color: var(--text); padding: 9px 12px; border-radius: 8px; font-weight: 700; }
+    .btn { border: 1px solid var(--line); background: #172231; color: var(--text); padding: 9px 12px; border-radius: 8px; font-weight: 750; display: inline-flex; align-items: center; justify-content: center; min-height: 38px; }
+    .btn.primary { border-color: rgba(66, 211, 146, .45); background: rgba(66, 211, 146, .12); color: var(--green); }
+    .btn.compact { min-height: 32px; padding: 6px 9px; font-size: 12px; }
     .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
-    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; min-width: 0; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,.025), transparent), var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; min-width: 0; box-shadow: 0 14px 30px rgba(0,0,0,.18); }
     .span-3 { grid-column: span 3; }
     .span-4 { grid-column: span 4; }
     .span-5 { grid-column: span 5; }
@@ -45,7 +49,9 @@
     .span-8 { grid-column: span 8; }
     .span-12 { grid-column: span 12; }
     .metric { font-size: 34px; line-height: 1.05; font-weight: 800; margin: 8px 0 4px; }
+    .metric.small { font-size: 20px; }
     .submetric { color: var(--muted); font-size: 13px; }
+    .intro { color: var(--muted); max-width: 920px; margin: 0 0 14px; }
     .pill { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; padding: 4px 9px; font-size: 12px; font-weight: 800; color: var(--muted); }
     .pill.hot { color: var(--green); border-color: rgba(61, 220, 151, .35); background: rgba(61, 220, 151, .08); }
     .pill.watch { color: var(--yellow); border-color: rgba(247, 201, 72, .35); background: rgba(247, 201, 72, .08); }
@@ -58,6 +64,11 @@
     .table-wrap { overflow-x: auto; }
     .company { font-weight: 800; }
     .reason { color: var(--muted); font-size: 12px; margin-top: 3px; max-width: 520px; }
+    .details { margin-top: 8px; color: var(--muted); }
+    .details summary { cursor: pointer; color: var(--blue); font-weight: 750; font-size: 12px; }
+    .detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 10px; padding: 12px; background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; }
+    .detail-grid strong { color: var(--text); display: block; margin-bottom: 4px; font-size: 12px; text-transform: uppercase; }
+    .detail-grid p { margin: 0; font-size: 13px; }
     .status-line { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
     .bar { height: 8px; background: #1a2430; border-radius: 999px; overflow: hidden; margin-top: 10px; }
     .bar > span { display: block; height: 100%; background: var(--green); width: var(--w); }
@@ -66,6 +77,7 @@
       .span-3, .span-4, .span-5, .span-7, .span-8 { grid-column: span 12; }
       .topbar { display: block; }
       .nav { justify-content: flex-start; margin-top: 16px; }
+      .detail-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -73,10 +85,11 @@
 <div class="shell">
   <div class="topbar">
     <div>
-      <h1>Event Rumor Watch</h1>
+      <h1>Radar De Rumores Y Eventos</h1>
       <div class="muted">Oportunidades públicas por noticias, rumores, eventos corporativos y momentum.</div>
     </div>
     <nav class="nav">
+      <a class="btn primary" href="opportunities.html">Oportunidades Claras</a>
       <a class="btn" href="index.html">Resumen</a>
       <a class="btn" href="dashboard.html">BTC</a>
       <a class="btn" href="https://github.com/DiegoSR-git/market-signal-agent/actions">Actions</a>
@@ -86,14 +99,23 @@
     <div class="card span-3"><h3>Empresas Analizadas</h3><div class="metric">12</div><div class="submetric">ordenadas por score</div></div>
     <div class="card span-3"><h3>Score ≥ 50</h3><div class="metric">4</div><div class="submetric">candidatas calientes</div></div>
     <div class="card span-3"><h3>Score Medio</h3><div class="metric">42.0</div><div class="submetric">sobre 100</div></div>
-    <div class="card span-3"><h3>Actualizado</h3><div class="metric" style="font-size:20px">2026-07-02 07:26 UTC</div><div class="submetric">UTC</div></div>
+    <div class="card span-3"><h3>Actualizado</h3><div class="metric" style="font-size:20px">2026-07-02 09:50 UTC</div><div class="submetric">UTC</div></div>
     <div class="card span-12">
       <h2>Ranking De Catalizadores</h2>
+      <p class="intro">Lectura de mercado basada en noticias públicas, eventos corporativos y contexto técnico. Abre el detalle de cada fila para revisar tesis, motivos, métricas y fuente antes de actuar.</p>
       <div class="table-wrap"><table><thead><tr><th>Empresa</th><th>Score</th><th>Tipo</th><th>Catalizador</th><th>Precio</th><th>RSI</th><th>20D</th><th>Fuente</th></tr></thead><tbody><tr>
           <td><div class="company">GOOGL</div><div class="muted">Alphabet</div></td>
           <td><span class="pill watch">57/100</span></td>
           <td>event_window</td>
-          <td>Google Cloud Next / Made by Google<div class="reason">lanzamiento o actualización de productos AI Gemini y TPU; nuevos desarrollos en Google Cloud y AI agents</div></td>
+          <td>Google Cloud Next / Made by Google<div class="reason">lanzamiento o actualización de productos AI Gemini y TPU; nuevos desarrollos en Google Cloud y AI agents</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>Se espera innovación en AI y hardware en Google Cloud Next, potencial catalizador para el precio; vigilar anuncios oficiales para confirmar fecha y alcance.</p></div>
+        <div><strong>Motivos</strong><p>18 artículos recientes; Rumores/productos: Gemini, TPU, Google Cloud, AI agents; Evento mencionado: Google Cloud Next, Google I/O; RSI razonable: 50.3; No descontado 20D: -0.2%</p></div>
+        <div><strong>Métricas</strong><p>Price: 361.21; Rsi: 50.33; Perf 20d: -0.18; Perf 60d: 20.41; Ticker: GOOGL; Sma20: 358.50; Sma50: 370.42; Status: ok</p></div>
+        <div><strong>Fuente</strong><p><a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxQZXd0dWYyRXVOVlR5UVRUYVVCR00xTWtfeW1WOVV0eUdjNDZrWmZFTmViaDdzM09ta2JiOFExdW16THZLRVF0Ry1jYXpielVTcTU4cVZ3UlpHd3pHNUVQU1Ztc1lDMERxT2JEdnI3ZTJjR0FhczFPaGQzSnhxbGdXTnpPcnE2dEY2WG0zX1Joc3RSX1RibW5fa2RHNGZqd3c4Y09sTmkzcWd1Zw?oc=5">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
           <td>361.21</td>
           <td>50.3</td>
           <td>-0.2%</td>
@@ -102,7 +124,15 @@
           <td><div class="company">AMZN</div><div class="muted">Amazon</div></td>
           <td><span class="pill watch">53/100</span></td>
           <td>event_window</td>
-          <td>AWS re:Invent<div class="reason">nuevos chips Trainium y avances en AI agents; posibles anuncios de productos Amazon y servicios AI Bedrock</div></td>
+          <td>AWS re:Invent<div class="reason">nuevos chips Trainium y avances en AI agents; posibles anuncios de productos Amazon y servicios AI Bedrock</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>AWS re:Invent puede traer anuncios clave en AI y hardware que impulsen el momentum; seguir noticias para ajustar timing de entrada.</p></div>
+        <div><strong>Motivos</strong><p>10 artículos recientes; Rumores/productos: Trainium, agents, AWS; Evento mencionado: AWS re:Invent, Amazon devices event; RSI razonable: 47.9; No descontado 20D: -5.8%</p></div>
+        <div><strong>Métricas</strong><p>Price: 241.70; Rsi: 47.86; Perf 20d: -5.78; Perf 60d: 13.59; Ticker: AMZN; Sma20: 240.61; Sma50: 255.56; Status: ok</p></div>
+        <div><strong>Fuente</strong><p><a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE9uOGNSaXFQTzhOS3BteDlWbTlIOV9JejBNQzdyRnNEaEFsVG01bXNKTGJ6Z1ZaRmlPYXR4YUU4YU82bXBBTXlZZXowVjQ0UVN0U1pUZjlsenlwQmlYbzRaRFBrTERGUHhiOUl1bWptVl9hcmJpaTBhUm9sdGk?oc=5">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
           <td>241.70</td>
           <td>47.9</td>
           <td>-5.8%</td>
@@ -111,7 +141,15 @@
           <td><div class="company">AAPL</div><div class="muted">Apple</div></td>
           <td><span class="pill watch">52/100</span></td>
           <td>event_window</td>
-          <td>WWDC / Apple product events<div class="reason">nuevas versiones de Apple Intelligence y servicios; posibles actualizaciones en iPhone, Vision Pro y chips M-series</div></td>
+          <td>WWDC / Apple product events<div class="reason">nuevas versiones de Apple Intelligence y servicios; posibles actualizaciones en iPhone, Vision Pro y chips M-series</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>WWDC suele ser catalizador para productos y software clave; vigilar anuncios para aprovechar posible impulso previo.</p></div>
+        <div><strong>Motivos</strong><p>15 artículos recientes; Rumores/productos: iPhone, Siri; Evento mencionado: WWDC, Apple event, iPhone event; RSI razonable: 51.0; No descontado 20D: -6.6%</p></div>
+        <div><strong>Métricas</strong><p>Price: 294.38; Rsi: 50.97; Perf 20d: -6.61; Perf 60d: 13.72; Ticker: AAPL; Sma20: 294.88; Sma50: 292.67; Status: ok</p></div>
+        <div><strong>Fuente</strong><p><a href="https://news.google.com/rss/articles/CBMiUEFVX3lxTE5tVXhfYUN5SzZfUUcyT3FVeTIwcWVZU1hmQUhtN2Nnd19zNDlRclF1UzhfdTRCVnZlZmVvSDdmTUpwT1o1LUtnSTk3WGVQeUdI?oc=5">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
           <td>294.38</td>
           <td>51.0</td>
           <td>-6.6%</td>
@@ -120,7 +158,15 @@
           <td><div class="company">META</div><div class="muted">Meta Platforms</div></td>
           <td><span class="pill watch">50/100</span></td>
           <td>event_window</td>
-          <td>Meta Connect<div class="reason">lanzamiento o actualización de gafas inteligentes AI con tecnología Ray-Ban y Orion; nuevos desarrollos en mixed reality y modelos Llama</div></td>
+          <td>Meta Connect<div class="reason">lanzamiento o actualización de gafas inteligentes AI con tecnología Ray-Ban y Orion; nuevos desarrollos en mixed reality y modelos Llama</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>Meta Connect puede impulsar el precio con novedades en gafas inteligentes y realidad mixta; recomendable monitorear anuncios oficiales.</p></div>
+        <div><strong>Motivos</strong><p>11 artículos recientes; Rumores/productos: AI glasses, Ray-Ban, smart glasses; Evento mencionado: Meta Connect; RSI razonable: 58.5; No descontado 20D: +2.6%</p></div>
+        <div><strong>Métricas</strong><p>Price: 612.91; Rsi: 58.45; Perf 20d: 2.56; Perf 60d: 6.96; Ticker: META; Sma20: 578.70; Sma50: 606.95; Status: ok</p></div>
+        <div><strong>Fuente</strong><p><a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxPa282bEc3V3VuS1FiQTAzZUQ2R1NLUVU4LTJkZGRGWlh5MGl3bmJkd0ZteUgxanJzX3l6QVVrSWRkSGVWZzBzR2NYQkhrVlNKRHhlNzEyZ1I2X1d0VHczQzhNUDJ1bnE0MmYzcFJ2TlBvVWRYRFhnUlE4c2UyUV9BYkZVdWI2N3JKQWJpWVZSRUxXa0pSQkctYXNySDV5STFfbzBVMy00WERwME0?oc=5">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
           <td>612.91</td>
           <td>58.5</td>
           <td>+2.6%</td>
@@ -129,7 +175,15 @@
           <td><div class="company">MSFT</div><div class="muted">Microsoft</div></td>
           <td><span class="pill quiet">49/100</span></td>
           <td>none</td>
-          <td>Microsoft Ignite<div class="reason">12 artículos recientes; Rumores/productos: Azure AI, Surface; Evento mencionado: Microsoft Ignite, Microsoft Build</div></td>
+          <td>Microsoft Ignite<div class="reason">12 artículos recientes; Rumores/productos: Azure AI, Surface; Evento mencionado: Microsoft Ignite, Microsoft Build</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>Sin resumen IA concluyente.</p></div>
+        <div><strong>Motivos</strong><p>12 artículos recientes; Rumores/productos: Azure AI, Surface; Evento mencionado: Microsoft Ignite, Microsoft Build; RSI razonable: 46.9; No descontado 20D: -12.9%</p></div>
+        <div><strong>Métricas</strong><p>Price: 384.28; Rsi: 46.94; Perf 20d: -12.92; Perf 60d: 3.06; Ticker: MSFT; Sma20: 388.80; Sma50: 408.27; Status: ok</p></div>
+        <div><strong>Fuente</strong><p><a href="https://news.google.com/rss/articles/CBMiUEFVX3lxTE85ZDRLTnlhWWw0aGxkZjhwanBILW5IWk52UnNydzBTUjEzRTRFdGQ3cTAwc1NfalR3aWh4alIyaWpIY3ZNVEtPZHYtSng5c2dt?oc=5">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
           <td>384.28</td>
           <td>46.9</td>
           <td>-12.9%</td>
@@ -138,7 +192,15 @@
           <td><div class="company">CRM</div><div class="muted">Salesforce</div></td>
           <td><span class="pill quiet">49/100</span></td>
           <td>none</td>
-          <td>Dreamforce / Salesforce AI updates<div class="reason">11 artículos recientes; Rumores/productos: Agentforce, Slack; Evento mencionado: Dreamforce, Salesforce earnings</div></td>
+          <td>Dreamforce / Salesforce AI updates<div class="reason">11 artículos recientes; Rumores/productos: Agentforce, Slack; Evento mencionado: Dreamforce, Salesforce earnings</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>Sin resumen IA concluyente.</p></div>
+        <div><strong>Motivos</strong><p>11 artículos recientes; Rumores/productos: Agentforce, Slack; Evento mencionado: Dreamforce, Salesforce earnings; RSI razonable: 47.1; No descontado 20D: -18.7%</p></div>
+        <div><strong>Métricas</strong><p>Price: 163.23; Rsi: 47.07; Perf 20d: -18.73; Perf 60d: -11.78; Ticker: CRM; Sma20: 165.10; Sma50: 174.81; Status: ok</p></div>
+        <div><strong>Fuente</strong><p><a href="https://news.google.com/rss/articles/CBMia0FVX3lxTFB6WFR2RldjQlhkWTk1bFJaRURyZ3Awb1k3ellucjROazFJOTFXU0ZLWWRoUnpoVEp0VEV0RHVHN1lCWjBpTG5NaDJyM285dkw4dzRtWVd6ZHhOQWlTOUlXTEx6Z0tOZEgwaXVZ?oc=5">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
           <td>163.23</td>
           <td>47.1</td>
           <td>-18.7%</td>
@@ -147,7 +209,15 @@
           <td><div class="company">AMD</div><div class="muted">Advanced Micro Devices</div></td>
           <td><span class="pill quiet">35/100</span></td>
           <td>none</td>
-          <td>AMD AI / Computex / Advancing AI<div class="reason">11 artículos recientes; Rumores/productos: GPU; Evento mencionado: AMD Computex</div></td>
+          <td>AMD AI / Computex / Advancing AI<div class="reason">11 artículos recientes; Rumores/productos: GPU; Evento mencionado: AMD Computex</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>Sin resumen IA concluyente.</p></div>
+        <div><strong>Motivos</strong><p>11 artículos recientes; Rumores/productos: GPU; Evento mencionado: AMD Computex; RSI razonable: 56.5</p></div>
+        <div><strong>Métricas</strong><p>Price: 540.88; Rsi: 56.48; Perf 20d: 3.71; Perf 60d: 145.65; Ticker: AMD; Sma20: 518.07; Sma50: 455.71; Status: ok</p></div>
+        <div><strong>Fuente</strong><p><a href="https://news.google.com/rss/articles/CBMihwFBVV95cUxNSFZsa0dIOWN6ekhxZWh4X01KMzNoejZPeGtqYUViNFJTR2lZQTJhWGdHYXUxQi1DTmpjRDMyM1REZ1E0UVhkQlFKcnkzcGdiQ3JtSUxDOGhTMVp6bDFreXlVbnZvWUxYcHhIeXpqSDF3RzlTN25NTzl3YnJsRTN4cnhCOWpLSFk?oc=5">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
           <td>540.88</td>
           <td>56.5</td>
           <td>+3.7%</td>
@@ -156,7 +226,15 @@
           <td><div class="company">ARM</div><div class="muted">Arm Holdings</div></td>
           <td><span class="pill quiet">34/100</span></td>
           <td>none</td>
-          <td>Arm earnings / product roadmap<div class="reason">6 artículos recientes; Rumores/productos: CPU; Evento mencionado: Arm earnings</div></td>
+          <td>Arm earnings / product roadmap<div class="reason">6 artículos recientes; Rumores/productos: CPU; Evento mencionado: Arm earnings</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>Sin resumen IA concluyente.</p></div>
+        <div><strong>Motivos</strong><p>6 artículos recientes; Rumores/productos: CPU; Evento mencionado: Arm earnings; RSI razonable: 48.8; No descontado 20D: -16.2%</p></div>
+        <div><strong>Métricas</strong><p>Price: 337.47; Rsi: 48.81; Perf 20d: -16.20; Perf 60d: 126.84; Ticker: ARM; Sma20: 368.40; Sma50: 295.93; Status: ok</p></div>
+        <div><strong>Fuente</strong><p><a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE9VYVZYZ21SWnhrV1dwOG15SzQ0MEpkdGVPSDZxTDNUMnN5YWoxbi1VbFpoZUVydTVHV1owVmplUFNoSkUxSXRNQkhmWFdGVENhb2NHTXFQY0daLVphZUln?oc=5">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
           <td>337.47</td>
           <td>48.8</td>
           <td>-16.2%</td>
@@ -165,7 +243,15 @@
           <td><div class="company">ORCL</div><div class="muted">Oracle</div></td>
           <td><span class="pill quiet">34/100</span></td>
           <td>none</td>
-          <td>Oracle CloudWorld / earnings<div class="reason">11 artículos recientes; Rumores/productos: cloud; Evento mencionado: Oracle earnings</div></td>
+          <td>Oracle CloudWorld / earnings<div class="reason">11 artículos recientes; Rumores/productos: cloud; Evento mencionado: Oracle earnings</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>Sin resumen IA concluyente.</p></div>
+        <div><strong>Motivos</strong><p>11 artículos recientes; Rumores/productos: cloud; Evento mencionado: Oracle earnings; No descontado 20D: -41.7%</p></div>
+        <div><strong>Métricas</strong><p>Price: 142.50; Rsi: 27.49; Perf 20d: -41.74; Perf 60d: -2.09; Ticker: ORCL; Sma20: 182.59; Sma50: 187.19; Status: ok</p></div>
+        <div><strong>Fuente</strong><p><a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxQX05GYml0bFA5dGZWZkl6bUJBb3BnVWZPWVB3dGg5SFFXdm12dmdXLThqWnBIMVp3a2VUck14TWYza1AwRDhycXlfMDBCbDZudEZKbGpuV0hkMk5jcGlTSU5vRUxwUi1WaWMtUFNEYWU5eEpKLWFMeW9Ta1JSSXQ2eHFFTHM?oc=5">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
           <td>142.50</td>
           <td>27.5</td>
           <td>-41.7%</td>
@@ -174,7 +260,15 @@
           <td><div class="company">NVDA</div><div class="muted">Nvidia</div></td>
           <td><span class="pill quiet">33/100</span></td>
           <td>none</td>
-          <td>Nvidia GTC / SIGGRAPH<div class="reason">6 artículos recientes; Evento mencionado: Nvidia GTC, Nvidia AI event; RSI razonable: 43.3</div></td>
+          <td>Nvidia GTC / SIGGRAPH<div class="reason">6 artículos recientes; Evento mencionado: Nvidia GTC, Nvidia AI event; RSI razonable: 43.3</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>Sin resumen IA concluyente.</p></div>
+        <div><strong>Motivos</strong><p>6 artículos recientes; Evento mencionado: Nvidia GTC, Nvidia AI event; RSI razonable: 43.3; No descontado 20D: -11.3%</p></div>
+        <div><strong>Métricas</strong><p>Price: 197.58; Rsi: 43.26; Perf 20d: -11.33; Perf 60d: 11.22; Ticker: NVDA; Sma20: 204.48; Sma50: 209.90; Status: ok</p></div>
+        <div><strong>Fuente</strong><p><a href="https://news.google.com/rss/articles/CBMivgFBVV95cUxON2cwQlVQRFJYQUoxUER1Qy1pajQtV1VWM3NEbFJqRWl5V09GVXRRNVl1cHY5VUNnQVdZd0FJRTlhOVJFbGRyem1ES09iN0pNSGhLZnVYbXpvSVhqTkFXYlpac0I0RXFMNnc2MjQyQjJfX2tzdlVTTS1vNVR0UkVtcWdYVEhYVmNKeDJtaGpZbEhpcEJxektHNkpIeGtIbi1iQzdDOE1fRW52REVqY0Y5Q1ZLcVJWNVk1Tm1QdjN3?oc=5">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
           <td>197.58</td>
           <td>43.3</td>
           <td>-11.3%</td>
@@ -183,7 +277,15 @@
           <td><div class="company">AVGO</div><div class="muted">Broadcom</div></td>
           <td><span class="pill quiet">30/100</span></td>
           <td>none</td>
-          <td>Broadcom earnings / AI infrastructure updates<div class="reason">6 artículos recientes; Evento mencionado: Broadcom earnings; RSI razonable: 42.0</div></td>
+          <td>Broadcom earnings / AI infrastructure updates<div class="reason">6 artículos recientes; Evento mencionado: Broadcom earnings; RSI razonable: 42.0</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>Sin resumen IA concluyente.</p></div>
+        <div><strong>Motivos</strong><p>6 artículos recientes; Evento mencionado: Broadcom earnings; RSI razonable: 42.0; No descontado 20D: -23.3%</p></div>
+        <div><strong>Métricas</strong><p>Price: 369.34; Rsi: 42.00; Perf 20d: -23.31; Perf 60d: 17.46; Ticker: AVGO; Sma20: 390.25; Sma50: 410.26; Status: ok</p></div>
+        <div><strong>Fuente</strong><p><a href="https://news.google.com/rss/articles/CBMimgFBVV95cUxNeXoxREs2TkpFR0RmVzRDS3RDVEtvdHZ5dm05VF9xRUtYZ3V4VlM1OFYwMXEzeXA1ckMxaTZJcmtEbnlIZUJIbXhLblpoOWVuc0NwbmhjZ3NUOUc3anZ6eE16ek5kNUV4czNVUGhzRXRGNl81Rk5QNEN0ZlFETEpnVFZpZWd1UFMybEFHcGdBRzZjUWVpV2ZfeFdB?oc=5">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
           <td>369.34</td>
           <td>42.0</td>
           <td>-23.3%</td>
@@ -192,7 +294,15 @@
           <td><div class="company">TSM</div><div class="muted">Taiwan Semiconductor Manufacturing</div></td>
           <td><span class="pill quiet">28/100</span></td>
           <td>none</td>
-          <td>TSMC earnings / technology symposium<div class="reason">5 artículos recientes; Evento mencionado: TSMC earnings; RSI razonable: 52.9</div></td>
+          <td>TSMC earnings / technology symposium<div class="reason">5 artículos recientes; Evento mencionado: TSMC earnings; RSI razonable: 52.9</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>Sin resumen IA concluyente.</p></div>
+        <div><strong>Motivos</strong><p>5 artículos recientes; Evento mencionado: TSMC earnings; RSI razonable: 52.9; No descontado 20D: -0.6%</p></div>
+        <div><strong>Métricas</strong><p>Price: 444.23; Rsi: 52.87; Perf 20d: -0.55; Perf 60d: 29.98; Ticker: TSM; Sma20: 437.79; Sma50: 418.18; Status: ok</p></div>
+        <div><strong>Fuente</strong><p><a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxPVEJyMHVuaTdsRVZDZ2x4Nkg3YzZMSHNYRlJPR3FGeG53UEZxMVNvTHhQR2NUeXk2SDQwM0VRS2U5T2VITTJPRzQ2R2RXQkJwRENONVM3a2JFLUNCQmZ6OWkzdXZSbU01NkhsZ09BbFVteV85Um5HaFBVVHp0LUZkZ0NyWmE2VkU1SVE?oc=5">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
           <td>444.23</td>
           <td>52.9</td>
           <td>-0.6%</td>
@@ -200,7 +310,7 @@
         </tr></tbody></table></div>
     </div>
   </section>
-  <footer>Generado: 2026-07-02 07:26 UTC. Solo información pública; no ejecuta operaciones.</footer>
+  <footer>Generado: 2026-07-02 09:50 UTC. Solo información pública; no ejecuta operaciones.</footer>
 </div>
 </body>
 </html>
