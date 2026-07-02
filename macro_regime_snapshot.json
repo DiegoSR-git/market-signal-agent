@@ -1,16 +1,16 @@
 [
   {
     "agent": "macro_regime",
-    "ai_brief": "El régimen macro actual muestra señales mixtas con desempeño negativo en proxies clave de crédito y duración. Se observa un volumen reducido en acciones principales y ausencia de rupturas técnicas significativas, salvo en el dólar. Se recomienda monitorear la confirmación en crédito, duración y dólar para ajustar la estrategia de riesgo.",
+    "ai_brief": "El régimen macro actual muestra señales mixtas con desempeño negativo en proxies clave de crédito y duración. Se recomienda monitorear la confirmación en indicadores de crédito, duración y dólar. La volatilidad y la falta de rupturas técnicas sugieren precaución en la toma de decisiones.",
     "ai_risk_notes": [
-      "Volúmenes de negociación inferiores al promedio en proxies de acciones pueden indicar menor liquidez y mayor volatilidad.",
-      "Rendimientos negativos en activos de crédito y duración sugieren posibles presiones en esos segmentos.",
-      "Ausencia de rupturas técnicas en la mayoría de proxies limita señales claras de tendencia, aumentando la incertidumbre."
+      "Riesgo de consolidación o reversión debido a la falta de rupturas técnicas en la mayoría de proxies",
+      "Volumen de negociación inferior al promedio en proxies clave, lo que puede limitar la liquidez y aumentar la volatilidad",
+      "Posible impacto negativo de la debilidad en activos de crédito y duración sobre la estabilidad del mercado"
     ],
     "ai_watch_items": [
-      "Evolución del rendimiento a 20 días en SPY y QQQ, que presentan caídas de -1.8% y -2.8% respectivamente.",
-      "Comportamiento del crédito representado por HYG y LQD, con rendimientos negativos y volúmenes cercanos a la media.",
-      "Seguimiento del dólar (UUP) que muestra ruptura técnica en 20 y 50 días, indicando posible fortaleza relativa."
+      "Evolución del rendimiento a 20 días de SPY y QQQ, ambos con caídas superiores al 1.8%",
+      "Comportamiento de los proxies de crédito HYG y LQD, con rendimientos negativos y sin rupturas técnicas",
+      "Confirmación del breakout en UUP como indicador del dólar y su impacto en el régimen macro"
     ],
     "asset": "MARKET",
     "level": "watch",
@@ -28,9 +28,9 @@
           "sma50": 407.40239868164065,
           "status": "ok",
           "symbol": "GLD",
-          "volume": 9027180.0,
-          "volume_20d_avg": 8619404.0,
-          "volume_ratio": 1.0473090714856852
+          "volume": 9034500.0,
+          "volume_20d_avg": 8619770.0,
+          "volume_ratio": 1.0481138127815475
         },
         "HYG": {
           "breakout_20d": false,
@@ -44,9 +44,9 @@
           "sma50": 79.95000076293945,
           "status": "ok",
           "symbol": "HYG",
-          "volume": 35755755.0,
-          "volume_20d_avg": 34012162.75,
-          "volume_ratio": 1.0512637865111945
+          "volume": 38087300.0,
+          "volume_20d_avg": 34128740.0,
+          "volume_ratio": 1.1159890461821913
         },
         "IWM": {
           "breakout_20d": false,
@@ -60,9 +60,9 @@
           "sma50": 286.11980102539064,
           "status": "ok",
           "symbol": "IWM",
-          "volume": 20383671.0,
-          "volume_20d_avg": 30386943.55,
-          "volume_ratio": 0.6708035958423992
+          "volume": 20580600.0,
+          "volume_20d_avg": 30396790.0,
+          "volume_ratio": 0.6770649137622755
         },
         "LQD": {
           "breakout_20d": false,
@@ -76,9 +76,9 @@
           "sma50": 108.8200001525879,
           "status": "ok",
           "symbol": "LQD",
-          "volume": 25358714.0,
-          "volume_20d_avg": 28954355.7,
-          "volume_ratio": 0.8758168982499583
+          "volume": 25563100.0,
+          "volume_20d_avg": 28964575.0,
+          "volume_ratio": 0.8825643048447975
         },
         "QQQ": {
           "breakout_20d": false,
@@ -92,9 +92,9 @@
           "sma50": 707.7842016601562,
           "status": "ok",
           "symbol": "QQQ",
-          "volume": 38884823.0,
-          "volume_20d_avg": 53711311.15,
-          "volume_ratio": 0.7239596682234409
+          "volume": 40258000.0,
+          "volume_20d_avg": 53779970.0,
+          "volume_ratio": 0.7485686585544767
         },
         "SPY": {
           "breakout_20d": false,
@@ -108,9 +108,9 @@
           "sma50": 736.6116015625,
           "status": "ok",
           "symbol": "SPY",
-          "volume": 39119066.0,
-          "volume_20d_avg": 63941113.3,
-          "volume_ratio": 0.611798324756413
+          "volume": 46886600.0,
+          "volume_20d_avg": 64329490.0,
+          "volume_ratio": 0.7288507961123273
         },
         "TLT": {
           "breakout_20d": false,
@@ -124,9 +124,9 @@
           "sma50": 85.63379989624023,
           "status": "ok",
           "symbol": "TLT",
-          "volume": 28079912.0,
-          "volume_20d_avg": 25598505.6,
-          "volume_ratio": 1.0969355961154232
+          "volume": 28090200.0,
+          "volume_20d_avg": 25599020.0,
+          "volume_ratio": 1.0973154441068447
         },
         "UUP": {
           "breakout_20d": true,
@@ -140,9 +140,9 @@
           "sma50": 27.81680019378662,
           "status": "ok",
           "symbol": "UUP",
-          "volume": 1951624.0,
-          "volume_20d_avg": 2141266.2,
-          "volume_ratio": 0.9114345521355541
+          "volume": 1996400.0,
+          "volume_20d_avg": 2143505.0,
+          "volume_ratio": 0.9313717486080042
         }
       },
       "regime": "mixed"
@@ -156,7 +156,7 @@
     "score": 36,
     "source": "https://finance.yahoo.com",
     "summary": "Current proxy basket points to mixed. Watch confirmation across credit, duration and dollar proxies.",
-    "time_utc": "2026-07-01T21:08:29.140945+00:00",
+    "time_utc": "2026-07-02T07:45:34.797529+00:00",
     "title": "Macro regime: mixed"
   }
 ]
