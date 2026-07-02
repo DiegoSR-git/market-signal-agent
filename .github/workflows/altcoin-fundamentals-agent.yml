@@ -45,6 +45,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add altcoin_fundamentals_state.json altcoin_fundamentals_snapshot.json altcoin_fundamentals_log.csv docs/altcoin_fundamentals_dashboard.html docs/index.html || true
+          git add altcoin_fundamentals_state.json altcoin_fundamentals_snapshot.json altcoin_fundamentals_log.csv docs/altcoin_fundamentals_dashboard.html docs/index.html docs/opportunities.html || true
           git diff --cached --quiet || git commit -m "Update altcoin fundamentals agent state [skip ci]"
           git push || true

@@ -45,6 +45,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add defi_liquidity_state.json defi_liquidity_snapshot.json defi_liquidity_log.csv docs/defi_liquidity_dashboard.html docs/index.html || true
+          git add defi_liquidity_state.json defi_liquidity_snapshot.json defi_liquidity_log.csv docs/defi_liquidity_dashboard.html docs/index.html docs/opportunities.html || true
           git diff --cached --quiet || git commit -m "Update DeFi liquidity agent state [skip ci]"
           git push || true

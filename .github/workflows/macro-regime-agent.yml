@@ -45,6 +45,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add macro_regime_state.json macro_regime_snapshot.json macro_regime_log.csv docs/macro_regime_dashboard.html docs/index.html || true
+          git add macro_regime_state.json macro_regime_snapshot.json macro_regime_log.csv docs/macro_regime_dashboard.html docs/index.html docs/opportunities.html || true
           git diff --cached --quiet || git commit -m "Update macro regime agent state [skip ci]"
           git push || true
