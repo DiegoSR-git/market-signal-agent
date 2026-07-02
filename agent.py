@@ -31,7 +31,7 @@ from datetime import datetime, timezone, timedelta
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
-from dashboard_utils import render_home_dashboard
+from dashboard_utils import render_home_dashboard, render_page
 
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
@@ -1256,12 +1256,49 @@ def generate_dashboard(config, state):
         f"<tr><td>{e(x.get('symbol'))}</td><td>{x.get('score')}</td><td>{fmt_float(x.get('rsi'),1)}</td><td>{fmt_pct(x.get('drawdown'))}</td><td>{fmt_pct(x.get('dist200'))}</td></tr>"
         for x in stock_top
     )
-    html_doc = f"""<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Market Signal Agent</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>body{{font-family:system-ui;margin:32px;background:#0b0f19;color:#e5e7eb}}.card{{background:#111827;border:1px solid #273449;border-radius:14px;padding:20px;margin:18px 0}}table{{width:100%;border-collapse:collapse}}td,th{{border-bottom:1px solid #273449;padding:10px;text-align:left}}.score{{font-size:42px;font-weight:800}}.muted{{color:#9ca3af}}</style></head><body>
-<h1>Panel Market Signal Agent</h1><p class="muted">Actualizado: {utc_now().strftime("%Y-%m-%d %H:%M UTC")}</p>
-<div class="card"><h2>BTC</h2><div class="score">{e(btc.get('score','N/A'))}/100</div><p><b>Estado:</b> {e(btc.get('status','N/A'))}</p><p><b>Precio:</b> {fmt_eur(btc.get('price'))}</p><p><b>Regime:</b> {e(btc.get('regime','N/A'))}</p><p><b>RSI:</b> {fmt_float(btc.get('rsi'),1)} | <b>SMA200:</b> {fmt_eur(btc.get('sma200'))}</p><p><b>Fear:</b> {e(btc.get('fear','N/A'))} | <b>ETF total:</b> {fmt_musd(btc.get('etf_total'))} | <b>IBIT:</b> {fmt_musd(btc.get('ibit'))} | <b>OI 24h:</b> {fmt_pct(btc.get('oi_24h'))}</p></div>
-<div class="card"><h2>Órdenes BTC</h2><table><thead><tr><th>ID</th><th>Precio</th><th>Importe</th><th>Estado</th><th>Veces</th></tr></thead><tbody>{order_rows or '<tr><td colspan="5">Sin órdenes</td></tr>'}</tbody></table></div>
-<div class="card"><h2>Bolsa / ETFs</h2><table><thead><tr><th>Símbolo</th><th>Score</th><th>RSI</th><th>DD52s</th><th>Dist. SMA200</th></tr></thead><tbody>{stock_rows or '<tr><td colspan="5">Sin oportunidades</td></tr>'}</tbody></table></div>
-</body></html>"""
+    html_body = f"""<div class="shell">
+  <div class="topbar">
+    <div>
+      <h1>Panel BTC Y Mercado</h1>
+      <div class="muted">Seguimiento de BTC, órdenes planificadas y oportunidades técnicas en bolsa/ETFs.</div>
+    </div>
+    <nav class="nav">
+      <a class="btn primary" href="opportunities.html">Oportunidades Claras</a>
+      <a class="btn" href="index.html">Resumen</a>
+      <a class="btn" href="event_rumor_dashboard.html">Rumores</a>
+      <a class="btn" href="https://github.com/DiegoSR-git/market-signal-agent/actions">Actions</a>
+    </nav>
+  </div>
+  <section class="grid">
+    <div class="card span-4">
+      <h3>Score BTC</h3>
+      <div class="metric">{e(btc.get('score','N/A'))}/100</div>
+      <div class="submetric">{e(btc.get('status','N/A'))}</div>
+    </div>
+    <div class="card span-4">
+      <h3>Precio</h3>
+      <div class="metric">{fmt_eur(btc.get('price'))}</div>
+      <div class="submetric">RSI {fmt_float(btc.get('rsi'),1)} · SMA200 {fmt_eur(btc.get('sma200'))}</div>
+    </div>
+    <div class="card span-4">
+      <h3>Contexto</h3>
+      <div class="metric small">{e(btc.get('regime','N/A'))}</div>
+      <div class="submetric">Miedo {e(btc.get('fear','N/A'))} · ETF {fmt_musd(btc.get('etf_total'))} · OI 24h {fmt_pct(btc.get('oi_24h'))}</div>
+    </div>
+    <div class="card span-7">
+      <h2>Órdenes BTC</h2>
+      <p class="intro">Plan de niveles y tramos configurados. La tabla muestra qué órdenes se han tocado y cuántas veces han aparecido en las ejecuciones del agente.</p>
+      <div class="table-wrap"><table><thead><tr><th>ID</th><th>Precio</th><th>Importe</th><th>Estado</th><th>Veces</th></tr></thead><tbody>{order_rows or '<tr><td colspan="5">Sin órdenes</td></tr>'}</tbody></table></div>
+    </div>
+    <div class="card span-5">
+      <h2>Bolsa / ETFs</h2>
+      <p class="intro">Candidatas técnicas detectadas por score, RSI, drawdown y distancia a SMA200.</p>
+      <div class="table-wrap"><table><thead><tr><th>Símbolo</th><th>Score</th><th>RSI</th><th>DD52s</th><th>Dist. SMA200</th></tr></thead><tbody>{stock_rows or '<tr><td colspan="5">Sin oportunidades</td></tr>'}</tbody></table></div>
+    </div>
+  </section>
+  <footer>Actualizado: {utc_now().strftime("%Y-%m-%d %H:%M UTC")}. Investigación automatizada con datos públicos; no es asesoramiento financiero personalizado.</footer>
+</div>"""
+    html_doc = render_page("Panel BTC Y Mercado", html_body)
     DASHBOARD_FILE.write_text(html_doc, encoding="utf-8")
     render_home_dashboard(INDEX_FILE)
     print(f"Panel escrito en {DASHBOARD_FILE} y {INDEX_FILE}")

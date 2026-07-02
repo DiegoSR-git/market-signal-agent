@@ -45,6 +45,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add cftc_positioning_state.json cftc_positioning_snapshot.json cftc_positioning_log.csv docs/cftc_positioning_dashboard.html docs/index.html || true
+          git add cftc_positioning_state.json cftc_positioning_snapshot.json cftc_positioning_log.csv docs/cftc_positioning_dashboard.html docs/index.html docs/opportunities.html || true
           git diff --cached --quiet || git commit -m "Update CFTC positioning agent state [skip ci]"
           git push || true

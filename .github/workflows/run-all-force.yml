@@ -73,8 +73,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add state.json signals_log.csv docs/dashboard.html docs/index.html || true
-          git add event_rumor_state.json event_rumor_snapshot.json event_rumor_log.csv docs/event_rumor_dashboard.html || true
+          git add state.json signals_log.csv docs/dashboard.html docs/index.html docs/opportunities.html || true
+          git add event_rumor_state.json event_rumor_snapshot.json event_rumor_log.csv docs/event_rumor_dashboard.html docs/opportunities.html || true
           git add sec_filing_state.json sec_filing_snapshot.json sec_filing_log.csv docs/sec_filing_dashboard.html || true
           git add macro_regime_state.json macro_regime_snapshot.json macro_regime_log.csv docs/macro_regime_dashboard.html || true
           git add sector_rotation_state.json sector_rotation_snapshot.json sector_rotation_log.csv docs/sector_rotation_dashboard.html || true
