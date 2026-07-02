@@ -1,10 +1,10 @@
-name: Agent Healthcheck
+name: Healthcheck Del Agente
 
 on:
   workflow_dispatch:
   schedule:
-    # GitHub cron uses UTC. 06:00 UTC = 08:00 Europe/Madrid during CEST.
-    - cron: "0 6 * * *"
+    # GitHub cron uses UTC. These map to 08:00 and 22:00 Europe/Madrid during CEST.
+    - cron: "0 6,20 * * *"
 
 permissions:
   contents: write

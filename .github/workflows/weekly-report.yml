@@ -1,9 +1,10 @@
-name: Weekly Regime Report
+name: Informe Semanal De Regimen
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "30 18 * * 0"
+    # GitHub cron uses UTC. These map to 09:00 and 23:00 Europe/Madrid during CEST.
+    - cron: "0 7,21 * * *"
 
 permissions:
   contents: write
@@ -29,7 +30,7 @@ jobs:
           ETF_DATE: ${{ vars.ETF_DATE }}
           ETF_TOTAL_MUSD: ${{ vars.ETF_TOTAL_MUSD }}
           ETF_IBIT_MUSD: ${{ vars.ETF_IBIT_MUSD }}
-        run: python agent.py --mode weekly --force
+        run: python -u agent.py --mode weekly --force
       - name: Run baseline backtest
         continue-on-error: true
         env:
@@ -40,7 +41,7 @@ jobs:
           ETF_DATE: ${{ vars.ETF_DATE }}
           ETF_TOTAL_MUSD: ${{ vars.ETF_TOTAL_MUSD }}
           ETF_IBIT_MUSD: ${{ vars.ETF_IBIT_MUSD }}
-        run: python agent.py --mode backtest
+        run: python -u agent.py --mode backtest
       - name: Persist state and dashboard
         if: always()
         run: |

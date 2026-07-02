@@ -1,4 +1,4 @@
-name: Earnings Catalyst Agent
+name: Agente De Catalizadores De Resultados
 
 on:
   workflow_dispatch:
@@ -8,8 +8,8 @@ on:
         required: false
         default: "false"
   schedule:
-    # GitHub cron uses UTC. This maps to 08:50 Europe/Madrid during CEST, weekdays.
-    - cron: "50 6 * * 1-5"
+    # GitHub cron uses UTC. These map to 08:45 and 22:45 Europe/Madrid during CEST.
+    - cron: "45 6,20 * * *"
 
 permissions:
   contents: write

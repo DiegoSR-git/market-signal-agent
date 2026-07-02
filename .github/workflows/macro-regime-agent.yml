@@ -1,4 +1,4 @@
-name: Macro Regime Agent
+name: Agente De Regimen Macro
 
 on:
   workflow_dispatch:
@@ -8,8 +8,8 @@ on:
         required: false
         default: "false"
   schedule:
-    # GitHub cron uses UTC. These map to 08:35 and 22:35 Europe/Madrid during CEST.
-    - cron: "35 6,20 * * *"
+    # GitHub cron uses UTC. These map to 08:25 and 22:25 Europe/Madrid during CEST.
+    - cron: "25 6,20 * * *"
 
 permissions:
   contents: write

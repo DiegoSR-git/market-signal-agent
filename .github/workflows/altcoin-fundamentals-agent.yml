@@ -1,4 +1,4 @@
-name: Altcoin Fundamentals Agent
+name: Agente De Fundamentales Altcoin
 
 on:
   workflow_dispatch:
@@ -8,8 +8,8 @@ on:
         required: false
         default: "false"
   schedule:
-    # GitHub cron uses UTC. This maps to 09:05 Europe/Madrid during CEST.
-    - cron: "5 7 * * *"
+    # GitHub cron uses UTC. These map to 08:55 and 22:55 Europe/Madrid during CEST.
+    - cron: "55 6,20 * * *"
 
 permissions:
   contents: write
