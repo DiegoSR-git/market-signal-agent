@@ -1,11 +1,11 @@
-name: Daily Market Brief
+name: Resumen Diario De Mercado
 
 on:
   workflow_dispatch:
   schedule:
-    # GitHub cron uses UTC. These map to 08:25 and 22:25 Europe/Madrid during CEST.
-    - cron: "25 6 * * *"
-    - cron: "25 20 * * *"
+    # GitHub cron uses UTC. These map to 08:15 and 22:15 Europe/Madrid during CEST.
+    - cron: "15 6 * * *"
+    - cron: "15 20 * * *"
 
 permissions:
   contents: write

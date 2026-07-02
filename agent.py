@@ -908,7 +908,7 @@ def score_btc(config, state, m, macro=None):
     elif regime == "RISK_OFF": score -= 8; blocks.append("Macro risk-off: reducir agresividad")
 
     score = int(round(clamp(score, 0, 100)))
-    status = "🟢 BTC STRONG BUY" if score >= 85 else "🟠 BTC PARTIAL BUY" if score >= 70 else "🟡 BTC WATCH" if score >= 55 else "⚪ SIN SEÑAL"
+    status = "🟢 BTC COMPRA FUERTE" if score >= 85 else "🟠 BTC COMPRA PARCIAL" if score >= 70 else "🟡 BTC EN VIGILANCIA" if score >= 55 else "⚪ SIN SEÑAL"
     if not signal_types: signal_types = ["NO_SIGNAL" if score < 55 else "SCORE_WATCH"]
     return {"score": score, "status": status, "signal_types": sorted(set(signal_types)), "reasons": reasons, "actions": actions, "blocks": blocks, "market_regime": regime, "touched_orders": touched}
 
@@ -1257,14 +1257,14 @@ def generate_dashboard(config, state):
         for x in stock_top
     )
     html_doc = f"""<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Market Signal Agent</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>body{{font-family:system-ui;margin:32px;background:#0b0f19;color:#e5e7eb}}.card{{background:#111827;border:1px solid #273449;border-radius:14px;padding:20px;margin:18px 0}}table{{width:100%;border-collapse:collapse}}td,th{{border-bottom:1px solid #273449;padding:10px;text-align:left}}.score{{font-size:42px;font-weight:800}}.muted{{color:#9ca3af}}</style></head><body>
-<h1>Market Signal Agent Dashboard</h1><p class="muted">Actualizado: {utc_now().strftime("%Y-%m-%d %H:%M UTC")}</p>
+<h1>Panel Market Signal Agent</h1><p class="muted">Actualizado: {utc_now().strftime("%Y-%m-%d %H:%M UTC")}</p>
 <div class="card"><h2>BTC</h2><div class="score">{e(btc.get('score','N/A'))}/100</div><p><b>Estado:</b> {e(btc.get('status','N/A'))}</p><p><b>Precio:</b> {fmt_eur(btc.get('price'))}</p><p><b>Regime:</b> {e(btc.get('regime','N/A'))}</p><p><b>RSI:</b> {fmt_float(btc.get('rsi'),1)} | <b>SMA200:</b> {fmt_eur(btc.get('sma200'))}</p><p><b>Fear:</b> {e(btc.get('fear','N/A'))} | <b>ETF total:</b> {fmt_musd(btc.get('etf_total'))} | <b>IBIT:</b> {fmt_musd(btc.get('ibit'))} | <b>OI 24h:</b> {fmt_pct(btc.get('oi_24h'))}</p></div>
 <div class="card"><h2>Órdenes BTC</h2><table><thead><tr><th>ID</th><th>Precio</th><th>Importe</th><th>Estado</th><th>Veces</th></tr></thead><tbody>{order_rows or '<tr><td colspan="5">Sin órdenes</td></tr>'}</tbody></table></div>
 <div class="card"><h2>Bolsa / ETFs</h2><table><thead><tr><th>Símbolo</th><th>Score</th><th>RSI</th><th>DD52s</th><th>Dist. SMA200</th></tr></thead><tbody>{stock_rows or '<tr><td colspan="5">Sin oportunidades</td></tr>'}</tbody></table></div>
 </body></html>"""
     DASHBOARD_FILE.write_text(html_doc, encoding="utf-8")
     render_home_dashboard(INDEX_FILE)
-    print(f"Dashboard written to {DASHBOARD_FILE} and {INDEX_FILE}")
+    print(f"Panel escrito en {DASHBOARD_FILE} y {INDEX_FILE}")
 
 
 def backtest_btc(config):
@@ -1617,7 +1617,7 @@ def main():
     finally:
         save_state(state)
         try: generate_dashboard(config, state)
-        except Exception as ex: print(f"Dashboard generation failed: {ex}")
+        except Exception as ex: print(f"Fallo la generacion del panel: {ex}")
 
 
 if __name__ == "__main__":

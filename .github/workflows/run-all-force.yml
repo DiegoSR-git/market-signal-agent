@@ -1,0 +1,96 @@
+name: Ejecutar Todo En Cola Force
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  models: read
+
+jobs:
+  run-all-force:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install -r requirements.txt
+
+      - name: Ejecutar todos los scripts en cola con force=true
+        env:
+          PYTHONUNBUFFERED: "1"
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_CHAT_IDS: ${{ vars.TELEGRAM_CHAT_IDS }}
+          GITHUB_TOKEN: ${{ github.token }}
+          ETF_DATE: ${{ vars.ETF_DATE }}
+          ETF_TOTAL_MUSD: ${{ vars.ETF_TOTAL_MUSD }}
+          ETF_IBIT_MUSD: ${{ vars.ETF_IBIT_MUSD }}
+          SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT }}
+        run: |
+          failures=0
+
+          run_script() {
+            name="$1"
+            shift
+            echo "::group::${name}"
+            set +e
+            "$@"
+            status=$?
+            set -e
+            if [ "$status" -ne 0 ]; then
+              echo "::error::${name} fallo con exit code ${status}"
+              failures=$((failures + 1))
+            fi
+            echo "::endgroup::"
+          }
+
+          run_script "Healthcheck" python -u agent.py --mode health --force
+          run_script "Market Signal Agent" python -u agent.py --mode signal --force
+          run_script "Event Rumor Agent" python -u event_rumor_agent.py --force
+          run_script "Daily Market Brief" python -u agent.py --mode daily --force
+          run_script "SEC Insider & Filing Agent" python -u sec_filing_agent.py --force
+          run_script "Macro Regime Agent" python -u macro_regime_agent.py --force
+          run_script "Sector Rotation Agent" python -u sector_rotation_agent.py --force
+          run_script "DeFi Liquidity Agent" python -u defi_liquidity_agent.py --force
+          run_script "Unusual Volume Agent" python -u unusual_volume_agent.py --force
+          run_script "Earnings Catalyst Agent" python -u earnings_catalyst_agent.py --force
+          run_script "CFTC Positioning Agent" python -u cftc_positioning_agent.py --force
+          run_script "Altcoin Fundamentals Agent" python -u altcoin_fundamentals_agent.py --force
+          run_script "Weekly Regime Report" python -u agent.py --mode weekly --force
+          run_script "BTC Backtest" python -u agent.py --mode backtest --force
+
+          echo "$failures" > run_all_force_failures.txt
+
+      - name: Persistir resultados generados
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state.json signals_log.csv docs/dashboard.html docs/index.html || true
+          git add event_rumor_state.json event_rumor_snapshot.json event_rumor_log.csv docs/event_rumor_dashboard.html || true
+          git add sec_filing_state.json sec_filing_snapshot.json sec_filing_log.csv docs/sec_filing_dashboard.html || true
+          git add macro_regime_state.json macro_regime_snapshot.json macro_regime_log.csv docs/macro_regime_dashboard.html || true
+          git add sector_rotation_state.json sector_rotation_snapshot.json sector_rotation_log.csv docs/sector_rotation_dashboard.html || true
+          git add defi_liquidity_state.json defi_liquidity_snapshot.json defi_liquidity_log.csv docs/defi_liquidity_dashboard.html || true
+          git add unusual_volume_state.json unusual_volume_snapshot.json unusual_volume_log.csv docs/unusual_volume_dashboard.html || true
+          git add earnings_catalyst_state.json earnings_catalyst_snapshot.json earnings_catalyst_log.csv docs/earnings_catalyst_dashboard.html || true
+          git add cftc_positioning_state.json cftc_positioning_snapshot.json cftc_positioning_log.csv docs/cftc_positioning_dashboard.html || true
+          git add altcoin_fundamentals_state.json altcoin_fundamentals_snapshot.json altcoin_fundamentals_log.csv docs/altcoin_fundamentals_dashboard.html || true
+          git diff --cached --quiet || git commit -m "Update all forced agent outputs [skip ci]"
+          git push || true
+
+      - name: Fallar si algun script fallo
+        if: always()
+        run: |
+          failures="$(cat run_all_force_failures.txt 2>/dev/null || echo 1)"
+          if [ "$failures" -ne 0 ]; then
+            echo "::error::Fallaron ${failures} scripts en la ejecucion en cola."
+            exit 1
+          fi

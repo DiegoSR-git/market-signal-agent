@@ -1,4 +1,4 @@
-name: Unusual Volume Agent
+name: Agente De Volumen Inusual
 
 on:
   workflow_dispatch:
@@ -8,8 +8,8 @@ on:
         required: false
         default: "false"
   schedule:
-    # GitHub cron uses UTC. These map to 08:55 and 22:55 Europe/Madrid during CEST, weekdays.
-    - cron: "55 6,20 * * 1-5"
+    # GitHub cron uses UTC. These map to 08:40 and 22:40 Europe/Madrid during CEST.
+    - cron: "40 6,20 * * *"
 
 permissions:
   contents: write
