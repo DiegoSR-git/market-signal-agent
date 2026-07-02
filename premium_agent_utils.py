@@ -825,6 +825,214 @@ def altcoin_fundamentals(config):
     return sorted(events, key=lambda x: x["score"], reverse=True)
 
 
+def normalize_trade_symbol(value):
+    symbol = str(value or "").strip().upper()
+    if not symbol or symbol in {"N/A", "BTC"}:
+        return None
+    if any(ch in symbol for ch in [" ", "/", "-", "_"]) and symbol not in {"BRK.B", "BRK-A"}:
+        return None
+    return symbol
+
+
+def merge_candidate_metric(current, new_value):
+    if current in [None, "", "N/A"]:
+        return new_value
+    return current
+
+
+def add_intraday_candidate(candidates, symbol, source, score, summary, reasons=None, metrics=None, source_url=None):
+    symbol = normalize_trade_symbol(symbol)
+    if not symbol:
+        return
+    metrics = metrics or {}
+    item = candidates.setdefault(
+        symbol,
+        {
+            "symbol": symbol,
+            "sources": [],
+            "source_scores": [],
+            "reasons": [],
+            "summaries": [],
+            "metrics": {},
+            "source_url": source_url,
+        },
+    )
+    item["sources"].append(source)
+    item["source_scores"].append(safe_float(score, 0))
+    if summary:
+        item["summaries"].append(str(summary))
+    for reason in reasons or []:
+        if reason and reason not in item["reasons"]:
+            item["reasons"].append(str(reason))
+    for key, value in metrics.items():
+        item["metrics"][key] = merge_candidate_metric(item["metrics"].get(key), value)
+    if source_url and not item.get("source_url"):
+        item["source_url"] = source_url
+
+
+def load_snapshot_list(path):
+    data = read_json(path, [])
+    return data if isinstance(data, list) else []
+
+
+def intraday_cashout(config):
+    cfg = config.get("intraday", {})
+    min_input_score = float(cfg.get("min_input_score", 50))
+    max_candidates = int(cfg.get("max_candidates", 30))
+    max_hold_hours = int(cfg.get("max_hold_hours", 8))
+    candidates = {}
+
+    state = read_json("state.json", {})
+    for item in state.get("last_snapshot", {}).get("stocks", {}).get("top", []):
+        add_intraday_candidate(
+            candidates,
+            item.get("symbol"),
+            "Market Signal Agent",
+            item.get("score"),
+            "Candidata tecnica detectada por el agente principal.",
+            item.get("reasons", []),
+            item,
+            "https://finance.yahoo.com/quote/" + quote_plus(str(item.get("symbol", ""))),
+        )
+
+    for item in load_snapshot_list("event_rumor_snapshot.json"):
+        if safe_float(item.get("score"), 0) < min_input_score:
+            continue
+        add_intraday_candidate(
+            candidates,
+            item.get("ticker"),
+            "Rumores y eventos",
+            item.get("score"),
+            item.get("summary"),
+            item.get("score_reasons", []) + item.get("rumors", []),
+            item.get("market", {}),
+            (item.get("articles") or [{}])[0].get("url"),
+        )
+
+    premium_sources = [
+        ("sec_filing_snapshot.json", "SEC e insiders"),
+        ("sector_rotation_snapshot.json", "Rotacion sectorial"),
+        ("unusual_volume_snapshot.json", "Volumen inusual"),
+        ("earnings_catalyst_snapshot.json", "Catalizadores de resultados"),
+        ("macro_regime_snapshot.json", "Regimen macro"),
+    ]
+    for path, label in premium_sources:
+        for item in load_snapshot_list(path):
+            if safe_float(item.get("score"), 0) < min_input_score:
+                continue
+            add_intraday_candidate(
+                candidates,
+                item.get("asset"),
+                label,
+                item.get("score"),
+                item.get("summary") or item.get("ai_brief"),
+                item.get("reasons", []) + item.get("ai_watch_items", []),
+                item.get("metrics", {}),
+                item.get("source"),
+            )
+
+    events = []
+    for symbol, item in candidates.items():
+        metrics = item.get("metrics", {})
+        source_scores = [safe_float(x, 0) for x in item.get("source_scores", [])]
+        source_count = len(set(item.get("sources", [])))
+        max_source_score = max(source_scores) if source_scores else 0
+        avg_source_score = sum(source_scores) / len(source_scores) if source_scores else 0
+        perf_5d = safe_float(metrics.get("perf_5d"), 0)
+        perf_20d = safe_float(metrics.get("perf_20d"), 0)
+        rsi = safe_float(metrics.get("rsi"), 50)
+        volume_ratio = safe_float(metrics.get("volume_ratio"), 1)
+        price = safe_float(metrics.get("price"))
+
+        score = 38
+        score += min(22, max(0, max_source_score - 55) * 0.45)
+        score += min(18, max(0, source_count - 1) * 6)
+        score += min(14, max(0, perf_5d) * 2.2)
+        score += min(10, max(0, perf_20d) * 0.7)
+        if 45 <= rsi <= 68:
+            score += 12
+        elif 68 < rsi <= 74:
+            score += 4
+        elif rsi > 74:
+            score -= 12
+        elif rsi < 35:
+            score -= 8
+        if volume_ratio >= 2:
+            score += 12
+        elif volume_ratio >= 1.2:
+            score += 6
+        elif volume_ratio < 0.75:
+            score -= 5
+        if any("Rumores" in x or "Catalizadores" in x for x in item.get("sources", [])):
+            score += 6
+        if any("Volumen" in x for x in item.get("sources", [])):
+            score += 5
+        if any("Rotacion" in x for x in item.get("sources", [])):
+            score += 4
+        if price is None:
+            score -= 10
+
+        risk = "medio"
+        if rsi > 74 or volume_ratio < 0.75:
+            risk = "alto"
+        elif score >= 82 and 45 <= rsi <= 68 and volume_ratio >= 1:
+            risk = "controlado"
+
+        entry = "Solo si mantiene fuerza tras la apertura y no pierde el precio de referencia."
+        stop_pct = -1.2 if risk != "alto" else -0.8
+        target_pct = 1.8 if score >= 80 else 1.2
+        if price:
+            entry = f"Vigilar entrada cerca de {price:.2f} si confirma impulso intradia."
+            stop = price * (1 + stop_pct / 100)
+            target = price * (1 + target_pct / 100)
+        else:
+            stop = None
+            target = None
+
+        reasons = [
+            f"Confluencia: {source_count} fuentes",
+            f"Score maximo previo: {max_source_score:.0f}/100",
+            f"Score medio previo: {avg_source_score:.0f}/100",
+            f"5D {fmt_pct(perf_5d)}",
+            f"RSI {fmt_float(rsi, 1)}",
+            f"Volumen relativo {fmt_float(volume_ratio, 2)}",
+            f"Horizonte: salida el mismo dia, maximo {max_hold_hours}h",
+        ] + item.get("reasons", [])[:4]
+        summary = (
+            f"{symbol} concentra señales recientes para una operativa intradia vigilada. "
+            f"{entry} Objetivo orientativo {fmt_float(target, 2) if target else 'N/A'} "
+            f"y stop orientativo {fmt_float(stop, 2) if stop else 'N/A'}; cerrar la posicion antes del fin de sesion."
+        )
+        event_metrics = {
+            **metrics,
+            "source_count": source_count,
+            "max_source_score": max_source_score,
+            "avg_source_score": avg_source_score,
+            "intraday_entry_reference": price,
+            "intraday_target": target,
+            "intraday_stop": stop,
+            "intraday_target_pct": target_pct,
+            "intraday_stop_pct": stop_pct,
+            "intraday_risk": risk,
+            "max_hold_hours": max_hold_hours,
+            "sources": sorted(set(item.get("sources", []))),
+        }
+        events.append(
+            make_event(
+                "intraday_cashout",
+                f"{symbol} plan intradia salida mismo dia",
+                symbol,
+                score,
+                summary,
+                reasons,
+                event_metrics,
+                item.get("source_url") or f"https://finance.yahoo.com/quote/{quote_plus(symbol)}",
+            )
+        )
+
+    return sorted(events, key=lambda x: x["score"], reverse=True)[:max_candidates]
+
+
 COLLECTORS = {
     "sec_filing": sec_filings,
     "macro_regime": macro_regime,
@@ -834,6 +1042,7 @@ COLLECTORS = {
     "cftc_positioning": cftc_positioning,
     "unusual_volume": unusual_volume,
     "altcoin_fundamentals": altcoin_fundamentals,
+    "intraday_cashout": intraday_cashout,
 }
 
 
@@ -926,7 +1135,7 @@ class PremiumResearchAgent:
     <div class="card span-3"><h3>Alto</h3><div class="metric">{high}</div><div class="submetric">score >= 80</div></div>
     <div class="card span-3"><h3>Medio</h3><div class="metric">{medium}</div><div class="submetric">score 65-79</div></div>
     <div class="card span-3"><h3>Actualizado</h3><div class="metric" style="font-size:20px">{utc_now().strftime('%Y-%m-%d %H:%M UTC')}</div><div class="submetric">UTC</div></div>
-    {ai_html}
+{ai_html}
     <div class="card span-12">
       <h2>Ranking</h2>
       <p class="intro">Este panel prioriza eventos detectados por el agente. Revisa el detalle desplegable de cada fila para entender la tesis, los motivos de score, las métricas clave y la fuente antes de tomar decisiones.</p>

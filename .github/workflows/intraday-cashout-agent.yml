@@ -1,0 +1,51 @@
+name: Agente Intradia Salida Mismo Dia
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Force Telegram alert for testing"
+        required: false
+        default: "false"
+  schedule:
+    # GitHub cron uses UTC. During CEST this maps to 08:55 Europe/Madrid,
+    # after the morning agents have persisted their snapshots.
+    - cron: "55 6 * * *"
+
+permissions:
+  contents: write
+  models: read
+
+jobs:
+  intraday-cashout-agent:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Run intraday cashout agent
+        env:
+          PYTHONUNBUFFERED: "1"
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_CHAT_IDS: ${{ vars.TELEGRAM_CHAT_IDS }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            python -u intraday_cashout_agent.py --force
+          else
+            python -u intraday_cashout_agent.py
+          fi
+      - name: Persist intraday cashout state
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add intraday_cashout_state.json intraday_cashout_snapshot.json intraday_cashout_log.csv docs/intraday_cashout_dashboard.html docs/index.html docs/opportunities.html || true
+          git diff --cached --quiet || git commit -m "Update intraday cashout agent state [skip ci]"
+          git push || true

@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agente Intradia Salida Mismo Dia</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #080b10;
+      --panel: #101720;
+      --panel-2: #0d131b;
+      --panel-3: #151f2a;
+      --line: #263545;
+      --text: #eef4fb;
+      --muted: #9eacbb;
+      --green: #42d392;
+      --yellow: #f4c95d;
+      --red: #ff6f61;
+      --blue: #69b7ff;
+      --cyan: #57d6d1;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top left, rgba(87, 214, 209, .08), transparent 34rem), var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.45;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .shell { width: min(1440px, calc(100% - 40px)); margin: 0 auto; padding: 28px 0 44px; }
+    .topbar { display: flex; justify-content: space-between; gap: 18px; align-items: flex-start; margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+    h1 { margin: 0; font-size: clamp(30px, 4vw, 54px); letter-spacing: 0; line-height: 1.02; }
+    h2 { margin: 0 0 12px; font-size: 18px; }
+    h3 { margin: 0; font-size: 15px; color: var(--muted); font-weight: 650; }
+    .muted { color: var(--muted); }
+    .nav { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+    .btn { border: 1px solid var(--line); background: #172231; color: var(--text); padding: 9px 12px; border-radius: 8px; font-weight: 750; display: inline-flex; align-items: center; justify-content: center; min-height: 38px; }
+    .btn.primary { border-color: rgba(66, 211, 146, .45); background: rgba(66, 211, 146, .12); color: var(--green); }
+    .btn.compact { min-height: 32px; padding: 6px 9px; font-size: 12px; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,.025), transparent), var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; min-width: 0; box-shadow: 0 14px 30px rgba(0,0,0,.18); }
+    .span-3 { grid-column: span 3; }
+    .span-4 { grid-column: span 4; }
+    .span-5 { grid-column: span 5; }
+    .span-7 { grid-column: span 7; }
+    .span-8 { grid-column: span 8; }
+    .span-12 { grid-column: span 12; }
+    .metric { font-size: 34px; line-height: 1.05; font-weight: 800; margin: 8px 0 4px; }
+    .metric.small { font-size: 20px; }
+    .submetric { color: var(--muted); font-size: 13px; }
+    .intro { color: var(--muted); max-width: 920px; margin: 0 0 14px; }
+    .pill { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; padding: 4px 9px; font-size: 12px; font-weight: 800; color: var(--muted); }
+    .pill.hot { color: var(--green); border-color: rgba(61, 220, 151, .35); background: rgba(61, 220, 151, .08); }
+    .pill.watch { color: var(--yellow); border-color: rgba(247, 201, 72, .35); background: rgba(247, 201, 72, .08); }
+    .pill.quiet { color: var(--muted); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 10px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+    td { font-size: 14px; }
+    tr:last-child td { border-bottom: 0; }
+    .table-wrap { overflow-x: auto; }
+    .company { font-weight: 800; }
+    .reason { color: var(--muted); font-size: 12px; margin-top: 3px; max-width: 520px; }
+    .details { margin-top: 8px; color: var(--muted); }
+    .details summary { cursor: pointer; color: var(--blue); font-weight: 750; font-size: 12px; }
+    .detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 10px; padding: 12px; background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; }
+    .detail-grid strong { color: var(--text); display: block; margin-bottom: 4px; font-size: 12px; text-transform: uppercase; }
+    .detail-grid p { margin: 0; font-size: 13px; }
+    .status-line { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .bar { height: 8px; background: #1a2430; border-radius: 999px; overflow: hidden; margin-top: 10px; }
+    .bar > span { display: block; height: 100%; background: var(--green); width: var(--w); }
+    footer { color: var(--muted); font-size: 12px; margin-top: 20px; }
+    @media (max-width: 980px) {
+      .span-3, .span-4, .span-5, .span-7, .span-8 { grid-column: span 12; }
+      .topbar { display: block; }
+      .nav { justify-content: flex-start; margin-top: 16px; }
+      .detail-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+  <div class="topbar">
+    <div>
+      <h1>Agente Intradia Salida Mismo Dia</h1>
+      <div class="muted">Investigacion automatizada premium. Solo datos publicos. No es asesoramiento financiero personalizado.</div>
+    </div>
+    <nav class="nav">
+      <a class="btn primary" href="opportunities.html">Oportunidades Claras</a>
+      <a class="btn" href="index.html">Resumen</a>
+      <a class="btn" href="https://github.com/DiegoSR-git/market-signal-agent/actions">Actions</a>
+    </nav>
+  </div>
+  <section class="grid">
+    <div class="card span-3"><h3>Eventos</h3><div class="metric">25</div><div class="submetric">analizados en la ultima ejecucion</div></div>
+    <div class="card span-3"><h3>Alto</h3><div class="metric">4</div><div class="submetric">score >= 80</div></div>
+    <div class="card span-3"><h3>Medio</h3><div class="metric">9</div><div class="submetric">score 65-79</div></div>
+    <div class="card span-3"><h3>Actualizado</h3><div class="metric" style="font-size:20px">2026-07-02 11:25 UTC</div><div class="submetric">UTC</div></div>
+
+    <div class="card span-12">
+      <h2>Ranking</h2>
+      <p class="intro">Este panel prioriza eventos detectados por el agente. Revisa el detalle desplegable de cada fila para entender la tesis, los motivos de score, las métricas clave y la fuente antes de tomar decisiones.</p>
+      <div class="table-wrap"><table><thead><tr><th>Activo</th><th>Score</th><th>Nivel</th><th>Lectura</th><th>Fuente</th></tr></thead><tbody><tr>
+          <td><div class="company">XLV</div><div class="muted">XLV plan intradia salida mismo dia</div></td>
+          <td><span class="pill hot">89/100</span></td>
+          <td>alto</td>
+          <td>XLV concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 159.54 si confirma impulso intradia. Objetivo orientativo 162.41 y stop orientativo 157.63; cerrar la posicion antes del fin de sesion.<div class="reason">Confluencia: 1 fuentes; Score maximo previo: 100/100; Score medio previo: 100/100; 5D +4.0%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>XLV concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 159.54 si confirma impulso intradia. Objetivo orientativo 162.41 y stop orientativo 157.63; cerrar la posicion antes del fin de sesion.</p></div>
+        <div><strong>Motivos</strong><p>Confluencia: 1 fuentes; Score maximo previo: 100/100; Score medio previo: 100/100; 5D +4.0%; RSI 66.4</p></div>
+        <div><strong>Métricas</strong><p>Price: 159.54; Rsi: 66.42; Perf 5d: 4.04; Perf 20d: 8.98; Perf 60d: 9.06; Volume ratio: 0.87; Volume: 10118300.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/XLV">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
+          <td><a href="https://finance.yahoo.com/quote/XLV">fuente</a></td>
+        </tr><tr>
+          <td><div class="company">MSFT</div><div class="muted">MSFT plan intradia salida mismo dia</div></td>
+          <td><span class="pill hot">83/100</span></td>
+          <td>alto</td>
+          <td>MSFT concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 384.28 si confirma impulso intradia. Objetivo orientativo 391.20 y stop orientativo 379.67; cerrar la posicion antes del fin de sesion.<div class="reason">Confluencia: 2 fuentes; Score maximo previo: 78/100; Score medio previo: 66/100; 5D +5.1%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>MSFT concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 384.28 si confirma impulso intradia. Objetivo orientativo 391.20 y stop orientativo 379.67; cerrar la posicion antes del fin de sesion.</p></div>
+        <div><strong>Motivos</strong><p>Confluencia: 2 fuentes; Score maximo previo: 78/100; Score medio previo: 66/100; 5D +5.1%; RSI 46.9</p></div>
+        <div><strong>Métricas</strong><p>Price: 384.28; Rsi: 46.94; Perf 5d: 5.15; Perf 20d: -12.92; Perf 60d: 3.06; Volume ratio: 0.98; Volume: 47966000.00; Filing date: 2026-07-01</p></div>
+        <div><strong>Fuente</strong><p><a href="https://www.sec.gov/Archives/edgar/data/789019/000078901926000137/xslF345X06/form4.xml">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/789019/000078901926000137/xslF345X06/form4.xml">fuente</a></td>
+        </tr><tr>
+          <td><div class="company">HOOD</div><div class="muted">HOOD plan intradia salida mismo dia</div></td>
+          <td><span class="pill hot">82/100</span></td>
+          <td>alto</td>
+          <td>HOOD concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 108.65 si confirma impulso intradia. Objetivo orientativo 110.61 y stop orientativo 107.35; cerrar la posicion antes del fin de sesion.<div class="reason">Confluencia: 1 fuentes; Score maximo previo: 62/100; Score medio previo: 62/100; 5D +11.8%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>HOOD concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 108.65 si confirma impulso intradia. Objetivo orientativo 110.61 y stop orientativo 107.35; cerrar la posicion antes del fin de sesion.</p></div>
+        <div><strong>Motivos</strong><p>Confluencia: 1 fuentes; Score maximo previo: 62/100; Score medio previo: 62/100; 5D +11.8%; RSI 64.4</p></div>
+        <div><strong>Métricas</strong><p>Price: 108.65; Rsi: 64.37; Perf 5d: 11.79; Perf 20d: 23.24; Perf 60d: 55.70; Volume ratio: 0.84; Volume: 28019900.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/HOOD">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
+          <td><a href="https://finance.yahoo.com/quote/HOOD">fuente</a></td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">GOOGL plan intradia salida mismo dia</div></td>
+          <td><span class="pill hot">80/100</span></td>
+          <td>alto</td>
+          <td>GOOGL concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 361.21 si confirma impulso intradia. Objetivo orientativo 365.54 y stop orientativo 358.32; cerrar la posicion antes del fin de sesion.<div class="reason">Confluencia: 3 fuentes; Score maximo previo: 70/100; Score medio previo: 68/100; 5D +4.6%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>GOOGL concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 361.21 si confirma impulso intradia. Objetivo orientativo 365.54 y stop orientativo 358.32; cerrar la posicion antes del fin de sesion.</p></div>
+        <div><strong>Motivos</strong><p>Confluencia: 3 fuentes; Score maximo previo: 70/100; Score medio previo: 68/100; 5D +4.6%; RSI 50.3</p></div>
+        <div><strong>Métricas</strong><p>Price: 361.21; Rsi: 50.33; Perf 5d: 4.61; Perf 20d: -0.18; Perf 60d: 20.41; Volume ratio: 0.67; Volume: 26687500.00; Filing date: 2026-07-01</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/GOOGL">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
+          <td><a href="https://finance.yahoo.com/quote/GOOGL">fuente</a></td>
+        </tr><tr>
+          <td><div class="company">AMD</div><div class="muted">AMD plan intradia salida mismo dia</div></td>
+          <td><span class="pill watch">78/100</span></td>
+          <td>medio</td>
+          <td>AMD concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 540.88 si confirma impulso intradia. Objetivo orientativo 547.37 y stop orientativo 534.39; cerrar la posicion antes del fin de sesion.<div class="reason">Confluencia: 2 fuentes; Score maximo previo: 67/100; Score medio previo: 59/100; 5D +4.1%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>AMD concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 540.88 si confirma impulso intradia. Objetivo orientativo 547.37 y stop orientativo 534.39; cerrar la posicion antes del fin de sesion.</p></div>
+        <div><strong>Motivos</strong><p>Confluencia: 2 fuentes; Score maximo previo: 67/100; Score medio previo: 59/100; 5D +4.1%; RSI 56.5</p></div>
+        <div><strong>Métricas</strong><p>Price: 540.88; Rsi: 56.48; Perf 5d: 4.07; Perf 20d: 3.71; Perf 60d: 145.65; Volume ratio: 0.88; Volume: 28186200.00; Filing date: 2026-07-01</p></div>
+        <div><strong>Fuente</strong><p><a href="https://www.sec.gov/Archives/edgar/data/2488/000000248826000115/amd-20260626.htm">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/2488/000000248826000115/amd-20260626.htm">fuente</a></td>
+        </tr><tr>
+          <td><div class="company">PLTR</div><div class="muted">PLTR plan intradia salida mismo dia</div></td>
+          <td><span class="pill watch">78/100</span></td>
+          <td>medio</td>
+          <td>PLTR concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 125.73 si confirma impulso intradia. Objetivo orientativo 127.24 y stop orientativo 124.22; cerrar la posicion antes del fin de sesion.<div class="reason">Confluencia: 1 fuentes; Score maximo previo: 62/100; Score medio previo: 62/100; 5D +10.8%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>PLTR concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 125.73 si confirma impulso intradia. Objetivo orientativo 127.24 y stop orientativo 124.22; cerrar la posicion antes del fin de sesion.</p></div>
+        <div><strong>Motivos</strong><p>Confluencia: 1 fuentes; Score maximo previo: 62/100; Score medio previo: 62/100; 5D +10.8%; RSI 48.4</p></div>
+        <div><strong>Métricas</strong><p>Price: 125.73; Rsi: 48.37; Perf 5d: 10.78; Perf 20d: -17.38; Perf 60d: -15.01; Volume ratio: 1.37; Volume: 58390700.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/PLTR">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
+          <td><a href="https://finance.yahoo.com/quote/PLTR">fuente</a></td>
+        </tr><tr>
+          <td><div class="company">COIN</div><div class="muted">COIN plan intradia salida mismo dia</div></td>
+          <td><span class="pill watch">77/100</span></td>
+          <td>medio</td>
+          <td>COIN concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 159.24 si confirma impulso intradia. Objetivo orientativo 161.15 y stop orientativo 157.33; cerrar la posicion antes del fin de sesion.<div class="reason">Confluencia: 1 fuentes; Score maximo previo: 60/100; Score medio previo: 60/100; 5D +6.1%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>COIN concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 159.24 si confirma impulso intradia. Objetivo orientativo 161.15 y stop orientativo 157.33; cerrar la posicion antes del fin de sesion.</p></div>
+        <div><strong>Motivos</strong><p>Confluencia: 1 fuentes; Score maximo previo: 60/100; Score medio previo: 60/100; 5D +6.1%; RSI 47.0</p></div>
+        <div><strong>Métricas</strong><p>Price: 159.24; Rsi: 47.03; Perf 5d: 6.08; Perf 20d: -8.48; Perf 60d: -8.90; Volume ratio: 1.34; Volume: 11929500.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/COIN">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
+          <td><a href="https://finance.yahoo.com/quote/COIN">fuente</a></td>
+        </tr><tr>
+          <td><div class="company">XLF</div><div class="muted">XLF plan intradia salida mismo dia</div></td>
+          <td><span class="pill watch">75/100</span></td>
+          <td>medio</td>
+          <td>XLF concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 54.78 si confirma impulso intradia. Objetivo orientativo 55.44 y stop orientativo 54.12; cerrar la posicion antes del fin de sesion.<div class="reason">Confluencia: 1 fuentes; Score maximo previo: 87/100; Score medio previo: 87/100; 5D +2.0%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>XLF concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 54.78 si confirma impulso intradia. Objetivo orientativo 55.44 y stop orientativo 54.12; cerrar la posicion antes del fin de sesion.</p></div>
+        <div><strong>Motivos</strong><p>Confluencia: 1 fuentes; Score maximo previo: 87/100; Score medio previo: 87/100; 5D +2.0%; RSI 68.5</p></div>
+        <div><strong>Métricas</strong><p>Price: 54.78; Rsi: 68.53; Perf 5d: 1.97; Perf 20d: 6.45; Perf 60d: 9.82; Volume ratio: 1.24; Volume: 47735100.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/XLF">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
+          <td><a href="https://finance.yahoo.com/quote/XLF">fuente</a></td>
+        </tr><tr>
+          <td><div class="company">CRM</div><div class="muted">CRM plan intradia salida mismo dia</div></td>
+          <td><span class="pill watch">74/100</span></td>
+          <td>medio</td>
+          <td>CRM concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 163.23 si confirma impulso intradia. Objetivo orientativo 165.19 y stop orientativo 161.27; cerrar la posicion antes del fin de sesion.<div class="reason">Confluencia: 1 fuentes; Score maximo previo: 78/100; Score medio previo: 78/100; 5D +6.9%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>CRM concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 163.23 si confirma impulso intradia. Objetivo orientativo 165.19 y stop orientativo 161.27; cerrar la posicion antes del fin de sesion.</p></div>
+        <div><strong>Motivos</strong><p>Confluencia: 1 fuentes; Score maximo previo: 78/100; Score medio previo: 78/100; 5D +6.9%; RSI 47.1</p></div>
+        <div><strong>Métricas</strong><p>Price: 163.23; Rsi: 47.07; Perf 5d: 6.85; Perf 20d: -18.73; Perf 60d: -11.78; Volume ratio: 0.82; Volume: 14153200.00; Filing date: 2026-06-23</p></div>
+        <div><strong>Fuente</strong><p><a href="https://www.sec.gov/Archives/edgar/data/1108524/000110852426000152/xslF345X06/form4.xml">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1108524/000110852426000152/xslF345X06/form4.xml">fuente</a></td>
+        </tr><tr>
+          <td><div class="company">XLI</div><div class="muted">XLI plan intradia salida mismo dia</div></td>
+          <td><span class="pill watch">74/100</span></td>
+          <td>medio</td>
+          <td>XLI concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 183.36 si confirma impulso intradia. Objetivo orientativo 185.56 y stop orientativo 181.16; cerrar la posicion antes del fin de sesion.<div class="reason">Confluencia: 1 fuentes; Score maximo previo: 82/100; Score medio previo: 82/100; 5D +1.7%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>XLI concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 183.36 si confirma impulso intradia. Objetivo orientativo 185.56 y stop orientativo 181.16; cerrar la posicion antes del fin de sesion.</p></div>
+        <div><strong>Motivos</strong><p>Confluencia: 1 fuentes; Score maximo previo: 82/100; Score medio previo: 82/100; 5D +1.7%; RSI 59.6</p></div>
+        <div><strong>Métricas</strong><p>Price: 183.36; Rsi: 59.62; Perf 5d: 1.75; Perf 20d: 5.26; Perf 60d: 11.39; Volume ratio: 0.97; Volume: 8110800.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/XLI">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
+          <td><a href="https://finance.yahoo.com/quote/XLI">fuente</a></td>
+        </tr><tr>
+          <td><div class="company">TSLA</div><div class="muted">TSLA plan intradia salida mismo dia</div></td>
+          <td><span class="pill watch">72/100</span></td>
+          <td>medio</td>
+          <td>TSLA concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 425.30 si confirma impulso intradia. Objetivo orientativo 430.40 y stop orientativo 420.20; cerrar la posicion antes del fin de sesion.<div class="reason">Confluencia: 1 fuentes; Score maximo previo: 62/100; Score medio previo: 62/100; 5D +13.3%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>TSLA concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 425.30 si confirma impulso intradia. Objetivo orientativo 430.40 y stop orientativo 420.20; cerrar la posicion antes del fin de sesion.</p></div>
+        <div><strong>Motivos</strong><p>Confluencia: 1 fuentes; Score maximo previo: 62/100; Score medio previo: 62/100; 5D +13.3%; RSI 58.2</p></div>
+        <div><strong>Métricas</strong><p>Price: 425.30; Rsi: 58.24; Perf 5d: 13.25; Perf 20d: 0.37; Perf 60d: 20.54; Volume ratio: 0.83; Volume: 39967100.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/TSLA">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
+          <td><a href="https://finance.yahoo.com/quote/TSLA">fuente</a></td>
+        </tr><tr>
+          <td><div class="company">XLY</div><div class="muted">XLY plan intradia salida mismo dia</div></td>
+          <td><span class="pill watch">70/100</span></td>
+          <td>medio</td>
+          <td>XLY concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 118.09 si confirma impulso intradia. Objetivo orientativo 119.51 y stop orientativo 116.67; cerrar la posicion antes del fin de sesion.<div class="reason">Confluencia: 1 fuentes; Score maximo previo: 64/100; Score medio previo: 64/100; 5D +2.6%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>XLY concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 118.09 si confirma impulso intradia. Objetivo orientativo 119.51 y stop orientativo 116.67; cerrar la posicion antes del fin de sesion.</p></div>
+        <div><strong>Motivos</strong><p>Confluencia: 1 fuentes; Score maximo previo: 64/100; Score medio previo: 64/100; 5D +2.6%; RSI 54.5</p></div>
+        <div><strong>Métricas</strong><p>Price: 118.09; Rsi: 54.48; Perf 5d: 2.62; Perf 20d: 0.43; Perf 60d: 8.30; Volume ratio: 1.28; Volume: 9863500.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/XLY">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
+          <td><a href="https://finance.yahoo.com/quote/XLY">fuente</a></td>
+        </tr><tr>
+          <td><div class="company">XLU</div><div class="muted">XLU plan intradia salida mismo dia</div></td>
+          <td><span class="pill watch">65/100</span></td>
+          <td>medio</td>
+          <td>XLU concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 44.77 si confirma impulso intradia. Objetivo orientativo 45.31 y stop orientativo 44.23; cerrar la posicion antes del fin de sesion.<div class="reason">Confluencia: 1 fuentes; Score maximo previo: 62/100; Score medio previo: 62/100; 5D -1.7%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>XLU concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 44.77 si confirma impulso intradia. Objetivo orientativo 45.31 y stop orientativo 44.23; cerrar la posicion antes del fin de sesion.</p></div>
+        <div><strong>Motivos</strong><p>Confluencia: 1 fuentes; Score maximo previo: 62/100; Score medio previo: 62/100; 5D -1.7%; RSI 47.9</p></div>
+        <div><strong>Métricas</strong><p>Price: 44.77; Rsi: 47.94; Perf 5d: -1.69; Perf 20d: 1.98; Perf 60d: -3.03; Volume ratio: 1.41; Volume: 29491100.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/XLU">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
+          <td><a href="https://finance.yahoo.com/quote/XLU">fuente</a></td>
+        </tr><tr>
+          <td><div class="company">META</div><div class="muted">META plan intradia salida mismo dia</div></td>
+          <td><span class="pill quiet">64/100</span></td>
+          <td>vigilancia</td>
+          <td>META concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 612.91 si confirma impulso intradia. Objetivo orientativo 620.26 y stop orientativo 605.56; cerrar la posicion antes del fin de sesion.<div class="reason">Confluencia: 2 fuentes; Score maximo previo: 55/100; Score medio previo: 52/100; 5D +0.0%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>META concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 612.91 si confirma impulso intradia. Objetivo orientativo 620.26 y stop orientativo 605.56; cerrar la posicion antes del fin de sesion.</p></div>
+        <div><strong>Motivos</strong><p>Confluencia: 2 fuentes; Score maximo previo: 55/100; Score medio previo: 52/100; 5D +0.0%; RSI 58.5</p></div>
+        <div><strong>Métricas</strong><p>Price: 612.91; Rsi: 58.45; Perf 20d: 2.56; Perf 60d: 6.96; Dist200: -5.33; Drawdown: -22.42; Reasons: Drawdown 52s -22.4%, Cerca de SMA200 desde abajo, Recupera SMA20; Score: 50.00</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/META">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
+          <td><a href="https://finance.yahoo.com/quote/META">fuente</a></td>
+        </tr><tr>
+          <td><div class="company">AMZN</div><div class="muted">AMZN plan intradia salida mismo dia</div></td>
+          <td><span class="pill quiet">62/100</span></td>
+          <td>vigilancia</td>
+          <td>AMZN concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 241.70 si confirma impulso intradia. Objetivo orientativo 244.60 y stop orientativo 238.80; cerrar la posicion antes del fin de sesion.<div class="reason">Confluencia: 2 fuentes; Score maximo previo: 51/100; Score medio previo: 50/100; 5D +0.0%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>AMZN concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 241.70 si confirma impulso intradia. Objetivo orientativo 244.60 y stop orientativo 238.80; cerrar la posicion antes del fin de sesion.</p></div>
+        <div><strong>Motivos</strong><p>Confluencia: 2 fuentes; Score maximo previo: 51/100; Score medio previo: 50/100; 5D +0.0%; RSI 47.8</p></div>
+        <div><strong>Métricas</strong><p>Price: 241.70; Rsi: 47.85; Perf 20d: -5.78; Perf 60d: 13.59; Dist200: 3.77; Drawdown: -12.11; Reasons: Drawdown 52s -12.1%, Precio sobre SMA200, Recupera SMA20; Score: 50.00</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/AMZN">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
+          <td><a href="https://finance.yahoo.com/quote/AMZN">fuente</a></td>
+        </tr><tr>
+          <td><div class="company">IWM</div><div class="muted">IWM plan intradia salida mismo dia</div></td>
+          <td><span class="pill quiet">60/100</span></td>
+          <td>vigilancia</td>
+          <td>IWM concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 299.32 si confirma impulso intradia. Objetivo orientativo 302.91 y stop orientativo 296.93; cerrar la posicion antes del fin de sesion.<div class="reason">Confluencia: 1 fuentes; Score maximo previo: 70/100; Score medio previo: 70/100; 5D +0.9%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>IWM concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 299.32 si confirma impulso intradia. Objetivo orientativo 302.91 y stop orientativo 296.93; cerrar la posicion antes del fin de sesion.</p></div>
+        <div><strong>Motivos</strong><p>Confluencia: 1 fuentes; Score maximo previo: 70/100; Score medio previo: 70/100; 5D +0.9%; RSI 61.1</p></div>
+        <div><strong>Métricas</strong><p>Price: 299.32; Rsi: 61.08; Perf 5d: 0.89; Perf 20d: 2.63; Perf 60d: 18.61; Volume ratio: 0.68; Volume: 20580600.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/IWM">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
+          <td><a href="https://finance.yahoo.com/quote/IWM">fuente</a></td>
+        </tr><tr>
+          <td><div class="company">XLP</div><div class="muted">XLP plan intradia salida mismo dia</div></td>
+          <td><span class="pill quiet">58/100</span></td>
+          <td>vigilancia</td>
+          <td>XLP concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 83.30 si confirma impulso intradia. Objetivo orientativo 84.30 y stop orientativo 82.30; cerrar la posicion antes del fin de sesion.<div class="reason">Confluencia: 1 fuentes; Score maximo previo: 62/100; Score medio previo: 62/100; 5D -1.4%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>XLP concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 83.30 si confirma impulso intradia. Objetivo orientativo 84.30 y stop orientativo 82.30; cerrar la posicion antes del fin de sesion.</p></div>
+        <div><strong>Motivos</strong><p>Confluencia: 1 fuentes; Score maximo previo: 62/100; Score medio previo: 62/100; 5D -1.4%; RSI 46.7</p></div>
+        <div><strong>Métricas</strong><p>Price: 83.30; Rsi: 46.67; Perf 5d: -1.35; Perf 20d: 1.80; Perf 60d: 0.77; Volume ratio: 0.97; Volume: 12199800.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/XLP">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
+          <td><a href="https://finance.yahoo.com/quote/XLP">fuente</a></td>
+        </tr><tr>
+          <td><div class="company">AAPL</div><div class="muted">AAPL plan intradia salida mismo dia</div></td>
+          <td><span class="pill quiet">56/100</span></td>
+          <td>vigilancia</td>
+          <td>AAPL concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 294.38 si confirma impulso intradia. Objetivo orientativo 297.91 y stop orientativo 290.85; cerrar la posicion antes del fin de sesion.<div class="reason">Confluencia: 1 fuentes; Score maximo previo: 52/100; Score medio previo: 52/100; 5D +0.0%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>AAPL concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 294.38 si confirma impulso intradia. Objetivo orientativo 297.91 y stop orientativo 290.85; cerrar la posicion antes del fin de sesion.</p></div>
+        <div><strong>Motivos</strong><p>Confluencia: 1 fuentes; Score maximo previo: 52/100; Score medio previo: 52/100; 5D +0.0%; RSI 51.0</p></div>
+        <div><strong>Métricas</strong><p>Price: 294.38; Rsi: 50.97; Perf 20d: -6.61; Perf 60d: 13.72; Ticker: AAPL; Sma20: 294.88; Sma50: 292.67; Status: ok</p></div>
+        <div><strong>Fuente</strong><p><a href="https://news.google.com/rss/articles/CBMiUEFVX3lxTE5tVXhfYUN5SzZfUUcyT3FVeTIwcWVZU1hmQUhtN2Nnd19zNDlRclF1UzhfdTRCVnZlZmVvSDdmTUpwT1o1LUtnSTk3WGVQeUdI?oc=5">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
+          <td><a href="https://news.google.com/rss/articles/CBMiUEFVX3lxTE5tVXhfYUN5SzZfUUcyT3FVeTIwcWVZU1hmQUhtN2Nnd19zNDlRclF1UzhfdTRCVnZlZmVvSDdmTUpwT1o1LUtnSTk3WGVQeUdI?oc=5">fuente</a></td>
+        </tr><tr>
+          <td><div class="company">SMH</div><div class="muted">SMH plan intradia salida mismo dia</div></td>
+          <td><span class="pill quiet">55/100</span></td>
+          <td>vigilancia</td>
+          <td>SMH concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 620.46 si confirma impulso intradia. Objetivo orientativo 627.91 y stop orientativo 613.01; cerrar la posicion antes del fin de sesion.<div class="reason">Confluencia: 1 fuentes; Score maximo previo: 50/100; Score medio previo: 50/100; 5D +0.2%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>SMH concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 620.46 si confirma impulso intradia. Objetivo orientativo 627.91 y stop orientativo 613.01; cerrar la posicion antes del fin de sesion.</p></div>
+        <div><strong>Motivos</strong><p>Confluencia: 1 fuentes; Score maximo previo: 50/100; Score medio previo: 50/100; 5D +0.2%; RSI 51.9</p></div>
+        <div><strong>Métricas</strong><p>Price: 620.46; Rsi: 51.94; Perf 5d: 0.25; Perf 20d: -1.86; Perf 60d: 56.69; Volume ratio: 1.05; Volume: 13305700.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/SMH">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
+          <td><a href="https://finance.yahoo.com/quote/SMH">fuente</a></td>
+        </tr><tr>
+          <td><div class="company">TLT</div><div class="muted">TLT plan intradia salida mismo dia</div></td>
+          <td><span class="pill quiet">54/100</span></td>
+          <td>vigilancia</td>
+          <td>TLT concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 85.52 si confirma impulso intradia. Objetivo orientativo 86.55 y stop orientativo 84.49; cerrar la posicion antes del fin de sesion.<div class="reason">Confluencia: 1 fuentes; Score maximo previo: 52/100; Score medio previo: 52/100; 5D -2.1%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>TLT concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 85.52 si confirma impulso intradia. Objetivo orientativo 86.55 y stop orientativo 84.49; cerrar la posicion antes del fin de sesion.</p></div>
+        <div><strong>Motivos</strong><p>Confluencia: 1 fuentes; Score maximo previo: 52/100; Score medio previo: 52/100; 5D -2.1%; RSI 45.1</p></div>
+        <div><strong>Métricas</strong><p>Price: 85.52; Rsi: 45.14; Perf 5d: -2.13; Perf 20d: -0.15; Perf 60d: -1.30; Volume ratio: 1.10; Volume: 28090200.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/TLT">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
+          <td><a href="https://finance.yahoo.com/quote/TLT">fuente</a></td>
+        </tr><tr>
+          <td><div class="company">QQQ</div><div class="muted">QQQ plan intradia salida mismo dia</div></td>
+          <td><span class="pill quiet">54/100</span></td>
+          <td>vigilancia</td>
+          <td>QQQ concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 725.17 si confirma impulso intradia. Objetivo orientativo 733.87 y stop orientativo 719.37; cerrar la posicion antes del fin de sesion.<div class="reason">Confluencia: 1 fuentes; Score maximo previo: 50/100; Score medio previo: 50/100; 5D +2.0%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>QQQ concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 725.17 si confirma impulso intradia. Objetivo orientativo 733.87 y stop orientativo 719.37; cerrar la posicion antes del fin de sesion.</p></div>
+        <div><strong>Motivos</strong><p>Confluencia: 1 fuentes; Score maximo previo: 50/100; Score medio previo: 50/100; 5D +2.0%; RSI 52.4</p></div>
+        <div><strong>Métricas</strong><p>Price: 725.17; Rsi: 52.43; Perf 5d: 2.05; Perf 20d: -2.81; Perf 60d: 23.22; Volume ratio: 0.75; Volume: 40258000.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/QQQ">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
+          <td><a href="https://finance.yahoo.com/quote/QQQ">fuente</a></td>
+        </tr><tr>
+          <td><div class="company">SPY</div><div class="muted">SPY plan intradia salida mismo dia</div></td>
+          <td><span class="pill quiet">53/100</span></td>
+          <td>vigilancia</td>
+          <td>SPY concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 745.76 si confirma impulso intradia. Objetivo orientativo 754.71 y stop orientativo 739.79; cerrar la posicion antes del fin de sesion.<div class="reason">Confluencia: 1 fuentes; Score maximo previo: 53/100; Score medio previo: 53/100; 5D +1.7%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>SPY concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 745.76 si confirma impulso intradia. Objetivo orientativo 754.71 y stop orientativo 739.79; cerrar la posicion antes del fin de sesion.</p></div>
+        <div><strong>Motivos</strong><p>Confluencia: 1 fuentes; Score maximo previo: 53/100; Score medio previo: 53/100; 5D +1.7%; RSI 54.2</p></div>
+        <div><strong>Métricas</strong><p>Price: 745.76; Rsi: 54.23; Perf 5d: 1.71; Perf 20d: -1.82; Perf 60d: 13.18; Volume ratio: 0.73; Volume: 46886600.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/SPY">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
+          <td><a href="https://finance.yahoo.com/quote/SPY">fuente</a></td>
+        </tr><tr>
+          <td><div class="company">AVGO</div><div class="muted">AVGO plan intradia salida mismo dia</div></td>
+          <td><span class="pill quiet">51/100</span></td>
+          <td>vigilancia</td>
+          <td>AVGO concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 369.34 si confirma impulso intradia. Objetivo orientativo 373.77 y stop orientativo 366.39; cerrar la posicion antes del fin de sesion.<div class="reason">Confluencia: 2 fuentes; Score maximo previo: 70/100; Score medio previo: 66/100; 5D -3.3%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>AVGO concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 369.34 si confirma impulso intradia. Objetivo orientativo 373.77 y stop orientativo 366.39; cerrar la posicion antes del fin de sesion.</p></div>
+        <div><strong>Motivos</strong><p>Confluencia: 2 fuentes; Score maximo previo: 70/100; Score medio previo: 66/100; 5D -3.3%; RSI 42.0</p></div>
+        <div><strong>Métricas</strong><p>Price: 369.34; Rsi: 42.00; Perf 5d: -3.33; Perf 20d: -23.31; Perf 60d: 17.46; Volume ratio: 0.65; Volume: 23652000.00; Filing date: 2026-07-01</p></div>
+        <div><strong>Fuente</strong><p><a href="https://www.sec.gov/Archives/edgar/data/1730168/000135956126000004/xslF345X06/wk-form4_1782940899.xml">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/1730168/000135956126000004/xslF345X06/wk-form4_1782940899.xml">fuente</a></td>
+        </tr><tr>
+          <td><div class="company">ARM</div><div class="muted">ARM plan intradia salida mismo dia</div></td>
+          <td><span class="pill quiet">50/100</span></td>
+          <td>vigilancia</td>
+          <td>ARM concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 337.47 si confirma impulso intradia. Objetivo orientativo 341.52 y stop orientativo 334.77; cerrar la posicion antes del fin de sesion.<div class="reason">Confluencia: 1 fuentes; Score maximo previo: 54/100; Score medio previo: 54/100; 5D -6.0%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>ARM concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 337.47 si confirma impulso intradia. Objetivo orientativo 341.52 y stop orientativo 334.77; cerrar la posicion antes del fin de sesion.</p></div>
+        <div><strong>Motivos</strong><p>Confluencia: 1 fuentes; Score maximo previo: 54/100; Score medio previo: 54/100; 5D -6.0%; RSI 48.8</p></div>
+        <div><strong>Métricas</strong><p>Price: 337.47; Rsi: 48.81; Perf 5d: -6.02; Perf 20d: -16.20; Perf 60d: 126.84; Volume ratio: 0.44; Volume: 5047500.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/ARM">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
+          <td><a href="https://finance.yahoo.com/quote/ARM">fuente</a></td>
+        </tr><tr>
+          <td><div class="company">MSTR</div><div class="muted">MSTR plan intradia salida mismo dia</div></td>
+          <td><span class="pill quiet">49/100</span></td>
+          <td>vigilancia</td>
+          <td>MSTR concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 93.39 si confirma impulso intradia. Objetivo orientativo 94.51 y stop orientativo 92.27; cerrar la posicion antes del fin de sesion.<div class="reason">Confluencia: 1 fuentes; Score maximo previo: 50/100; Score medio previo: 50/100; 5D -0.8%</div><details class="details">
+      <summary>Ver tesis, métricas y fuente</summary>
+      <div class="detail-grid">
+        <div><strong>Lectura</strong><p>MSTR concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 93.39 si confirma impulso intradia. Objetivo orientativo 94.51 y stop orientativo 92.27; cerrar la posicion antes del fin de sesion.</p></div>
+        <div><strong>Motivos</strong><p>Confluencia: 1 fuentes; Score maximo previo: 50/100; Score medio previo: 50/100; 5D -0.8%; RSI 35.3</p></div>
+        <div><strong>Métricas</strong><p>Price: 93.39; Rsi: 35.35; Perf 5d: -0.79; Perf 20d: -31.37; Perf 60d: -26.86; Volume ratio: 1.21; Volume: 34244400.00; Breakout 20d: no</p></div>
+        <div><strong>Fuente</strong><p><a href="https://finance.yahoo.com/quote/MSTR">Abrir fuente</a></p></div>
+      </div>
+    </details></td>
+          <td><a href="https://finance.yahoo.com/quote/MSTR">fuente</a></td>
+        </tr></tbody></table></div>
+    </div>
+  </section>
+  <footer>Generado: 2026-07-02 11:25 UTC. Fuente: config_intraday_cashout.yaml.</footer>
+</div>
+</body>
+</html>

@@ -63,6 +63,7 @@ jobs:
           run_script "Earnings Catalyst Agent" python -u earnings_catalyst_agent.py --force
           run_script "CFTC Positioning Agent" python -u cftc_positioning_agent.py --force
           run_script "Altcoin Fundamentals Agent" python -u altcoin_fundamentals_agent.py --force
+          run_script "Intraday Cashout Agent" python -u intraday_cashout_agent.py --force
           run_script "Weekly Regime Report" python -u agent.py --mode weekly --force
           run_script "BTC Backtest" python -u agent.py --mode backtest --force
 
@@ -83,6 +84,7 @@ jobs:
           git add earnings_catalyst_state.json earnings_catalyst_snapshot.json earnings_catalyst_log.csv docs/earnings_catalyst_dashboard.html || true
           git add cftc_positioning_state.json cftc_positioning_snapshot.json cftc_positioning_log.csv docs/cftc_positioning_dashboard.html || true
           git add altcoin_fundamentals_state.json altcoin_fundamentals_snapshot.json altcoin_fundamentals_log.csv docs/altcoin_fundamentals_dashboard.html || true
+          git add intraday_cashout_state.json intraday_cashout_snapshot.json intraday_cashout_log.csv docs/intraday_cashout_dashboard.html docs/index.html docs/opportunities.html || true
           git diff --cached --quiet || git commit -m "Update all forced agent outputs [skip ci]"
           git push || true
 

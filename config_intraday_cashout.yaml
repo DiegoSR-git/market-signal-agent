@@ -1,0 +1,32 @@
+agent:
+  key: intraday_cashout
+  name: Agente Intradia Salida Mismo Dia
+  state_file: intraday_cashout_state.json
+  snapshot_file: intraday_cashout_snapshot.json
+  log_file: intraday_cashout_log.csv
+  dashboard_file: docs/intraday_cashout_dashboard.html
+
+alerts:
+  min_score_to_alert: 76
+  max_alerts: 5
+  cooldown_hours: 8
+
+http:
+  user_agent: market-signal-agent intraday-cashout
+  connect_timeout: 6
+  read_timeout: 12
+  retries: 1
+  retry_delay_seconds: 1
+
+ai:
+  enabled: true
+  model: openai/gpt-4.1-mini
+  timeout_seconds: 45
+  max_output_tokens: 700
+  max_events: 8
+  temperature: 0.1
+
+intraday:
+  min_input_score: 50
+  max_candidates: 25
+  max_hold_hours: 8
