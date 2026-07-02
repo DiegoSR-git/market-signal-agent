@@ -1,4 +1,4 @@
-name: Event Rumor Agent
+name: Agente De Rumores Y Eventos
 
 on:
   workflow_dispatch:
@@ -8,9 +8,9 @@ on:
         required: false
         default: "false"
   schedule:
-    # GitHub cron uses UTC. These map to 08:15 and 22:15 Europe/Madrid during CEST.
-    - cron: "15 6 * * *"
-    - cron: "15 20 * * *"
+    # GitHub cron uses UTC. These map to 08:10 and 22:10 Europe/Madrid during CEST.
+    - cron: "10 6 * * *"
+    - cron: "10 20 * * *"
 
 permissions:
   contents: write
@@ -44,9 +44,9 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           if [ "${{ github.event.inputs.force }}" = "true" ]; then
-            python event_rumor_agent.py --force
+            python -u event_rumor_agent.py --force
           else
-            python event_rumor_agent.py
+            python -u event_rumor_agent.py
           fi
 
       - name: Persist event rumor state

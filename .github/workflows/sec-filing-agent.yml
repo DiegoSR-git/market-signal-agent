@@ -1,4 +1,4 @@
-name: SEC Insider & Filing Agent
+name: Agente SEC De Insiders Y Filings
 
 on:
   workflow_dispatch:
@@ -8,8 +8,8 @@ on:
         required: false
         default: "false"
   schedule:
-    # GitHub cron uses UTC. These map to 08:30 and 22:30 Europe/Madrid during CEST, weekdays.
-    - cron: "30 6,20 * * 1-5"
+    # GitHub cron uses UTC. These map to 08:20 and 22:20 Europe/Madrid during CEST.
+    - cron: "20 6,20 * * *"
 
 permissions:
   contents: write

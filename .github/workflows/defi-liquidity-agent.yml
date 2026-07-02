@@ -1,4 +1,4 @@
-name: DeFi Liquidity Agent
+name: Agente De Liquidez DeFi
 
 on:
   workflow_dispatch:
@@ -8,8 +8,8 @@ on:
         required: false
         default: "false"
   schedule:
-    # GitHub cron uses UTC. These map to 08:45 and 22:45 Europe/Madrid during CEST.
-    - cron: "45 6,20 * * *"
+    # GitHub cron uses UTC. These map to 08:35 and 22:35 Europe/Madrid during CEST.
+    - cron: "35 6,20 * * *"
 
 permissions:
   contents: write

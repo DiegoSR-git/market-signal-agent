@@ -1,4 +1,4 @@
-# Premium Research Agents
+# Agentes Premium De Investigacion
 
 V1 modular de agentes de research automatizado con datos publicos, Telegram multi-chat, GitHub Models, state anti-spam, snapshots, logs CSV y dashboards en `docs/`.
 
@@ -6,16 +6,16 @@ No ejecutan ordenes, no usan informacion privilegiada y no generan asesoramiento
 
 ## Agentes
 
-| Agente | Script | Config | Dashboard |
+| Agente | Script | Config | Panel |
 | --- | --- | --- | --- |
-| SEC Insider & Filing | `sec_filing_agent.py` | `config_sec.yaml` | `docs/sec_filing_dashboard.html` |
-| Macro Regime | `macro_regime_agent.py` | `config_macro.yaml` | `docs/macro_regime_dashboard.html` |
-| Sector Rotation | `sector_rotation_agent.py` | `config_sector_rotation.yaml` | `docs/sector_rotation_dashboard.html` |
-| DeFi Liquidity | `defi_liquidity_agent.py` | `config_defi.yaml` | `docs/defi_liquidity_dashboard.html` |
-| Earnings Catalyst | `earnings_catalyst_agent.py` | `config_earnings.yaml` | `docs/earnings_catalyst_dashboard.html` |
-| CFTC Positioning | `cftc_positioning_agent.py` | `config_cftc.yaml` | `docs/cftc_positioning_dashboard.html` |
-| Unusual Volume | `unusual_volume_agent.py` | `config_unusual_volume.yaml` | `docs/unusual_volume_dashboard.html` |
-| Altcoin Fundamentals | `altcoin_fundamentals_agent.py` | `config_altcoins.yaml` | `docs/altcoin_fundamentals_dashboard.html` |
+| SEC e insiders | `sec_filing_agent.py` | `config_sec.yaml` | `docs/sec_filing_dashboard.html` |
+| Regimen macro | `macro_regime_agent.py` | `config_macro.yaml` | `docs/macro_regime_dashboard.html` |
+| Rotacion sectorial | `sector_rotation_agent.py` | `config_sector_rotation.yaml` | `docs/sector_rotation_dashboard.html` |
+| Liquidez DeFi | `defi_liquidity_agent.py` | `config_defi.yaml` | `docs/defi_liquidity_dashboard.html` |
+| Catalizadores de resultados | `earnings_catalyst_agent.py` | `config_earnings.yaml` | `docs/earnings_catalyst_dashboard.html` |
+| Posicionamiento CFTC | `cftc_positioning_agent.py` | `config_cftc.yaml` | `docs/cftc_positioning_dashboard.html` |
+| Volumen inusual | `unusual_volume_agent.py` | `config_unusual_volume.yaml` | `docs/unusual_volume_dashboard.html` |
+| Fundamentales altcoin | `altcoin_fundamentals_agent.py` | `config_altcoins.yaml` | `docs/altcoin_fundamentals_dashboard.html` |
 
 ## Probar en local
 
@@ -66,6 +66,6 @@ Cada agente genera:
 - `*_state.json`: cooldown anti-spam y ultima ejecucion
 - `*_snapshot.json`: ultimo ranking completo
 - `*_log.csv`: historico append-only
-- `docs/*_dashboard.html`: dashboard publicado por GitHub Pages
+- `docs/*_dashboard.html`: panel publicado por GitHub Pages
 
 Los workflows hacen commit automatico de estos archivos con `[skip ci]`.

@@ -69,10 +69,10 @@ def pct_change(current, previous):
 def score_level(score):
     score = safe_float(score, 0)
     if score >= 80:
-        return "high"
+        return "alto"
     if score >= 65:
-        return "medium"
-    return "watch"
+        return "medio"
+    return "vigilancia"
 
 
 def fmt_float(value, decimals=2):
@@ -364,7 +364,7 @@ def ai_summary(agent_name, events, config):
     if not ai.get("enabled", True):
         return None
     if not GITHUB_MODELS_TOKEN:
-        log("AI skipped: missing GITHUB_TOKEN")
+        log("IA omitida: falta GITHUB_TOKEN")
         return None
     selected = [
         {
@@ -379,11 +379,11 @@ def ai_summary(agent_name, events, config):
         for e in events[: int(ai.get("max_events", 8))]
     ]
     prompt = f"""
-Analiza estos eventos de research automatizado para {agent_name}.
+Analiza estos eventos de investigacion automatizada para {agent_name}.
 Devuelve SOLO JSON valido con:
 {{
   "brief": "maximo 3 frases en espanol, profesional y accionable",
-  "watch_items": ["punto 1", "punto 2", "punto 3"],
+  "watch_items": ["punto de vigilancia 1", "punto de vigilancia 2", "punto de vigilancia 3"],
   "risk_notes": ["riesgo 1", "riesgo 2"]
 }}
 Reglas: no digas compra ahora, vende, garantizado ni senal segura. Usa lenguaje de vigilancia y control de riesgo.
@@ -399,7 +399,7 @@ Eventos:
     body = {
         "model": ai.get("model", "openai/gpt-4.1-mini"),
         "messages": [
-            {"role": "system", "content": "Eres un analista de mercado prudente. Usa solo el JSON recibido."},
+            {"role": "system", "content": "Eres un analista de mercado prudente. Usa solo el JSON recibido y responde siempre en castellano."},
             {"role": "user", "content": prompt},
         ],
         "temperature": float(ai.get("temperature", 0.15)),
@@ -420,7 +420,7 @@ Eventos:
         match = re.search(r"\{.*\}", text, flags=re.S)
         return json.loads(match.group(0) if match else text)
     except Exception as ex:
-        log(f"AI summary error: {ex}")
+        log(f"Error de resumen IA: {ex}")
         return None
 
 
@@ -492,42 +492,42 @@ def sec_filings(config):
                 accession_clean = accession.replace("-", "")
                 source = f"{base}/{int(cik)}/{accession_clean}/{primary_doc}" if accession and primary_doc else None
                 score = 45
-                reasons = [f"SEC form {form}", f"filed {filing_date}"]
+                reasons = [f"formulario SEC {form}", f"presentado {filing_date}"]
                 form4_details = {}
                 if form == "4":
                     score += 25
-                    reasons.append("insider transaction filing")
+                    reasons.append("operacion declarada por insider")
                     if sec_cfg.get("parse_form4_details", True) and source and form4_detail_fetches < max_form4_detail_fetches:
                         try:
                             form4_details = parse_form4_details(request_text(source, config, headers=headers, retries=0, read_timeout=10))
                             form4_detail_fetches += 1
                             if form4_details.get("purchase_count"):
                                 score += 15
-                                reasons.append(f"insider purchase transactions: {form4_details['purchase_count']}")
+                                reasons.append(f"compras de insiders: {form4_details['purchase_count']}")
                             if form4_details.get("sale_count"):
                                 score += 8
-                                reasons.append(f"insider sale transactions: {form4_details['sale_count']}")
+                                reasons.append(f"ventas de insiders: {form4_details['sale_count']}")
                         except Exception as ex:
-                            log(f"Form 4 detail parse skipped {ticker}: {ex}")
+                            log(f"Analisis de detalle Form 4 omitido para {ticker}: {ex}")
                 elif form == "8-K":
                     score += 22
-                    reasons.append("material event filing")
+                    reasons.append("hecho relevante comunicado")
                 elif form in ["13D", "13G"]:
                     score += 20
-                    reasons.append("ownership change filing")
+                    reasons.append("cambio de participacion accionarial")
                 elif form == "13F-HR":
                     score += 12
-                    reasons.append("institutional holdings update")
+                    reasons.append("actualizacion de posiciones institucionales")
                 if safe_float(metric.get("perf_5d"), 0) > 5:
                     score += 8
-                    reasons.append("price reacting recently")
+                    reasons.append("precio reaccionando recientemente")
                 events.append(
                     make_event(
                         "sec_filing",
-                        f"{ticker} {form} filing",
+                        f"{ticker} presentacion SEC {form}",
                         ticker,
                         score,
-                        f"{company.get('name', ticker)} published {form}. Monitor filing details and price reaction.",
+                        f"{company.get('name', ticker)} publico el formulario {form}. Vigilar detalles del documento y reaccion del precio.",
                         reasons,
                         {"filing_date": filing_date, "form": form, "form4_details": form4_details, **metric},
                         source,
@@ -568,10 +568,10 @@ def macro_regime(config):
     return [
         make_event(
             "macro_regime",
-            f"Macro regime: {regime}",
+            f"Regimen macro: {regime}",
             "MARKET",
             risk_score,
-            f"Current proxy basket points to {regime}. Watch confirmation across credit, duration and dollar proxies.",
+            f"La cesta de proxies apunta a un regimen {regime}. Vigilar confirmacion en credito, duracion y dolar.",
             reasons,
             {"regime": regime, "proxies": metrics},
             "https://finance.yahoo.com",
@@ -598,16 +598,16 @@ def sector_rotation(config):
             score -= 6
         reasons = [
             f"20D {fmt_pct(m.get('perf_20d'))}",
-            f"relative vs SPY {fmt_pct(rel20)}",
+            f"relativo vs SPY {fmt_pct(rel20)}",
             f"RSI {fmt_float(m.get('rsi'), 1)}",
         ]
         events.append(
             make_event(
                 "sector_rotation",
-                f"{symbol} rotation watch",
+                f"{symbol} rotacion sectorial",
                 symbol,
                 score,
-                f"{label} is showing relative strength/weakness vs SPY. Monitor rotation persistence.",
+                f"{label} muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
                 reasons,
                 {**m, "relative_20d_vs_spy": rel20},
                 f"https://finance.yahoo.com/quote/{quote_plus(symbol)}",
@@ -638,10 +638,10 @@ def defi_liquidity(config):
         events.append(
             make_event(
                 "defi_liquidity",
-                f"{name} DeFi liquidity",
+                f"{name} liquidez DeFi",
                 name,
                 score,
-                f"{name} liquidity trend from DefiLlama. Watch TVL and chain activity confirmation.",
+                f"Tendencia de liquidez de {name} segun DefiLlama. Vigilar TVL y confirmacion de actividad en la red.",
                 reasons,
                 {"tvl": tvl, "change_1d": change_1d, "change_7d": change_7d},
                 "https://defillama.com/chains",
@@ -668,24 +668,24 @@ def earnings_catalyst(config):
             continue
         m = market_metrics(symbol, config=config)
         score = 45
-        reasons = [f"earnings in {days} days"]
+        reasons = [f"resultados en {days} dias"]
         if 0 <= days <= 10:
             score += 20
         if abs(safe_float(m.get("perf_5d"), 0)) >= 4:
             score += 10
-            reasons.append(f"5D move {fmt_pct(m.get('perf_5d'))}")
+            reasons.append(f"movimiento 5D {fmt_pct(m.get('perf_5d'))}")
         if safe_float(m.get("volume_ratio"), 0) >= 1.5:
             score += 10
-            reasons.append(f"volume {fmt_float(m.get('volume_ratio'), 1)}x")
+            reasons.append(f"volumen {fmt_float(m.get('volume_ratio'), 1)}x")
         if 45 <= safe_float(m.get("rsi"), 50) <= 68:
             score += 6
         events.append(
             make_event(
                 "earnings_catalyst",
-                f"{symbol} earnings setup",
+                f"{symbol} vigilancia de resultados",
                 symbol,
                 score,
-                f"{item.get('name', symbol)} has earnings approaching. This is a watch alert, not a buy/sell recommendation.",
+                f"{item.get('name', symbol)} tiene resultados cerca. Es una alerta de vigilancia, no una recomendacion de compra o venta.",
                 reasons,
                 {**m, "earnings_date": str(earnings_date), "days_until": days},
                 f"https://finance.yahoo.com/quote/{quote_plus(symbol)}/analysis",
@@ -701,7 +701,7 @@ def cftc_positioning(config):
     try:
         text = request_text(url, config, retries=1, read_timeout=18)
     except Exception as ex:
-        log(f"CFTC fetch error: {ex}")
+        log(f"Error al obtener CFTC: {ex}")
         text = ""
     lower = text.lower()
     for market in cftc.get("markets", []):
@@ -709,14 +709,14 @@ def cftc_positioning(config):
         patterns = [p.lower() for p in market.get("match", [])]
         matched = any(p in lower for p in patterns)
         score = 68 if matched else 35
-        reasons = ["public CFTC report scanned"] + (["market name matched in report"] if matched else ["market not matched; check config mapping"])
+        reasons = ["informe publico CFTC revisado"] + (["mercado encontrado en el informe"] if matched else ["mercado no encontrado; revisar mapeo de config"])
         events.append(
             make_event(
                 "cftc_positioning",
-                f"{name} CFTC positioning watch",
+                f"{name} posicionamiento CFTC",
                 market.get("symbol", name),
                 score,
-                f"{name} positioning report should be reviewed for extremes and weekly changes.",
+                f"Conviene revisar el posicionamiento de {name} para extremos y cambios semanales.",
                 reasons,
                 {"matched_public_report": matched, "report_url": url},
                 url,
@@ -740,19 +740,19 @@ def unusual_volume(config):
         reasons = [f"volume {fmt_float(ratio, 1)}x avg", f"5D {fmt_pct(m.get('perf_5d'))}"]
         if m.get("breakout_20d"):
             score += 12
-            reasons.append("near 20D breakout")
+            reasons.append("cerca de ruptura 20D")
         if m.get("breakout_50d"):
             score += 10
-            reasons.append("near 50D breakout")
+            reasons.append("cerca de ruptura 50D")
         if ratio < min_ratio and not m.get("breakout_20d"):
             score = min(score, 62)
         events.append(
             make_event(
                 "unusual_volume",
-                f"{symbol} unusual volume",
+                f"{symbol} volumen inusual",
                 symbol,
                 score,
-                f"{name} has abnormal volume or technical movement to monitor.",
+                f"{name} presenta volumen anormal o movimiento tecnico a vigilar.",
                 reasons,
                 m,
                 f"https://finance.yahoo.com/quote/{quote_plus(symbol)}",
@@ -808,15 +808,15 @@ def altcoin_fundamentals(config):
         reasons = [
             f"7D {fmt_pct(change_7d)}",
             f"30D {fmt_pct(change_30d)}",
-            f"TVL ${tvl:,.0f}" if tvl else "TVL unavailable",
+            f"TVL ${tvl:,.0f}" if tvl else "TVL no disponible",
         ]
         events.append(
             make_event(
                 "altcoin_fundamentals",
-                f"{coin.get('symbol')} fundamentals watch",
+                f"{coin.get('symbol')} vigilancia fundamental",
                 coin.get("symbol"),
                 score,
-                f"{coin.get('name')} shows public market/fundamental metrics to monitor. Memecoin-style signals are excluded.",
+                f"{coin.get('name')} muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
                 reasons,
                 {"market_cap": market_cap, "volume": volume, "tvl": tvl, "change_7d": change_7d, "change_30d": change_30d},
                 f"https://www.coingecko.com/en/coins/{coin.get('coingecko_id')}",
@@ -852,18 +852,18 @@ class PremiumResearchAgent:
     def collect(self):
         collector = COLLECTORS.get(self.agent_key)
         if not collector:
-            raise RuntimeError(f"No collector registered for {self.agent_key}")
+            raise RuntimeError(f"No hay collector registrado para {self.agent_key}")
         try:
             return collector(self.config)
         except Exception as ex:
-            log(f"Agent collector fatal error: {ex}")
+            log(f"Error fatal del collector del agente: {ex}")
             return [
                 make_event(
                     self.agent_key,
-                    f"{self.name} source degradation",
+                    f"{self.name} degradacion de fuentes",
                     self.agent_key,
                     20,
-                    "Primary data collection failed. Dashboard and state were still updated.",
+                    "Fallo la recopilacion principal de datos. Panel y estado se actualizaron igualmente.",
                     [str(ex)[:200]],
                     {"error": str(ex)[:500]},
                 )
@@ -888,7 +888,7 @@ class PremiumResearchAgent:
         for event in events[:80]:
             reasons = "; ".join(str(x) for x in event.get("reasons", [])[:4])
             source = event.get("source")
-            source_html = f'<a href="{esc(source)}">source</a>' if source else "N/A"
+            source_html = f'<a href="{esc(source)}">fuente</a>' if source else "N/A"
             rows.append(
                 f"""<tr>
           <td><div class="company">{esc(event.get('asset'))}</div><div class="muted">{esc(event.get('title'))}</div></td>
@@ -903,16 +903,16 @@ class PremiumResearchAgent:
             watch = "; ".join(ai_brief.get("watch_items", [])[:4])
             risks = "; ".join(ai_brief.get("risk_notes", [])[:3])
             ai_html = f"""<div class="card span-12">
-      <h2>AI Research Brief</h2>
+      <h2>Resumen IA</h2>
       <p>{esc(ai_brief.get('brief'))}</p>
-      <div class="submetric">Watch: {esc(watch or 'N/A')}</div>
-      <div class="submetric">Risks: {esc(risks or 'N/A')}</div>
+      <div class="submetric">Vigilar: {esc(watch or 'N/A')}</div>
+      <div class="submetric">Riesgos: {esc(risks or 'N/A')}</div>
     </div>"""
         body = f"""<div class="shell">
   <div class="topbar">
     <div>
       <h1>{esc(self.name)}</h1>
-      <div class="muted">Premium research automation. Public data only. Not personalized financial advice.</div>
+      <div class="muted">Investigacion automatizada premium. Solo datos publicos. No es asesoramiento financiero personalizado.</div>
     </div>
     <nav class="nav">
       <a class="btn" href="index.html">Resumen</a>
@@ -921,8 +921,8 @@ class PremiumResearchAgent:
   </div>
   <section class="grid">
     <div class="card span-3"><h3>Eventos</h3><div class="metric">{len(events)}</div><div class="submetric">analizados en la ultima ejecucion</div></div>
-    <div class="card span-3"><h3>High</h3><div class="metric">{high}</div><div class="submetric">score >= 80</div></div>
-    <div class="card span-3"><h3>Medium</h3><div class="metric">{medium}</div><div class="submetric">score 65-79</div></div>
+    <div class="card span-3"><h3>Alto</h3><div class="metric">{high}</div><div class="submetric">score >= 80</div></div>
+    <div class="card span-3"><h3>Medio</h3><div class="metric">{medium}</div><div class="submetric">score 65-79</div></div>
     <div class="card span-3"><h3>Actualizado</h3><div class="metric" style="font-size:20px">{utc_now().strftime('%Y-%m-%d %H:%M UTC')}</div><div class="submetric">UTC</div></div>
     {ai_html}
     <div class="card span-12">
@@ -936,7 +936,7 @@ class PremiumResearchAgent:
         try:
             render_home_dashboard("docs/index.html")
         except Exception as ex:
-            log(f"Home dashboard refresh skipped: {ex}")
+            log(f"Actualizacion del panel principal omitida: {ex}")
 
     def append_logs(self, events):
         fields = ["time_utc", "agent", "asset", "score", "level", "title", "summary"]
@@ -982,12 +982,12 @@ class PremiumResearchAgent:
                     "",
                 ]
             )
-        lines.append("Research automatizado con datos publicos. No es asesoramiento financiero personalizado.")
+        lines.append("Investigacion automatizada con datos publicos. No es asesoramiento financiero personalizado.")
         buttons = []
         first_source = selected[0].get("source")
         if first_source:
             buttons.append([{"text": "Fuente principal", "url": first_source}])
-        buttons.append([{"text": "Dashboard", "url": f"https://diegosr-git.github.io/market-signal-agent/{self.dashboard_file.name}"}])
+        buttons.append([{"text": "Panel", "url": f"https://diegosr-git.github.io/market-signal-agent/{self.dashboard_file.name}"}])
         return "\n".join(lines).strip(), buttons
 
     def run(self, force=False, dry_run=False):
@@ -999,7 +999,7 @@ class PremiumResearchAgent:
         self.render_dashboard(events, brief)
         message, buttons = self.build_message(events, force=force)
         if not message:
-            log(f"No {self.name} alerts above threshold.")
+            log(f"No hay alertas de {self.name} por encima del umbral.")
             save_state(self.state_file, state)
             return events
         alerts = self.config.get("alerts", {})
@@ -1007,12 +1007,12 @@ class PremiumResearchAgent:
         signature = "|".join(f"{x.get('asset')}:{x.get('score')}:{x.get('title')}" for x in events[:5])
         key = f"{self.agent_key}::{signature}"
         if dry_run:
-            log("Dry run enabled. Message would be:\n" + message)
+            log("Prueba en seco activada. El mensaje seria:\n" + message)
         elif force or should_send_alert(state, key, cooldown):
             send_telegram(message, buttons=buttons)
             mark_alert_sent(state, key)
         else:
-            log(f"Suppressed by cooldown: {key}")
+            log(f"Suprimido por cooldown: {key}")
         save_state(self.state_file, state)
         return events
 

@@ -224,14 +224,14 @@ def render_home_dashboard(
         for row in signal_rows
     )
     premium_dashboards = [
-        ("SEC Filings", "sec_filing_dashboard.html", "Insiders, 8-K, 10-Q, 10-K, 13D/G y 13F"),
-        ("Macro Regime", "macro_regime_dashboard.html", "Risk-on, risk-off, defensivos y liquidez"),
-        ("Sector Rotation", "sector_rotation_dashboard.html", "Ranking de sectores, ETFs y fuerza relativa"),
-        ("DeFi Liquidity", "defi_liquidity_dashboard.html", "TVL y liquidez crypto por cadenas"),
-        ("Earnings Catalyst", "earnings_catalyst_dashboard.html", "Vigilancia pre/post earnings"),
-        ("CFTC Positioning", "cftc_positioning_dashboard.html", "Commitment of Traders semanal"),
-        ("Unusual Volume", "unusual_volume_dashboard.html", "Volumen anormal y rupturas tecnicas"),
-        ("Altcoins", "altcoin_fundamentals_dashboard.html", "Fundamentales publicos de altcoins"),
+        ("SEC e insiders", "sec_filing_dashboard.html", "Insiders, 8-K, 10-Q, 10-K, 13D/G y 13F"),
+        ("Regimen macro", "macro_regime_dashboard.html", "Risk-on, risk-off, defensivos y liquidez"),
+        ("Rotacion sectorial", "sector_rotation_dashboard.html", "Ranking de sectores, ETFs y fuerza relativa"),
+        ("Liquidez DeFi", "defi_liquidity_dashboard.html", "TVL y liquidez crypto por cadenas"),
+        ("Catalizadores de resultados", "earnings_catalyst_dashboard.html", "Vigilancia pre/post resultados"),
+        ("Posicionamiento CFTC", "cftc_positioning_dashboard.html", "Commitment of Traders semanal"),
+        ("Volumen inusual", "unusual_volume_dashboard.html", "Volumen anormal y rupturas tecnicas"),
+        ("Fundamentales altcoin", "altcoin_fundamentals_dashboard.html", "Fundamentales publicos de altcoins"),
     ]
     premium_links = "".join(
         f"""<tr>
@@ -245,12 +245,12 @@ def render_home_dashboard(
   <div class="topbar">
     <div>
       <h1>Market Signal Agent</h1>
-      <div class="muted">Dashboard publicado en GitHub Pages con los últimos datos persistidos por los workflows.</div>
+      <div class="muted">Panel publicado en GitHub Pages con los últimos datos persistidos por los workflows.</div>
     </div>
     <nav class="nav">
       <a class="btn" href="dashboard.html">BTC</a>
       <a class="btn" href="event_rumor_dashboard.html">Event Rumor</a>
-      <a class="btn" href="macro_regime_dashboard.html">Premium</a>
+      <a class="btn" href="macro_regime_dashboard.html">Research Premium</a>
       <a class="btn" href="https://github.com/DiegoSR-git/market-signal-agent">GitHub</a>
     </nav>
   </div>
@@ -263,7 +263,7 @@ def render_home_dashboard(
       <div class="submetric">Precio {fmt_money_eur(btc.get('price'))} · RSI {fmt_float(btc.get('rsi'), 1)} · Régimen {esc(btc.get('regime', 'N/A'))}</div>
     </div>
     <div class="card span-4">
-      <h3>Event Rumor Watch</h3>
+      <h3>Radar De Rumores</h3>
       <div class="metric">{len(events)}</div>
       <div class="submetric">{hot_count} candidatas con score ≥ 50 · última actualización {esc(event_updated)}</div>
     </div>
@@ -298,14 +298,14 @@ def render_home_dashboard(
       <div class="table-wrap"><table><thead><tr><th>Hora</th><th>Activo</th><th>Tipo</th><th>Score</th><th>Precio</th><th>Estado</th></tr></thead><tbody>{signal_rows_html or '<tr><td colspan="6">Sin señales registradas</td></tr>'}</tbody></table></div>
     </div>
     <div class="card span-12">
-      <h2>Premium Research Agents</h2>
-      <div class="table-wrap"><table><thead><tr><th>Dashboard</th><th>Cobertura</th></tr></thead><tbody>{premium_links}</tbody></table></div>
+      <h2>Agentes Premium De Investigacion</h2>
+      <div class="table-wrap"><table><thead><tr><th>Panel</th><th>Cobertura</th></tr></thead><tbody>{premium_links}</tbody></table></div>
     </div>
   </section>
   <footer>Generado: {utc_now_label()}. Datos procedentes de <code>state.json</code>, <code>signals_log.csv</code>, <code>event_rumor_snapshot.json</code> y <code>event_rumor_log.csv</code>.</footer>
 </div>"""
 
-    Path(output_path).write_text(render_page("Market Signal Agent Dashboard", body), encoding="utf-8")
+    Path(output_path).write_text(render_page("Panel Market Signal Agent", body), encoding="utf-8")
 
 
 def render_event_dashboard(results, output_path):
@@ -330,7 +330,7 @@ def render_event_dashboard(results, output_path):
     body = f"""<div class="shell">
   <div class="topbar">
     <div>
-      <h1>Event Rumor Watch</h1>
+      <h1>Radar De Rumores Y Eventos</h1>
       <div class="muted">Oportunidades públicas por noticias, rumores, eventos corporativos y momentum.</div>
     </div>
     <nav class="nav">
@@ -351,4 +351,4 @@ def render_event_dashboard(results, output_path):
   </section>
   <footer>Generado: {utc_now_label()}. Solo información pública; no ejecuta operaciones.</footer>
 </div>"""
-    Path(output_path).write_text(render_page("Event Rumor Watch", body), encoding="utf-8")
+    Path(output_path).write_text(render_page("Radar De Rumores Y Eventos", body), encoding="utf-8")

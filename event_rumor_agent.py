@@ -4,7 +4,7 @@
 """
 EVENT RUMOR AGENT — FREE
 
-Monitoriza eventos corporativos tech, rumores públicos y ventanas "buy the rumor".
+Monitoriza eventos corporativos tech, rumores públicos y ventanas de anticipacion a catalizadores.
 Fuentes gratuitas: Google News RSS (best effort), GDELT DOC API, Yahoo Finance chart API, GitHub Models.
 No ejecuta compras ni usa información privada.
 """
@@ -276,7 +276,7 @@ def gdelt_search(query, max_items=10, timespan="30d", timeout_seconds=8, backoff
     if not source_available("gdelt"):
         return []
     if SOURCE_STATE["gdelt"]["errors"] >= max_errors:
-        source_backoff("gdelt", backoff_seconds, "error budget exhausted")
+        source_backoff("gdelt", backoff_seconds, "presupuesto de errores agotado")
         return []
     url = "https://api.gdeltproject.org/api/v2/doc/doc"
     params = {"query":query, "mode":"ArtList", "format":"json", "maxrecords":max_items, "timespan":timespan, "sort":"HybridRel"}
@@ -581,7 +581,7 @@ def build_message(results, config, force=False):
     if not top: return None, []
     candidate_count = len([r for r in results if force or r["score"] >= threshold])
     lines = [
-        "<b>🕵️ EVENT RUMOR WATCH</b>",
+        "<b>🕵️ RADAR DE RUMORES Y EVENTOS</b>",
         f"<b>Hora:</b> {utc_now().strftime('%Y-%m-%d %H:%M UTC')}",
         f"<b>Mostrando:</b> {len(top)} de {candidate_count} candidatas (límite max_alerts={max_alerts})",
         "",
@@ -640,10 +640,10 @@ def run(config, state, force=False, dry_run=False):
     generate_dashboard(results)
     message, buttons = build_message(results, config, force=force)
     if not message:
-        log("No event rumor alerts above threshold.")
+        log("No hay alertas de rumores por encima del umbral.")
         return results
     if dry_run:
-        log("Dry run enabled. Message would be:\n" + message)
+        log("Prueba en seco activada. El mensaje seria:\n" + message)
         return results
     acfg = config.get("alerts", {}); cooldown = int(acfg.get("cooldown_hours",12)); threshold = int(acfg.get("min_score_to_alert",70))
     top_keys = [f"{r['ticker']}:{r.get('event_date')}:{r['score']}" for r in results if r["score"] >= threshold]
