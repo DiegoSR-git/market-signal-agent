@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Market Signal Agent Dashboard</title>
+  <title>Panel Market Signal Agent</title>
   <style>
     :root {
       color-scheme: dark;
@@ -74,12 +74,12 @@
   <div class="topbar">
     <div>
       <h1>Market Signal Agent</h1>
-      <div class="muted">Dashboard publicado en GitHub Pages con los últimos datos persistidos por los workflows.</div>
+      <div class="muted">Panel publicado en GitHub Pages con los últimos datos persistidos por los workflows.</div>
     </div>
     <nav class="nav">
       <a class="btn" href="dashboard.html">BTC</a>
       <a class="btn" href="event_rumor_dashboard.html">Event Rumor</a>
-      <a class="btn" href="macro_regime_dashboard.html">Premium</a>
+      <a class="btn" href="macro_regime_dashboard.html">Research Premium</a>
       <a class="btn" href="https://github.com/DiegoSR-git/market-signal-agent">GitHub</a>
     </nav>
   </div>
@@ -89,12 +89,12 @@
       <h3>BTC Signal</h3>
       <div class="status-line"><div class="metric">31/100</div><span class="pill quiet">⚪ SIN SEÑAL</span></div>
       <div class="bar" style="--w:31%"><span></span></div>
-      <div class="submetric">Precio 52,766 € · RSI 38.7 · Régimen RISK_ON</div>
+      <div class="submetric">Precio 53,227 € · RSI 41.5 · Régimen RISK_ON</div>
     </div>
     <div class="card span-4">
-      <h3>Event Rumor Watch</h3>
+      <h3>Radar De Rumores</h3>
       <div class="metric">12</div>
-      <div class="submetric">4 candidatas con score ≥ 50 · última actualización 2026-07-02 07:26:25</div>
+      <div class="submetric">4 candidatas con score ≥ 50 · última actualización 2026-07-02 09:43:03</div>
     </div>
     <div class="card span-4">
       <h3>Gestión</h3>
@@ -112,13 +112,6 @@
           <td>50.3</td>
           <td>-0.2%</td>
         </tr><tr>
-          <td><div class="company">AMZN</div><div class="muted">Amazon</div></td>
-          <td><span class="pill watch">53/100</span></td>
-          <td>AWS re:Invent<div class="reason">10 artículos recientes; Rumores/productos: Trainium, agents, AWS; Evento mencionado: AWS re:Invent, Amazon devices event</div></td>
-          <td>241.70</td>
-          <td>47.9</td>
-          <td>-5.8%</td>
-        </tr><tr>
           <td><div class="company">AAPL</div><div class="muted">Apple</div></td>
           <td><span class="pill watch">52/100</span></td>
           <td>WWDC / Apple product events<div class="reason">15 artículos recientes; Rumores/productos: iPhone, Siri; Evento mencionado: WWDC, Apple event, iPhone event</div></td>
@@ -126,9 +119,16 @@
           <td>51.0</td>
           <td>-6.6%</td>
         </tr><tr>
+          <td><div class="company">AMZN</div><div class="muted">Amazon</div></td>
+          <td><span class="pill watch">51/100</span></td>
+          <td>AWS re:Invent<div class="reason">9 artículos recientes; Rumores/productos: Trainium, agents, AWS; Evento mencionado: AWS re:Invent, Amazon devices event</div></td>
+          <td>241.70</td>
+          <td>47.9</td>
+          <td>-5.8%</td>
+        </tr><tr>
           <td><div class="company">META</div><div class="muted">Meta Platforms</div></td>
           <td><span class="pill watch">50/100</span></td>
-          <td>Meta Connect<div class="reason">11 artículos recientes; Rumores/productos: AI glasses, Ray-Ban, smart glasses; Evento mencionado: Meta Connect</div></td>
+          <td>Meta Connect<div class="reason">12 artículos recientes; Rumores/productos: AI glasses, Ray-Ban, smart glasses; Evento mencionado: Meta Connect</div></td>
           <td>612.91</td>
           <td>58.5</td>
           <td>+2.6%</td>
@@ -193,8 +193,8 @@
     <div class="card span-5">
       <h2>BTC Snapshot</h2>
       <table><tbody>
-        <tr><td>Actualizado</td><td>2026-07-02T07:21:28.944816+00:00</td></tr>
-        <tr><td>SMA200</td><td>64,406 €</td></tr>
+        <tr><td>Actualizado</td><td>2026-07-02T09:41:17.830215+00:00</td></tr>
+        <tr><td>SMA200</td><td>64,409 €</td></tr>
         <tr><td>Fear & Greed</td><td>19</td></tr>
         <tr><td>ETF total</td><td>N/A</td></tr>
         <tr><td>IBIT</td><td>N/A</td></tr>
@@ -239,6 +239,13 @@
     <div class="card span-5">
       <h2>Últimas Señales BTC</h2>
       <div class="table-wrap"><table><thead><tr><th>Hora</th><th>Activo</th><th>Tipo</th><th>Score</th><th>Precio</th><th>Estado</th></tr></thead><tbody><tr>
+          <td>2026-07-02 09:41:17</td>
+          <td>BTC</td>
+          <td>NO_SIGNAL</td>
+          <td>31</td>
+          <td>53,227 €</td>
+          <td>⚪ SIN SEÑAL</td>
+        </tr><tr>
           <td>2026-07-02 07:21:28</td>
           <td>BTC</td>
           <td>NO_SIGNAL</td>
@@ -287,45 +294,38 @@
           <td>86</td>
           <td>51,768 €</td>
           <td>🟢 BTC STRONG BUY</td>
-        </tr><tr>
-          <td>2026-07-01 02:44:36</td>
-          <td>BTC</td>
-          <td>ORDER_52000</td>
-          <td>86</td>
-          <td>51,724 €</td>
-          <td>🟢 BTC STRONG BUY</td>
         </tr></tbody></table></div>
     </div>
     <div class="card span-12">
-      <h2>Premium Research Agents</h2>
-      <div class="table-wrap"><table><thead><tr><th>Dashboard</th><th>Cobertura</th></tr></thead><tbody><tr>
-          <td><a href="sec_filing_dashboard.html">SEC Filings</a></td>
+      <h2>Agentes Premium De Investigacion</h2>
+      <div class="table-wrap"><table><thead><tr><th>Panel</th><th>Cobertura</th></tr></thead><tbody><tr>
+          <td><a href="sec_filing_dashboard.html">SEC e insiders</a></td>
           <td>Insiders, 8-K, 10-Q, 10-K, 13D/G y 13F</td>
         </tr><tr>
-          <td><a href="macro_regime_dashboard.html">Macro Regime</a></td>
+          <td><a href="macro_regime_dashboard.html">Regimen macro</a></td>
           <td>Risk-on, risk-off, defensivos y liquidez</td>
         </tr><tr>
-          <td><a href="sector_rotation_dashboard.html">Sector Rotation</a></td>
+          <td><a href="sector_rotation_dashboard.html">Rotacion sectorial</a></td>
           <td>Ranking de sectores, ETFs y fuerza relativa</td>
         </tr><tr>
-          <td><a href="defi_liquidity_dashboard.html">DeFi Liquidity</a></td>
+          <td><a href="defi_liquidity_dashboard.html">Liquidez DeFi</a></td>
           <td>TVL y liquidez crypto por cadenas</td>
         </tr><tr>
-          <td><a href="earnings_catalyst_dashboard.html">Earnings Catalyst</a></td>
-          <td>Vigilancia pre/post earnings</td>
+          <td><a href="earnings_catalyst_dashboard.html">Catalizadores de resultados</a></td>
+          <td>Vigilancia pre/post resultados</td>
         </tr><tr>
-          <td><a href="cftc_positioning_dashboard.html">CFTC Positioning</a></td>
+          <td><a href="cftc_positioning_dashboard.html">Posicionamiento CFTC</a></td>
           <td>Commitment of Traders semanal</td>
         </tr><tr>
-          <td><a href="unusual_volume_dashboard.html">Unusual Volume</a></td>
+          <td><a href="unusual_volume_dashboard.html">Volumen inusual</a></td>
           <td>Volumen anormal y rupturas tecnicas</td>
         </tr><tr>
-          <td><a href="altcoin_fundamentals_dashboard.html">Altcoins</a></td>
+          <td><a href="altcoin_fundamentals_dashboard.html">Fundamentales altcoin</a></td>
           <td>Fundamentales publicos de altcoins</td>
         </tr></tbody></table></div>
     </div>
   </section>
-  <footer>Generado: 2026-07-02 08:09 UTC. Datos procedentes de <code>state.json</code>, <code>signals_log.csv</code>, <code>event_rumor_snapshot.json</code> y <code>event_rumor_log.csv</code>.</footer>
+  <footer>Generado: 2026-07-02 09:45 UTC. Datos procedentes de <code>state.json</code>, <code>signals_log.csv</code>, <code>event_rumor_snapshot.json</code> y <code>event_rumor_log.csv</code>.</footer>
 </div>
 </body>
 </html>

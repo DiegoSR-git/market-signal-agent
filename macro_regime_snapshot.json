@@ -1,19 +1,18 @@
 [
   {
     "agent": "macro_regime",
-    "ai_brief": "El régimen macro actual muestra señales mixtas con desempeño negativo en proxies clave de crédito y duración. Se recomienda monitorear la confirmación en indicadores de crédito, duración y dólar. La volatilidad y la falta de rupturas técnicas sugieren precaución en la toma de decisiones.",
+    "ai_brief": "El régimen macro actual es mixto, con señales divergentes en proxies clave como crédito, duración y dólar. Se recomienda vigilancia estrecha para confirmar tendencias en estos sectores. La falta de rupturas significativas sugiere cautela en la interpretación del mercado.",
     "ai_risk_notes": [
-      "Riesgo de consolidación o reversión debido a la falta de rupturas técnicas en la mayoría de proxies",
-      "Volumen de negociación inferior al promedio en proxies clave, lo que puede limitar la liquidez y aumentar la volatilidad",
-      "Posible impacto negativo de la debilidad en activos de crédito y duración sobre la estabilidad del mercado"
+      "Volúmenes inferiores al promedio en proxies principales pueden indicar menor liquidez y mayor volatilidad",
+      "Rendimientos negativos en el corto plazo en SPY y QQQ podrían anticipar correcciones o consolidaciones"
     ],
     "ai_watch_items": [
-      "Evolución del rendimiento a 20 días de SPY y QQQ, ambos con caídas superiores al 1.8%",
-      "Comportamiento de los proxies de crédito HYG y LQD, con rendimientos negativos y sin rupturas técnicas",
-      "Confirmación del breakout en UUP como indicador del dólar y su impacto en el régimen macro"
+      "Confirmación de tendencias en activos de crédito (HYG, LQD)",
+      "Evolución del dólar y su impacto en UUP",
+      "Comportamiento de duración y bonos (TLT)"
     ],
     "asset": "MARKET",
-    "level": "watch",
+    "level": "vigilancia",
     "metrics": {
       "proxies": {
         "GLD": {
@@ -155,8 +154,8 @@
     ],
     "score": 36,
     "source": "https://finance.yahoo.com",
-    "summary": "Current proxy basket points to mixed. Watch confirmation across credit, duration and dollar proxies.",
-    "time_utc": "2026-07-02T07:45:34.797529+00:00",
-    "title": "Macro regime: mixed"
+    "summary": "La cesta de proxies apunta a un regimen mixed. Vigilar confirmacion en credito, duracion y dolar.",
+    "time_utc": "2026-07-02T09:43:46.831910+00:00",
+    "title": "Regimen macro: mixed"
   }
 ]
