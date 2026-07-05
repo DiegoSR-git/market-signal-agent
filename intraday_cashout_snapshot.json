@@ -1,21 +1,95 @@
 [
   {
     "agent": "intraday_cashout",
-    "ai_brief": "Se identifican múltiples activos con señales para operativa intradía con salida el mismo día, destacando niveles de entrada, objetivos y stops orientativos. Se recomienda vigilancia estricta del impulso intradía y cierre antes del fin de sesión para controlar riesgos. La confluencia de fuentes y el análisis técnico sugieren un seguimiento activo y gestión prudente del riesgo.",
+    "ai_brief": "Se identifican múltiples activos con señales para operativa intradía con salida el mismo día, destacando niveles de entrada, objetivos y stops orientativos. Se recomienda vigilancia estricta de confirmación de impulso y cierre antes del fin de sesión para controlar riesgos. La gestión del riesgo es clave, especialmente en activos con riesgo intradía medio a alto y volatilidad reciente significativa.",
     "ai_risk_notes": [
-      "Riesgo medio a alto en la mayoría de activos, con stops ajustados entre -0.8% y -1.2%, lo que requiere disciplina en la gestión de pérdidas.",
-      "Algunos activos presentan drawdowns recientes significativos (por ejemplo, AMZN y GOOGL), lo que puede indicar volatilidad elevada.",
-      "La dependencia de señales de fuentes múltiples y eventos regulatorios implica la necesidad de monitoreo constante para evitar sorpresas."
+      "Riesgo medio a alto en la mayoría de activos, con stops ajustados para limitar pérdidas intradía.",
+      "Volatilidad reciente y drawdowns significativos en algunos activos pueden aumentar la incertidumbre.",
+      "La concentración de señales en pocas fuentes o alta dependencia de eventos específicos puede incrementar la exposición a riesgos inesperados."
     ],
     "ai_watch_items": [
-      "Confirmación del impulso intradía en niveles de entrada señalados para cada activo.",
-      "Evolución del RSI y su impacto en la fuerza del movimiento intradía.",
-      "Volumen relativo y su comparación con el promedio de 20 días para detectar anomalías."
+      "Confirmar impulso intradía en niveles de entrada indicados para cada activo antes de considerar la operativa.",
+      "Monitorear volumen relativo y comportamiento frente a medias móviles para detectar posibles cambios de tendencia.",
+      "Vigilar niveles de stop-loss para limitar pérdidas, especialmente en activos con riesgo intradía medio o alto."
+    ],
+    "asset": "MSFT",
+    "level": "alto",
+    "metrics": {
+      "avg_source_score": 64.0,
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "filing_date": "2026-07-01",
+      "form": "4",
+      "form4_details": {
+        "avg_price": null,
+        "purchase_count": 0,
+        "sale_count": 0,
+        "shares": 0
+      },
+      "intraday_entry_reference": 390.489990234375,
+      "intraday_risk": "medio",
+      "intraday_stop": 385.8041103515625,
+      "intraday_stop_pct": -1.2,
+      "intraday_target": 397.5188100585938,
+      "intraday_target_pct": 1.8,
+      "max_hold_hours": 8,
+      "max_source_score": 78.0,
+      "perf_20d": -8.623111906047509,
+      "perf_5d": 10.673696991566771,
+      "perf_60d": 4.888657033957711,
+      "price": 390.489990234375,
+      "rsi": 49.80552817235103,
+      "sma20": 386.9554962158203,
+      "sma50": 407.59539794921875,
+      "source_count": 3,
+      "sources": [
+        "Rumores y eventos",
+        "SEC e insiders",
+        "Volumen inusual"
+      ],
+      "status": "ok",
+      "symbol": "MSFT",
+      "ticker": "MSFT",
+      "volume": 42128900.0,
+      "volume_20d_avg": 48915315.0,
+      "volume_ratio": 0.8612619585502005
+    },
+    "reasons": [
+      "Confluencia: 3 fuentes",
+      "Score maximo previo: 78/100",
+      "Score medio previo: 64/100",
+      "5D +10.7%",
+      "RSI 49.8",
+      "Volumen relativo 0.86",
+      "Horizonte: salida el mismo dia, maximo 8h",
+      "13 artículos recientes",
+      "Rumores/productos: Copilot, Azure AI, Surface",
+      "Evento mencionado: Microsoft Ignite, Microsoft Build",
+      "RSI razonable: 49.8"
+    ],
+    "score": 97,
+    "source": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE85ZDRLTnlhWWw0aGxkZjhwanBILW5IWk52UnNydzBTUjEzRTRFdGQ3cTAwc1NfalR3aWh4alIyaWpIY3ZNVEtPZHYtSng5c2dt?oc=5",
+    "summary": "MSFT concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 390.49 si confirma impulso intradia. Objetivo orientativo 397.52 y stop orientativo 385.80; cerrar la posicion antes del fin de sesion.",
+    "time_utc": "2026-07-05T09:36:03.173110+00:00",
+    "title": "MSFT plan intradia salida mismo dia"
+  },
+  {
+    "agent": "intraday_cashout",
+    "ai_brief": "Se identifican múltiples activos con señales para operativa intradía con salida el mismo día, destacando niveles de entrada, objetivos y stops orientativos. Se recomienda vigilancia estricta de confirmación de impulso y cierre antes del fin de sesión para controlar riesgos. La gestión del riesgo es clave, especialmente en activos con riesgo intradía medio a alto y volatilidad reciente significativa.",
+    "ai_risk_notes": [
+      "Riesgo medio a alto en la mayoría de activos, con stops ajustados para limitar pérdidas intradía.",
+      "Volatilidad reciente y drawdowns significativos en algunos activos pueden aumentar la incertidumbre.",
+      "La concentración de señales en pocas fuentes o alta dependencia de eventos específicos puede incrementar la exposición a riesgos inesperados."
+    ],
+    "ai_watch_items": [
+      "Confirmar impulso intradía en niveles de entrada indicados para cada activo antes de considerar la operativa.",
+      "Monitorear volumen relativo y comportamiento frente a medias móviles para detectar posibles cambios de tendencia.",
+      "Vigilar niveles de stop-loss para limitar pérdidas, especialmente en activos con riesgo intradía medio o alto."
     ],
     "asset": "AMZN",
     "level": "alto",
     "metrics": {
-      "avg_source_score": 59.666666666666664,
+      "avg_source_score": 60.333333333333336,
       "breakout_20d": false,
       "breakout_50d": false,
       "dist200": 4.158014425810275,
@@ -53,9 +127,9 @@
       "status": "ok",
       "symbol": "AMZN",
       "ticker": "AMZN",
-      "volume": 48298100.0,
-      "volume_20d_avg": 63457215.0,
-      "volume_ratio": 0.7611128222377865
+      "volume": 48246400.0,
+      "volume_20d_avg": 63454630.0,
+      "volume_ratio": 0.760329072913986
     },
     "reasons": [
       "Confluencia: 3 fuentes",
@@ -68,26 +142,26 @@
       "Drawdown 52s -11.8%",
       "Precio sobre SMA200",
       "Recupera SMA20",
-      "9 artículos recientes"
+      "10 artículos recientes"
     ],
     "score": 92,
     "source": "https://finance.yahoo.com/quote/AMZN",
     "summary": "AMZN concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 242.67 si confirma impulso intradia. Objetivo orientativo 247.04 y stop orientativo 239.76; cerrar la posicion antes del fin de sesion.",
-    "time_utc": "2026-07-04T09:14:46.674417+00:00",
+    "time_utc": "2026-07-05T09:36:03.173065+00:00",
     "title": "AMZN plan intradia salida mismo dia"
   },
   {
     "agent": "intraday_cashout",
-    "ai_brief": "Se identifican múltiples activos con señales para operativa intradía con salida el mismo día, destacando niveles de entrada, objetivos y stops orientativos. Se recomienda vigilancia estricta del impulso intradía y cierre antes del fin de sesión para controlar riesgos. La confluencia de fuentes y el análisis técnico sugieren un seguimiento activo y gestión prudente del riesgo.",
+    "ai_brief": "Se identifican múltiples activos con señales para operativa intradía con salida el mismo día, destacando niveles de entrada, objetivos y stops orientativos. Se recomienda vigilancia estricta de confirmación de impulso y cierre antes del fin de sesión para controlar riesgos. La gestión del riesgo es clave, especialmente en activos con riesgo intradía medio a alto y volatilidad reciente significativa.",
     "ai_risk_notes": [
-      "Riesgo medio a alto en la mayoría de activos, con stops ajustados entre -0.8% y -1.2%, lo que requiere disciplina en la gestión de pérdidas.",
-      "Algunos activos presentan drawdowns recientes significativos (por ejemplo, AMZN y GOOGL), lo que puede indicar volatilidad elevada.",
-      "La dependencia de señales de fuentes múltiples y eventos regulatorios implica la necesidad de monitoreo constante para evitar sorpresas."
+      "Riesgo medio a alto en la mayoría de activos, con stops ajustados para limitar pérdidas intradía.",
+      "Volatilidad reciente y drawdowns significativos en algunos activos pueden aumentar la incertidumbre.",
+      "La concentración de señales en pocas fuentes o alta dependencia de eventos específicos puede incrementar la exposición a riesgos inesperados."
     ],
     "ai_watch_items": [
-      "Confirmación del impulso intradía en niveles de entrada señalados para cada activo.",
-      "Evolución del RSI y su impacto en la fuerza del movimiento intradía.",
-      "Volumen relativo y su comparación con el promedio de 20 días para detectar anomalías."
+      "Confirmar impulso intradía en niveles de entrada indicados para cada activo antes de considerar la operativa.",
+      "Monitorear volumen relativo y comportamiento frente a medias móviles para detectar posibles cambios de tendencia.",
+      "Vigilar niveles de stop-loss para limitar pérdidas, especialmente en activos con riesgo intradía medio o alto."
     ],
     "asset": "XLV",
     "level": "alto",
@@ -117,9 +191,9 @@
       ],
       "status": "ok",
       "symbol": "XLV",
-      "volume": 14722300.0,
-      "volume_20d_avg": 11825865.0,
-      "volume_ratio": 1.2449237328516773
+      "volume": 14719400.0,
+      "volume_20d_avg": 11825720.0,
+      "volume_ratio": 1.2446937691743083
     },
     "reasons": [
       "Confluencia: 1 fuentes",
@@ -132,26 +206,26 @@
       "20D +11.0%",
       "relativo vs SPY +12.2%",
       "RSI 72.4",
-      "Persistencia de la rotación en Financials (XLF) y Health Care (XLV) tras rompimientos técnicos."
+      "Persistencia de la rotación en Financials (XLF) y Health Care (XLV) dada su alta fuerza relativa y volumen creciente."
     ],
     "score": 91,
     "source": "https://finance.yahoo.com/quote/XLV",
     "summary": "XLV concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 163.74 si confirma impulso intradia. Objetivo orientativo 166.69 y stop orientativo 161.78; cerrar la posicion antes del fin de sesion.",
-    "time_utc": "2026-07-04T09:14:46.674616+00:00",
+    "time_utc": "2026-07-05T09:36:03.173267+00:00",
     "title": "XLV plan intradia salida mismo dia"
   },
   {
     "agent": "intraday_cashout",
-    "ai_brief": "Se identifican múltiples activos con señales para operativa intradía con salida el mismo día, destacando niveles de entrada, objetivos y stops orientativos. Se recomienda vigilancia estricta del impulso intradía y cierre antes del fin de sesión para controlar riesgos. La confluencia de fuentes y el análisis técnico sugieren un seguimiento activo y gestión prudente del riesgo.",
+    "ai_brief": "Se identifican múltiples activos con señales para operativa intradía con salida el mismo día, destacando niveles de entrada, objetivos y stops orientativos. Se recomienda vigilancia estricta de confirmación de impulso y cierre antes del fin de sesión para controlar riesgos. La gestión del riesgo es clave, especialmente en activos con riesgo intradía medio a alto y volatilidad reciente significativa.",
     "ai_risk_notes": [
-      "Riesgo medio a alto en la mayoría de activos, con stops ajustados entre -0.8% y -1.2%, lo que requiere disciplina en la gestión de pérdidas.",
-      "Algunos activos presentan drawdowns recientes significativos (por ejemplo, AMZN y GOOGL), lo que puede indicar volatilidad elevada.",
-      "La dependencia de señales de fuentes múltiples y eventos regulatorios implica la necesidad de monitoreo constante para evitar sorpresas."
+      "Riesgo medio a alto en la mayoría de activos, con stops ajustados para limitar pérdidas intradía.",
+      "Volatilidad reciente y drawdowns significativos en algunos activos pueden aumentar la incertidumbre.",
+      "La concentración de señales en pocas fuentes o alta dependencia de eventos específicos puede incrementar la exposición a riesgos inesperados."
     ],
     "ai_watch_items": [
-      "Confirmación del impulso intradía en niveles de entrada señalados para cada activo.",
-      "Evolución del RSI y su impacto en la fuerza del movimiento intradía.",
-      "Volumen relativo y su comparación con el promedio de 20 días para detectar anomalías."
+      "Confirmar impulso intradía en niveles de entrada indicados para cada activo antes de considerar la operativa.",
+      "Monitorear volumen relativo y comportamiento frente a medias móviles para detectar posibles cambios de tendencia.",
+      "Vigilar niveles de stop-loss para limitar pérdidas, especialmente en activos con riesgo intradía medio o alto."
     ],
     "asset": "XLF",
     "level": "alto",
@@ -181,9 +255,9 @@
       ],
       "status": "ok",
       "symbol": "XLF",
-      "volume": 46285200.0,
-      "volume_20d_avg": 38497405.0,
-      "volume_ratio": 1.202294024753097
+      "volume": 46246100.0,
+      "volume_20d_avg": 38495450.0,
+      "volume_ratio": 1.2013393790694744
     },
     "reasons": [
       "Confluencia: 1 fuentes",
@@ -196,26 +270,26 @@
       "20D +9.3%",
       "relativo vs SPY +10.6%",
       "RSI 73.3",
-      "Persistencia de la rotación en Financials (XLF) y Health Care (XLV) tras rompimientos técnicos."
+      "Persistencia de la rotación en Financials (XLF) y Health Care (XLV) dada su alta fuerza relativa y volumen creciente."
     ],
     "score": 88,
     "source": "https://finance.yahoo.com/quote/XLF",
     "summary": "XLF concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 55.62 si confirma impulso intradia. Objetivo orientativo 56.62 y stop orientativo 54.95; cerrar la posicion antes del fin de sesion.",
-    "time_utc": "2026-07-04T09:14:46.674598+00:00",
+    "time_utc": "2026-07-05T09:36:03.173249+00:00",
     "title": "XLF plan intradia salida mismo dia"
   },
   {
     "agent": "intraday_cashout",
-    "ai_brief": "Se identifican múltiples activos con señales para operativa intradía con salida el mismo día, destacando niveles de entrada, objetivos y stops orientativos. Se recomienda vigilancia estricta del impulso intradía y cierre antes del fin de sesión para controlar riesgos. La confluencia de fuentes y el análisis técnico sugieren un seguimiento activo y gestión prudente del riesgo.",
+    "ai_brief": "Se identifican múltiples activos con señales para operativa intradía con salida el mismo día, destacando niveles de entrada, objetivos y stops orientativos. Se recomienda vigilancia estricta de confirmación de impulso y cierre antes del fin de sesión para controlar riesgos. La gestión del riesgo es clave, especialmente en activos con riesgo intradía medio a alto y volatilidad reciente significativa.",
     "ai_risk_notes": [
-      "Riesgo medio a alto en la mayoría de activos, con stops ajustados entre -0.8% y -1.2%, lo que requiere disciplina en la gestión de pérdidas.",
-      "Algunos activos presentan drawdowns recientes significativos (por ejemplo, AMZN y GOOGL), lo que puede indicar volatilidad elevada.",
-      "La dependencia de señales de fuentes múltiples y eventos regulatorios implica la necesidad de monitoreo constante para evitar sorpresas."
+      "Riesgo medio a alto en la mayoría de activos, con stops ajustados para limitar pérdidas intradía.",
+      "Volatilidad reciente y drawdowns significativos en algunos activos pueden aumentar la incertidumbre.",
+      "La concentración de señales en pocas fuentes o alta dependencia de eventos específicos puede incrementar la exposición a riesgos inesperados."
     ],
     "ai_watch_items": [
-      "Confirmación del impulso intradía en niveles de entrada señalados para cada activo.",
-      "Evolución del RSI y su impacto en la fuerza del movimiento intradía.",
-      "Volumen relativo y su comparación con el promedio de 20 días para detectar anomalías."
+      "Confirmar impulso intradía en niveles de entrada indicados para cada activo antes de considerar la operativa.",
+      "Monitorear volumen relativo y comportamiento frente a medias móviles para detectar posibles cambios de tendencia.",
+      "Vigilar niveles de stop-loss para limitar pérdidas, especialmente en activos con riesgo intradía medio o alto."
     ],
     "asset": "HOOD",
     "level": "alto",
@@ -258,104 +332,32 @@
       "Horizonte: salida el mismo dia, maximo 8h",
       "volume 1.2x avg",
       "5D +20.6%",
-      "Volumen superior al promedio en PLTR, TSLA y SMH con movimientos técnicos relevantes.",
-      "Desempeño negativo reciente en SMCI, ARM y MSTR acompañado de volúmenes por debajo del promedio."
+      "Monitorear AAPL y PLTR por aumento de volumen superior al promedio y rendimiento positivo en 5 días.",
+      "Vigilar SMCI y ARM por volumen inferior al promedio y caídas significativas en rendimiento reciente."
     ],
     "score": 88,
     "source": "https://finance.yahoo.com/quote/HOOD",
     "summary": "HOOD concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 112.73 si confirma impulso intradia. Objetivo orientativo 114.76 y stop orientativo 111.38; cerrar la posicion antes del fin de sesion.",
-    "time_utc": "2026-07-04T09:14:46.674814+00:00",
+    "time_utc": "2026-07-05T09:36:03.173499+00:00",
     "title": "HOOD plan intradia salida mismo dia"
   },
   {
     "agent": "intraday_cashout",
-    "ai_brief": "Se identifican múltiples activos con señales para operativa intradía con salida el mismo día, destacando niveles de entrada, objetivos y stops orientativos. Se recomienda vigilancia estricta del impulso intradía y cierre antes del fin de sesión para controlar riesgos. La confluencia de fuentes y el análisis técnico sugieren un seguimiento activo y gestión prudente del riesgo.",
+    "ai_brief": "Se identifican múltiples activos con señales para operativa intradía con salida el mismo día, destacando niveles de entrada, objetivos y stops orientativos. Se recomienda vigilancia estricta de confirmación de impulso y cierre antes del fin de sesión para controlar riesgos. La gestión del riesgo es clave, especialmente en activos con riesgo intradía medio a alto y volatilidad reciente significativa.",
     "ai_risk_notes": [
-      "Riesgo medio a alto en la mayoría de activos, con stops ajustados entre -0.8% y -1.2%, lo que requiere disciplina en la gestión de pérdidas.",
-      "Algunos activos presentan drawdowns recientes significativos (por ejemplo, AMZN y GOOGL), lo que puede indicar volatilidad elevada.",
-      "La dependencia de señales de fuentes múltiples y eventos regulatorios implica la necesidad de monitoreo constante para evitar sorpresas."
+      "Riesgo medio a alto en la mayoría de activos, con stops ajustados para limitar pérdidas intradía.",
+      "Volatilidad reciente y drawdowns significativos en algunos activos pueden aumentar la incertidumbre.",
+      "La concentración de señales en pocas fuentes o alta dependencia de eventos específicos puede incrementar la exposición a riesgos inesperados."
     ],
     "ai_watch_items": [
-      "Confirmación del impulso intradía en niveles de entrada señalados para cada activo.",
-      "Evolución del RSI y su impacto en la fuerza del movimiento intradía.",
-      "Volumen relativo y su comparación con el promedio de 20 días para detectar anomalías."
-    ],
-    "asset": "MSFT",
-    "level": "alto",
-    "metrics": {
-      "avg_source_score": 69.5,
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "filing_date": "2026-07-01",
-      "form": "4",
-      "form4_details": {
-        "avg_price": null,
-        "purchase_count": 0,
-        "sale_count": 0,
-        "shares": 0
-      },
-      "intraday_entry_reference": 390.489990234375,
-      "intraday_risk": "medio",
-      "intraday_stop": 385.8041103515625,
-      "intraday_stop_pct": -1.2,
-      "intraday_target": 397.5188100585938,
-      "intraday_target_pct": 1.8,
-      "max_hold_hours": 8,
-      "max_source_score": 78.0,
-      "perf_20d": -8.623111906047509,
-      "perf_5d": 10.673696991566771,
-      "perf_60d": 4.888657033957711,
-      "price": 390.489990234375,
-      "rsi": 49.80552817235103,
-      "sma20": 386.9554962158203,
-      "sma50": 407.59539794921875,
-      "source_count": 2,
-      "sources": [
-        "SEC e insiders",
-        "Volumen inusual"
-      ],
-      "status": "ok",
-      "symbol": "MSFT",
-      "volume": 42194400.0,
-      "volume_20d_avg": 48918590.0,
-      "volume_ratio": 0.8625432580947243
-    },
-    "reasons": [
-      "Confluencia: 2 fuentes",
-      "Score maximo previo: 78/100",
-      "Score medio previo: 70/100",
-      "5D +10.7%",
-      "RSI 49.8",
-      "Volumen relativo 0.86",
-      "Horizonte: salida el mismo dia, maximo 8h",
-      "formulario SEC 4",
-      "presentado 2026-07-01",
-      "operacion declarada por insider",
-      "precio reaccionando recientemente"
-    ],
-    "score": 85,
-    "source": "https://www.sec.gov/Archives/edgar/data/789019/000078901926000137/xslF345X06/form4.xml",
-    "summary": "MSFT concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 390.49 si confirma impulso intradia. Objetivo orientativo 397.52 y stop orientativo 385.80; cerrar la posicion antes del fin de sesion.",
-    "time_utc": "2026-07-04T09:14:46.674461+00:00",
-    "title": "MSFT plan intradia salida mismo dia"
-  },
-  {
-    "agent": "intraday_cashout",
-    "ai_brief": "Se identifican múltiples activos con señales para operativa intradía con salida el mismo día, destacando niveles de entrada, objetivos y stops orientativos. Se recomienda vigilancia estricta del impulso intradía y cierre antes del fin de sesión para controlar riesgos. La confluencia de fuentes y el análisis técnico sugieren un seguimiento activo y gestión prudente del riesgo.",
-    "ai_risk_notes": [
-      "Riesgo medio a alto en la mayoría de activos, con stops ajustados entre -0.8% y -1.2%, lo que requiere disciplina en la gestión de pérdidas.",
-      "Algunos activos presentan drawdowns recientes significativos (por ejemplo, AMZN y GOOGL), lo que puede indicar volatilidad elevada.",
-      "La dependencia de señales de fuentes múltiples y eventos regulatorios implica la necesidad de monitoreo constante para evitar sorpresas."
-    ],
-    "ai_watch_items": [
-      "Confirmación del impulso intradía en niveles de entrada señalados para cada activo.",
-      "Evolución del RSI y su impacto en la fuerza del movimiento intradía.",
-      "Volumen relativo y su comparación con el promedio de 20 días para detectar anomalías."
+      "Confirmar impulso intradía en niveles de entrada indicados para cada activo antes de considerar la operativa.",
+      "Monitorear volumen relativo y comportamiento frente a medias móviles para detectar posibles cambios de tendencia.",
+      "Vigilar niveles de stop-loss para limitar pérdidas, especialmente en activos con riesgo intradía medio o alto."
     ],
     "asset": "AAPL",
     "level": "alto",
     "metrics": {
-      "avg_source_score": 57.0,
+      "avg_source_score": 59.5,
       "breakout_20d": false,
       "breakout_50d": false,
       "intraday_entry_reference": 308.6300048828125,
@@ -381,41 +383,41 @@
       "status": "ok",
       "symbol": "AAPL",
       "ticker": "AAPL",
-      "volume": 75400600.0,
-      "volume_20d_avg": 69125680.0,
-      "volume_ratio": 1.0907755265481656
+      "volume": 75352800.0,
+      "volume_20d_avg": 69123290.0,
+      "volume_ratio": 1.0901217230834932
     },
     "reasons": [
       "Confluencia: 2 fuentes",
       "Score maximo previo: 62/100",
-      "Score medio previo: 57/100",
+      "Score medio previo: 60/100",
       "5D +12.2%",
       "RSI 60.3",
       "Volumen relativo 1.09",
       "Horizonte: salida el mismo dia, maximo 8h",
-      "17 artículos recientes",
+      "15 artículos recientes",
       "Rumores/productos: iPhone, Siri",
       "Evento mencionado: WWDC, Apple event, iPhone event",
       "RSI razonable: 60.3"
     ],
     "score": 84,
-    "source": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOMXRhcmhJclFkdHVTMk1rTURTLTB4WFk1a2VCeVRfYjkwYlg0ZHl4aXZNbmZyLVNrMjlqd1V1RklINlZVYlphR0paNFEtRlZET1d2dXBTaC00WEQ3M0VVNmRUQ2Uxa0JZUWN2Q2JjNjN4Q3JhLVd5dUdhdHR1bjlpQ0J3TUtORUxWMjFiU1RoZmVnZ1FMcTZnU3R0SzZJbDg3WXhfQVloWEk?oc=5",
+    "source": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBydE9PX0hkREZsOGl6SXJrNUJfNGswanRNcDdUUFFMOUpoWmVxYmE4QmRnTTlGRmtmYkdKRGhuOVVLNzJ3aXd5Tkc0cDZOT2F3SnU5V3ctZnhZM3hONHBKbXhtdnFlZUpNakoya1NQdw?oc=5",
     "summary": "AAPL concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 308.63 si confirma impulso intradia. Objetivo orientativo 314.19 y stop orientativo 304.93; cerrar la posicion antes del fin de sesion.",
-    "time_utc": "2026-07-04T09:14:46.674440+00:00",
+    "time_utc": "2026-07-05T09:36:03.173089+00:00",
     "title": "AAPL plan intradia salida mismo dia"
   },
   {
     "agent": "intraday_cashout",
-    "ai_brief": "Se identifican múltiples activos con señales para operativa intradía con salida el mismo día, destacando niveles de entrada, objetivos y stops orientativos. Se recomienda vigilancia estricta del impulso intradía y cierre antes del fin de sesión para controlar riesgos. La confluencia de fuentes y el análisis técnico sugieren un seguimiento activo y gestión prudente del riesgo.",
+    "ai_brief": "Se identifican múltiples activos con señales para operativa intradía con salida el mismo día, destacando niveles de entrada, objetivos y stops orientativos. Se recomienda vigilancia estricta de confirmación de impulso y cierre antes del fin de sesión para controlar riesgos. La gestión del riesgo es clave, especialmente en activos con riesgo intradía medio a alto y volatilidad reciente significativa.",
     "ai_risk_notes": [
-      "Riesgo medio a alto en la mayoría de activos, con stops ajustados entre -0.8% y -1.2%, lo que requiere disciplina en la gestión de pérdidas.",
-      "Algunos activos presentan drawdowns recientes significativos (por ejemplo, AMZN y GOOGL), lo que puede indicar volatilidad elevada.",
-      "La dependencia de señales de fuentes múltiples y eventos regulatorios implica la necesidad de monitoreo constante para evitar sorpresas."
+      "Riesgo medio a alto en la mayoría de activos, con stops ajustados para limitar pérdidas intradía.",
+      "Volatilidad reciente y drawdowns significativos en algunos activos pueden aumentar la incertidumbre.",
+      "La concentración de señales en pocas fuentes o alta dependencia de eventos específicos puede incrementar la exposición a riesgos inesperados."
     ],
     "ai_watch_items": [
-      "Confirmación del impulso intradía en niveles de entrada señalados para cada activo.",
-      "Evolución del RSI y su impacto en la fuerza del movimiento intradía.",
-      "Volumen relativo y su comparación con el promedio de 20 días para detectar anomalías."
+      "Confirmar impulso intradía en niveles de entrada indicados para cada activo antes de considerar la operativa.",
+      "Monitorear volumen relativo y comportamiento frente a medias móviles para detectar posibles cambios de tendencia.",
+      "Vigilar niveles de stop-loss para limitar pérdidas, especialmente en activos con riesgo intradía medio o alto."
     ],
     "asset": "TSLA",
     "level": "alto",
@@ -448,9 +450,9 @@
       ],
       "status": "ok",
       "symbol": "TSLA",
-      "volume": 73915800.0,
-      "volume_20d_avg": 49465550.0,
-      "volume_ratio": 1.4942884492338608
+      "volume": 73717700.0,
+      "volume_20d_avg": 49455645.0,
+      "volume_ratio": 1.4905821165612136
     },
     "reasons": [
       "Confluencia: 2 fuentes",
@@ -468,26 +470,26 @@
     "score": 83,
     "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026046717/tsla-20260702.htm",
     "summary": "TSLA concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 393.45 si confirma impulso intradia. Objetivo orientativo 400.53 y stop orientativo 388.73; cerrar la posicion antes del fin de sesion.",
-    "time_utc": "2026-07-04T09:14:46.674563+00:00",
+    "time_utc": "2026-07-05T09:36:03.173212+00:00",
     "title": "TSLA plan intradia salida mismo dia"
   },
   {
     "agent": "intraday_cashout",
-    "ai_brief": "Se identifican múltiples activos con señales para operativa intradía con salida el mismo día, destacando niveles de entrada, objetivos y stops orientativos. Se recomienda vigilancia estricta del impulso intradía y cierre antes del fin de sesión para controlar riesgos. La confluencia de fuentes y el análisis técnico sugieren un seguimiento activo y gestión prudente del riesgo.",
+    "ai_brief": "Se identifican múltiples activos con señales para operativa intradía con salida el mismo día, destacando niveles de entrada, objetivos y stops orientativos. Se recomienda vigilancia estricta de confirmación de impulso y cierre antes del fin de sesión para controlar riesgos. La gestión del riesgo es clave, especialmente en activos con riesgo intradía medio a alto y volatilidad reciente significativa.",
     "ai_risk_notes": [
-      "Riesgo medio a alto en la mayoría de activos, con stops ajustados entre -0.8% y -1.2%, lo que requiere disciplina en la gestión de pérdidas.",
-      "Algunos activos presentan drawdowns recientes significativos (por ejemplo, AMZN y GOOGL), lo que puede indicar volatilidad elevada.",
-      "La dependencia de señales de fuentes múltiples y eventos regulatorios implica la necesidad de monitoreo constante para evitar sorpresas."
+      "Riesgo medio a alto en la mayoría de activos, con stops ajustados para limitar pérdidas intradía.",
+      "Volatilidad reciente y drawdowns significativos en algunos activos pueden aumentar la incertidumbre.",
+      "La concentración de señales en pocas fuentes o alta dependencia de eventos específicos puede incrementar la exposición a riesgos inesperados."
     ],
     "ai_watch_items": [
-      "Confirmación del impulso intradía en niveles de entrada señalados para cada activo.",
-      "Evolución del RSI y su impacto en la fuerza del movimiento intradía.",
-      "Volumen relativo y su comparación con el promedio de 20 días para detectar anomalías."
+      "Confirmar impulso intradía en niveles de entrada indicados para cada activo antes de considerar la operativa.",
+      "Monitorear volumen relativo y comportamiento frente a medias móviles para detectar posibles cambios de tendencia.",
+      "Vigilar niveles de stop-loss para limitar pérdidas, especialmente en activos con riesgo intradía medio o alto."
     ],
     "asset": "GOOGL",
     "level": "alto",
     "metrics": {
-      "avg_source_score": 66.7,
+      "avg_source_score": 67.0,
       "breakout_20d": false,
       "breakout_50d": false,
       "dist200": 13.840271874276166,
@@ -525,9 +527,9 @@
       "status": "ok",
       "symbol": "GOOGL",
       "ticker": "GOOGL",
-      "volume": 25999300.0,
-      "volume_20d_avg": 38321290.0,
-      "volume_ratio": 0.6784557617971629
+      "volume": 25974800.0,
+      "volume_20d_avg": 38320065.0,
+      "volume_ratio": 0.6778380986566698
     },
     "reasons": [
       "Confluencia: 3 fuentes",
@@ -545,7 +547,7 @@
     "score": 80,
     "source": "https://finance.yahoo.com/quote/GOOGL",
     "summary": "GOOGL concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 359.91 si confirma impulso intradia. Objetivo orientativo 366.39 y stop orientativo 357.03; cerrar la posicion antes del fin de sesion.",
-    "time_utc": "2026-07-04T09:14:46.674378+00:00",
+    "time_utc": "2026-07-05T09:36:03.173025+00:00",
     "title": "GOOGL plan intradia salida mismo dia"
   },
   {
@@ -591,13 +593,13 @@
       "Horizonte: salida el mismo dia, maximo 8h",
       "volume 1.4x avg",
       "5D +20.5%",
-      "Volumen superior al promedio en PLTR, TSLA y SMH con movimientos técnicos relevantes.",
-      "Desempeño negativo reciente en SMCI, ARM y MSTR acompañado de volúmenes por debajo del promedio."
+      "Monitorear AAPL y PLTR por aumento de volumen superior al promedio y rendimiento positivo en 5 días.",
+      "Vigilar SMCI y ARM por volumen inferior al promedio y caídas significativas en rendimiento reciente."
     ],
     "score": 78,
     "source": "https://finance.yahoo.com/quote/PLTR",
     "summary": "PLTR concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 129.30 si confirma impulso intradia. Objetivo orientativo 130.85 y stop orientativo 127.75; cerrar la posicion antes del fin de sesion.",
-    "time_utc": "2026-07-04T09:14:46.674760+00:00",
+    "time_utc": "2026-07-05T09:36:03.173445+00:00",
     "title": "PLTR plan intradia salida mismo dia"
   },
   {
@@ -643,13 +645,13 @@
       "Horizonte: salida el mismo dia, maximo 8h",
       "volume 1.1x avg",
       "5D +16.1%",
-      "Volumen superior al promedio en PLTR, TSLA y SMH con movimientos técnicos relevantes.",
-      "Desempeño negativo reciente en SMCI, ARM y MSTR acompañado de volúmenes por debajo del promedio."
+      "Monitorear AAPL y PLTR por aumento de volumen superior al promedio y rendimiento positivo en 5 días.",
+      "Vigilar SMCI y ARM por volumen inferior al promedio y caídas significativas en rendimiento reciente."
     ],
     "score": 73,
     "source": "https://finance.yahoo.com/quote/COIN",
     "summary": "COIN concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 165.48 si confirma impulso intradia. Objetivo orientativo 167.47 y stop orientativo 163.49; cerrar la posicion antes del fin de sesion.",
-    "time_utc": "2026-07-04T09:14:46.674775+00:00",
+    "time_utc": "2026-07-05T09:36:03.173462+00:00",
     "title": "COIN plan intradia salida mismo dia"
   },
   {
@@ -682,9 +684,9 @@
       ],
       "status": "ok",
       "symbol": "XLP",
-      "volume": 16706900.0,
-      "volume_20d_avg": 12664575.0,
-      "volume_ratio": 1.319183628349155
+      "volume": 16704700.0,
+      "volume_20d_avg": 12664465.0,
+      "volume_ratio": 1.3190213720042654
     },
     "reasons": [
       "Confluencia: 1 fuentes",
@@ -697,12 +699,12 @@
       "20D +3.4%",
       "relativo vs SPY +4.7%",
       "RSI 54.9",
-      "Persistencia de la rotación en Financials (XLF) y Health Care (XLV) tras rompimientos técnicos."
+      "Persistencia de la rotación en Financials (XLF) y Health Care (XLV) dada su alta fuerza relativa y volumen creciente."
     ],
     "score": 72,
     "source": "https://finance.yahoo.com/quote/XLP",
     "summary": "XLP concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 84.99 si confirma impulso intradia. Objetivo orientativo 86.01 y stop orientativo 83.97; cerrar la posicion antes del fin de sesion.",
-    "time_utc": "2026-07-04T09:14:46.674663+00:00",
+    "time_utc": "2026-07-05T09:36:03.173315+00:00",
     "title": "XLP plan intradia salida mismo dia"
   },
   {
@@ -735,9 +737,9 @@
       ],
       "status": "ok",
       "symbol": "XLY",
-      "volume": 10884600.0,
-      "volume_20d_avg": 7956120.0,
-      "volume_ratio": 1.3680789128369104
+      "volume": 10882400.0,
+      "volume_20d_avg": 7956010.0,
+      "volume_ratio": 1.3678213074141434
     },
     "reasons": [
       "Confluencia: 1 fuentes",
@@ -750,12 +752,12 @@
       "20D +0.3%",
       "relativo vs SPY +1.6%",
       "RSI 51.6",
-      "Persistencia de la rotación en Financials (XLF) y Health Care (XLV) tras rompimientos técnicos."
+      "Persistencia de la rotación en Financials (XLF) y Health Care (XLV) dada su alta fuerza relativa y volumen creciente."
     ],
     "score": 71,
     "source": "https://finance.yahoo.com/quote/XLY",
     "summary": "XLY concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 117.12 si confirma impulso intradia. Objetivo orientativo 118.53 y stop orientativo 115.71; cerrar la posicion antes del fin de sesion.",
-    "time_utc": "2026-07-04T09:14:46.674695+00:00",
+    "time_utc": "2026-07-05T09:36:03.173346+00:00",
     "title": "XLY plan intradia salida mismo dia"
   },
   {
@@ -790,9 +792,9 @@
       ],
       "status": "ok",
       "symbol": "CRM",
-      "volume": 10493200.0,
-      "volume_20d_avg": 17057420.0,
-      "volume_ratio": 0.6151692342687229
+      "volume": 10486300.0,
+      "volume_20d_avg": 17057075.0,
+      "volume_ratio": 0.6147771525891749
     },
     "reasons": [
       "Confluencia: 1 fuentes",
@@ -800,7 +802,7 @@
       "Score medio previo: 78/100",
       "5D +10.6%",
       "RSI 49.9",
-      "Volumen relativo 0.62",
+      "Volumen relativo 0.61",
       "Horizonte: salida el mismo dia, maximo 8h",
       "formulario SEC 4",
       "presentado 2026-06-23",
@@ -810,7 +812,7 @@
     "score": 69,
     "source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000152/xslF345X06/form4.xml",
     "summary": "CRM concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 166.11 si confirma impulso intradia. Objetivo orientativo 168.10 y stop orientativo 164.78; cerrar la posicion antes del fin de sesion.",
-    "time_utc": "2026-07-04T09:14:46.674481+00:00",
+    "time_utc": "2026-07-05T09:36:03.173131+00:00",
     "title": "CRM plan intradia salida mismo dia"
   },
   {
@@ -843,9 +845,9 @@
       ],
       "status": "ok",
       "symbol": "XLI",
-      "volume": 6536000.0,
-      "volume_20d_avg": 8315735.0,
-      "volume_ratio": 0.7859798322096604
+      "volume": 6530800.0,
+      "volume_20d_avg": 8315475.0,
+      "volume_ratio": 0.7853790673413125
     },
     "reasons": [
       "Confluencia: 1 fuentes",
@@ -858,12 +860,12 @@
       "20D +5.7%",
       "relativo vs SPY +6.9%",
       "RSI 60.4",
-      "Persistencia de la rotación en Financials (XLF) y Health Care (XLV) tras rompimientos técnicos."
+      "Persistencia de la rotación en Financials (XLF) y Health Care (XLV) dada su alta fuerza relativa y volumen creciente."
     ],
     "score": 68,
     "source": "https://finance.yahoo.com/quote/XLI",
     "summary": "XLI concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 183.91 si confirma impulso intradia. Objetivo orientativo 186.12 y stop orientativo 181.70; cerrar la posicion antes del fin de sesion.",
-    "time_utc": "2026-07-04T09:14:46.674632+00:00",
+    "time_utc": "2026-07-05T09:36:03.173284+00:00",
     "title": "XLI plan intradia salida mismo dia"
   },
   {
@@ -896,9 +898,9 @@
       ],
       "status": "ok",
       "symbol": "XLU",
-      "volume": 24335400.0,
-      "volume_20d_avg": 21101005.0,
-      "volume_ratio": 1.1532815617076058
+      "volume": 24327900.0,
+      "volume_20d_avg": 21100630.0,
+      "volume_ratio": 1.1529466181815424
     },
     "reasons": [
       "Confluencia: 1 fuentes",
@@ -911,12 +913,12 @@
       "20D +4.7%",
       "relativo vs SPY +5.9%",
       "RSI 56.5",
-      "Persistencia de la rotación en Financials (XLF) y Health Care (XLV) tras rompimientos técnicos."
+      "Persistencia de la rotación en Financials (XLF) y Health Care (XLV) dada su alta fuerza relativa y volumen creciente."
     ],
     "score": 65,
     "source": "https://finance.yahoo.com/quote/XLU",
     "summary": "XLU concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 45.76 si confirma impulso intradia. Objetivo orientativo 46.31 y stop orientativo 45.21; cerrar la posicion antes del fin de sesion.",
-    "time_utc": "2026-07-04T09:14:46.674648+00:00",
+    "time_utc": "2026-07-05T09:36:03.173300+00:00",
     "title": "XLU plan intradia salida mismo dia"
   },
   {
@@ -948,9 +950,9 @@
       ],
       "status": "ok",
       "symbol": "SMH",
-      "volume": 21334100.0,
-      "volume_20d_avg": 13214725.0,
-      "volume_ratio": 1.614418763916767
+      "volume": 21288600.0,
+      "volume_20d_avg": 13212450.0,
+      "volume_ratio": 1.61125302271721
     },
     "reasons": [
       "Confluencia: 1 fuentes",
@@ -962,13 +964,13 @@
       "Horizonte: salida el mismo dia, maximo 8h",
       "volume 1.6x avg",
       "5D -7.0%",
-      "Volumen superior al promedio en PLTR, TSLA y SMH con movimientos técnicos relevantes.",
-      "Desempeño negativo reciente en SMCI, ARM y MSTR acompañado de volúmenes por debajo del promedio."
+      "Monitorear AAPL y PLTR por aumento de volumen superior al promedio y rendimiento positivo en 5 días.",
+      "Vigilar SMCI y ARM por volumen inferior al promedio y caídas significativas en rendimiento reciente."
     ],
     "score": 64,
     "source": "https://finance.yahoo.com/quote/SMH",
     "summary": "SMH concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 592.29 si confirma impulso intradia. Objetivo orientativo 599.40 y stop orientativo 585.18; cerrar la posicion antes del fin de sesion.",
-    "time_utc": "2026-07-04T09:14:46.674831+00:00",
+    "time_utc": "2026-07-05T09:36:03.173515+00:00",
     "title": "SMH plan intradia salida mismo dia"
   },
   {
@@ -1000,9 +1002,9 @@
       ],
       "status": "ok",
       "symbol": "MSTR",
-      "volume": 34757600.0,
-      "volume_20d_avg": 29032555.0,
-      "volume_ratio": 1.1971939775882625
+      "volume": 34625800.0,
+      "volume_20d_avg": 29025965.0,
+      "volume_ratio": 1.192925024198162
     },
     "reasons": [
       "Confluencia: 1 fuentes",
@@ -1010,17 +1012,17 @@
       "Score medio previo: 62/100",
       "5D +18.1%",
       "RSI 40.6",
-      "Volumen relativo 1.20",
+      "Volumen relativo 1.19",
       "Horizonte: salida el mismo dia, maximo 8h",
       "volume 1.2x avg",
       "5D +18.1%",
-      "Volumen superior al promedio en PLTR, TSLA y SMH con movimientos técnicos relevantes.",
-      "Desempeño negativo reciente en SMCI, ARM y MSTR acompañado de volúmenes por debajo del promedio."
+      "Monitorear AAPL y PLTR por aumento de volumen superior al promedio y rendimiento positivo en 5 días.",
+      "Vigilar SMCI y ARM por volumen inferior al promedio y caídas significativas en rendimiento reciente."
     ],
     "score": 60,
     "source": "https://finance.yahoo.com/quote/MSTR",
     "summary": "MSTR concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 100.77 si confirma impulso intradia. Objetivo orientativo 101.98 y stop orientativo 99.56; cerrar la posicion antes del fin de sesion.",
-    "time_utc": "2026-07-04T09:14:46.674791+00:00",
+    "time_utc": "2026-07-05T09:36:03.173482+00:00",
     "title": "MSTR plan intradia salida mismo dia"
   },
   {
@@ -1053,9 +1055,9 @@
       ],
       "status": "ok",
       "symbol": "IWM",
-      "volume": 21236400.0,
-      "volume_20d_avg": 30001610.0,
-      "volume_ratio": 0.7078420124786636
+      "volume": 21178900.0,
+      "volume_20d_avg": 29998735.0,
+      "volume_ratio": 0.7059931027091643
     },
     "reasons": [
       "Confluencia: 1 fuentes",
@@ -1068,12 +1070,12 @@
       "20D +3.4%",
       "relativo vs SPY +4.7%",
       "RSI 58.1",
-      "Persistencia de la rotación en Financials (XLF) y Health Care (XLV) tras rompimientos técnicos."
+      "Persistencia de la rotación en Financials (XLF) y Health Care (XLV) dada su alta fuerza relativa y volumen creciente."
     ],
     "score": 57,
     "source": "https://finance.yahoo.com/quote/IWM",
     "summary": "IWM concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 297.58 si confirma impulso intradia. Objetivo orientativo 301.15 y stop orientativo 295.20; cerrar la posicion antes del fin de sesion.",
-    "time_utc": "2026-07-04T09:14:46.674679+00:00",
+    "time_utc": "2026-07-05T09:36:03.173331+00:00",
     "title": "IWM plan intradia salida mismo dia"
   },
   {
@@ -1106,9 +1108,9 @@
       ],
       "status": "ok",
       "symbol": "SPY",
-      "volume": 57506000.0,
-      "volume_20d_avg": 64645380.0,
-      "volume_ratio": 0.8895608626633489
+      "volume": 57447800.0,
+      "volume_20d_avg": 64642470.0,
+      "volume_ratio": 0.8887005710023147
     },
     "reasons": [
       "Confluencia: 1 fuentes",
@@ -1121,12 +1123,12 @@
       "20D -1.3%",
       "relativo vs SPY +0.0%",
       "RSI 53.5",
-      "Persistencia de la rotación en Financials (XLF) y Health Care (XLV) tras rompimientos técnicos."
+      "Persistencia de la rotación en Financials (XLF) y Health Care (XLV) dada su alta fuerza relativa y volumen creciente."
     ],
     "score": 57,
     "source": "https://finance.yahoo.com/quote/SPY",
     "summary": "SPY concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 744.78 si confirma impulso intradia. Objetivo orientativo 753.72 y stop orientativo 735.84; cerrar la posicion antes del fin de sesion.",
-    "time_utc": "2026-07-04T09:14:46.674711+00:00",
+    "time_utc": "2026-07-05T09:36:03.173362+00:00",
     "title": "SPY plan intradia salida mismo dia"
   },
   {
@@ -1162,9 +1164,9 @@
       ],
       "status": "ok",
       "symbol": "AVGO",
-      "volume": 26788900.0,
-      "volume_20d_avg": 35362230.0,
-      "volume_ratio": 0.7575568622227727
+      "volume": 26749500.0,
+      "volume_20d_avg": 35360260.0,
+      "volume_ratio": 0.7564848222269859
     },
     "reasons": [
       "Confluencia: 2 fuentes",
@@ -1182,7 +1184,7 @@
     "score": 56,
     "source": "https://www.sec.gov/Archives/edgar/data/1730168/000135956126000004/xslF345X06/wk-form4_1782940899.xml",
     "summary": "AVGO concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 360.45 si confirma impulso intradia. Objetivo orientativo 364.78 y stop orientativo 356.12; cerrar la posicion antes del fin de sesion.",
-    "time_utc": "2026-07-04T09:14:46.674524+00:00",
+    "time_utc": "2026-07-05T09:36:03.173173+00:00",
     "title": "AVGO plan intradia salida mismo dia"
   },
   {
@@ -1217,9 +1219,9 @@
       ],
       "status": "ok",
       "symbol": "AMD",
-      "volume": 28228900.0,
-      "volume_20d_avg": 32086385.0,
-      "volume_ratio": 0.8797781364276468
+      "volume": 28142500.0,
+      "volume_20d_avg": 32082065.0,
+      "volume_ratio": 0.8772035091880775
     },
     "reasons": [
       "Confluencia: 1 fuentes",
@@ -1236,7 +1238,7 @@
     "score": 55,
     "source": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000115/amd-20260626.htm",
     "summary": "AMD concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 517.82 si confirma impulso intradia. Objetivo orientativo 524.03 y stop orientativo 511.61; cerrar la posicion antes del fin de sesion.",
-    "time_utc": "2026-07-04T09:14:46.674580+00:00",
+    "time_utc": "2026-07-05T09:36:03.173230+00:00",
     "title": "AMD plan intradia salida mismo dia"
   },
   {
@@ -1269,9 +1271,9 @@
       ],
       "status": "ok",
       "symbol": "TLT",
-      "volume": 20957200.0,
-      "volume_20d_avg": 25879260.0,
-      "volume_ratio": 0.8098067719092431
+      "volume": 20816300.0,
+      "volume_20d_avg": 25872215.0,
+      "volume_ratio": 0.8045812853673333
     },
     "reasons": [
       "Confluencia: 1 fuentes",
@@ -1279,17 +1281,17 @@
       "Score medio previo: 52/100",
       "5D -2.1%",
       "RSI 45.1",
-      "Volumen relativo 0.81",
+      "Volumen relativo 0.80",
       "Horizonte: salida el mismo dia, maximo 8h",
       "20D +0.2%",
       "relativo vs SPY +1.5%",
       "RSI 45.1",
-      "Persistencia de la rotación en Financials (XLF) y Health Care (XLV) tras rompimientos técnicos."
+      "Persistencia de la rotación en Financials (XLF) y Health Care (XLV) dada su alta fuerza relativa y volumen creciente."
     ],
     "score": 54,
     "source": "https://finance.yahoo.com/quote/TLT",
     "summary": "TLT concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 85.51 si confirma impulso intradia. Objetivo orientativo 86.54 y stop orientativo 84.48; cerrar la posicion antes del fin de sesion.",
-    "time_utc": "2026-07-04T09:14:46.674727+00:00",
+    "time_utc": "2026-07-05T09:36:03.173387+00:00",
     "title": "TLT plan intradia salida mismo dia"
   },
   {
@@ -1329,9 +1331,9 @@
       ],
       "status": "ok",
       "symbol": "NVDA",
-      "volume": 142385500.0,
-      "volume_20d_avg": 157285940.0,
-      "volume_ratio": 0.9052652767310289
+      "volume": 142068700.0,
+      "volume_20d_avg": 157270100.0,
+      "volume_ratio": 0.9033420847319357
     },
     "reasons": [
       "Confluencia: 1 fuentes",
@@ -1339,7 +1341,7 @@
       "Score medio previo: 70/100",
       "5D -0.5%",
       "RSI 41.2",
-      "Volumen relativo 0.91",
+      "Volumen relativo 0.90",
       "Horizonte: salida el mismo dia, maximo 8h",
       "formulario SEC 4",
       "presentado 2026-06-29",
@@ -1349,7 +1351,7 @@
     "score": 45,
     "source": "https://www.sec.gov/Archives/edgar/data/1045810/000119903926000009/xslF345X06/wk-form4_1782767219.xml",
     "summary": "NVDA concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 194.83 si confirma impulso intradia. Objetivo orientativo 197.17 y stop orientativo 192.49; cerrar la posicion antes del fin de sesion.",
-    "time_utc": "2026-07-04T09:14:46.674504+00:00",
+    "time_utc": "2026-07-05T09:36:03.173153+00:00",
     "title": "NVDA plan intradia salida mismo dia"
   },
   {
@@ -1384,9 +1386,9 @@
       ],
       "status": "ok",
       "symbol": "ORCL",
-      "volume": 44273600.0,
-      "volume_20d_avg": 32265920.0,
-      "volume_ratio": 1.3721474546518433
+      "volume": 44166700.0,
+      "volume_20d_avg": 32260575.0,
+      "volume_ratio": 1.3690611528157821
     },
     "reasons": [
       "Confluencia: 1 fuentes",
@@ -1403,7 +1405,7 @@
     "score": 43,
     "source": "https://www.sec.gov/Archives/edgar/data/1341439/000134143926000064/xslF345X06/form4.xml",
     "summary": "ORCL concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 140.27 si confirma impulso intradia. Objetivo orientativo 141.95 y stop orientativo 138.59; cerrar la posicion antes del fin de sesion.",
-    "time_utc": "2026-07-04T09:14:46.674544+00:00",
+    "time_utc": "2026-07-05T09:36:03.173192+00:00",
     "title": "ORCL plan intradia salida mismo dia"
   },
   {
@@ -1435,9 +1437,9 @@
       ],
       "status": "ok",
       "symbol": "SMCI",
-      "volume": 42867500.0,
-      "volume_20d_avg": 75418325.0,
-      "volume_ratio": 0.5683963413401186
+      "volume": 42742400.0,
+      "volume_20d_avg": 75412070.0,
+      "volume_ratio": 0.5667846009266156
     },
     "reasons": [
       "Confluencia: 1 fuentes",
@@ -1449,13 +1451,13 @@
       "Horizonte: salida el mismo dia, maximo 8h",
       "volume 0.6x avg",
       "5D -14.1%",
-      "Volumen superior al promedio en PLTR, TSLA y SMH con movimientos técnicos relevantes.",
-      "Desempeño negativo reciente en SMCI, ARM y MSTR acompañado de volúmenes por debajo del promedio."
+      "Monitorear AAPL y PLTR por aumento de volumen superior al promedio y rendimiento positivo en 5 días.",
+      "Vigilar SMCI y ARM por volumen inferior al promedio y caídas significativas en rendimiento reciente."
     ],
     "score": 41,
     "source": "https://finance.yahoo.com/quote/SMCI",
     "summary": "SMCI concentra señales recientes para una operativa intradia vigilada. Vigilar entrada cerca de 27.22 si confirma impulso intradia. Objetivo orientativo 27.55 y stop orientativo 27.00; cerrar la posicion antes del fin de sesion.",
-    "time_utc": "2026-07-04T09:14:46.674744+00:00",
+    "time_utc": "2026-07-05T09:36:03.173424+00:00",
     "title": "SMCI plan intradia salida mismo dia"
   }
 ]
