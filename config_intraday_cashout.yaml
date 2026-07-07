@@ -30,3 +30,14 @@ intraday:
   min_input_score: 50
   max_candidates: 25
   max_hold_hours: 8
+  max_stale_seconds: 15
+  require_same_session_signals: true
+  quote_batch_size: 20
+  max_spread_pct: 0.35
+  min_premarket_volume: 50000
+  max_vwap_distance_pct: 1.2
+  min_relative_strength_pct: 0.15
+  min_risk_reward: 1.5
+  leverage: 5
+  risk_per_trade_pct: 1.0
+  max_position_pct: 20.0
