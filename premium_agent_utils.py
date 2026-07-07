@@ -1089,11 +1089,18 @@ def premarket_metrics_from_chart(symbol, config, session):
     if vol_sum > 0:
         typical = (pre["high"].fillna(pre["close"]) + pre["low"].fillna(pre["close"]) + pre["close"]) / 3
         vwap = float((typical * volume).sum() / vol_sum)
+    last_5m = pre.tail(5)
+    last_5m_volume = float(last_5m["volume"].fillna(0).sum()) if not last_5m.empty else 0.0
+    last_5m_change = None
+    if len(last_5m) >= 2:
+        last_5m_change = pct_change(float(last_5m["close"].iloc[-1]), float(last_5m["close"].iloc[0]))
     return {
         "premarket_high": safe_float(pre["high"].max()),
         "premarket_low": safe_float(pre["low"].min()),
         "premarket_vwap": vwap,
         "premarket_volume": vol_sum,
+        "last_5m_volume": last_5m_volume,
+        "last_5m_change_pct": last_5m_change,
         "last_intraday_price": safe_float(pre["close"].iloc[-1]),
         "last_intraday_time": pre["time"].iloc[-1].isoformat(),
     }
@@ -1169,6 +1176,90 @@ def risk_reward(entry, stop, target, direction):
     return reward / risk
 
 
+def intraday_action_state(validation):
+    invalid_text = " | ".join(validation.get("invalid_reasons", []))
+    phase = validation.get("phase")
+    if validation.get("status") == "STALE":
+        return "STALE_DATA"
+    if "faltan datos" in invalid_text or "sin timestamp" in invalid_text:
+        return "NO_TRADE"
+    if "spread alto" in invalid_text or "spread consume" in invalid_text:
+        return "SPREAD_TOO_WIDE"
+    if "volumen pre-market bajo" in invalid_text:
+        return "LOW_VOLUME"
+    if phase in {"AVOID_MARKET_ENTRY", "PREMARKET_LATE"}:
+        return "TOO_LATE"
+    if validation.get("is_valid") and validation.get("direction") == "LONG":
+        return "READY_LONG"
+    if validation.get("is_valid") and validation.get("direction") == "SHORT":
+        return "READY_SHORT"
+    if validation.get("score", 0) >= 65 and validation.get("direction") in {"LONG", "SHORT"}:
+        return "WAITING_CONFIRMATION"
+    return "NO_TRADE"
+
+
+def build_intraday_risk_plan(entry, stop, target, direction, spread_pct, config):
+    cfg = config.get("intraday", {})
+    entry = safe_float(entry)
+    stop = safe_float(stop)
+    target = safe_float(target)
+    leverage = float(cfg.get("leverage", 5))
+    equity = float(cfg.get("account_equity", 1000))
+    risk_per_trade_pct = float(cfg.get("risk_per_trade_pct", 1.0))
+    max_daily_loss_pct = float(cfg.get("max_daily_loss_pct", 3.0))
+    max_position_pct = float(cfg.get("max_position_pct", 20.0))
+    max_trades_per_day = int(cfg.get("max_trades_per_day", 3))
+    allow_fractional = bool(cfg.get("allow_fractional_shares", True))
+    min_trade_notional = float(cfg.get("min_trade_notional", 25))
+    if direction not in {"LONG", "SHORT"} or not entry or not stop or not target:
+        return {
+            "position_size": 0,
+            "notional": 0,
+            "margin_required": 0,
+            "risk_amount": equity * risk_per_trade_pct / 100,
+            "max_daily_loss_amount": equity * max_daily_loss_pct / 100,
+            "max_trades_per_day": max_trades_per_day,
+            "net_risk_reward": None,
+            "spread_cost_to_reward_pct": None,
+        }
+    risk_per_share = abs(entry - stop)
+    reward_per_share = abs(target - entry)
+    risk_amount = equity * risk_per_trade_pct / 100
+    max_notional = equity * leverage * max_position_pct / 100
+    shares_by_risk = risk_amount / risk_per_share if risk_per_share > 0 else 0
+    shares_by_notional = max_notional / entry if entry > 0 else 0
+    raw_shares = max(0, min(shares_by_risk, shares_by_notional))
+    shares = round(raw_shares, 4) if allow_fractional else int(raw_shares)
+    notional = shares * entry
+    spread_cost = notional * (safe_float(spread_pct, 0) / 100)
+    gross_reward = shares * reward_per_share
+    gross_risk = shares * risk_per_share
+    net_reward = gross_reward - spread_cost
+    net_risk = gross_risk + spread_cost
+    return {
+        "account_equity": equity,
+        "leverage": leverage,
+        "risk_per_trade_pct": risk_per_trade_pct,
+        "risk_amount": risk_amount,
+        "max_daily_loss_pct": max_daily_loss_pct,
+        "max_daily_loss_amount": equity * max_daily_loss_pct / 100,
+        "max_trades_per_day": max_trades_per_day,
+        "max_position_pct": max_position_pct,
+        "max_notional": max_notional,
+        "position_size": shares,
+        "notional": notional,
+        "margin_required": notional / leverage if leverage else notional,
+        "min_trade_notional": min_trade_notional,
+        "risk_per_share": risk_per_share,
+        "reward_per_share": reward_per_share,
+        "gross_risk": gross_risk,
+        "gross_reward": gross_reward,
+        "spread_cost": spread_cost,
+        "net_risk_reward": net_reward / net_risk if net_risk > 0 else None,
+        "spread_cost_to_reward_pct": spread_cost / gross_reward * 100 if gross_reward > 0 else None,
+    }
+
+
 def validate_intraday_setup(symbol, market, candidate, session, config):
     cfg = config.get("intraday", {})
     max_spread_pct = float(cfg.get("max_spread_pct", 0.35))
@@ -1177,6 +1268,8 @@ def validate_intraday_setup(symbol, market, candidate, session, config):
     min_relative_strength_pct = float(cfg.get("min_relative_strength_pct", 0.15))
     min_rr = float(cfg.get("min_risk_reward", 1.5))
     max_stale_seconds = float(cfg.get("max_stale_seconds", 15))
+    max_spread_reward_cost_pct = float(cfg.get("max_spread_reward_cost_pct", 20.0))
+    max_open_chase_pct = float(cfg.get("max_open_chase_pct", 1.0))
     leverage = float(cfg.get("leverage", 5))
     risk_per_trade_pct = float(cfg.get("risk_per_trade_pct", 1.0))
     max_position_pct = float(cfg.get("max_position_pct", 20.0))
@@ -1237,6 +1330,8 @@ def validate_intraday_setup(symbol, market, candidate, session, config):
     gap = safe_float(market.get("gap_pct"), 0)
     rel_qqq = safe_float(market.get("relative_strength_vs_qqq"), 0)
     rel_spy = safe_float(market.get("relative_strength_vs_spy"), 0)
+    last_5m_volume = safe_float(market.get("last_5m_volume"), 0)
+    last_5m_change = safe_float(market.get("last_5m_change_pct"), 0)
     max_source_score = max(candidate.get("source_scores", [0]) or [0])
     has_catalyst = any(x in " ".join(candidate.get("sources", [])) for x in ["Rumores", "Catalizadores", "SEC"])
 
@@ -1289,6 +1384,18 @@ def validate_intraday_setup(symbol, market, candidate, session, config):
         invalid.append(f"riesgo/beneficio insuficiente {fmt_float(rr, 2)}")
     if vwap_distance is not None and abs(vwap_distance) > max_vwap_distance_pct * 1.8:
         warnings.append(f"precio alejado de VWAP {vwap_distance:.2f}%")
+    if abs(last_5m_change) > max_open_chase_pct:
+        invalid.append(f"no perseguir vela: movimiento 5m {last_5m_change:.2f}%")
+
+    risk_plan = build_intraday_risk_plan(current, stop, target, direction, spread_pct, config)
+    net_rr = safe_float(risk_plan.get("net_risk_reward"))
+    spread_reward_pct = safe_float(risk_plan.get("spread_cost_to_reward_pct"))
+    if net_rr is not None and net_rr < min_rr:
+        invalid.append(f"R/R neto insuficiente {net_rr:.2f}")
+    if spread_reward_pct is not None and spread_reward_pct > max_spread_reward_cost_pct:
+        invalid.append(f"spread consume {spread_reward_pct:.1f}% del beneficio esperado")
+    if safe_float(risk_plan.get("notional"), 0) < float(cfg.get("min_trade_notional", 25)) and direction in {"LONG", "SHORT"}:
+        warnings.append("tamano teorico bajo para cuenta pequena")
 
     score = 0
     score += 20 if not any("STALE" in x or "timestamp" in x for x in invalid) else 5
@@ -1296,8 +1403,9 @@ def validate_intraday_setup(symbol, market, candidate, session, config):
     score += 15 if spread_pct is not None and spread_pct <= max_spread_pct * 0.5 else 8 if spread_pct is not None and spread_pct <= max_spread_pct else 0
     score += 15 if setup in {"LONG_CONTINUATION", "SHORT_WEAKNESS"} and not any("VWAP" in x for x in warnings) else 8 if setup == "GAP_FADE" else 0
     score += 12 if (direction == "LONG" and rel_long) or (direction == "SHORT" and rel_short) else 0
-    score += 15 if rr is not None and rr >= 2 else 10 if rr is not None and rr >= min_rr else 0
+    score += 15 if net_rr is not None and net_rr >= 2 else 10 if net_rr is not None and net_rr >= min_rr else 0
     score += 8 if has_catalyst else min(6, max(0, max_source_score - 65) / 5)
+    score += 5 if last_5m_volume >= min_premarket_volume * 0.15 else 0
     if invalid:
         score = min(score, 64)
     if phase in {"WATCH_ONLY", "AVOID_MARKET_ENTRY", "PREMARKET_LATE", "NO_TRADE"}:
@@ -1310,7 +1418,7 @@ def validate_intraday_setup(symbol, market, candidate, session, config):
         direction = "WAIT"
 
     buying_power_pct = min(max_position_pct, max_position_pct * leverage)
-    return {
+    validation = {
         "setup": setup,
         "direction": direction,
         "entry_zone": f"{fmt_usd(entry_low)} - {fmt_usd(entry_high)}" if entry_low and entry_high else "N/A",
@@ -1323,10 +1431,12 @@ def validate_intraday_setup(symbol, market, candidate, session, config):
         "classification": intraday_classification(score),
         "invalid_reasons": invalid,
         "warnings": warnings,
+        "phase": phase,
         "reason": (
             f"{setup}: spread {fmt_pct(spread_pct, 2)}, volumen pre-market {pre_volume:,.0f}, "
             f"VWAP {fmt_usd(vwap)}, RS vs QQQ {fmt_pct(rel_qqq, 2)}, RS vs SPY {fmt_pct(rel_spy, 2)}."
         ),
+        "risk_plan": risk_plan,
         "risk_context": {
             "leverage": leverage,
             "risk_per_trade_pct": risk_per_trade_pct,
@@ -1334,6 +1444,8 @@ def validate_intraday_setup(symbol, market, candidate, session, config):
             "max_buying_power_pct_with_leverage": buying_power_pct,
         },
     }
+    validation["action_state"] = intraday_action_state(validation)
+    return validation
 
 
 def intraday_cashout(config):
@@ -1430,10 +1542,13 @@ def intraday_cashout(config):
         warning_text = "; ".join(validation.get("warnings", [])[:2]) or "sin avisos"
         reasons = [
             f"Estado: {validation['status']}",
+            f"Accion: {validation['action_state']}",
             f"Setup: {validation['setup']} {validation['direction']}",
             f"Entrada: {validation['entry_zone']}",
             f"SL {fmt_usd(validation.get('stop_loss'))} / TP {fmt_usd(validation.get('take_profit'))}",
-            f"R/R {fmt_float(validation.get('risk_reward'), 2)}",
+            f"R/R bruto {fmt_float(validation.get('risk_reward'), 2)} / neto {fmt_float(validation.get('risk_plan', {}).get('net_risk_reward'), 2)}",
+            f"Tamano teorico {fmt_float(validation.get('risk_plan', {}).get('position_size'), 4)} acciones",
+            f"Margen aprox. {fmt_usd(validation.get('risk_plan', {}).get('margin_required'))}",
             f"Invalidacion: {invalid_text}",
             f"Avisos: {warning_text}",
             f"Confluencia: {source_count} fuentes",
@@ -1467,17 +1582,19 @@ def intraday_cashout(config):
             "stop_loss": validation.get("stop_loss"),
             "take_profit": validation.get("take_profit"),
             "risk_reward": validation.get("risk_reward"),
+            "action_state": validation.get("action_state"),
             "validation_status": validation["status"],
             "classification": validation["classification"],
             "invalid_reasons": validation.get("invalid_reasons", []),
             "warnings": validation.get("warnings", []),
+            "risk_plan": validation.get("risk_plan", {}),
             "risk_context": validation.get("risk_context", {}),
             "max_hold_hours": max_hold_hours,
             "sources": sorted(set(item.get("sources", []))),
         }
         event = make_event(
             "intraday_cashout",
-            f"{symbol} {validation['setup']} {validation['status']}",
+            f"{symbol} {validation['action_state']} {validation['setup']}",
             symbol,
             score,
             summary,
@@ -1626,7 +1743,60 @@ class PremiumResearchAgent:
                 },
             )
 
+    def build_intraday_message(self, events, force=False):
+        alerts = self.config.get("alerts", {})
+        threshold = int(alerts.get("min_score_to_alert", 75))
+        max_alerts = int(alerts.get("max_alerts", 5))
+        actionable_states = {"READY_LONG", "READY_SHORT", "WAITING_CONFIRMATION"}
+        selected = [
+            x for x in events
+            if x.get("metrics", {}).get("action_state") in actionable_states and x.get("score", 0) >= threshold
+        ]
+        if force and not selected:
+            selected = events[:max_alerts]
+        selected = selected[:max_alerts]
+        if not selected:
+            return None, None
+        first_session = selected[0].get("metrics", {}).get("session", {})
+        lines = [
+            f"<b>{esc(self.name)}</b>",
+            f"<b>Hora:</b> {utc_now().strftime('%Y-%m-%d %H:%M UTC')}",
+            f"<b>Sesion:</b> {esc(first_session.get('state', 'N/A'))} / {esc(first_session.get('phase', 'N/A'))}",
+            f"<b>Apertura regular USA:</b> {esc(first_session.get('minutes_to_regular_open', 'N/A'))} min",
+            "",
+        ]
+        for event in selected:
+            metrics = event.get("metrics", {})
+            risk_plan = metrics.get("risk_plan", {})
+            invalid = "; ".join(metrics.get("invalid_reasons", [])[:3]) or "N/A"
+            warnings = "; ".join(metrics.get("warnings", [])[:2]) or "N/A"
+            lines.extend(
+                [
+                    f"<b>{esc(event.get('asset'))} - {esc(metrics.get('action_state', event.get('level')))}</b>",
+                    f"Score: <b>{event.get('score')}/100</b> ({esc(event.get('level'))})",
+                    f"Setup: <b>{esc(metrics.get('setup'))}</b> / {esc(metrics.get('direction'))}",
+                    f"Entrada: <b>{esc(metrics.get('entry_zone'))}</b>",
+                    f"SL: <b>{fmt_usd(metrics.get('stop_loss'))}</b> | TP: <b>{fmt_usd(metrics.get('take_profit'))}</b>",
+                    f"R/R neto: <b>{fmt_float(risk_plan.get('net_risk_reward'), 2)}</b> | Spread: {fmt_pct(metrics.get('spread_pct'), 2)}",
+                    f"Tamano teorico: {fmt_float(risk_plan.get('position_size'), 4)} acc. | Margen: {fmt_usd(risk_plan.get('margin_required'))}",
+                    f"VWAP: {fmt_usd(metrics.get('premarket_vwap'))} | Vol pre: {safe_float(metrics.get('premarket_volume'), 0):,.0f}",
+                    f"RS QQQ/SPY: {fmt_pct(metrics.get('relative_strength_vs_qqq'), 2)} / {fmt_pct(metrics.get('relative_strength_vs_spy'), 2)}",
+                    f"Invalidar: {esc(invalid)}",
+                    f"Avisos: {esc(warnings)}",
+                    "",
+                ]
+            )
+        lines.append("Regla: cuenta pequena x5, cerrar el mismo dia, no perseguir velas y no operar si pasa a STALE/INVALID.")
+        lines.append("Investigacion automatizada con datos publicos. No es asesoramiento financiero personalizado.")
+        buttons = [[{"text": "Panel Intradia", "url": "https://diegosr-git.github.io/market-signal-agent/intraday_cashout_dashboard.html"}]]
+        first_source = selected[0].get("source")
+        if first_source:
+            buttons.insert(0, [{"text": "Fuente principal", "url": first_source}])
+        return "\n".join(lines).strip(), buttons
+
     def build_message(self, events, force=False):
+        if self.agent_key == "intraday_cashout":
+            return self.build_intraday_message(events, force=force)
         alerts = self.config.get("alerts", {})
         threshold = int(alerts.get("min_score_to_alert", 75))
         max_alerts = int(alerts.get("max_alerts", 5))

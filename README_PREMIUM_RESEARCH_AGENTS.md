@@ -36,6 +36,8 @@ El agente intradia cruza los snapshots ya generados por el resto de scripts, per
 
 La logica cambia por horario espanol: antes de las 15:00 solo vigila, entre 15:00 y 15:25 busca setups pre-market, de 15:25 a 15:30 evita entradas a mercado y de 15:30 a 15:35 exige confirmacion sin perseguir velas. Los setups minimos son `LONG_CONTINUATION`, `SHORT_WEAKNESS`, `GAP_FADE` y `NO_TRADE`. La configuracion incluye apalancamiento x5, riesgo por operacion, spread maximo, volumen minimo, distancia a VWAP y riesgo/beneficio minimo 1:1.5.
 
+El motor intradia devuelve estados accionables: `READY_LONG`, `READY_SHORT`, `WAITING_CONFIRMATION`, `TOO_LATE`, `SPREAD_TOO_WIDE`, `LOW_VOLUME`, `STALE_DATA` y `NO_TRADE`. Para cuenta pequena calcula tamano teorico, margen requerido, perdida maxima diaria, coste del spread y R/R neto antes de enviar alertas.
+
 ## Probar en GitHub Actions
 
 En la pestana **Actions**, abre el workflow correspondiente y ejecuta **Run workflow** con:
