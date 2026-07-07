@@ -39,5 +39,12 @@ intraday:
   min_relative_strength_pct: 0.15
   min_risk_reward: 1.5
   leverage: 5
+  account_equity: 1000
   risk_per_trade_pct: 1.0
+  max_daily_loss_pct: 3.0
+  max_trades_per_day: 3
   max_position_pct: 20.0
+  max_spread_reward_cost_pct: 20.0
+  max_open_chase_pct: 1.0
+  min_trade_notional: 25
+  allow_fractional_shares: true
