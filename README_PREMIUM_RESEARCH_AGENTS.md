@@ -32,7 +32,9 @@ python -u altcoin_fundamentals_agent.py --dry-run --force
 python -u intraday_cashout_agent.py --dry-run --force
 ```
 
-El agente intradia no descarga nuevas fuentes de mercado: cruza los snapshots ya generados por el resto de scripts y prioriza ideas liquidas para una operativa de manana con salida antes del cierre. El plan muestra precio de referencia, objetivo, stop orientativo, fuentes que coinciden y riesgos. Es investigacion automatizada, no asesoramiento financiero personalizado.
+El agente intradia cruza los snapshots ya generados por el resto de scripts, pero antes de marcar una entrada como operable valida datos pre-market en tiempo casi real: timestamp, bid/ask, spread, previous close, gap, VWAP, high/low, volumen pre-market y fuerza relativa frente a QQQ/SPY. Si faltan datos criticos queda `INVALID`; si el precio pre-market supera `max_stale_seconds` queda `STALE`.
+
+La logica cambia por horario espanol: antes de las 15:00 solo vigila, entre 15:00 y 15:25 busca setups pre-market, de 15:25 a 15:30 evita entradas a mercado y de 15:30 a 15:35 exige confirmacion sin perseguir velas. Los setups minimos son `LONG_CONTINUATION`, `SHORT_WEAKNESS`, `GAP_FADE` y `NO_TRADE`. La configuracion incluye apalancamiento x5, riesgo por operacion, spread maximo, volumen minimo, distancia a VWAP y riesgo/beneficio minimo 1:1.5.
 
 ## Probar en GitHub Actions
 

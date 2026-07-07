@@ -8,9 +8,9 @@ on:
         required: false
         default: "false"
   schedule:
-    # GitHub cron uses UTC. During CEST this maps to 08:55 Europe/Madrid,
-    # after the morning agents have persisted their snapshots.
-    - cron: "55 6 * * *"
+    # GitHub cron uses UTC. During CEST these map to 15:05 and 15:20
+    # Europe/Madrid, inside the useful USA pre-market validation window.
+    - cron: "5,20 13 * * *"
 
 permissions:
   contents: write
@@ -19,7 +19,7 @@ permissions:
 jobs:
   intraday-cashout-agent:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:

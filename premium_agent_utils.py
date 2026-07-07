@@ -8,9 +8,10 @@ import json
 import os
 import re
 import time
-from datetime import datetime, timezone, timedelta
+from datetime import date, datetime, timezone, timedelta
 from pathlib import Path
 from urllib.parse import quote_plus
+from zoneinfo import ZoneInfo
 
 import pandas as pd
 import requests
@@ -83,6 +84,11 @@ def fmt_float(value, decimals=2):
 def fmt_pct(value, decimals=1):
     value = safe_float(value)
     return "N/A" if value is None else f"{value:+.{decimals}f}%"
+
+
+def fmt_usd(value, decimals=2):
+    value = safe_float(value)
+    return "N/A" if value is None else f"${value:,.{decimals}f}"
 
 
 def load_yaml(path):
@@ -840,7 +846,7 @@ def merge_candidate_metric(current, new_value):
     return current
 
 
-def add_intraday_candidate(candidates, symbol, source, score, summary, reasons=None, metrics=None, source_url=None):
+def add_intraday_candidate(candidates, symbol, source, score, summary, reasons=None, metrics=None, source_url=None, source_time=None):
     symbol = normalize_trade_symbol(symbol)
     if not symbol:
         return
@@ -855,6 +861,7 @@ def add_intraday_candidate(candidates, symbol, source, score, summary, reasons=N
             "summaries": [],
             "metrics": {},
             "source_url": source_url,
+            "source_times": [],
         },
     )
     item["sources"].append(source)
@@ -868,6 +875,8 @@ def add_intraday_candidate(candidates, symbol, source, score, summary, reasons=N
         item["metrics"][key] = merge_candidate_metric(item["metrics"].get(key), value)
     if source_url and not item.get("source_url"):
         item["source_url"] = source_url
+    if source_time:
+        item["source_times"].append(source_time)
 
 
 def load_snapshot_list(path):
@@ -875,11 +884,464 @@ def load_snapshot_list(path):
     return data if isinstance(data, list) else []
 
 
+def parse_iso_datetime(value):
+    if not value:
+        return None
+    try:
+        return datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+    except Exception:
+        return None
+
+
+def nth_weekday(year, month, weekday, nth):
+    day = date(year, month, 1)
+    offset = (weekday - day.weekday()) % 7
+    return day + timedelta(days=offset + (nth - 1) * 7)
+
+
+def last_weekday(year, month, weekday):
+    day = date(year, month + 1, 1) - timedelta(days=1) if month < 12 else date(year, 12, 31)
+    return day - timedelta(days=(day.weekday() - weekday) % 7)
+
+
+def observed_fixed_holiday(year, month, day):
+    holiday = date(year, month, day)
+    if holiday.weekday() == 5:
+        return holiday - timedelta(days=1)
+    if holiday.weekday() == 6:
+        return holiday + timedelta(days=1)
+    return holiday
+
+
+def easter_date(year):
+    a = year % 19
+    b = year // 100
+    c = year % 100
+    d = b // 4
+    e = b % 4
+    f = (b + 8) // 25
+    g = (b - f + 1) // 3
+    h = (19 * a + b - d - g + 15) % 30
+    i = c // 4
+    k = c % 4
+    l = (32 + 2 * e + 2 * i - h - k) % 7
+    m = (a + 11 * h + 22 * l) // 451
+    month = (h + l - 7 * m + 114) // 31
+    day = ((h + l - 7 * m + 114) % 31) + 1
+    return date(year, month, day)
+
+
+def us_market_holidays(year):
+    holidays = {
+        observed_fixed_holiday(year, 1, 1),
+        nth_weekday(year, 1, 0, 3),
+        nth_weekday(year, 2, 0, 3),
+        easter_date(year) - timedelta(days=2),
+        last_weekday(year, 5, 0),
+        observed_fixed_holiday(year, 6, 19),
+        observed_fixed_holiday(year, 7, 4),
+        nth_weekday(year, 9, 0, 1),
+        nth_weekday(year, 11, 3, 4),
+        observed_fixed_holiday(year, 12, 25),
+    }
+    return holidays
+
+
+def trading_day_for_ny(now_ny):
+    return now_ny.date()
+
+
+def market_session_state(now=None):
+    now_utc = now or utc_now()
+    ny = now_utc.astimezone(ZoneInfo("America/New_York"))
+    madrid = now_utc.astimezone(ZoneInfo("Europe/Madrid"))
+    trade_date = trading_day_for_ny(ny)
+    open_ny = ny.replace(hour=9, minute=30, second=0, microsecond=0)
+    close_ny = ny.replace(hour=16, minute=0, second=0, microsecond=0)
+    premarket_start = ny.replace(hour=4, minute=0, second=0, microsecond=0)
+    after_end = ny.replace(hour=20, minute=0, second=0, microsecond=0)
+    holiday = trade_date in us_market_holidays(trade_date.year)
+    weekend = ny.weekday() >= 5
+
+    if weekend or holiday:
+        state = "festivo" if holiday else "cerrado"
+        phase = "NO_TRADE"
+    elif premarket_start <= ny < open_ny:
+        state = "pre-market"
+        if madrid.hour < 15:
+            phase = "WATCH_ONLY"
+        elif madrid.hour == 15 and madrid.minute < 25:
+            phase = "PREMARKET_SETUP"
+        elif madrid.hour == 15 and madrid.minute < 30:
+            phase = "AVOID_MARKET_ENTRY"
+        else:
+            phase = "PREMARKET_LATE"
+    elif open_ny <= ny < close_ny:
+        state = "mercado_abierto"
+        phase = "CONFIRMATION" if madrid.hour == 15 and madrid.minute < 35 else "OPEN_MARKET"
+    elif close_ny <= ny < after_end:
+        state = "after-hours"
+        phase = "NO_TRADE"
+    else:
+        state = "cerrado"
+        phase = "NO_TRADE"
+
+    seconds_to_open = int((open_ny - ny).total_seconds()) if ny < open_ny else 0
+    return {
+        "now_utc": now_utc.isoformat(),
+        "now_ny": ny.isoformat(),
+        "now_madrid": madrid.isoformat(),
+        "trade_date": trade_date.isoformat(),
+        "state": state,
+        "phase": phase,
+        "is_weekend": weekend,
+        "is_holiday": holiday,
+        "seconds_to_regular_open": max(0, seconds_to_open),
+        "minutes_to_regular_open": max(0, round(seconds_to_open / 60, 1)),
+    }
+
+
+def quote_time_to_iso(epoch):
+    try:
+        if not epoch:
+            return None
+        return datetime.fromtimestamp(float(epoch), tz=timezone.utc).isoformat()
+    except Exception:
+        return None
+
+
+def yahoo_realtime_quotes(symbols, config):
+    symbols = sorted({normalize_trade_symbol(x) for x in symbols if normalize_trade_symbol(x)})
+    if not symbols:
+        return {}
+    url = "https://query1.finance.yahoo.com/v7/finance/quote"
+    out = {}
+    chunk_size = int(config.get("intraday", {}).get("quote_batch_size", 20))
+    for idx in range(0, len(symbols), chunk_size):
+        chunk = symbols[idx : idx + chunk_size]
+        try:
+            data = request_json(
+                url,
+                config=config,
+                params={"symbols": ",".join(chunk), "fields": "regularMarketPrice,bid,ask,regularMarketVolume,preMarketPrice,preMarketTime,preMarketChangePercent,regularMarketPreviousClose,marketState"},
+                headers={"User-Agent": "Mozilla/5.0", "Accept": "application/json"},
+                retries=1,
+                read_timeout=8,
+            )
+            for item in data.get("quoteResponse", {}).get("result", []):
+                out[str(item.get("symbol", "")).upper()] = item
+        except Exception as ex:
+            log(f"Yahoo quote error {','.join(chunk)}: {ex}")
+    return out
+
+
+def yahoo_intraday_chart(symbol, config, range_days="1d", interval="1m"):
+    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{quote_plus(symbol)}"
+    try:
+        data = request_json(
+            url,
+            config=config,
+            params={"range": range_days, "interval": interval, "includePrePost": "true"},
+            headers={"User-Agent": "Mozilla/5.0", "Accept": "application/json"},
+            retries=1,
+            read_timeout=8,
+        )
+        result = (data.get("chart", {}).get("result") or [None])[0]
+        if not result:
+            return pd.DataFrame()
+        quote = (result.get("indicators", {}).get("quote") or [{}])[0]
+        df = pd.DataFrame(
+            {
+                "time": pd.to_datetime(result.get("timestamp", []), unit="s", utc=True),
+                "open": quote.get("open", []),
+                "high": quote.get("high", []),
+                "low": quote.get("low", []),
+                "close": quote.get("close", []),
+                "volume": quote.get("volume", []),
+            }
+        )
+        for col in ["open", "high", "low", "close", "volume"]:
+            df[col] = pd.to_numeric(df[col], errors="coerce")
+        return df.dropna(subset=["close"]).sort_values("time").reset_index(drop=True)
+    except Exception as ex:
+        log(f"Yahoo intraday chart error {symbol}: {ex}")
+        return pd.DataFrame()
+
+
+def premarket_metrics_from_chart(symbol, config, session):
+    df = yahoo_intraday_chart(symbol, config)
+    if df.empty:
+        return {}
+    ny_tz = ZoneInfo("America/New_York")
+    trade_date = date.fromisoformat(session["trade_date"])
+    local_time = df["time"].dt.tz_convert(ny_tz)
+    mask = (
+        (local_time.dt.date == trade_date)
+        & (local_time.dt.time >= datetime.strptime("04:00", "%H:%M").time())
+        & (local_time.dt.time < datetime.strptime("09:30", "%H:%M").time())
+    )
+    pre = df.loc[mask].copy()
+    if pre.empty:
+        return {}
+    volume = pre["volume"].fillna(0)
+    vwap = None
+    vol_sum = float(volume.sum())
+    if vol_sum > 0:
+        typical = (pre["high"].fillna(pre["close"]) + pre["low"].fillna(pre["close"]) + pre["close"]) / 3
+        vwap = float((typical * volume).sum() / vol_sum)
+    return {
+        "premarket_high": safe_float(pre["high"].max()),
+        "premarket_low": safe_float(pre["low"].min()),
+        "premarket_vwap": vwap,
+        "premarket_volume": vol_sum,
+        "last_intraday_price": safe_float(pre["close"].iloc[-1]),
+        "last_intraday_time": pre["time"].iloc[-1].isoformat(),
+    }
+
+
+def quote_market_snapshot(symbol, quote, chart_metrics, now=None):
+    now_utc = now or utc_now()
+    pre_price = safe_float(quote.get("preMarketPrice"))
+    regular_price = safe_float(quote.get("regularMarketPrice"))
+    current_price = pre_price or regular_price or safe_float(chart_metrics.get("last_intraday_price"))
+    bid = safe_float(quote.get("bid"))
+    ask = safe_float(quote.get("ask"))
+    previous_close = safe_float(quote.get("regularMarketPreviousClose") or quote.get("regularMarketPreviousCloseRaw"))
+    volume = safe_float(quote.get("regularMarketVolume"))
+    timestamp_epoch = quote.get("preMarketTime") or quote.get("regularMarketTime")
+    timestamp = quote_time_to_iso(timestamp_epoch) or chart_metrics.get("last_intraday_time")
+    timestamp_dt = parse_iso_datetime(timestamp)
+    age_seconds = (now_utc - timestamp_dt.astimezone(timezone.utc)).total_seconds() if timestamp_dt else None
+    spread_pct = ((ask - bid) / current_price * 100) if bid and ask and current_price else None
+    gap_pct = pct_change(current_price, previous_close)
+    return {
+        "symbol": symbol,
+        "current_price": current_price,
+        "bid": bid,
+        "ask": ask,
+        "spread_pct": spread_pct,
+        "previous_close": previous_close,
+        "gap_pct": gap_pct,
+        "quote_timestamp": timestamp,
+        "quote_age_seconds": age_seconds,
+        "market_state": quote.get("marketState"),
+        "regular_volume": volume,
+        **chart_metrics,
+    }
+
+
+def relative_strength(symbol_metrics, benchmark_metrics):
+    perf = safe_float(symbol_metrics.get("gap_pct"), 0)
+    qqq = safe_float(benchmark_metrics.get("QQQ", {}).get("gap_pct"), 0)
+    spy = safe_float(benchmark_metrics.get("SPY", {}).get("gap_pct"), 0)
+    return {
+        "relative_strength_vs_qqq": perf - qqq,
+        "relative_strength_vs_spy": perf - spy,
+    }
+
+
+def intraday_classification(score):
+    if score >= 85:
+        return "operable"
+    if score >= 75:
+        return "vigilable"
+    if score >= 65:
+        return "solo con confirmacion"
+    return "NO_TRADE"
+
+
+def risk_reward(entry, stop, target, direction):
+    entry = safe_float(entry)
+    stop = safe_float(stop)
+    target = safe_float(target)
+    if entry is None or stop is None or target is None:
+        return None
+    if direction == "LONG":
+        risk = entry - stop
+        reward = target - entry
+    elif direction == "SHORT":
+        risk = stop - entry
+        reward = entry - target
+    else:
+        return None
+    if risk <= 0 or reward <= 0:
+        return None
+    return reward / risk
+
+
+def validate_intraday_setup(symbol, market, candidate, session, config):
+    cfg = config.get("intraday", {})
+    max_spread_pct = float(cfg.get("max_spread_pct", 0.35))
+    min_premarket_volume = float(cfg.get("min_premarket_volume", 50000))
+    max_vwap_distance_pct = float(cfg.get("max_vwap_distance_pct", 1.2))
+    min_relative_strength_pct = float(cfg.get("min_relative_strength_pct", 0.15))
+    min_rr = float(cfg.get("min_risk_reward", 1.5))
+    max_stale_seconds = float(cfg.get("max_stale_seconds", 15))
+    leverage = float(cfg.get("leverage", 5))
+    risk_per_trade_pct = float(cfg.get("risk_per_trade_pct", 1.0))
+    max_position_pct = float(cfg.get("max_position_pct", 20.0))
+
+    invalid = []
+    warnings = []
+    phase = session.get("phase")
+    now_madrid = parse_iso_datetime(session.get("now_madrid"))
+    trade_date = session.get("trade_date")
+    if phase in {"WATCH_ONLY", "AVOID_MARKET_ENTRY", "PREMARKET_LATE", "NO_TRADE"}:
+        warnings.append(f"fase {phase}: no abrir posicion automaticamente")
+    if session.get("state") in {"festivo", "cerrado", "after-hours"}:
+        invalid.append(f"mercado {session.get('state')}")
+    if now_madrid and now_madrid.hour < 15:
+        warnings.append("antes de 15:00 Espana: solo vigilancia")
+    if now_madrid and now_madrid.hour == 15 and 25 <= now_madrid.minute < 30:
+        invalid.append("15:25-15:30 Espana: evitar entradas a mercado")
+    if now_madrid and now_madrid.hour == 15 and 30 <= now_madrid.minute < 35:
+        warnings.append("15:30-15:35 Espana: modo confirmacion, no perseguir velas")
+
+    required = {
+        "current_price": market.get("current_price"),
+        "bid": market.get("bid"),
+        "ask": market.get("ask"),
+        "premarket_volume": market.get("premarket_volume"),
+        "premarket_vwap": market.get("premarket_vwap"),
+        "previous_close": market.get("previous_close"),
+    }
+    missing = [key for key, value in required.items() if value in [None, "", 0]]
+    if missing:
+        invalid.append("faltan datos: " + ", ".join(missing))
+    quote_age = safe_float(market.get("quote_age_seconds"))
+    stale = False
+    if session.get("state") == "pre-market" and quote_age is not None and quote_age > max_stale_seconds:
+        stale = True
+        invalid.append(f"STALE: precio de hace {quote_age:.0f}s")
+    if quote_age is None:
+        invalid.append("sin timestamp de precio")
+    source_times = candidate.get("source_times", [])
+    if not source_times:
+        invalid.append("senal sin timestamp de origen")
+    else:
+        fresh_sources = [
+            x for x in source_times
+            if parse_iso_datetime(x) and parse_iso_datetime(x).astimezone(ZoneInfo("America/New_York")).date().isoformat() == trade_date
+        ]
+        if not fresh_sources and cfg.get("require_same_session_signals", True):
+            invalid.append("senal de sesion anterior")
+
+    current = safe_float(market.get("current_price"))
+    bid = safe_float(market.get("bid"))
+    ask = safe_float(market.get("ask"))
+    spread_pct = safe_float(market.get("spread_pct"))
+    vwap = safe_float(market.get("premarket_vwap"))
+    pre_high = safe_float(market.get("premarket_high"))
+    pre_low = safe_float(market.get("premarket_low"))
+    pre_volume = safe_float(market.get("premarket_volume"), 0)
+    gap = safe_float(market.get("gap_pct"), 0)
+    rel_qqq = safe_float(market.get("relative_strength_vs_qqq"), 0)
+    rel_spy = safe_float(market.get("relative_strength_vs_spy"), 0)
+    max_source_score = max(candidate.get("source_scores", [0]) or [0])
+    has_catalyst = any(x in " ".join(candidate.get("sources", [])) for x in ["Rumores", "Catalizadores", "SEC"])
+
+    if spread_pct is not None and spread_pct > max_spread_pct:
+        invalid.append(f"spread alto {spread_pct:.2f}%")
+    if pre_volume < min_premarket_volume:
+        invalid.append(f"volumen pre-market bajo {pre_volume:.0f}")
+
+    direction = "WAIT"
+    setup = "NO_TRADE"
+    entry_low = current
+    entry_high = ask or current
+    stop = None
+    target = None
+    vwap_distance = ((current - vwap) / vwap * 100) if current and vwap else None
+    aligned_long = vwap_distance is not None and -0.2 <= vwap_distance <= max_vwap_distance_pct
+    aligned_short = vwap_distance is not None and -max_vwap_distance_pct <= vwap_distance <= 0.2
+    rel_long = rel_qqq >= min_relative_strength_pct or rel_spy >= min_relative_strength_pct
+    rel_short = rel_qqq <= -min_relative_strength_pct or rel_spy <= -min_relative_strength_pct
+
+    if current and vwap and pre_high and pre_low:
+        if gap >= 1.0 and aligned_long and rel_long:
+            setup = "LONG_CONTINUATION"
+            direction = "LONG"
+            entry_low = max(vwap, bid or current)
+            entry_high = ask or current
+            stop = min(vwap * 0.995, pre_low)
+            target = current + max((current - stop) * min_rr, pre_high - current)
+        elif gap <= -1.0 and aligned_short and rel_short:
+            setup = "SHORT_WEAKNESS"
+            direction = "SHORT"
+            entry_low = bid or current
+            entry_high = min(vwap, ask or current)
+            stop = max(vwap * 1.005, pre_high)
+            target = current - max((stop - current) * min_rr, current - pre_low)
+        elif abs(gap) >= 2.5 and ((gap > 0 and current < vwap) or (gap < 0 and current > vwap)):
+            setup = "GAP_FADE"
+            direction = "SHORT" if gap > 0 else "LONG"
+            if direction == "SHORT":
+                stop = max(pre_high, current * 1.006)
+                target = max(vwap, current - (stop - current) * min_rr)
+            else:
+                stop = min(pre_low, current * 0.994)
+                target = min(vwap, current + (current - stop) * min_rr)
+
+    rr = risk_reward(current, stop, target, direction)
+    if setup == "NO_TRADE" or direction == "WAIT":
+        invalid.append("ningun setup minimo confirma")
+    if rr is None or rr < min_rr:
+        invalid.append(f"riesgo/beneficio insuficiente {fmt_float(rr, 2)}")
+    if vwap_distance is not None and abs(vwap_distance) > max_vwap_distance_pct * 1.8:
+        warnings.append(f"precio alejado de VWAP {vwap_distance:.2f}%")
+
+    score = 0
+    score += 20 if not any("STALE" in x or "timestamp" in x for x in invalid) else 5
+    score += 15 if pre_volume >= min_premarket_volume * 2 else 10 if pre_volume >= min_premarket_volume else 0
+    score += 15 if spread_pct is not None and spread_pct <= max_spread_pct * 0.5 else 8 if spread_pct is not None and spread_pct <= max_spread_pct else 0
+    score += 15 if setup in {"LONG_CONTINUATION", "SHORT_WEAKNESS"} and not any("VWAP" in x for x in warnings) else 8 if setup == "GAP_FADE" else 0
+    score += 12 if (direction == "LONG" and rel_long) or (direction == "SHORT" and rel_short) else 0
+    score += 15 if rr is not None and rr >= 2 else 10 if rr is not None and rr >= min_rr else 0
+    score += 8 if has_catalyst else min(6, max(0, max_source_score - 65) / 5)
+    if invalid:
+        score = min(score, 64)
+    if phase in {"WATCH_ONLY", "AVOID_MARKET_ENTRY", "PREMARKET_LATE", "NO_TRADE"}:
+        score = min(score, 74)
+    score = int(round(clamp(score)))
+    valid = not invalid and score >= 75 and phase == "PREMARKET_SETUP"
+    status = "VALID" if valid else "STALE" if stale else "INVALID" if invalid else "WATCH"
+    if not valid and score < 65:
+        setup = "NO_TRADE"
+        direction = "WAIT"
+
+    buying_power_pct = min(max_position_pct, max_position_pct * leverage)
+    return {
+        "setup": setup,
+        "direction": direction,
+        "entry_zone": f"{fmt_usd(entry_low)} - {fmt_usd(entry_high)}" if entry_low and entry_high else "N/A",
+        "stop_loss": stop,
+        "take_profit": target,
+        "risk_reward": rr,
+        "status": status,
+        "is_valid": valid,
+        "score": score,
+        "classification": intraday_classification(score),
+        "invalid_reasons": invalid,
+        "warnings": warnings,
+        "reason": (
+            f"{setup}: spread {fmt_pct(spread_pct, 2)}, volumen pre-market {pre_volume:,.0f}, "
+            f"VWAP {fmt_usd(vwap)}, RS vs QQQ {fmt_pct(rel_qqq, 2)}, RS vs SPY {fmt_pct(rel_spy, 2)}."
+        ),
+        "risk_context": {
+            "leverage": leverage,
+            "risk_per_trade_pct": risk_per_trade_pct,
+            "max_position_pct": max_position_pct,
+            "max_buying_power_pct_with_leverage": buying_power_pct,
+        },
+    }
+
+
 def intraday_cashout(config):
     cfg = config.get("intraday", {})
     min_input_score = float(cfg.get("min_input_score", 50))
     max_candidates = int(cfg.get("max_candidates", 30))
     max_hold_hours = int(cfg.get("max_hold_hours", 8))
+    session = market_session_state()
     candidates = {}
 
     state = read_json("state.json", {})
@@ -893,6 +1355,7 @@ def intraday_cashout(config):
             item.get("reasons", []),
             item,
             "https://finance.yahoo.com/quote/" + quote_plus(str(item.get("symbol", ""))),
+            state.get("last_snapshot", {}).get("btc", {}).get("time_utc") or state.get("last_run_utc"),
         )
 
     for item in load_snapshot_list("event_rumor_snapshot.json"):
@@ -907,6 +1370,7 @@ def intraday_cashout(config):
             item.get("score_reasons", []) + item.get("rumors", []),
             item.get("market", {}),
             (item.get("articles") or [{}])[0].get("url"),
+            item.get("time_utc"),
         )
 
     premium_sources = [
@@ -929,106 +1393,100 @@ def intraday_cashout(config):
                 item.get("reasons", []) + item.get("ai_watch_items", []),
                 item.get("metrics", {}),
                 item.get("source"),
+                item.get("time_utc"),
             )
+
+    ranked_candidates = sorted(
+        candidates.items(),
+        key=lambda kv: max([safe_float(x, 0) for x in kv[1].get("source_scores", [])] or [0]),
+        reverse=True,
+    )[:max_candidates]
+    candidates = dict(ranked_candidates)
+    symbols = list(candidates.keys())
+    quote_data = yahoo_realtime_quotes(symbols + ["SPY", "QQQ"], config)
+    chart_cache = {}
+    benchmark_metrics = {}
+    for benchmark in ["SPY", "QQQ"]:
+        chart_cache[benchmark] = premarket_metrics_from_chart(benchmark, config, session)
+        benchmark_metrics[benchmark] = quote_market_snapshot(
+            benchmark,
+            quote_data.get(benchmark, {}),
+            chart_cache[benchmark],
+        )
 
     events = []
     for symbol, item in candidates.items():
-        metrics = item.get("metrics", {})
+        chart_cache[symbol] = premarket_metrics_from_chart(symbol, config, session)
+        realtime = quote_market_snapshot(symbol, quote_data.get(symbol, {}), chart_cache[symbol])
+        realtime.update(relative_strength(realtime, benchmark_metrics))
+        validation = validate_intraday_setup(symbol, realtime, item, session, config)
+        metrics = {**item.get("metrics", {}), **realtime}
         source_scores = [safe_float(x, 0) for x in item.get("source_scores", [])]
         source_count = len(set(item.get("sources", [])))
         max_source_score = max(source_scores) if source_scores else 0
         avg_source_score = sum(source_scores) / len(source_scores) if source_scores else 0
-        perf_5d = safe_float(metrics.get("perf_5d"), 0)
-        perf_20d = safe_float(metrics.get("perf_20d"), 0)
-        rsi = safe_float(metrics.get("rsi"), 50)
-        volume_ratio = safe_float(metrics.get("volume_ratio"), 1)
-        price = safe_float(metrics.get("price"))
-
-        score = 38
-        score += min(22, max(0, max_source_score - 55) * 0.45)
-        score += min(18, max(0, source_count - 1) * 6)
-        score += min(14, max(0, perf_5d) * 2.2)
-        score += min(10, max(0, perf_20d) * 0.7)
-        if 45 <= rsi <= 68:
-            score += 12
-        elif 68 < rsi <= 74:
-            score += 4
-        elif rsi > 74:
-            score -= 12
-        elif rsi < 35:
-            score -= 8
-        if volume_ratio >= 2:
-            score += 12
-        elif volume_ratio >= 1.2:
-            score += 6
-        elif volume_ratio < 0.75:
-            score -= 5
-        if any("Rumores" in x or "Catalizadores" in x for x in item.get("sources", [])):
-            score += 6
-        if any("Volumen" in x for x in item.get("sources", [])):
-            score += 5
-        if any("Rotacion" in x for x in item.get("sources", [])):
-            score += 4
-        if price is None:
-            score -= 10
-
-        risk = "medio"
-        if rsi > 74 or volume_ratio < 0.75:
-            risk = "alto"
-        elif score >= 82 and 45 <= rsi <= 68 and volume_ratio >= 1:
-            risk = "controlado"
-
-        entry = "Solo si mantiene fuerza tras la apertura y no pierde el precio de referencia."
-        stop_pct = -1.2 if risk != "alto" else -0.8
-        target_pct = 1.8 if score >= 80 else 1.2
-        if price:
-            entry = f"Vigilar entrada cerca de {price:.2f} si confirma impulso intradia."
-            stop = price * (1 + stop_pct / 100)
-            target = price * (1 + target_pct / 100)
-        else:
-            stop = None
-            target = None
-
+        score = validation["score"]
+        invalid_text = "; ".join(validation.get("invalid_reasons", [])[:3]) or "sin invalidaciones criticas"
+        warning_text = "; ".join(validation.get("warnings", [])[:2]) or "sin avisos"
         reasons = [
+            f"Estado: {validation['status']}",
+            f"Setup: {validation['setup']} {validation['direction']}",
+            f"Entrada: {validation['entry_zone']}",
+            f"SL {fmt_usd(validation.get('stop_loss'))} / TP {fmt_usd(validation.get('take_profit'))}",
+            f"R/R {fmt_float(validation.get('risk_reward'), 2)}",
+            f"Invalidacion: {invalid_text}",
+            f"Avisos: {warning_text}",
             f"Confluencia: {source_count} fuentes",
             f"Score maximo previo: {max_source_score:.0f}/100",
             f"Score medio previo: {avg_source_score:.0f}/100",
-            f"5D {fmt_pct(perf_5d)}",
-            f"RSI {fmt_float(rsi, 1)}",
-            f"Volumen relativo {fmt_float(volume_ratio, 2)}",
+            f"Spread {fmt_pct(realtime.get('spread_pct'), 2)}",
+            f"Gap {fmt_pct(realtime.get('gap_pct'), 2)}",
+            f"VWAP pre-market {fmt_usd(realtime.get('premarket_vwap'))}",
+            f"Volumen pre-market {safe_float(realtime.get('premarket_volume'), 0):,.0f}",
+            f"RS vs QQQ {fmt_pct(realtime.get('relative_strength_vs_qqq'), 2)}",
+            f"RS vs SPY {fmt_pct(realtime.get('relative_strength_vs_spy'), 2)}",
             f"Horizonte: salida el mismo dia, maximo {max_hold_hours}h",
         ] + item.get("reasons", [])[:4]
+        verb = "OPERABLE" if validation["status"] == "VALID" else validation["classification"].upper()
         summary = (
-            f"{symbol} concentra señales recientes para una operativa intradia vigilada. "
-            f"{entry} Objetivo orientativo {fmt_float(target, 2) if target else 'N/A'} "
-            f"y stop orientativo {fmt_float(stop, 2) if stop else 'N/A'}; cerrar la posicion antes del fin de sesion."
+            f"{symbol} queda como {verb}. Setup {validation['setup']} con direccion {validation['direction']}. "
+            f"Entrada {validation['entry_zone']}, SL {fmt_usd(validation.get('stop_loss'))}, "
+            f"TP {fmt_usd(validation.get('take_profit'))}. {validation['reason']} "
+            f"Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID."
         )
         event_metrics = {
             **metrics,
+            "session": session,
             "source_count": source_count,
             "max_source_score": max_source_score,
             "avg_source_score": avg_source_score,
-            "intraday_entry_reference": price,
-            "intraday_target": target,
-            "intraday_stop": stop,
-            "intraday_target_pct": target_pct,
-            "intraday_stop_pct": stop_pct,
-            "intraday_risk": risk,
+            "source_times": item.get("source_times", []),
+            "setup": validation["setup"],
+            "direction": validation["direction"],
+            "entry_zone": validation["entry_zone"],
+            "stop_loss": validation.get("stop_loss"),
+            "take_profit": validation.get("take_profit"),
+            "risk_reward": validation.get("risk_reward"),
+            "validation_status": validation["status"],
+            "classification": validation["classification"],
+            "invalid_reasons": validation.get("invalid_reasons", []),
+            "warnings": validation.get("warnings", []),
+            "risk_context": validation.get("risk_context", {}),
             "max_hold_hours": max_hold_hours,
             "sources": sorted(set(item.get("sources", []))),
         }
-        events.append(
-            make_event(
-                "intraday_cashout",
-                f"{symbol} plan intradia salida mismo dia",
-                symbol,
-                score,
-                summary,
-                reasons,
-                event_metrics,
-                item.get("source_url") or f"https://finance.yahoo.com/quote/{quote_plus(symbol)}",
-            )
+        event = make_event(
+            "intraday_cashout",
+            f"{symbol} {validation['setup']} {validation['status']}",
+            symbol,
+            score,
+            summary,
+            reasons,
+            event_metrics,
+            item.get("source_url") or f"https://finance.yahoo.com/quote/{quote_plus(symbol)}",
         )
+        event["level"] = validation["classification"]
+        events.append(event)
 
     return sorted(events, key=lambda x: x["score"], reverse=True)[:max_candidates]
 
