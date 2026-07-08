@@ -13,6 +13,45 @@
       "timestamp": "2026-07-07T10:07:07.725027+00:00",
       "valid_until": "2026-07-17T10:07:07.725027+00:00"
     },
+    "02d75fbd2e45fad2": {
+      "agent": "cftc_positioning",
+      "asset": "BTC",
+      "direction": "WAIT",
+      "entry_price": null,
+      "id": "02d75fbd2e45fad2",
+      "observations": {},
+      "score": 68.0,
+      "signal_type": "Bitcoin Futures posicionamiento CFTC",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:21:07.280210+00:00",
+      "valid_until": "2026-07-18T07:21:07.280210+00:00"
+    },
+    "02fbf06ec1e72adb": {
+      "agent": "altcoin_fundamentals",
+      "asset": "LINK",
+      "direction": "WAIT",
+      "entry_price": null,
+      "id": "02fbf06ec1e72adb",
+      "observations": {},
+      "score": 51.0,
+      "signal_type": "LINK vigilancia fundamental",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:21:17.429064+00:00",
+      "valid_until": "2026-07-18T07:21:17.429064+00:00"
+    },
+    "04d0a444df432967": {
+      "agent": "event_rumor",
+      "asset": "GOOGL",
+      "direction": "WAIT",
+      "entry_price": 367.0299987792969,
+      "id": "04d0a444df432967",
+      "observations": {},
+      "score": 60.0,
+      "signal_type": "event_window",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:21:28.904739+00:00",
+      "valid_until": "2026-07-18T07:21:28.904739+00:00"
+    },
     "0a919d2a2a3c153c": {
       "agent": "unusual_volume",
       "asset": "AAPL",
@@ -25,6 +64,19 @@
       "status": "OPEN",
       "timestamp": "2026-07-07T22:00:22.245362+00:00",
       "valid_until": "2026-07-17T22:00:22.245362+00:00"
+    },
+    "0d32f2a0add108c4": {
+      "agent": "sector_rotation",
+      "asset": "XLU",
+      "direction": "LONG",
+      "entry_price": 45.70000076293945,
+      "id": "0d32f2a0add108c4",
+      "observations": {},
+      "score": 55.0,
+      "signal_type": "XLU rotacion sectorial",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:44.603123+00:00",
+      "valid_until": "2026-07-18T07:20:44.603123+00:00"
     },
     "0d8f223581ca9cf4": {
       "agent": "sec_filing",
@@ -39,6 +91,19 @@
       "timestamp": "2026-07-07T21:43:24.618211+00:00",
       "valid_until": "2026-07-17T21:43:24.618211+00:00"
     },
+    "0e03898bf8556a61": {
+      "agent": "sector_rotation",
+      "asset": "XLP",
+      "direction": "LONG",
+      "entry_price": 84.86000061035156,
+      "id": "0e03898bf8556a61",
+      "observations": {},
+      "score": 52.0,
+      "signal_type": "XLP rotacion sectorial",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:44.532259+00:00",
+      "valid_until": "2026-07-18T07:20:44.532259+00:00"
+    },
     "0ed603e1a00d2ae9": {
       "agent": "sec_filing",
       "asset": "NVDA",
@@ -51,6 +116,41 @@
       "status": "OPEN",
       "timestamp": "2026-07-07T21:43:23.742017+00:00",
       "valid_until": "2026-07-17T21:43:23.742017+00:00"
+    },
+    "0f45aa3f69cb4f5b": {
+      "agent": "sec_filing",
+      "asset": "NVDA",
+      "direction": "WAIT",
+      "entry_price": 196.92999267578125,
+      "id": "0f45aa3f69cb4f5b",
+      "observations": {},
+      "score": 70.0,
+      "signal_type": "NVDA presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:26.828269+00:00",
+      "valid_until": "2026-07-18T07:20:26.828269+00:00"
+    },
+    "1130ee71ef903c94": {
+      "agent": "sec_filing",
+      "asset": "GOOGL",
+      "direction": "WAIT",
+      "entry_price": 367.0299987792969,
+      "id": "1130ee71ef903c94",
+      "last_checked_utc": "2026-07-08T07:21:29.511836+00:00",
+      "last_price": 367.0299987792969,
+      "last_return_pct": 0.0,
+      "observations": {
+        "latest": {
+          "price": 367.0299987792969,
+          "return_pct": 0.0,
+          "time_utc": "2026-07-08T07:21:29.511844+00:00"
+        }
+      },
+      "score": 70.0,
+      "signal_type": "GOOGL presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:27.629824+00:00",
+      "valid_until": "2026-07-18T07:20:27.629824+00:00"
     },
     "115e2f218004b337": {
       "agent": "unusual_volume",
@@ -77,6 +177,28 @@
       "status": "OPEN",
       "timestamp": "2026-07-08T07:14:55.182990+00:00",
       "valid_until": "2026-07-18T07:14:55.182990+00:00"
+    },
+    "1200cc22fc483e98": {
+      "agent": "sector_rotation",
+      "asset": "XLV",
+      "direction": "LONG",
+      "entry_price": 164.44000244140625,
+      "id": "1200cc22fc483e98",
+      "last_checked_utc": "2026-07-08T07:21:29.237364+00:00",
+      "last_price": 164.44000244140625,
+      "last_return_pct": 0.0,
+      "observations": {
+        "latest": {
+          "price": 164.44000244140625,
+          "return_pct": 0.0,
+          "time_utc": "2026-07-08T07:21:29.237376+00:00"
+        }
+      },
+      "score": 73.0,
+      "signal_type": "XLV rotacion sectorial",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:44.323770+00:00",
+      "valid_until": "2026-07-18T07:20:44.323770+00:00"
     },
     "12e53e6b78e03ee5": {
       "agent": "sec_filing",
@@ -182,6 +304,32 @@
       "timestamp": "2026-07-07T10:07:08.313775+00:00",
       "valid_until": "2026-07-17T10:07:08.313775+00:00"
     },
+    "2c0e565a1b118823": {
+      "agent": "sec_filing",
+      "asset": "AMD",
+      "direction": "WAIT",
+      "entry_price": 516.1099853515625,
+      "id": "2c0e565a1b118823",
+      "observations": {},
+      "score": 67.0,
+      "signal_type": "AMD presentacion SEC 8-K",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:29.189230+00:00",
+      "valid_until": "2026-07-18T07:20:29.189230+00:00"
+    },
+    "2fbdbdc520fc60ef": {
+      "agent": "unusual_volume",
+      "asset": "AAPL",
+      "direction": "LONG",
+      "entry_price": 310.6600036621094,
+      "id": "2fbdbdc520fc60ef",
+      "observations": {},
+      "score": 60.0,
+      "signal_type": "AAPL volumen inusual",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:55.615987+00:00",
+      "valid_until": "2026-07-18T07:20:55.615987+00:00"
+    },
     "30c2bf78a9d86294": {
       "agent": "sec_filing",
       "asset": "NVDA",
@@ -208,6 +356,54 @@
       "timestamp": "2026-07-07T10:07:07.885481+00:00",
       "valid_until": "2026-07-17T10:07:07.885481+00:00"
     },
+    "3377c0124e8802cf": {
+      "agent": "unusual_volume",
+      "asset": "PLTR",
+      "direction": "LONG",
+      "entry_price": 134.3699951171875,
+      "id": "3377c0124e8802cf",
+      "observations": {},
+      "score": 62.0,
+      "signal_type": "PLTR volumen inusual",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:56.002817+00:00",
+      "valid_until": "2026-07-18T07:20:56.002817+00:00"
+    },
+    "338c912cf6d01ebe": {
+      "agent": "sec_filing",
+      "asset": "AVGO",
+      "direction": "WAIT",
+      "entry_price": 370.7799987792969,
+      "id": "338c912cf6d01ebe",
+      "last_checked_utc": "2026-07-08T07:21:29.353299+00:00",
+      "last_price": 370.7799987792969,
+      "last_return_pct": 0.0,
+      "observations": {
+        "latest": {
+          "price": 370.7799987792969,
+          "return_pct": 0.0,
+          "time_utc": "2026-07-08T07:21:29.353312+00:00"
+        }
+      },
+      "score": 70.0,
+      "signal_type": "AVGO presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:29.595128+00:00",
+      "valid_until": "2026-07-18T07:20:29.595128+00:00"
+    },
+    "352bbc3a0f1da123": {
+      "agent": "defi_liquidity",
+      "asset": "BASE",
+      "direction": "WAIT",
+      "entry_price": null,
+      "id": "352bbc3a0f1da123",
+      "observations": {},
+      "score": 50.0,
+      "signal_type": "Base liquidez DeFi",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:51.522760+00:00",
+      "valid_until": "2026-07-18T07:20:51.522760+00:00"
+    },
     "361473fb55cb8a43": {
       "agent": "sec_filing",
       "asset": "GOOGL",
@@ -220,6 +416,19 @@
       "status": "OPEN",
       "timestamp": "2026-07-07T21:43:24.618351+00:00",
       "valid_until": "2026-07-17T21:43:24.618351+00:00"
+    },
+    "36a8403d110161a2": {
+      "agent": "defi_liquidity",
+      "asset": "ARBITRUM",
+      "direction": "WAIT",
+      "entry_price": null,
+      "id": "36a8403d110161a2",
+      "observations": {},
+      "score": 50.0,
+      "signal_type": "Arbitrum liquidez DeFi",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:51.522808+00:00",
+      "valid_until": "2026-07-18T07:20:51.522808+00:00"
     },
     "378997da00683f16": {
       "agent": "sec_filing",
@@ -234,6 +443,32 @@
       "timestamp": "2026-07-07T21:43:27.896571+00:00",
       "valid_until": "2026-07-17T21:43:27.896571+00:00"
     },
+    "39f52709d5b5bb25": {
+      "agent": "sec_filing",
+      "asset": "NVDA",
+      "direction": "WAIT",
+      "entry_price": 196.92999267578125,
+      "id": "39f52709d5b5bb25",
+      "observations": {},
+      "score": 67.0,
+      "signal_type": "NVDA presentacion SEC 8-K",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:26.800385+00:00",
+      "valid_until": "2026-07-18T07:20:26.800385+00:00"
+    },
+    "3ab01ab0aaf827ae": {
+      "agent": "unusual_volume",
+      "asset": "ARM",
+      "direction": "LONG",
+      "entry_price": 300.42999267578125,
+      "id": "3ab01ab0aaf827ae",
+      "observations": {},
+      "score": 62.0,
+      "signal_type": "ARM volumen inusual",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:55.920191+00:00",
+      "valid_until": "2026-07-18T07:20:55.920191+00:00"
+    },
     "3c2883cadf89ac35": {
       "agent": "sec_filing",
       "asset": "AMD",
@@ -246,6 +481,19 @@
       "status": "OPEN",
       "timestamp": "2026-07-07T21:43:26.470681+00:00",
       "valid_until": "2026-07-17T21:43:26.470681+00:00"
+    },
+    "3d8f2885f67dfc6a": {
+      "agent": "sec_filing",
+      "asset": "NVDA",
+      "direction": "WAIT",
+      "entry_price": 196.92999267578125,
+      "id": "3d8f2885f67dfc6a",
+      "observations": {},
+      "score": 70.0,
+      "signal_type": "NVDA presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:26.828207+00:00",
+      "valid_until": "2026-07-18T07:20:26.828207+00:00"
     },
     "3eb89a7e8da73e28": {
       "agent": "altcoin_fundamentals",
@@ -325,6 +573,41 @@
       "timestamp": "2026-07-07T21:43:23.742127+00:00",
       "valid_until": "2026-07-17T21:43:23.742127+00:00"
     },
+    "4756bc35a32d22ae": {
+      "agent": "sec_filing",
+      "asset": "NVDA",
+      "direction": "WAIT",
+      "entry_price": 196.92999267578125,
+      "id": "4756bc35a32d22ae",
+      "observations": {},
+      "score": 70.0,
+      "signal_type": "NVDA presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:26.828383+00:00",
+      "valid_until": "2026-07-18T07:20:26.828383+00:00"
+    },
+    "490812d8cb0d157e": {
+      "agent": "sec_filing",
+      "asset": "GOOGL",
+      "direction": "WAIT",
+      "entry_price": 367.0299987792969,
+      "id": "490812d8cb0d157e",
+      "last_checked_utc": "2026-07-08T07:21:29.529421+00:00",
+      "last_price": 367.0299987792969,
+      "last_return_pct": 0.0,
+      "observations": {
+        "latest": {
+          "price": 367.0299987792969,
+          "return_pct": 0.0,
+          "time_utc": "2026-07-08T07:21:29.529430+00:00"
+        }
+      },
+      "score": 70.0,
+      "signal_type": "GOOGL presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:27.629768+00:00",
+      "valid_until": "2026-07-18T07:20:27.629768+00:00"
+    },
     "4976f2f280177be3": {
       "agent": "defi_liquidity",
       "asset": "AVALANCHE",
@@ -338,6 +621,19 @@
       "timestamp": "2026-07-07T21:55:09.703791+00:00",
       "valid_until": "2026-07-17T21:55:09.703791+00:00"
     },
+    "4e628d043b0a7323": {
+      "agent": "unusual_volume",
+      "asset": "SMH",
+      "direction": "LONG",
+      "entry_price": 581.4500122070312,
+      "id": "4e628d043b0a7323",
+      "observations": {},
+      "score": 59.0,
+      "signal_type": "SMH volumen inusual",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:56.406691+00:00",
+      "valid_until": "2026-07-18T07:20:56.406691+00:00"
+    },
     "4fa4c4266b72323e": {
       "agent": "sec_filing",
       "asset": "GOOGL",
@@ -350,6 +646,19 @@
       "status": "OPEN",
       "timestamp": "2026-07-07T21:43:24.618156+00:00",
       "valid_until": "2026-07-17T21:43:24.618156+00:00"
+    },
+    "51862eb6658a3403": {
+      "agent": "sec_filing",
+      "asset": "NVDA",
+      "direction": "WAIT",
+      "entry_price": 196.92999267578125,
+      "id": "51862eb6658a3403",
+      "observations": {},
+      "score": 70.0,
+      "signal_type": "NVDA presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:26.819230+00:00",
+      "valid_until": "2026-07-18T07:20:26.819230+00:00"
     },
     "52390dfab9b19f6c": {
       "agent": "altcoin_fundamentals",
@@ -377,6 +686,19 @@
       "timestamp": "2026-07-07T21:55:09.703860+00:00",
       "valid_until": "2026-07-17T21:55:09.703860+00:00"
     },
+    "559bb60191feff2e": {
+      "agent": "unusual_volume",
+      "asset": "MSTR",
+      "direction": "LONG",
+      "entry_price": 97.36000061035156,
+      "id": "559bb60191feff2e",
+      "observations": {},
+      "score": 53.0,
+      "signal_type": "MSTR volumen inusual",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:56.162833+00:00",
+      "valid_until": "2026-07-18T07:20:56.162833+00:00"
+    },
     "5624fde41a62c352": {
       "agent": "sec_filing",
       "asset": "NVDA",
@@ -389,6 +711,19 @@
       "status": "OPEN",
       "timestamp": "2026-07-07T21:43:23.742094+00:00",
       "valid_until": "2026-07-17T21:43:23.742094+00:00"
+    },
+    "57b565db1f207cfc": {
+      "agent": "altcoin_fundamentals",
+      "asset": "AVAX",
+      "direction": "WAIT",
+      "entry_price": null,
+      "id": "57b565db1f207cfc",
+      "observations": {},
+      "score": 50.0,
+      "signal_type": "AVAX vigilancia fundamental",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:21:17.429110+00:00",
+      "valid_until": "2026-07-18T07:21:17.429110+00:00"
     },
     "60c6575bf874e6ba": {
       "agent": "sec_filing",
@@ -429,6 +764,50 @@
       "timestamp": "2026-07-07T10:07:08.462912+00:00",
       "valid_until": "2026-07-17T10:07:08.462912+00:00"
     },
+    "62f740d40abab8ee": {
+      "agent": "sec_filing",
+      "asset": "MSFT",
+      "direction": "WAIT",
+      "entry_price": 388.8399963378906,
+      "id": "62f740d40abab8ee",
+      "last_checked_utc": "2026-07-08T07:21:29.087834+00:00",
+      "last_price": 388.8399963378906,
+      "last_return_pct": 0.0,
+      "observations": {
+        "latest": {
+          "price": 388.8399963378906,
+          "return_pct": 0.0,
+          "time_utc": "2026-07-08T07:21:29.087846+00:00"
+        }
+      },
+      "score": 78.0,
+      "signal_type": "MSFT presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:26.363686+00:00",
+      "valid_until": "2026-07-18T07:20:26.363686+00:00"
+    },
+    "63c6b46ac28747da": {
+      "agent": "sec_filing",
+      "asset": "GOOGL",
+      "direction": "WAIT",
+      "entry_price": 367.0299987792969,
+      "id": "63c6b46ac28747da",
+      "last_checked_utc": "2026-07-08T07:21:29.453677+00:00",
+      "last_price": 367.0299987792969,
+      "last_return_pct": 0.0,
+      "observations": {
+        "latest": {
+          "price": 367.0299987792969,
+          "return_pct": 0.0,
+          "time_utc": "2026-07-08T07:21:29.453687+00:00"
+        }
+      },
+      "score": 70.0,
+      "signal_type": "GOOGL presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:27.629919+00:00",
+      "valid_until": "2026-07-18T07:20:27.629919+00:00"
+    },
     "65680b9b953310f5": {
       "agent": "cftc_positioning",
       "asset": "NQ",
@@ -441,6 +820,19 @@
       "status": "OPEN",
       "timestamp": "2026-07-07T22:01:05.328457+00:00",
       "valid_until": "2026-07-17T22:01:05.328457+00:00"
+    },
+    "664d86a5f65c50fe": {
+      "agent": "cftc_positioning",
+      "asset": "ES",
+      "direction": "WAIT",
+      "entry_price": null,
+      "id": "664d86a5f65c50fe",
+      "observations": {},
+      "score": 68.0,
+      "signal_type": "S&P 500 posicionamiento CFTC",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:21:07.279130+00:00",
+      "valid_until": "2026-07-18T07:21:07.279130+00:00"
     },
     "67b2e052b7f3ad0f": {
       "agent": "sector_rotation",
@@ -468,6 +860,19 @@
       "timestamp": "2026-07-07T21:43:23.742049+00:00",
       "valid_until": "2026-07-17T21:43:23.742049+00:00"
     },
+    "6a3f5308bf2b92c1": {
+      "agent": "sector_rotation",
+      "asset": "XLY",
+      "direction": "LONG",
+      "entry_price": 117.38999938964844,
+      "id": "6a3f5308bf2b92c1",
+      "observations": {},
+      "score": 54.0,
+      "signal_type": "XLY rotacion sectorial",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:44.467554+00:00",
+      "valid_until": "2026-07-18T07:20:44.467554+00:00"
+    },
     "6af1f51db16a6902": {
       "agent": "cftc_positioning",
       "asset": "DX",
@@ -481,6 +886,19 @@
       "timestamp": "2026-07-07T22:01:05.328769+00:00",
       "valid_until": "2026-07-17T22:01:05.328769+00:00"
     },
+    "6e103f645db8b0d8": {
+      "agent": "unusual_volume",
+      "asset": "AMD",
+      "direction": "LONG",
+      "entry_price": 516.1099853515625,
+      "id": "6e103f645db8b0d8",
+      "observations": {},
+      "score": 52.0,
+      "signal_type": "AMD volumen inusual",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:55.831515+00:00",
+      "valid_until": "2026-07-18T07:20:55.831515+00:00"
+    },
     "6e5f695f19a7cfb0": {
       "agent": "market_signal",
       "asset": "META",
@@ -493,6 +911,28 @@
       "status": "OPEN",
       "timestamp": "2026-07-07T22:11:33.060111+00:00",
       "valid_until": "2026-07-17T22:11:33.060111+00:00"
+    },
+    "7396a82714e46bd2": {
+      "agent": "sector_rotation",
+      "asset": "XLF",
+      "direction": "LONG",
+      "entry_price": 56.04999923706055,
+      "id": "7396a82714e46bd2",
+      "last_checked_utc": "2026-07-08T07:21:29.172526+00:00",
+      "last_price": 56.04999923706055,
+      "last_return_pct": 0.0,
+      "observations": {
+        "latest": {
+          "price": 56.04999923706055,
+          "return_pct": 0.0,
+          "time_utc": "2026-07-08T07:21:29.172539+00:00"
+        }
+      },
+      "score": 76.0,
+      "signal_type": "XLF rotacion sectorial",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:44.185100+00:00",
+      "valid_until": "2026-07-18T07:20:44.185100+00:00"
     },
     "739f69deee47a03b": {
       "agent": "sec_filing",
@@ -559,6 +999,19 @@
       "timestamp": "2026-07-07T21:43:23.224394+00:00",
       "valid_until": "2026-07-17T21:43:23.224394+00:00"
     },
+    "7837e8e19610a2a1": {
+      "agent": "sec_filing",
+      "asset": "NVDA",
+      "direction": "WAIT",
+      "entry_price": 196.92999267578125,
+      "id": "7837e8e19610a2a1",
+      "observations": {},
+      "score": 70.0,
+      "signal_type": "NVDA presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:26.828300+00:00",
+      "valid_until": "2026-07-18T07:20:26.828300+00:00"
+    },
     "790ddd0a1bc10951": {
       "agent": "sec_filing",
       "asset": "NVDA",
@@ -571,6 +1024,19 @@
       "status": "OPEN",
       "timestamp": "2026-07-07T21:43:23.742163+00:00",
       "valid_until": "2026-07-17T21:43:23.742163+00:00"
+    },
+    "7993a3f864982e3e": {
+      "agent": "event_rumor",
+      "asset": "AAPL",
+      "direction": "WAIT",
+      "entry_price": 310.6600036621094,
+      "id": "7993a3f864982e3e",
+      "observations": {},
+      "score": 56.0,
+      "signal_type": "event_window",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:21:28.904793+00:00",
+      "valid_until": "2026-07-18T07:21:28.904793+00:00"
     },
     "7a7afdcc57311533": {
       "agent": "sec_filing",
@@ -585,6 +1051,76 @@
       "timestamp": "2026-07-07T21:43:26.972075+00:00",
       "valid_until": "2026-07-17T21:43:26.972075+00:00"
     },
+    "7ba100572d4a7eac": {
+      "agent": "sec_filing",
+      "asset": "GOOGL",
+      "direction": "WAIT",
+      "entry_price": 367.0299987792969,
+      "id": "7ba100572d4a7eac",
+      "last_checked_utc": "2026-07-08T07:21:29.495383+00:00",
+      "last_price": 367.0299987792969,
+      "last_return_pct": 0.0,
+      "observations": {
+        "latest": {
+          "price": 367.0299987792969,
+          "return_pct": 0.0,
+          "time_utc": "2026-07-08T07:21:29.495391+00:00"
+        }
+      },
+      "score": 70.0,
+      "signal_type": "GOOGL presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:27.629851+00:00",
+      "valid_until": "2026-07-18T07:20:27.629851+00:00"
+    },
+    "7cace12f4a53df55": {
+      "agent": "altcoin_fundamentals",
+      "asset": "ARB",
+      "direction": "WAIT",
+      "entry_price": null,
+      "id": "7cace12f4a53df55",
+      "observations": {},
+      "score": 55.0,
+      "signal_type": "ARB vigilancia fundamental",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:21:17.429084+00:00",
+      "valid_until": "2026-07-18T07:21:17.429084+00:00"
+    },
+    "7ef05c388e392896": {
+      "agent": "market_signal",
+      "asset": "AMZN",
+      "direction": "WAIT",
+      "entry_price": 245.97999572753906,
+      "id": "7ef05c388e392896",
+      "observations": {},
+      "score": 50.0,
+      "signal_type": "AMZN oportunidad tecnica",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:25.102133+00:00",
+      "valid_until": "2026-07-18T07:20:25.102133+00:00"
+    },
+    "7f584fda041a0043": {
+      "agent": "sec_filing",
+      "asset": "GOOGL",
+      "direction": "WAIT",
+      "entry_price": 367.0299987792969,
+      "id": "7f584fda041a0043",
+      "last_checked_utc": "2026-07-08T07:21:29.410913+00:00",
+      "last_price": 367.0299987792969,
+      "last_return_pct": 0.0,
+      "observations": {
+        "latest": {
+          "price": 367.0299987792969,
+          "return_pct": 0.0,
+          "time_utc": "2026-07-08T07:21:29.410923+00:00"
+        }
+      },
+      "score": 70.0,
+      "signal_type": "GOOGL presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:27.629975+00:00",
+      "valid_until": "2026-07-18T07:20:27.629975+00:00"
+    },
     "7ff893ac47b03e90": {
       "agent": "sec_filing",
       "asset": "AVGO",
@@ -597,6 +1133,89 @@
       "status": "OPEN",
       "timestamp": "2026-07-07T21:43:26.972047+00:00",
       "valid_until": "2026-07-17T21:43:26.972047+00:00"
+    },
+    "821e22919830eea0": {
+      "agent": "sec_filing",
+      "asset": "AVGO",
+      "direction": "WAIT",
+      "entry_price": 370.7799987792969,
+      "id": "821e22919830eea0",
+      "last_checked_utc": "2026-07-08T07:21:29.362899+00:00",
+      "last_price": 370.7799987792969,
+      "last_return_pct": 0.0,
+      "observations": {
+        "latest": {
+          "price": 370.7799987792969,
+          "return_pct": 0.0,
+          "time_utc": "2026-07-08T07:21:29.362910+00:00"
+        }
+      },
+      "score": 70.0,
+      "signal_type": "AVGO presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:29.595088+00:00",
+      "valid_until": "2026-07-18T07:20:29.595088+00:00"
+    },
+    "846cf0415d4f17fe": {
+      "agent": "cftc_positioning",
+      "asset": "GC",
+      "direction": "WAIT",
+      "entry_price": null,
+      "id": "846cf0415d4f17fe",
+      "observations": {},
+      "score": 68.0,
+      "signal_type": "Gold posicionamiento CFTC",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:21:07.279399+00:00",
+      "valid_until": "2026-07-18T07:21:07.279399+00:00"
+    },
+    "859bbd1b5e0a1691": {
+      "agent": "sec_filing",
+      "asset": "AVGO",
+      "direction": "WAIT",
+      "entry_price": 370.7799987792969,
+      "id": "859bbd1b5e0a1691",
+      "observations": {},
+      "score": 67.0,
+      "signal_type": "AVGO presentacion SEC 8-K",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:29.595043+00:00",
+      "valid_until": "2026-07-18T07:20:29.595043+00:00"
+    },
+    "8754d31ac4ffebbd": {
+      "agent": "sec_filing",
+      "asset": "NVDA",
+      "direction": "WAIT",
+      "entry_price": 196.92999267578125,
+      "id": "8754d31ac4ffebbd",
+      "observations": {},
+      "score": 70.0,
+      "signal_type": "NVDA presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:26.828325+00:00",
+      "valid_until": "2026-07-18T07:20:26.828325+00:00"
+    },
+    "88210ee76d04ea3f": {
+      "agent": "sec_filing",
+      "asset": "GOOGL",
+      "direction": "WAIT",
+      "entry_price": 367.0299987792969,
+      "id": "88210ee76d04ea3f",
+      "last_checked_utc": "2026-07-08T07:21:29.436538+00:00",
+      "last_price": 367.0299987792969,
+      "last_return_pct": 0.0,
+      "observations": {
+        "latest": {
+          "price": 367.0299987792969,
+          "return_pct": 0.0,
+          "time_utc": "2026-07-08T07:21:29.436548+00:00"
+        }
+      },
+      "score": 70.0,
+      "signal_type": "GOOGL presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:27.629942+00:00",
+      "valid_until": "2026-07-18T07:20:27.629942+00:00"
     },
     "88d7126cf9e1c8eb": {
       "agent": "defi_liquidity",
@@ -649,6 +1268,19 @@
       "status": "OPEN",
       "timestamp": "2026-07-07T21:43:24.173434+00:00",
       "valid_until": "2026-07-17T21:43:24.173434+00:00"
+    },
+    "8f9102ad24502a6a": {
+      "agent": "altcoin_fundamentals",
+      "asset": "SOL",
+      "direction": "WAIT",
+      "entry_price": null,
+      "id": "8f9102ad24502a6a",
+      "observations": {},
+      "score": 56.0,
+      "signal_type": "SOL vigilancia fundamental",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:21:17.429039+00:00",
+      "valid_until": "2026-07-18T07:21:17.429039+00:00"
     },
     "8fd827c15c4b87fe": {
       "agent": "unusual_volume",
@@ -714,6 +1346,28 @@
       "status": "OPEN",
       "timestamp": "2026-07-07T21:55:09.703749+00:00",
       "valid_until": "2026-07-17T21:55:09.703749+00:00"
+    },
+    "9a4a5c59e895c506": {
+      "agent": "sec_filing",
+      "asset": "GOOGL",
+      "direction": "WAIT",
+      "entry_price": 367.0299987792969,
+      "id": "9a4a5c59e895c506",
+      "last_checked_utc": "2026-07-08T07:21:29.427948+00:00",
+      "last_price": 367.0299987792969,
+      "last_return_pct": 0.0,
+      "observations": {
+        "latest": {
+          "price": 367.0299987792969,
+          "return_pct": 0.0,
+          "time_utc": "2026-07-08T07:21:29.427957+00:00"
+        }
+      },
+      "score": 70.0,
+      "signal_type": "GOOGL presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:27.629953+00:00",
+      "valid_until": "2026-07-18T07:20:27.629953+00:00"
     },
     "9b0392c8456f73aa": {
       "agent": "defi_liquidity",
@@ -793,6 +1447,76 @@
       "timestamp": "2026-07-07T22:01:55.000056+00:00",
       "valid_until": "2026-07-17T22:01:55.000056+00:00"
     },
+    "a0cca939a259c12d": {
+      "agent": "event_rumor",
+      "asset": "AMZN",
+      "direction": "LONG",
+      "entry_price": 245.97999572753906,
+      "id": "a0cca939a259c12d",
+      "observations": {},
+      "score": 53.0,
+      "signal_type": "event_window",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:21:28.904823+00:00",
+      "valid_until": "2026-07-18T07:21:28.904823+00:00"
+    },
+    "a1568323e9f78c09": {
+      "agent": "sector_rotation",
+      "asset": "IWM",
+      "direction": "LONG",
+      "entry_price": 296.19000244140625,
+      "id": "a1568323e9f78c09",
+      "observations": {},
+      "score": 63.0,
+      "signal_type": "IWM rotacion sectorial",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:43.990238+00:00",
+      "valid_until": "2026-07-18T07:20:43.990238+00:00"
+    },
+    "a4a8a61053e63fa7": {
+      "agent": "sec_filing",
+      "asset": "GOOGL",
+      "direction": "WAIT",
+      "entry_price": 367.0299987792969,
+      "id": "a4a8a61053e63fa7",
+      "last_checked_utc": "2026-07-08T07:21:29.462112+00:00",
+      "last_price": 367.0299987792969,
+      "last_return_pct": 0.0,
+      "observations": {
+        "latest": {
+          "price": 367.0299987792969,
+          "return_pct": 0.0,
+          "time_utc": "2026-07-08T07:21:29.462121+00:00"
+        }
+      },
+      "score": 70.0,
+      "signal_type": "GOOGL presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:27.629900+00:00",
+      "valid_until": "2026-07-18T07:20:27.629900+00:00"
+    },
+    "a4a9e97bc9350ef2": {
+      "agent": "sec_filing",
+      "asset": "PLTR",
+      "direction": "WAIT",
+      "entry_price": 134.3699951171875,
+      "id": "a4a9e97bc9350ef2",
+      "last_checked_utc": "2026-07-08T07:21:28.986857+00:00",
+      "last_price": 134.3699951171875,
+      "last_return_pct": 0.0,
+      "observations": {
+        "latest": {
+          "price": 134.3699951171875,
+          "return_pct": 0.0,
+          "time_utc": "2026-07-08T07:21:28.986869+00:00"
+        }
+      },
+      "score": 78.0,
+      "signal_type": "PLTR presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:28.813882+00:00",
+      "valid_until": "2026-07-18T07:20:28.813882+00:00"
+    },
     "a57f2f3dc8a7d704": {
       "agent": "sec_filing",
       "asset": "META",
@@ -819,6 +1543,32 @@
       "timestamp": "2026-07-07T10:07:08.392953+00:00",
       "valid_until": "2026-07-17T10:07:08.392953+00:00"
     },
+    "a849940fc4845c55": {
+      "agent": "cftc_positioning",
+      "asset": "CL",
+      "direction": "WAIT",
+      "entry_price": null,
+      "id": "a849940fc4845c55",
+      "observations": {},
+      "score": 68.0,
+      "signal_type": "Crude Oil posicionamiento CFTC",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:21:07.279557+00:00",
+      "valid_until": "2026-07-18T07:21:07.279557+00:00"
+    },
+    "a8524de42d5e4589": {
+      "agent": "defi_liquidity",
+      "asset": "OPTIMISM",
+      "direction": "WAIT",
+      "entry_price": null,
+      "id": "a8524de42d5e4589",
+      "observations": {},
+      "score": 50.0,
+      "signal_type": "Optimism liquidez DeFi",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:51.522862+00:00",
+      "valid_until": "2026-07-18T07:20:51.522862+00:00"
+    },
     "a88e6736a978543e": {
       "agent": "unusual_volume",
       "asset": "AMD",
@@ -832,6 +1582,19 @@
       "timestamp": "2026-07-07T22:00:22.579045+00:00",
       "valid_until": "2026-07-17T22:00:22.579045+00:00"
     },
+    "a8b0bca0d7a0e74b": {
+      "agent": "sec_filing",
+      "asset": "NVDA",
+      "direction": "WAIT",
+      "entry_price": 196.92999267578125,
+      "id": "a8b0bca0d7a0e74b",
+      "observations": {},
+      "score": 70.0,
+      "signal_type": "NVDA presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:26.828405+00:00",
+      "valid_until": "2026-07-18T07:20:26.828405+00:00"
+    },
     "a98c26efc1c67679": {
       "agent": "sec_filing",
       "asset": "NVDA",
@@ -844,6 +1607,45 @@
       "status": "OPEN",
       "timestamp": "2026-07-07T21:43:23.741984+00:00",
       "valid_until": "2026-07-17T21:43:23.741984+00:00"
+    },
+    "ac88247e9ccd97b3": {
+      "agent": "altcoin_fundamentals",
+      "asset": "ETH",
+      "direction": "WAIT",
+      "entry_price": null,
+      "id": "ac88247e9ccd97b3",
+      "observations": {},
+      "score": 60.0,
+      "signal_type": "ETH vigilancia fundamental",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:21:17.428995+00:00",
+      "valid_until": "2026-07-18T07:21:17.428995+00:00"
+    },
+    "ad97c230f9cc3e48": {
+      "agent": "unusual_volume",
+      "asset": "MSFT",
+      "direction": "LONG",
+      "entry_price": 388.8399963378906,
+      "id": "ad97c230f9cc3e48",
+      "observations": {},
+      "score": 53.0,
+      "signal_type": "MSFT volumen inusual",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:55.691058+00:00",
+      "valid_until": "2026-07-18T07:20:55.691058+00:00"
+    },
+    "b0c2b272ea08fde1": {
+      "agent": "altcoin_fundamentals",
+      "asset": "UNI",
+      "direction": "WAIT",
+      "entry_price": null,
+      "id": "b0c2b272ea08fde1",
+      "observations": {},
+      "score": 84.0,
+      "signal_type": "UNI vigilancia fundamental",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:21:17.429075+00:00",
+      "valid_until": "2026-07-18T07:21:17.429075+00:00"
     },
     "b1121a201c2a39ee": {
       "agent": "defi_liquidity",
@@ -871,6 +1673,28 @@
       "timestamp": "2026-07-07T21:43:24.618340+00:00",
       "valid_until": "2026-07-17T21:43:24.618340+00:00"
     },
+    "b229182ee5282304": {
+      "agent": "sec_filing",
+      "asset": "GOOGL",
+      "direction": "WAIT",
+      "entry_price": 367.0299987792969,
+      "id": "b229182ee5282304",
+      "last_checked_utc": "2026-07-08T07:21:29.419495+00:00",
+      "last_price": 367.0299987792969,
+      "last_return_pct": 0.0,
+      "observations": {
+        "latest": {
+          "price": 367.0299987792969,
+          "return_pct": 0.0,
+          "time_utc": "2026-07-08T07:21:29.419505+00:00"
+        }
+      },
+      "score": 70.0,
+      "signal_type": "GOOGL presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:27.629964+00:00",
+      "valid_until": "2026-07-18T07:20:27.629964+00:00"
+    },
     "b5d7533f2039312a": {
       "agent": "sec_filing",
       "asset": "NVDA",
@@ -897,6 +1721,19 @@
       "timestamp": "2026-07-07T21:43:27.896596+00:00",
       "valid_until": "2026-07-17T21:43:27.896596+00:00"
     },
+    "b7cebe8dd42fe8e4": {
+      "agent": "cftc_positioning",
+      "asset": "NQ",
+      "direction": "WAIT",
+      "entry_price": null,
+      "id": "b7cebe8dd42fe8e4",
+      "observations": {},
+      "score": 68.0,
+      "signal_type": "Nasdaq 100 posicionamiento CFTC",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:21:07.279321+00:00",
+      "valid_until": "2026-07-18T07:21:07.279321+00:00"
+    },
     "b92532055bfa9b8d": {
       "agent": "event_rumor",
       "asset": "AAPL",
@@ -922,6 +1759,50 @@
       "status": "OPEN",
       "timestamp": "2026-07-07T21:49:55.874079+00:00",
       "valid_until": "2026-07-17T21:49:55.874079+00:00"
+    },
+    "ba6b38ab4eedb589": {
+      "agent": "sec_filing",
+      "asset": "AMZN",
+      "direction": "WAIT",
+      "entry_price": 245.97999572753906,
+      "id": "ba6b38ab4eedb589",
+      "last_checked_utc": "2026-07-08T07:21:29.564265+00:00",
+      "last_price": 245.97999572753906,
+      "last_return_pct": 0.0,
+      "observations": {
+        "latest": {
+          "price": 245.97999572753906,
+          "return_pct": 0.0,
+          "time_utc": "2026-07-08T07:21:29.564276+00:00"
+        }
+      },
+      "score": 70.0,
+      "signal_type": "AMZN presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:27.224799+00:00",
+      "valid_until": "2026-07-18T07:20:27.224799+00:00"
+    },
+    "bd637821cfd4731a": {
+      "agent": "sec_filing",
+      "asset": "ORCL",
+      "direction": "WAIT",
+      "entry_price": 141.60000610351562,
+      "id": "bd637821cfd4731a",
+      "last_checked_utc": "2026-07-08T07:21:29.296411+00:00",
+      "last_price": 141.60000610351562,
+      "last_return_pct": 0.0,
+      "observations": {
+        "latest": {
+          "price": 141.60000610351562,
+          "return_pct": 0.0,
+          "time_utc": "2026-07-08T07:21:29.296425+00:00"
+        }
+      },
+      "score": 70.0,
+      "signal_type": "ORCL presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:29.983914+00:00",
+      "valid_until": "2026-07-18T07:20:29.983914+00:00"
     },
     "bd96ce67eec32136": {
       "agent": "sec_filing",
@@ -962,6 +1843,76 @@
       "timestamp": "2026-07-07T21:43:23.699050+00:00",
       "valid_until": "2026-07-17T21:43:23.699050+00:00"
     },
+    "c28283d781219475": {
+      "agent": "defi_liquidity",
+      "asset": "ETHEREUM",
+      "direction": "WAIT",
+      "entry_price": null,
+      "id": "c28283d781219475",
+      "observations": {},
+      "score": 58.0,
+      "signal_type": "Ethereum liquidez DeFi",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:51.522815+00:00",
+      "valid_until": "2026-07-18T07:20:51.522815+00:00"
+    },
+    "c3db002469a6eae6": {
+      "agent": "sec_filing",
+      "asset": "AVGO",
+      "direction": "WAIT",
+      "entry_price": 370.7799987792969,
+      "id": "c3db002469a6eae6",
+      "last_checked_utc": "2026-07-08T07:21:29.371874+00:00",
+      "last_price": 370.7799987792969,
+      "last_return_pct": 0.0,
+      "observations": {
+        "latest": {
+          "price": 370.7799987792969,
+          "return_pct": 0.0,
+          "time_utc": "2026-07-08T07:21:29.371883+00:00"
+        }
+      },
+      "score": 70.0,
+      "signal_type": "AVGO presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:29.595072+00:00",
+      "valid_until": "2026-07-18T07:20:29.595072+00:00"
+    },
+    "c55c642f2d770cc5": {
+      "agent": "sec_filing",
+      "asset": "GOOGL",
+      "direction": "WAIT",
+      "entry_price": 367.0299987792969,
+      "id": "c55c642f2d770cc5",
+      "last_checked_utc": "2026-07-08T07:21:29.519961+00:00",
+      "last_price": 367.0299987792969,
+      "last_return_pct": 0.0,
+      "observations": {
+        "latest": {
+          "price": 367.0299987792969,
+          "return_pct": 0.0,
+          "time_utc": "2026-07-08T07:21:29.519970+00:00"
+        }
+      },
+      "score": 70.0,
+      "signal_type": "GOOGL presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:27.629808+00:00",
+      "valid_until": "2026-07-18T07:20:27.629808+00:00"
+    },
+    "c68f7a298ff2d52a": {
+      "agent": "unusual_volume",
+      "asset": "HOOD",
+      "direction": "LONG",
+      "entry_price": 112.9000015258789,
+      "id": "c68f7a298ff2d52a",
+      "observations": {},
+      "score": 61.0,
+      "signal_type": "HOOD volumen inusual",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:56.201084+00:00",
+      "valid_until": "2026-07-18T07:20:56.201084+00:00"
+    },
     "c6e92e63680049d9": {
       "agent": "event_rumor",
       "asset": "AMZN",
@@ -987,6 +1938,93 @@
       "status": "OPEN",
       "timestamp": "2026-07-07T21:43:24.618303+00:00",
       "valid_until": "2026-07-17T21:43:24.618303+00:00"
+    },
+    "c895530dc0b87a19": {
+      "agent": "defi_liquidity",
+      "asset": "SOLANA",
+      "direction": "WAIT",
+      "entry_price": null,
+      "id": "c895530dc0b87a19",
+      "observations": {},
+      "score": 50.0,
+      "signal_type": "Solana liquidez DeFi",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:51.522826+00:00",
+      "valid_until": "2026-07-18T07:20:51.522826+00:00"
+    },
+    "c9a394166e03028f": {
+      "agent": "cftc_positioning",
+      "asset": "DX",
+      "direction": "WAIT",
+      "entry_price": null,
+      "id": "c9a394166e03028f",
+      "observations": {},
+      "score": 68.0,
+      "signal_type": "Dollar Index posicionamiento CFTC",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:21:07.279712+00:00",
+      "valid_until": "2026-07-18T07:21:07.279712+00:00"
+    },
+    "ca4542eced9e8e83": {
+      "agent": "defi_liquidity",
+      "asset": "AVALANCHE",
+      "direction": "WAIT",
+      "entry_price": null,
+      "id": "ca4542eced9e8e83",
+      "observations": {},
+      "score": 50.0,
+      "signal_type": "Avalanche liquidez DeFi",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:51.522799+00:00",
+      "valid_until": "2026-07-18T07:20:51.522799+00:00"
+    },
+    "cc69606a6a88da9c": {
+      "agent": "sec_filing",
+      "asset": "GOOGL",
+      "direction": "WAIT",
+      "entry_price": 367.0299987792969,
+      "id": "cc69606a6a88da9c",
+      "last_checked_utc": "2026-07-08T07:21:29.487170+00:00",
+      "last_price": 367.0299987792969,
+      "last_return_pct": 0.0,
+      "observations": {
+        "latest": {
+          "price": 367.0299987792969,
+          "return_pct": 0.0,
+          "time_utc": "2026-07-08T07:21:29.487179+00:00"
+        }
+      },
+      "score": 70.0,
+      "signal_type": "GOOGL presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:27.629864+00:00",
+      "valid_until": "2026-07-18T07:20:27.629864+00:00"
+    },
+    "cccbbd7fd7b3851a": {
+      "agent": "macro_regime",
+      "asset": "MARKET",
+      "direction": "WAIT",
+      "entry_price": null,
+      "id": "cccbbd7fd7b3851a",
+      "observations": {},
+      "score": 55.0,
+      "signal_type": "Regimen macro: mixed",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:37.827977+00:00",
+      "valid_until": "2026-07-18T07:20:37.827977+00:00"
+    },
+    "ccf3aced04a6875c": {
+      "agent": "sec_filing",
+      "asset": "NVDA",
+      "direction": "WAIT",
+      "entry_price": 196.92999267578125,
+      "id": "ccf3aced04a6875c",
+      "observations": {},
+      "score": 70.0,
+      "signal_type": "NVDA presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:26.809968+00:00",
+      "valid_until": "2026-07-18T07:20:26.809968+00:00"
     },
     "ce8e2127c554cfc0": {
       "agent": "cftc_positioning",
@@ -1040,6 +2078,28 @@
       "timestamp": "2026-07-07T22:01:05.329206+00:00",
       "valid_until": "2026-07-17T22:01:05.329206+00:00"
     },
+    "d78e5e083c012524": {
+      "agent": "sec_filing",
+      "asset": "META",
+      "direction": "WAIT",
+      "entry_price": 615.5800170898438,
+      "id": "d78e5e083c012524",
+      "last_checked_utc": "2026-07-08T07:21:29.026616+00:00",
+      "last_price": 615.5800170898438,
+      "last_return_pct": 0.0,
+      "observations": {
+        "latest": {
+          "price": 615.5800170898438,
+          "return_pct": 0.0,
+          "time_utc": "2026-07-08T07:21:29.026628+00:00"
+        }
+      },
+      "score": 78.0,
+      "signal_type": "META presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:28.024321+00:00",
+      "valid_until": "2026-07-18T07:20:28.024321+00:00"
+    },
     "dd0f3e42d6505ce0": {
       "agent": "unusual_volume",
       "asset": "HOOD",
@@ -1078,6 +2138,32 @@
       "status": "OPEN",
       "timestamp": "2026-07-07T21:43:23.742114+00:00",
       "valid_until": "2026-07-17T21:43:23.742114+00:00"
+    },
+    "e160d272e42200b2": {
+      "agent": "sec_filing",
+      "asset": "TSLA",
+      "direction": "WAIT",
+      "entry_price": 402.8999938964844,
+      "id": "e160d272e42200b2",
+      "observations": {},
+      "score": 67.0,
+      "signal_type": "TSLA presentacion SEC 8-K",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:28.418934+00:00",
+      "valid_until": "2026-07-18T07:20:28.418934+00:00"
+    },
+    "e178f10d23098210": {
+      "agent": "market_signal",
+      "asset": "META",
+      "direction": "WAIT",
+      "entry_price": 615.5800170898438,
+      "id": "e178f10d23098210",
+      "observations": {},
+      "score": 50.0,
+      "signal_type": "META oportunidad tecnica",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:25.102133+00:00",
+      "valid_until": "2026-07-18T07:20:25.102133+00:00"
     },
     "e17f40d0c2ea85a8": {
       "agent": "sec_filing",
@@ -1118,6 +2204,41 @@
       "timestamp": "2026-07-08T07:13:58.914309+00:00",
       "valid_until": "2026-07-18T07:13:58.914309+00:00"
     },
+    "e407fb423296bee0": {
+      "agent": "sec_filing",
+      "asset": "GOOGL",
+      "direction": "WAIT",
+      "entry_price": 367.0299987792969,
+      "id": "e407fb423296bee0",
+      "last_checked_utc": "2026-07-08T07:21:29.470505+00:00",
+      "last_price": 367.0299987792969,
+      "last_return_pct": 0.0,
+      "observations": {
+        "latest": {
+          "price": 367.0299987792969,
+          "return_pct": 0.0,
+          "time_utc": "2026-07-08T07:21:29.470513+00:00"
+        }
+      },
+      "score": 70.0,
+      "signal_type": "GOOGL presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:27.629888+00:00",
+      "valid_until": "2026-07-18T07:20:27.629888+00:00"
+    },
+    "e43aec12c73381fb": {
+      "agent": "altcoin_fundamentals",
+      "asset": "OP",
+      "direction": "WAIT",
+      "entry_price": null,
+      "id": "e43aec12c73381fb",
+      "observations": {},
+      "score": 61.0,
+      "signal_type": "OP vigilancia fundamental",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:21:17.429093+00:00",
+      "valid_until": "2026-07-18T07:21:17.429093+00:00"
+    },
     "e6ddcac796519843": {
       "agent": "sec_filing",
       "asset": "CRM",
@@ -1130,6 +2251,32 @@
       "status": "OPEN",
       "timestamp": "2026-07-07T21:43:27.896556+00:00",
       "valid_until": "2026-07-17T21:43:27.896556+00:00"
+    },
+    "ea723b85cfb11e7d": {
+      "agent": "altcoin_fundamentals",
+      "asset": "AAVE",
+      "direction": "WAIT",
+      "entry_price": null,
+      "id": "ea723b85cfb11e7d",
+      "observations": {},
+      "score": 69.0,
+      "signal_type": "AAVE vigilancia fundamental",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:21:17.429053+00:00",
+      "valid_until": "2026-07-18T07:21:17.429053+00:00"
+    },
+    "ea75cbf1114152a8": {
+      "agent": "defi_liquidity",
+      "asset": "BSC",
+      "direction": "WAIT",
+      "entry_price": null,
+      "id": "ea75cbf1114152a8",
+      "observations": {},
+      "score": 50.0,
+      "signal_type": "BSC liquidez DeFi",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:51.522790+00:00",
+      "valid_until": "2026-07-18T07:20:51.522790+00:00"
     },
     "ea8b82ea9c7d2e31": {
       "agent": "defi_liquidity",
@@ -1170,6 +2317,89 @@
       "timestamp": "2026-07-07T22:01:05.328289+00:00",
       "valid_until": "2026-07-17T22:01:05.328289+00:00"
     },
+    "ec1fb14004d184c7": {
+      "agent": "sec_filing",
+      "asset": "GOOGL",
+      "direction": "WAIT",
+      "entry_price": 367.0299987792969,
+      "id": "ec1fb14004d184c7",
+      "last_checked_utc": "2026-07-08T07:21:29.445040+00:00",
+      "last_price": 367.0299987792969,
+      "last_return_pct": 0.0,
+      "observations": {
+        "latest": {
+          "price": 367.0299987792969,
+          "return_pct": 0.0,
+          "time_utc": "2026-07-08T07:21:29.445049+00:00"
+        }
+      },
+      "score": 70.0,
+      "signal_type": "GOOGL presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:27.629930+00:00",
+      "valid_until": "2026-07-18T07:20:27.629930+00:00"
+    },
+    "eeb2fe96cb2c848b": {
+      "agent": "sec_filing",
+      "asset": "NVDA",
+      "direction": "WAIT",
+      "entry_price": 196.92999267578125,
+      "id": "eeb2fe96cb2c848b",
+      "observations": {},
+      "score": 70.0,
+      "signal_type": "NVDA presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:26.800322+00:00",
+      "valid_until": "2026-07-18T07:20:26.800322+00:00"
+    },
+    "efd09ab74ba4433b": {
+      "agent": "sec_filing",
+      "asset": "GOOGL",
+      "direction": "WAIT",
+      "entry_price": 367.0299987792969,
+      "id": "efd09ab74ba4433b",
+      "last_checked_utc": "2026-07-08T07:21:29.478956+00:00",
+      "last_price": 367.0299987792969,
+      "last_return_pct": 0.0,
+      "observations": {
+        "latest": {
+          "price": 367.0299987792969,
+          "return_pct": 0.0,
+          "time_utc": "2026-07-08T07:21:29.478965+00:00"
+        }
+      },
+      "score": 70.0,
+      "signal_type": "GOOGL presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:27.629876+00:00",
+      "valid_until": "2026-07-18T07:20:27.629876+00:00"
+    },
+    "f1a5ce3df95faad2": {
+      "agent": "unusual_volume",
+      "asset": "COIN",
+      "direction": "LONG",
+      "entry_price": 163.50999450683594,
+      "id": "f1a5ce3df95faad2",
+      "observations": {},
+      "score": 57.0,
+      "signal_type": "COIN volumen inusual",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:56.126969+00:00",
+      "valid_until": "2026-07-18T07:20:56.126969+00:00"
+    },
+    "f1f74979dcb3f698": {
+      "agent": "altcoin_fundamentals",
+      "asset": "NEAR",
+      "direction": "WAIT",
+      "entry_price": null,
+      "id": "f1f74979dcb3f698",
+      "observations": {},
+      "score": 59.0,
+      "signal_type": "NEAR vigilancia fundamental",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:21:17.429121+00:00",
+      "valid_until": "2026-07-18T07:21:17.429121+00:00"
+    },
     "f3aaf0a697880677": {
       "agent": "sec_filing",
       "asset": "NVDA",
@@ -1209,6 +2439,32 @@
       "timestamp": "2026-07-07T21:43:26.972130+00:00",
       "valid_until": "2026-07-17T21:43:26.972130+00:00"
     },
+    "f4ef4de80c450a71": {
+      "agent": "sector_rotation",
+      "asset": "SPY",
+      "direction": "LONG",
+      "entry_price": 747.7100219726562,
+      "id": "f4ef4de80c450a71",
+      "observations": {},
+      "score": 52.0,
+      "signal_type": "SPY rotacion sectorial",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:43.837179+00:00",
+      "valid_until": "2026-07-18T07:20:43.837179+00:00"
+    },
+    "f59656f4ffdc0a67": {
+      "agent": "sector_rotation",
+      "asset": "XLI",
+      "direction": "LONG",
+      "entry_price": 182.3800048828125,
+      "id": "f59656f4ffdc0a67",
+      "observations": {},
+      "score": 63.0,
+      "signal_type": "XLI rotacion sectorial",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:44.396896+00:00",
+      "valid_until": "2026-07-18T07:20:44.396896+00:00"
+    },
     "f7cbdf6c4a30a79b": {
       "agent": "sec_filing",
       "asset": "NVDA",
@@ -1235,6 +2491,41 @@
       "timestamp": "2026-07-07T21:43:24.618327+00:00",
       "valid_until": "2026-07-17T21:43:24.618327+00:00"
     },
+    "fa3b99921f8ef8ac": {
+      "agent": "sec_filing",
+      "asset": "NVDA",
+      "direction": "WAIT",
+      "entry_price": 196.92999267578125,
+      "id": "fa3b99921f8ef8ac",
+      "observations": {},
+      "score": 70.0,
+      "signal_type": "NVDA presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:26.828349+00:00",
+      "valid_until": "2026-07-18T07:20:26.828349+00:00"
+    },
+    "fbf8b7aa9822288f": {
+      "agent": "sec_filing",
+      "asset": "GOOGL",
+      "direction": "WAIT",
+      "entry_price": 367.0299987792969,
+      "id": "fbf8b7aa9822288f",
+      "last_checked_utc": "2026-07-08T07:21:29.503677+00:00",
+      "last_price": 367.0299987792969,
+      "last_return_pct": 0.0,
+      "observations": {
+        "latest": {
+          "price": 367.0299987792969,
+          "return_pct": 0.0,
+          "time_utc": "2026-07-08T07:21:29.503686+00:00"
+        }
+      },
+      "score": 70.0,
+      "signal_type": "GOOGL presentacion SEC 4",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:27.629838+00:00",
+      "valid_until": "2026-07-18T07:20:27.629838+00:00"
+    },
     "fc23c80ae6cbbba1": {
       "agent": "sec_filing",
       "asset": "GOOGL",
@@ -1260,13 +2551,39 @@
       "status": "OPEN",
       "timestamp": "2026-07-07T21:43:24.618273+00:00",
       "valid_until": "2026-07-17T21:43:24.618273+00:00"
+    },
+    "fd16b1781f484486": {
+      "agent": "sec_filing",
+      "asset": "NVDA",
+      "direction": "WAIT",
+      "entry_price": 196.92999267578125,
+      "id": "fd16b1781f484486",
+      "observations": {},
+      "score": 67.0,
+      "signal_type": "NVDA presentacion SEC 8-K",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:26.800411+00:00",
+      "valid_until": "2026-07-18T07:20:26.800411+00:00"
+    },
+    "fde06f15b8410168": {
+      "agent": "unusual_volume",
+      "asset": "SMCI",
+      "direction": "LONG",
+      "entry_price": 26.25,
+      "id": "fde06f15b8410168",
+      "observations": {},
+      "score": 55.0,
+      "signal_type": "SMCI volumen inusual",
+      "status": "OPEN",
+      "timestamp": "2026-07-08T07:20:55.960292+00:00",
+      "valid_until": "2026-07-18T07:20:55.960292+00:00"
     }
   },
   "summary": {
-    "avg_return_pct": null,
-    "total_tracked": 97,
-    "updated_utc": "2026-07-08T07:14:55.188763+00:00",
-    "win_rate": null,
-    "with_price": 0
+    "avg_return_pct": 0.0,
+    "total_tracked": 181,
+    "updated_utc": "2026-07-08T07:21:29.564493+00:00",
+    "win_rate": 0.0,
+    "with_price": 25
   }
 }
