@@ -1,15 +1,105 @@
 [
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 recientes para MSFT, META, PLTR y NVDA, indicando operaciones declaradas por insiders. Es recomendable vigilar la evolución del precio y el volumen en relación con estos eventos. La ausencia de operaciones concretas en algunos formularios sugiere precaución y seguimiento detallado de futuras actualizaciones.",
+    "ai_brief": "Se han presentado múltiples formularios SEC 4 recientes para META, PLTR, MSFT y NVDA, indicando operaciones declaradas por insiders. Es importante vigilar la evolución del precio y el volumen en respuesta a estas presentaciones. La ausencia de operaciones en algunos formularios sugiere atención a posibles movimientos futuros o información adicional.",
     "ai_risk_notes": [
-      "La falta de operaciones concretas en varios formularios 4 puede indicar incertidumbre o movimientos limitados por parte de insiders.",
-      "Volúmenes de negociación inferiores al promedio en algunos casos podrían limitar la liquidez y aumentar la volatilidad."
+      "Volúmenes de negociación inferiores al promedio pueden indicar menor liquidez y mayor volatilidad.",
+      "Repetidas presentaciones sin operaciones en NVDA podrían generar incertidumbre sobre la intención real de insiders."
     ],
     "ai_watch_items": [
-      "Reacción del precio y volumen tras la presentación del formulario 4 en MSFT, META, PLTR y NVDA.",
-      "Detalles específicos de las operaciones declaradas por insiders en cada formulario 4.",
-      "Evolución del RSI y medias móviles para detectar posibles cambios de tendencia en los activos mencionados."
+      "Reacción del precio y volumen en META y PLTR tras presentación del formulario 4.",
+      "Seguimiento de la evolución del RSI y medias móviles para MSFT y NVDA.",
+      "Confirmar detalles específicos de las operaciones declaradas en los formularios 4 para evaluar impacto."
+    ],
+    "asset": "META",
+    "level": "medio",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "filing_date": "2026-07-06",
+      "form": "4",
+      "form4_details": {},
+      "perf_20d": 3.0287466518194694,
+      "perf_5d": 7.070961430794398,
+      "perf_60d": -4.245386412259511,
+      "price": 603.1199951171875,
+      "rsi": 53.85367320206606,
+      "sma20": 577.3499938964844,
+      "sma50": 601.4307971191406,
+      "status": "ok",
+      "symbol": "META",
+      "volume": 13311707.0,
+      "volume_20d_avg": 18625820.35,
+      "volume_ratio": 0.7146910444672038
+    },
+    "reasons": [
+      "formulario SEC 4",
+      "presentado 2026-07-06",
+      "operacion declarada por insider",
+      "precio reaccionando recientemente"
+    ],
+    "score": 78,
+    "source": "https://www.sec.gov/Archives/edgar/data/1326801/000095010326010283/xslF345X06/ownership.xml",
+    "summary": "Meta Platforms publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
+    "time_utc": "2026-07-08T21:32:51.577923+00:00",
+    "title": "META presentacion SEC 4"
+  },
+  {
+    "agent": "sec_filing",
+    "ai_brief": "Se han presentado múltiples formularios SEC 4 recientes para META, PLTR, MSFT y NVDA, indicando operaciones declaradas por insiders. Es importante vigilar la evolución del precio y el volumen en respuesta a estas presentaciones. La ausencia de operaciones en algunos formularios sugiere atención a posibles movimientos futuros o información adicional.",
+    "ai_risk_notes": [
+      "Volúmenes de negociación inferiores al promedio pueden indicar menor liquidez y mayor volatilidad.",
+      "Repetidas presentaciones sin operaciones en NVDA podrían generar incertidumbre sobre la intención real de insiders."
+    ],
+    "ai_watch_items": [
+      "Reacción del precio y volumen en META y PLTR tras presentación del formulario 4.",
+      "Seguimiento de la evolución del RSI y medias móviles para MSFT y NVDA.",
+      "Confirmar detalles específicos de las operaciones declaradas en los formularios 4 para evaluar impacto."
+    ],
+    "asset": "PLTR",
+    "level": "medio",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "filing_date": "2026-07-07",
+      "form": "4",
+      "form4_details": {},
+      "perf_20d": -3.1142375335124206,
+      "perf_5d": 13.328193448019476,
+      "perf_60d": 3.2484801978900357,
+      "price": 132.22000122070312,
+      "rsi": 53.567173376267135,
+      "sma20": 125.24200057983398,
+      "sma50": 133.82129974365233,
+      "status": "ok",
+      "symbol": "PLTR",
+      "volume": 40357417.0,
+      "volume_20d_avg": 44794850.85,
+      "volume_ratio": 0.9009387515350997
+    },
+    "reasons": [
+      "formulario SEC 4",
+      "presentado 2026-07-07",
+      "operacion declarada por insider",
+      "precio reaccionando recientemente"
+    ],
+    "score": 78,
+    "source": "https://www.sec.gov/Archives/edgar/data/1321655/000182415926000009/xslF345X06/wk-form4_1783468921.xml",
+    "summary": "Palantir publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
+    "time_utc": "2026-07-08T21:32:52.411719+00:00",
+    "title": "PLTR presentacion SEC 4"
+  },
+  {
+    "agent": "sec_filing",
+    "ai_brief": "Se han presentado múltiples formularios SEC 4 recientes para META, PLTR, MSFT y NVDA, indicando operaciones declaradas por insiders. Es importante vigilar la evolución del precio y el volumen en respuesta a estas presentaciones. La ausencia de operaciones en algunos formularios sugiere atención a posibles movimientos futuros o información adicional.",
+    "ai_risk_notes": [
+      "Volúmenes de negociación inferiores al promedio pueden indicar menor liquidez y mayor volatilidad.",
+      "Repetidas presentaciones sin operaciones en NVDA podrían generar incertidumbre sobre la intención real de insiders."
+    ],
+    "ai_watch_items": [
+      "Reacción del precio y volumen en META y PLTR tras presentación del formulario 4.",
+      "Seguimiento de la evolución del RSI y medias móviles para MSFT y NVDA.",
+      "Confirmar detalles específicos de las operaciones declaradas en los formularios 4 para evaluar impacto."
     ],
     "asset": "MSFT",
     "level": "medio",
@@ -24,132 +114,41 @@
         "sale_count": 0,
         "shares": 0
       },
-      "perf_20d": -6.679150453112815,
-      "perf_5d": 5.499630629423691,
-      "perf_60d": 4.227085722269508,
-      "price": 388.8399963378906,
-      "rsi": 49.154109177017,
-      "sma20": 383.4984954833984,
-      "sma50": 406.1335974121094,
+      "perf_20d": -6.897555391769994,
+      "perf_5d": 2.766609733571279,
+      "perf_60d": 3.3623645441478445,
+      "price": 383.3399963378906,
+      "rsi": 46.524131843739966,
+      "sma20": 382.07849578857423,
+      "sma50": 405.30799743652346,
       "status": "ok",
       "symbol": "MSFT",
-      "volume": 29209100.0,
-      "volume_20d_avg": 49002910.0,
-      "volume_ratio": 0.5960686824517156
+      "volume": 24832517.0,
+      "volume_20d_avg": 48644620.85,
+      "volume_ratio": 0.5104884479739963
     },
     "reasons": [
       "formulario SEC 4",
       "presentado 2026-07-01",
-      "operacion declarada por insider",
-      "precio reaccionando recientemente"
+      "operacion declarada por insider"
     ],
-    "score": 78,
+    "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/789019/000078901926000137/xslF345X06/form4.xml",
     "summary": "Microsoft publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:48.436555+00:00",
+    "time_utc": "2026-07-08T21:32:49.791004+00:00",
     "title": "MSFT presentacion SEC 4"
   },
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 recientes para MSFT, META, PLTR y NVDA, indicando operaciones declaradas por insiders. Es recomendable vigilar la evolución del precio y el volumen en relación con estos eventos. La ausencia de operaciones concretas en algunos formularios sugiere precaución y seguimiento detallado de futuras actualizaciones.",
+    "ai_brief": "Se han presentado múltiples formularios SEC 4 recientes para META, PLTR, MSFT y NVDA, indicando operaciones declaradas por insiders. Es importante vigilar la evolución del precio y el volumen en respuesta a estas presentaciones. La ausencia de operaciones en algunos formularios sugiere atención a posibles movimientos futuros o información adicional.",
     "ai_risk_notes": [
-      "La falta de operaciones concretas en varios formularios 4 puede indicar incertidumbre o movimientos limitados por parte de insiders.",
-      "Volúmenes de negociación inferiores al promedio en algunos casos podrían limitar la liquidez y aumentar la volatilidad."
+      "Volúmenes de negociación inferiores al promedio pueden indicar menor liquidez y mayor volatilidad.",
+      "Repetidas presentaciones sin operaciones en NVDA podrían generar incertidumbre sobre la intención real de insiders."
     ],
     "ai_watch_items": [
-      "Reacción del precio y volumen tras la presentación del formulario 4 en MSFT, META, PLTR y NVDA.",
-      "Detalles específicos de las operaciones declaradas por insiders en cada formulario 4.",
-      "Evolución del RSI y medias móviles para detectar posibles cambios de tendencia en los activos mencionados."
-    ],
-    "asset": "META",
-    "level": "medio",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "filing_date": "2026-07-06",
-      "form": "4",
-      "form4_details": {},
-      "perf_20d": 3.8077600488775287,
-      "perf_5d": 9.417000320472546,
-      "perf_60d": -2.0385425070384877,
-      "price": 615.5800170898438,
-      "rsi": 57.4345532795461,
-      "sma20": 576.4634948730469,
-      "sma50": 602.8689978027344,
-      "status": "ok",
-      "symbol": "META",
-      "volume": 18524000.0,
-      "volume_20d_avg": 18934015.0,
-      "volume_ratio": 0.9783450578231823
-    },
-    "reasons": [
-      "formulario SEC 4",
-      "presentado 2026-07-06",
-      "operacion declarada por insider",
-      "precio reaccionando recientemente"
-    ],
-    "score": 78,
-    "source": "https://www.sec.gov/Archives/edgar/data/1326801/000095010326010283/xslF345X06/ownership.xml",
-    "summary": "Meta Platforms publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:50.014179+00:00",
-    "title": "META presentacion SEC 4"
-  },
-  {
-    "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 recientes para MSFT, META, PLTR y NVDA, indicando operaciones declaradas por insiders. Es recomendable vigilar la evolución del precio y el volumen en relación con estos eventos. La ausencia de operaciones concretas en algunos formularios sugiere precaución y seguimiento detallado de futuras actualizaciones.",
-    "ai_risk_notes": [
-      "La falta de operaciones concretas en varios formularios 4 puede indicar incertidumbre o movimientos limitados por parte de insiders.",
-      "Volúmenes de negociación inferiores al promedio en algunos casos podrían limitar la liquidez y aumentar la volatilidad."
-    ],
-    "ai_watch_items": [
-      "Reacción del precio y volumen tras la presentación del formulario 4 en MSFT, META, PLTR y NVDA.",
-      "Detalles específicos de las operaciones declaradas por insiders en cada formulario 4.",
-      "Evolución del RSI y medias móviles para detectar posibles cambios de tendencia en los activos mencionados."
-    ],
-    "asset": "PLTR",
-    "level": "medio",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "filing_date": "2026-07-07",
-      "form": "4",
-      "form4_details": {},
-      "perf_20d": -0.8559017727126084,
-      "perf_5d": 16.13655891218151,
-      "perf_60d": 2.9733998472601053,
-      "price": 134.3699951171875,
-      "rsi": 55.83315698458689,
-      "sma20": 125.45450057983399,
-      "sma50": 134.0386996459961,
-      "status": "ok",
-      "symbol": "PLTR",
-      "volume": 52457200.0,
-      "volume_20d_avg": 44120265.0,
-      "volume_ratio": 1.1889593138209846
-    },
-    "reasons": [
-      "formulario SEC 4",
-      "presentado 2026-07-07",
-      "operacion declarada por insider",
-      "precio reaccionando recientemente"
-    ],
-    "score": 78,
-    "source": "https://www.sec.gov/Archives/edgar/data/1321655/000182415926000009/xslF345X06/wk-form4_1783468921.xml",
-    "summary": "Palantir publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:50.790260+00:00",
-    "title": "PLTR presentacion SEC 4"
-  },
-  {
-    "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 recientes para MSFT, META, PLTR y NVDA, indicando operaciones declaradas por insiders. Es recomendable vigilar la evolución del precio y el volumen en relación con estos eventos. La ausencia de operaciones concretas en algunos formularios sugiere precaución y seguimiento detallado de futuras actualizaciones.",
-    "ai_risk_notes": [
-      "La falta de operaciones concretas en varios formularios 4 puede indicar incertidumbre o movimientos limitados por parte de insiders.",
-      "Volúmenes de negociación inferiores al promedio en algunos casos podrían limitar la liquidez y aumentar la volatilidad."
-    ],
-    "ai_watch_items": [
-      "Reacción del precio y volumen tras la presentación del formulario 4 en MSFT, META, PLTR y NVDA.",
-      "Detalles específicos de las operaciones declaradas por insiders en cada formulario 4.",
-      "Evolución del RSI y medias móviles para detectar posibles cambios de tendencia en los activos mencionados."
+      "Reacción del precio y volumen en META y PLTR tras presentación del formulario 4.",
+      "Seguimiento de la evolución del RSI y medias móviles para MSFT y NVDA.",
+      "Confirmar detalles específicos de las operaciones declaradas en los formularios 4 para evaluar impacto."
     ],
     "asset": "NVDA",
     "level": "medio",
@@ -164,18 +163,18 @@
         "sale_count": 0,
         "shares": 0
       },
-      "perf_20d": -3.983429149003004,
-      "perf_5d": 1.0052784750508525,
-      "perf_60d": 7.079543665059673,
-      "price": 196.92999267578125,
-      "rsi": 43.52629011708673,
-      "sma20": 201.9209991455078,
-      "sma50": 209.60280059814454,
+      "perf_20d": -2.1664130970493023,
+      "perf_5d": 2.01409308463949,
+      "perf_60d": 8.211837901397633,
+      "price": 204.1199951171875,
+      "rsi": 50.98483824717139,
+      "sma20": 201.69499893188475,
+      "sma50": 209.51980041503907,
       "status": "ok",
       "symbol": "NVDA",
-      "volume": 123810500.0,
-      "volume_20d_avg": 149476690.0,
-      "volume_ratio": 0.828293026825788
+      "volume": 145806099.0,
+      "volume_20d_avg": 149865559.95,
+      "volume_ratio": 0.9729126495016309
     },
     "reasons": [
       "formulario SEC 4",
@@ -185,20 +184,20 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1045810/000119764726000005/xslF345X06/wk-form4_1783371701.xml",
     "summary": "Nvidia publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:48.859013+00:00",
+    "time_utc": "2026-07-08T21:32:50.295313+00:00",
     "title": "NVDA presentacion SEC 4"
   },
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 recientes para MSFT, META, PLTR y NVDA, indicando operaciones declaradas por insiders. Es recomendable vigilar la evolución del precio y el volumen en relación con estos eventos. La ausencia de operaciones concretas en algunos formularios sugiere precaución y seguimiento detallado de futuras actualizaciones.",
+    "ai_brief": "Se han presentado múltiples formularios SEC 4 recientes para META, PLTR, MSFT y NVDA, indicando operaciones declaradas por insiders. Es importante vigilar la evolución del precio y el volumen en respuesta a estas presentaciones. La ausencia de operaciones en algunos formularios sugiere atención a posibles movimientos futuros o información adicional.",
     "ai_risk_notes": [
-      "La falta de operaciones concretas en varios formularios 4 puede indicar incertidumbre o movimientos limitados por parte de insiders.",
-      "Volúmenes de negociación inferiores al promedio en algunos casos podrían limitar la liquidez y aumentar la volatilidad."
+      "Volúmenes de negociación inferiores al promedio pueden indicar menor liquidez y mayor volatilidad.",
+      "Repetidas presentaciones sin operaciones en NVDA podrían generar incertidumbre sobre la intención real de insiders."
     ],
     "ai_watch_items": [
-      "Reacción del precio y volumen tras la presentación del formulario 4 en MSFT, META, PLTR y NVDA.",
-      "Detalles específicos de las operaciones declaradas por insiders en cada formulario 4.",
-      "Evolución del RSI y medias móviles para detectar posibles cambios de tendencia en los activos mencionados."
+      "Reacción del precio y volumen en META y PLTR tras presentación del formulario 4.",
+      "Seguimiento de la evolución del RSI y medias móviles para MSFT y NVDA.",
+      "Confirmar detalles específicos de las operaciones declaradas en los formularios 4 para evaluar impacto."
     ],
     "asset": "NVDA",
     "level": "medio",
@@ -213,18 +212,18 @@
         "sale_count": 0,
         "shares": 0
       },
-      "perf_20d": -3.983429149003004,
-      "perf_5d": 1.0052784750508525,
-      "perf_60d": 7.079543665059673,
-      "price": 196.92999267578125,
-      "rsi": 43.52629011708673,
-      "sma20": 201.9209991455078,
-      "sma50": 209.60280059814454,
+      "perf_20d": -2.1664130970493023,
+      "perf_5d": 2.01409308463949,
+      "perf_60d": 8.211837901397633,
+      "price": 204.1199951171875,
+      "rsi": 50.98483824717139,
+      "sma20": 201.69499893188475,
+      "sma50": 209.51980041503907,
       "status": "ok",
       "symbol": "NVDA",
-      "volume": 123810500.0,
-      "volume_20d_avg": 149476690.0,
-      "volume_ratio": 0.828293026825788
+      "volume": 145806099.0,
+      "volume_20d_avg": 149865559.95,
+      "volume_ratio": 0.9729126495016309
     },
     "reasons": [
       "formulario SEC 4",
@@ -234,20 +233,20 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1045810/000119903926000009/xslF345X06/wk-form4_1782767219.xml",
     "summary": "Nvidia publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:48.870774+00:00",
+    "time_utc": "2026-07-08T21:32:50.310468+00:00",
     "title": "NVDA presentacion SEC 4"
   },
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 recientes para MSFT, META, PLTR y NVDA, indicando operaciones declaradas por insiders. Es recomendable vigilar la evolución del precio y el volumen en relación con estos eventos. La ausencia de operaciones concretas en algunos formularios sugiere precaución y seguimiento detallado de futuras actualizaciones.",
+    "ai_brief": "Se han presentado múltiples formularios SEC 4 recientes para META, PLTR, MSFT y NVDA, indicando operaciones declaradas por insiders. Es importante vigilar la evolución del precio y el volumen en respuesta a estas presentaciones. La ausencia de operaciones en algunos formularios sugiere atención a posibles movimientos futuros o información adicional.",
     "ai_risk_notes": [
-      "La falta de operaciones concretas en varios formularios 4 puede indicar incertidumbre o movimientos limitados por parte de insiders.",
-      "Volúmenes de negociación inferiores al promedio en algunos casos podrían limitar la liquidez y aumentar la volatilidad."
+      "Volúmenes de negociación inferiores al promedio pueden indicar menor liquidez y mayor volatilidad.",
+      "Repetidas presentaciones sin operaciones en NVDA podrían generar incertidumbre sobre la intención real de insiders."
     ],
     "ai_watch_items": [
-      "Reacción del precio y volumen tras la presentación del formulario 4 en MSFT, META, PLTR y NVDA.",
-      "Detalles específicos de las operaciones declaradas por insiders en cada formulario 4.",
-      "Evolución del RSI y medias móviles para detectar posibles cambios de tendencia en los activos mencionados."
+      "Reacción del precio y volumen en META y PLTR tras presentación del formulario 4.",
+      "Seguimiento de la evolución del RSI y medias móviles para MSFT y NVDA.",
+      "Confirmar detalles específicos de las operaciones declaradas en los formularios 4 para evaluar impacto."
     ],
     "asset": "NVDA",
     "level": "medio",
@@ -262,18 +261,18 @@
         "sale_count": 0,
         "shares": 0
       },
-      "perf_20d": -3.983429149003004,
-      "perf_5d": 1.0052784750508525,
-      "perf_60d": 7.079543665059673,
-      "price": 196.92999267578125,
-      "rsi": 43.52629011708673,
-      "sma20": 201.9209991455078,
-      "sma50": 209.60280059814454,
+      "perf_20d": -2.1664130970493023,
+      "perf_5d": 2.01409308463949,
+      "perf_60d": 8.211837901397633,
+      "price": 204.1199951171875,
+      "rsi": 50.98483824717139,
+      "sma20": 201.69499893188475,
+      "sma50": 209.51980041503907,
       "status": "ok",
       "symbol": "NVDA",
-      "volume": 123810500.0,
-      "volume_20d_avg": 149476690.0,
-      "volume_ratio": 0.828293026825788
+      "volume": 145806099.0,
+      "volume_20d_avg": 149865559.95,
+      "volume_ratio": 0.9729126495016309
     },
     "reasons": [
       "formulario SEC 4",
@@ -283,20 +282,20 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1045810/000172529226000004/xslF345X06/wk-form4_1782767179.xml",
     "summary": "Nvidia publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:48.881389+00:00",
+    "time_utc": "2026-07-08T21:32:50.324440+00:00",
     "title": "NVDA presentacion SEC 4"
   },
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 recientes para MSFT, META, PLTR y NVDA, indicando operaciones declaradas por insiders. Es recomendable vigilar la evolución del precio y el volumen en relación con estos eventos. La ausencia de operaciones concretas en algunos formularios sugiere precaución y seguimiento detallado de futuras actualizaciones.",
+    "ai_brief": "Se han presentado múltiples formularios SEC 4 recientes para META, PLTR, MSFT y NVDA, indicando operaciones declaradas por insiders. Es importante vigilar la evolución del precio y el volumen en respuesta a estas presentaciones. La ausencia de operaciones en algunos formularios sugiere atención a posibles movimientos futuros o información adicional.",
     "ai_risk_notes": [
-      "La falta de operaciones concretas en varios formularios 4 puede indicar incertidumbre o movimientos limitados por parte de insiders.",
-      "Volúmenes de negociación inferiores al promedio en algunos casos podrían limitar la liquidez y aumentar la volatilidad."
+      "Volúmenes de negociación inferiores al promedio pueden indicar menor liquidez y mayor volatilidad.",
+      "Repetidas presentaciones sin operaciones en NVDA podrían generar incertidumbre sobre la intención real de insiders."
     ],
     "ai_watch_items": [
-      "Reacción del precio y volumen tras la presentación del formulario 4 en MSFT, META, PLTR y NVDA.",
-      "Detalles específicos de las operaciones declaradas por insiders en cada formulario 4.",
-      "Evolución del RSI y medias móviles para detectar posibles cambios de tendencia en los activos mencionados."
+      "Reacción del precio y volumen en META y PLTR tras presentación del formulario 4.",
+      "Seguimiento de la evolución del RSI y medias móviles para MSFT y NVDA.",
+      "Confirmar detalles específicos de las operaciones declaradas en los formularios 4 para evaluar impacto."
     ],
     "asset": "NVDA",
     "level": "medio",
@@ -311,18 +310,18 @@
         "sale_count": 0,
         "shares": 0
       },
-      "perf_20d": -3.983429149003004,
-      "perf_5d": 1.0052784750508525,
-      "perf_60d": 7.079543665059673,
-      "price": 196.92999267578125,
-      "rsi": 43.52629011708673,
-      "sma20": 201.9209991455078,
-      "sma50": 209.60280059814454,
+      "perf_20d": -2.1664130970493023,
+      "perf_5d": 2.01409308463949,
+      "perf_60d": 8.211837901397633,
+      "price": 204.1199951171875,
+      "rsi": 50.98483824717139,
+      "sma20": 201.69499893188475,
+      "sma50": 209.51980041503907,
       "status": "ok",
       "symbol": "NVDA",
-      "volume": 123810500.0,
-      "volume_20d_avg": 149476690.0,
-      "volume_ratio": 0.828293026825788
+      "volume": 145806099.0,
+      "volume_20d_avg": 149865559.95,
+      "volume_ratio": 0.9729126495016309
     },
     "reasons": [
       "formulario SEC 4",
@@ -332,20 +331,20 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1045810/000119765226000007/xslF345X06/wk-form4_1782767137.xml",
     "summary": "Nvidia publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:48.891561+00:00",
+    "time_utc": "2026-07-08T21:32:50.338097+00:00",
     "title": "NVDA presentacion SEC 4"
   },
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 recientes para MSFT, META, PLTR y NVDA, indicando operaciones declaradas por insiders. Es recomendable vigilar la evolución del precio y el volumen en relación con estos eventos. La ausencia de operaciones concretas en algunos formularios sugiere precaución y seguimiento detallado de futuras actualizaciones.",
+    "ai_brief": "Se han presentado múltiples formularios SEC 4 recientes para META, PLTR, MSFT y NVDA, indicando operaciones declaradas por insiders. Es importante vigilar la evolución del precio y el volumen en respuesta a estas presentaciones. La ausencia de operaciones en algunos formularios sugiere atención a posibles movimientos futuros o información adicional.",
     "ai_risk_notes": [
-      "La falta de operaciones concretas en varios formularios 4 puede indicar incertidumbre o movimientos limitados por parte de insiders.",
-      "Volúmenes de negociación inferiores al promedio en algunos casos podrían limitar la liquidez y aumentar la volatilidad."
+      "Volúmenes de negociación inferiores al promedio pueden indicar menor liquidez y mayor volatilidad.",
+      "Repetidas presentaciones sin operaciones en NVDA podrían generar incertidumbre sobre la intención real de insiders."
     ],
     "ai_watch_items": [
-      "Reacción del precio y volumen tras la presentación del formulario 4 en MSFT, META, PLTR y NVDA.",
-      "Detalles específicos de las operaciones declaradas por insiders en cada formulario 4.",
-      "Evolución del RSI y medias móviles para detectar posibles cambios de tendencia en los activos mencionados."
+      "Reacción del precio y volumen en META y PLTR tras presentación del formulario 4.",
+      "Seguimiento de la evolución del RSI y medias móviles para MSFT y NVDA.",
+      "Confirmar detalles específicos de las operaciones declaradas en los formularios 4 para evaluar impacto."
     ],
     "asset": "NVDA",
     "level": "medio",
@@ -355,18 +354,18 @@
       "filing_date": "2026-06-29",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -3.983429149003004,
-      "perf_5d": 1.0052784750508525,
-      "perf_60d": 7.079543665059673,
-      "price": 196.92999267578125,
-      "rsi": 43.52629011708673,
-      "sma20": 201.9209991455078,
-      "sma50": 209.60280059814454,
+      "perf_20d": -2.1664130970493023,
+      "perf_5d": 2.01409308463949,
+      "perf_60d": 8.211837901397633,
+      "price": 204.1199951171875,
+      "rsi": 50.98483824717139,
+      "sma20": 201.69499893188475,
+      "sma50": 209.51980041503907,
       "status": "ok",
       "symbol": "NVDA",
-      "volume": 123810500.0,
-      "volume_20d_avg": 149476690.0,
-      "volume_ratio": 0.828293026825788
+      "volume": 145806099.0,
+      "volume_20d_avg": 149865559.95,
+      "volume_ratio": 0.9729126495016309
     },
     "reasons": [
       "formulario SEC 4",
@@ -376,7 +375,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1045810/000176867026000004/xslF345X06/wk-form4_1782767093.xml",
     "summary": "Nvidia publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:48.891629+00:00",
+    "time_utc": "2026-07-08T21:32:50.338155+00:00",
     "title": "NVDA presentacion SEC 4"
   },
   {
@@ -389,18 +388,18 @@
       "filing_date": "2026-06-29",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -3.983429149003004,
-      "perf_5d": 1.0052784750508525,
-      "perf_60d": 7.079543665059673,
-      "price": 196.92999267578125,
-      "rsi": 43.52629011708673,
-      "sma20": 201.9209991455078,
-      "sma50": 209.60280059814454,
+      "perf_20d": -2.1664130970493023,
+      "perf_5d": 2.01409308463949,
+      "perf_60d": 8.211837901397633,
+      "price": 204.1199951171875,
+      "rsi": 50.98483824717139,
+      "sma20": 201.69499893188475,
+      "sma50": 209.51980041503907,
       "status": "ok",
       "symbol": "NVDA",
-      "volume": 123810500.0,
-      "volume_20d_avg": 149476690.0,
-      "volume_ratio": 0.828293026825788
+      "volume": 145806099.0,
+      "volume_20d_avg": 149865559.95,
+      "volume_ratio": 0.9729126495016309
     },
     "reasons": [
       "formulario SEC 4",
@@ -410,7 +409,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1045810/000128411626000004/xslF345X06/wk-form4_1782767057.xml",
     "summary": "Nvidia publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:48.891654+00:00",
+    "time_utc": "2026-07-08T21:32:50.338179+00:00",
     "title": "NVDA presentacion SEC 4"
   },
   {
@@ -423,18 +422,18 @@
       "filing_date": "2026-06-29",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -3.983429149003004,
-      "perf_5d": 1.0052784750508525,
-      "perf_60d": 7.079543665059673,
-      "price": 196.92999267578125,
-      "rsi": 43.52629011708673,
-      "sma20": 201.9209991455078,
-      "sma50": 209.60280059814454,
+      "perf_20d": -2.1664130970493023,
+      "perf_5d": 2.01409308463949,
+      "perf_60d": 8.211837901397633,
+      "price": 204.1199951171875,
+      "rsi": 50.98483824717139,
+      "sma20": 201.69499893188475,
+      "sma50": 209.51980041503907,
       "status": "ok",
       "symbol": "NVDA",
-      "volume": 123810500.0,
-      "volume_20d_avg": 149476690.0,
-      "volume_ratio": 0.828293026825788
+      "volume": 145806099.0,
+      "volume_20d_avg": 149865559.95,
+      "volume_ratio": 0.9729126495016309
     },
     "reasons": [
       "formulario SEC 4",
@@ -444,7 +443,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1045810/000119765026000002/xslF345X06/wk-form4_1782767025.xml",
     "summary": "Nvidia publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:48.891671+00:00",
+    "time_utc": "2026-07-08T21:32:50.338197+00:00",
     "title": "NVDA presentacion SEC 4"
   },
   {
@@ -457,18 +456,18 @@
       "filing_date": "2026-06-29",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -3.983429149003004,
-      "perf_5d": 1.0052784750508525,
-      "perf_60d": 7.079543665059673,
-      "price": 196.92999267578125,
-      "rsi": 43.52629011708673,
-      "sma20": 201.9209991455078,
-      "sma50": 209.60280059814454,
+      "perf_20d": -2.1664130970493023,
+      "perf_5d": 2.01409308463949,
+      "perf_60d": 8.211837901397633,
+      "price": 204.1199951171875,
+      "rsi": 50.98483824717139,
+      "sma20": 201.69499893188475,
+      "sma50": 209.51980041503907,
       "status": "ok",
       "symbol": "NVDA",
-      "volume": 123810500.0,
-      "volume_20d_avg": 149476690.0,
-      "volume_ratio": 0.828293026825788
+      "volume": 145806099.0,
+      "volume_20d_avg": 149865559.95,
+      "volume_ratio": 0.9729126495016309
     },
     "reasons": [
       "formulario SEC 4",
@@ -478,7 +477,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1045810/000121988826000002/xslF345X06/wk-form4_1782766973.xml",
     "summary": "Nvidia publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:48.891689+00:00",
+    "time_utc": "2026-07-08T21:32:50.338214+00:00",
     "title": "NVDA presentacion SEC 4"
   },
   {
@@ -491,18 +490,18 @@
       "filing_date": "2026-06-29",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -3.983429149003004,
-      "perf_5d": 1.0052784750508525,
-      "perf_60d": 7.079543665059673,
-      "price": 196.92999267578125,
-      "rsi": 43.52629011708673,
-      "sma20": 201.9209991455078,
-      "sma50": 209.60280059814454,
+      "perf_20d": -2.1664130970493023,
+      "perf_5d": 2.01409308463949,
+      "perf_60d": 8.211837901397633,
+      "price": 204.1199951171875,
+      "rsi": 50.98483824717139,
+      "sma20": 201.69499893188475,
+      "sma50": 209.51980041503907,
       "status": "ok",
       "symbol": "NVDA",
-      "volume": 123810500.0,
-      "volume_20d_avg": 149476690.0,
-      "volume_ratio": 0.828293026825788
+      "volume": 145806099.0,
+      "volume_20d_avg": 149865559.95,
+      "volume_ratio": 0.9729126495016309
     },
     "reasons": [
       "formulario SEC 4",
@@ -512,7 +511,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1045810/000181822426000006/xslF345X06/wk-form4_1782766926.xml",
     "summary": "Nvidia publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:48.891720+00:00",
+    "time_utc": "2026-07-08T21:32:50.338241+00:00",
     "title": "NVDA presentacion SEC 4"
   },
   {
@@ -525,18 +524,18 @@
       "filing_date": "2026-06-29",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -3.983429149003004,
-      "perf_5d": 1.0052784750508525,
-      "perf_60d": 7.079543665059673,
-      "price": 196.92999267578125,
-      "rsi": 43.52629011708673,
-      "sma20": 201.9209991455078,
-      "sma50": 209.60280059814454,
+      "perf_20d": -2.1664130970493023,
+      "perf_5d": 2.01409308463949,
+      "perf_60d": 8.211837901397633,
+      "price": 204.1199951171875,
+      "rsi": 50.98483824717139,
+      "sma20": 201.69499893188475,
+      "sma50": 209.51980041503907,
       "status": "ok",
       "symbol": "NVDA",
-      "volume": 123810500.0,
-      "volume_20d_avg": 149476690.0,
-      "volume_ratio": 0.828293026825788
+      "volume": 145806099.0,
+      "volume_20d_avg": 149865559.95,
+      "volume_ratio": 0.9729126495016309
     },
     "reasons": [
       "formulario SEC 4",
@@ -546,7 +545,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1045810/000119764726000003/xslF345X06/wk-form4_1782766872.xml",
     "summary": "Nvidia publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:48.891736+00:00",
+    "time_utc": "2026-07-08T21:32:50.338257+00:00",
     "title": "NVDA presentacion SEC 4"
   },
   {
@@ -559,18 +558,18 @@
       "filing_date": "2026-07-02",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -0.020323965372481823,
-      "perf_5d": 2.4319131976071606,
-      "perf_60d": 5.27712482479985,
-      "price": 245.97999572753906,
-      "rsi": 51.72037662839524,
-      "sma20": 239.76199951171876,
-      "sma50": 255.01080017089845,
+      "perf_20d": -0.6524778140244658,
+      "perf_5d": 2.215322170187295,
+      "perf_60d": 2.198166845810312,
+      "price": 243.6199951171875,
+      "rsi": 49.40977864182119,
+      "sma20": 239.68199920654297,
+      "sma50": 254.60340026855468,
       "status": "ok",
       "symbol": "AMZN",
-      "volume": 40504100.0,
-      "volume_20d_avg": 62921155.0,
-      "volume_ratio": 0.6437278527388761
+      "volume": 27799758.0,
+      "volume_20d_avg": 62619942.9,
+      "volume_ratio": 0.4439441607986519
     },
     "reasons": [
       "formulario SEC 4",
@@ -580,7 +579,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000022/xslF345X06/wk-form4_1783023822.xml",
     "summary": "Amazon publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:49.252255+00:00",
+    "time_utc": "2026-07-08T21:32:50.734845+00:00",
     "title": "AMZN presentacion SEC 4"
   },
   {
@@ -593,18 +592,18 @@
       "filing_date": "2026-07-06",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -0.4070224961247537,
-      "perf_5d": 3.7834031143031632,
-      "perf_60d": 15.24067004718157,
-      "price": 367.0299987792969,
-      "rsi": 54.00605776617379,
-      "sma20": 358.18249969482423,
-      "sma50": 372.07639953613284,
+      "perf_20d": -0.3825890121934239,
+      "perf_5d": 1.2731953920907202,
+      "perf_60d": 14.083982022679443,
+      "price": 361.9200134277344,
+      "rsi": 50.292517507049986,
+      "sma20": 358.1130004882813,
+      "sma50": 372.42679992675784,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 24008000.0,
-      "volume_20d_avg": 36789920.0,
-      "volume_ratio": 0.6525700517967965
+      "volume": 21880821.0,
+      "volume_20d_avg": 36488716.05,
+      "volume_ratio": 0.5996599324025818
     },
     "reasons": [
       "formulario SEC 4",
@@ -614,7 +613,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526296465/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:49.616933+00:00",
+    "time_utc": "2026-07-08T21:32:51.126212+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -627,18 +626,18 @@
       "filing_date": "2026-07-06",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -0.4070224961247537,
-      "perf_5d": 3.7834031143031632,
-      "perf_60d": 15.24067004718157,
-      "price": 367.0299987792969,
-      "rsi": 54.00605776617379,
-      "sma20": 358.18249969482423,
-      "sma50": 372.07639953613284,
+      "perf_20d": -0.3825890121934239,
+      "perf_5d": 1.2731953920907202,
+      "perf_60d": 14.083982022679443,
+      "price": 361.9200134277344,
+      "rsi": 50.292517507049986,
+      "sma20": 358.1130004882813,
+      "sma50": 372.42679992675784,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 24008000.0,
-      "volume_20d_avg": 36789920.0,
-      "volume_ratio": 0.6525700517967965
+      "volume": 21880821.0,
+      "volume_20d_avg": 36488716.05,
+      "volume_ratio": 0.5996599324025818
     },
     "reasons": [
       "formulario SEC 4",
@@ -648,7 +647,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526296453/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:49.616962+00:00",
+    "time_utc": "2026-07-08T21:32:51.126240+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -661,18 +660,18 @@
       "filing_date": "2026-07-06",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -0.4070224961247537,
-      "perf_5d": 3.7834031143031632,
-      "perf_60d": 15.24067004718157,
-      "price": 367.0299987792969,
-      "rsi": 54.00605776617379,
-      "sma20": 358.18249969482423,
-      "sma50": 372.07639953613284,
+      "perf_20d": -0.3825890121934239,
+      "perf_5d": 1.2731953920907202,
+      "perf_60d": 14.083982022679443,
+      "price": 361.9200134277344,
+      "rsi": 50.292517507049986,
+      "sma20": 358.1130004882813,
+      "sma50": 372.42679992675784,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 24008000.0,
-      "volume_20d_avg": 36789920.0,
-      "volume_ratio": 0.6525700517967965
+      "volume": 21880821.0,
+      "volume_20d_avg": 36488716.05,
+      "volume_ratio": 0.5996599324025818
     },
     "reasons": [
       "formulario SEC 4",
@@ -682,7 +681,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526296382/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:49.616976+00:00",
+    "time_utc": "2026-07-08T21:32:51.126255+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -695,18 +694,18 @@
       "filing_date": "2026-07-06",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -0.4070224961247537,
-      "perf_5d": 3.7834031143031632,
-      "perf_60d": 15.24067004718157,
-      "price": 367.0299987792969,
-      "rsi": 54.00605776617379,
-      "sma20": 358.18249969482423,
-      "sma50": 372.07639953613284,
+      "perf_20d": -0.3825890121934239,
+      "perf_5d": 1.2731953920907202,
+      "perf_60d": 14.083982022679443,
+      "price": 361.9200134277344,
+      "rsi": 50.292517507049986,
+      "sma20": 358.1130004882813,
+      "sma50": 372.42679992675784,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 24008000.0,
-      "volume_20d_avg": 36789920.0,
-      "volume_ratio": 0.6525700517967965
+      "volume": 21880821.0,
+      "volume_20d_avg": 36488716.05,
+      "volume_ratio": 0.5996599324025818
     },
     "reasons": [
       "formulario SEC 4",
@@ -716,7 +715,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526296351/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:49.616988+00:00",
+    "time_utc": "2026-07-08T21:32:51.126267+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -729,18 +728,18 @@
       "filing_date": "2026-07-06",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -0.4070224961247537,
-      "perf_5d": 3.7834031143031632,
-      "perf_60d": 15.24067004718157,
-      "price": 367.0299987792969,
-      "rsi": 54.00605776617379,
-      "sma20": 358.18249969482423,
-      "sma50": 372.07639953613284,
+      "perf_20d": -0.3825890121934239,
+      "perf_5d": 1.2731953920907202,
+      "perf_60d": 14.083982022679443,
+      "price": 361.9200134277344,
+      "rsi": 50.292517507049986,
+      "sma20": 358.1130004882813,
+      "sma50": 372.42679992675784,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 24008000.0,
-      "volume_20d_avg": 36789920.0,
-      "volume_ratio": 0.6525700517967965
+      "volume": 21880821.0,
+      "volume_20d_avg": 36488716.05,
+      "volume_ratio": 0.5996599324025818
     },
     "reasons": [
       "formulario SEC 4",
@@ -750,7 +749,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526296327/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:49.617000+00:00",
+    "time_utc": "2026-07-08T21:32:51.126278+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -763,18 +762,18 @@
       "filing_date": "2026-07-06",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -0.4070224961247537,
-      "perf_5d": 3.7834031143031632,
-      "perf_60d": 15.24067004718157,
-      "price": 367.0299987792969,
-      "rsi": 54.00605776617379,
-      "sma20": 358.18249969482423,
-      "sma50": 372.07639953613284,
+      "perf_20d": -0.3825890121934239,
+      "perf_5d": 1.2731953920907202,
+      "perf_60d": 14.083982022679443,
+      "price": 361.9200134277344,
+      "rsi": 50.292517507049986,
+      "sma20": 358.1130004882813,
+      "sma50": 372.42679992675784,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 24008000.0,
-      "volume_20d_avg": 36789920.0,
-      "volume_ratio": 0.6525700517967965
+      "volume": 21880821.0,
+      "volume_20d_avg": 36488716.05,
+      "volume_ratio": 0.5996599324025818
     },
     "reasons": [
       "formulario SEC 4",
@@ -784,7 +783,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526296291/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:49.617010+00:00",
+    "time_utc": "2026-07-08T21:32:51.126288+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -797,18 +796,18 @@
       "filing_date": "2026-07-06",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -0.4070224961247537,
-      "perf_5d": 3.7834031143031632,
-      "perf_60d": 15.24067004718157,
-      "price": 367.0299987792969,
-      "rsi": 54.00605776617379,
-      "sma20": 358.18249969482423,
-      "sma50": 372.07639953613284,
+      "perf_20d": -0.3825890121934239,
+      "perf_5d": 1.2731953920907202,
+      "perf_60d": 14.083982022679443,
+      "price": 361.9200134277344,
+      "rsi": 50.292517507049986,
+      "sma20": 358.1130004882813,
+      "sma50": 372.42679992675784,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 24008000.0,
-      "volume_20d_avg": 36789920.0,
-      "volume_ratio": 0.6525700517967965
+      "volume": 21880821.0,
+      "volume_20d_avg": 36488716.05,
+      "volume_ratio": 0.5996599324025818
     },
     "reasons": [
       "formulario SEC 4",
@@ -818,7 +817,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526296243/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:49.617020+00:00",
+    "time_utc": "2026-07-08T21:32:51.126298+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -831,18 +830,18 @@
       "filing_date": "2026-07-01",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -0.4070224961247537,
-      "perf_5d": 3.7834031143031632,
-      "perf_60d": 15.24067004718157,
-      "price": 367.0299987792969,
-      "rsi": 54.00605776617379,
-      "sma20": 358.18249969482423,
-      "sma50": 372.07639953613284,
+      "perf_20d": -0.3825890121934239,
+      "perf_5d": 1.2731953920907202,
+      "perf_60d": 14.083982022679443,
+      "price": 361.9200134277344,
+      "rsi": 50.292517507049986,
+      "sma20": 358.1130004882813,
+      "sma50": 372.42679992675784,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 24008000.0,
-      "volume_20d_avg": 36789920.0,
-      "volume_ratio": 0.6525700517967965
+      "volume": 21880821.0,
+      "volume_20d_avg": 36488716.05,
+      "volume_ratio": 0.5996599324025818
     },
     "reasons": [
       "formulario SEC 4",
@@ -852,7 +851,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526292904/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:49.617032+00:00",
+    "time_utc": "2026-07-08T21:32:51.126309+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -865,18 +864,18 @@
       "filing_date": "2026-06-30",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -0.4070224961247537,
-      "perf_5d": 3.7834031143031632,
-      "perf_60d": 15.24067004718157,
-      "price": 367.0299987792969,
-      "rsi": 54.00605776617379,
-      "sma20": 358.18249969482423,
-      "sma50": 372.07639953613284,
+      "perf_20d": -0.3825890121934239,
+      "perf_5d": 1.2731953920907202,
+      "perf_60d": 14.083982022679443,
+      "price": 361.9200134277344,
+      "rsi": 50.292517507049986,
+      "sma20": 358.1130004882813,
+      "sma50": 372.42679992675784,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 24008000.0,
-      "volume_20d_avg": 36789920.0,
-      "volume_ratio": 0.6525700517967965
+      "volume": 21880821.0,
+      "volume_20d_avg": 36488716.05,
+      "volume_ratio": 0.5996599324025818
     },
     "reasons": [
       "formulario SEC 4",
@@ -886,7 +885,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526290710/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:49.617043+00:00",
+    "time_utc": "2026-07-08T21:32:51.126321+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -899,18 +898,18 @@
       "filing_date": "2026-06-29",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -0.4070224961247537,
-      "perf_5d": 3.7834031143031632,
-      "perf_60d": 15.24067004718157,
-      "price": 367.0299987792969,
-      "rsi": 54.00605776617379,
-      "sma20": 358.18249969482423,
-      "sma50": 372.07639953613284,
+      "perf_20d": -0.3825890121934239,
+      "perf_5d": 1.2731953920907202,
+      "perf_60d": 14.083982022679443,
+      "price": 361.9200134277344,
+      "rsi": 50.292517507049986,
+      "sma20": 358.1130004882813,
+      "sma50": 372.42679992675784,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 24008000.0,
-      "volume_20d_avg": 36789920.0,
-      "volume_ratio": 0.6525700517967965
+      "volume": 21880821.0,
+      "volume_20d_avg": 36488716.05,
+      "volume_ratio": 0.5996599324025818
     },
     "reasons": [
       "formulario SEC 4",
@@ -920,7 +919,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526289028/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:49.617058+00:00",
+    "time_utc": "2026-07-08T21:32:51.126336+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -933,18 +932,18 @@
       "filing_date": "2026-06-29",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -0.4070224961247537,
-      "perf_5d": 3.7834031143031632,
-      "perf_60d": 15.24067004718157,
-      "price": 367.0299987792969,
-      "rsi": 54.00605776617379,
-      "sma20": 358.18249969482423,
-      "sma50": 372.07639953613284,
+      "perf_20d": -0.3825890121934239,
+      "perf_5d": 1.2731953920907202,
+      "perf_60d": 14.083982022679443,
+      "price": 361.9200134277344,
+      "rsi": 50.292517507049986,
+      "sma20": 358.1130004882813,
+      "sma50": 372.42679992675784,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 24008000.0,
-      "volume_20d_avg": 36789920.0,
-      "volume_ratio": 0.6525700517967965
+      "volume": 21880821.0,
+      "volume_20d_avg": 36488716.05,
+      "volume_ratio": 0.5996599324025818
     },
     "reasons": [
       "formulario SEC 4",
@@ -954,7 +953,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526289019/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:49.617068+00:00",
+    "time_utc": "2026-07-08T21:32:51.126346+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -967,18 +966,18 @@
       "filing_date": "2026-06-29",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -0.4070224961247537,
-      "perf_5d": 3.7834031143031632,
-      "perf_60d": 15.24067004718157,
-      "price": 367.0299987792969,
-      "rsi": 54.00605776617379,
-      "sma20": 358.18249969482423,
-      "sma50": 372.07639953613284,
+      "perf_20d": -0.3825890121934239,
+      "perf_5d": 1.2731953920907202,
+      "perf_60d": 14.083982022679443,
+      "price": 361.9200134277344,
+      "rsi": 50.292517507049986,
+      "sma20": 358.1130004882813,
+      "sma50": 372.42679992675784,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 24008000.0,
-      "volume_20d_avg": 36789920.0,
-      "volume_ratio": 0.6525700517967965
+      "volume": 21880821.0,
+      "volume_20d_avg": 36488716.05,
+      "volume_ratio": 0.5996599324025818
     },
     "reasons": [
       "formulario SEC 4",
@@ -988,7 +987,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526289015/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:49.617078+00:00",
+    "time_utc": "2026-07-08T21:32:51.126357+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -1001,18 +1000,18 @@
       "filing_date": "2026-06-29",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -0.4070224961247537,
-      "perf_5d": 3.7834031143031632,
-      "perf_60d": 15.24067004718157,
-      "price": 367.0299987792969,
-      "rsi": 54.00605776617379,
-      "sma20": 358.18249969482423,
-      "sma50": 372.07639953613284,
+      "perf_20d": -0.3825890121934239,
+      "perf_5d": 1.2731953920907202,
+      "perf_60d": 14.083982022679443,
+      "price": 361.9200134277344,
+      "rsi": 50.292517507049986,
+      "sma20": 358.1130004882813,
+      "sma50": 372.42679992675784,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 24008000.0,
-      "volume_20d_avg": 36789920.0,
-      "volume_ratio": 0.6525700517967965
+      "volume": 21880821.0,
+      "volume_20d_avg": 36488716.05,
+      "volume_ratio": 0.5996599324025818
     },
     "reasons": [
       "formulario SEC 4",
@@ -1022,7 +1021,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526289012/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:49.617088+00:00",
+    "time_utc": "2026-07-08T21:32:51.126367+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -1035,18 +1034,18 @@
       "filing_date": "2026-06-29",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -0.4070224961247537,
-      "perf_5d": 3.7834031143031632,
-      "perf_60d": 15.24067004718157,
-      "price": 367.0299987792969,
-      "rsi": 54.00605776617379,
-      "sma20": 358.18249969482423,
-      "sma50": 372.07639953613284,
+      "perf_20d": -0.3825890121934239,
+      "perf_5d": 1.2731953920907202,
+      "perf_60d": 14.083982022679443,
+      "price": 361.9200134277344,
+      "rsi": 50.292517507049986,
+      "sma20": 358.1130004882813,
+      "sma50": 372.42679992675784,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 24008000.0,
-      "volume_20d_avg": 36789920.0,
-      "volume_ratio": 0.6525700517967965
+      "volume": 21880821.0,
+      "volume_20d_avg": 36488716.05,
+      "volume_ratio": 0.5996599324025818
     },
     "reasons": [
       "formulario SEC 4",
@@ -1056,7 +1055,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526289009/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:49.617097+00:00",
+    "time_utc": "2026-07-08T21:32:51.126377+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -1069,18 +1068,18 @@
       "filing_date": "2026-06-29",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -0.4070224961247537,
-      "perf_5d": 3.7834031143031632,
-      "perf_60d": 15.24067004718157,
-      "price": 367.0299987792969,
-      "rsi": 54.00605776617379,
-      "sma20": 358.18249969482423,
-      "sma50": 372.07639953613284,
+      "perf_20d": -0.3825890121934239,
+      "perf_5d": 1.2731953920907202,
+      "perf_60d": 14.083982022679443,
+      "price": 361.9200134277344,
+      "rsi": 50.292517507049986,
+      "sma20": 358.1130004882813,
+      "sma50": 372.42679992675784,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 24008000.0,
-      "volume_20d_avg": 36789920.0,
-      "volume_ratio": 0.6525700517967965
+      "volume": 21880821.0,
+      "volume_20d_avg": 36488716.05,
+      "volume_ratio": 0.5996599324025818
     },
     "reasons": [
       "formulario SEC 4",
@@ -1090,7 +1089,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526289007/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:49.617107+00:00",
+    "time_utc": "2026-07-08T21:32:51.126386+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -1103,18 +1102,18 @@
       "filing_date": "2026-07-01",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -3.875771078533252,
-      "perf_5d": -0.4483859237480958,
-      "perf_60d": 4.471554747241346,
-      "price": 370.7799987792969,
-      "rsi": 43.80795945025825,
-      "sma20": 381.3175018310547,
-      "sma50": 407.4708013916016,
+      "perf_20d": -1.9944537419005481,
+      "perf_5d": 2.896095947427191,
+      "perf_60d": 4.613111347479859,
+      "price": 388.69000244140625,
+      "rsi": 50.165667194587996,
+      "sma20": 380.92200164794923,
+      "sma50": 406.7894012451172,
       "status": "ok",
       "symbol": "AVGO",
-      "volume": 24064300.0,
-      "volume_20d_avg": 31184400.0,
-      "volume_ratio": 0.7716775054193764
+      "volume": 28744548.0,
+      "volume_20d_avg": 30769297.4,
+      "volume_ratio": 0.9341957869990233
     },
     "reasons": [
       "formulario SEC 4",
@@ -1124,7 +1123,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1730168/000135956126000004/xslF345X06/wk-form4_1782940899.xml",
     "summary": "Broadcom publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:51.676331+00:00",
+    "time_utc": "2026-07-08T21:32:53.195124+00:00",
     "title": "AVGO presentacion SEC 4"
   },
   {
@@ -1137,18 +1136,18 @@
       "filing_date": "2026-06-29",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -3.875771078533252,
-      "perf_5d": -0.4483859237480958,
-      "perf_60d": 4.471554747241346,
-      "price": 370.7799987792969,
-      "rsi": 43.80795945025825,
-      "sma20": 381.3175018310547,
-      "sma50": 407.4708013916016,
+      "perf_20d": -1.9944537419005481,
+      "perf_5d": 2.896095947427191,
+      "perf_60d": 4.613111347479859,
+      "price": 388.69000244140625,
+      "rsi": 50.165667194587996,
+      "sma20": 380.92200164794923,
+      "sma50": 406.7894012451172,
       "status": "ok",
       "symbol": "AVGO",
-      "volume": 24064300.0,
-      "volume_20d_avg": 31184400.0,
-      "volume_ratio": 0.7716775054193764
+      "volume": 28744548.0,
+      "volume_20d_avg": 30769297.4,
+      "volume_ratio": 0.9341957869990233
     },
     "reasons": [
       "formulario SEC 4",
@@ -1158,7 +1157,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000064/xslF345X06/wk-form4_1782775021.xml",
     "summary": "Broadcom publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:51.676345+00:00",
+    "time_utc": "2026-07-08T21:32:53.195138+00:00",
     "title": "AVGO presentacion SEC 4"
   },
   {
@@ -1171,18 +1170,18 @@
       "filing_date": "2026-06-26",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -3.875771078533252,
-      "perf_5d": -0.4483859237480958,
-      "perf_60d": 4.471554747241346,
-      "price": 370.7799987792969,
-      "rsi": 43.80795945025825,
-      "sma20": 381.3175018310547,
-      "sma50": 407.4708013916016,
+      "perf_20d": -1.9944537419005481,
+      "perf_5d": 2.896095947427191,
+      "perf_60d": 4.613111347479859,
+      "price": 388.69000244140625,
+      "rsi": 50.165667194587996,
+      "sma20": 380.92200164794923,
+      "sma50": 406.7894012451172,
       "status": "ok",
       "symbol": "AVGO",
-      "volume": 24064300.0,
-      "volume_20d_avg": 31184400.0,
-      "volume_ratio": 0.7716775054193764
+      "volume": 28744548.0,
+      "volume_20d_avg": 30769297.4,
+      "volume_ratio": 0.9341957869990233
     },
     "reasons": [
       "formulario SEC 4",
@@ -1192,7 +1191,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1730168/000110465926078348/xslF345X06/tm2619044-1_4seq1.xml",
     "summary": "Broadcom publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:51.676380+00:00",
+    "time_utc": "2026-07-08T21:32:53.195171+00:00",
     "title": "AVGO presentacion SEC 4"
   },
   {
@@ -1205,18 +1204,18 @@
       "filing_date": "2026-06-26",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -33.73267926007153,
-      "perf_5d": -4.168914883815411,
-      "perf_60d": 2.712901114613242,
-      "price": 141.60000610351562,
-      "rsi": 29.18144411296315,
-      "sma20": 169.85500106811523,
-      "sma50": 184.80420043945313,
+      "perf_20d": -33.67481794194946,
+      "perf_5d": -4.135105719822818,
+      "perf_60d": 1.7380036345289618,
+      "price": 140.49000549316406,
+      "rsi": 28.709405176997763,
+      "sma20": 166.2885009765625,
+      "sma50": 184.14840057373047,
       "status": "ok",
       "symbol": "ORCL",
-      "volume": 47088000.0,
-      "volume_20d_avg": 33998440.0,
-      "volume_ratio": 1.3850047237461482
+      "volume": 28803332.0,
+      "volume_20d_avg": 34582846.6,
+      "volume_ratio": 0.8328791534471311
     },
     "reasons": [
       "formulario SEC 4",
@@ -1226,7 +1225,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1341439/000134143926000064/xslF345X06/form4.xml",
     "summary": "Oracle publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:52.122784+00:00",
+    "time_utc": "2026-07-08T21:32:53.648296+00:00",
     "title": "ORCL presentacion SEC 4"
   },
   {
@@ -1239,18 +1238,18 @@
       "filing_date": "2026-07-02",
       "form": "8-K",
       "form4_details": {},
-      "perf_20d": -3.983429149003004,
-      "perf_5d": 1.0052784750508525,
-      "perf_60d": 7.079543665059673,
-      "price": 196.92999267578125,
-      "rsi": 43.52629011708673,
-      "sma20": 201.9209991455078,
-      "sma50": 209.60280059814454,
+      "perf_20d": -2.1664130970493023,
+      "perf_5d": 2.01409308463949,
+      "perf_60d": 8.211837901397633,
+      "price": 204.1199951171875,
+      "rsi": 50.98483824717139,
+      "sma20": 201.69499893188475,
+      "sma50": 209.51980041503907,
       "status": "ok",
       "symbol": "NVDA",
-      "volume": 123810500.0,
-      "volume_20d_avg": 149476690.0,
-      "volume_ratio": 0.828293026825788
+      "volume": 145806099.0,
+      "volume_20d_avg": 149865559.95,
+      "volume_ratio": 0.9729126495016309
     },
     "reasons": [
       "formulario SEC 8-K",
@@ -1260,7 +1259,7 @@
     "score": 67,
     "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000060/nvda-20260628.htm",
     "summary": "Nvidia publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:48.859089+00:00",
+    "time_utc": "2026-07-08T21:32:50.295373+00:00",
     "title": "NVDA presentacion SEC 8-K"
   },
   {
@@ -1273,18 +1272,18 @@
       "filing_date": "2026-06-30",
       "form": "8-K",
       "form4_details": {},
-      "perf_20d": -3.983429149003004,
-      "perf_5d": 1.0052784750508525,
-      "perf_60d": 7.079543665059673,
-      "price": 196.92999267578125,
-      "rsi": 43.52629011708673,
-      "sma20": 201.9209991455078,
-      "sma50": 209.60280059814454,
+      "perf_20d": -2.1664130970493023,
+      "perf_5d": 2.01409308463949,
+      "perf_60d": 8.211837901397633,
+      "price": 204.1199951171875,
+      "rsi": 50.98483824717139,
+      "sma20": 201.69499893188475,
+      "sma50": 209.51980041503907,
       "status": "ok",
       "symbol": "NVDA",
-      "volume": 123810500.0,
-      "volume_20d_avg": 149476690.0,
-      "volume_ratio": 0.828293026825788
+      "volume": 145806099.0,
+      "volume_20d_avg": 149865559.95,
+      "volume_ratio": 0.9729126495016309
     },
     "reasons": [
       "formulario SEC 8-K",
@@ -1294,7 +1293,7 @@
     "score": 67,
     "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000056/nvda-20260624.htm",
     "summary": "Nvidia publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:48.859113+00:00",
+    "time_utc": "2026-07-08T21:32:50.295396+00:00",
     "title": "NVDA presentacion SEC 8-K"
   },
   {
@@ -1307,18 +1306,18 @@
       "filing_date": "2026-07-02",
       "form": "8-K",
       "form4_details": {},
-      "perf_20d": 3.0434766998681306,
-      "perf_5d": -2.1707465328528963,
-      "perf_60d": 16.573114862719464,
-      "price": 402.8999938964844,
-      "rsi": 49.60478148095409,
-      "sma20": 399.8179962158203,
-      "sma50": 407.648798828125,
+      "perf_20d": -3.641035384270741,
+      "perf_5d": -6.310035225817378,
+      "perf_60d": 12.92734883895028,
+      "price": 394.05999755859375,
+      "rsi": 47.1208134111988,
+      "sma20": 399.07349548339846,
+      "sma50": 408.0039990234375,
       "status": "ok",
       "symbol": "TSLA",
-      "volume": 38043200.0,
-      "volume_20d_avg": 49157025.0,
-      "volume_ratio": 0.7739117654089115
+      "volume": 33241905.0,
+      "volume_20d_avg": 48308015.25,
+      "volume_ratio": 0.688124006502213
     },
     "reasons": [
       "formulario SEC 8-K",
@@ -1328,7 +1327,7 @@
     "score": 67,
     "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026046717/tsla-20260702.htm",
     "summary": "Tesla publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:50.388560+00:00",
+    "time_utc": "2026-07-08T21:32:52.007479+00:00",
     "title": "TSLA presentacion SEC 8-K"
   },
   {
@@ -1341,18 +1340,18 @@
       "filing_date": "2026-07-01",
       "form": "8-K",
       "form4_details": {},
-      "perf_20d": 10.662974387430202,
-      "perf_5d": -4.333723573379988,
-      "perf_60d": 118.09921681995203,
-      "price": 516.1099853515625,
-      "rsi": 51.1722974233285,
-      "sma20": 520.7644973754883,
-      "sma50": 469.56820007324217,
+      "perf_20d": 5.521800311231639,
+      "perf_5d": -10.931976861043857,
+      "perf_60d": 111.15125835508084,
+      "price": 517.405029296875,
+      "rsi": 51.37722171026804,
+      "sma20": 522.1182495117188,
+      "sma50": 472.9601007080078,
       "status": "ok",
       "symbol": "AMD",
-      "volume": 29062100.0,
-      "volume_20d_avg": 31268850.0,
-      "volume_ratio": 0.9294265698930405
+      "volume": 22824431.0,
+      "volume_20d_avg": 31157366.55,
+      "volume_ratio": 0.7325532779983935
     },
     "reasons": [
       "formulario SEC 8-K",
@@ -1362,7 +1361,7 @@
     "score": 67,
     "source": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000115/amd-20260626.htm",
     "summary": "Advanced Micro Devices publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:51.233112+00:00",
+    "time_utc": "2026-07-08T21:32:52.790820+00:00",
     "title": "AMD presentacion SEC 8-K"
   },
   {
@@ -1375,18 +1374,18 @@
       "filing_date": "2026-07-06",
       "form": "8-K",
       "form4_details": {},
-      "perf_20d": -3.875771078533252,
-      "perf_5d": -0.4483859237480958,
-      "perf_60d": 4.471554747241346,
-      "price": 370.7799987792969,
-      "rsi": 43.80795945025825,
-      "sma20": 381.3175018310547,
-      "sma50": 407.4708013916016,
+      "perf_20d": -1.9944537419005481,
+      "perf_5d": 2.896095947427191,
+      "perf_60d": 4.613111347479859,
+      "price": 388.69000244140625,
+      "rsi": 50.165667194587996,
+      "sma20": 380.92200164794923,
+      "sma50": 406.7894012451172,
       "status": "ok",
       "symbol": "AVGO",
-      "volume": 24064300.0,
-      "volume_20d_avg": 31184400.0,
-      "volume_ratio": 0.7716775054193764
+      "volume": 28744548.0,
+      "volume_20d_avg": 30769297.4,
+      "volume_ratio": 0.9341957869990233
     },
     "reasons": [
       "formulario SEC 8-K",
@@ -1396,7 +1395,7 @@
     "score": 67,
     "source": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526295589/d84378d8k.htm",
     "summary": "Broadcom publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-08T08:45:51.676301+00:00",
+    "time_utc": "2026-07-08T21:32:53.195097+00:00",
     "title": "AVGO presentacion SEC 8-K"
   }
 ]
