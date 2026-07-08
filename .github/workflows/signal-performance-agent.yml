@@ -1,0 +1,44 @@
+name: Signal Performance Engine
+
+on:
+  workflow_dispatch:
+    inputs:
+      max_price_fetches:
+        description: "Maximo de precios en vivo a consultar"
+        required: false
+        default: "25"
+  schedule:
+    - cron: "30 13 * * 1-5"
+    - cron: "00 21 * * 1-5"
+
+permissions:
+  contents: write
+
+jobs:
+  signal-performance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install -r requirements.txt
+
+      - name: Ejecutar motor de decision y rendimiento
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: python -u signal_performance_agent.py --max-price-fetches "${{ github.event.inputs.max_price_fetches || '25' }}"
+
+      - name: Persistir dashboard y snapshots
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add unified_signals.json decision_engine_snapshot.json signal_performance.json docs/performance_dashboard.html docs/index.html docs/opportunities.html || true
+          git diff --cached --quiet || git commit -m "Update signal performance dashboard [skip ci]"
+          git push || true
