@@ -90,6 +90,7 @@ def compact_reason_list(reasons, max_items=2):
 
 
 PREMIUM_DASHBOARDS = [
+    ("Motor de decision y rendimiento", "performance_dashboard.html", "Señales normalizadas, decisión agregada y tracking de rendimiento", "decision_engine_snapshot.json"),
     ("SEC e insiders", "sec_filing_dashboard.html", "Insiders, 8-K, 10-Q, 10-K, 13D/G y 13F", "sec_filing_snapshot.json"),
     ("Regimen macro", "macro_regime_dashboard.html", "Risk-on, risk-off, defensivos y liquidez", "macro_regime_snapshot.json"),
     ("Rotacion sectorial", "sector_rotation_dashboard.html", "Ranking de sectores, ETFs y fuerza relativa", "sector_rotation_snapshot.json"),
@@ -285,6 +286,7 @@ def render_opportunities_dashboard(output_path="docs/opportunities.html", min_sc
     </div>
     <nav class="nav">
       <a class="btn" href="index.html">Resumen</a>
+      <a class="btn" href="performance_dashboard.html">Rendimiento</a>
       <a class="btn" href="dashboard.html">BTC</a>
       <a class="btn" href="intraday_cashout_dashboard.html">Intradia</a>
       <a class="btn" href="event_rumor_dashboard.html">Rumores</a>
@@ -338,6 +340,7 @@ def render_premium_snapshot_dashboard(label, snapshot_path, output_path, descrip
     </div>
     <nav class="nav">
       <a class="btn primary" href="opportunities.html">Oportunidades Claras</a>
+      <a class="btn" href="performance_dashboard.html">Rendimiento</a>
       <a class="btn" href="index.html">Resumen</a>
       <a class="btn" href="https://github.com/DiegoSR-git/market-signal-agent/actions">Actions</a>
     </nav>
@@ -527,6 +530,7 @@ def render_home_dashboard(
     </div>
     <nav class="nav">
       <a class="btn primary" href="opportunities.html">Oportunidades Claras</a>
+      <a class="btn" href="performance_dashboard.html">Rendimiento</a>
       <a class="btn" href="intraday_cashout_dashboard.html">Intradia</a>
       <a class="btn" href="dashboard.html">BTC</a>
       <a class="btn" href="event_rumor_dashboard.html">Event Rumor</a>
@@ -628,6 +632,7 @@ def render_event_dashboard(results, output_path):
     </div>
     <nav class="nav">
       <a class="btn primary" href="opportunities.html">Oportunidades Claras</a>
+      <a class="btn" href="performance_dashboard.html">Rendimiento</a>
       <a class="btn" href="index.html">Resumen</a>
       <a class="btn" href="dashboard.html">BTC</a>
       <a class="btn" href="https://github.com/DiegoSR-git/market-signal-agent/actions">Actions</a>
