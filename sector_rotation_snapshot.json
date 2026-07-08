@@ -1,529 +1,433 @@
 [
   {
     "agent": "sector_rotation",
-    "ai_brief": "Se observa una rotación sectorial con Financials (XLF) y Health Care (XLV) mostrando fuerza relativa destacada frente al SPY. Sectores como Small Caps (IWM) e Industrials (XLI) mantienen vigilancia por desempeño moderado y RSI neutro. Es importante monitorear la persistencia de esta rotación para ajustar estrategias y controlar riesgos asociados a posibles retrocesos o cambios en el momentum.",
+    "ai_brief": "Los sectores de salud (XLV) y financieros (XLF) muestran fortaleza relativa moderada frente al SPY, con rendimientos positivos en 20 días y RSI por encima de 60. Sectores como utilities (XLU), industriales (XLI) y consumo básico (XLP) están en vigilancia con rendimientos más moderados y RSI cercano a 50. Se recomienda monitorear la persistencia de estas rotaciones para ajustar la exposición sectorial y controlar riesgos asociados a posibles retrocesos.",
     "ai_risk_notes": [
-      "Altos niveles de RSI en XLF y XLV pueden indicar riesgo de corrección a corto plazo.",
-      "Volúmenes inferiores al promedio en algunos sectores sugieren menor convicción en la rotación.",
-      "Sectores tecnológicos y semiconductores presentan señales de debilidad que podrían afectar la estabilidad del mercado."
+      "Riesgo de reversión en sectores con RSI cercano a niveles de sobrecompra.",
+      "Volúmenes inferiores al promedio pueden indicar menor interés y posible debilidad futura.",
+      "Sectores con rendimiento negativo o débil relativo frente a SPY pueden presentar mayor volatilidad y riesgo de pérdidas."
     ],
     "ai_watch_items": [
-      "Evolución del RSI en XLF y XLV para detectar sobrecompra o reversión.",
-      "Volumen relativo y desempeño de IWM y XLI para confirmar continuidad o debilidad.",
-      "Comportamiento de sectores con menor puntuación como QQQ y SMH que muestran debilidad relativa."
-    ],
-    "asset": "XLF",
-    "level": "medio",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": 7.170172188726709,
-      "perf_5d": 4.337300750952822,
-      "perf_60d": 9.195396917266919,
-      "price": 56.04999923706055,
-      "relative_20d_vs_spy": 5.792633805180647,
-      "rsi": 74.43891249140108,
-      "sma20": 53.81949996948242,
-      "sma50": 52.47839988708496,
-      "status": "ok",
-      "symbol": "XLF",
-      "volume": 27101500.0,
-      "volume_20d_avg": 36479220.0,
-      "volume_ratio": 0.742929810450991
-    },
-    "reasons": [
-      "20D +7.2%",
-      "relativo vs SPY +5.8%",
-      "RSI 74.4"
-    ],
-    "score": 76,
-    "source": "https://finance.yahoo.com/quote/XLF",
-    "summary": "Financials muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "time_utc": "2026-07-08T09:07:48.595414+00:00",
-    "title": "XLF rotacion sectorial"
-  },
-  {
-    "agent": "sector_rotation",
-    "ai_brief": "Se observa una rotación sectorial con Financials (XLF) y Health Care (XLV) mostrando fuerza relativa destacada frente al SPY. Sectores como Small Caps (IWM) e Industrials (XLI) mantienen vigilancia por desempeño moderado y RSI neutro. Es importante monitorear la persistencia de esta rotación para ajustar estrategias y controlar riesgos asociados a posibles retrocesos o cambios en el momentum.",
-    "ai_risk_notes": [
-      "Altos niveles de RSI en XLF y XLV pueden indicar riesgo de corrección a corto plazo.",
-      "Volúmenes inferiores al promedio en algunos sectores sugieren menor convicción en la rotación.",
-      "Sectores tecnológicos y semiconductores presentan señales de debilidad que podrían afectar la estabilidad del mercado."
-    ],
-    "ai_watch_items": [
-      "Evolución del RSI en XLF y XLV para detectar sobrecompra o reversión.",
-      "Volumen relativo y desempeño de IWM y XLI para confirmar continuidad o debilidad.",
-      "Comportamiento de sectores con menor puntuación como QQQ y SMH que muestran debilidad relativa."
+      "Evolución del RSI en sectores con fuerza relativa para detectar sobrecompra.",
+      "Persistencia de la rotación sectorial en sectores con rendimiento positivo frente a SPY.",
+      "Volumen relativo y posibles señales de agotamiento en sectores en vigilancia."
     ],
     "asset": "XLV",
     "level": "medio",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": 7.470105447301134,
-      "perf_5d": 2.3018519483623656,
-      "perf_60d": 10.11852971611582,
-      "price": 164.44000244140625,
-      "relative_20d_vs_spy": 6.092567063755072,
-      "rsi": 70.29982821761509,
-      "sma20": 155.72750091552734,
-      "sma50": 150.27460052490235,
+      "perf_20d": 6.321657085566179,
+      "perf_5d": 2.294213604961448,
+      "perf_60d": 10.175823597581468,
+      "price": 162.3000030517578,
+      "relative_20d_vs_spy": 5.4856334449901345,
+      "rsi": 64.26077040634803,
+      "sma20": 156.21000137329102,
+      "sma50": 150.63700073242188,
       "status": "ok",
       "symbol": "XLV",
-      "volume": 12140000.0,
-      "volume_20d_avg": 11500150.0,
-      "volume_ratio": 1.0556384047164602
+      "volume": 8892245.0,
+      "volume_20d_avg": 11412962.25,
+      "volume_ratio": 0.7791355833144896
     },
     "reasons": [
-      "20D +7.5%",
-      "relativo vs SPY +6.1%",
-      "RSI 70.3"
+      "20D +6.3%",
+      "relativo vs SPY +5.5%",
+      "RSI 64.3"
     ],
-    "score": 73,
+    "score": 77,
     "source": "https://finance.yahoo.com/quote/XLV",
     "summary": "Health care muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "time_utc": "2026-07-08T09:07:48.742854+00:00",
+    "time_utc": "2026-07-08T21:43:54.038940+00:00",
     "title": "XLV rotacion sectorial"
   },
   {
     "agent": "sector_rotation",
-    "ai_brief": "Se observa una rotación sectorial con Financials (XLF) y Health Care (XLV) mostrando fuerza relativa destacada frente al SPY. Sectores como Small Caps (IWM) e Industrials (XLI) mantienen vigilancia por desempeño moderado y RSI neutro. Es importante monitorear la persistencia de esta rotación para ajustar estrategias y controlar riesgos asociados a posibles retrocesos o cambios en el momentum.",
+    "ai_brief": "Los sectores de salud (XLV) y financieros (XLF) muestran fortaleza relativa moderada frente al SPY, con rendimientos positivos en 20 días y RSI por encima de 60. Sectores como utilities (XLU), industriales (XLI) y consumo básico (XLP) están en vigilancia con rendimientos más moderados y RSI cercano a 50. Se recomienda monitorear la persistencia de estas rotaciones para ajustar la exposición sectorial y controlar riesgos asociados a posibles retrocesos.",
     "ai_risk_notes": [
-      "Altos niveles de RSI en XLF y XLV pueden indicar riesgo de corrección a corto plazo.",
-      "Volúmenes inferiores al promedio en algunos sectores sugieren menor convicción en la rotación.",
-      "Sectores tecnológicos y semiconductores presentan señales de debilidad que podrían afectar la estabilidad del mercado."
+      "Riesgo de reversión en sectores con RSI cercano a niveles de sobrecompra.",
+      "Volúmenes inferiores al promedio pueden indicar menor interés y posible debilidad futura.",
+      "Sectores con rendimiento negativo o débil relativo frente a SPY pueden presentar mayor volatilidad y riesgo de pérdidas."
     ],
     "ai_watch_items": [
-      "Evolución del RSI en XLF y XLV para detectar sobrecompra o reversión.",
-      "Volumen relativo y desempeño de IWM y XLI para confirmar continuidad o debilidad.",
-      "Comportamiento de sectores con menor puntuación como QQQ y SMH que muestran debilidad relativa."
+      "Evolución del RSI en sectores con fuerza relativa para detectar sobrecompra.",
+      "Persistencia de la rotación sectorial en sectores con rendimiento positivo frente a SPY.",
+      "Volumen relativo y posibles señales de agotamiento en sectores en vigilancia."
     ],
-    "asset": "IWM",
-    "level": "vigilancia",
+    "asset": "XLF",
+    "level": "medio",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": 5.162438792832291,
-      "perf_5d": -0.9298587710961148,
-      "perf_60d": 13.066885059888245,
-      "price": 296.19000244140625,
-      "relative_20d_vs_spy": 3.7849004092862293,
-      "rsi": 54.967834951758235,
-      "sma20": 294.353498840332,
-      "sma50": 287.44300048828126,
+      "perf_20d": 5.7725609573487935,
+      "perf_5d": 2.5368412513857796,
+      "perf_60d": 8.272603358421282,
+      "price": 54.970001220703125,
+      "relative_20d_vs_spy": 4.936537316772749,
+      "rsi": 61.18974050935611,
+      "sma20": 53.96949996948242,
+      "sma50": 52.54939994812012,
       "status": "ok",
-      "symbol": "IWM",
-      "volume": 18038800.0,
-      "volume_20d_avg": 28823710.0,
-      "volume_ratio": 0.6258319973383024
+      "symbol": "XLF",
+      "volume": 41411671.0,
+      "volume_20d_avg": 36595418.55,
+      "volume_ratio": 1.131608071196661
     },
     "reasons": [
-      "20D +5.2%",
-      "relativo vs SPY +3.8%",
-      "RSI 55.0"
+      "20D +5.8%",
+      "relativo vs SPY +4.9%",
+      "RSI 61.2"
     ],
-    "score": 63,
-    "source": "https://finance.yahoo.com/quote/IWM",
-    "summary": "Small caps muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "time_utc": "2026-07-08T09:07:48.374633+00:00",
-    "title": "IWM rotacion sectorial"
+    "score": 75,
+    "source": "https://finance.yahoo.com/quote/XLF",
+    "summary": "Financials muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
+    "time_utc": "2026-07-08T21:43:53.870677+00:00",
+    "title": "XLF rotacion sectorial"
   },
   {
     "agent": "sector_rotation",
-    "ai_brief": "Se observa una rotación sectorial con Financials (XLF) y Health Care (XLV) mostrando fuerza relativa destacada frente al SPY. Sectores como Small Caps (IWM) e Industrials (XLI) mantienen vigilancia por desempeño moderado y RSI neutro. Es importante monitorear la persistencia de esta rotación para ajustar estrategias y controlar riesgos asociados a posibles retrocesos o cambios en el momentum.",
+    "ai_brief": "Los sectores de salud (XLV) y financieros (XLF) muestran fortaleza relativa moderada frente al SPY, con rendimientos positivos en 20 días y RSI por encima de 60. Sectores como utilities (XLU), industriales (XLI) y consumo básico (XLP) están en vigilancia con rendimientos más moderados y RSI cercano a 50. Se recomienda monitorear la persistencia de estas rotaciones para ajustar la exposición sectorial y controlar riesgos asociados a posibles retrocesos.",
     "ai_risk_notes": [
-      "Altos niveles de RSI en XLF y XLV pueden indicar riesgo de corrección a corto plazo.",
-      "Volúmenes inferiores al promedio en algunos sectores sugieren menor convicción en la rotación.",
-      "Sectores tecnológicos y semiconductores presentan señales de debilidad que podrían afectar la estabilidad del mercado."
+      "Riesgo de reversión en sectores con RSI cercano a niveles de sobrecompra.",
+      "Volúmenes inferiores al promedio pueden indicar menor interés y posible debilidad futura.",
+      "Sectores con rendimiento negativo o débil relativo frente a SPY pueden presentar mayor volatilidad y riesgo de pérdidas."
     ],
     "ai_watch_items": [
-      "Evolución del RSI en XLF y XLV para detectar sobrecompra o reversión.",
-      "Volumen relativo y desempeño de IWM y XLI para confirmar continuidad o debilidad.",
-      "Comportamiento de sectores con menor puntuación como QQQ y SMH que muestran debilidad relativa."
-    ],
-    "asset": "XLI",
-    "level": "vigilancia",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": 4.7077807738198585,
-      "perf_5d": -0.20791728794302688,
-      "perf_60d": 5.917882744019209,
-      "price": 182.3800048828125,
-      "relative_20d_vs_spy": 3.3302423902737965,
-      "rsi": 55.761150782850805,
-      "sma20": 179.89700012207032,
-      "sma50": 175.73559967041015,
-      "status": "ok",
-      "symbol": "XLI",
-      "volume": 7720600.0,
-      "volume_20d_avg": 8258420.0,
-      "volume_ratio": 0.9348761627526815
-    },
-    "reasons": [
-      "20D +4.7%",
-      "relativo vs SPY +3.3%",
-      "RSI 55.8"
-    ],
-    "score": 63,
-    "source": "https://finance.yahoo.com/quote/XLI",
-    "summary": "Industrials muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "time_utc": "2026-07-08T09:07:48.817791+00:00",
-    "title": "XLI rotacion sectorial"
-  },
-  {
-    "agent": "sector_rotation",
-    "ai_brief": "Se observa una rotación sectorial con Financials (XLF) y Health Care (XLV) mostrando fuerza relativa destacada frente al SPY. Sectores como Small Caps (IWM) e Industrials (XLI) mantienen vigilancia por desempeño moderado y RSI neutro. Es importante monitorear la persistencia de esta rotación para ajustar estrategias y controlar riesgos asociados a posibles retrocesos o cambios en el momentum.",
-    "ai_risk_notes": [
-      "Altos niveles de RSI en XLF y XLV pueden indicar riesgo de corrección a corto plazo.",
-      "Volúmenes inferiores al promedio en algunos sectores sugieren menor convicción en la rotación.",
-      "Sectores tecnológicos y semiconductores presentan señales de debilidad que podrían afectar la estabilidad del mercado."
-    ],
-    "ai_watch_items": [
-      "Evolución del RSI en XLF y XLV para detectar sobrecompra o reversión.",
-      "Volumen relativo y desempeño de IWM y XLI para confirmar continuidad o debilidad.",
-      "Comportamiento de sectores con menor puntuación como QQQ y SMH que muestran debilidad relativa."
+      "Evolución del RSI en sectores con fuerza relativa para detectar sobrecompra.",
+      "Persistencia de la rotación sectorial en sectores con rendimiento positivo frente a SPY.",
+      "Volumen relativo y posibles señales de agotamiento en sectores en vigilancia."
     ],
     "asset": "XLU",
     "level": "vigilancia",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": 3.043973698457081,
-      "perf_5d": -0.6953491778382559,
-      "perf_60d": -3.0752931410693574,
-      "price": 45.70000076293945,
-      "relative_20d_vs_spy": 1.666435314911019,
-      "rsi": 55.39458176225185,
-      "sma20": 44.968499946594235,
-      "sma50": 45.01579963684082,
+      "perf_20d": 4.227941482614694,
+      "perf_5d": 0.04411216959938624,
+      "perf_60d": -3.4071518426629033,
+      "price": 45.36000061035156,
+      "relative_20d_vs_spy": 3.3919178420386498,
+      "rsi": 52.21196951382661,
+      "sma20": 45.06049995422363,
+      "sma50": 44.99939964294433,
       "status": "ok",
       "symbol": "XLU",
-      "volume": 18957300.0,
-      "volume_20d_avg": 21028920.0,
-      "volume_ratio": 0.9014870949150028
+      "volume": 14860867.0,
+      "volume_20d_avg": 20730058.35,
+      "volume_ratio": 0.716875309711803
     },
     "reasons": [
-      "20D +3.0%",
-      "relativo vs SPY +1.7%",
-      "RSI 55.4"
+      "20D +4.2%",
+      "relativo vs SPY +3.4%",
+      "RSI 52.2"
     ],
-    "score": 55,
+    "score": 64,
     "source": "https://finance.yahoo.com/quote/XLU",
     "summary": "Utilities muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "time_utc": "2026-07-08T09:07:49.018714+00:00",
+    "time_utc": "2026-07-08T21:43:54.378577+00:00",
     "title": "XLU rotacion sectorial"
   },
   {
     "agent": "sector_rotation",
-    "ai_brief": "Se observa una rotación sectorial con Financials (XLF) y Health Care (XLV) mostrando fuerza relativa destacada frente al SPY. Sectores como Small Caps (IWM) e Industrials (XLI) mantienen vigilancia por desempeño moderado y RSI neutro. Es importante monitorear la persistencia de esta rotación para ajustar estrategias y controlar riesgos asociados a posibles retrocesos o cambios en el momentum.",
+    "ai_brief": "Los sectores de salud (XLV) y financieros (XLF) muestran fortaleza relativa moderada frente al SPY, con rendimientos positivos en 20 días y RSI por encima de 60. Sectores como utilities (XLU), industriales (XLI) y consumo básico (XLP) están en vigilancia con rendimientos más moderados y RSI cercano a 50. Se recomienda monitorear la persistencia de estas rotaciones para ajustar la exposición sectorial y controlar riesgos asociados a posibles retrocesos.",
     "ai_risk_notes": [
-      "Altos niveles de RSI en XLF y XLV pueden indicar riesgo de corrección a corto plazo.",
-      "Volúmenes inferiores al promedio en algunos sectores sugieren menor convicción en la rotación.",
-      "Sectores tecnológicos y semiconductores presentan señales de debilidad que podrían afectar la estabilidad del mercado."
+      "Riesgo de reversión en sectores con RSI cercano a niveles de sobrecompra.",
+      "Volúmenes inferiores al promedio pueden indicar menor interés y posible debilidad futura.",
+      "Sectores con rendimiento negativo o débil relativo frente a SPY pueden presentar mayor volatilidad y riesgo de pérdidas."
     ],
     "ai_watch_items": [
-      "Evolución del RSI en XLF y XLV para detectar sobrecompra o reversión.",
-      "Volumen relativo y desempeño de IWM y XLI para confirmar continuidad o debilidad.",
-      "Comportamiento de sectores con menor puntuación como QQQ y SMH que muestran debilidad relativa."
+      "Evolución del RSI en sectores con fuerza relativa para detectar sobrecompra.",
+      "Persistencia de la rotación sectorial en sectores con rendimiento positivo frente a SPY.",
+      "Volumen relativo y posibles señales de agotamiento en sectores en vigilancia."
     ],
-    "asset": "XLY",
+    "asset": "XLI",
     "level": "vigilancia",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": 2.202680450855632,
-      "perf_5d": 0.2305299152447926,
-      "perf_60d": 4.124535758371906,
-      "price": 117.38999938964844,
-      "relative_20d_vs_spy": 0.82514206730957,
-      "rsi": 52.058390722067706,
-      "sma20": 116.19150047302246,
-      "sma50": 117.48480010986329,
+      "perf_20d": 3.9106105483989184,
+      "perf_5d": -2.5967703231332684,
+      "perf_60d": 5.1888955659928016,
+      "price": 180.4199981689453,
+      "relative_20d_vs_spy": 3.074586907822874,
+      "rsi": 51.86665471324844,
+      "sma20": 180.23649978637695,
+      "sma50": 175.894599609375,
       "status": "ok",
-      "symbol": "XLY",
-      "volume": 9190900.0,
-      "volume_20d_avg": 8235275.0,
-      "volume_ratio": 1.11604044795104
+      "symbol": "XLI",
+      "volume": 7271533.0,
+      "volume_20d_avg": 8353436.65,
+      "volume_ratio": 0.870484006124593
     },
     "reasons": [
-      "20D +2.2%",
-      "relativo vs SPY +0.8%",
-      "RSI 52.1"
+      "20D +3.9%",
+      "relativo vs SPY +3.1%",
+      "RSI 51.9"
     ],
-    "score": 54,
-    "source": "https://finance.yahoo.com/quote/XLY",
-    "summary": "Consumer discretionary muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "time_utc": "2026-07-08T09:07:48.886587+00:00",
-    "title": "XLY rotacion sectorial"
+    "score": 57,
+    "source": "https://finance.yahoo.com/quote/XLI",
+    "summary": "Industrials muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
+    "time_utc": "2026-07-08T21:43:54.122931+00:00",
+    "title": "XLI rotacion sectorial"
   },
   {
     "agent": "sector_rotation",
-    "ai_brief": "Se observa una rotación sectorial con Financials (XLF) y Health Care (XLV) mostrando fuerza relativa destacada frente al SPY. Sectores como Small Caps (IWM) e Industrials (XLI) mantienen vigilancia por desempeño moderado y RSI neutro. Es importante monitorear la persistencia de esta rotación para ajustar estrategias y controlar riesgos asociados a posibles retrocesos o cambios en el momentum.",
+    "ai_brief": "Los sectores de salud (XLV) y financieros (XLF) muestran fortaleza relativa moderada frente al SPY, con rendimientos positivos en 20 días y RSI por encima de 60. Sectores como utilities (XLU), industriales (XLI) y consumo básico (XLP) están en vigilancia con rendimientos más moderados y RSI cercano a 50. Se recomienda monitorear la persistencia de estas rotaciones para ajustar la exposición sectorial y controlar riesgos asociados a posibles retrocesos.",
     "ai_risk_notes": [
-      "Altos niveles de RSI en XLF y XLV pueden indicar riesgo de corrección a corto plazo.",
-      "Volúmenes inferiores al promedio en algunos sectores sugieren menor convicción en la rotación.",
-      "Sectores tecnológicos y semiconductores presentan señales de debilidad que podrían afectar la estabilidad del mercado."
+      "Riesgo de reversión en sectores con RSI cercano a niveles de sobrecompra.",
+      "Volúmenes inferiores al promedio pueden indicar menor interés y posible debilidad futura.",
+      "Sectores con rendimiento negativo o débil relativo frente a SPY pueden presentar mayor volatilidad y riesgo de pérdidas."
     ],
     "ai_watch_items": [
-      "Evolución del RSI en XLF y XLV para detectar sobrecompra o reversión.",
-      "Volumen relativo y desempeño de IWM y XLI para confirmar continuidad o debilidad.",
-      "Comportamiento de sectores con menor puntuación como QQQ y SMH que muestran debilidad relativa."
-    ],
-    "asset": "SPY",
-    "level": "vigilancia",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": 1.377538383546062,
-      "perf_5d": 0.9055360286985392,
-      "perf_60d": 9.971915622086701,
-      "price": 747.7100219726562,
-      "relative_20d_vs_spy": 0.0,
-      "rsi": 54.74546214227772,
-      "sma20": 741.293505859375,
-      "sma50": 739.0122021484375,
-      "status": "ok",
-      "symbol": "SPY",
-      "volume": 43601100.0,
-      "volume_20d_avg": 62160570.0,
-      "volume_ratio": 0.7014269656793688
-    },
-    "reasons": [
-      "20D +1.4%",
-      "relativo vs SPY +0.0%",
-      "RSI 54.7"
-    ],
-    "score": 52,
-    "source": "https://finance.yahoo.com/quote/SPY",
-    "summary": "S&P 500 muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "time_utc": "2026-07-08T09:07:48.212709+00:00",
-    "title": "SPY rotacion sectorial"
-  },
-  {
-    "agent": "sector_rotation",
-    "ai_brief": "Se observa una rotación sectorial con Financials (XLF) y Health Care (XLV) mostrando fuerza relativa destacada frente al SPY. Sectores como Small Caps (IWM) e Industrials (XLI) mantienen vigilancia por desempeño moderado y RSI neutro. Es importante monitorear la persistencia de esta rotación para ajustar estrategias y controlar riesgos asociados a posibles retrocesos o cambios en el momentum.",
-    "ai_risk_notes": [
-      "Altos niveles de RSI en XLF y XLV pueden indicar riesgo de corrección a corto plazo.",
-      "Volúmenes inferiores al promedio en algunos sectores sugieren menor convicción en la rotación.",
-      "Sectores tecnológicos y semiconductores presentan señales de debilidad que podrían afectar la estabilidad del mercado."
-    ],
-    "ai_watch_items": [
-      "Evolución del RSI en XLF y XLV para detectar sobrecompra o reversión.",
-      "Volumen relativo y desempeño de IWM y XLI para confirmar continuidad o debilidad.",
-      "Comportamiento de sectores con menor puntuación como QQQ y SMH que muestran debilidad relativa."
+      "Evolución del RSI en sectores con fuerza relativa para detectar sobrecompra.",
+      "Persistencia de la rotación sectorial en sectores con rendimiento positivo frente a SPY.",
+      "Volumen relativo y posibles señales de agotamiento en sectores en vigilancia."
     ],
     "asset": "XLP",
     "level": "vigilancia",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": 1.7018194240136397,
-      "perf_5d": 0.5807726061611174,
-      "perf_60d": 1.689638961861073,
-      "price": 84.86000061035156,
-      "relative_20d_vs_spy": 0.3242810404675778,
-      "rsi": 53.865650988294234,
-      "sma20": 84.27400016784668,
-      "sma50": 84.03400039672852,
+      "perf_20d": 1.5890209457969595,
+      "perf_5d": 1.5890209457969595,
+      "perf_60d": 2.452344999041811,
+      "price": 84.38999938964844,
+      "relative_20d_vs_spy": 0.7529973052209149,
+      "rsi": 51.514486952062576,
+      "sma20": 84.34000015258789,
+      "sma50": 84.05720031738281,
       "status": "ok",
       "symbol": "XLP",
-      "volume": 13234800.0,
-      "volume_20d_avg": 12524725.0,
-      "volume_ratio": 1.0566938595458184
+      "volume": 10378714.0,
+      "volume_20d_avg": 12566435.7,
+      "volume_ratio": 0.825907540353706
     },
     "reasons": [
-      "20D +1.7%",
-      "relativo vs SPY +0.3%",
-      "RSI 53.9"
+      "20D +1.6%",
+      "relativo vs SPY +0.8%",
+      "RSI 51.5"
     ],
-    "score": 52,
+    "score": 56,
     "source": "https://finance.yahoo.com/quote/XLP",
     "summary": "Consumer staples muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "time_utc": "2026-07-08T09:07:48.952768+00:00",
+    "time_utc": "2026-07-08T21:43:54.290209+00:00",
     "title": "XLP rotacion sectorial"
   },
   {
     "agent": "sector_rotation",
-    "ai_brief": "Se observa una rotación sectorial con Financials (XLF) y Health Care (XLV) mostrando fuerza relativa destacada frente al SPY. Sectores como Small Caps (IWM) e Industrials (XLI) mantienen vigilancia por desempeño moderado y RSI neutro. Es importante monitorear la persistencia de esta rotación para ajustar estrategias y controlar riesgos asociados a posibles retrocesos o cambios en el momentum.",
+    "ai_brief": "Los sectores de salud (XLV) y financieros (XLF) muestran fortaleza relativa moderada frente al SPY, con rendimientos positivos en 20 días y RSI por encima de 60. Sectores como utilities (XLU), industriales (XLI) y consumo básico (XLP) están en vigilancia con rendimientos más moderados y RSI cercano a 50. Se recomienda monitorear la persistencia de estas rotaciones para ajustar la exposición sectorial y controlar riesgos asociados a posibles retrocesos.",
     "ai_risk_notes": [
-      "Altos niveles de RSI en XLF y XLV pueden indicar riesgo de corrección a corto plazo.",
-      "Volúmenes inferiores al promedio en algunos sectores sugieren menor convicción en la rotación.",
-      "Sectores tecnológicos y semiconductores presentan señales de debilidad que podrían afectar la estabilidad del mercado."
+      "Riesgo de reversión en sectores con RSI cercano a niveles de sobrecompra.",
+      "Volúmenes inferiores al promedio pueden indicar menor interés y posible debilidad futura.",
+      "Sectores con rendimiento negativo o débil relativo frente a SPY pueden presentar mayor volatilidad y riesgo de pérdidas."
     ],
     "ai_watch_items": [
-      "Evolución del RSI en XLF y XLV para detectar sobrecompra o reversión.",
-      "Volumen relativo y desempeño de IWM y XLI para confirmar continuidad o debilidad.",
-      "Comportamiento de sectores con menor puntuación como QQQ y SMH que muestran debilidad relativa."
+      "Evolución del RSI en sectores con fuerza relativa para detectar sobrecompra.",
+      "Persistencia de la rotación sectorial en sectores con rendimiento positivo frente a SPY.",
+      "Volumen relativo y posibles señales de agotamiento en sectores en vigilancia."
+    ],
+    "asset": "IWM",
+    "level": "vigilancia",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": 3.2980275660396074,
+      "perf_5d": -2.319853865041721,
+      "perf_60d": 12.315355796670001,
+      "price": 293.4800109863281,
+      "relative_20d_vs_spy": 2.462003925463563,
+      "rsi": 50.65275333932346,
+      "sma20": 294.82200012207034,
+      "sma50": 287.77960083007815,
+      "status": "ok",
+      "symbol": "IWM",
+      "volume": 23753197.0,
+      "volume_20d_avg": 28648414.85,
+      "volume_ratio": 0.8291277937843741
+    },
+    "reasons": [
+      "20D +3.3%",
+      "relativo vs SPY +2.5%",
+      "RSI 50.7"
+    ],
+    "score": 55,
+    "source": "https://finance.yahoo.com/quote/IWM",
+    "summary": "Small caps muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
+    "time_utc": "2026-07-08T21:43:53.581331+00:00",
+    "title": "IWM rotacion sectorial"
+  },
+  {
+    "agent": "sector_rotation",
+    "ai_brief": "Los sectores de salud (XLV) y financieros (XLF) muestran fortaleza relativa moderada frente al SPY, con rendimientos positivos en 20 días y RSI por encima de 60. Sectores como utilities (XLU), industriales (XLI) y consumo básico (XLP) están en vigilancia con rendimientos más moderados y RSI cercano a 50. Se recomienda monitorear la persistencia de estas rotaciones para ajustar la exposición sectorial y controlar riesgos asociados a posibles retrocesos.",
+    "ai_risk_notes": [
+      "Riesgo de reversión en sectores con RSI cercano a niveles de sobrecompra.",
+      "Volúmenes inferiores al promedio pueden indicar menor interés y posible debilidad futura.",
+      "Sectores con rendimiento negativo o débil relativo frente a SPY pueden presentar mayor volatilidad y riesgo de pérdidas."
+    ],
+    "ai_watch_items": [
+      "Evolución del RSI en sectores con fuerza relativa para detectar sobrecompra.",
+      "Persistencia de la rotación sectorial en sectores con rendimiento positivo frente a SPY.",
+      "Volumen relativo y posibles señales de agotamiento en sectores en vigilancia."
+    ],
+    "asset": "SPY",
+    "level": "vigilancia",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": 0.8360236405760446,
+      "perf_5d": -0.1834560950970454,
+      "perf_60d": 9.704765594591503,
+      "price": 745.4000244140625,
+      "relative_20d_vs_spy": 0.0,
+      "rsi": 52.91635740816957,
+      "sma20": 741.6025085449219,
+      "sma50": 739.6414025878906,
+      "status": "ok",
+      "symbol": "SPY",
+      "volume": 42671305.0,
+      "volume_20d_avg": 61834200.25,
+      "volume_ratio": 0.6900922924122399
+    },
+    "reasons": [
+      "20D +0.8%",
+      "relativo vs SPY +0.0%",
+      "RSI 52.9"
+    ],
+    "score": 50,
+    "source": "https://finance.yahoo.com/quote/SPY",
+    "summary": "S&P 500 muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
+    "time_utc": "2026-07-08T21:43:53.418832+00:00",
+    "title": "SPY rotacion sectorial"
+  },
+  {
+    "agent": "sector_rotation",
+    "ai_brief": "Los sectores de salud (XLV) y financieros (XLF) muestran fortaleza relativa moderada frente al SPY, con rendimientos positivos en 20 días y RSI por encima de 60. Sectores como utilities (XLU), industriales (XLI) y consumo básico (XLP) están en vigilancia con rendimientos más moderados y RSI cercano a 50. Se recomienda monitorear la persistencia de estas rotaciones para ajustar la exposición sectorial y controlar riesgos asociados a posibles retrocesos.",
+    "ai_risk_notes": [
+      "Riesgo de reversión en sectores con RSI cercano a niveles de sobrecompra.",
+      "Volúmenes inferiores al promedio pueden indicar menor interés y posible debilidad futura.",
+      "Sectores con rendimiento negativo o débil relativo frente a SPY pueden presentar mayor volatilidad y riesgo de pérdidas."
+    ],
+    "ai_watch_items": [
+      "Evolución del RSI en sectores con fuerza relativa para detectar sobrecompra.",
+      "Persistencia de la rotación sectorial en sectores con rendimiento positivo frente a SPY.",
+      "Volumen relativo y posibles señales de agotamiento en sectores en vigilancia."
+    ],
+    "asset": "XLY",
+    "level": "vigilancia",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": -0.07799318690238088,
+      "perf_5d": -1.6882637688845126,
+      "perf_60d": 2.1348247631670647,
+      "price": 115.30000305175781,
+      "relative_20d_vs_spy": -0.9140168274784255,
+      "rsi": 46.03161974055874,
+      "sma20": 116.18700065612794,
+      "sma50": 117.4170001220703,
+      "status": "ok",
+      "symbol": "XLY",
+      "volume": 14674956.0,
+      "volume_20d_avg": 8653677.8,
+      "volume_ratio": 1.6958056839139537
+    },
+    "reasons": [
+      "20D -0.1%",
+      "relativo vs SPY -0.9%",
+      "RSI 46.0"
+    ],
+    "score": 43,
+    "source": "https://finance.yahoo.com/quote/XLY",
+    "summary": "Consumer discretionary muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
+    "time_utc": "2026-07-08T21:43:54.202916+00:00",
+    "title": "XLY rotacion sectorial"
+  },
+  {
+    "agent": "sector_rotation",
+    "ai_brief": "Los sectores de salud (XLV) y financieros (XLF) muestran fortaleza relativa moderada frente al SPY, con rendimientos positivos en 20 días y RSI por encima de 60. Sectores como utilities (XLU), industriales (XLI) y consumo básico (XLP) están en vigilancia con rendimientos más moderados y RSI cercano a 50. Se recomienda monitorear la persistencia de estas rotaciones para ajustar la exposición sectorial y controlar riesgos asociados a posibles retrocesos.",
+    "ai_risk_notes": [
+      "Riesgo de reversión en sectores con RSI cercano a niveles de sobrecompra.",
+      "Volúmenes inferiores al promedio pueden indicar menor interés y posible debilidad futura.",
+      "Sectores con rendimiento negativo o débil relativo frente a SPY pueden presentar mayor volatilidad y riesgo de pérdidas."
+    ],
+    "ai_watch_items": [
+      "Evolución del RSI en sectores con fuerza relativa para detectar sobrecompra.",
+      "Persistencia de la rotación sectorial en sectores con rendimiento positivo frente a SPY.",
+      "Volumen relativo y posibles señales de agotamiento en sectores en vigilancia."
+    ],
+    "asset": "TLT",
+    "level": "vigilancia",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": -0.3072584823816671,
+      "perf_5d": -2.383704700579359,
+      "perf_60d": -2.4627093375270137,
+      "price": 84.36000061035156,
+      "relative_20d_vs_spy": -1.1432821229577117,
+      "rsi": 36.46328361334549,
+      "sma20": 86.01899948120118,
+      "sma50": 85.49979995727539,
+      "status": "ok",
+      "symbol": "TLT",
+      "volume": 25049714.0,
+      "volume_20d_avg": 26000045.7,
+      "volume_ratio": 0.9634488450149148
+    },
+    "reasons": [
+      "20D -0.3%",
+      "relativo vs SPY -1.1%",
+      "RSI 36.5"
+    ],
+    "score": 41,
+    "source": "https://finance.yahoo.com/quote/TLT",
+    "summary": "Long bonds muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
+    "time_utc": "2026-07-08T21:43:54.507788+00:00",
+    "title": "TLT rotacion sectorial"
+  },
+  {
+    "agent": "sector_rotation",
+    "ai_brief": "Los sectores de salud (XLV) y financieros (XLF) muestran fortaleza relativa moderada frente al SPY, con rendimientos positivos en 20 días y RSI por encima de 60. Sectores como utilities (XLU), industriales (XLI) y consumo básico (XLP) están en vigilancia con rendimientos más moderados y RSI cercano a 50. Se recomienda monitorear la persistencia de estas rotaciones para ajustar la exposición sectorial y controlar riesgos asociados a posibles retrocesos.",
+    "ai_risk_notes": [
+      "Riesgo de reversión en sectores con RSI cercano a niveles de sobrecompra.",
+      "Volúmenes inferiores al promedio pueden indicar menor interés y posible debilidad futura.",
+      "Sectores con rendimiento negativo o débil relativo frente a SPY pueden presentar mayor volatilidad y riesgo de pérdidas."
+    ],
+    "ai_watch_items": [
+      "Evolución del RSI en sectores con fuerza relativa para detectar sobrecompra.",
+      "Persistencia de la rotación sectorial en sectores con rendimiento positivo frente a SPY.",
+      "Volumen relativo y posibles señales de agotamiento en sectores en vigilancia."
     ],
     "asset": "QQQ",
     "level": "vigilancia",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": 0.6198047162396803,
-      "perf_5d": -2.0232604226453454,
-      "perf_60d": 16.263785023895828,
-      "price": 709.4299926757812,
-      "relative_20d_vs_spy": -0.7577336673063817,
-      "rsi": 47.13803728110812,
-      "sma20": 720.4330047607422,
-      "sma50": 711.6640014648438,
+      "perf_20d": -0.6465855063688131,
+      "perf_5d": -3.3894651201996306,
+      "perf_60d": 16.42528579608942,
+      "price": 711.4400024414062,
+      "relative_20d_vs_spy": -1.4826091469448577,
+      "rsi": 47.86452669979088,
+      "sma20": 720.2015045166015,
+      "sma50": 712.6152014160157,
       "status": "ok",
       "symbol": "QQQ",
-      "volume": 42150000.0,
-      "volume_20d_avg": 50940800.0,
-      "volume_ratio": 0.8274310572272128
+      "volume": 32607725.0,
+      "volume_20d_avg": 50217766.25,
+      "volume_ratio": 0.6493264721825416
     },
     "reasons": [
-      "20D +0.6%",
-      "relativo vs SPY -0.8%",
-      "RSI 47.1"
-    ],
-    "score": 43,
-    "source": "https://finance.yahoo.com/quote/QQQ",
-    "summary": "Nasdaq 100 muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "time_utc": "2026-07-08T09:07:48.287439+00:00",
-    "title": "QQQ rotacion sectorial"
-  },
-  {
-    "agent": "sector_rotation",
-    "ai_brief": "Se observa una rotación sectorial con Financials (XLF) y Health Care (XLV) mostrando fuerza relativa destacada frente al SPY. Sectores como Small Caps (IWM) e Industrials (XLI) mantienen vigilancia por desempeño moderado y RSI neutro. Es importante monitorear la persistencia de esta rotación para ajustar estrategias y controlar riesgos asociados a posibles retrocesos o cambios en el momentum.",
-    "ai_risk_notes": [
-      "Altos niveles de RSI en XLF y XLV pueden indicar riesgo de corrección a corto plazo.",
-      "Volúmenes inferiores al promedio en algunos sectores sugieren menor convicción en la rotación.",
-      "Sectores tecnológicos y semiconductores presentan señales de debilidad que podrían afectar la estabilidad del mercado."
-    ],
-    "ai_watch_items": [
-      "Evolución del RSI en XLF y XLV para detectar sobrecompra o reversión.",
-      "Volumen relativo y desempeño de IWM y XLI para confirmar continuidad o debilidad.",
-      "Comportamiento de sectores con menor puntuación como QQQ y SMH que muestran debilidad relativa."
-    ],
-    "asset": "SMH",
-    "level": "vigilancia",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": 2.0642822789986637,
-      "perf_5d": -7.995501411965589,
-      "perf_60d": 35.123519208464906,
-      "price": 581.4500122070312,
-      "relative_20d_vs_spy": 0.6867438954526017,
-      "rsi": 45.35444390150985,
-      "sma20": 619.0589935302735,
-      "sma50": 584.0461999511718,
-      "status": "ok",
-      "symbol": "SMH",
-      "volume": 14440400.0,
-      "volume_20d_avg": 12800460.0,
-      "volume_ratio": 1.1281157083417315
-    },
-    "reasons": [
-      "20D +2.1%",
-      "relativo vs SPY +0.7%",
-      "RSI 45.4"
+      "20D -0.6%",
+      "relativo vs SPY -1.5%",
+      "RSI 47.9"
     ],
     "score": 37,
-    "source": "https://finance.yahoo.com/quote/SMH",
-    "summary": "Semiconductors muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "time_utc": "2026-07-08T09:07:48.430181+00:00",
-    "title": "SMH rotacion sectorial"
-  },
-  {
-    "agent": "sector_rotation",
-    "asset": "XLK",
-    "level": "vigilancia",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": -0.6211926550301006,
-      "perf_5d": -3.3601266723890855,
-      "perf_60d": 26.120914646589412,
-      "price": 179.17999267578125,
-      "relative_20d_vs_spy": -1.9987310385761625,
-      "rsi": 46.02875372205484,
-      "sma20": 184.7510009765625,
-      "sma50": 179.55180114746094,
-      "status": "ok",
-      "symbol": "XLK",
-      "volume": 12244300.0,
-      "volume_20d_avg": 14018235.0,
-      "volume_ratio": 0.8734551817686035
-    },
-    "reasons": [
-      "20D -0.6%",
-      "relativo vs SPY -2.0%",
-      "RSI 46.0"
-    ],
-    "score": 35,
-    "source": "https://finance.yahoo.com/quote/XLK",
-    "summary": "Technology muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "time_utc": "2026-07-08T09:07:48.503041+00:00",
-    "title": "XLK rotacion sectorial"
-  },
-  {
-    "agent": "sector_rotation",
-    "asset": "TLT",
-    "level": "vigilancia",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": -0.5995703285608833,
-      "perf_5d": -3.3161738109616534,
-      "perf_60d": -2.479808503070502,
-      "price": 84.55000305175781,
-      "relative_20d_vs_spy": -1.9771087121069453,
-      "rsi": 37.74548406789883,
-      "sma20": 86.0319995880127,
-      "sma50": 85.54679992675781,
-      "status": "ok",
-      "symbol": "TLT",
-      "volume": 24553800.0,
-      "volume_20d_avg": 25880565.0,
-      "volume_ratio": 0.9487350836428803
-    },
-    "reasons": [
-      "20D -0.6%",
-      "relativo vs SPY -2.0%",
-      "RSI 37.7"
-    ],
-    "score": 35,
-    "source": "https://finance.yahoo.com/quote/TLT",
-    "summary": "Long bonds muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "time_utc": "2026-07-08T09:07:49.124487+00:00",
-    "title": "TLT rotacion sectorial"
-  },
-  {
-    "agent": "sector_rotation",
-    "asset": "GLD",
-    "level": "vigilancia",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": -4.731980734430518,
-      "perf_5d": 2.4173867238346247,
-      "perf_60d": -13.797358571957707,
-      "price": 377.489990234375,
-      "relative_20d_vs_spy": -6.10951911797658,
-      "rsi": 42.32121600959955,
-      "sma20": 381.08099975585935,
-      "sma50": 404.2399981689453,
-      "status": "ok",
-      "symbol": "GLD",
-      "volume": 4778100.0,
-      "volume_20d_avg": 8376915.0,
-      "volume_ratio": 0.5703889797138922
-    },
-    "reasons": [
-      "20D -4.7%",
-      "relativo vs SPY -6.1%",
-      "RSI 42.3"
-    ],
-    "score": 30,
-    "source": "https://finance.yahoo.com/quote/GLD",
-    "summary": "Gold muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "time_utc": "2026-07-08T09:07:49.054605+00:00",
-    "title": "GLD rotacion sectorial"
+    "source": "https://finance.yahoo.com/quote/QQQ",
+    "summary": "Nasdaq 100 muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
+    "time_utc": "2026-07-08T21:43:53.501157+00:00",
+    "title": "QQQ rotacion sectorial"
   },
   {
     "agent": "sector_rotation",
@@ -532,29 +436,125 @@
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": -5.254029608983924,
-      "perf_5d": 1.9783455064747324,
-      "perf_60d": -4.692137372214633,
-      "price": 54.63999938964844,
-      "relative_20d_vs_spy": -6.631567992529986,
-      "rsi": 46.71942153645606,
-      "sma20": 54.92500019073486,
-      "sma50": 56.87020004272461,
+      "perf_20d": -4.680273052006234,
+      "perf_5d": 4.688378525991221,
+      "perf_60d": -2.35335473288778,
+      "price": 55.599998474121094,
+      "relative_20d_vs_spy": -5.516296692582278,
+      "rsi": 52.1969742178626,
+      "sma20": 54.788500022888186,
+      "sma50": 56.844800033569335,
       "status": "ok",
       "symbol": "XLE",
-      "volume": 41810900.0,
-      "volume_20d_avg": 34375605.0,
-      "volume_ratio": 1.2162956841050507
+      "volume": 38065567.0,
+      "volume_20d_avg": 34994128.35,
+      "volume_ratio": 1.0877701144397842
     },
     "reasons": [
-      "20D -5.3%",
-      "relativo vs SPY -6.6%",
-      "RSI 46.7"
+      "20D -4.7%",
+      "relativo vs SPY -5.5%",
+      "RSI 52.2"
     ],
-    "score": 27,
+    "score": 37,
     "source": "https://finance.yahoo.com/quote/XLE",
     "summary": "Energy muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "time_utc": "2026-07-08T09:07:48.670650+00:00",
+    "time_utc": "2026-07-08T21:43:53.958160+00:00",
     "title": "XLE rotacion sectorial"
+  },
+  {
+    "agent": "sector_rotation",
+    "asset": "XLK",
+    "level": "vigilancia",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": -1.5093923823694566,
+      "perf_5d": -4.786904352014454,
+      "perf_60d": 27.19113736291483,
+      "price": 181.39999389648438,
+      "relative_20d_vs_spy": -2.3454160229455012,
+      "rsi": 48.326026959623775,
+      "sma20": 184.61200103759765,
+      "sma50": 179.97540100097658,
+      "status": "ok",
+      "symbol": "XLK",
+      "volume": 9961030.0,
+      "volume_20d_avg": 13782561.5,
+      "volume_ratio": 0.7227270489596582
+    },
+    "reasons": [
+      "20D -1.5%",
+      "relativo vs SPY -2.3%",
+      "RSI 48.3"
+    ],
+    "score": 31,
+    "source": "https://finance.yahoo.com/quote/XLK",
+    "summary": "Technology muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
+    "time_utc": "2026-07-08T21:43:53.740583+00:00",
+    "title": "XLK rotacion sectorial"
+  },
+  {
+    "agent": "sector_rotation",
+    "asset": "GLD",
+    "level": "vigilancia",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": -5.7441985142893,
+      "perf_5d": 1.64775700194415,
+      "perf_60d": -14.338981990628795,
+      "price": 374.45001220703125,
+      "relative_20d_vs_spy": -6.580222154865345,
+      "rsi": 40.44402754653358,
+      "sma20": 379.9400009155273,
+      "sma50": 403.0639984130859,
+      "status": "ok",
+      "symbol": "GLD",
+      "volume": 7610727.0,
+      "volume_20d_avg": 8356451.35,
+      "volume_ratio": 0.9107606424346623
+    },
+    "reasons": [
+      "20D -5.7%",
+      "relativo vs SPY -6.6%",
+      "RSI 40.4"
+    ],
+    "score": 27,
+    "source": "https://finance.yahoo.com/quote/GLD",
+    "summary": "Gold muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
+    "time_utc": "2026-07-08T21:43:54.430155+00:00",
+    "title": "GLD rotacion sectorial"
+  },
+  {
+    "agent": "sector_rotation",
+    "asset": "SMH",
+    "level": "vigilancia",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": -0.8626409950845182,
+      "perf_5d": -9.58850009054446,
+      "perf_60d": 35.73521181383998,
+      "price": 593.0,
+      "relative_20d_vs_spy": -1.6986646356605628,
+      "rsi": 47.59624762849023,
+      "sma20": 618.8009948730469,
+      "sma50": 585.7773999023437,
+      "status": "ok",
+      "symbol": "SMH",
+      "volume": 9357377.0,
+      "volume_20d_avg": 12586073.85,
+      "volume_ratio": 0.7434706892332433
+    },
+    "reasons": [
+      "20D -0.9%",
+      "relativo vs SPY -1.7%",
+      "RSI 47.6"
+    ],
+    "score": 24,
+    "source": "https://finance.yahoo.com/quote/SMH",
+    "summary": "Semiconductors muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
+    "time_utc": "2026-07-08T21:43:53.643526+00:00",
+    "title": "SMH rotacion sectorial"
   }
 ]
