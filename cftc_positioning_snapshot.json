@@ -1,15 +1,15 @@
 [
   {
     "agent": "cftc_positioning",
-    "ai_brief": "Se recomienda monitorear semanalmente el posicionamiento de los principales activos según el informe público de la CFTC para detectar extremos y cambios relevantes. La mayoría de los activos presentan un nivel medio de alerta, excepto los 10Y Treasuries que requieren vigilancia adicional por falta de correspondencia en el informe. Mantener control sobre posibles desviaciones y ajustes en el mapeo de datos para asegurar la precisión del análisis.",
+    "ai_brief": "Se recomienda monitorear el posicionamiento CFTC de los principales activos para detectar extremos y cambios semanales relevantes. Los informes públicos han sido revisados y coinciden con la mayoría de los mercados analizados. Se debe prestar especial atención a la correcta configuración del mapeo para 10Y Treasuries, dado que no fue encontrado en el informe.",
     "ai_risk_notes": [
-      "Riesgo de interpretación errónea por falta de datos precisos en 10Y Treasuries.",
-      "Posibles movimientos abruptos en activos con posicionamiento en niveles medios que pueden afectar la estabilidad del mercado."
+      "Posibles desviaciones en la interpretación del posicionamiento si no se corrige el mapeo para 10Y Treasuries.",
+      "Riesgo de señales erróneas si no se consideran los cambios semanales y extremos en los activos con nivel medio de vigilancia."
     ],
     "ai_watch_items": [
-      "Revisión semanal del posicionamiento en S&P 500, Nasdaq 100 y Gold para identificar extremos.",
-      "Monitoreo del posicionamiento en Crude Oil, Dollar Index y Bitcoin Futures con atención a cambios significativos.",
-      "Vigilancia especial en 10Y Treasuries debido a la falta de correspondencia en el informe público y posible error en el mapeo."
+      "Revisión semanal del posicionamiento en S&P 500, Nasdaq 100 y Gold para identificar posibles extremos.",
+      "Monitoreo del posicionamiento en Crude Oil, Dollar Index y Bitcoin Futures para detectar cambios significativos.",
+      "Verificación y ajuste del mapeo para 10Y Treasuries debido a la ausencia en el informe público."
     ],
     "asset": "ES",
     "level": "medio",
@@ -24,20 +24,20 @@
     "score": 68,
     "source": "https://www.cftc.gov/dea/newcot/deafut.txt",
     "summary": "Conviene revisar el posicionamiento de S&P 500 para extremos y cambios semanales.",
-    "time_utc": "2026-07-11T21:34:20.629729+00:00",
+    "time_utc": "2026-07-12T08:54:32.742311+00:00",
     "title": "S&P 500 posicionamiento CFTC"
   },
   {
     "agent": "cftc_positioning",
-    "ai_brief": "Se recomienda monitorear semanalmente el posicionamiento de los principales activos según el informe público de la CFTC para detectar extremos y cambios relevantes. La mayoría de los activos presentan un nivel medio de alerta, excepto los 10Y Treasuries que requieren vigilancia adicional por falta de correspondencia en el informe. Mantener control sobre posibles desviaciones y ajustes en el mapeo de datos para asegurar la precisión del análisis.",
+    "ai_brief": "Se recomienda monitorear el posicionamiento CFTC de los principales activos para detectar extremos y cambios semanales relevantes. Los informes públicos han sido revisados y coinciden con la mayoría de los mercados analizados. Se debe prestar especial atención a la correcta configuración del mapeo para 10Y Treasuries, dado que no fue encontrado en el informe.",
     "ai_risk_notes": [
-      "Riesgo de interpretación errónea por falta de datos precisos en 10Y Treasuries.",
-      "Posibles movimientos abruptos en activos con posicionamiento en niveles medios que pueden afectar la estabilidad del mercado."
+      "Posibles desviaciones en la interpretación del posicionamiento si no se corrige el mapeo para 10Y Treasuries.",
+      "Riesgo de señales erróneas si no se consideran los cambios semanales y extremos en los activos con nivel medio de vigilancia."
     ],
     "ai_watch_items": [
-      "Revisión semanal del posicionamiento en S&P 500, Nasdaq 100 y Gold para identificar extremos.",
-      "Monitoreo del posicionamiento en Crude Oil, Dollar Index y Bitcoin Futures con atención a cambios significativos.",
-      "Vigilancia especial en 10Y Treasuries debido a la falta de correspondencia en el informe público y posible error en el mapeo."
+      "Revisión semanal del posicionamiento en S&P 500, Nasdaq 100 y Gold para identificar posibles extremos.",
+      "Monitoreo del posicionamiento en Crude Oil, Dollar Index y Bitcoin Futures para detectar cambios significativos.",
+      "Verificación y ajuste del mapeo para 10Y Treasuries debido a la ausencia en el informe público."
     ],
     "asset": "NQ",
     "level": "medio",
@@ -52,20 +52,20 @@
     "score": 68,
     "source": "https://www.cftc.gov/dea/newcot/deafut.txt",
     "summary": "Conviene revisar el posicionamiento de Nasdaq 100 para extremos y cambios semanales.",
-    "time_utc": "2026-07-11T21:34:20.629917+00:00",
+    "time_utc": "2026-07-12T08:54:32.742535+00:00",
     "title": "Nasdaq 100 posicionamiento CFTC"
   },
   {
     "agent": "cftc_positioning",
-    "ai_brief": "Se recomienda monitorear semanalmente el posicionamiento de los principales activos según el informe público de la CFTC para detectar extremos y cambios relevantes. La mayoría de los activos presentan un nivel medio de alerta, excepto los 10Y Treasuries que requieren vigilancia adicional por falta de correspondencia en el informe. Mantener control sobre posibles desviaciones y ajustes en el mapeo de datos para asegurar la precisión del análisis.",
+    "ai_brief": "Se recomienda monitorear el posicionamiento CFTC de los principales activos para detectar extremos y cambios semanales relevantes. Los informes públicos han sido revisados y coinciden con la mayoría de los mercados analizados. Se debe prestar especial atención a la correcta configuración del mapeo para 10Y Treasuries, dado que no fue encontrado en el informe.",
     "ai_risk_notes": [
-      "Riesgo de interpretación errónea por falta de datos precisos en 10Y Treasuries.",
-      "Posibles movimientos abruptos en activos con posicionamiento en niveles medios que pueden afectar la estabilidad del mercado."
+      "Posibles desviaciones en la interpretación del posicionamiento si no se corrige el mapeo para 10Y Treasuries.",
+      "Riesgo de señales erróneas si no se consideran los cambios semanales y extremos en los activos con nivel medio de vigilancia."
     ],
     "ai_watch_items": [
-      "Revisión semanal del posicionamiento en S&P 500, Nasdaq 100 y Gold para identificar extremos.",
-      "Monitoreo del posicionamiento en Crude Oil, Dollar Index y Bitcoin Futures con atención a cambios significativos.",
-      "Vigilancia especial en 10Y Treasuries debido a la falta de correspondencia en el informe público y posible error en el mapeo."
+      "Revisión semanal del posicionamiento en S&P 500, Nasdaq 100 y Gold para identificar posibles extremos.",
+      "Monitoreo del posicionamiento en Crude Oil, Dollar Index y Bitcoin Futures para detectar cambios significativos.",
+      "Verificación y ajuste del mapeo para 10Y Treasuries debido a la ausencia en el informe público."
     ],
     "asset": "GC",
     "level": "medio",
@@ -80,20 +80,20 @@
     "score": 68,
     "source": "https://www.cftc.gov/dea/newcot/deafut.txt",
     "summary": "Conviene revisar el posicionamiento de Gold para extremos y cambios semanales.",
-    "time_utc": "2026-07-11T21:34:20.629993+00:00",
+    "time_utc": "2026-07-12T08:54:32.742616+00:00",
     "title": "Gold posicionamiento CFTC"
   },
   {
     "agent": "cftc_positioning",
-    "ai_brief": "Se recomienda monitorear semanalmente el posicionamiento de los principales activos según el informe público de la CFTC para detectar extremos y cambios relevantes. La mayoría de los activos presentan un nivel medio de alerta, excepto los 10Y Treasuries que requieren vigilancia adicional por falta de correspondencia en el informe. Mantener control sobre posibles desviaciones y ajustes en el mapeo de datos para asegurar la precisión del análisis.",
+    "ai_brief": "Se recomienda monitorear el posicionamiento CFTC de los principales activos para detectar extremos y cambios semanales relevantes. Los informes públicos han sido revisados y coinciden con la mayoría de los mercados analizados. Se debe prestar especial atención a la correcta configuración del mapeo para 10Y Treasuries, dado que no fue encontrado en el informe.",
     "ai_risk_notes": [
-      "Riesgo de interpretación errónea por falta de datos precisos en 10Y Treasuries.",
-      "Posibles movimientos abruptos en activos con posicionamiento en niveles medios que pueden afectar la estabilidad del mercado."
+      "Posibles desviaciones en la interpretación del posicionamiento si no se corrige el mapeo para 10Y Treasuries.",
+      "Riesgo de señales erróneas si no se consideran los cambios semanales y extremos en los activos con nivel medio de vigilancia."
     ],
     "ai_watch_items": [
-      "Revisión semanal del posicionamiento en S&P 500, Nasdaq 100 y Gold para identificar extremos.",
-      "Monitoreo del posicionamiento en Crude Oil, Dollar Index y Bitcoin Futures con atención a cambios significativos.",
-      "Vigilancia especial en 10Y Treasuries debido a la falta de correspondencia en el informe público y posible error en el mapeo."
+      "Revisión semanal del posicionamiento en S&P 500, Nasdaq 100 y Gold para identificar posibles extremos.",
+      "Monitoreo del posicionamiento en Crude Oil, Dollar Index y Bitcoin Futures para detectar cambios significativos.",
+      "Verificación y ajuste del mapeo para 10Y Treasuries debido a la ausencia en el informe público."
     ],
     "asset": "CL",
     "level": "medio",
@@ -108,20 +108,20 @@
     "score": 68,
     "source": "https://www.cftc.gov/dea/newcot/deafut.txt",
     "summary": "Conviene revisar el posicionamiento de Crude Oil para extremos y cambios semanales.",
-    "time_utc": "2026-07-11T21:34:20.630151+00:00",
+    "time_utc": "2026-07-12T08:54:32.742786+00:00",
     "title": "Crude Oil posicionamiento CFTC"
   },
   {
     "agent": "cftc_positioning",
-    "ai_brief": "Se recomienda monitorear semanalmente el posicionamiento de los principales activos según el informe público de la CFTC para detectar extremos y cambios relevantes. La mayoría de los activos presentan un nivel medio de alerta, excepto los 10Y Treasuries que requieren vigilancia adicional por falta de correspondencia en el informe. Mantener control sobre posibles desviaciones y ajustes en el mapeo de datos para asegurar la precisión del análisis.",
+    "ai_brief": "Se recomienda monitorear el posicionamiento CFTC de los principales activos para detectar extremos y cambios semanales relevantes. Los informes públicos han sido revisados y coinciden con la mayoría de los mercados analizados. Se debe prestar especial atención a la correcta configuración del mapeo para 10Y Treasuries, dado que no fue encontrado en el informe.",
     "ai_risk_notes": [
-      "Riesgo de interpretación errónea por falta de datos precisos en 10Y Treasuries.",
-      "Posibles movimientos abruptos en activos con posicionamiento en niveles medios que pueden afectar la estabilidad del mercado."
+      "Posibles desviaciones en la interpretación del posicionamiento si no se corrige el mapeo para 10Y Treasuries.",
+      "Riesgo de señales erróneas si no se consideran los cambios semanales y extremos en los activos con nivel medio de vigilancia."
     ],
     "ai_watch_items": [
-      "Revisión semanal del posicionamiento en S&P 500, Nasdaq 100 y Gold para identificar extremos.",
-      "Monitoreo del posicionamiento en Crude Oil, Dollar Index y Bitcoin Futures con atención a cambios significativos.",
-      "Vigilancia especial en 10Y Treasuries debido a la falta de correspondencia en el informe público y posible error en el mapeo."
+      "Revisión semanal del posicionamiento en S&P 500, Nasdaq 100 y Gold para identificar posibles extremos.",
+      "Monitoreo del posicionamiento en Crude Oil, Dollar Index y Bitcoin Futures para detectar cambios significativos.",
+      "Verificación y ajuste del mapeo para 10Y Treasuries debido a la ausencia en el informe público."
     ],
     "asset": "DX",
     "level": "medio",
@@ -136,20 +136,20 @@
     "score": 68,
     "source": "https://www.cftc.gov/dea/newcot/deafut.txt",
     "summary": "Conviene revisar el posicionamiento de Dollar Index para extremos y cambios semanales.",
-    "time_utc": "2026-07-11T21:34:20.630278+00:00",
+    "time_utc": "2026-07-12T08:54:32.742921+00:00",
     "title": "Dollar Index posicionamiento CFTC"
   },
   {
     "agent": "cftc_positioning",
-    "ai_brief": "Se recomienda monitorear semanalmente el posicionamiento de los principales activos según el informe público de la CFTC para detectar extremos y cambios relevantes. La mayoría de los activos presentan un nivel medio de alerta, excepto los 10Y Treasuries que requieren vigilancia adicional por falta de correspondencia en el informe. Mantener control sobre posibles desviaciones y ajustes en el mapeo de datos para asegurar la precisión del análisis.",
+    "ai_brief": "Se recomienda monitorear el posicionamiento CFTC de los principales activos para detectar extremos y cambios semanales relevantes. Los informes públicos han sido revisados y coinciden con la mayoría de los mercados analizados. Se debe prestar especial atención a la correcta configuración del mapeo para 10Y Treasuries, dado que no fue encontrado en el informe.",
     "ai_risk_notes": [
-      "Riesgo de interpretación errónea por falta de datos precisos en 10Y Treasuries.",
-      "Posibles movimientos abruptos en activos con posicionamiento en niveles medios que pueden afectar la estabilidad del mercado."
+      "Posibles desviaciones en la interpretación del posicionamiento si no se corrige el mapeo para 10Y Treasuries.",
+      "Riesgo de señales erróneas si no se consideran los cambios semanales y extremos en los activos con nivel medio de vigilancia."
     ],
     "ai_watch_items": [
-      "Revisión semanal del posicionamiento en S&P 500, Nasdaq 100 y Gold para identificar extremos.",
-      "Monitoreo del posicionamiento en Crude Oil, Dollar Index y Bitcoin Futures con atención a cambios significativos.",
-      "Vigilancia especial en 10Y Treasuries debido a la falta de correspondencia en el informe público y posible error en el mapeo."
+      "Revisión semanal del posicionamiento en S&P 500, Nasdaq 100 y Gold para identificar posibles extremos.",
+      "Monitoreo del posicionamiento en Crude Oil, Dollar Index y Bitcoin Futures para detectar cambios significativos.",
+      "Verificación y ajuste del mapeo para 10Y Treasuries debido a la ausencia en el informe público."
     ],
     "asset": "BTC",
     "level": "medio",
@@ -164,20 +164,20 @@
     "score": 68,
     "source": "https://www.cftc.gov/dea/newcot/deafut.txt",
     "summary": "Conviene revisar el posicionamiento de Bitcoin Futures para extremos y cambios semanales.",
-    "time_utc": "2026-07-11T21:34:20.630787+00:00",
+    "time_utc": "2026-07-12T08:54:32.743458+00:00",
     "title": "Bitcoin Futures posicionamiento CFTC"
   },
   {
     "agent": "cftc_positioning",
-    "ai_brief": "Se recomienda monitorear semanalmente el posicionamiento de los principales activos según el informe público de la CFTC para detectar extremos y cambios relevantes. La mayoría de los activos presentan un nivel medio de alerta, excepto los 10Y Treasuries que requieren vigilancia adicional por falta de correspondencia en el informe. Mantener control sobre posibles desviaciones y ajustes en el mapeo de datos para asegurar la precisión del análisis.",
+    "ai_brief": "Se recomienda monitorear el posicionamiento CFTC de los principales activos para detectar extremos y cambios semanales relevantes. Los informes públicos han sido revisados y coinciden con la mayoría de los mercados analizados. Se debe prestar especial atención a la correcta configuración del mapeo para 10Y Treasuries, dado que no fue encontrado en el informe.",
     "ai_risk_notes": [
-      "Riesgo de interpretación errónea por falta de datos precisos en 10Y Treasuries.",
-      "Posibles movimientos abruptos en activos con posicionamiento en niveles medios que pueden afectar la estabilidad del mercado."
+      "Posibles desviaciones en la interpretación del posicionamiento si no se corrige el mapeo para 10Y Treasuries.",
+      "Riesgo de señales erróneas si no se consideran los cambios semanales y extremos en los activos con nivel medio de vigilancia."
     ],
     "ai_watch_items": [
-      "Revisión semanal del posicionamiento en S&P 500, Nasdaq 100 y Gold para identificar extremos.",
-      "Monitoreo del posicionamiento en Crude Oil, Dollar Index y Bitcoin Futures con atención a cambios significativos.",
-      "Vigilancia especial en 10Y Treasuries debido a la falta de correspondencia en el informe público y posible error en el mapeo."
+      "Revisión semanal del posicionamiento en S&P 500, Nasdaq 100 y Gold para identificar posibles extremos.",
+      "Monitoreo del posicionamiento en Crude Oil, Dollar Index y Bitcoin Futures para detectar cambios significativos.",
+      "Verificación y ajuste del mapeo para 10Y Treasuries debido a la ausencia en el informe público."
     ],
     "asset": "ZN",
     "level": "vigilancia",
@@ -192,7 +192,7 @@
     "score": 35,
     "source": "https://www.cftc.gov/dea/newcot/deafut.txt",
     "summary": "Conviene revisar el posicionamiento de 10Y Treasuries para extremos y cambios semanales.",
-    "time_utc": "2026-07-11T21:34:20.630615+00:00",
+    "time_utc": "2026-07-12T08:54:32.743269+00:00",
     "title": "10Y Treasuries posicionamiento CFTC"
   }
 ]
