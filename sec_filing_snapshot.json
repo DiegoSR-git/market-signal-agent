@@ -1,16 +1,62 @@
 [
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 recientes para META, MSFT, NVDA, AMZN y GOOGL, indicando operaciones declaradas por insiders. Es importante monitorear la evolución del precio y volumen para detectar posibles reacciones significativas. La ausencia de operaciones en algunos formularios sugiere precaución y necesidad de análisis detallado de cada documento.",
+    "ai_brief": "Se han registrado múltiples presentaciones del formulario SEC 4 para META, MSFT, NVDA, AMZN y GOOGL, indicando operaciones declaradas por insiders. Es crucial monitorear los detalles específicos de cada documento y la reacción del precio para evaluar posibles impactos. La ausencia de operaciones en algunos formularios sugiere vigilancia continua sin señales inmediatas de cambio significativo.",
     "ai_risk_notes": [
-      "La ausencia de compras o ventas declaradas en varios formularios puede indicar incertidumbre o falta de información clara sobre movimientos internos.",
-      "El volumen actual inferior al promedio de 20 días en la mayoría de activos puede limitar la liquidez y aumentar la volatilidad en caso de movimientos bruscos.",
-      "El nivel medio de alerta requiere mantener vigilancia constante para evitar sorpresas derivadas de movimientos internos no anticipados."
+      "Reacción del mercado puede ser volátil ante operaciones insider, especialmente en META con movimientos recientes de precio.",
+      "Falta de operaciones declaradas en algunos formularios 4 puede ocultar movimientos futuros o falta de información relevante.",
+      "Volúmenes inferiores al promedio podrían indicar menor liquidez y mayor riesgo en la ejecución de operaciones."
     ],
     "ai_watch_items": [
-      "Revisión detallada de las operaciones declaradas en los formularios SEC 4 para detectar patrones relevantes.",
-      "Monitoreo de la evolución del precio y volumen en META, que muestra una reacción reciente con aumento en rendimiento a corto plazo.",
-      "Vigilancia de la falta de operaciones en formularios de MSFT, NVDA, AMZN y GOOGL para evaluar posibles señales indirectas o futuras acciones."
+      "Evolución del precio y volumen en META tras varias presentaciones recientes del formulario 4.",
+      "Detalles específicos de las operaciones declaradas en los formularios 4 de MSFT, NVDA, AMZN y GOOGL.",
+      "Comparación del volumen actual con el promedio de 20 días para detectar anomalías en la negociación."
+    ],
+    "asset": "META",
+    "level": "medio",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "filing_date": "2026-07-15",
+      "form": "4",
+      "form4_details": {},
+      "perf_20d": 14.799154138354043,
+      "perf_5d": 12.964253063142728,
+      "perf_60d": -1.051483605072967,
+      "price": 681.3099975585938,
+      "rsi": 66.79639906131553,
+      "sma20": 598.1154937744141,
+      "sma50": 602.631396484375,
+      "status": "ok",
+      "symbol": "META",
+      "volume": 18983100.0,
+      "volume_20d_avg": 20596135.0,
+      "volume_ratio": 0.9216826360868192
+    },
+    "reasons": [
+      "formulario SEC 4",
+      "presentado 2026-07-15",
+      "operacion declarada por insider",
+      "precio reaccionando recientemente"
+    ],
+    "score": 78,
+    "source": "https://www.sec.gov/Archives/edgar/data/1326801/000095010326010694/xslF345X06/ownership.xml",
+    "summary": "Meta Platforms publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
+    "time_utc": "2026-07-16T08:35:59.535591+00:00",
+    "title": "META presentacion SEC 4"
+  },
+  {
+    "agent": "sec_filing",
+    "ai_brief": "Se han registrado múltiples presentaciones del formulario SEC 4 para META, MSFT, NVDA, AMZN y GOOGL, indicando operaciones declaradas por insiders. Es crucial monitorear los detalles específicos de cada documento y la reacción del precio para evaluar posibles impactos. La ausencia de operaciones en algunos formularios sugiere vigilancia continua sin señales inmediatas de cambio significativo.",
+    "ai_risk_notes": [
+      "Reacción del mercado puede ser volátil ante operaciones insider, especialmente en META con movimientos recientes de precio.",
+      "Falta de operaciones declaradas en algunos formularios 4 puede ocultar movimientos futuros o falta de información relevante.",
+      "Volúmenes inferiores al promedio podrían indicar menor liquidez y mayor riesgo en la ejecución de operaciones."
+    ],
+    "ai_watch_items": [
+      "Evolución del precio y volumen en META tras varias presentaciones recientes del formulario 4.",
+      "Detalles específicos de las operaciones declaradas en los formularios 4 de MSFT, NVDA, AMZN y GOOGL.",
+      "Comparación del volumen actual con el promedio de 20 días para detectar anomalías en la negociación."
     ],
     "asset": "META",
     "level": "medio",
@@ -29,9 +75,9 @@
       "sma50": 602.631396484375,
       "status": "ok",
       "symbol": "META",
-      "volume": 17731107.0,
-      "volume_20d_avg": 20533535.35,
-      "volume_ratio": 0.8635194425980813
+      "volume": 18983100.0,
+      "volume_20d_avg": 20596135.0,
+      "volume_ratio": 0.9216826360868192
     },
     "reasons": [
       "formulario SEC 4",
@@ -42,21 +88,21 @@
     "score": 78,
     "source": "https://www.sec.gov/Archives/edgar/data/1326801/000095010326010417/xslF345X06/ownership.xml",
     "summary": "Meta Platforms publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-15T21:16:41.254212+00:00",
+    "time_utc": "2026-07-16T08:35:59.535631+00:00",
     "title": "META presentacion SEC 4"
   },
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 recientes para META, MSFT, NVDA, AMZN y GOOGL, indicando operaciones declaradas por insiders. Es importante monitorear la evolución del precio y volumen para detectar posibles reacciones significativas. La ausencia de operaciones en algunos formularios sugiere precaución y necesidad de análisis detallado de cada documento.",
+    "ai_brief": "Se han registrado múltiples presentaciones del formulario SEC 4 para META, MSFT, NVDA, AMZN y GOOGL, indicando operaciones declaradas por insiders. Es crucial monitorear los detalles específicos de cada documento y la reacción del precio para evaluar posibles impactos. La ausencia de operaciones en algunos formularios sugiere vigilancia continua sin señales inmediatas de cambio significativo.",
     "ai_risk_notes": [
-      "La ausencia de compras o ventas declaradas en varios formularios puede indicar incertidumbre o falta de información clara sobre movimientos internos.",
-      "El volumen actual inferior al promedio de 20 días en la mayoría de activos puede limitar la liquidez y aumentar la volatilidad en caso de movimientos bruscos.",
-      "El nivel medio de alerta requiere mantener vigilancia constante para evitar sorpresas derivadas de movimientos internos no anticipados."
+      "Reacción del mercado puede ser volátil ante operaciones insider, especialmente en META con movimientos recientes de precio.",
+      "Falta de operaciones declaradas en algunos formularios 4 puede ocultar movimientos futuros o falta de información relevante.",
+      "Volúmenes inferiores al promedio podrían indicar menor liquidez y mayor riesgo en la ejecución de operaciones."
     ],
     "ai_watch_items": [
-      "Revisión detallada de las operaciones declaradas en los formularios SEC 4 para detectar patrones relevantes.",
-      "Monitoreo de la evolución del precio y volumen en META, que muestra una reacción reciente con aumento en rendimiento a corto plazo.",
-      "Vigilancia de la falta de operaciones en formularios de MSFT, NVDA, AMZN y GOOGL para evaluar posibles señales indirectas o futuras acciones."
+      "Evolución del precio y volumen en META tras varias presentaciones recientes del formulario 4.",
+      "Detalles específicos de las operaciones declaradas en los formularios 4 de MSFT, NVDA, AMZN y GOOGL.",
+      "Comparación del volumen actual con el promedio de 20 días para detectar anomalías en la negociación."
     ],
     "asset": "META",
     "level": "medio",
@@ -75,9 +121,9 @@
       "sma50": 602.631396484375,
       "status": "ok",
       "symbol": "META",
-      "volume": 17731107.0,
-      "volume_20d_avg": 20533535.35,
-      "volume_ratio": 0.8635194425980813
+      "volume": 18983100.0,
+      "volume_20d_avg": 20596135.0,
+      "volume_ratio": 0.9216826360868192
     },
     "reasons": [
       "formulario SEC 4",
@@ -88,28 +134,28 @@
     "score": 78,
     "source": "https://www.sec.gov/Archives/edgar/data/1326801/000095010326010283/xslF345X06/ownership.xml",
     "summary": "Meta Platforms publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-15T21:16:41.254234+00:00",
+    "time_utc": "2026-07-16T08:35:59.535646+00:00",
     "title": "META presentacion SEC 4"
   },
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 recientes para META, MSFT, NVDA, AMZN y GOOGL, indicando operaciones declaradas por insiders. Es importante monitorear la evolución del precio y volumen para detectar posibles reacciones significativas. La ausencia de operaciones en algunos formularios sugiere precaución y necesidad de análisis detallado de cada documento.",
+    "ai_brief": "Se han registrado múltiples presentaciones del formulario SEC 4 para META, MSFT, NVDA, AMZN y GOOGL, indicando operaciones declaradas por insiders. Es crucial monitorear los detalles específicos de cada documento y la reacción del precio para evaluar posibles impactos. La ausencia de operaciones en algunos formularios sugiere vigilancia continua sin señales inmediatas de cambio significativo.",
     "ai_risk_notes": [
-      "La ausencia de compras o ventas declaradas en varios formularios puede indicar incertidumbre o falta de información clara sobre movimientos internos.",
-      "El volumen actual inferior al promedio de 20 días en la mayoría de activos puede limitar la liquidez y aumentar la volatilidad en caso de movimientos bruscos.",
-      "El nivel medio de alerta requiere mantener vigilancia constante para evitar sorpresas derivadas de movimientos internos no anticipados."
+      "Reacción del mercado puede ser volátil ante operaciones insider, especialmente en META con movimientos recientes de precio.",
+      "Falta de operaciones declaradas en algunos formularios 4 puede ocultar movimientos futuros o falta de información relevante.",
+      "Volúmenes inferiores al promedio podrían indicar menor liquidez y mayor riesgo en la ejecución de operaciones."
     ],
     "ai_watch_items": [
-      "Revisión detallada de las operaciones declaradas en los formularios SEC 4 para detectar patrones relevantes.",
-      "Monitoreo de la evolución del precio y volumen en META, que muestra una reacción reciente con aumento en rendimiento a corto plazo.",
-      "Vigilancia de la falta de operaciones en formularios de MSFT, NVDA, AMZN y GOOGL para evaluar posibles señales indirectas o futuras acciones."
+      "Evolución del precio y volumen en META tras varias presentaciones recientes del formulario 4.",
+      "Detalles específicos de las operaciones declaradas en los formularios 4 de MSFT, NVDA, AMZN y GOOGL.",
+      "Comparación del volumen actual con el promedio de 20 días para detectar anomalías en la negociación."
     ],
     "asset": "MSFT",
     "level": "medio",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "filing_date": "2026-07-01",
+      "filing_date": "2026-07-15",
       "form": "4",
       "form4_details": {
         "avg_price": null,
@@ -126,33 +172,33 @@
       "sma50": 402.1131970214844,
       "status": "ok",
       "symbol": "MSFT",
-      "volume": 32663427.0,
-      "volume_20d_avg": 46844431.35,
-      "volume_ratio": 0.6972744904501866
+      "volume": 36199900.0,
+      "volume_20d_avg": 47021255.0,
+      "volume_ratio": 0.769862480276207
     },
     "reasons": [
       "formulario SEC 4",
-      "presentado 2026-07-01",
+      "presentado 2026-07-15",
       "operacion declarada por insider"
     ],
     "score": 70,
-    "source": "https://www.sec.gov/Archives/edgar/data/789019/000078901926000137/xslF345X06/form4.xml",
+    "source": "https://www.sec.gov/Archives/edgar/data/789019/000078901926000139/xslF345X06/form4.xml",
     "summary": "Microsoft publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-15T21:16:39.108534+00:00",
+    "time_utc": "2026-07-16T08:35:57.262900+00:00",
     "title": "MSFT presentacion SEC 4"
   },
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 recientes para META, MSFT, NVDA, AMZN y GOOGL, indicando operaciones declaradas por insiders. Es importante monitorear la evolución del precio y volumen para detectar posibles reacciones significativas. La ausencia de operaciones en algunos formularios sugiere precaución y necesidad de análisis detallado de cada documento.",
+    "ai_brief": "Se han registrado múltiples presentaciones del formulario SEC 4 para META, MSFT, NVDA, AMZN y GOOGL, indicando operaciones declaradas por insiders. Es crucial monitorear los detalles específicos de cada documento y la reacción del precio para evaluar posibles impactos. La ausencia de operaciones en algunos formularios sugiere vigilancia continua sin señales inmediatas de cambio significativo.",
     "ai_risk_notes": [
-      "La ausencia de compras o ventas declaradas en varios formularios puede indicar incertidumbre o falta de información clara sobre movimientos internos.",
-      "El volumen actual inferior al promedio de 20 días en la mayoría de activos puede limitar la liquidez y aumentar la volatilidad en caso de movimientos bruscos.",
-      "El nivel medio de alerta requiere mantener vigilancia constante para evitar sorpresas derivadas de movimientos internos no anticipados."
+      "Reacción del mercado puede ser volátil ante operaciones insider, especialmente en META con movimientos recientes de precio.",
+      "Falta de operaciones declaradas en algunos formularios 4 puede ocultar movimientos futuros o falta de información relevante.",
+      "Volúmenes inferiores al promedio podrían indicar menor liquidez y mayor riesgo en la ejecución de operaciones."
     ],
     "ai_watch_items": [
-      "Revisión detallada de las operaciones declaradas en los formularios SEC 4 para detectar patrones relevantes.",
-      "Monitoreo de la evolución del precio y volumen en META, que muestra una reacción reciente con aumento en rendimiento a corto plazo.",
-      "Vigilancia de la falta de operaciones en formularios de MSFT, NVDA, AMZN y GOOGL para evaluar posibles señales indirectas o futuras acciones."
+      "Evolución del precio y volumen en META tras varias presentaciones recientes del formulario 4.",
+      "Detalles específicos de las operaciones declaradas en los formularios 4 de MSFT, NVDA, AMZN y GOOGL.",
+      "Comparación del volumen actual con el promedio de 20 días para detectar anomalías en la negociación."
     ],
     "asset": "NVDA",
     "level": "medio",
@@ -176,9 +222,9 @@
       "sma50": 209.61020050048828,
       "status": "ok",
       "symbol": "NVDA",
-      "volume": 118979465.0,
-      "volume_20d_avg": 144043093.25,
-      "volume_ratio": 0.8259990973222175
+      "volume": 124482600.0,
+      "volume_20d_avg": 144318250.0,
+      "volume_ratio": 0.862556190918335
     },
     "reasons": [
       "formulario SEC 4",
@@ -188,21 +234,21 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1045810/000119764726000005/xslF345X06/wk-form4_1783371701.xml",
     "summary": "Nvidia publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-15T21:16:39.611953+00:00",
+    "time_utc": "2026-07-16T08:35:57.859874+00:00",
     "title": "NVDA presentacion SEC 4"
   },
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 recientes para META, MSFT, NVDA, AMZN y GOOGL, indicando operaciones declaradas por insiders. Es importante monitorear la evolución del precio y volumen para detectar posibles reacciones significativas. La ausencia de operaciones en algunos formularios sugiere precaución y necesidad de análisis detallado de cada documento.",
+    "ai_brief": "Se han registrado múltiples presentaciones del formulario SEC 4 para META, MSFT, NVDA, AMZN y GOOGL, indicando operaciones declaradas por insiders. Es crucial monitorear los detalles específicos de cada documento y la reacción del precio para evaluar posibles impactos. La ausencia de operaciones en algunos formularios sugiere vigilancia continua sin señales inmediatas de cambio significativo.",
     "ai_risk_notes": [
-      "La ausencia de compras o ventas declaradas en varios formularios puede indicar incertidumbre o falta de información clara sobre movimientos internos.",
-      "El volumen actual inferior al promedio de 20 días en la mayoría de activos puede limitar la liquidez y aumentar la volatilidad en caso de movimientos bruscos.",
-      "El nivel medio de alerta requiere mantener vigilancia constante para evitar sorpresas derivadas de movimientos internos no anticipados."
+      "Reacción del mercado puede ser volátil ante operaciones insider, especialmente en META con movimientos recientes de precio.",
+      "Falta de operaciones declaradas en algunos formularios 4 puede ocultar movimientos futuros o falta de información relevante.",
+      "Volúmenes inferiores al promedio podrían indicar menor liquidez y mayor riesgo en la ejecución de operaciones."
     ],
     "ai_watch_items": [
-      "Revisión detallada de las operaciones declaradas en los formularios SEC 4 para detectar patrones relevantes.",
-      "Monitoreo de la evolución del precio y volumen en META, que muestra una reacción reciente con aumento en rendimiento a corto plazo.",
-      "Vigilancia de la falta de operaciones en formularios de MSFT, NVDA, AMZN y GOOGL para evaluar posibles señales indirectas o futuras acciones."
+      "Evolución del precio y volumen en META tras varias presentaciones recientes del formulario 4.",
+      "Detalles específicos de las operaciones declaradas en los formularios 4 de MSFT, NVDA, AMZN y GOOGL.",
+      "Comparación del volumen actual con el promedio de 20 días para detectar anomalías en la negociación."
     ],
     "asset": "AMZN",
     "level": "medio",
@@ -226,9 +272,9 @@
       "sma50": 253.10259979248048,
       "status": "ok",
       "symbol": "AMZN",
-      "volume": 42296511.0,
-      "volume_20d_avg": 60689465.55,
-      "volume_ratio": 0.696933324699545
+      "volume": 45166300.0,
+      "volume_20d_avg": 60832955.0,
+      "volume_ratio": 0.7424643435453695
     },
     "reasons": [
       "formulario SEC 4",
@@ -238,21 +284,21 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000022/xslF345X06/wk-form4_1783023822.xml",
     "summary": "Amazon publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-15T21:16:40.180462+00:00",
+    "time_utc": "2026-07-16T08:35:58.370053+00:00",
     "title": "AMZN presentacion SEC 4"
   },
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 recientes para META, MSFT, NVDA, AMZN y GOOGL, indicando operaciones declaradas por insiders. Es importante monitorear la evolución del precio y volumen para detectar posibles reacciones significativas. La ausencia de operaciones en algunos formularios sugiere precaución y necesidad de análisis detallado de cada documento.",
+    "ai_brief": "Se han registrado múltiples presentaciones del formulario SEC 4 para META, MSFT, NVDA, AMZN y GOOGL, indicando operaciones declaradas por insiders. Es crucial monitorear los detalles específicos de cada documento y la reacción del precio para evaluar posibles impactos. La ausencia de operaciones en algunos formularios sugiere vigilancia continua sin señales inmediatas de cambio significativo.",
     "ai_risk_notes": [
-      "La ausencia de compras o ventas declaradas en varios formularios puede indicar incertidumbre o falta de información clara sobre movimientos internos.",
-      "El volumen actual inferior al promedio de 20 días en la mayoría de activos puede limitar la liquidez y aumentar la volatilidad en caso de movimientos bruscos.",
-      "El nivel medio de alerta requiere mantener vigilancia constante para evitar sorpresas derivadas de movimientos internos no anticipados."
+      "Reacción del mercado puede ser volátil ante operaciones insider, especialmente en META con movimientos recientes de precio.",
+      "Falta de operaciones declaradas en algunos formularios 4 puede ocultar movimientos futuros o falta de información relevante.",
+      "Volúmenes inferiores al promedio podrían indicar menor liquidez y mayor riesgo en la ejecución de operaciones."
     ],
     "ai_watch_items": [
-      "Revisión detallada de las operaciones declaradas en los formularios SEC 4 para detectar patrones relevantes.",
-      "Monitoreo de la evolución del precio y volumen en META, que muestra una reacción reciente con aumento en rendimiento a corto plazo.",
-      "Vigilancia de la falta de operaciones en formularios de MSFT, NVDA, AMZN y GOOGL para evaluar posibles señales indirectas o futuras acciones."
+      "Evolución del precio y volumen en META tras varias presentaciones recientes del formulario 4.",
+      "Detalles específicos de las operaciones declaradas en los formularios 4 de MSFT, NVDA, AMZN y GOOGL.",
+      "Comparación del volumen actual con el promedio de 20 días para detectar anomalías en la negociación."
     ],
     "asset": "GOOGL",
     "level": "medio",
@@ -276,9 +322,9 @@
       "sma50": 371.9960009765625,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 28115784.0,
-      "volume_20d_avg": 34263894.2,
-      "volume_ratio": 0.8205659238814716
+      "volume": 28274200.0,
+      "volume_20d_avg": 34271815.0,
+      "volume_ratio": 0.8249986176687754
     },
     "reasons": [
       "formulario SEC 4",
@@ -288,21 +334,21 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526296465/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-15T21:16:40.682748+00:00",
+    "time_utc": "2026-07-16T08:35:58.961534+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 recientes para META, MSFT, NVDA, AMZN y GOOGL, indicando operaciones declaradas por insiders. Es importante monitorear la evolución del precio y volumen para detectar posibles reacciones significativas. La ausencia de operaciones en algunos formularios sugiere precaución y necesidad de análisis detallado de cada documento.",
+    "ai_brief": "Se han registrado múltiples presentaciones del formulario SEC 4 para META, MSFT, NVDA, AMZN y GOOGL, indicando operaciones declaradas por insiders. Es crucial monitorear los detalles específicos de cada documento y la reacción del precio para evaluar posibles impactos. La ausencia de operaciones en algunos formularios sugiere vigilancia continua sin señales inmediatas de cambio significativo.",
     "ai_risk_notes": [
-      "La ausencia de compras o ventas declaradas en varios formularios puede indicar incertidumbre o falta de información clara sobre movimientos internos.",
-      "El volumen actual inferior al promedio de 20 días en la mayoría de activos puede limitar la liquidez y aumentar la volatilidad en caso de movimientos bruscos.",
-      "El nivel medio de alerta requiere mantener vigilancia constante para evitar sorpresas derivadas de movimientos internos no anticipados."
+      "Reacción del mercado puede ser volátil ante operaciones insider, especialmente en META con movimientos recientes de precio.",
+      "Falta de operaciones declaradas en algunos formularios 4 puede ocultar movimientos futuros o falta de información relevante.",
+      "Volúmenes inferiores al promedio podrían indicar menor liquidez y mayor riesgo en la ejecución de operaciones."
     ],
     "ai_watch_items": [
-      "Revisión detallada de las operaciones declaradas en los formularios SEC 4 para detectar patrones relevantes.",
-      "Monitoreo de la evolución del precio y volumen en META, que muestra una reacción reciente con aumento en rendimiento a corto plazo.",
-      "Vigilancia de la falta de operaciones en formularios de MSFT, NVDA, AMZN y GOOGL para evaluar posibles señales indirectas o futuras acciones."
+      "Evolución del precio y volumen en META tras varias presentaciones recientes del formulario 4.",
+      "Detalles específicos de las operaciones declaradas en los formularios 4 de MSFT, NVDA, AMZN y GOOGL.",
+      "Comparación del volumen actual con el promedio de 20 días para detectar anomalías en la negociación."
     ],
     "asset": "GOOGL",
     "level": "medio",
@@ -326,9 +372,9 @@
       "sma50": 371.9960009765625,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 28115784.0,
-      "volume_20d_avg": 34263894.2,
-      "volume_ratio": 0.8205659238814716
+      "volume": 28274200.0,
+      "volume_20d_avg": 34271815.0,
+      "volume_ratio": 0.8249986176687754
     },
     "reasons": [
       "formulario SEC 4",
@@ -338,22 +384,11 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526296453/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-15T21:16:40.733170+00:00",
+    "time_utc": "2026-07-16T08:35:58.977620+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 recientes para META, MSFT, NVDA, AMZN y GOOGL, indicando operaciones declaradas por insiders. Es importante monitorear la evolución del precio y volumen para detectar posibles reacciones significativas. La ausencia de operaciones en algunos formularios sugiere precaución y necesidad de análisis detallado de cada documento.",
-    "ai_risk_notes": [
-      "La ausencia de compras o ventas declaradas en varios formularios puede indicar incertidumbre o falta de información clara sobre movimientos internos.",
-      "El volumen actual inferior al promedio de 20 días en la mayoría de activos puede limitar la liquidez y aumentar la volatilidad en caso de movimientos bruscos.",
-      "El nivel medio de alerta requiere mantener vigilancia constante para evitar sorpresas derivadas de movimientos internos no anticipados."
-    ],
-    "ai_watch_items": [
-      "Revisión detallada de las operaciones declaradas en los formularios SEC 4 para detectar patrones relevantes.",
-      "Monitoreo de la evolución del precio y volumen en META, que muestra una reacción reciente con aumento en rendimiento a corto plazo.",
-      "Vigilancia de la falta de operaciones en formularios de MSFT, NVDA, AMZN y GOOGL para evaluar posibles señales indirectas o futuras acciones."
-    ],
     "asset": "GOOGL",
     "level": "medio",
     "metrics": {
@@ -371,9 +406,9 @@
       "sma50": 371.9960009765625,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 28115784.0,
-      "volume_20d_avg": 34263894.2,
-      "volume_ratio": 0.8205659238814716
+      "volume": 28274200.0,
+      "volume_20d_avg": 34271815.0,
+      "volume_ratio": 0.8249986176687754
     },
     "reasons": [
       "formulario SEC 4",
@@ -383,7 +418,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526296382/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-15T21:16:40.733217+00:00",
+    "time_utc": "2026-07-16T08:35:58.977685+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -405,9 +440,9 @@
       "sma50": 371.9960009765625,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 28115784.0,
-      "volume_20d_avg": 34263894.2,
-      "volume_ratio": 0.8205659238814716
+      "volume": 28274200.0,
+      "volume_20d_avg": 34271815.0,
+      "volume_ratio": 0.8249986176687754
     },
     "reasons": [
       "formulario SEC 4",
@@ -417,7 +452,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526296351/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-15T21:16:40.733231+00:00",
+    "time_utc": "2026-07-16T08:35:58.977720+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -439,9 +474,9 @@
       "sma50": 371.9960009765625,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 28115784.0,
-      "volume_20d_avg": 34263894.2,
-      "volume_ratio": 0.8205659238814716
+      "volume": 28274200.0,
+      "volume_20d_avg": 34271815.0,
+      "volume_ratio": 0.8249986176687754
     },
     "reasons": [
       "formulario SEC 4",
@@ -451,7 +486,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526296327/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-15T21:16:40.733242+00:00",
+    "time_utc": "2026-07-16T08:35:58.977747+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -473,9 +508,9 @@
       "sma50": 371.9960009765625,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 28115784.0,
-      "volume_20d_avg": 34263894.2,
-      "volume_ratio": 0.8205659238814716
+      "volume": 28274200.0,
+      "volume_20d_avg": 34271815.0,
+      "volume_ratio": 0.8249986176687754
     },
     "reasons": [
       "formulario SEC 4",
@@ -485,7 +520,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526296291/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-15T21:16:40.733255+00:00",
+    "time_utc": "2026-07-16T08:35:58.977778+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -507,9 +542,9 @@
       "sma50": 371.9960009765625,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 28115784.0,
-      "volume_20d_avg": 34263894.2,
-      "volume_ratio": 0.8205659238814716
+      "volume": 28274200.0,
+      "volume_20d_avg": 34271815.0,
+      "volume_ratio": 0.8249986176687754
     },
     "reasons": [
       "formulario SEC 4",
@@ -519,41 +554,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526296243/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-15T21:16:40.733264+00:00",
-    "title": "GOOGL presentacion SEC 4"
-  },
-  {
-    "agent": "sec_filing",
-    "asset": "GOOGL",
-    "level": "medio",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "filing_date": "2026-07-01",
-      "form": "4",
-      "form4_details": {},
-      "perf_20d": 0.4250730467779462,
-      "perf_5d": 2.4867373082690936,
-      "perf_60d": 8.55772107783286,
-      "price": 370.9200134277344,
-      "rsi": 56.8588704890007,
-      "sma20": 357.6915023803711,
-      "sma50": 371.9960009765625,
-      "status": "ok",
-      "symbol": "GOOGL",
-      "volume": 28115784.0,
-      "volume_20d_avg": 34263894.2,
-      "volume_ratio": 0.8205659238814716
-    },
-    "reasons": [
-      "formulario SEC 4",
-      "presentado 2026-07-01",
-      "operacion declarada por insider"
-    ],
-    "score": 70,
-    "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526292904/xslF345X06/ownership.xml",
-    "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-15T21:16:40.733273+00:00",
+    "time_utc": "2026-07-16T08:35:58.977808+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -575,9 +576,9 @@
       "sma50": 132.77969924926757,
       "status": "ok",
       "symbol": "PLTR",
-      "volume": 25984282.0,
-      "volume_20d_avg": 45216884.1,
-      "volume_ratio": 0.5746588363438337
+      "volume": 26017700.0,
+      "volume_20d_avg": 45218555.0,
+      "volume_ratio": 0.5753766346580513
     },
     "reasons": [
       "formulario SEC 4",
@@ -587,7 +588,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1321655/000182415926000009/xslF345X06/wk-form4_1783468921.xml",
     "summary": "Palantir publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-15T21:16:42.169846+00:00",
+    "time_utc": "2026-07-16T08:36:00.652912+00:00",
     "title": "PLTR presentacion SEC 4"
   },
   {
@@ -609,9 +610,9 @@
       "sma50": 404.91600036621094,
       "status": "ok",
       "symbol": "AVGO",
-      "volume": 16167483.0,
-      "volume_20d_avg": 27405649.15,
-      "volume_ratio": 0.5899324957241526
+      "volume": 16289600.0,
+      "volume_20d_avg": 27411755.0,
+      "volume_ratio": 0.5942560044039501
     },
     "reasons": [
       "formulario SEC 4",
@@ -621,7 +622,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000072/xslF345X06/wk-form4_1784075275.xml",
     "summary": "Broadcom publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-15T21:16:43.239534+00:00",
+    "time_utc": "2026-07-16T08:36:01.706548+00:00",
     "title": "AVGO presentacion SEC 4"
   },
   {
@@ -643,9 +644,9 @@
       "sma50": 404.91600036621094,
       "status": "ok",
       "symbol": "AVGO",
-      "volume": 16167483.0,
-      "volume_20d_avg": 27405649.15,
-      "volume_ratio": 0.5899324957241526
+      "volume": 16289600.0,
+      "volume_20d_avg": 27411755.0,
+      "volume_ratio": 0.5942560044039501
     },
     "reasons": [
       "formulario SEC 4",
@@ -655,7 +656,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000070/xslF345X06/wk-form4_1784075021.xml",
     "summary": "Broadcom publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-15T21:16:43.239576+00:00",
+    "time_utc": "2026-07-16T08:36:01.706576+00:00",
     "title": "AVGO presentacion SEC 4"
   },
   {
@@ -677,9 +678,9 @@
       "sma50": 404.91600036621094,
       "status": "ok",
       "symbol": "AVGO",
-      "volume": 16167483.0,
-      "volume_20d_avg": 27405649.15,
-      "volume_ratio": 0.5899324957241526
+      "volume": 16289600.0,
+      "volume_20d_avg": 27411755.0,
+      "volume_ratio": 0.5942560044039501
     },
     "reasons": [
       "formulario SEC 4",
@@ -689,7 +690,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000068/xslF345X06/wk-form4_1783723427.xml",
     "summary": "Broadcom publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-15T21:16:43.239587+00:00",
+    "time_utc": "2026-07-16T08:36:01.706592+00:00",
     "title": "AVGO presentacion SEC 4"
   },
   {
@@ -711,9 +712,9 @@
       "sma50": 404.91600036621094,
       "status": "ok",
       "symbol": "AVGO",
-      "volume": 16167483.0,
-      "volume_20d_avg": 27405649.15,
-      "volume_ratio": 0.5899324957241526
+      "volume": 16289600.0,
+      "volume_20d_avg": 27411755.0,
+      "volume_ratio": 0.5942560044039501
     },
     "reasons": [
       "formulario SEC 4",
@@ -723,41 +724,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000066/xslF345X06/wk-form4_1783723055.xml",
     "summary": "Broadcom publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-15T21:16:43.239596+00:00",
-    "title": "AVGO presentacion SEC 4"
-  },
-  {
-    "agent": "sec_filing",
-    "asset": "AVGO",
-    "level": "medio",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "filing_date": "2026-07-01",
-      "form": "4",
-      "form4_details": {},
-      "perf_20d": 0.08630662938100553,
-      "perf_5d": 1.4381631384340343,
-      "perf_60d": -3.0156957514478666,
-      "price": 394.2799987792969,
-      "rsi": 51.67282151580692,
-      "sma20": 383.05599822998045,
-      "sma50": 404.91600036621094,
-      "status": "ok",
-      "symbol": "AVGO",
-      "volume": 16167483.0,
-      "volume_20d_avg": 27405649.15,
-      "volume_ratio": 0.5899324957241526
-    },
-    "reasons": [
-      "formulario SEC 4",
-      "presentado 2026-07-01",
-      "operacion declarada por insider"
-    ],
-    "score": 70,
-    "source": "https://www.sec.gov/Archives/edgar/data/1730168/000135956126000004/xslF345X06/wk-form4_1782940899.xml",
-    "summary": "Broadcom publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-15T21:16:43.239624+00:00",
+    "time_utc": "2026-07-16T08:36:01.706606+00:00",
     "title": "AVGO presentacion SEC 4"
   },
   {
@@ -779,9 +746,9 @@
       "sma50": 209.61020050048828,
       "status": "ok",
       "symbol": "NVDA",
-      "volume": 118979465.0,
-      "volume_20d_avg": 144043093.25,
-      "volume_ratio": 0.8259990973222175
+      "volume": 124482600.0,
+      "volume_20d_avg": 144318250.0,
+      "volume_ratio": 0.862556190918335
     },
     "reasons": [
       "formulario SEC 8-K",
@@ -791,7 +758,7 @@
     "score": 67,
     "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000060/nvda-20260628.htm",
     "summary": "Nvidia publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-15T21:16:39.612007+00:00",
+    "time_utc": "2026-07-16T08:35:57.859922+00:00",
     "title": "NVDA presentacion SEC 8-K"
   },
   {
@@ -813,9 +780,9 @@
       "sma50": 253.10259979248048,
       "status": "ok",
       "symbol": "AMZN",
-      "volume": 42296511.0,
-      "volume_20d_avg": 60689465.55,
-      "volume_ratio": 0.696933324699545
+      "volume": 45166300.0,
+      "volume_20d_avg": 60832955.0,
+      "volume_ratio": 0.7424643435453695
     },
     "reasons": [
       "formulario SEC 8-K",
@@ -825,7 +792,7 @@
     "score": 67,
     "source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926082293/tm2619352d4_8k.htm",
     "summary": "Amazon publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-15T21:16:40.111208+00:00",
+    "time_utc": "2026-07-16T08:35:58.357565+00:00",
     "title": "AMZN presentacion SEC 8-K"
   },
   {
@@ -847,9 +814,9 @@
       "sma50": 409.99939880371096,
       "status": "ok",
       "symbol": "TSLA",
-      "volume": 31393664.0,
-      "volume_20d_avg": 43075053.2,
-      "volume_ratio": 0.7288131219301662
+      "volume": 31471800.0,
+      "volume_20d_avg": 43078960.0,
+      "volume_ratio": 0.73056081205303
     },
     "reasons": [
       "formulario SEC 8-K",
@@ -859,42 +826,8 @@
     "score": 67,
     "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026046717/tsla-20260702.htm",
     "summary": "Tesla publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-15T21:16:41.736705+00:00",
+    "time_utc": "2026-07-16T08:36:00.074823+00:00",
     "title": "TSLA presentacion SEC 8-K"
-  },
-  {
-    "agent": "sec_filing",
-    "asset": "AMD",
-    "level": "medio",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "filing_date": "2026-07-01",
-      "form": "8-K",
-      "form4_details": {},
-      "perf_20d": -3.3110395047772134,
-      "perf_5d": 2.267069077276873,
-      "perf_60d": 90.0714777132569,
-      "price": 529.1400146484375,
-      "rsi": 51.7061435438272,
-      "sma20": 534.1724960327149,
-      "sma50": 493.08600036621095,
-      "status": "ok",
-      "symbol": "AMD",
-      "volume": 27727468.0,
-      "volume_20d_avg": 29125358.4,
-      "volume_ratio": 0.9520043537043651
-    },
-    "reasons": [
-      "formulario SEC 8-K",
-      "presentado 2026-07-01",
-      "hecho relevante comunicado"
-    ],
-    "score": 67,
-    "source": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000115/amd-20260626.htm",
-    "summary": "Advanced Micro Devices publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-15T21:16:42.680088+00:00",
-    "title": "AMD presentacion SEC 8-K"
   },
   {
     "agent": "sec_filing",
@@ -915,9 +848,9 @@
       "sma50": 404.91600036621094,
       "status": "ok",
       "symbol": "AVGO",
-      "volume": 16167483.0,
-      "volume_20d_avg": 27405649.15,
-      "volume_ratio": 0.5899324957241526
+      "volume": 16289600.0,
+      "volume_20d_avg": 27411755.0,
+      "volume_ratio": 0.5942560044039501
     },
     "reasons": [
       "formulario SEC 8-K",
@@ -927,7 +860,7 @@
     "score": 67,
     "source": "https://www.sec.gov/Archives/edgar/data/1730168/000119312526295589/d84378d8k.htm",
     "summary": "Broadcom publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-15T21:16:43.239616+00:00",
+    "time_utc": "2026-07-16T08:36:01.706636+00:00",
     "title": "AVGO presentacion SEC 8-K"
   }
 ]
