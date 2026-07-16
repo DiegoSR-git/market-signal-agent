@@ -1,16 +1,6 @@
 [
   {
     "agent": "unusual_volume",
-    "ai_brief": "Se detectan volúmenes inusuales en varias acciones clave, con movimientos técnicos cercanos a rupturas en algunos casos. Es recomendable monitorear de cerca la evolución del volumen y el comportamiento del precio para anticipar posibles cambios significativos. Mantener vigilancia especial en activos con volumen cercano al promedio pero con variaciones recientes en rendimiento.",
-    "ai_risk_notes": [
-      "Volúmenes inferiores al promedio pueden indicar falta de interés o presión vendedora, aumentando la volatilidad.",
-      "Rupturas técnicas no confirmadas requieren confirmación para evitar señales falsas y riesgos asociados."
-    ],
-    "ai_watch_items": [
-      "Apple (AAPL) muestra volumen cercano al promedio con rupturas técnicas a 20 y 50 días.",
-      "S&P 500 ETF (SPY) presenta volumen bajo promedio pero con ruptura técnica a 20 días.",
-      "Arm Holdings (ARM) y Super Micro Computer (SMCI) exhiben disminución significativa en volumen y rendimiento reciente negativo."
-    ],
     "asset": "AAPL",
     "level": "medio",
     "metrics": {
@@ -25,9 +15,9 @@
       "sma50": 300.52859985351563,
       "status": "ok",
       "symbol": "AAPL",
-      "volume": 60780931.0,
-      "volume_20d_avg": 65221181.55,
-      "volume_ratio": 0.9319201148388273
+      "volume": 60884500.0,
+      "volume_20d_avg": 65226360.0,
+      "volume_ratio": 0.9334339674941236
     },
     "reasons": [
       "volume 0.9x avg",
@@ -38,21 +28,11 @@
     "score": 74,
     "source": "https://finance.yahoo.com/quote/AAPL",
     "summary": "Apple presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-15T21:37:49.419422+00:00",
+    "time_utc": "2026-07-16T09:01:04.968034+00:00",
     "title": "AAPL volumen inusual"
   },
   {
     "agent": "unusual_volume",
-    "ai_brief": "Se detectan volúmenes inusuales en varias acciones clave, con movimientos técnicos cercanos a rupturas en algunos casos. Es recomendable monitorear de cerca la evolución del volumen y el comportamiento del precio para anticipar posibles cambios significativos. Mantener vigilancia especial en activos con volumen cercano al promedio pero con variaciones recientes en rendimiento.",
-    "ai_risk_notes": [
-      "Volúmenes inferiores al promedio pueden indicar falta de interés o presión vendedora, aumentando la volatilidad.",
-      "Rupturas técnicas no confirmadas requieren confirmación para evitar señales falsas y riesgos asociados."
-    ],
-    "ai_watch_items": [
-      "Apple (AAPL) muestra volumen cercano al promedio con rupturas técnicas a 20 y 50 días.",
-      "S&P 500 ETF (SPY) presenta volumen bajo promedio pero con ruptura técnica a 20 días.",
-      "Arm Holdings (ARM) y Super Micro Computer (SMCI) exhiben disminución significativa en volumen y rendimiento reciente negativo."
-    ],
     "asset": "SPY",
     "level": "vigilancia",
     "metrics": {
@@ -67,33 +47,23 @@
       "sma50": 743.3358032226563,
       "status": "ok",
       "symbol": "SPY",
-      "volume": 36741829.0,
-      "volume_20d_avg": 54285021.45,
-      "volume_ratio": 0.6768318040334863
+      "volume": 43794800.0,
+      "volume_20d_avg": 54637670.0,
+      "volume_ratio": 0.801549553632137
     },
     "reasons": [
-      "volume 0.7x avg",
+      "volume 0.8x avg",
       "5D +1.3%",
       "cerca de ruptura 20D"
     ],
     "score": 59,
     "source": "https://finance.yahoo.com/quote/SPY",
     "summary": "S&P 500 ETF presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-15T21:37:50.138929+00:00",
+    "time_utc": "2026-07-16T09:01:07.084063+00:00",
     "title": "SPY volumen inusual"
   },
   {
     "agent": "unusual_volume",
-    "ai_brief": "Se detectan volúmenes inusuales en varias acciones clave, con movimientos técnicos cercanos a rupturas en algunos casos. Es recomendable monitorear de cerca la evolución del volumen y el comportamiento del precio para anticipar posibles cambios significativos. Mantener vigilancia especial en activos con volumen cercano al promedio pero con variaciones recientes en rendimiento.",
-    "ai_risk_notes": [
-      "Volúmenes inferiores al promedio pueden indicar falta de interés o presión vendedora, aumentando la volatilidad.",
-      "Rupturas técnicas no confirmadas requieren confirmación para evitar señales falsas y riesgos asociados."
-    ],
-    "ai_watch_items": [
-      "Apple (AAPL) muestra volumen cercano al promedio con rupturas técnicas a 20 y 50 días.",
-      "S&P 500 ETF (SPY) presenta volumen bajo promedio pero con ruptura técnica a 20 días.",
-      "Arm Holdings (ARM) y Super Micro Computer (SMCI) exhiben disminución significativa en volumen y rendimiento reciente negativo."
-    ],
     "asset": "ARM",
     "level": "vigilancia",
     "metrics": {
@@ -108,9 +78,9 @@
       "sma50": 313.8753988647461,
       "status": "ok",
       "symbol": "ARM",
-      "volume": 5672300.0,
-      "volume_20d_avg": 8942465.0,
-      "volume_ratio": 0.634310562020651
+      "volume": 5680300.0,
+      "volume_20d_avg": 8942865.0,
+      "volume_ratio": 0.6351767582312827
     },
     "reasons": [
       "volume 0.6x avg",
@@ -119,21 +89,11 @@
     "score": 57,
     "source": "https://finance.yahoo.com/quote/ARM",
     "summary": "Arm Holdings presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-15T21:37:49.686825+00:00",
+    "time_utc": "2026-07-16T09:01:05.828738+00:00",
     "title": "ARM volumen inusual"
   },
   {
     "agent": "unusual_volume",
-    "ai_brief": "Se detectan volúmenes inusuales en varias acciones clave, con movimientos técnicos cercanos a rupturas en algunos casos. Es recomendable monitorear de cerca la evolución del volumen y el comportamiento del precio para anticipar posibles cambios significativos. Mantener vigilancia especial en activos con volumen cercano al promedio pero con variaciones recientes en rendimiento.",
-    "ai_risk_notes": [
-      "Volúmenes inferiores al promedio pueden indicar falta de interés o presión vendedora, aumentando la volatilidad.",
-      "Rupturas técnicas no confirmadas requieren confirmación para evitar señales falsas y riesgos asociados."
-    ],
-    "ai_watch_items": [
-      "Apple (AAPL) muestra volumen cercano al promedio con rupturas técnicas a 20 y 50 días.",
-      "S&P 500 ETF (SPY) presenta volumen bajo promedio pero con ruptura técnica a 20 días.",
-      "Arm Holdings (ARM) y Super Micro Computer (SMCI) exhiben disminución significativa en volumen y rendimiento reciente negativo."
-    ],
     "asset": "SMCI",
     "level": "vigilancia",
     "metrics": {
@@ -148,9 +108,9 @@
       "sma50": 33.44939979553223,
       "status": "ok",
       "symbol": "SMCI",
-      "volume": 25267665.0,
-      "volume_20d_avg": 49519588.25,
-      "volume_ratio": 0.5102559591658156
+      "volume": 25480400.0,
+      "volume_20d_avg": 49530225.0,
+      "volume_ratio": 0.5144414344978243
     },
     "reasons": [
       "volume 0.5x avg",
@@ -159,21 +119,11 @@
     "score": 52,
     "source": "https://finance.yahoo.com/quote/SMCI",
     "summary": "Super Micro Computer presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-15T21:37:49.758870+00:00",
+    "time_utc": "2026-07-16T09:01:06.015252+00:00",
     "title": "SMCI volumen inusual"
   },
   {
     "agent": "unusual_volume",
-    "ai_brief": "Se detectan volúmenes inusuales en varias acciones clave, con movimientos técnicos cercanos a rupturas en algunos casos. Es recomendable monitorear de cerca la evolución del volumen y el comportamiento del precio para anticipar posibles cambios significativos. Mantener vigilancia especial en activos con volumen cercano al promedio pero con variaciones recientes en rendimiento.",
-    "ai_risk_notes": [
-      "Volúmenes inferiores al promedio pueden indicar falta de interés o presión vendedora, aumentando la volatilidad.",
-      "Rupturas técnicas no confirmadas requieren confirmación para evitar señales falsas y riesgos asociados."
-    ],
-    "ai_watch_items": [
-      "Apple (AAPL) muestra volumen cercano al promedio con rupturas técnicas a 20 y 50 días.",
-      "S&P 500 ETF (SPY) presenta volumen bajo promedio pero con ruptura técnica a 20 días.",
-      "Arm Holdings (ARM) y Super Micro Computer (SMCI) exhiben disminución significativa en volumen y rendimiento reciente negativo."
-    ],
     "asset": "COIN",
     "level": "vigilancia",
     "metrics": {
@@ -188,9 +138,9 @@
       "sma50": 173.6381997680664,
       "status": "ok",
       "symbol": "COIN",
-      "volume": 7534949.0,
-      "volume_20d_avg": 7686552.45,
-      "volume_ratio": 0.9802767949628705
+      "volume": 7560800.0,
+      "volume_20d_avg": 7687845.0,
+      "volume_ratio": 0.9834745627675896
     },
     "reasons": [
       "volume 1.0x avg",
@@ -199,21 +149,11 @@
     "score": 52,
     "source": "https://finance.yahoo.com/quote/COIN",
     "summary": "Coinbase presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-15T21:37:49.880454+00:00",
+    "time_utc": "2026-07-16T09:01:06.522427+00:00",
     "title": "COIN volumen inusual"
   },
   {
     "agent": "unusual_volume",
-    "ai_brief": "Se detectan volúmenes inusuales en varias acciones clave, con movimientos técnicos cercanos a rupturas en algunos casos. Es recomendable monitorear de cerca la evolución del volumen y el comportamiento del precio para anticipar posibles cambios significativos. Mantener vigilancia especial en activos con volumen cercano al promedio pero con variaciones recientes en rendimiento.",
-    "ai_risk_notes": [
-      "Volúmenes inferiores al promedio pueden indicar falta de interés o presión vendedora, aumentando la volatilidad.",
-      "Rupturas técnicas no confirmadas requieren confirmación para evitar señales falsas y riesgos asociados."
-    ],
-    "ai_watch_items": [
-      "Apple (AAPL) muestra volumen cercano al promedio con rupturas técnicas a 20 y 50 días.",
-      "S&P 500 ETF (SPY) presenta volumen bajo promedio pero con ruptura técnica a 20 días.",
-      "Arm Holdings (ARM) y Super Micro Computer (SMCI) exhiben disminución significativa en volumen y rendimiento reciente negativo."
-    ],
     "asset": "NVDA",
     "level": "vigilancia",
     "metrics": {
@@ -228,32 +168,22 @@
       "sma50": 209.61020050048828,
       "status": "ok",
       "symbol": "NVDA",
-      "volume": 118979465.0,
-      "volume_20d_avg": 144043093.25,
-      "volume_ratio": 0.8259990973222175
+      "volume": 124482600.0,
+      "volume_20d_avg": 144318250.0,
+      "volume_ratio": 0.862556190918335
     },
     "reasons": [
-      "volume 0.8x avg",
+      "volume 0.9x avg",
       "5D +4.1%"
     ],
     "score": 51,
     "source": "https://finance.yahoo.com/quote/NVDA",
     "summary": "Nvidia presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-15T21:37:49.540735+00:00",
+    "time_utc": "2026-07-16T09:01:05.359348+00:00",
     "title": "NVDA volumen inusual"
   },
   {
     "agent": "unusual_volume",
-    "ai_brief": "Se detectan volúmenes inusuales en varias acciones clave, con movimientos técnicos cercanos a rupturas en algunos casos. Es recomendable monitorear de cerca la evolución del volumen y el comportamiento del precio para anticipar posibles cambios significativos. Mantener vigilancia especial en activos con volumen cercano al promedio pero con variaciones recientes en rendimiento.",
-    "ai_risk_notes": [
-      "Volúmenes inferiores al promedio pueden indicar falta de interés o presión vendedora, aumentando la volatilidad.",
-      "Rupturas técnicas no confirmadas requieren confirmación para evitar señales falsas y riesgos asociados."
-    ],
-    "ai_watch_items": [
-      "Apple (AAPL) muestra volumen cercano al promedio con rupturas técnicas a 20 y 50 días.",
-      "S&P 500 ETF (SPY) presenta volumen bajo promedio pero con ruptura técnica a 20 días.",
-      "Arm Holdings (ARM) y Super Micro Computer (SMCI) exhiben disminución significativa en volumen y rendimiento reciente negativo."
-    ],
     "asset": "MSTR",
     "level": "vigilancia",
     "metrics": {
@@ -268,9 +198,9 @@
       "sma50": 133.19739944458007,
       "status": "ok",
       "symbol": "MSTR",
-      "volume": 14496437.0,
-      "volume_20d_avg": 26942156.85,
-      "volume_ratio": 0.5380577761724373
+      "volume": 14524300.0,
+      "volume_20d_avg": 26943550.0,
+      "volume_ratio": 0.5390640802715306
     },
     "reasons": [
       "volume 0.5x avg",
@@ -279,21 +209,11 @@
     "score": 51,
     "source": "https://finance.yahoo.com/quote/MSTR",
     "summary": "MicroStrategy presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-15T21:37:49.921528+00:00",
+    "time_utc": "2026-07-16T09:01:06.655334+00:00",
     "title": "MSTR volumen inusual"
   },
   {
     "agent": "unusual_volume",
-    "ai_brief": "Se detectan volúmenes inusuales en varias acciones clave, con movimientos técnicos cercanos a rupturas en algunos casos. Es recomendable monitorear de cerca la evolución del volumen y el comportamiento del precio para anticipar posibles cambios significativos. Mantener vigilancia especial en activos con volumen cercano al promedio pero con variaciones recientes en rendimiento.",
-    "ai_risk_notes": [
-      "Volúmenes inferiores al promedio pueden indicar falta de interés o presión vendedora, aumentando la volatilidad.",
-      "Rupturas técnicas no confirmadas requieren confirmación para evitar señales falsas y riesgos asociados."
-    ],
-    "ai_watch_items": [
-      "Apple (AAPL) muestra volumen cercano al promedio con rupturas técnicas a 20 y 50 días.",
-      "S&P 500 ETF (SPY) presenta volumen bajo promedio pero con ruptura técnica a 20 días.",
-      "Arm Holdings (ARM) y Super Micro Computer (SMCI) exhiben disminución significativa en volumen y rendimiento reciente negativo."
-    ],
     "asset": "MSFT",
     "level": "vigilancia",
     "metrics": {
@@ -308,32 +228,22 @@
       "sma50": 402.1131970214844,
       "status": "ok",
       "symbol": "MSFT",
-      "volume": 32663427.0,
-      "volume_20d_avg": 46844431.35,
-      "volume_ratio": 0.6972744904501866
+      "volume": 36199900.0,
+      "volume_20d_avg": 47021255.0,
+      "volume_ratio": 0.769862480276207
     },
     "reasons": [
-      "volume 0.7x avg",
+      "volume 0.8x avg",
       "5D +3.2%"
     ],
     "score": 50,
     "source": "https://finance.yahoo.com/quote/MSFT",
     "summary": "Microsoft presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-15T21:37:49.482353+00:00",
+    "time_utc": "2026-07-16T09:01:05.185005+00:00",
     "title": "MSFT volumen inusual"
   },
   {
     "agent": "unusual_volume",
-    "ai_brief": "Se detectan volúmenes inusuales en varias acciones clave, con movimientos técnicos cercanos a rupturas en algunos casos. Es recomendable monitorear de cerca la evolución del volumen y el comportamiento del precio para anticipar posibles cambios significativos. Mantener vigilancia especial en activos con volumen cercano al promedio pero con variaciones recientes en rendimiento.",
-    "ai_risk_notes": [
-      "Volúmenes inferiores al promedio pueden indicar falta de interés o presión vendedora, aumentando la volatilidad.",
-      "Rupturas técnicas no confirmadas requieren confirmación para evitar señales falsas y riesgos asociados."
-    ],
-    "ai_watch_items": [
-      "Apple (AAPL) muestra volumen cercano al promedio con rupturas técnicas a 20 y 50 días.",
-      "S&P 500 ETF (SPY) presenta volumen bajo promedio pero con ruptura técnica a 20 días.",
-      "Arm Holdings (ARM) y Super Micro Computer (SMCI) exhiben disminución significativa en volumen y rendimiento reciente negativo."
-    ],
     "asset": "AMD",
     "level": "vigilancia",
     "metrics": {
@@ -348,9 +258,9 @@
       "sma50": 493.08600036621095,
       "status": "ok",
       "symbol": "AMD",
-      "volume": 27727468.0,
-      "volume_20d_avg": 29125358.4,
-      "volume_ratio": 0.9520043537043651
+      "volume": 27767900.0,
+      "volume_20d_avg": 29127380.0,
+      "volume_ratio": 0.953326389122537
     },
     "reasons": [
       "volume 1.0x avg",
@@ -359,21 +269,11 @@
     "score": 48,
     "source": "https://finance.yahoo.com/quote/AMD",
     "summary": "Advanced Micro Devices presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-15T21:37:49.580407+00:00",
+    "time_utc": "2026-07-16T09:01:05.516692+00:00",
     "title": "AMD volumen inusual"
   },
   {
     "agent": "unusual_volume",
-    "ai_brief": "Se detectan volúmenes inusuales en varias acciones clave, con movimientos técnicos cercanos a rupturas en algunos casos. Es recomendable monitorear de cerca la evolución del volumen y el comportamiento del precio para anticipar posibles cambios significativos. Mantener vigilancia especial en activos con volumen cercano al promedio pero con variaciones recientes en rendimiento.",
-    "ai_risk_notes": [
-      "Volúmenes inferiores al promedio pueden indicar falta de interés o presión vendedora, aumentando la volatilidad.",
-      "Rupturas técnicas no confirmadas requieren confirmación para evitar señales falsas y riesgos asociados."
-    ],
-    "ai_watch_items": [
-      "Apple (AAPL) muestra volumen cercano al promedio con rupturas técnicas a 20 y 50 días.",
-      "S&P 500 ETF (SPY) presenta volumen bajo promedio pero con ruptura técnica a 20 días.",
-      "Arm Holdings (ARM) y Super Micro Computer (SMCI) exhiben disminución significativa en volumen y rendimiento reciente negativo."
-    ],
     "asset": "HOOD",
     "level": "vigilancia",
     "metrics": {
@@ -388,9 +288,9 @@
       "sma50": 91.9738005065918,
       "status": "ok",
       "symbol": "HOOD",
-      "volume": 20983659.0,
-      "volume_20d_avg": 29370757.95,
-      "volume_ratio": 0.7144405001642118
+      "volume": 21056900.0,
+      "volume_20d_avg": 29374420.0,
+      "volume_ratio": 0.7168447921695135
     },
     "reasons": [
       "volume 0.7x avg",
@@ -399,7 +299,7 @@
     "score": 48,
     "source": "https://finance.yahoo.com/quote/HOOD",
     "summary": "Robinhood presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-15T21:37:50.044320+00:00",
+    "time_utc": "2026-07-16T09:01:06.920892+00:00",
     "title": "HOOD volumen inusual"
   },
   {
@@ -418,9 +318,9 @@
       "sma50": 404.91600036621094,
       "status": "ok",
       "symbol": "AVGO",
-      "volume": 16167483.0,
-      "volume_20d_avg": 27405649.15,
-      "volume_ratio": 0.5899324957241526
+      "volume": 16289600.0,
+      "volume_20d_avg": 27411755.0,
+      "volume_ratio": 0.5942560044039501
     },
     "reasons": [
       "volume 0.6x avg",
@@ -429,7 +329,7 @@
     "score": 47,
     "source": "https://finance.yahoo.com/quote/AVGO",
     "summary": "Broadcom presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-15T21:37:49.642211+00:00",
+    "time_utc": "2026-07-16T09:01:05.661911+00:00",
     "title": "AVGO volumen inusual"
   },
   {
@@ -448,9 +348,9 @@
       "sma50": 132.77969924926757,
       "status": "ok",
       "symbol": "PLTR",
-      "volume": 25984282.0,
-      "volume_20d_avg": 45216884.1,
-      "volume_ratio": 0.5746588363438337
+      "volume": 26017700.0,
+      "volume_20d_avg": 45218555.0,
+      "volume_ratio": 0.5753766346580513
     },
     "reasons": [
       "volume 0.6x avg",
@@ -459,8 +359,38 @@
     "score": 47,
     "source": "https://finance.yahoo.com/quote/PLTR",
     "summary": "Palantir presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-15T21:37:49.800661+00:00",
+    "time_utc": "2026-07-16T09:01:06.208184+00:00",
     "title": "PLTR volumen inusual"
+  },
+  {
+    "agent": "unusual_volume",
+    "asset": "QQQ",
+    "level": "vigilancia",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": -3.529571205057125,
+      "perf_5d": 0.8855262244672035,
+      "perf_60d": 10.617248553677916,
+      "price": 717.739990234375,
+      "rsi": 49.93688236897694,
+      "sma20": 720.900503540039,
+      "sma50": 718.0696020507812,
+      "status": "ok",
+      "symbol": "QQQ",
+      "volume": 32504800.0,
+      "volume_20d_avg": 41949135.0,
+      "volume_ratio": 0.7748622230231923
+    },
+    "reasons": [
+      "volume 0.8x avg",
+      "5D +0.9%"
+    ],
+    "score": 46,
+    "source": "https://finance.yahoo.com/quote/QQQ",
+    "summary": "Nasdaq 100 ETF presenta volumen anormal o movimiento tecnico a vigilar.",
+    "time_utc": "2026-07-16T09:01:07.267652+00:00",
+    "title": "QQQ volumen inusual"
   },
   {
     "agent": "unusual_volume",
@@ -478,18 +408,18 @@
       "sma50": 595.414800415039,
       "status": "ok",
       "symbol": "SMH",
-      "volume": 10898804.0,
-      "volume_20d_avg": 11547010.2,
-      "volume_ratio": 0.9438637198051493
+      "volume": 10997600.0,
+      "volume_20d_avg": 11551950.0,
+      "volume_ratio": 0.9520124308017262
     },
     "reasons": [
-      "volume 0.9x avg",
+      "volume 1.0x avg",
       "5D -0.4%"
     ],
     "score": 46,
     "source": "https://finance.yahoo.com/quote/SMH",
     "summary": "Semiconductor ETF presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-15T21:37:50.226817+00:00",
+    "time_utc": "2026-07-16T09:01:07.441939+00:00",
     "title": "SMH volumen inusual"
   },
   {
@@ -508,9 +438,9 @@
       "sma50": 409.99939880371096,
       "status": "ok",
       "symbol": "TSLA",
-      "volume": 31393664.0,
-      "volume_20d_avg": 43075053.2,
-      "volume_ratio": 0.7288131219301662
+      "volume": 31471800.0,
+      "volume_20d_avg": 43078960.0,
+      "volume_ratio": 0.73056081205303
     },
     "reasons": [
       "volume 0.7x avg",
@@ -519,7 +449,7 @@
     "score": 45,
     "source": "https://finance.yahoo.com/quote/TSLA",
     "summary": "Tesla presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-15T21:37:49.840216+00:00",
+    "time_utc": "2026-07-16T09:01:06.399426+00:00",
     "title": "TSLA volumen inusual"
   }
 ]
