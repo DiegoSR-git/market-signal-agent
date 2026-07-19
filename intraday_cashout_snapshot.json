@@ -1,16 +1,15 @@
 [
   {
     "agent": "intraday_cashout",
-    "ai_brief": "Todos los activos analizados presentan estado NO_TRADE con dirección WAIT debido a la falta de datos críticos y mercado cerrado. Se recomienda mantener vigilancia activa y no abrir posiciones hasta que se confirme un setup válido. La gestión del riesgo debe priorizar la limitación de pérdidas diarias y evitar exposición innecesaria en condiciones inválidas.",
+    "ai_brief": "Todos los activos analizados presentan un estado NO_TRADE con setups en espera y sin señales claras de entrada, stop loss o take profit. Se observa falta de datos críticos y volumen pre-market nulo, lo que invalida las condiciones para operar intradía. Se recomienda mantener vigilancia activa y evitar aperturas automáticas hasta confirmar setups válidos y condiciones de mercado adecuadas.",
     "ai_risk_notes": [
-      "Riesgo elevado por ausencia de datos y setups confirmados, lo que impide definir niveles claros de gestión de riesgo.",
-      "Volumen pre-market nulo y mercado cerrado limitan la capacidad de reacción y aumentan la incertidumbre.",
-      "Mantener control estricto del tamaño de posición y pérdidas máximas diarias para evitar impactos negativos en la cartera."
+      "Riesgo elevado por falta de datos y volumen insuficiente que impide evaluar correctamente la relación riesgo/beneficio.",
+      "Posible exposición a movimientos adversos si se ignoran las fases NO_TRADE y se abren posiciones sin confirmación."
     ],
     "ai_watch_items": [
-      "Confirmación de apertura de mercado y disponibilidad de datos de precio y volumen actualizados.",
-      "Evolución del drawdown y comportamiento relativo frente a medias móviles (SMA20, SMA50, SMA200).",
-      "Cambios en la validación del setup y aparición de señales que permitan definir niveles de entrada, stop loss y take profit."
+      "Evolución del volumen pre-market y confirmación de datos de precio actualizados.",
+      "Cambios en la validación del setup que permitan transición de NO_TRADE a condiciones operativas.",
+      "Indicadores técnicos clave como RSI, SMA20 y SMA50 para detectar posibles rupturas o señales de reversión."
     ],
     "asset": "NVDA",
     "level": "NO_TRADE",
@@ -85,22 +84,22 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-18T16:22:41.618767+02:00",
-        "now_ny": "2026-07-18T10:22:41.618767-04:00",
-        "now_utc": "2026-07-18T14:22:41.618767+00:00",
+        "now_madrid": "2026-07-19T16:26:13.873524+02:00",
+        "now_ny": "2026-07-19T10:26:13.873524-04:00",
+        "now_utc": "2026-07-19T14:26:13.873524+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-18"
+        "trade_date": "2026-07-19"
       },
       "setup": "NO_TRADE",
       "sma20": 202.12499923706054,
       "sma50": 209.91480041503905,
       "source_count": 3,
       "source_times": [
-        "2026-07-18T08:04:52.796051+00:00",
-        "2026-07-18T08:10:58.220003+00:00",
-        "2026-07-17T21:32:07.627405+00:00"
+        "2026-07-19T08:30:22.728951+00:00",
+        "2026-07-19T08:34:55.516020+00:00",
+        "2026-07-19T08:57:20.518808+00:00"
       ],
       "sources": [
         "Market Signal Agent",
@@ -149,21 +148,20 @@
     "score": 13,
     "source": "https://finance.yahoo.com/quote/NVDA",
     "summary": "NVDA queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-18T14:22:45.085803+00:00",
+    "time_utc": "2026-07-19T14:26:16.829730+00:00",
     "title": "NVDA NO_TRADE NO_TRADE"
   },
   {
     "agent": "intraday_cashout",
-    "ai_brief": "Todos los activos analizados presentan estado NO_TRADE con dirección WAIT debido a la falta de datos críticos y mercado cerrado. Se recomienda mantener vigilancia activa y no abrir posiciones hasta que se confirme un setup válido. La gestión del riesgo debe priorizar la limitación de pérdidas diarias y evitar exposición innecesaria en condiciones inválidas.",
+    "ai_brief": "Todos los activos analizados presentan un estado NO_TRADE con setups en espera y sin señales claras de entrada, stop loss o take profit. Se observa falta de datos críticos y volumen pre-market nulo, lo que invalida las condiciones para operar intradía. Se recomienda mantener vigilancia activa y evitar aperturas automáticas hasta confirmar setups válidos y condiciones de mercado adecuadas.",
     "ai_risk_notes": [
-      "Riesgo elevado por ausencia de datos y setups confirmados, lo que impide definir niveles claros de gestión de riesgo.",
-      "Volumen pre-market nulo y mercado cerrado limitan la capacidad de reacción y aumentan la incertidumbre.",
-      "Mantener control estricto del tamaño de posición y pérdidas máximas diarias para evitar impactos negativos en la cartera."
+      "Riesgo elevado por falta de datos y volumen insuficiente que impide evaluar correctamente la relación riesgo/beneficio.",
+      "Posible exposición a movimientos adversos si se ignoran las fases NO_TRADE y se abren posiciones sin confirmación."
     ],
     "ai_watch_items": [
-      "Confirmación de apertura de mercado y disponibilidad de datos de precio y volumen actualizados.",
-      "Evolución del drawdown y comportamiento relativo frente a medias móviles (SMA20, SMA50, SMA200).",
-      "Cambios en la validación del setup y aparición de señales que permitan definir niveles de entrada, stop loss y take profit."
+      "Evolución del volumen pre-market y confirmación de datos de precio actualizados.",
+      "Cambios en la validación del setup que permitan transición de NO_TRADE a condiciones operativas.",
+      "Indicadores técnicos clave como RSI, SMA20 y SMA50 para detectar posibles rupturas o señales de reversión."
     ],
     "asset": "META",
     "level": "NO_TRADE",
@@ -233,23 +231,23 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-18T16:22:41.618767+02:00",
-        "now_ny": "2026-07-18T10:22:41.618767-04:00",
-        "now_utc": "2026-07-18T14:22:41.618767+00:00",
+        "now_madrid": "2026-07-19T16:26:13.873524+02:00",
+        "now_ny": "2026-07-19T10:26:13.873524-04:00",
+        "now_utc": "2026-07-19T14:26:13.873524+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-18"
+        "trade_date": "2026-07-19"
       },
       "setup": "NO_TRADE",
       "sma20": 605.2534912109375,
       "sma50": 604.5349963378907,
       "source_count": 2,
       "source_times": [
-        "2026-07-18T08:04:52.796051+00:00",
-        "2026-07-18T08:10:59.769189+00:00",
-        "2026-07-18T08:10:59.769233+00:00",
-        "2026-07-18T08:10:59.769249+00:00"
+        "2026-07-19T08:30:22.728951+00:00",
+        "2026-07-19T08:34:56.696186+00:00",
+        "2026-07-19T08:34:56.696226+00:00",
+        "2026-07-19T08:34:56.696240+00:00"
       ],
       "sources": [
         "Market Signal Agent",
@@ -297,21 +295,20 @@
     "score": 13,
     "source": "https://finance.yahoo.com/quote/META",
     "summary": "META queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-18T14:22:45.282357+00:00",
+    "time_utc": "2026-07-19T14:26:16.953503+00:00",
     "title": "META NO_TRADE NO_TRADE"
   },
   {
     "agent": "intraday_cashout",
-    "ai_brief": "Todos los activos analizados presentan estado NO_TRADE con dirección WAIT debido a la falta de datos críticos y mercado cerrado. Se recomienda mantener vigilancia activa y no abrir posiciones hasta que se confirme un setup válido. La gestión del riesgo debe priorizar la limitación de pérdidas diarias y evitar exposición innecesaria en condiciones inválidas.",
+    "ai_brief": "Todos los activos analizados presentan un estado NO_TRADE con setups en espera y sin señales claras de entrada, stop loss o take profit. Se observa falta de datos críticos y volumen pre-market nulo, lo que invalida las condiciones para operar intradía. Se recomienda mantener vigilancia activa y evitar aperturas automáticas hasta confirmar setups válidos y condiciones de mercado adecuadas.",
     "ai_risk_notes": [
-      "Riesgo elevado por ausencia de datos y setups confirmados, lo que impide definir niveles claros de gestión de riesgo.",
-      "Volumen pre-market nulo y mercado cerrado limitan la capacidad de reacción y aumentan la incertidumbre.",
-      "Mantener control estricto del tamaño de posición y pérdidas máximas diarias para evitar impactos negativos en la cartera."
+      "Riesgo elevado por falta de datos y volumen insuficiente que impide evaluar correctamente la relación riesgo/beneficio.",
+      "Posible exposición a movimientos adversos si se ignoran las fases NO_TRADE y se abren posiciones sin confirmación."
     ],
     "ai_watch_items": [
-      "Confirmación de apertura de mercado y disponibilidad de datos de precio y volumen actualizados.",
-      "Evolución del drawdown y comportamiento relativo frente a medias móviles (SMA20, SMA50, SMA200).",
-      "Cambios en la validación del setup y aparición de señales que permitan definir niveles de entrada, stop loss y take profit."
+      "Evolución del volumen pre-market y confirmación de datos de precio actualizados.",
+      "Cambios en la validación del setup que permitan transición de NO_TRADE a condiciones operativas.",
+      "Indicadores técnicos clave como RSI, SMA20 y SMA50 para detectar posibles rupturas o señales de reversión."
     ],
     "asset": "GOOGL",
     "level": "NO_TRADE",
@@ -378,27 +375,27 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-18T16:22:41.618767+02:00",
-        "now_ny": "2026-07-18T10:22:41.618767-04:00",
-        "now_utc": "2026-07-18T14:22:41.618767+00:00",
+        "now_madrid": "2026-07-19T16:26:13.873524+02:00",
+        "now_ny": "2026-07-19T10:26:13.873524-04:00",
+        "now_utc": "2026-07-19T14:26:13.873524+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-18"
+        "trade_date": "2026-07-19"
       },
       "setup": "NO_TRADE",
       "sma20": 355.9010009765625,
       "sma50": 370.58700073242187,
       "source_count": 2,
       "source_times": [
-        "2026-07-18T08:10:59.238794+00:00",
-        "2026-07-18T08:10:59.251725+00:00",
-        "2026-07-18T08:10:59.268027+00:00",
-        "2026-07-18T08:10:59.268070+00:00",
-        "2026-07-18T08:10:59.268131+00:00",
-        "2026-07-18T08:10:59.268165+00:00",
-        "2026-07-18T08:10:59.268183+00:00",
-        "2026-07-18T08:10:59.268201+00:00"
+        "2026-07-19T08:34:56.268197+00:00",
+        "2026-07-19T08:34:56.278382+00:00",
+        "2026-07-19T08:34:56.288163+00:00",
+        "2026-07-19T08:34:56.288219+00:00",
+        "2026-07-19T08:34:56.288268+00:00",
+        "2026-07-19T08:34:56.288298+00:00",
+        "2026-07-19T08:34:56.288323+00:00",
+        "2026-07-19T08:34:56.288355+00:00"
       ],
       "sources": [
         "Rumores y eventos",
@@ -439,7 +436,7 @@
       "RS vs QQQ +0.00%",
       "RS vs SPY +0.00%",
       "Horizonte: salida el mismo dia, maximo 8h",
-      "18 artículos recientes",
+      "17 artículos recientes",
       "Rumores/productos: Gemini, TPU, Pixel, Google Cloud, AI agents",
       "Evento mencionado: Google Cloud Next, Google I/O",
       "RSI razonable: 42.2"
@@ -447,21 +444,20 @@
     "score": 13,
     "source": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQZXd0dWYyRXVOVlR5UVRUYVVCR00xTWtfeW1WOVV0eUdjNDZrWmZFTmViaDdzM09ta2JiOFExdW16THZLRVF0Ry1jYXpielVTcTU4cVZ3UlpHd3pHNUVQU1Ztc1lDMERxT2JEdnI3ZTJjR0FhczFPaGQzSnhxbGdXTnpPcnE2dEY2WG0zX1Joc3RSX1RibW5fa2RHNGZqd3c4Y09sTmkzcWd1Zw?oc=5",
     "summary": "GOOGL queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-18T14:22:45.419626+00:00",
+    "time_utc": "2026-07-19T14:26:17.079906+00:00",
     "title": "GOOGL NO_TRADE NO_TRADE"
   },
   {
     "agent": "intraday_cashout",
-    "ai_brief": "Todos los activos analizados presentan estado NO_TRADE con dirección WAIT debido a la falta de datos críticos y mercado cerrado. Se recomienda mantener vigilancia activa y no abrir posiciones hasta que se confirme un setup válido. La gestión del riesgo debe priorizar la limitación de pérdidas diarias y evitar exposición innecesaria en condiciones inválidas.",
+    "ai_brief": "Todos los activos analizados presentan un estado NO_TRADE con setups en espera y sin señales claras de entrada, stop loss o take profit. Se observa falta de datos críticos y volumen pre-market nulo, lo que invalida las condiciones para operar intradía. Se recomienda mantener vigilancia activa y evitar aperturas automáticas hasta confirmar setups válidos y condiciones de mercado adecuadas.",
     "ai_risk_notes": [
-      "Riesgo elevado por ausencia de datos y setups confirmados, lo que impide definir niveles claros de gestión de riesgo.",
-      "Volumen pre-market nulo y mercado cerrado limitan la capacidad de reacción y aumentan la incertidumbre.",
-      "Mantener control estricto del tamaño de posición y pérdidas máximas diarias para evitar impactos negativos en la cartera."
+      "Riesgo elevado por falta de datos y volumen insuficiente que impide evaluar correctamente la relación riesgo/beneficio.",
+      "Posible exposición a movimientos adversos si se ignoran las fases NO_TRADE y se abren posiciones sin confirmación."
     ],
     "ai_watch_items": [
-      "Confirmación de apertura de mercado y disponibilidad de datos de precio y volumen actualizados.",
-      "Evolución del drawdown y comportamiento relativo frente a medias móviles (SMA20, SMA50, SMA200).",
-      "Cambios en la validación del setup y aparición de señales que permitan definir niveles de entrada, stop loss y take profit."
+      "Evolución del volumen pre-market y confirmación de datos de precio actualizados.",
+      "Cambios en la validación del setup que permitan transición de NO_TRADE a condiciones operativas.",
+      "Indicadores técnicos clave como RSI, SMA20 y SMA50 para detectar posibles rupturas o señales de reversión."
     ],
     "asset": "MSFT",
     "level": "NO_TRADE",
@@ -528,20 +524,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-18T16:22:41.618767+02:00",
-        "now_ny": "2026-07-18T10:22:41.618767-04:00",
-        "now_utc": "2026-07-18T14:22:41.618767+00:00",
+        "now_madrid": "2026-07-19T16:26:13.873524+02:00",
+        "now_ny": "2026-07-19T10:26:13.873524-04:00",
+        "now_utc": "2026-07-19T14:26:13.873524+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-18"
+        "trade_date": "2026-07-19"
       },
       "setup": "NO_TRADE",
       "sma20": 381.1574966430664,
       "sma50": 401.51159729003905,
       "source_count": 2,
       "source_times": [
-        "2026-07-18T08:10:57.720195+00:00"
+        "2026-07-19T08:34:55.132454+00:00"
       ],
       "sources": [
         "Rumores y eventos",
@@ -590,21 +586,20 @@
     "score": 13,
     "source": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQX05GYml0bFA5dGZWZkl6bUJBb3BnVWZPWVB3dGg5SFFXdm12dmdXLThqWnBIMVp3a2VUck14TWYza1AwRDhycXlfMDBCbDZudEZKbGpuV0hkMk5jcGlTSU5vRUxwUi1WaWMtUFNEYWU5eEpKLWFMeW9Ta1JSSXQ2eHFFTHM?oc=5",
     "summary": "MSFT queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-18T14:22:45.558115+00:00",
+    "time_utc": "2026-07-19T14:26:17.158167+00:00",
     "title": "MSFT NO_TRADE NO_TRADE"
   },
   {
     "agent": "intraday_cashout",
-    "ai_brief": "Todos los activos analizados presentan estado NO_TRADE con dirección WAIT debido a la falta de datos críticos y mercado cerrado. Se recomienda mantener vigilancia activa y no abrir posiciones hasta que se confirme un setup válido. La gestión del riesgo debe priorizar la limitación de pérdidas diarias y evitar exposición innecesaria en condiciones inválidas.",
+    "ai_brief": "Todos los activos analizados presentan un estado NO_TRADE con setups en espera y sin señales claras de entrada, stop loss o take profit. Se observa falta de datos críticos y volumen pre-market nulo, lo que invalida las condiciones para operar intradía. Se recomienda mantener vigilancia activa y evitar aperturas automáticas hasta confirmar setups válidos y condiciones de mercado adecuadas.",
     "ai_risk_notes": [
-      "Riesgo elevado por ausencia de datos y setups confirmados, lo que impide definir niveles claros de gestión de riesgo.",
-      "Volumen pre-market nulo y mercado cerrado limitan la capacidad de reacción y aumentan la incertidumbre.",
-      "Mantener control estricto del tamaño de posición y pérdidas máximas diarias para evitar impactos negativos en la cartera."
+      "Riesgo elevado por falta de datos y volumen insuficiente que impide evaluar correctamente la relación riesgo/beneficio.",
+      "Posible exposición a movimientos adversos si se ignoran las fases NO_TRADE y se abren posiciones sin confirmación."
     ],
     "ai_watch_items": [
-      "Confirmación de apertura de mercado y disponibilidad de datos de precio y volumen actualizados.",
-      "Evolución del drawdown y comportamiento relativo frente a medias móviles (SMA20, SMA50, SMA200).",
-      "Cambios en la validación del setup y aparición de señales que permitan definir niveles de entrada, stop loss y take profit."
+      "Evolución del volumen pre-market y confirmación de datos de precio actualizados.",
+      "Cambios en la validación del setup que permitan transición de NO_TRADE a condiciones operativas.",
+      "Indicadores técnicos clave como RSI, SMA20 y SMA50 para detectar posibles rupturas o señales de reversión."
     ],
     "asset": "PLTR",
     "level": "NO_TRADE",
@@ -666,22 +661,22 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-18T16:22:41.618767+02:00",
-        "now_ny": "2026-07-18T10:22:41.618767-04:00",
-        "now_utc": "2026-07-18T14:22:41.618767+00:00",
+        "now_madrid": "2026-07-19T16:26:13.873524+02:00",
+        "now_ny": "2026-07-19T10:26:13.873524-04:00",
+        "now_utc": "2026-07-19T14:26:13.873524+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-18"
+        "trade_date": "2026-07-19"
       },
       "setup": "NO_TRADE",
       "sma20": 125.25349884033203,
       "sma50": 132.47729934692381,
       "source_count": 2,
       "source_times": [
-        "2026-07-18T08:11:00.766915+00:00",
-        "2026-07-18T08:11:00.766951+00:00",
-        "2026-07-17T21:32:08.292093+00:00"
+        "2026-07-19T08:34:57.415311+00:00",
+        "2026-07-19T08:34:57.415344+00:00",
+        "2026-07-19T08:57:20.985376+00:00"
       ],
       "sources": [
         "SEC e insiders",
@@ -729,21 +724,20 @@
     "score": 13,
     "source": "https://www.sec.gov/Archives/edgar/data/1321655/000182395226000018/xslF345X06/wk-form4_1784333024.xml",
     "summary": "PLTR queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-18T14:22:45.753253+00:00",
+    "time_utc": "2026-07-19T14:26:17.244182+00:00",
     "title": "PLTR NO_TRADE NO_TRADE"
   },
   {
     "agent": "intraday_cashout",
-    "ai_brief": "Todos los activos analizados presentan estado NO_TRADE con dirección WAIT debido a la falta de datos críticos y mercado cerrado. Se recomienda mantener vigilancia activa y no abrir posiciones hasta que se confirme un setup válido. La gestión del riesgo debe priorizar la limitación de pérdidas diarias y evitar exposición innecesaria en condiciones inválidas.",
+    "ai_brief": "Todos los activos analizados presentan un estado NO_TRADE con setups en espera y sin señales claras de entrada, stop loss o take profit. Se observa falta de datos críticos y volumen pre-market nulo, lo que invalida las condiciones para operar intradía. Se recomienda mantener vigilancia activa y evitar aperturas automáticas hasta confirmar setups válidos y condiciones de mercado adecuadas.",
     "ai_risk_notes": [
-      "Riesgo elevado por ausencia de datos y setups confirmados, lo que impide definir niveles claros de gestión de riesgo.",
-      "Volumen pre-market nulo y mercado cerrado limitan la capacidad de reacción y aumentan la incertidumbre.",
-      "Mantener control estricto del tamaño de posición y pérdidas máximas diarias para evitar impactos negativos en la cartera."
+      "Riesgo elevado por falta de datos y volumen insuficiente que impide evaluar correctamente la relación riesgo/beneficio.",
+      "Posible exposición a movimientos adversos si se ignoran las fases NO_TRADE y se abren posiciones sin confirmación."
     ],
     "ai_watch_items": [
-      "Confirmación de apertura de mercado y disponibilidad de datos de precio y volumen actualizados.",
-      "Evolución del drawdown y comportamiento relativo frente a medias móviles (SMA20, SMA50, SMA200).",
-      "Cambios en la validación del setup y aparición de señales que permitan definir niveles de entrada, stop loss y take profit."
+      "Evolución del volumen pre-market y confirmación de datos de precio actualizados.",
+      "Cambios en la validación del setup que permitan transición de NO_TRADE a condiciones operativas.",
+      "Indicadores técnicos clave como RSI, SMA20 y SMA50 para detectar posibles rupturas o señales de reversión."
     ],
     "asset": "AMD",
     "level": "NO_TRADE",
@@ -805,21 +799,21 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-18T16:22:41.618767+02:00",
-        "now_ny": "2026-07-18T10:22:41.618767-04:00",
-        "now_utc": "2026-07-18T14:22:41.618767+00:00",
+        "now_madrid": "2026-07-19T16:26:13.873524+02:00",
+        "now_ny": "2026-07-19T10:26:13.873524-04:00",
+        "now_utc": "2026-07-19T14:26:13.873524+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-18"
+        "trade_date": "2026-07-19"
       },
       "setup": "NO_TRADE",
       "sma20": 533.0189971923828,
       "sma50": 499.0840002441406,
       "source_count": 2,
       "source_times": [
-        "2026-07-18T08:11:01.293983+00:00",
-        "2026-07-17T21:32:07.761677+00:00"
+        "2026-07-19T08:34:57.761940+00:00",
+        "2026-07-19T08:57:20.603486+00:00"
       ],
       "sources": [
         "SEC e insiders",
@@ -862,26 +856,25 @@
       "formulario SEC 4",
       "presentado 2026-07-17",
       "operacion declarada por insider",
-      "volume 1.0x avg"
+      "volume 1.1x avg"
     ],
     "score": 13,
     "source": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000117/xslF345X06/wk-form4_1784318998.xml",
     "summary": "AMD queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-18T14:22:45.950019+00:00",
+    "time_utc": "2026-07-19T14:26:17.354107+00:00",
     "title": "AMD NO_TRADE NO_TRADE"
   },
   {
     "agent": "intraday_cashout",
-    "ai_brief": "Todos los activos analizados presentan estado NO_TRADE con dirección WAIT debido a la falta de datos críticos y mercado cerrado. Se recomienda mantener vigilancia activa y no abrir posiciones hasta que se confirme un setup válido. La gestión del riesgo debe priorizar la limitación de pérdidas diarias y evitar exposición innecesaria en condiciones inválidas.",
+    "ai_brief": "Todos los activos analizados presentan un estado NO_TRADE con setups en espera y sin señales claras de entrada, stop loss o take profit. Se observa falta de datos críticos y volumen pre-market nulo, lo que invalida las condiciones para operar intradía. Se recomienda mantener vigilancia activa y evitar aperturas automáticas hasta confirmar setups válidos y condiciones de mercado adecuadas.",
     "ai_risk_notes": [
-      "Riesgo elevado por ausencia de datos y setups confirmados, lo que impide definir niveles claros de gestión de riesgo.",
-      "Volumen pre-market nulo y mercado cerrado limitan la capacidad de reacción y aumentan la incertidumbre.",
-      "Mantener control estricto del tamaño de posición y pérdidas máximas diarias para evitar impactos negativos en la cartera."
+      "Riesgo elevado por falta de datos y volumen insuficiente que impide evaluar correctamente la relación riesgo/beneficio.",
+      "Posible exposición a movimientos adversos si se ignoran las fases NO_TRADE y se abren posiciones sin confirmación."
     ],
     "ai_watch_items": [
-      "Confirmación de apertura de mercado y disponibilidad de datos de precio y volumen actualizados.",
-      "Evolución del drawdown y comportamiento relativo frente a medias móviles (SMA20, SMA50, SMA200).",
-      "Cambios en la validación del setup y aparición de señales que permitan definir niveles de entrada, stop loss y take profit."
+      "Evolución del volumen pre-market y confirmación de datos de precio actualizados.",
+      "Cambios en la validación del setup que permitan transición de NO_TRADE a condiciones operativas.",
+      "Indicadores técnicos clave como RSI, SMA20 y SMA50 para detectar posibles rupturas o señales de reversión."
     ],
     "asset": "AVGO",
     "level": "NO_TRADE",
@@ -943,25 +936,25 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-18T16:22:41.618767+02:00",
-        "now_ny": "2026-07-18T10:22:41.618767-04:00",
-        "now_utc": "2026-07-18T14:22:41.618767+00:00",
+        "now_madrid": "2026-07-19T16:26:13.873524+02:00",
+        "now_ny": "2026-07-19T10:26:13.873524-04:00",
+        "now_utc": "2026-07-19T14:26:13.873524+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-18"
+        "trade_date": "2026-07-19"
       },
       "setup": "NO_TRADE",
       "sma20": 381.83949890136716,
       "sma50": 402.9444006347656,
       "source_count": 2,
       "source_times": [
-        "2026-07-18T08:11:01.810206+00:00",
-        "2026-07-18T08:11:01.810233+00:00",
-        "2026-07-18T08:11:01.810250+00:00",
-        "2026-07-18T08:11:01.810264+00:00",
-        "2026-07-18T08:11:01.810294+00:00",
-        "2026-07-17T21:32:07.948016+00:00"
+        "2026-07-19T08:34:58.190002+00:00",
+        "2026-07-19T08:34:58.190029+00:00",
+        "2026-07-19T08:34:58.190045+00:00",
+        "2026-07-19T08:34:58.190058+00:00",
+        "2026-07-19T08:34:58.190112+00:00",
+        "2026-07-19T08:57:20.732931+00:00"
       ],
       "sources": [
         "SEC e insiders",
@@ -1009,21 +1002,20 @@
     "score": 13,
     "source": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000072/xslF345X06/wk-form4_1784075275.xml",
     "summary": "AVGO queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-18T14:22:46.245346+00:00",
+    "time_utc": "2026-07-19T14:26:17.463807+00:00",
     "title": "AVGO NO_TRADE NO_TRADE"
   },
   {
     "agent": "intraday_cashout",
-    "ai_brief": "Todos los activos analizados presentan estado NO_TRADE con dirección WAIT debido a la falta de datos críticos y mercado cerrado. Se recomienda mantener vigilancia activa y no abrir posiciones hasta que se confirme un setup válido. La gestión del riesgo debe priorizar la limitación de pérdidas diarias y evitar exposición innecesaria en condiciones inválidas.",
+    "ai_brief": "Todos los activos analizados presentan un estado NO_TRADE con setups en espera y sin señales claras de entrada, stop loss o take profit. Se observa falta de datos críticos y volumen pre-market nulo, lo que invalida las condiciones para operar intradía. Se recomienda mantener vigilancia activa y evitar aperturas automáticas hasta confirmar setups válidos y condiciones de mercado adecuadas.",
     "ai_risk_notes": [
-      "Riesgo elevado por ausencia de datos y setups confirmados, lo que impide definir niveles claros de gestión de riesgo.",
-      "Volumen pre-market nulo y mercado cerrado limitan la capacidad de reacción y aumentan la incertidumbre.",
-      "Mantener control estricto del tamaño de posición y pérdidas máximas diarias para evitar impactos negativos en la cartera."
+      "Riesgo elevado por falta de datos y volumen insuficiente que impide evaluar correctamente la relación riesgo/beneficio.",
+      "Posible exposición a movimientos adversos si se ignoran las fases NO_TRADE y se abren posiciones sin confirmación."
     ],
     "ai_watch_items": [
-      "Confirmación de apertura de mercado y disponibilidad de datos de precio y volumen actualizados.",
-      "Evolución del drawdown y comportamiento relativo frente a medias móviles (SMA20, SMA50, SMA200).",
-      "Cambios en la validación del setup y aparición de señales que permitan definir niveles de entrada, stop loss y take profit."
+      "Evolución del volumen pre-market y confirmación de datos de precio actualizados.",
+      "Cambios en la validación del setup que permitan transición de NO_TRADE a condiciones operativas.",
+      "Indicadores técnicos clave como RSI, SMA20 y SMA50 para detectar posibles rupturas o señales de reversión."
     ],
     "asset": "AMZN",
     "level": "NO_TRADE",
@@ -1093,21 +1085,21 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-18T16:22:41.618767+02:00",
-        "now_ny": "2026-07-18T10:22:41.618767-04:00",
-        "now_utc": "2026-07-18T14:22:41.618767+00:00",
+        "now_madrid": "2026-07-19T16:26:13.873524+02:00",
+        "now_ny": "2026-07-19T10:26:13.873524-04:00",
+        "now_utc": "2026-07-19T14:26:13.873524+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-18"
+        "trade_date": "2026-07-19"
       },
       "setup": "NO_TRADE",
       "sma20": 242.0564987182617,
       "sma50": 252.13300018310548,
       "source_count": 3,
       "source_times": [
-        "2026-07-18T08:04:52.796051+00:00",
-        "2026-07-18T08:10:58.714876+00:00"
+        "2026-07-19T08:30:22.728951+00:00",
+        "2026-07-19T08:34:55.893785+00:00"
       ],
       "sources": [
         "Market Signal Agent",
@@ -1157,7 +1149,7 @@
     "score": 13,
     "source": "https://finance.yahoo.com/quote/AMZN",
     "summary": "AMZN queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-18T14:22:46.417004+00:00",
+    "time_utc": "2026-07-19T14:26:17.553042+00:00",
     "title": "AMZN NO_TRADE NO_TRADE"
   },
   {
@@ -1220,20 +1212,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-18T16:22:41.618767+02:00",
-        "now_ny": "2026-07-18T10:22:41.618767-04:00",
-        "now_utc": "2026-07-18T14:22:41.618767+00:00",
+        "now_madrid": "2026-07-19T16:26:13.873524+02:00",
+        "now_ny": "2026-07-19T10:26:13.873524-04:00",
+        "now_utc": "2026-07-19T14:26:13.873524+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-18"
+        "trade_date": "2026-07-19"
       },
       "setup": "NO_TRADE",
       "sma20": 54.733500480651855,
       "sma50": 56.52360015869141,
       "source_count": 1,
       "source_times": [
-        "2026-07-18T08:22:10.989053+00:00"
+        "2026-07-19T08:54:56.247046+00:00"
       ],
       "sources": [
         "Rotacion sectorial"
@@ -1275,12 +1267,12 @@
       "20D +5.5%",
       "relativo vs SPY +5.2%",
       "RSI 61.4",
-      "Persistencia de la fortaleza relativa en XLE y XLV frente al SPY."
+      "Persistencia de la fortaleza relativa en XLE, XLV y XLF frente al SPY."
     ],
     "score": 8,
     "source": "https://finance.yahoo.com/quote/XLE",
     "summary": "XLE queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-18T14:22:44.478432+00:00",
+    "time_utc": "2026-07-19T14:26:16.620630+00:00",
     "title": "XLE NO_TRADE NO_TRADE"
   },
   {
@@ -1343,20 +1335,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-18T16:22:41.618767+02:00",
-        "now_ny": "2026-07-18T10:22:41.618767-04:00",
-        "now_utc": "2026-07-18T14:22:41.618767+00:00",
+        "now_madrid": "2026-07-19T16:26:13.873524+02:00",
+        "now_ny": "2026-07-19T10:26:13.873524-04:00",
+        "now_utc": "2026-07-19T14:26:13.873524+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-18"
+        "trade_date": "2026-07-19"
       },
       "setup": "NO_TRADE",
       "sma20": 158.81149978637694,
       "sma50": 152.88840026855468,
       "source_count": 1,
       "source_times": [
-        "2026-07-18T08:22:11.061175+00:00"
+        "2026-07-19T08:54:56.426060+00:00"
       ],
       "sources": [
         "Rotacion sectorial"
@@ -1398,12 +1390,12 @@
       "20D +6.9%",
       "relativo vs SPY +6.6%",
       "RSI 58.2",
-      "Persistencia de la fortaleza relativa en XLE y XLV frente al SPY."
+      "Persistencia de la fortaleza relativa en XLE, XLV y XLF frente al SPY."
     ],
     "score": 7,
     "source": "https://finance.yahoo.com/quote/XLV",
     "summary": "XLV queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-18T14:22:44.616462+00:00",
+    "time_utc": "2026-07-19T14:26:16.676302+00:00",
     "title": "XLV NO_TRADE NO_TRADE"
   },
   {
@@ -1426,7 +1418,6 @@
         "mercado cerrado",
         "faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close",
         "sin timestamp de precio",
-        "senal de sesion anterior",
         "volumen pre-market bajo 0",
         "ningun setup minimo confirma",
         "riesgo/beneficio insuficiente N/A"
@@ -1466,20 +1457,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-18T16:22:41.618767+02:00",
-        "now_ny": "2026-07-18T10:22:41.618767-04:00",
-        "now_utc": "2026-07-18T14:22:41.618767+00:00",
+        "now_madrid": "2026-07-19T16:26:13.873524+02:00",
+        "now_ny": "2026-07-19T10:26:13.873524-04:00",
+        "now_utc": "2026-07-19T14:26:13.873524+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-18"
+        "trade_date": "2026-07-19"
       },
       "setup": "NO_TRADE",
       "sma20": 305.51799926757815,
       "sma50": 302.64840026855467,
       "source_count": 1,
       "source_times": [
-        "2026-07-17T21:32:07.322025+00:00"
+        "2026-07-19T08:57:20.406860+00:00"
       ],
       "sources": [
         "Volumen inusual"
@@ -1490,9 +1481,9 @@
       "symbol": "AAPL",
       "take_profit": null,
       "validation_status": "INVALID",
-      "volume": 63325386.0,
-      "volume_20d_avg": 67413839.3,
-      "volume_ratio": 0.9393529082091606,
+      "volume": 63365300.0,
+      "volume_20d_avg": 67415835.0,
+      "volume_ratio": 0.9399171574452797,
       "warnings": [
         "fase NO_TRADE: no abrir posicion automaticamente"
       ]
@@ -1526,7 +1517,7 @@
     "score": 7,
     "source": "https://finance.yahoo.com/quote/AAPL",
     "summary": "AAPL queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-18T14:22:44.893520+00:00",
+    "time_utc": "2026-07-19T14:26:16.732098+00:00",
     "title": "AAPL NO_TRADE NO_TRADE"
   },
   {
@@ -1589,20 +1580,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-18T16:22:41.618767+02:00",
-        "now_ny": "2026-07-18T10:22:41.618767-04:00",
-        "now_utc": "2026-07-18T14:22:41.618767+00:00",
+        "now_madrid": "2026-07-19T16:26:13.873524+02:00",
+        "now_ny": "2026-07-19T10:26:13.873524-04:00",
+        "now_utc": "2026-07-19T14:26:13.873524+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-18"
+        "trade_date": "2026-07-19"
       },
       "setup": "NO_TRADE",
       "sma20": 54.992500114440915,
       "sma50": 53.154799957275394,
       "source_count": 1,
       "source_times": [
-        "2026-07-18T08:22:10.914766+00:00"
+        "2026-07-19T08:54:56.019143+00:00"
       ],
       "sources": [
         "Rotacion sectorial"
@@ -1644,12 +1635,12 @@
       "20D +4.1%",
       "relativo vs SPY +3.8%",
       "RSI 65.3",
-      "Persistencia de la fortaleza relativa en XLE y XLV frente al SPY."
+      "Persistencia de la fortaleza relativa en XLE, XLV y XLF frente al SPY."
     ],
     "score": 5,
     "source": "https://finance.yahoo.com/quote/XLF",
     "summary": "XLF queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-18T14:22:46.584490+00:00",
+    "time_utc": "2026-07-19T14:26:17.636595+00:00",
     "title": "XLF NO_TRADE NO_TRADE"
   },
   {
@@ -1672,7 +1663,6 @@
         "mercado cerrado",
         "faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close",
         "sin timestamp de precio",
-        "senal de sesion anterior",
         "volumen pre-market bajo 0",
         "ningun setup minimo confirma",
         "riesgo/beneficio insuficiente N/A"
@@ -1712,20 +1702,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-18T16:22:41.618767+02:00",
-        "now_ny": "2026-07-18T10:22:41.618767-04:00",
-        "now_utc": "2026-07-18T14:22:41.618767+00:00",
+        "now_madrid": "2026-07-19T16:26:13.873524+02:00",
+        "now_ny": "2026-07-19T10:26:13.873524-04:00",
+        "now_utc": "2026-07-19T14:26:13.873524+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-18"
+        "trade_date": "2026-07-19"
       },
       "setup": "NO_TRADE",
       "sma20": 328.30349884033205,
       "sma50": 316.2173992919922,
       "source_count": 1,
       "source_times": [
-        "2026-07-17T21:32:08.053512+00:00"
+        "2026-07-19T08:57:20.816422+00:00"
       ],
       "sources": [
         "Volumen inusual"
@@ -1736,9 +1726,9 @@
       "symbol": "ARM",
       "take_profit": null,
       "validation_status": "INVALID",
-      "volume": 7902420.0,
-      "volume_20d_avg": 8624091.0,
-      "volume_ratio": 0.9163191807693124,
+      "volume": 8227100.0,
+      "volume_20d_avg": 8640325.0,
+      "volume_ratio": 0.9521748313865509,
       "warnings": [
         "fase NO_TRADE: no abrir posicion automaticamente"
       ]
@@ -1764,15 +1754,15 @@
       "RS vs QQQ +0.00%",
       "RS vs SPY +0.00%",
       "Horizonte: salida el mismo dia, maximo 8h",
-      "volume 0.9x avg",
+      "volume 1.0x avg",
       "5D -17.4%",
-      "Volumen cercano al promedio pero con rupturas técnicas en Apple (AAPL).",
-      "Volúmenes superiores al promedio en ETFs como SMH y QQQ con rendimiento reciente negativo."
+      "Evolución del volumen en Apple (AAPL) y confirmación de rupturas técnicas 20D y 50D.",
+      "Comportamiento del RSI y rendimiento a corto plazo en AMD, ARM y SMH para detectar posibles cambios de tendencia."
     ],
     "score": 5,
     "source": "https://finance.yahoo.com/quote/ARM",
     "summary": "ARM queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-18T14:22:46.751775+00:00",
+    "time_utc": "2026-07-19T14:26:17.732339+00:00",
     "title": "ARM NO_TRADE NO_TRADE"
   },
   {
@@ -1795,7 +1785,6 @@
         "mercado cerrado",
         "faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close",
         "sin timestamp de precio",
-        "senal de sesion anterior",
         "volumen pre-market bajo 0",
         "ningun setup minimo confirma",
         "riesgo/beneficio insuficiente N/A"
@@ -1835,20 +1824,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-18T16:22:41.618767+02:00",
-        "now_ny": "2026-07-18T10:22:41.618767-04:00",
-        "now_utc": "2026-07-18T14:22:41.618767+00:00",
+        "now_madrid": "2026-07-19T16:26:13.873524+02:00",
+        "now_ny": "2026-07-19T10:26:13.873524-04:00",
+        "now_utc": "2026-07-19T14:26:13.873524+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-18"
+        "trade_date": "2026-07-19"
       },
       "setup": "NO_TRADE",
       "sma20": 28.78849983215332,
       "sma50": 33.311599807739256,
       "source_count": 1,
       "source_times": [
-        "2026-07-17T21:32:08.163298+00:00"
+        "2026-07-19T08:57:20.899490+00:00"
       ],
       "sources": [
         "Volumen inusual"
@@ -1859,9 +1848,9 @@
       "symbol": "SMCI",
       "take_profit": null,
       "validation_status": "INVALID",
-      "volume": 31794484.0,
-      "volume_20d_avg": 47528954.2,
-      "volume_ratio": 0.6689497914515442,
+      "volume": 32202600.0,
+      "volume_20d_avg": 47549360.0,
+      "volume_ratio": 0.6772457084595881,
       "warnings": [
         "fase NO_TRADE: no abrir posicion automaticamente"
       ]
@@ -1889,13 +1878,13 @@
       "Horizonte: salida el mismo dia, maximo 8h",
       "volume 0.7x avg",
       "5D -14.6%",
-      "Volumen cercano al promedio pero con rupturas técnicas en Apple (AAPL).",
-      "Volúmenes superiores al promedio en ETFs como SMH y QQQ con rendimiento reciente negativo."
+      "Evolución del volumen en Apple (AAPL) y confirmación de rupturas técnicas 20D y 50D.",
+      "Comportamiento del RSI y rendimiento a corto plazo en AMD, ARM y SMH para detectar posibles cambios de tendencia."
     ],
     "score": 5,
     "source": "https://finance.yahoo.com/quote/SMCI",
     "summary": "SMCI queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-18T14:22:46.930487+00:00",
+    "time_utc": "2026-07-19T14:26:17.835843+00:00",
     "title": "SMCI NO_TRADE NO_TRADE"
   },
   {
@@ -1918,7 +1907,6 @@
         "mercado cerrado",
         "faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close",
         "sin timestamp de precio",
-        "senal de sesion anterior",
         "volumen pre-market bajo 0",
         "ningun setup minimo confirma",
         "riesgo/beneficio insuficiente N/A"
@@ -1958,20 +1946,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-18T16:22:41.618767+02:00",
-        "now_ny": "2026-07-18T10:22:41.618767-04:00",
-        "now_utc": "2026-07-18T14:22:41.618767+00:00",
+        "now_madrid": "2026-07-19T16:26:13.873524+02:00",
+        "now_ny": "2026-07-19T10:26:13.873524-04:00",
+        "now_utc": "2026-07-19T14:26:13.873524+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-18"
+        "trade_date": "2026-07-19"
       },
       "setup": "NO_TRADE",
       "sma20": 610.9264984130859,
       "sma50": 597.3342004394531,
       "source_count": 1,
       "source_times": [
-        "2026-07-17T21:32:09.465787+00:00"
+        "2026-07-19T08:57:21.677168+00:00"
       ],
       "sources": [
         "Volumen inusual"
@@ -1982,9 +1970,9 @@
       "symbol": "SMH",
       "take_profit": null,
       "validation_status": "INVALID",
-      "volume": 21851115.0,
-      "volume_20d_avg": 12182910.75,
-      "volume_ratio": 1.7935873822271906,
+      "volume": 22058600.0,
+      "volume_20d_avg": 12193285.0,
+      "volume_ratio": 1.809077701374158,
       "warnings": [
         "fase NO_TRADE: no abrir posicion automaticamente"
       ]
@@ -2012,13 +2000,13 @@
       "Horizonte: salida el mismo dia, maximo 8h",
       "volume 1.8x avg",
       "5D -8.9%",
-      "Volumen cercano al promedio pero con rupturas técnicas en Apple (AAPL).",
-      "Volúmenes superiores al promedio en ETFs como SMH y QQQ con rendimiento reciente negativo."
+      "Evolución del volumen en Apple (AAPL) y confirmación de rupturas técnicas 20D y 50D.",
+      "Comportamiento del RSI y rendimiento a corto plazo en AMD, ARM y SMH para detectar posibles cambios de tendencia."
     ],
     "score": 5,
     "source": "https://finance.yahoo.com/quote/SMH",
     "summary": "SMH queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-18T14:22:47.124164+00:00",
+    "time_utc": "2026-07-19T14:26:17.943996+00:00",
     "title": "SMH NO_TRADE NO_TRADE"
   },
   {
@@ -2041,7 +2029,6 @@
         "mercado cerrado",
         "faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close",
         "sin timestamp de precio",
-        "senal de sesion anterior",
         "volumen pre-market bajo 0",
         "ningun setup minimo confirma",
         "riesgo/beneficio insuficiente N/A"
@@ -2081,20 +2068,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-18T16:22:41.618767+02:00",
-        "now_ny": "2026-07-18T10:22:41.618767-04:00",
-        "now_utc": "2026-07-18T14:22:41.618767+00:00",
+        "now_madrid": "2026-07-19T16:26:13.873524+02:00",
+        "now_ny": "2026-07-19T10:26:13.873524-04:00",
+        "now_utc": "2026-07-19T14:26:13.873524+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-18"
+        "trade_date": "2026-07-19"
       },
       "setup": "NO_TRADE",
       "sma20": 107.29200057983398,
       "sma50": 93.02180038452148,
       "source_count": 1,
       "source_times": [
-        "2026-07-17T21:32:08.934192+00:00"
+        "2026-07-19T08:57:21.329831+00:00"
       ],
       "sources": [
         "Volumen inusual"
@@ -2105,9 +2092,9 @@
       "symbol": "HOOD",
       "take_profit": null,
       "validation_status": "INVALID",
-      "volume": 26994969.0,
-      "volume_20d_avg": 27031268.45,
-      "volume_ratio": 0.9986571310899767,
+      "volume": 27559600.0,
+      "volume_20d_avg": 27059500.0,
+      "volume_ratio": 1.018481494484377,
       "warnings": [
         "fase NO_TRADE: no abrir posicion automaticamente"
       ]
@@ -2135,13 +2122,13 @@
       "Horizonte: salida el mismo dia, maximo 8h",
       "volume 1.0x avg",
       "5D -10.7%",
-      "Volumen cercano al promedio pero con rupturas técnicas en Apple (AAPL).",
-      "Volúmenes superiores al promedio en ETFs como SMH y QQQ con rendimiento reciente negativo."
+      "Evolución del volumen en Apple (AAPL) y confirmación de rupturas técnicas 20D y 50D.",
+      "Comportamiento del RSI y rendimiento a corto plazo en AMD, ARM y SMH para detectar posibles cambios de tendencia."
     ],
     "score": 5,
     "source": "https://finance.yahoo.com/quote/HOOD",
     "summary": "HOOD queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-18T14:22:47.321017+00:00",
+    "time_utc": "2026-07-19T14:26:18.024471+00:00",
     "title": "HOOD NO_TRADE NO_TRADE"
   },
   {
@@ -2204,20 +2191,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-18T16:22:41.618767+02:00",
-        "now_ny": "2026-07-18T10:22:41.618767-04:00",
-        "now_utc": "2026-07-18T14:22:41.618767+00:00",
+        "now_madrid": "2026-07-19T16:26:13.873524+02:00",
+        "now_ny": "2026-07-19T10:26:13.873524-04:00",
+        "now_utc": "2026-07-19T14:26:13.873524+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-18"
+        "trade_date": "2026-07-19"
       },
       "setup": "NO_TRADE",
       "sma20": 84.05850028991699,
       "sma50": 84.16480041503907,
       "source_count": 1,
       "source_times": [
-        "2026-07-18T08:22:11.299841+00:00"
+        "2026-07-19T08:54:57.055486+00:00"
       ],
       "sources": [
         "Rotacion sectorial"
@@ -2259,12 +2246,12 @@
       "20D +1.8%",
       "relativo vs SPY +1.5%",
       "RSI 54.5",
-      "Persistencia de la fortaleza relativa en XLE y XLV frente al SPY."
+      "Persistencia de la fortaleza relativa en XLE, XLV y XLF frente al SPY."
     ],
     "score": 5,
     "source": "https://finance.yahoo.com/quote/XLP",
     "summary": "XLP queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-18T14:22:47.496590+00:00",
+    "time_utc": "2026-07-19T14:26:18.105589+00:00",
     "title": "XLP NO_TRADE NO_TRADE"
   },
   {
@@ -2274,7 +2261,7 @@
     "metrics": {
       "action_state": "NO_TRADE",
       "ask": null,
-      "avg_source_score": 56.0,
+      "avg_source_score": 57.0,
       "bid": null,
       "breakout_20d": false,
       "breakout_50d": false,
@@ -2287,14 +2274,13 @@
         "mercado cerrado",
         "faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close",
         "sin timestamp de precio",
-        "senal de sesion anterior",
         "volumen pre-market bajo 0",
         "ningun setup minimo confirma",
         "riesgo/beneficio insuficiente N/A"
       ],
       "market_state": null,
       "max_hold_hours": 8,
-      "max_source_score": 56.0,
+      "max_source_score": 57.0,
       "perf_20d": -3.7618845840763027,
       "perf_5d": -4.159831328244645,
       "perf_60d": 7.915198523629963,
@@ -2327,20 +2313,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-18T16:22:41.618767+02:00",
-        "now_ny": "2026-07-18T10:22:41.618767-04:00",
-        "now_utc": "2026-07-18T14:22:41.618767+00:00",
+        "now_madrid": "2026-07-19T16:26:13.873524+02:00",
+        "now_ny": "2026-07-19T10:26:13.873524-04:00",
+        "now_utc": "2026-07-19T14:26:13.873524+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-18"
+        "trade_date": "2026-07-19"
       },
       "setup": "NO_TRADE",
       "sma20": 718.3455047607422,
       "sma50": 719.0052026367188,
       "source_count": 1,
       "source_times": [
-        "2026-07-17T21:32:09.323458+00:00"
+        "2026-07-19T08:57:21.576243+00:00"
       ],
       "sources": [
         "Volumen inusual"
@@ -2351,9 +2337,9 @@
       "symbol": "QQQ",
       "take_profit": null,
       "validation_status": "INVALID",
-      "volume": 53690868.0,
-      "volume_20d_avg": 41759018.4,
-      "volume_ratio": 1.285731084138702,
+      "volume": 53985400.0,
+      "volume_20d_avg": 41773745.0,
+      "volume_ratio": 1.29232847090918,
       "warnings": [
         "fase NO_TRADE: no abrir posicion automaticamente"
       ]
@@ -2370,8 +2356,8 @@
       "Invalidacion: mercado cerrado; faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close; sin timestamp de precio",
       "Avisos: fase NO_TRADE: no abrir posicion automaticamente",
       "Confluencia: 1 fuentes",
-      "Score maximo previo: 56/100",
-      "Score medio previo: 56/100",
+      "Score maximo previo: 57/100",
+      "Score medio previo: 57/100",
       "Spread N/A",
       "Gap N/A",
       "VWAP pre-market N/A",
@@ -2381,13 +2367,13 @@
       "Horizonte: salida el mismo dia, maximo 8h",
       "volume 1.3x avg",
       "5D -4.2%",
-      "Volumen cercano al promedio pero con rupturas técnicas en Apple (AAPL).",
-      "Volúmenes superiores al promedio en ETFs como SMH y QQQ con rendimiento reciente negativo."
+      "Evolución del volumen en Apple (AAPL) y confirmación de rupturas técnicas 20D y 50D.",
+      "Comportamiento del RSI y rendimiento a corto plazo en AMD, ARM y SMH para detectar posibles cambios de tendencia."
     ],
     "score": 5,
     "source": "https://finance.yahoo.com/quote/QQQ",
     "summary": "QQQ queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-18T14:22:47.518676+00:00",
+    "time_utc": "2026-07-19T14:26:18.125378+00:00",
     "title": "QQQ NO_TRADE NO_TRADE"
   },
   {
@@ -2410,7 +2396,6 @@
         "mercado cerrado",
         "faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close",
         "sin timestamp de precio",
-        "senal de sesion anterior",
         "volumen pre-market bajo 0",
         "ningun setup minimo confirma",
         "riesgo/beneficio insuficiente N/A"
@@ -2450,20 +2435,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-18T16:22:41.618767+02:00",
-        "now_ny": "2026-07-18T10:22:41.618767-04:00",
-        "now_utc": "2026-07-18T14:22:41.618767+00:00",
+        "now_madrid": "2026-07-19T16:26:13.873524+02:00",
+        "now_ny": "2026-07-19T10:26:13.873524-04:00",
+        "now_utc": "2026-07-19T14:26:13.873524+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-18"
+        "trade_date": "2026-07-19"
       },
       "setup": "NO_TRADE",
       "sma20": 397.85199584960935,
       "sma50": 409.7997985839844,
       "source_count": 1,
       "source_times": [
-        "2026-07-17T21:32:08.457012+00:00"
+        "2026-07-19T08:57:21.068986+00:00"
       ],
       "sources": [
         "Volumen inusual"
@@ -2474,9 +2459,9 @@
       "symbol": "TSLA",
       "take_profit": null,
       "validation_status": "INVALID",
-      "volume": 29958144.0,
-      "volume_20d_avg": 41854732.2,
-      "volume_ratio": 0.7157647994699151,
+      "volume": 31317100.0,
+      "volume_20d_avg": 41922680.0,
+      "volume_ratio": 0.7470204672029556,
       "warnings": [
         "fase NO_TRADE: no abrir posicion automaticamente"
       ]
@@ -2504,13 +2489,13 @@
       "Horizonte: salida el mismo dia, maximo 8h",
       "volume 0.7x avg",
       "5D -6.6%",
-      "Volumen cercano al promedio pero con rupturas técnicas en Apple (AAPL).",
-      "Volúmenes superiores al promedio en ETFs como SMH y QQQ con rendimiento reciente negativo."
+      "Evolución del volumen en Apple (AAPL) y confirmación de rupturas técnicas 20D y 50D.",
+      "Comportamiento del RSI y rendimiento a corto plazo en AMD, ARM y SMH para detectar posibles cambios de tendencia."
     ],
     "score": 5,
     "source": "https://finance.yahoo.com/quote/TSLA",
     "summary": "TSLA queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-18T14:22:47.778124+00:00",
+    "time_utc": "2026-07-19T14:26:18.209606+00:00",
     "title": "TSLA NO_TRADE NO_TRADE"
   },
   {
@@ -2573,20 +2558,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-18T16:22:41.618767+02:00",
-        "now_ny": "2026-07-18T10:22:41.618767-04:00",
-        "now_utc": "2026-07-18T14:22:41.618767+00:00",
+        "now_madrid": "2026-07-19T16:26:13.873524+02:00",
+        "now_ny": "2026-07-19T10:26:13.873524-04:00",
+        "now_utc": "2026-07-19T14:26:13.873524+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-18"
+        "trade_date": "2026-07-19"
       },
       "setup": "NO_TRADE",
       "sma20": 45.410000038146975,
       "sma50": 44.87039978027344,
       "source_count": 1,
       "source_times": [
-        "2026-07-18T08:22:11.442221+00:00"
+        "2026-07-19T08:54:57.275836+00:00"
       ],
       "sources": [
         "Rotacion sectorial"
@@ -2628,12 +2613,12 @@
       "20D +1.6%",
       "relativo vs SPY +1.3%",
       "RSI 49.4",
-      "Persistencia de la fortaleza relativa en XLE y XLV frente al SPY."
+      "Persistencia de la fortaleza relativa en XLE, XLV y XLF frente al SPY."
     ],
     "score": 5,
     "source": "https://finance.yahoo.com/quote/XLU",
     "summary": "XLU queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-18T14:22:47.966800+00:00",
+    "time_utc": "2026-07-19T14:26:18.281361+00:00",
     "title": "XLU NO_TRADE NO_TRADE"
   },
   {
@@ -2696,20 +2681,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-18T16:22:41.618767+02:00",
-        "now_ny": "2026-07-18T10:22:41.618767-04:00",
-        "now_utc": "2026-07-18T14:22:41.618767+00:00",
+        "now_madrid": "2026-07-19T16:26:13.873524+02:00",
+        "now_ny": "2026-07-19T10:26:13.873524-04:00",
+        "now_utc": "2026-07-19T14:26:13.873524+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-18"
+        "trade_date": "2026-07-19"
       },
       "setup": "NO_TRADE",
       "sma20": 296.80149993896487,
       "sma50": 290.2956005859375,
       "source_count": 1,
       "source_times": [
-        "2026-07-18T08:22:10.735828+00:00"
+        "2026-07-19T08:54:55.442817+00:00"
       ],
       "sources": [
         "Rotacion sectorial"
@@ -2751,12 +2736,12 @@
       "20D +1.4%",
       "relativo vs SPY +1.1%",
       "RSI 50.3",
-      "Persistencia de la fortaleza relativa en XLE y XLV frente al SPY."
+      "Persistencia de la fortaleza relativa en XLE, XLV y XLF frente al SPY."
     ],
     "score": 5,
     "source": "https://finance.yahoo.com/quote/IWM",
     "summary": "IWM queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-18T14:22:48.103346+00:00",
+    "time_utc": "2026-07-19T14:26:18.395388+00:00",
     "title": "IWM NO_TRADE NO_TRADE"
   },
   {
@@ -2766,7 +2751,7 @@
     "metrics": {
       "action_state": "NO_TRADE",
       "ask": null,
-      "avg_source_score": 50.0,
+      "avg_source_score": 51.0,
       "bid": null,
       "breakout_20d": false,
       "breakout_50d": false,
@@ -2779,14 +2764,13 @@
         "mercado cerrado",
         "faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close",
         "sin timestamp de precio",
-        "senal de sesion anterior",
         "volumen pre-market bajo 0",
         "ningun setup minimo confirma",
         "riesgo/beneficio insuficiente N/A"
       ],
       "market_state": null,
       "max_hold_hours": 8,
-      "max_source_score": 50.0,
+      "max_source_score": 51.0,
       "perf_20d": 0.3144509805649731,
       "perf_5d": -1.544477646354414,
       "perf_60d": 5.568963752098166,
@@ -2819,20 +2803,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-18T16:22:41.618767+02:00",
-        "now_ny": "2026-07-18T10:22:41.618767-04:00",
-        "now_utc": "2026-07-18T14:22:41.618767+00:00",
+        "now_madrid": "2026-07-19T16:26:13.873524+02:00",
+        "now_ny": "2026-07-19T10:26:13.873524-04:00",
+        "now_utc": "2026-07-19T14:26:13.873524+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-18"
+        "trade_date": "2026-07-19"
       },
       "setup": "NO_TRADE",
       "sma20": 745.0210052490235,
       "sma50": 744.3804016113281,
       "source_count": 1,
       "source_times": [
-        "2026-07-17T21:32:09.123435+00:00"
+        "2026-07-19T08:57:21.459986+00:00"
       ],
       "sources": [
         "Volumen inusual"
@@ -2843,9 +2827,9 @@
       "symbol": "SPY",
       "take_profit": null,
       "validation_status": "INVALID",
-      "volume": 61343126.0,
-      "volume_20d_avg": 52375901.3,
-      "volume_ratio": 1.1712089811808166,
+      "volume": 62569200.0,
+      "volume_20d_avg": 52437205.0,
+      "volume_ratio": 1.1932214922591697,
       "warnings": [
         "fase NO_TRADE: no abrir posicion automaticamente"
       ]
@@ -2862,8 +2846,8 @@
       "Invalidacion: mercado cerrado; faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close; sin timestamp de precio",
       "Avisos: fase NO_TRADE: no abrir posicion automaticamente",
       "Confluencia: 1 fuentes",
-      "Score maximo previo: 50/100",
-      "Score medio previo: 50/100",
+      "Score maximo previo: 51/100",
+      "Score medio previo: 51/100",
       "Spread N/A",
       "Gap N/A",
       "VWAP pre-market N/A",
@@ -2877,7 +2861,7 @@
     "score": 5,
     "source": "https://finance.yahoo.com/quote/SPY",
     "summary": "SPY queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-18T14:22:48.125690+00:00",
+    "time_utc": "2026-07-19T14:26:18.412376+00:00",
     "title": "SPY NO_TRADE NO_TRADE"
   }
 ]
