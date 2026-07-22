@@ -1,15 +1,15 @@
 [
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 sin operaciones de compra o venta declaradas por insiders en varias compañías tecnológicas. Es importante monitorear la evolución del precio y volumen para detectar posibles movimientos derivados de estas declaraciones. La ausencia de transacciones puede indicar precaución o espera por parte de los insiders.",
+    "ai_brief": "Se han presentado múltiples formularios SEC 4 por insiders en empresas tecnológicas clave sin operaciones recientes de compra o venta. Es importante monitorear la evolución del precio y volumen para detectar posibles movimientos derivados de estas declaraciones. La ausencia de transacciones puede indicar precaución o espera por parte de los insiders, lo que requiere vigilancia continua.",
     "ai_risk_notes": [
-      "La falta de operaciones declaradas en los formularios 4 puede limitar la información sobre la intención real de los insiders, aumentando la incertidumbre.",
-      "Volúmenes de negociación inferiores al promedio pueden indicar menor interés o liquidez, lo que puede aumentar la volatilidad en caso de noticias inesperadas."
+      "La falta de operaciones declaradas en los formularios 4 puede ocultar movimientos futuros o incertidumbre interna.",
+      "Volúmenes de negociación inferiores al promedio pueden limitar la liquidez y aumentar la volatilidad en caso de noticias inesperadas."
     ],
     "ai_watch_items": [
-      "Vigilar la reacción del precio tras la publicación de los formularios SEC 4 en MSFT, GOOGL, META, PLTR, AMD y AVGO.",
-      "Controlar el volumen de negociación en relación con el promedio de 20 días para detectar anomalías o incrementos significativos.",
-      "Observar indicadores técnicos como RSI y medias móviles para identificar posibles señales de cambio de tendencia."
+      "Reacción del precio y volumen tras la publicación de los formularios 4 en MSFT, GOOGL, META, PLTR, AMD y AVGO.",
+      "Cambios en indicadores técnicos relevantes como RSI, SMA20 y SMA50 para detectar señales de presión compradora o vendedora.",
+      "Actualizaciones o nuevas presentaciones de formularios 4 que puedan reflejar operaciones de insiders y alterar la percepción del mercado."
     ],
     "asset": "MSFT",
     "level": "medio",
@@ -24,18 +24,18 @@
         "sale_count": 0,
         "shares": 0
       },
-      "perf_20d": 6.033214290109568,
-      "perf_5d": 2.8901042463448157,
-      "perf_60d": -7.075211108928192,
-      "price": 402.2900085449219,
-      "rsi": 56.15375611314723,
-      "sma20": 382.30199737548827,
-      "sma50": 401.27819763183595,
+      "perf_20d": 8.278435227656855,
+      "perf_5d": 3.330477637011975,
+      "perf_60d": -4.329524954900776,
+      "price": 397.75,
+      "rsi": 53.41253730447022,
+      "sma20": 383.82249755859374,
+      "sma50": 400.8177978515625,
       "status": "ok",
       "symbol": "MSFT",
-      "volume": 27863300.0,
-      "volume_20d_avg": 45261530.0,
-      "volume_ratio": 0.6156066752493784
+      "volume": 24054000.0,
+      "volume_20d_avg": 44208300.0,
+      "volume_ratio": 0.544105971050685
     },
     "reasons": [
       "formulario SEC 4",
@@ -45,20 +45,69 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/789019/000078901926000139/xslF345X06/form4.xml",
     "summary": "Microsoft publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-21T08:47:43.279129+00:00",
+    "time_utc": "2026-07-22T08:46:33.764953+00:00",
     "title": "MSFT presentacion SEC 4"
   },
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 sin operaciones de compra o venta declaradas por insiders en varias compañías tecnológicas. Es importante monitorear la evolución del precio y volumen para detectar posibles movimientos derivados de estas declaraciones. La ausencia de transacciones puede indicar precaución o espera por parte de los insiders.",
+    "ai_brief": "Se han presentado múltiples formularios SEC 4 por insiders en empresas tecnológicas clave sin operaciones recientes de compra o venta. Es importante monitorear la evolución del precio y volumen para detectar posibles movimientos derivados de estas declaraciones. La ausencia de transacciones puede indicar precaución o espera por parte de los insiders, lo que requiere vigilancia continua.",
     "ai_risk_notes": [
-      "La falta de operaciones declaradas en los formularios 4 puede limitar la información sobre la intención real de los insiders, aumentando la incertidumbre.",
-      "Volúmenes de negociación inferiores al promedio pueden indicar menor interés o liquidez, lo que puede aumentar la volatilidad en caso de noticias inesperadas."
+      "La falta de operaciones declaradas en los formularios 4 puede ocultar movimientos futuros o incertidumbre interna.",
+      "Volúmenes de negociación inferiores al promedio pueden limitar la liquidez y aumentar la volatilidad en caso de noticias inesperadas."
     ],
     "ai_watch_items": [
-      "Vigilar la reacción del precio tras la publicación de los formularios SEC 4 en MSFT, GOOGL, META, PLTR, AMD y AVGO.",
-      "Controlar el volumen de negociación en relación con el promedio de 20 días para detectar anomalías o incrementos significativos.",
-      "Observar indicadores técnicos como RSI y medias móviles para identificar posibles señales de cambio de tendencia."
+      "Reacción del precio y volumen tras la publicación de los formularios 4 en MSFT, GOOGL, META, PLTR, AMD y AVGO.",
+      "Cambios en indicadores técnicos relevantes como RSI, SMA20 y SMA50 para detectar señales de presión compradora o vendedora.",
+      "Actualizaciones o nuevas presentaciones de formularios 4 que puedan reflejar operaciones de insiders y alterar la percepción del mercado."
+    ],
+    "asset": "GOOGL",
+    "level": "medio",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "filing_date": "2026-07-21",
+      "form": "4",
+      "form4_details": {
+        "avg_price": null,
+        "purchase_count": 0,
+        "sale_count": 0,
+        "shares": 0
+      },
+      "perf_20d": -0.7235183116818034,
+      "perf_5d": -3.4380171715381436,
+      "perf_60d": 2.437362828944889,
+      "price": 347.1499938964844,
+      "rsi": 43.09941844397725,
+      "sma20": 354.9725006103516,
+      "sma50": 368.6492004394531,
+      "status": "ok",
+      "symbol": "GOOGL",
+      "volume": 23285100.0,
+      "volume_20d_avg": 32894080.0,
+      "volume_ratio": 0.7078811749713019
+    },
+    "reasons": [
+      "formulario SEC 4",
+      "presentado 2026-07-21",
+      "operacion declarada por insider"
+    ],
+    "score": 70,
+    "source": "https://www.sec.gov/Archives/edgar/data/1652044/000116840426000031/xslF345X06/form4-07212026_090748.xml",
+    "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
+    "time_utc": "2026-07-22T08:46:35.499400+00:00",
+    "title": "GOOGL presentacion SEC 4"
+  },
+  {
+    "agent": "sec_filing",
+    "ai_brief": "Se han presentado múltiples formularios SEC 4 por insiders en empresas tecnológicas clave sin operaciones recientes de compra o venta. Es importante monitorear la evolución del precio y volumen para detectar posibles movimientos derivados de estas declaraciones. La ausencia de transacciones puede indicar precaución o espera por parte de los insiders, lo que requiere vigilancia continua.",
+    "ai_risk_notes": [
+      "La falta de operaciones declaradas en los formularios 4 puede ocultar movimientos futuros o incertidumbre interna.",
+      "Volúmenes de negociación inferiores al promedio pueden limitar la liquidez y aumentar la volatilidad en caso de noticias inesperadas."
+    ],
+    "ai_watch_items": [
+      "Reacción del precio y volumen tras la publicación de los formularios 4 en MSFT, GOOGL, META, PLTR, AMD y AVGO.",
+      "Cambios en indicadores técnicos relevantes como RSI, SMA20 y SMA50 para detectar señales de presión compradora o vendedora.",
+      "Actualizaciones o nuevas presentaciones de formularios 4 que puedan reflejar operaciones de insiders y alterar la percepción del mercado."
     ],
     "asset": "GOOGL",
     "level": "medio",
@@ -73,18 +122,18 @@
         "sale_count": 0,
         "shares": 0
       },
-      "perf_20d": -4.3583426889450045,
-      "perf_5d": -0.1475190822512351,
-      "perf_60d": 3.7339333480710835,
-      "price": 351.989990234375,
-      "rsi": 45.654063891922235,
-      "sma20": 355.09900054931643,
-      "sma50": 369.66600036621094,
+      "perf_20d": -0.7235183116818034,
+      "perf_5d": -3.4380171715381436,
+      "perf_60d": 2.437362828944889,
+      "price": 347.1499938964844,
+      "rsi": 43.09941844397725,
+      "sma20": 354.9725006103516,
+      "sma50": 368.6492004394531,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 24704700.0,
-      "volume_20d_avg": 34368970.0,
-      "volume_ratio": 0.718808273858658
+      "volume": 23285100.0,
+      "volume_20d_avg": 32894080.0,
+      "volume_ratio": 0.7078811749713019
     },
     "reasons": [
       "formulario SEC 4",
@@ -94,20 +143,20 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000116840426000029/xslF345X06/form4-07182026_120730.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-21T08:47:44.542691+00:00",
+    "time_utc": "2026-07-22T08:46:35.522895+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 sin operaciones de compra o venta declaradas por insiders en varias compañías tecnológicas. Es importante monitorear la evolución del precio y volumen para detectar posibles movimientos derivados de estas declaraciones. La ausencia de transacciones puede indicar precaución o espera por parte de los insiders.",
+    "ai_brief": "Se han presentado múltiples formularios SEC 4 por insiders en empresas tecnológicas clave sin operaciones recientes de compra o venta. Es importante monitorear la evolución del precio y volumen para detectar posibles movimientos derivados de estas declaraciones. La ausencia de transacciones puede indicar precaución o espera por parte de los insiders, lo que requiere vigilancia continua.",
     "ai_risk_notes": [
-      "La falta de operaciones declaradas en los formularios 4 puede limitar la información sobre la intención real de los insiders, aumentando la incertidumbre.",
-      "Volúmenes de negociación inferiores al promedio pueden indicar menor interés o liquidez, lo que puede aumentar la volatilidad en caso de noticias inesperadas."
+      "La falta de operaciones declaradas en los formularios 4 puede ocultar movimientos futuros o incertidumbre interna.",
+      "Volúmenes de negociación inferiores al promedio pueden limitar la liquidez y aumentar la volatilidad en caso de noticias inesperadas."
     ],
     "ai_watch_items": [
-      "Vigilar la reacción del precio tras la publicación de los formularios SEC 4 en MSFT, GOOGL, META, PLTR, AMD y AVGO.",
-      "Controlar el volumen de negociación en relación con el promedio de 20 días para detectar anomalías o incrementos significativos.",
-      "Observar indicadores técnicos como RSI y medias móviles para identificar posibles señales de cambio de tendencia."
+      "Reacción del precio y volumen tras la publicación de los formularios 4 en MSFT, GOOGL, META, PLTR, AMD y AVGO.",
+      "Cambios en indicadores técnicos relevantes como RSI, SMA20 y SMA50 para detectar señales de presión compradora o vendedora.",
+      "Actualizaciones o nuevas presentaciones de formularios 4 que puedan reflejar operaciones de insiders y alterar la percepción del mercado."
     ],
     "asset": "META",
     "level": "medio",
@@ -122,18 +171,18 @@
         "sale_count": 0,
         "shares": 0
       },
-      "perf_20d": 11.889748859384186,
-      "perf_5d": -1.656693802077791,
-      "perf_60d": -4.278811413733918,
-      "price": 645.8499755859375,
-      "rsi": 56.769257635890085,
-      "sma20": 608.6849914550781,
-      "sma50": 605.1943957519532,
+      "perf_20d": 14.18108103836735,
+      "perf_5d": -2.6064959823106637,
+      "perf_60d": -2.3272436148515596,
+      "price": 643.8099975585938,
+      "rsi": 56.17815400833916,
+      "sma20": 612.682992553711,
+      "sma50": 605.7343957519531,
       "status": "ok",
       "symbol": "META",
-      "volume": 10200100.0,
-      "volume_20d_avg": 19978985.0,
-      "volume_ratio": 0.5105414514300902
+      "volume": 9108200.0,
+      "volume_20d_avg": 19665375.0,
+      "volume_ratio": 0.46315923291572114
     },
     "reasons": [
       "formulario SEC 4",
@@ -143,20 +192,20 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1326801/000095010326010694/xslF345X06/ownership.xml",
     "summary": "Meta Platforms publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-21T08:47:44.989993+00:00",
+    "time_utc": "2026-07-22T08:46:36.109641+00:00",
     "title": "META presentacion SEC 4"
   },
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 sin operaciones de compra o venta declaradas por insiders en varias compañías tecnológicas. Es importante monitorear la evolución del precio y volumen para detectar posibles movimientos derivados de estas declaraciones. La ausencia de transacciones puede indicar precaución o espera por parte de los insiders.",
+    "ai_brief": "Se han presentado múltiples formularios SEC 4 por insiders en empresas tecnológicas clave sin operaciones recientes de compra o venta. Es importante monitorear la evolución del precio y volumen para detectar posibles movimientos derivados de estas declaraciones. La ausencia de transacciones puede indicar precaución o espera por parte de los insiders, lo que requiere vigilancia continua.",
     "ai_risk_notes": [
-      "La falta de operaciones declaradas en los formularios 4 puede limitar la información sobre la intención real de los insiders, aumentando la incertidumbre.",
-      "Volúmenes de negociación inferiores al promedio pueden indicar menor interés o liquidez, lo que puede aumentar la volatilidad en caso de noticias inesperadas."
+      "La falta de operaciones declaradas en los formularios 4 puede ocultar movimientos futuros o incertidumbre interna.",
+      "Volúmenes de negociación inferiores al promedio pueden limitar la liquidez y aumentar la volatilidad en caso de noticias inesperadas."
     ],
     "ai_watch_items": [
-      "Vigilar la reacción del precio tras la publicación de los formularios SEC 4 en MSFT, GOOGL, META, PLTR, AMD y AVGO.",
-      "Controlar el volumen de negociación en relación con el promedio de 20 días para detectar anomalías o incrementos significativos.",
-      "Observar indicadores técnicos como RSI y medias móviles para identificar posibles señales de cambio de tendencia."
+      "Reacción del precio y volumen tras la publicación de los formularios 4 en MSFT, GOOGL, META, PLTR, AMD y AVGO.",
+      "Cambios en indicadores técnicos relevantes como RSI, SMA20 y SMA50 para detectar señales de presión compradora o vendedora.",
+      "Actualizaciones o nuevas presentaciones de formularios 4 que puedan reflejar operaciones de insiders y alterar la percepción del mercado."
     ],
     "asset": "META",
     "level": "medio",
@@ -171,18 +220,18 @@
         "sale_count": 0,
         "shares": 0
       },
-      "perf_20d": 11.889748859384186,
-      "perf_5d": -1.656693802077791,
-      "perf_60d": -4.278811413733918,
-      "price": 645.8499755859375,
-      "rsi": 56.769257635890085,
-      "sma20": 608.6849914550781,
-      "sma50": 605.1943957519532,
+      "perf_20d": 14.18108103836735,
+      "perf_5d": -2.6064959823106637,
+      "perf_60d": -2.3272436148515596,
+      "price": 643.8099975585938,
+      "rsi": 56.17815400833916,
+      "sma20": 612.682992553711,
+      "sma50": 605.7343957519531,
       "status": "ok",
       "symbol": "META",
-      "volume": 10200100.0,
-      "volume_20d_avg": 19978985.0,
-      "volume_ratio": 0.5105414514300902
+      "volume": 9108200.0,
+      "volume_20d_avg": 19665375.0,
+      "volume_ratio": 0.46315923291572114
     },
     "reasons": [
       "formulario SEC 4",
@@ -192,20 +241,20 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1326801/000095010326010417/xslF345X06/ownership.xml",
     "summary": "Meta Platforms publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-21T08:47:45.006544+00:00",
+    "time_utc": "2026-07-22T08:46:36.137268+00:00",
     "title": "META presentacion SEC 4"
   },
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 sin operaciones de compra o venta declaradas por insiders en varias compañías tecnológicas. Es importante monitorear la evolución del precio y volumen para detectar posibles movimientos derivados de estas declaraciones. La ausencia de transacciones puede indicar precaución o espera por parte de los insiders.",
+    "ai_brief": "Se han presentado múltiples formularios SEC 4 por insiders en empresas tecnológicas clave sin operaciones recientes de compra o venta. Es importante monitorear la evolución del precio y volumen para detectar posibles movimientos derivados de estas declaraciones. La ausencia de transacciones puede indicar precaución o espera por parte de los insiders, lo que requiere vigilancia continua.",
     "ai_risk_notes": [
-      "La falta de operaciones declaradas en los formularios 4 puede limitar la información sobre la intención real de los insiders, aumentando la incertidumbre.",
-      "Volúmenes de negociación inferiores al promedio pueden indicar menor interés o liquidez, lo que puede aumentar la volatilidad en caso de noticias inesperadas."
+      "La falta de operaciones declaradas en los formularios 4 puede ocultar movimientos futuros o incertidumbre interna.",
+      "Volúmenes de negociación inferiores al promedio pueden limitar la liquidez y aumentar la volatilidad en caso de noticias inesperadas."
     ],
     "ai_watch_items": [
-      "Vigilar la reacción del precio tras la publicación de los formularios SEC 4 en MSFT, GOOGL, META, PLTR, AMD y AVGO.",
-      "Controlar el volumen de negociación en relación con el promedio de 20 días para detectar anomalías o incrementos significativos.",
-      "Observar indicadores técnicos como RSI y medias móviles para identificar posibles señales de cambio de tendencia."
+      "Reacción del precio y volumen tras la publicación de los formularios 4 en MSFT, GOOGL, META, PLTR, AMD y AVGO.",
+      "Cambios en indicadores técnicos relevantes como RSI, SMA20 y SMA50 para detectar señales de presión compradora o vendedora.",
+      "Actualizaciones o nuevas presentaciones de formularios 4 que puedan reflejar operaciones de insiders y alterar la percepción del mercado."
     ],
     "asset": "PLTR",
     "level": "medio",
@@ -214,24 +263,19 @@
       "breakout_50d": false,
       "filing_date": "2026-07-17",
       "form": "4",
-      "form4_details": {
-        "avg_price": null,
-        "purchase_count": 0,
-        "sale_count": 0,
-        "shares": 0
-      },
-      "perf_20d": 4.966143708407111,
-      "perf_5d": 3.6988719361120914,
-      "perf_60d": -11.643290251731031,
-      "price": 134.85000610351562,
-      "rsi": 55.76384877620135,
-      "sma20": 125.57249908447265,
-      "sma50": 132.49849960327148,
+      "form4_details": {},
+      "perf_20d": 11.012555365781896,
+      "perf_5d": -0.7926993336204391,
+      "perf_60d": -6.293708554880551,
+      "price": 132.66000366210938,
+      "rsi": 52.84219267752938,
+      "sma20": 126.23049926757812,
+      "sma50": 132.4106996154785,
       "status": "ok",
       "symbol": "PLTR",
-      "volume": 30508200.0,
-      "volume_20d_avg": 43885690.0,
-      "volume_ratio": 0.6951742128242714
+      "volume": 23071500.0,
+      "volume_20d_avg": 42196195.0,
+      "volume_ratio": 0.546767309232503
     },
     "reasons": [
       "formulario SEC 4",
@@ -241,64 +285,20 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1321655/000182395226000018/xslF345X06/wk-form4_1784333024.xml",
     "summary": "Palantir publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-21T08:47:45.783696+00:00",
+    "time_utc": "2026-07-22T08:46:37.257272+00:00",
     "title": "PLTR presentacion SEC 4"
   },
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 sin operaciones de compra o venta declaradas por insiders en varias compañías tecnológicas. Es importante monitorear la evolución del precio y volumen para detectar posibles movimientos derivados de estas declaraciones. La ausencia de transacciones puede indicar precaución o espera por parte de los insiders.",
+    "ai_brief": "Se han presentado múltiples formularios SEC 4 por insiders en empresas tecnológicas clave sin operaciones recientes de compra o venta. Es importante monitorear la evolución del precio y volumen para detectar posibles movimientos derivados de estas declaraciones. La ausencia de transacciones puede indicar precaución o espera por parte de los insiders, lo que requiere vigilancia continua.",
     "ai_risk_notes": [
-      "La falta de operaciones declaradas en los formularios 4 puede limitar la información sobre la intención real de los insiders, aumentando la incertidumbre.",
-      "Volúmenes de negociación inferiores al promedio pueden indicar menor interés o liquidez, lo que puede aumentar la volatilidad en caso de noticias inesperadas."
+      "La falta de operaciones declaradas en los formularios 4 puede ocultar movimientos futuros o incertidumbre interna.",
+      "Volúmenes de negociación inferiores al promedio pueden limitar la liquidez y aumentar la volatilidad en caso de noticias inesperadas."
     ],
     "ai_watch_items": [
-      "Vigilar la reacción del precio tras la publicación de los formularios SEC 4 en MSFT, GOOGL, META, PLTR, AMD y AVGO.",
-      "Controlar el volumen de negociación en relación con el promedio de 20 días para detectar anomalías o incrementos significativos.",
-      "Observar indicadores técnicos como RSI y medias móviles para identificar posibles señales de cambio de tendencia."
-    ],
-    "asset": "PLTR",
-    "level": "medio",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "filing_date": "2026-07-07",
-      "form": "4",
-      "form4_details": {},
-      "perf_20d": 4.966143708407111,
-      "perf_5d": 3.6988719361120914,
-      "perf_60d": -11.643290251731031,
-      "price": 134.85000610351562,
-      "rsi": 55.76384877620135,
-      "sma20": 125.57249908447265,
-      "sma50": 132.49849960327148,
-      "status": "ok",
-      "symbol": "PLTR",
-      "volume": 30508200.0,
-      "volume_20d_avg": 43885690.0,
-      "volume_ratio": 0.6951742128242714
-    },
-    "reasons": [
-      "formulario SEC 4",
-      "presentado 2026-07-07",
-      "operacion declarada por insider"
-    ],
-    "score": 70,
-    "source": "https://www.sec.gov/Archives/edgar/data/1321655/000182415926000009/xslF345X06/wk-form4_1783468921.xml",
-    "summary": "Palantir publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-21T08:47:45.783769+00:00",
-    "title": "PLTR presentacion SEC 4"
-  },
-  {
-    "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 sin operaciones de compra o venta declaradas por insiders en varias compañías tecnológicas. Es importante monitorear la evolución del precio y volumen para detectar posibles movimientos derivados de estas declaraciones. La ausencia de transacciones puede indicar precaución o espera por parte de los insiders.",
-    "ai_risk_notes": [
-      "La falta de operaciones declaradas en los formularios 4 puede limitar la información sobre la intención real de los insiders, aumentando la incertidumbre.",
-      "Volúmenes de negociación inferiores al promedio pueden indicar menor interés o liquidez, lo que puede aumentar la volatilidad en caso de noticias inesperadas."
-    ],
-    "ai_watch_items": [
-      "Vigilar la reacción del precio tras la publicación de los formularios SEC 4 en MSFT, GOOGL, META, PLTR, AMD y AVGO.",
-      "Controlar el volumen de negociación en relación con el promedio de 20 días para detectar anomalías o incrementos significativos.",
-      "Observar indicadores técnicos como RSI y medias móviles para identificar posibles señales de cambio de tendencia."
+      "Reacción del precio y volumen tras la publicación de los formularios 4 en MSFT, GOOGL, META, PLTR, AMD y AVGO.",
+      "Cambios en indicadores técnicos relevantes como RSI, SMA20 y SMA50 para detectar señales de presión compradora o vendedora.",
+      "Actualizaciones o nuevas presentaciones de formularios 4 que puedan reflejar operaciones de insiders y alterar la percepción del mercado."
     ],
     "asset": "AMD",
     "level": "medio",
@@ -308,18 +308,18 @@
       "filing_date": "2026-07-17",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -6.289891155087246,
-      "perf_5d": -5.767324702819254,
-      "perf_60d": 65.94280020559593,
-      "price": 503.57000732421875,
-      "rsi": 47.603370260169065,
-      "sma20": 531.3289978027344,
-      "sma50": 500.72760009765625,
+      "perf_20d": -1.3052249049724574,
+      "perf_5d": -0.6750245697318302,
+      "perf_60d": 78.30872060347906,
+      "price": 544.4299926757812,
+      "rsi": 54.82958356946611,
+      "sma20": 530.9689971923829,
+      "sma50": 503.44700012207034,
       "status": "ok",
       "symbol": "AMD",
-      "volume": 23347500.0,
-      "volume_20d_avg": 28293020.0,
-      "volume_ratio": 0.8252035307648318
+      "volume": 28967100.0,
+      "volume_20d_avg": 28446875.0,
+      "volume_ratio": 1.0182875974953312
     },
     "reasons": [
       "formulario SEC 4",
@@ -329,20 +329,20 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000117/xslF345X06/wk-form4_1784318998.xml",
     "summary": "Advanced Micro Devices publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-21T08:47:46.167334+00:00",
+    "time_utc": "2026-07-22T08:46:37.825208+00:00",
     "title": "AMD presentacion SEC 4"
   },
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 sin operaciones de compra o venta declaradas por insiders en varias compañías tecnológicas. Es importante monitorear la evolución del precio y volumen para detectar posibles movimientos derivados de estas declaraciones. La ausencia de transacciones puede indicar precaución o espera por parte de los insiders.",
+    "ai_brief": "Se han presentado múltiples formularios SEC 4 por insiders en empresas tecnológicas clave sin operaciones recientes de compra o venta. Es importante monitorear la evolución del precio y volumen para detectar posibles movimientos derivados de estas declaraciones. La ausencia de transacciones puede indicar precaución o espera por parte de los insiders, lo que requiere vigilancia continua.",
     "ai_risk_notes": [
-      "La falta de operaciones declaradas en los formularios 4 puede limitar la información sobre la intención real de los insiders, aumentando la incertidumbre.",
-      "Volúmenes de negociación inferiores al promedio pueden indicar menor interés o liquidez, lo que puede aumentar la volatilidad en caso de noticias inesperadas."
+      "La falta de operaciones declaradas en los formularios 4 puede ocultar movimientos futuros o incertidumbre interna.",
+      "Volúmenes de negociación inferiores al promedio pueden limitar la liquidez y aumentar la volatilidad en caso de noticias inesperadas."
     ],
     "ai_watch_items": [
-      "Vigilar la reacción del precio tras la publicación de los formularios SEC 4 en MSFT, GOOGL, META, PLTR, AMD y AVGO.",
-      "Controlar el volumen de negociación en relación con el promedio de 20 días para detectar anomalías o incrementos significativos.",
-      "Observar indicadores técnicos como RSI y medias móviles para identificar posibles señales de cambio de tendencia."
+      "Reacción del precio y volumen tras la publicación de los formularios 4 en MSFT, GOOGL, META, PLTR, AMD y AVGO.",
+      "Cambios en indicadores técnicos relevantes como RSI, SMA20 y SMA50 para detectar señales de presión compradora o vendedora.",
+      "Actualizaciones o nuevas presentaciones de formularios 4 que puedan reflejar operaciones de insiders y alterar la percepción del mercado."
     ],
     "asset": "AVGO",
     "level": "medio",
@@ -352,18 +352,18 @@
       "filing_date": "2026-07-14",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -8.068555232512631,
-      "perf_5d": -1.5336503887703579,
-      "perf_60d": -10.52643815848996,
-      "price": 378.1600036621094,
-      "rsi": 46.73932803068995,
-      "sma20": 380.17999877929685,
-      "sma50": 401.99880065917966,
+      "perf_20d": -1.435749576086387,
+      "perf_5d": -0.6707577419799104,
+      "perf_60d": -7.9630428744573045,
+      "price": 386.5,
+      "rsi": 49.90121343573178,
+      "sma20": 379.89849853515625,
+      "sma50": 401.4776007080078,
       "status": "ok",
       "symbol": "AVGO",
-      "volume": 14399000.0,
-      "volume_20d_avg": 24634635.0,
-      "volume_ratio": 0.5845022668287961
+      "volume": 17261000.0,
+      "volume_20d_avg": 24178575.0,
+      "volume_ratio": 0.7138964972087892
     },
     "reasons": [
       "formulario SEC 4",
@@ -373,7 +373,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000072/xslF345X06/wk-form4_1784075275.xml",
     "summary": "Broadcom publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-21T08:47:46.575134+00:00",
+    "time_utc": "2026-07-22T08:46:38.390120+00:00",
     "title": "AVGO presentacion SEC 4"
   },
   {
@@ -386,18 +386,18 @@
       "filing_date": "2026-07-14",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -8.068555232512631,
-      "perf_5d": -1.5336503887703579,
-      "perf_60d": -10.52643815848996,
-      "price": 378.1600036621094,
-      "rsi": 46.73932803068995,
-      "sma20": 380.17999877929685,
-      "sma50": 401.99880065917966,
+      "perf_20d": -1.435749576086387,
+      "perf_5d": -0.6707577419799104,
+      "perf_60d": -7.9630428744573045,
+      "price": 386.5,
+      "rsi": 49.90121343573178,
+      "sma20": 379.89849853515625,
+      "sma50": 401.4776007080078,
       "status": "ok",
       "symbol": "AVGO",
-      "volume": 14399000.0,
-      "volume_20d_avg": 24634635.0,
-      "volume_ratio": 0.5845022668287961
+      "volume": 17261000.0,
+      "volume_20d_avg": 24178575.0,
+      "volume_ratio": 0.7138964972087892
     },
     "reasons": [
       "formulario SEC 4",
@@ -407,7 +407,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000070/xslF345X06/wk-form4_1784075021.xml",
     "summary": "Broadcom publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-21T08:47:46.575161+00:00",
+    "time_utc": "2026-07-22T08:46:38.390154+00:00",
     "title": "AVGO presentacion SEC 4"
   },
   {
@@ -420,18 +420,18 @@
       "filing_date": "2026-07-10",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -8.068555232512631,
-      "perf_5d": -1.5336503887703579,
-      "perf_60d": -10.52643815848996,
-      "price": 378.1600036621094,
-      "rsi": 46.73932803068995,
-      "sma20": 380.17999877929685,
-      "sma50": 401.99880065917966,
+      "perf_20d": -1.435749576086387,
+      "perf_5d": -0.6707577419799104,
+      "perf_60d": -7.9630428744573045,
+      "price": 386.5,
+      "rsi": 49.90121343573178,
+      "sma20": 379.89849853515625,
+      "sma50": 401.4776007080078,
       "status": "ok",
       "symbol": "AVGO",
-      "volume": 14399000.0,
-      "volume_20d_avg": 24634635.0,
-      "volume_ratio": 0.5845022668287961
+      "volume": 17261000.0,
+      "volume_20d_avg": 24178575.0,
+      "volume_ratio": 0.7138964972087892
     },
     "reasons": [
       "formulario SEC 4",
@@ -441,7 +441,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000068/xslF345X06/wk-form4_1783723427.xml",
     "summary": "Broadcom publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-21T08:47:46.575197+00:00",
+    "time_utc": "2026-07-22T08:46:38.390171+00:00",
     "title": "AVGO presentacion SEC 4"
   },
   {
@@ -454,18 +454,18 @@
       "filing_date": "2026-07-10",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -8.068555232512631,
-      "perf_5d": -1.5336503887703579,
-      "perf_60d": -10.52643815848996,
-      "price": 378.1600036621094,
-      "rsi": 46.73932803068995,
-      "sma20": 380.17999877929685,
-      "sma50": 401.99880065917966,
+      "perf_20d": -1.435749576086387,
+      "perf_5d": -0.6707577419799104,
+      "perf_60d": -7.9630428744573045,
+      "price": 386.5,
+      "rsi": 49.90121343573178,
+      "sma20": 379.89849853515625,
+      "sma50": 401.4776007080078,
       "status": "ok",
       "symbol": "AVGO",
-      "volume": 14399000.0,
-      "volume_20d_avg": 24634635.0,
-      "volume_ratio": 0.5845022668287961
+      "volume": 17261000.0,
+      "volume_20d_avg": 24178575.0,
+      "volume_ratio": 0.7138964972087892
     },
     "reasons": [
       "formulario SEC 4",
@@ -475,7 +475,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000066/xslF345X06/wk-form4_1783723055.xml",
     "summary": "Broadcom publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-21T08:47:46.575218+00:00",
+    "time_utc": "2026-07-22T08:46:38.390185+00:00",
     "title": "AVGO presentacion SEC 4"
   },
   {
@@ -488,18 +488,18 @@
       "filing_date": "2026-07-09",
       "form": "8-K",
       "form4_details": {},
-      "perf_20d": 2.291421955686146,
-      "perf_5d": 1.083663402623003,
-      "perf_60d": -2.102911616679337,
-      "price": 249.99000549316406,
-      "rsi": 54.046040456097515,
-      "sma20": 242.3364990234375,
-      "sma50": 251.63300048828125,
+      "perf_20d": 6.340482920794099,
+      "perf_5d": 0.024242416769193476,
+      "perf_60d": -2.9520145543530996,
+      "price": 247.5500030517578,
+      "rsi": 51.32141668944692,
+      "sma20": 243.07449951171876,
+      "sma50": 251.1606002807617,
       "status": "ok",
       "symbol": "AMZN",
-      "volume": 32373200.0,
-      "volume_20d_avg": 59121505.0,
-      "volume_ratio": 0.5475706344079029
+      "volume": 27647700.0,
+      "volume_20d_avg": 57086130.0,
+      "volume_ratio": 0.48431554214657746
     },
     "reasons": [
       "formulario SEC 8-K",
@@ -509,7 +509,7 @@
     "score": 67,
     "source": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926082293/tm2619352d4_8k.htm",
     "summary": "Amazon publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-21T08:47:44.035475+00:00",
+    "time_utc": "2026-07-22T08:46:34.910215+00:00",
     "title": "AMZN presentacion SEC 8-K"
   }
 ]
