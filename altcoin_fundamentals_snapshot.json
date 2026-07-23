@@ -1,290 +1,290 @@
 [
   {
     "agent": "altcoin_fundamentals",
-    "ai_brief": "Se observa una variabilidad significativa en el desempeño semanal y mensual de varias altcoins clave, con algunas mostrando crecimiento y otras retrocesos. La ausencia de datos de TVL limita la evaluación completa del valor bloqueado y la salud del ecosistema. Se recomienda mantener vigilancia activa sobre las fluctuaciones de mercado y la evolución de métricas fundamentales para anticipar posibles riesgos.",
+    "ai_brief": "Las altcoins analizadas muestran variaciones moderadas en sus métricas de mercado con incrementos en 30 días para la mayoría, aunque algunas presentan caídas recientes. La ausencia de TVL es un punto crítico a vigilar para evaluar la salud fundamental. Se recomienda monitorear la evolución de volumen y cambios porcentuales para anticipar posibles riesgos.",
     "ai_risk_notes": [
-      "La falta de datos de TVL puede ocultar riesgos relacionados con la liquidez y la adopción real de los protocolos.",
-      "Las caídas significativas en periodos cortos, como en NEAR y OP, pueden indicar vulnerabilidades o cambios negativos en el mercado."
+      "Caídas pronunciadas en 7 días y 30 días en NEAR (-8.9% y -7.5%) y OP (-4.5% y -1.7%) que pueden reflejar debilidad en el mercado.",
+      "Falta de datos de TVL que limita la evaluación completa del respaldo fundamental y puede ocultar riesgos de liquidez."
     ],
     "ai_watch_items": [
-      "Evolución del cambio porcentual semanal y mensual para AAVE, UNI y NEAR por su alta volatilidad.",
-      "Impacto de la ausencia de datos de TVL en la evaluación del valor y adopción de los activos.",
-      "Volumen de mercado y capitalización como indicadores de liquidez y confianza en activos como ETH y LINK."
-    ],
-    "asset": "AAVE",
-    "level": "vigilancia",
-    "metrics": {
-      "change_30d": 27.016798215243742,
-      "change_7d": -1.6773990267357022,
-      "market_cap": 1481321960.0,
-      "tvl": 0,
-      "volume": 239781080.0
-    },
-    "reasons": [
-      "7D -1.7%",
-      "30D +27.0%",
-      "TVL no disponible"
-    ],
-    "score": 60,
-    "source": "https://www.coingecko.com/en/coins/aave",
-    "summary": "Aave muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
-    "time_utc": "2026-07-22T09:17:49.501731+00:00",
-    "title": "AAVE vigilancia fundamental"
-  },
-  {
-    "agent": "altcoin_fundamentals",
-    "ai_brief": "Se observa una variabilidad significativa en el desempeño semanal y mensual de varias altcoins clave, con algunas mostrando crecimiento y otras retrocesos. La ausencia de datos de TVL limita la evaluación completa del valor bloqueado y la salud del ecosistema. Se recomienda mantener vigilancia activa sobre las fluctuaciones de mercado y la evolución de métricas fundamentales para anticipar posibles riesgos.",
-    "ai_risk_notes": [
-      "La falta de datos de TVL puede ocultar riesgos relacionados con la liquidez y la adopción real de los protocolos.",
-      "Las caídas significativas en periodos cortos, como en NEAR y OP, pueden indicar vulnerabilidades o cambios negativos en el mercado."
-    ],
-    "ai_watch_items": [
-      "Evolución del cambio porcentual semanal y mensual para AAVE, UNI y NEAR por su alta volatilidad.",
-      "Impacto de la ausencia de datos de TVL en la evaluación del valor y adopción de los activos.",
-      "Volumen de mercado y capitalización como indicadores de liquidez y confianza en activos como ETH y LINK."
-    ],
-    "asset": "ARB",
-    "level": "vigilancia",
-    "metrics": {
-      "change_30d": 5.643584044952372,
-      "change_7d": 1.7908423416368784,
-      "market_cap": 594452565.0,
-      "tvl": 0,
-      "volume": 49426085.0
-    },
-    "reasons": [
-      "7D +1.8%",
-      "30D +5.6%",
-      "TVL no disponible"
-    ],
-    "score": 59,
-    "source": "https://www.coingecko.com/en/coins/arbitrum",
-    "summary": "Arbitrum muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
-    "time_utc": "2026-07-22T09:17:49.501756+00:00",
-    "title": "ARB vigilancia fundamental"
-  },
-  {
-    "agent": "altcoin_fundamentals",
-    "ai_brief": "Se observa una variabilidad significativa en el desempeño semanal y mensual de varias altcoins clave, con algunas mostrando crecimiento y otras retrocesos. La ausencia de datos de TVL limita la evaluación completa del valor bloqueado y la salud del ecosistema. Se recomienda mantener vigilancia activa sobre las fluctuaciones de mercado y la evolución de métricas fundamentales para anticipar posibles riesgos.",
-    "ai_risk_notes": [
-      "La falta de datos de TVL puede ocultar riesgos relacionados con la liquidez y la adopción real de los protocolos.",
-      "Las caídas significativas en periodos cortos, como en NEAR y OP, pueden indicar vulnerabilidades o cambios negativos en el mercado."
-    ],
-    "ai_watch_items": [
-      "Evolución del cambio porcentual semanal y mensual para AAVE, UNI y NEAR por su alta volatilidad.",
-      "Impacto de la ausencia de datos de TVL en la evaluación del valor y adopción de los activos.",
-      "Volumen de mercado y capitalización como indicadores de liquidez y confianza en activos como ETH y LINK."
+      "Evolución del volumen de negociación semanal y mensual para detectar cambios significativos.",
+      "Variaciones porcentuales en 7 y 30 días, especialmente en activos con tendencia negativa como NEAR y OP.",
+      "Ausencia de TVL reportado que puede indicar falta de liquidez o datos incompletos."
     ],
     "asset": "UNI",
-    "level": "vigilancia",
+    "level": "medio",
     "metrics": {
-      "change_30d": 23.986824068766857,
-      "change_7d": 3.4972478991142966,
-      "market_cap": 2329324255.0,
+      "change_30d": 35.3,
+      "change_7d": 4.9,
+      "market_cap": 2413068112.0,
       "tvl": 0,
-      "volume": 134987262.0
+      "volume": 179074940.0
     },
     "reasons": [
-      "7D +3.5%",
-      "30D +24.0%",
+      "7D +4.9%",
+      "30D +35.3%",
       "TVL no disponible"
     ],
-    "score": 55,
+    "score": 70,
     "source": "https://www.coingecko.com/en/coins/uniswap",
     "summary": "Uniswap muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
-    "time_utc": "2026-07-22T09:17:49.501748+00:00",
+    "time_utc": "2026-07-23T09:15:32.798618+00:00",
     "title": "UNI vigilancia fundamental"
   },
   {
     "agent": "altcoin_fundamentals",
-    "ai_brief": "Se observa una variabilidad significativa en el desempeño semanal y mensual de varias altcoins clave, con algunas mostrando crecimiento y otras retrocesos. La ausencia de datos de TVL limita la evaluación completa del valor bloqueado y la salud del ecosistema. Se recomienda mantener vigilancia activa sobre las fluctuaciones de mercado y la evolución de métricas fundamentales para anticipar posibles riesgos.",
+    "ai_brief": "Las altcoins analizadas muestran variaciones moderadas en sus métricas de mercado con incrementos en 30 días para la mayoría, aunque algunas presentan caídas recientes. La ausencia de TVL es un punto crítico a vigilar para evaluar la salud fundamental. Se recomienda monitorear la evolución de volumen y cambios porcentuales para anticipar posibles riesgos.",
     "ai_risk_notes": [
-      "La falta de datos de TVL puede ocultar riesgos relacionados con la liquidez y la adopción real de los protocolos.",
-      "Las caídas significativas en periodos cortos, como en NEAR y OP, pueden indicar vulnerabilidades o cambios negativos en el mercado."
+      "Caídas pronunciadas en 7 días y 30 días en NEAR (-8.9% y -7.5%) y OP (-4.5% y -1.7%) que pueden reflejar debilidad en el mercado.",
+      "Falta de datos de TVL que limita la evaluación completa del respaldo fundamental y puede ocultar riesgos de liquidez."
     ],
     "ai_watch_items": [
-      "Evolución del cambio porcentual semanal y mensual para AAVE, UNI y NEAR por su alta volatilidad.",
-      "Impacto de la ausencia de datos de TVL en la evaluación del valor y adopción de los activos.",
-      "Volumen de mercado y capitalización como indicadores de liquidez y confianza en activos como ETH y LINK."
+      "Evolución del volumen de negociación semanal y mensual para detectar cambios significativos.",
+      "Variaciones porcentuales en 7 y 30 días, especialmente en activos con tendencia negativa como NEAR y OP.",
+      "Ausencia de TVL reportado que puede indicar falta de liquidez o datos incompletos."
+    ],
+    "asset": "AAVE",
+    "level": "medio",
+    "metrics": {
+      "change_30d": 34.8,
+      "change_7d": 3.0,
+      "market_cap": 1497594345.0,
+      "tvl": 0,
+      "volume": 217478499.0
+    },
+    "reasons": [
+      "7D +3.0%",
+      "30D +34.8%",
+      "TVL no disponible"
+    ],
+    "score": 67,
+    "source": "https://www.coingecko.com/en/coins/aave",
+    "summary": "Aave muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
+    "time_utc": "2026-07-23T09:15:32.798598+00:00",
+    "title": "AAVE vigilancia fundamental"
+  },
+  {
+    "agent": "altcoin_fundamentals",
+    "ai_brief": "Las altcoins analizadas muestran variaciones moderadas en sus métricas de mercado con incrementos en 30 días para la mayoría, aunque algunas presentan caídas recientes. La ausencia de TVL es un punto crítico a vigilar para evaluar la salud fundamental. Se recomienda monitorear la evolución de volumen y cambios porcentuales para anticipar posibles riesgos.",
+    "ai_risk_notes": [
+      "Caídas pronunciadas en 7 días y 30 días en NEAR (-8.9% y -7.5%) y OP (-4.5% y -1.7%) que pueden reflejar debilidad en el mercado.",
+      "Falta de datos de TVL que limita la evaluación completa del respaldo fundamental y puede ocultar riesgos de liquidez."
+    ],
+    "ai_watch_items": [
+      "Evolución del volumen de negociación semanal y mensual para detectar cambios significativos.",
+      "Variaciones porcentuales en 7 y 30 días, especialmente en activos con tendencia negativa como NEAR y OP.",
+      "Ausencia de TVL reportado que puede indicar falta de liquidez o datos incompletos."
+    ],
+    "asset": "ARB",
+    "level": "vigilancia",
+    "metrics": {
+      "change_30d": 11.6,
+      "change_7d": 2.5,
+      "market_cap": 587299961.0,
+      "tvl": 0,
+      "volume": 46699669.0
+    },
+    "reasons": [
+      "7D +2.5%",
+      "30D +11.6%",
+      "TVL no disponible"
+    ],
+    "score": 61,
+    "source": "https://www.coingecko.com/en/coins/arbitrum",
+    "summary": "Arbitrum muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
+    "time_utc": "2026-07-23T09:15:32.798627+00:00",
+    "title": "ARB vigilancia fundamental"
+  },
+  {
+    "agent": "altcoin_fundamentals",
+    "ai_brief": "Las altcoins analizadas muestran variaciones moderadas en sus métricas de mercado con incrementos en 30 días para la mayoría, aunque algunas presentan caídas recientes. La ausencia de TVL es un punto crítico a vigilar para evaluar la salud fundamental. Se recomienda monitorear la evolución de volumen y cambios porcentuales para anticipar posibles riesgos.",
+    "ai_risk_notes": [
+      "Caídas pronunciadas en 7 días y 30 días en NEAR (-8.9% y -7.5%) y OP (-4.5% y -1.7%) que pueden reflejar debilidad en el mercado.",
+      "Falta de datos de TVL que limita la evaluación completa del respaldo fundamental y puede ocultar riesgos de liquidez."
+    ],
+    "ai_watch_items": [
+      "Evolución del volumen de negociación semanal y mensual para detectar cambios significativos.",
+      "Variaciones porcentuales en 7 y 30 días, especialmente en activos con tendencia negativa como NEAR y OP.",
+      "Ausencia de TVL reportado que puede indicar falta de liquidez o datos incompletos."
     ],
     "asset": "ETH",
     "level": "vigilancia",
     "metrics": {
-      "change_30d": 10.169831097468057,
-      "change_7d": 2.436078685992567,
-      "market_cap": 232058455019.0,
+      "change_30d": 14.5,
+      "change_7d": 0.8,
+      "market_cap": 232753971396.0,
       "tvl": 0,
-      "volume": 10720964905.0
+      "volume": 9259179553.0
     },
     "reasons": [
-      "7D +2.4%",
-      "30D +10.2%",
+      "7D +0.8%",
+      "30D +14.5%",
       "TVL no disponible"
     ],
     "score": 50,
     "source": "https://www.coingecko.com/en/coins/ethereum",
     "summary": "Ethereum muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
-    "time_utc": "2026-07-22T09:17:49.501678+00:00",
+    "time_utc": "2026-07-23T09:15:32.798543+00:00",
     "title": "ETH vigilancia fundamental"
   },
   {
     "agent": "altcoin_fundamentals",
-    "ai_brief": "Se observa una variabilidad significativa en el desempeño semanal y mensual de varias altcoins clave, con algunas mostrando crecimiento y otras retrocesos. La ausencia de datos de TVL limita la evaluación completa del valor bloqueado y la salud del ecosistema. Se recomienda mantener vigilancia activa sobre las fluctuaciones de mercado y la evolución de métricas fundamentales para anticipar posibles riesgos.",
+    "ai_brief": "Las altcoins analizadas muestran variaciones moderadas en sus métricas de mercado con incrementos en 30 días para la mayoría, aunque algunas presentan caídas recientes. La ausencia de TVL es un punto crítico a vigilar para evaluar la salud fundamental. Se recomienda monitorear la evolución de volumen y cambios porcentuales para anticipar posibles riesgos.",
     "ai_risk_notes": [
-      "La falta de datos de TVL puede ocultar riesgos relacionados con la liquidez y la adopción real de los protocolos.",
-      "Las caídas significativas en periodos cortos, como en NEAR y OP, pueden indicar vulnerabilidades o cambios negativos en el mercado."
+      "Caídas pronunciadas en 7 días y 30 días en NEAR (-8.9% y -7.5%) y OP (-4.5% y -1.7%) que pueden reflejar debilidad en el mercado.",
+      "Falta de datos de TVL que limita la evaluación completa del respaldo fundamental y puede ocultar riesgos de liquidez."
     ],
     "ai_watch_items": [
-      "Evolución del cambio porcentual semanal y mensual para AAVE, UNI y NEAR por su alta volatilidad.",
-      "Impacto de la ausencia de datos de TVL en la evaluación del valor y adopción de los activos.",
-      "Volumen de mercado y capitalización como indicadores de liquidez y confianza en activos como ETH y LINK."
-    ],
-    "asset": "LINK",
-    "level": "vigilancia",
-    "metrics": {
-      "change_30d": 7.866819178602458,
-      "change_7d": 2.9127625145265403,
-      "market_cap": 6446203926.0,
-      "tvl": 0,
-      "volume": 178197896.0
-    },
-    "reasons": [
-      "7D +2.9%",
-      "30D +7.9%",
-      "TVL no disponible"
-    ],
-    "score": 50,
-    "source": "https://www.coingecko.com/en/coins/chainlink",
-    "summary": "Chainlink muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
-    "time_utc": "2026-07-22T09:17:49.501740+00:00",
-    "title": "LINK vigilancia fundamental"
-  },
-  {
-    "agent": "altcoin_fundamentals",
-    "ai_brief": "Se observa una variabilidad significativa en el desempeño semanal y mensual de varias altcoins clave, con algunas mostrando crecimiento y otras retrocesos. La ausencia de datos de TVL limita la evaluación completa del valor bloqueado y la salud del ecosistema. Se recomienda mantener vigilancia activa sobre las fluctuaciones de mercado y la evolución de métricas fundamentales para anticipar posibles riesgos.",
-    "ai_risk_notes": [
-      "La falta de datos de TVL puede ocultar riesgos relacionados con la liquidez y la adopción real de los protocolos.",
-      "Las caídas significativas en periodos cortos, como en NEAR y OP, pueden indicar vulnerabilidades o cambios negativos en el mercado."
-    ],
-    "ai_watch_items": [
-      "Evolución del cambio porcentual semanal y mensual para AAVE, UNI y NEAR por su alta volatilidad.",
-      "Impacto de la ausencia de datos de TVL en la evaluación del valor y adopción de los activos.",
-      "Volumen de mercado y capitalización como indicadores de liquidez y confianza en activos como ETH y LINK."
-    ],
-    "asset": "OP",
-    "level": "vigilancia",
-    "metrics": {
-      "change_30d": -6.701333843685404,
-      "change_7d": -4.913980412441915,
-      "market_cap": 219371291.0,
-      "tvl": 0,
-      "volume": 31784945.0
-    },
-    "reasons": [
-      "7D -4.9%",
-      "30D -6.7%",
-      "TVL no disponible"
-    ],
-    "score": 47,
-    "source": "https://www.coingecko.com/en/coins/optimism",
-    "summary": "Optimism muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
-    "time_utc": "2026-07-22T09:17:49.501762+00:00",
-    "title": "OP vigilancia fundamental"
-  },
-  {
-    "agent": "altcoin_fundamentals",
-    "ai_brief": "Se observa una variabilidad significativa en el desempeño semanal y mensual de varias altcoins clave, con algunas mostrando crecimiento y otras retrocesos. La ausencia de datos de TVL limita la evaluación completa del valor bloqueado y la salud del ecosistema. Se recomienda mantener vigilancia activa sobre las fluctuaciones de mercado y la evolución de métricas fundamentales para anticipar posibles riesgos.",
-    "ai_risk_notes": [
-      "La falta de datos de TVL puede ocultar riesgos relacionados con la liquidez y la adopción real de los protocolos.",
-      "Las caídas significativas en periodos cortos, como en NEAR y OP, pueden indicar vulnerabilidades o cambios negativos en el mercado."
-    ],
-    "ai_watch_items": [
-      "Evolución del cambio porcentual semanal y mensual para AAVE, UNI y NEAR por su alta volatilidad.",
-      "Impacto de la ausencia de datos de TVL en la evaluación del valor y adopción de los activos.",
-      "Volumen de mercado y capitalización como indicadores de liquidez y confianza en activos como ETH y LINK."
+      "Evolución del volumen de negociación semanal y mensual para detectar cambios significativos.",
+      "Variaciones porcentuales en 7 y 30 días, especialmente en activos con tendencia negativa como NEAR y OP.",
+      "Ausencia de TVL reportado que puede indicar falta de liquidez o datos incompletos."
     ],
     "asset": "SOL",
     "level": "vigilancia",
     "metrics": {
-      "change_30d": 4.766522503561315,
-      "change_7d": -0.20718412687020446,
-      "market_cap": 45082810433.0,
+      "change_30d": 10.7,
+      "change_7d": 1.4,
+      "market_cap": 45167079920.0,
       "tvl": 0,
-      "volume": 1482630646.0
+      "volume": 1562289380.0
     },
     "reasons": [
-      "7D -0.2%",
-      "30D +4.8%",
+      "7D +1.4%",
+      "30D +10.7%",
       "TVL no disponible"
     ],
-    "score": 46,
+    "score": 49,
     "source": "https://www.coingecko.com/en/coins/solana",
     "summary": "Solana muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
-    "time_utc": "2026-07-22T09:17:49.501716+00:00",
+    "time_utc": "2026-07-23T09:15:32.798585+00:00",
     "title": "SOL vigilancia fundamental"
   },
   {
     "agent": "altcoin_fundamentals",
-    "ai_brief": "Se observa una variabilidad significativa en el desempeño semanal y mensual de varias altcoins clave, con algunas mostrando crecimiento y otras retrocesos. La ausencia de datos de TVL limita la evaluación completa del valor bloqueado y la salud del ecosistema. Se recomienda mantener vigilancia activa sobre las fluctuaciones de mercado y la evolución de métricas fundamentales para anticipar posibles riesgos.",
+    "ai_brief": "Las altcoins analizadas muestran variaciones moderadas en sus métricas de mercado con incrementos en 30 días para la mayoría, aunque algunas presentan caídas recientes. La ausencia de TVL es un punto crítico a vigilar para evaluar la salud fundamental. Se recomienda monitorear la evolución de volumen y cambios porcentuales para anticipar posibles riesgos.",
     "ai_risk_notes": [
-      "La falta de datos de TVL puede ocultar riesgos relacionados con la liquidez y la adopción real de los protocolos.",
-      "Las caídas significativas en periodos cortos, como en NEAR y OP, pueden indicar vulnerabilidades o cambios negativos en el mercado."
+      "Caídas pronunciadas en 7 días y 30 días en NEAR (-8.9% y -7.5%) y OP (-4.5% y -1.7%) que pueden reflejar debilidad en el mercado.",
+      "Falta de datos de TVL que limita la evaluación completa del respaldo fundamental y puede ocultar riesgos de liquidez."
     ],
     "ai_watch_items": [
-      "Evolución del cambio porcentual semanal y mensual para AAVE, UNI y NEAR por su alta volatilidad.",
-      "Impacto de la ausencia de datos de TVL en la evaluación del valor y adopción de los activos.",
-      "Volumen de mercado y capitalización como indicadores de liquidez y confianza en activos como ETH y LINK."
+      "Evolución del volumen de negociación semanal y mensual para detectar cambios significativos.",
+      "Variaciones porcentuales en 7 y 30 días, especialmente en activos con tendencia negativa como NEAR y OP.",
+      "Ausencia de TVL reportado que puede indicar falta de liquidez o datos incompletos."
+    ],
+    "asset": "LINK",
+    "level": "vigilancia",
+    "metrics": {
+      "change_30d": 12.1,
+      "change_7d": 0.9,
+      "market_cap": 6450016706.0,
+      "tvl": 0,
+      "volume": 176056707.0
+    },
+    "reasons": [
+      "7D +0.9%",
+      "30D +12.1%",
+      "TVL no disponible"
+    ],
+    "score": 49,
+    "source": "https://www.coingecko.com/en/coins/chainlink",
+    "summary": "Chainlink muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
+    "time_utc": "2026-07-23T09:15:32.798609+00:00",
+    "title": "LINK vigilancia fundamental"
+  },
+  {
+    "agent": "altcoin_fundamentals",
+    "ai_brief": "Las altcoins analizadas muestran variaciones moderadas en sus métricas de mercado con incrementos en 30 días para la mayoría, aunque algunas presentan caídas recientes. La ausencia de TVL es un punto crítico a vigilar para evaluar la salud fundamental. Se recomienda monitorear la evolución de volumen y cambios porcentuales para anticipar posibles riesgos.",
+    "ai_risk_notes": [
+      "Caídas pronunciadas en 7 días y 30 días en NEAR (-8.9% y -7.5%) y OP (-4.5% y -1.7%) que pueden reflejar debilidad en el mercado.",
+      "Falta de datos de TVL que limita la evaluación completa del respaldo fundamental y puede ocultar riesgos de liquidez."
+    ],
+    "ai_watch_items": [
+      "Evolución del volumen de negociación semanal y mensual para detectar cambios significativos.",
+      "Variaciones porcentuales en 7 y 30 días, especialmente en activos con tendencia negativa como NEAR y OP.",
+      "Ausencia de TVL reportado que puede indicar falta de liquidez o datos incompletos."
+    ],
+    "asset": "OP",
+    "level": "vigilancia",
+    "metrics": {
+      "change_30d": -1.7,
+      "change_7d": -4.5,
+      "market_cap": 220941823.0,
+      "tvl": 0,
+      "volume": 26235667.0
+    },
+    "reasons": [
+      "7D -4.5%",
+      "30D -1.7%",
+      "TVL no disponible"
+    ],
+    "score": 49,
+    "source": "https://www.coingecko.com/en/coins/optimism",
+    "summary": "Optimism muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
+    "time_utc": "2026-07-23T09:15:32.798635+00:00",
+    "title": "OP vigilancia fundamental"
+  },
+  {
+    "agent": "altcoin_fundamentals",
+    "ai_brief": "Las altcoins analizadas muestran variaciones moderadas en sus métricas de mercado con incrementos en 30 días para la mayoría, aunque algunas presentan caídas recientes. La ausencia de TVL es un punto crítico a vigilar para evaluar la salud fundamental. Se recomienda monitorear la evolución de volumen y cambios porcentuales para anticipar posibles riesgos.",
+    "ai_risk_notes": [
+      "Caídas pronunciadas en 7 días y 30 días en NEAR (-8.9% y -7.5%) y OP (-4.5% y -1.7%) que pueden reflejar debilidad en el mercado.",
+      "Falta de datos de TVL que limita la evaluación completa del respaldo fundamental y puede ocultar riesgos de liquidez."
+    ],
+    "ai_watch_items": [
+      "Evolución del volumen de negociación semanal y mensual para detectar cambios significativos.",
+      "Variaciones porcentuales en 7 y 30 días, especialmente en activos con tendencia negativa como NEAR y OP.",
+      "Ausencia de TVL reportado que puede indicar falta de liquidez o datos incompletos."
     ],
     "asset": "AVAX",
     "level": "vigilancia",
     "metrics": {
-      "change_30d": 4.171792450158605,
-      "change_7d": -1.999933849148787,
-      "market_cap": 2811747427.0,
+      "change_30d": 6.9,
+      "change_7d": -0.7,
+      "market_cap": 2839634680.0,
       "tvl": 0,
-      "volume": 116355741.0
+      "volume": 113779335.0
     },
     "reasons": [
-      "7D -2.0%",
-      "30D +4.2%",
+      "7D -0.7%",
+      "30D +6.9%",
       "TVL no disponible"
     ],
-    "score": 44,
+    "score": 46,
     "source": "https://www.coingecko.com/en/coins/avalanche-2",
     "summary": "Avalanche muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
-    "time_utc": "2026-07-22T09:17:49.501776+00:00",
+    "time_utc": "2026-07-23T09:15:32.798652+00:00",
     "title": "AVAX vigilancia fundamental"
   },
   {
     "agent": "altcoin_fundamentals",
-    "ai_brief": "Se observa una variabilidad significativa en el desempeño semanal y mensual de varias altcoins clave, con algunas mostrando crecimiento y otras retrocesos. La ausencia de datos de TVL limita la evaluación completa del valor bloqueado y la salud del ecosistema. Se recomienda mantener vigilancia activa sobre las fluctuaciones de mercado y la evolución de métricas fundamentales para anticipar posibles riesgos.",
+    "ai_brief": "Las altcoins analizadas muestran variaciones moderadas en sus métricas de mercado con incrementos en 30 días para la mayoría, aunque algunas presentan caídas recientes. La ausencia de TVL es un punto crítico a vigilar para evaluar la salud fundamental. Se recomienda monitorear la evolución de volumen y cambios porcentuales para anticipar posibles riesgos.",
     "ai_risk_notes": [
-      "La falta de datos de TVL puede ocultar riesgos relacionados con la liquidez y la adopción real de los protocolos.",
-      "Las caídas significativas en periodos cortos, como en NEAR y OP, pueden indicar vulnerabilidades o cambios negativos en el mercado."
+      "Caídas pronunciadas en 7 días y 30 días en NEAR (-8.9% y -7.5%) y OP (-4.5% y -1.7%) que pueden reflejar debilidad en el mercado.",
+      "Falta de datos de TVL que limita la evaluación completa del respaldo fundamental y puede ocultar riesgos de liquidez."
     ],
     "ai_watch_items": [
-      "Evolución del cambio porcentual semanal y mensual para AAVE, UNI y NEAR por su alta volatilidad.",
-      "Impacto de la ausencia de datos de TVL en la evaluación del valor y adopción de los activos.",
-      "Volumen de mercado y capitalización como indicadores de liquidez y confianza en activos como ETH y LINK."
+      "Evolución del volumen de negociación semanal y mensual para detectar cambios significativos.",
+      "Variaciones porcentuales en 7 y 30 días, especialmente en activos con tendencia negativa como NEAR y OP.",
+      "Ausencia de TVL reportado que puede indicar falta de liquidez o datos incompletos."
     ],
     "asset": "NEAR",
     "level": "vigilancia",
     "metrics": {
-      "change_30d": -13.344636402424612,
-      "change_7d": -6.294846060267395,
-      "market_cap": 2449749305.0,
+      "change_30d": -7.5,
+      "change_7d": -8.9,
+      "market_cap": 2432532237.0,
       "tvl": 0,
-      "volume": 201552832.0
+      "volume": 122729983.0
     },
     "reasons": [
-      "7D -6.3%",
-      "30D -13.3%",
+      "7D -8.9%",
+      "30D -7.5%",
       "TVL no disponible"
     ],
-    "score": 44,
+    "score": 32,
     "source": "https://www.coingecko.com/en/coins/near",
     "summary": "NEAR Protocol muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
-    "time_utc": "2026-07-22T09:17:49.501785+00:00",
+    "time_utc": "2026-07-23T09:15:32.798663+00:00",
     "title": "NEAR vigilancia fundamental"
   }
 ]
