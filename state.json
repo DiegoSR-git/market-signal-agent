@@ -6,65 +6,52 @@
     "btc::SCORE_WATCH::\ud83d\udfe1 BTC WATCH": "2026-06-19T11:18:57.373865+00:00",
     "btc::none::\u26aa SIN SE\u00d1AL": "2026-06-19T10:54:58.472290+00:00",
     "btc::none::\ud83d\udfe1 BTC WATCH": "2026-06-19T10:51:22.737931+00:00",
-    "stocks::opportunities": "2026-07-23T08:42:22.826120+00:00"
+    "stocks::opportunities": "2026-07-23T21:10:04.856607+00:00"
   },
-  "last_run_utc": "2026-07-23T09:25:08.466013+00:00",
+  "last_run_utc": "2026-07-23T21:10:04.856632+00:00",
   "last_snapshot": {
     "btc": {
       "etf_total": null,
       "fear": 31,
       "ibit": null,
       "oi_24h": null,
-      "price": 57473.0,
+      "price": 57209.0,
       "regime": "RISK_ON",
-      "rsi": 56.94143666030971,
+      "rsi": 54.74792396985252,
       "score": 57,
-      "sma200": 62412.69825958949,
+      "sma200": 62410.491649701464,
       "status": "\ud83d\udfe1 BTC EN VIGILANCIA",
-      "time_utc": "2026-07-23T08:42:18.239778+00:00"
+      "time_utc": "2026-07-23T21:10:01.474654+00:00"
     },
     "stocks": {
-      "opportunities": 3,
-      "time_utc": "2026-07-23T08:42:22.347174+00:00",
+      "opportunities": 2,
+      "time_utc": "2026-07-23T21:10:04.425943+00:00",
       "top": [
         {
-          "dist200": 4.430838521912417,
-          "drawdown": -10.960393178373861,
-          "price": 244.85000610351562,
+          "dist200": -1.812795379972143,
+          "drawdown": -21.09433056126816,
+          "price": 317.69000244140625,
           "reasons": [
-            "Drawdown 52s -11.0%",
-            "Precio sobre SMA200",
-            "Recupera SMA20"
+            "Drawdown 52s -21.1%",
+            "RSI diario 31.0",
+            "Cerca de SMA200 desde abajo"
           ],
-          "rsi": 48.402927703952166,
-          "score": 50,
-          "symbol": "AMZN"
+          "rsi": 31.019850004304914,
+          "score": 60,
+          "symbol": "GOOGL"
         },
         {
-          "dist200": 10.049787193218606,
-          "drawdown": -10.044967923468118,
-          "price": 212.05999755859375,
+          "dist200": 8.277836802959172,
+          "drawdown": -11.444816474779662,
+          "price": 208.75999450683594,
           "reasons": [
-            "Drawdown 52s -10.0%",
+            "Drawdown 52s -11.4%",
             "Precio sobre SMA200",
             "Recupera SMA20"
           ],
-          "rsi": 56.18270443252174,
+          "rsi": 52.92475896270239,
           "score": 50,
           "symbol": "NVDA"
-        },
-        {
-          "dist200": -1.881405442296158,
-          "drawdown": -20.611394568334653,
-          "price": 627.1699829101562,
-          "reasons": [
-            "Drawdown 52s -20.6%",
-            "Cerca de SMA200 desde abajo",
-            "Recupera SMA20"
-          ],
-          "rsi": 51.52420635025806,
-          "score": 50,
-          "symbol": "META"
         }
       ]
     }
