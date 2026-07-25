@@ -1,443 +1,473 @@
 [
   {
     "agent": "unusual_volume",
-    "ai_brief": "Se detectan volúmenes inusuales en varios activos tecnológicos y ETFs relacionados, con movimientos técnicos que requieren seguimiento. Destacan incrementos significativos en volumen sin ruptura de resistencias clave. Se recomienda monitorear la evolución del volumen y la acción del precio para evaluar posibles cambios de tendencia.",
+    "ai_brief": "Tesla muestra un volumen inusual 2.7 veces superior al promedio con una caída del 18.3% en 5 días, lo que requiere vigilancia por posible presión vendedora. Super Micro Computer destaca por un aumento del 26.4% en 5 días con volumen casi 1.8 veces el promedio, indicando posible interés creciente. Se recomienda monitorear estos activos para detectar cambios significativos en tendencia y gestionar riesgos asociados a movimientos abruptos.",
     "ai_risk_notes": [
-      "Volúmenes elevados sin confirmación de ruptura pueden indicar movimientos especulativos o de consolidación.",
-      "Rendimientos negativos en activos con volumen alto, como TSLA, sugieren presión vendedora y posible volatilidad.",
-      "Volúmenes bajos en algunos activos (PLTR, MSFT, MSTR) pueden limitar la liquidez y aumentar el riesgo de movimientos erráticos."
+      "Volumen inusual puede preceder a alta volatilidad y movimientos erráticos",
+      "Caídas pronunciadas en corto plazo pueden indicar presión vendedora o corrección",
+      "Falta de ruptura técnica (breakout) sugiere que la tendencia no está confirmada"
     ],
     "ai_watch_items": [
-      "Volumen 1.7x promedio en SMH con ligera alza en 5 días, sin breakout confirmado.",
-      "Volumen 1.4x promedio en TSLA con caída sostenida en rendimiento y RSI bajo.",
-      "Volumen cercano al promedio en SMCI con fuerte subida en 5 días, pero sin breakout."
+      "Volumen de TSLA 2.7x promedio con caída de precio significativa en 5 días",
+      "Incremento del 26.4% en 5 días en SMCI con volumen elevado",
+      "RSI bajo en TSLA (29) que puede indicar sobreventa"
+    ],
+    "asset": "TSLA",
+    "level": "alto",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": -14.869649966555244,
+      "perf_5d": -18.250395223943585,
+      "perf_60d": -15.57556946546651,
+      "price": 319.69000244140625,
+      "rsi": 29.101056756090244,
+      "sma20": 391.82799835205077,
+      "sma50": 404.9663983154297,
+      "status": "ok",
+      "symbol": "TSLA",
+      "volume": 115606400.0,
+      "volume_20d_avg": 42885730.0,
+      "volume_ratio": 2.695684555212188
+    },
+    "reasons": [
+      "volume 2.7x avg",
+      "5D -18.3%"
+    ],
+    "score": 100,
+    "source": "https://finance.yahoo.com/quote/TSLA",
+    "summary": "Tesla presenta volumen anormal o movimiento tecnico a vigilar.",
+    "time_utc": "2026-07-25T21:35:36.750772+00:00",
+    "title": "TSLA volumen inusual"
+  },
+  {
+    "agent": "unusual_volume",
+    "ai_brief": "Tesla muestra un volumen inusual 2.7 veces superior al promedio con una caída del 18.3% en 5 días, lo que requiere vigilancia por posible presión vendedora. Super Micro Computer destaca por un aumento del 26.4% en 5 días con volumen casi 1.8 veces el promedio, indicando posible interés creciente. Se recomienda monitorear estos activos para detectar cambios significativos en tendencia y gestionar riesgos asociados a movimientos abruptos.",
+    "ai_risk_notes": [
+      "Volumen inusual puede preceder a alta volatilidad y movimientos erráticos",
+      "Caídas pronunciadas en corto plazo pueden indicar presión vendedora o corrección",
+      "Falta de ruptura técnica (breakout) sugiere que la tendencia no está confirmada"
+    ],
+    "ai_watch_items": [
+      "Volumen de TSLA 2.7x promedio con caída de precio significativa en 5 días",
+      "Incremento del 26.4% en 5 días en SMCI con volumen elevado",
+      "RSI bajo en TSLA (29) que puede indicar sobreventa"
     ],
     "asset": "SMCI",
     "level": "vigilancia",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": -4.987373448503152,
-      "perf_5d": 24.48304384440705,
-      "perf_60d": 10.458716996219186,
-      "price": 30.100000381469727,
-      "rsi": 52.3698751293543,
-      "sma20": 27.66949987411499,
-      "sma50": 32.736199836730954,
+      "perf_20d": -3.852080032699423,
+      "perf_5d": 26.418153878208518,
+      "perf_60d": 12.02872651915181,
+      "price": 31.200000762939453,
+      "rsi": 55.317625180962956,
+      "sma20": 27.748499870300293,
+      "sma50": 32.78999984741211,
       "status": "ok",
       "symbol": "SMCI",
-      "volume": 49590500.0,
-      "volume_20d_avg": 48555615.0,
-      "volume_ratio": 1.0213133949595736
+      "volume": 86788900.0,
+      "volume_20d_avg": 48379965.0,
+      "volume_ratio": 1.7939016698337835
     },
     "reasons": [
-      "volume 1.0x avg",
-      "5D +24.5%"
+      "volume 1.8x avg",
+      "5D +26.4%"
     ],
     "score": 62,
     "source": "https://finance.yahoo.com/quote/SMCI",
     "summary": "Super Micro Computer presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-25T08:49:00.316831+00:00",
+    "time_utc": "2026-07-25T21:35:36.650879+00:00",
     "title": "SMCI volumen inusual"
   },
   {
     "agent": "unusual_volume",
-    "ai_brief": "Se detectan volúmenes inusuales en varios activos tecnológicos y ETFs relacionados, con movimientos técnicos que requieren seguimiento. Destacan incrementos significativos en volumen sin ruptura de resistencias clave. Se recomienda monitorear la evolución del volumen y la acción del precio para evaluar posibles cambios de tendencia.",
+    "ai_brief": "Tesla muestra un volumen inusual 2.7 veces superior al promedio con una caída del 18.3% en 5 días, lo que requiere vigilancia por posible presión vendedora. Super Micro Computer destaca por un aumento del 26.4% en 5 días con volumen casi 1.8 veces el promedio, indicando posible interés creciente. Se recomienda monitorear estos activos para detectar cambios significativos en tendencia y gestionar riesgos asociados a movimientos abruptos.",
     "ai_risk_notes": [
-      "Volúmenes elevados sin confirmación de ruptura pueden indicar movimientos especulativos o de consolidación.",
-      "Rendimientos negativos en activos con volumen alto, como TSLA, sugieren presión vendedora y posible volatilidad.",
-      "Volúmenes bajos en algunos activos (PLTR, MSFT, MSTR) pueden limitar la liquidez y aumentar el riesgo de movimientos erráticos."
+      "Volumen inusual puede preceder a alta volatilidad y movimientos erráticos",
+      "Caídas pronunciadas en corto plazo pueden indicar presión vendedora o corrección",
+      "Falta de ruptura técnica (breakout) sugiere que la tendencia no está confirmada"
     ],
     "ai_watch_items": [
-      "Volumen 1.7x promedio en SMH con ligera alza en 5 días, sin breakout confirmado.",
-      "Volumen 1.4x promedio en TSLA con caída sostenida en rendimiento y RSI bajo.",
-      "Volumen cercano al promedio en SMCI con fuerte subida en 5 días, pero sin breakout."
-    ],
-    "asset": "TSLA",
-    "level": "vigilancia",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": -16.55203592079748,
-      "perf_5d": -17.805377116543987,
-      "perf_60d": -16.75176641529148,
-      "price": 313.0299987792969,
-      "rsi": 27.984952518684565,
-      "sma20": 388.72349853515624,
-      "sma50": 402.557998046875,
-      "status": "ok",
-      "symbol": "TSLA",
-      "volume": 62575300.0,
-      "volume_20d_avg": 44507555.0,
-      "volume_ratio": 1.4059478216675798
-    },
-    "reasons": [
-      "volume 1.4x avg",
-      "5D -17.8%"
-    ],
-    "score": 62,
-    "source": "https://finance.yahoo.com/quote/TSLA",
-    "summary": "Tesla presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-25T08:49:00.401440+00:00",
-    "title": "TSLA volumen inusual"
-  },
-  {
-    "agent": "unusual_volume",
-    "ai_brief": "Se detectan volúmenes inusuales en varios activos tecnológicos y ETFs relacionados, con movimientos técnicos que requieren seguimiento. Destacan incrementos significativos en volumen sin ruptura de resistencias clave. Se recomienda monitorear la evolución del volumen y la acción del precio para evaluar posibles cambios de tendencia.",
-    "ai_risk_notes": [
-      "Volúmenes elevados sin confirmación de ruptura pueden indicar movimientos especulativos o de consolidación.",
-      "Rendimientos negativos en activos con volumen alto, como TSLA, sugieren presión vendedora y posible volatilidad.",
-      "Volúmenes bajos en algunos activos (PLTR, MSFT, MSTR) pueden limitar la liquidez y aumentar el riesgo de movimientos erráticos."
-    ],
-    "ai_watch_items": [
-      "Volumen 1.7x promedio en SMH con ligera alza en 5 días, sin breakout confirmado.",
-      "Volumen 1.4x promedio en TSLA con caída sostenida en rendimiento y RSI bajo.",
-      "Volumen cercano al promedio en SMCI con fuerte subida en 5 días, pero sin breakout."
-    ],
-    "asset": "SMH",
-    "level": "vigilancia",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": -11.884499726967157,
-      "perf_5d": 0.8373264512642198,
-      "perf_60d": 14.246455121776137,
-      "price": 561.1900024414062,
-      "rsi": 42.92938389944049,
-      "sma20": 594.1535003662109,
-      "sma50": 598.8786010742188,
-      "status": "ok",
-      "symbol": "SMH",
-      "volume": 19143000.0,
-      "volume_20d_avg": 11258050.0,
-      "volume_ratio": 1.7003832812964945
-    },
-    "reasons": [
-      "volume 1.7x avg",
-      "5D +0.8%"
-    ],
-    "score": 59,
-    "source": "https://finance.yahoo.com/quote/SMH",
-    "summary": "Semiconductor ETF presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-25T08:49:00.709415+00:00",
-    "title": "SMH volumen inusual"
-  },
-  {
-    "agent": "unusual_volume",
-    "ai_brief": "Se detectan volúmenes inusuales en varios activos tecnológicos y ETFs relacionados, con movimientos técnicos que requieren seguimiento. Destacan incrementos significativos en volumen sin ruptura de resistencias clave. Se recomienda monitorear la evolución del volumen y la acción del precio para evaluar posibles cambios de tendencia.",
-    "ai_risk_notes": [
-      "Volúmenes elevados sin confirmación de ruptura pueden indicar movimientos especulativos o de consolidación.",
-      "Rendimientos negativos en activos con volumen alto, como TSLA, sugieren presión vendedora y posible volatilidad.",
-      "Volúmenes bajos en algunos activos (PLTR, MSFT, MSTR) pueden limitar la liquidez y aumentar el riesgo de movimientos erráticos."
-    ],
-    "ai_watch_items": [
-      "Volumen 1.7x promedio en SMH con ligera alza en 5 días, sin breakout confirmado.",
-      "Volumen 1.4x promedio en TSLA con caída sostenida en rendimiento y RSI bajo.",
-      "Volumen cercano al promedio en SMCI con fuerte subida en 5 días, pero sin breakout."
-    ],
-    "asset": "PLTR",
-    "level": "vigilancia",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": 14.589355845654794,
-      "perf_5d": -7.146099384300165,
-      "perf_60d": -12.93384010067905,
-      "price": 122.91999816894531,
-      "rsi": 42.07543788489828,
-      "sma20": 127.89999961853027,
-      "sma50": 131.61409957885743,
-      "status": "ok",
-      "symbol": "PLTR",
-      "volume": 21090100.0,
-      "volume_20d_avg": 39021390.0,
-      "volume_ratio": 0.5404753649216494
-    },
-    "reasons": [
-      "volume 0.5x avg",
-      "5D -7.1%"
-    ],
-    "score": 56,
-    "source": "https://finance.yahoo.com/quote/PLTR",
-    "summary": "Palantir presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-25T08:49:00.354108+00:00",
-    "title": "PLTR volumen inusual"
-  },
-  {
-    "agent": "unusual_volume",
-    "ai_brief": "Se detectan volúmenes inusuales en varios activos tecnológicos y ETFs relacionados, con movimientos técnicos que requieren seguimiento. Destacan incrementos significativos en volumen sin ruptura de resistencias clave. Se recomienda monitorear la evolución del volumen y la acción del precio para evaluar posibles cambios de tendencia.",
-    "ai_risk_notes": [
-      "Volúmenes elevados sin confirmación de ruptura pueden indicar movimientos especulativos o de consolidación.",
-      "Rendimientos negativos en activos con volumen alto, como TSLA, sugieren presión vendedora y posible volatilidad.",
-      "Volúmenes bajos en algunos activos (PLTR, MSFT, MSTR) pueden limitar la liquidez y aumentar el riesgo de movimientos erráticos."
-    ],
-    "ai_watch_items": [
-      "Volumen 1.7x promedio en SMH con ligera alza en 5 días, sin breakout confirmado.",
-      "Volumen 1.4x promedio en TSLA con caída sostenida en rendimiento y RSI bajo.",
-      "Volumen cercano al promedio en SMCI con fuerte subida en 5 días, pero sin breakout."
+      "Volumen de TSLA 2.7x promedio con caída de precio significativa en 5 días",
+      "Incremento del 26.4% en 5 días en SMCI con volumen elevado",
+      "RSI bajo en TSLA (29) que puede indicar sobreventa"
     ],
     "asset": "AMD",
     "level": "vigilancia",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": -1.994103117174273,
-      "perf_5d": 5.282798516521692,
-      "perf_60d": 61.48944216026049,
-      "price": 521.9500122070312,
-      "rsi": 50.04443070157733,
-      "sma20": 533.0595001220703,
-      "sma50": 508.48100036621094,
+      "perf_20d": 3.838460111186537,
+      "perf_5d": 7.735457302500515,
+      "perf_60d": 61.279620645615985,
+      "price": 539.6900024414062,
+      "rsi": 53.515452518725304,
+      "sma20": 533.5904998779297,
+      "sma50": 507.00780029296874,
       "status": "ok",
       "symbol": "AMD",
-      "volume": 27136700.0,
-      "volume_20d_avg": 28215380.0,
-      "volume_ratio": 0.9617697865490381
+      "volume": 27155100.0,
+      "volume_20d_avg": 28210110.0,
+      "volume_ratio": 0.9626017055587518
     },
     "reasons": [
       "volume 1.0x avg",
-      "5D +5.3%"
+      "5D +7.7%"
     ],
-    "score": 53,
+    "score": 57,
     "source": "https://finance.yahoo.com/quote/AMD",
     "summary": "Advanced Micro Devices presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-25T08:49:00.184456+00:00",
+    "time_utc": "2026-07-25T21:35:36.498094+00:00",
     "title": "AMD volumen inusual"
   },
   {
     "agent": "unusual_volume",
-    "ai_brief": "Se detectan volúmenes inusuales en varios activos tecnológicos y ETFs relacionados, con movimientos técnicos que requieren seguimiento. Destacan incrementos significativos en volumen sin ruptura de resistencias clave. Se recomienda monitorear la evolución del volumen y la acción del precio para evaluar posibles cambios de tendencia.",
+    "ai_brief": "Tesla muestra un volumen inusual 2.7 veces superior al promedio con una caída del 18.3% en 5 días, lo que requiere vigilancia por posible presión vendedora. Super Micro Computer destaca por un aumento del 26.4% en 5 días con volumen casi 1.8 veces el promedio, indicando posible interés creciente. Se recomienda monitorear estos activos para detectar cambios significativos en tendencia y gestionar riesgos asociados a movimientos abruptos.",
     "ai_risk_notes": [
-      "Volúmenes elevados sin confirmación de ruptura pueden indicar movimientos especulativos o de consolidación.",
-      "Rendimientos negativos en activos con volumen alto, como TSLA, sugieren presión vendedora y posible volatilidad.",
-      "Volúmenes bajos en algunos activos (PLTR, MSFT, MSTR) pueden limitar la liquidez y aumentar el riesgo de movimientos erráticos."
+      "Volumen inusual puede preceder a alta volatilidad y movimientos erráticos",
+      "Caídas pronunciadas en corto plazo pueden indicar presión vendedora o corrección",
+      "Falta de ruptura técnica (breakout) sugiere que la tendencia no está confirmada"
     ],
     "ai_watch_items": [
-      "Volumen 1.7x promedio en SMH con ligera alza en 5 días, sin breakout confirmado.",
-      "Volumen 1.4x promedio en TSLA con caída sostenida en rendimiento y RSI bajo.",
-      "Volumen cercano al promedio en SMCI con fuerte subida en 5 días, pero sin breakout."
+      "Volumen de TSLA 2.7x promedio con caída de precio significativa en 5 días",
+      "Incremento del 26.4% en 5 días en SMCI con volumen elevado",
+      "RSI bajo en TSLA (29) que puede indicar sobreventa"
     ],
-    "asset": "HOOD",
+    "asset": "ARM",
     "level": "vigilancia",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": 1.54060385428485,
-      "perf_5d": -5.052016275125926,
-      "perf_60d": 15.645185835299703,
-      "price": 94.91000366210938,
-      "rsi": 42.42667303936405,
-      "sma20": 107.23400077819824,
-      "sma50": 95.32580062866211,
+      "perf_20d": -21.17633420709749,
+      "perf_5d": 8.026410440619713,
+      "perf_60d": 31.109876849672236,
+      "price": 283.0400085449219,
+      "rsi": 43.233358377865116,
+      "sma20": 305.95999908447266,
+      "sma50": 321.2023992919922,
       "status": "ok",
-      "symbol": "HOOD",
-      "volume": 24356300.0,
-      "volume_20d_avg": 23309975.0,
-      "volume_ratio": 1.0448874355292102
+      "symbol": "ARM",
+      "volume": 3603200.0,
+      "volume_20d_avg": 6207560.0,
+      "volume_ratio": 0.5804535115246571
     },
     "reasons": [
-      "volume 1.0x avg",
-      "5D -5.1%"
+      "volume 0.6x avg",
+      "5D +8.0%"
     ],
-    "score": 53,
-    "source": "https://finance.yahoo.com/quote/HOOD",
-    "summary": "Robinhood presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-25T08:49:00.515276+00:00",
-    "title": "HOOD volumen inusual"
+    "score": 57,
+    "source": "https://finance.yahoo.com/quote/ARM",
+    "summary": "Arm Holdings presenta volumen anormal o movimiento tecnico a vigilar.",
+    "time_utc": "2026-07-25T21:35:36.603950+00:00",
+    "title": "ARM volumen inusual"
   },
   {
     "agent": "unusual_volume",
-    "ai_brief": "Se detectan volúmenes inusuales en varios activos tecnológicos y ETFs relacionados, con movimientos técnicos que requieren seguimiento. Destacan incrementos significativos en volumen sin ruptura de resistencias clave. Se recomienda monitorear la evolución del volumen y la acción del precio para evaluar posibles cambios de tendencia.",
+    "ai_brief": "Tesla muestra un volumen inusual 2.7 veces superior al promedio con una caída del 18.3% en 5 días, lo que requiere vigilancia por posible presión vendedora. Super Micro Computer destaca por un aumento del 26.4% en 5 días con volumen casi 1.8 veces el promedio, indicando posible interés creciente. Se recomienda monitorear estos activos para detectar cambios significativos en tendencia y gestionar riesgos asociados a movimientos abruptos.",
     "ai_risk_notes": [
-      "Volúmenes elevados sin confirmación de ruptura pueden indicar movimientos especulativos o de consolidación.",
-      "Rendimientos negativos en activos con volumen alto, como TSLA, sugieren presión vendedora y posible volatilidad.",
-      "Volúmenes bajos en algunos activos (PLTR, MSFT, MSTR) pueden limitar la liquidez y aumentar el riesgo de movimientos erráticos."
+      "Volumen inusual puede preceder a alta volatilidad y movimientos erráticos",
+      "Caídas pronunciadas en corto plazo pueden indicar presión vendedora o corrección",
+      "Falta de ruptura técnica (breakout) sugiere que la tendencia no está confirmada"
     ],
     "ai_watch_items": [
-      "Volumen 1.7x promedio en SMH con ligera alza en 5 días, sin breakout confirmado.",
-      "Volumen 1.4x promedio en TSLA con caída sostenida en rendimiento y RSI bajo.",
-      "Volumen cercano al promedio en SMCI con fuerte subida en 5 días, pero sin breakout."
+      "Volumen de TSLA 2.7x promedio con caída de precio significativa en 5 días",
+      "Incremento del 26.4% en 5 días en SMCI con volumen elevado",
+      "RSI bajo en TSLA (29) que puede indicar sobreventa"
+    ],
+    "asset": "PLTR",
+    "level": "vigilancia",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": 8.696037662186807,
+      "perf_5d": -8.234156124512804,
+      "perf_60d": -13.787562903848738,
+      "price": 123.37000274658203,
+      "rsi": 42.531730259404995,
+      "sma20": 127.11749954223633,
+      "sma50": 131.8756996154785,
+      "status": "ok",
+      "symbol": "PLTR",
+      "volume": 29757900.0,
+      "volume_20d_avg": 41058890.0,
+      "volume_ratio": 0.724761434125472
+    },
+    "reasons": [
+      "volume 0.7x avg",
+      "5D -8.2%"
+    ],
+    "score": 57,
+    "source": "https://finance.yahoo.com/quote/PLTR",
+    "summary": "Palantir presenta volumen anormal o movimiento tecnico a vigilar.",
+    "time_utc": "2026-07-25T21:35:36.697045+00:00",
+    "title": "PLTR volumen inusual"
+  },
+  {
+    "agent": "unusual_volume",
+    "ai_brief": "Tesla muestra un volumen inusual 2.7 veces superior al promedio con una caída del 18.3% en 5 días, lo que requiere vigilancia por posible presión vendedora. Super Micro Computer destaca por un aumento del 26.4% en 5 días con volumen casi 1.8 veces el promedio, indicando posible interés creciente. Se recomienda monitorear estos activos para detectar cambios significativos en tendencia y gestionar riesgos asociados a movimientos abruptos.",
+    "ai_risk_notes": [
+      "Volumen inusual puede preceder a alta volatilidad y movimientos erráticos",
+      "Caídas pronunciadas en corto plazo pueden indicar presión vendedora o corrección",
+      "Falta de ruptura técnica (breakout) sugiere que la tendencia no está confirmada"
+    ],
+    "ai_watch_items": [
+      "Volumen de TSLA 2.7x promedio con caída de precio significativa en 5 días",
+      "Incremento del 26.4% en 5 días en SMCI con volumen elevado",
+      "RSI bajo en TSLA (29) que puede indicar sobreventa"
     ],
     "asset": "MSFT",
     "level": "vigilancia",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": 8.182418369605493,
-      "perf_5d": -3.077546821334931,
-      "perf_60d": -11.077457843440596,
-      "price": 381.70001220703125,
-      "rsi": 44.75125634654141,
-      "sma20": 386.8919982910156,
-      "sma50": 399.1791979980469,
+      "perf_20d": 4.4108782066693,
+      "perf_5d": -4.8666215991560735,
+      "perf_60d": -10.178433220296224,
+      "price": 381.5799865722656,
+      "rsi": 44.67660286303507,
+      "sma20": 385.44849700927733,
+      "sma50": 399.7005975341797,
       "status": "ok",
       "symbol": "MSFT",
-      "volume": 27624500.0,
-      "volume_20d_avg": 40951045.0,
-      "volume_ratio": 0.6745737501936764
+      "volume": 30351800.0,
+      "volume_20d_avg": 42878770.0,
+      "volume_ratio": 0.7078514612242842
     },
     "reasons": [
       "volume 0.7x avg",
-      "5D -3.1%"
+      "5D -4.9%"
     ],
-    "score": 50,
+    "score": 52,
     "source": "https://finance.yahoo.com/quote/MSFT",
     "summary": "Microsoft presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-25T08:49:00.047180+00:00",
+    "time_utc": "2026-07-25T21:35:36.378626+00:00",
     "title": "MSFT volumen inusual"
   },
   {
     "agent": "unusual_volume",
-    "ai_brief": "Se detectan volúmenes inusuales en varios activos tecnológicos y ETFs relacionados, con movimientos técnicos que requieren seguimiento. Destacan incrementos significativos en volumen sin ruptura de resistencias clave. Se recomienda monitorear la evolución del volumen y la acción del precio para evaluar posibles cambios de tendencia.",
+    "ai_brief": "Tesla muestra un volumen inusual 2.7 veces superior al promedio con una caída del 18.3% en 5 días, lo que requiere vigilancia por posible presión vendedora. Super Micro Computer destaca por un aumento del 26.4% en 5 días con volumen casi 1.8 veces el promedio, indicando posible interés creciente. Se recomienda monitorear estos activos para detectar cambios significativos en tendencia y gestionar riesgos asociados a movimientos abruptos.",
     "ai_risk_notes": [
-      "Volúmenes elevados sin confirmación de ruptura pueden indicar movimientos especulativos o de consolidación.",
-      "Rendimientos negativos en activos con volumen alto, como TSLA, sugieren presión vendedora y posible volatilidad.",
-      "Volúmenes bajos en algunos activos (PLTR, MSFT, MSTR) pueden limitar la liquidez y aumentar el riesgo de movimientos erráticos."
+      "Volumen inusual puede preceder a alta volatilidad y movimientos erráticos",
+      "Caídas pronunciadas en corto plazo pueden indicar presión vendedora o corrección",
+      "Falta de ruptura técnica (breakout) sugiere que la tendencia no está confirmada"
     ],
     "ai_watch_items": [
-      "Volumen 1.7x promedio en SMH con ligera alza en 5 días, sin breakout confirmado.",
-      "Volumen 1.4x promedio en TSLA con caída sostenida en rendimiento y RSI bajo.",
-      "Volumen cercano al promedio en SMCI con fuerte subida en 5 días, pero sin breakout."
-    ],
-    "asset": "MSTR",
-    "level": "vigilancia",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": 7.429973282366986,
-      "perf_5d": -3.352662473730472,
-      "perf_60d": -44.68046922040584,
-      "price": 91.66999816894531,
-      "rsi": 39.137149898320494,
-      "sma20": 94.8859992980957,
-      "sma50": 120.57039932250977,
-      "status": "ok",
-      "symbol": "MSTR",
-      "volume": 13044000.0,
-      "volume_20d_avg": 21934740.0,
-      "volume_ratio": 0.5946731075909721
-    },
-    "reasons": [
-      "volume 0.6x avg",
-      "5D -3.4%"
-    ],
-    "score": 50,
-    "source": "https://finance.yahoo.com/quote/MSTR",
-    "summary": "MicroStrategy presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-25T08:49:00.477669+00:00",
-    "title": "MSTR volumen inusual"
-  },
-  {
-    "agent": "unusual_volume",
-    "ai_brief": "Se detectan volúmenes inusuales en varios activos tecnológicos y ETFs relacionados, con movimientos técnicos que requieren seguimiento. Destacan incrementos significativos en volumen sin ruptura de resistencias clave. Se recomienda monitorear la evolución del volumen y la acción del precio para evaluar posibles cambios de tendencia.",
-    "ai_risk_notes": [
-      "Volúmenes elevados sin confirmación de ruptura pueden indicar movimientos especulativos o de consolidación.",
-      "Rendimientos negativos en activos con volumen alto, como TSLA, sugieren presión vendedora y posible volatilidad.",
-      "Volúmenes bajos en algunos activos (PLTR, MSFT, MSTR) pueden limitar la liquidez y aumentar el riesgo de movimientos erráticos."
-    ],
-    "ai_watch_items": [
-      "Volumen 1.7x promedio en SMH con ligera alza en 5 días, sin breakout confirmado.",
-      "Volumen 1.4x promedio en TSLA con caída sostenida en rendimiento y RSI bajo.",
-      "Volumen cercano al promedio en SMCI con fuerte subida en 5 días, pero sin breakout."
-    ],
-    "asset": "QQQ",
-    "level": "vigilancia",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": -4.487845025674842,
-      "perf_5d": -1.596369543709708,
-      "perf_60d": 4.057485084188239,
-      "price": 684.22998046875,
-      "rsi": 39.29088702131988,
-      "sma20": 711.7130004882813,
-      "sma50": 718.2872021484375,
-      "status": "ok",
-      "symbol": "QQQ",
-      "volume": 42783600.0,
-      "volume_20d_avg": 38017165.0,
-      "volume_ratio": 1.1253758664014004
-    },
-    "reasons": [
-      "volume 1.1x avg",
-      "5D -1.6%"
-    ],
-    "score": 50,
-    "source": "https://finance.yahoo.com/quote/QQQ",
-    "summary": "Nasdaq 100 ETF presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-25T08:49:00.654780+00:00",
-    "title": "QQQ volumen inusual"
-  },
-  {
-    "agent": "unusual_volume",
-    "ai_brief": "Se detectan volúmenes inusuales en varios activos tecnológicos y ETFs relacionados, con movimientos técnicos que requieren seguimiento. Destacan incrementos significativos en volumen sin ruptura de resistencias clave. Se recomienda monitorear la evolución del volumen y la acción del precio para evaluar posibles cambios de tendencia.",
-    "ai_risk_notes": [
-      "Volúmenes elevados sin confirmación de ruptura pueden indicar movimientos especulativos o de consolidación.",
-      "Rendimientos negativos en activos con volumen alto, como TSLA, sugieren presión vendedora y posible volatilidad.",
-      "Volúmenes bajos en algunos activos (PLTR, MSFT, MSTR) pueden limitar la liquidez y aumentar el riesgo de movimientos erráticos."
-    ],
-    "ai_watch_items": [
-      "Volumen 1.7x promedio en SMH con ligera alza en 5 días, sin breakout confirmado.",
-      "Volumen 1.4x promedio en TSLA con caída sostenida en rendimiento y RSI bajo.",
-      "Volumen cercano al promedio en SMCI con fuerte subida en 5 días, pero sin breakout."
+      "Volumen de TSLA 2.7x promedio con caída de precio significativa en 5 días",
+      "Incremento del 26.4% en 5 días en SMCI con volumen elevado",
+      "RSI bajo en TSLA (29) que puede indicar sobreventa"
     ],
     "asset": "AVGO",
     "level": "vigilancia",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": 0.7943864602501183,
-      "perf_5d": 2.990596029727377,
-      "perf_60d": -4.479397180304834,
-      "price": 381.9200134277344,
-      "rsi": 47.83159932421311,
-      "sma20": 381.40199890136716,
-      "sma50": 399.3470013427734,
+      "perf_20d": 2.7220126409082557,
+      "perf_5d": 4.8123884166703546,
+      "perf_60d": -6.152561031870651,
+      "price": 392.4700012207031,
+      "rsi": 51.8568667020793,
+      "sma20": 381.2514984130859,
+      "sma50": 400.09460083007815,
       "status": "ok",
       "symbol": "AVGO",
-      "volume": 15130500.0,
-      "volume_20d_avg": 22281620.0,
-      "volume_ratio": 0.6790574473489809
+      "volume": 16348700.0,
+      "volume_20d_avg": 22692780.0,
+      "volume_ratio": 0.7204361915992664
     },
     "reasons": [
       "volume 0.7x avg",
-      "5D +3.0%"
+      "5D +4.8%"
     ],
-    "score": 49,
+    "score": 52,
     "source": "https://finance.yahoo.com/quote/AVGO",
     "summary": "Broadcom presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-25T08:49:00.240636+00:00",
+    "time_utc": "2026-07-25T21:35:36.557833+00:00",
     "title": "AVGO volumen inusual"
   },
   {
     "agent": "unusual_volume",
-    "asset": "ARM",
+    "ai_brief": "Tesla muestra un volumen inusual 2.7 veces superior al promedio con una caída del 18.3% en 5 días, lo que requiere vigilancia por posible presión vendedora. Super Micro Computer destaca por un aumento del 26.4% en 5 días con volumen casi 1.8 veces el promedio, indicando posible interés creciente. Se recomienda monitorear estos activos para detectar cambios significativos en tendencia y gestionar riesgos asociados a movimientos abruptos.",
+    "ai_risk_notes": [
+      "Volumen inusual puede preceder a alta volatilidad y movimientos erráticos",
+      "Caídas pronunciadas en corto plazo pueden indicar presión vendedora o corrección",
+      "Falta de ruptura técnica (breakout) sugiere que la tendencia no está confirmada"
+    ],
+    "ai_watch_items": [
+      "Volumen de TSLA 2.7x promedio con caída de precio significativa en 5 días",
+      "Incremento del 26.4% en 5 días en SMCI con volumen elevado",
+      "RSI bajo en TSLA (29) que puede indicar sobreventa"
+    ],
+    "asset": "HOOD",
     "level": "vigilancia",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": -25.222163252327302,
-      "perf_5d": -2.6872235525937316,
-      "perf_60d": 30.888506294701944,
-      "price": 260.010009765625,
-      "rsi": 38.239787004705725,
-      "sma20": 301.575,
-      "sma50": 322.2441995239258,
+      "perf_20d": 4.51692486816746,
+      "perf_5d": -4.187884316729118,
+      "perf_60d": 21.000602172364523,
+      "price": 101.58000183105469,
+      "rsi": 48.1971833318467,
+      "sma20": 107.16200065612793,
+      "sma50": 94.99300048828125,
       "status": "ok",
-      "symbol": "ARM",
-      "volume": 4870600.0,
-      "volume_20d_avg": 6032095.0,
-      "volume_ratio": 0.807447495438981
+      "symbol": "HOOD",
+      "volume": 16539900.0,
+      "volume_20d_avg": 23262380.0,
+      "volume_ratio": 0.7110149520384415
     },
     "reasons": [
-      "volume 0.8x avg",
-      "5D -2.7%"
+      "volume 0.7x avg",
+      "5D -4.2%"
     ],
-    "score": 49,
-    "source": "https://finance.yahoo.com/quote/ARM",
-    "summary": "Arm Holdings presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-25T08:49:00.278590+00:00",
-    "title": "ARM volumen inusual"
+    "score": 51,
+    "source": "https://finance.yahoo.com/quote/HOOD",
+    "summary": "Robinhood presenta volumen anormal o movimiento tecnico a vigilar.",
+    "time_utc": "2026-07-25T21:35:36.889898+00:00",
+    "title": "HOOD volumen inusual"
+  },
+  {
+    "agent": "unusual_volume",
+    "ai_brief": "Tesla muestra un volumen inusual 2.7 veces superior al promedio con una caída del 18.3% en 5 días, lo que requiere vigilancia por posible presión vendedora. Super Micro Computer destaca por un aumento del 26.4% en 5 días con volumen casi 1.8 veces el promedio, indicando posible interés creciente. Se recomienda monitorear estos activos para detectar cambios significativos en tendencia y gestionar riesgos asociados a movimientos abruptos.",
+    "ai_risk_notes": [
+      "Volumen inusual puede preceder a alta volatilidad y movimientos erráticos",
+      "Caídas pronunciadas en corto plazo pueden indicar presión vendedora o corrección",
+      "Falta de ruptura técnica (breakout) sugiere que la tendencia no está confirmada"
+    ],
+    "ai_watch_items": [
+      "Volumen de TSLA 2.7x promedio con caída de precio significativa en 5 días",
+      "Incremento del 26.4% en 5 días en SMCI con volumen elevado",
+      "RSI bajo en TSLA (29) que puede indicar sobreventa"
+    ],
+    "asset": "QQQ",
+    "level": "vigilancia",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": -2.625872234492088,
+      "perf_5d": -1.980335498824537,
+      "perf_60d": 4.174765114386592,
+      "price": 691.9600219726562,
+      "rsi": 41.82029953761848,
+      "sma20": 713.3205017089844,
+      "sma50": 718.74740234375,
+      "status": "ok",
+      "symbol": "QQQ",
+      "volume": 44028600.0,
+      "volume_20d_avg": 38361385.0,
+      "volume_ratio": 1.1477322833886212
+    },
+    "reasons": [
+      "volume 1.1x avg",
+      "5D -2.0%"
+    ],
+    "score": 51,
+    "source": "https://finance.yahoo.com/quote/QQQ",
+    "summary": "Nasdaq 100 ETF presenta volumen anormal o movimiento tecnico a vigilar.",
+    "time_utc": "2026-07-25T21:35:37.031194+00:00",
+    "title": "QQQ volumen inusual"
+  },
+  {
+    "agent": "unusual_volume",
+    "ai_brief": "Tesla muestra un volumen inusual 2.7 veces superior al promedio con una caída del 18.3% en 5 días, lo que requiere vigilancia por posible presión vendedora. Super Micro Computer destaca por un aumento del 26.4% en 5 días con volumen casi 1.8 veces el promedio, indicando posible interés creciente. Se recomienda monitorear estos activos para detectar cambios significativos en tendencia y gestionar riesgos asociados a movimientos abruptos.",
+    "ai_risk_notes": [
+      "Volumen inusual puede preceder a alta volatilidad y movimientos erráticos",
+      "Caídas pronunciadas en corto plazo pueden indicar presión vendedora o corrección",
+      "Falta de ruptura técnica (breakout) sugiere que la tendencia no está confirmada"
+    ],
+    "ai_watch_items": [
+      "Volumen de TSLA 2.7x promedio con caída de precio significativa en 5 días",
+      "Incremento del 26.4% en 5 días en SMCI con volumen elevado",
+      "RSI bajo en TSLA (29) que puede indicar sobreventa"
+    ],
+    "asset": "AAPL",
+    "level": "vigilancia",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": 9.751609935602579,
+      "perf_5d": -3.4807674979286163,
+      "perf_60d": 20.19730999183036,
+      "price": 321.6600036621094,
+      "rsi": 58.11074705171627,
+      "sma20": 311.4919998168945,
+      "sma50": 305.4670001220703,
+      "status": "ok",
+      "symbol": "AAPL",
+      "volume": 40840800.0,
+      "volume_20d_avg": 64341360.0,
+      "volume_ratio": 0.6347518920955354
+    },
+    "reasons": [
+      "volume 0.6x avg",
+      "5D -3.5%"
+    ],
+    "score": 50,
+    "source": "https://finance.yahoo.com/quote/AAPL",
+    "summary": "Apple presenta volumen anormal o movimiento tecnico a vigilar.",
+    "time_utc": "2026-07-25T21:35:36.301740+00:00",
+    "title": "AAPL volumen inusual"
+  },
+  {
+    "agent": "unusual_volume",
+    "asset": "SPY",
+    "level": "vigilancia",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": 0.673722452021086,
+      "perf_5d": -1.6703935577468076,
+      "perf_60d": 3.217418280335682,
+      "price": 738.1799926757812,
+      "rsi": 44.566960219644564,
+      "sma20": 745.9215057373046,
+      "sma50": 745.0530017089844,
+      "status": "ok",
+      "symbol": "SPY",
+      "volume": 55437300.0,
+      "volume_20d_avg": 48502795.0,
+      "volume_ratio": 1.1429712452653502
+    },
+    "reasons": [
+      "volume 1.1x avg",
+      "5D -1.7%"
+    ],
+    "score": 50,
+    "source": "https://finance.yahoo.com/quote/SPY",
+    "summary": "S&P 500 ETF presenta volumen anormal o movimiento tecnico a vigilar.",
+    "time_utc": "2026-07-25T21:35:36.962779+00:00",
+    "title": "SPY volumen inusual"
+  },
+  {
+    "agent": "unusual_volume",
+    "asset": "SMH",
+    "level": "vigilancia",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": -6.260906267365584,
+      "perf_5d": 1.9774309811467106,
+      "perf_60d": 14.599212206934563,
+      "price": 580.1699829101562,
+      "rsi": 46.929837212282145,
+      "sma20": 597.9380004882812,
+      "sma50": 598.8798010253906,
+      "status": "ok",
+      "symbol": "SMH",
+      "volume": 7963200.0,
+      "volume_20d_avg": 11044780.0,
+      "volume_ratio": 0.720992179110856
+    },
+    "reasons": [
+      "volume 0.7x avg",
+      "5D +2.0%"
+    ],
+    "score": 48,
+    "source": "https://finance.yahoo.com/quote/SMH",
+    "summary": "Semiconductor ETF presenta volumen anormal o movimiento tecnico a vigilar.",
+    "time_utc": "2026-07-25T21:35:37.094034+00:00",
+    "title": "SMH volumen inusual"
   },
   {
     "agent": "unusual_volume",
@@ -446,27 +476,27 @@
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": 5.670782943302921,
-      "perf_5d": 1.9870809268821121,
-      "perf_60d": -2.969461878044355,
-      "price": 206.83999633789062,
-      "rsi": 51.071752594280966,
-      "sma20": 203.33049850463868,
-      "sma50": 209.18440002441406,
+      "perf_20d": 4.904519852681366,
+      "perf_5d": 0.6557380185027162,
+      "perf_60d": -3.6240275524658694,
+      "price": 208.75999450683594,
+      "rsi": 52.927419730783356,
+      "sma20": 202.77549896240234,
+      "sma50": 209.46320007324218,
       "status": "ok",
       "symbol": "NVDA",
-      "volume": 114672100.0,
-      "volume_20d_avg": 132096490.0,
-      "volume_ratio": 0.8680934671314885
+      "volume": 110505300.0,
+      "volume_20d_avg": 133840385.0,
+      "volume_ratio": 0.8256498963298708
     },
     "reasons": [
-      "volume 0.9x avg",
-      "5D +2.0%"
+      "volume 0.8x avg",
+      "5D +0.7%"
     ],
-    "score": 48,
+    "score": 46,
     "source": "https://finance.yahoo.com/quote/NVDA",
     "summary": "Nvidia presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-25T08:49:00.146957+00:00",
+    "time_utc": "2026-07-25T21:35:36.446279+00:00",
     "title": "NVDA volumen inusual"
   },
   {
@@ -476,87 +506,57 @@
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": 11.065105627925597,
-      "perf_5d": 0.744652625576192,
-      "perf_60d": -18.449258985744155,
-      "price": 158.2899932861328,
-      "rsi": 46.752795279718335,
-      "sma20": 160.32049942016602,
-      "sma50": 168.08619903564454,
+      "perf_20d": 7.361270406254206,
+      "perf_5d": 0.4174703383469369,
+      "perf_60d": -18.05978764308025,
+      "price": 161.16000366210938,
+      "rsi": 48.54068655541624,
+      "sma20": 159.53199996948243,
+      "sma50": 169.07319915771484,
       "status": "ok",
       "symbol": "COIN",
-      "volume": 5360200.0,
-      "volume_20d_avg": 7277995.0,
-      "volume_ratio": 0.736494048154746
+      "volume": 5607000.0,
+      "volume_20d_avg": 7400355.0,
+      "volume_ratio": 0.7576663551951224
     },
     "reasons": [
-      "volume 0.7x avg",
-      "5D +0.7%"
+      "volume 0.8x avg",
+      "5D +0.4%"
     ],
     "score": 46,
     "source": "https://finance.yahoo.com/quote/COIN",
     "summary": "Coinbase presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-25T08:49:00.438972+00:00",
+    "time_utc": "2026-07-25T21:35:36.798532+00:00",
     "title": "COIN volumen inusual"
   },
   {
     "agent": "unusual_volume",
-    "asset": "SPY",
+    "asset": "MSTR",
     "level": "vigilancia",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": 0.630533155356372,
-      "perf_5d": -0.5865793271064512,
-      "perf_60d": 3.8275077830136617,
-      "price": 738.9299926757812,
-      "rsi": 45.23015215995834,
-      "sma20": 746.1530059814453,
-      "sma50": 745.0680017089844,
+      "perf_20d": -0.5311802980870084,
+      "perf_5d": -0.42539777844491367,
+      "perf_60d": -44.663121192573584,
+      "price": 93.62999725341797,
+      "rsi": 40.58231414866326,
+      "sma20": 94.56899948120117,
+      "sma50": 122.42539932250976,
       "status": "ok",
-      "symbol": "SPY",
-      "volume": 44725600.0,
-      "volume_20d_avg": 48042355.0,
-      "volume_ratio": 0.9309618564701918
+      "symbol": "MSTR",
+      "volume": 17186400.0,
+      "volume_20d_avg": 23535865.0,
+      "volume_ratio": 0.7302217275634442
     },
     "reasons": [
-      "volume 0.9x avg",
-      "5D -0.6%"
+      "volume 0.7x avg",
+      "5D -0.4%"
     ],
     "score": 46,
-    "source": "https://finance.yahoo.com/quote/SPY",
-    "summary": "S&P 500 ETF presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-25T08:49:00.591832+00:00",
-    "title": "SPY volumen inusual"
-  },
-  {
-    "agent": "unusual_volume",
-    "asset": "AAPL",
-    "level": "vigilancia",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": 21.03216296597814,
-      "perf_5d": -0.21573717318008612,
-      "perf_60d": 23.01725075741563,
-      "price": 333.0199890136719,
-      "rsi": 65.23643105660899,
-      "sma20": 314.38549957275393,
-      "sma50": 306.23140014648436,
-      "status": "ok",
-      "symbol": "AAPL",
-      "volume": 47443900.0,
-      "volume_20d_avg": 61362870.0,
-      "volume_ratio": 0.773169507879928
-    },
-    "reasons": [
-      "volume 0.8x avg",
-      "5D -0.2%"
-    ],
-    "score": 45,
-    "source": "https://finance.yahoo.com/quote/AAPL",
-    "summary": "Apple presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-07-25T08:48:59.983463+00:00",
-    "title": "AAPL volumen inusual"
+    "source": "https://finance.yahoo.com/quote/MSTR",
+    "summary": "MicroStrategy presenta volumen anormal o movimiento tecnico a vigilar.",
+    "time_utc": "2026-07-25T21:35:36.844439+00:00",
+    "title": "MSTR volumen inusual"
   }
 ]
