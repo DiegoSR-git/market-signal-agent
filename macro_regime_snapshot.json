@@ -1,16 +1,15 @@
 [
   {
     "agent": "macro_regime",
-    "ai_brief": "El régimen macro actual es mixto, con señales divergentes en activos clave como crédito, duración y dólar. Se observa presión bajista en tecnología y bonos, mientras que el dólar muestra fortaleza con breakout. Es recomendable mantener vigilancia sobre la confirmación de estas tendencias para ajustar la estrategia de riesgo.",
+    "ai_brief": "El régimen macro actual es mixto, con señales divergentes en proxies clave como crédito, duración y dólar. Se observa debilidad en activos de crédito y duración, mientras que el dólar muestra fortaleza. Es recomendable mantener vigilancia estrecha para confirmar tendencias y gestionar riesgos asociados a la volatilidad sectorial.",
     "ai_risk_notes": [
-      "Volatilidad en activos de crédito y duración puede aumentar riesgo de cartera.",
-      "Divergencias en rendimiento de proxies clave pueden generar señales contradictorias.",
-      "Volumen reducido en algunos activos puede limitar la confirmación de tendencias."
+      "Riesgo de mayor volatilidad debido a señales mixtas en proxies clave.",
+      "Posible presión a la baja en activos de crédito y duración que podría afectar la estabilidad del portafolio."
     ],
     "ai_watch_items": [
-      "Confirmación de la tendencia en activos de crédito (HYG, LQD) y duración (TLT).",
-      "Evolución del dólar (UUP) tras breakout en medias móviles.",
-      "Comportamiento del sector tecnológico (QQQ) y su impacto en el mercado general."
+      "Confirmación de tendencias en activos de crédito (HYG, LQD) y duración (TLT).",
+      "Comportamiento del dólar (UUP) y su impacto en otros activos.",
+      "Volatilidad y desempeño relativo de índices principales (SPY, QQQ, IWM)."
     ],
     "asset": "MARKET",
     "level": "vigilancia",
@@ -28,9 +27,9 @@
           "sma50": 390.10639892578126,
           "status": "ok",
           "symbol": "GLD",
-          "volume": 3784137.0,
-          "volume_20d_avg": 6329481.85,
-          "volume_ratio": 0.5978588910875856
+          "volume": 3839800.0,
+          "volume_20d_avg": 6332265.0,
+          "volume_ratio": 0.6063864983540644
         },
         "HYG": {
           "breakout_20d": false,
@@ -44,9 +43,9 @@
           "sma50": 79.77600067138673,
           "status": "ok",
           "symbol": "HYG",
-          "volume": 41435261.0,
-          "volume_20d_avg": 30810088.05,
-          "volume_ratio": 1.344860194257056
+          "volume": 41964600.0,
+          "volume_20d_avg": 30836555.0,
+          "volume_ratio": 1.3608718613347048
         },
         "IWM": {
           "breakout_20d": false,
@@ -60,9 +59,9 @@
           "sma50": 291.1910009765625,
           "status": "ok",
           "symbol": "IWM",
-          "volume": 19674950.0,
-          "volume_20d_avg": 21871342.5,
-          "volume_ratio": 0.8995766949376793
+          "volume": 19762600.0,
+          "volume_20d_avg": 21875725.0,
+          "volume_ratio": 0.9034032014938933
         },
         "LQD": {
           "breakout_20d": false,
@@ -76,9 +75,9 @@
           "sma50": 108.28240020751953,
           "status": "ok",
           "symbol": "LQD",
-          "volume": 27928176.0,
-          "volume_20d_avg": 28752348.8,
-          "volume_ratio": 0.9713354618179924
+          "volume": 27980000.0,
+          "volume_20d_avg": 28754940.0,
+          "volume_ratio": 0.9730501958967747
         },
         "QQQ": {
           "breakout_20d": false,
@@ -92,9 +91,9 @@
           "sma50": 718.2872021484375,
           "status": "ok",
           "symbol": "QQQ",
-          "volume": 39636030.0,
-          "volume_20d_avg": 37859786.5,
-          "volume_ratio": 1.0469163633556149
+          "volume": 42783600.0,
+          "volume_20d_avg": 38017165.0,
+          "volume_ratio": 1.1253758664014004
         },
         "SPY": {
           "breakout_20d": false,
@@ -108,9 +107,9 @@
           "sma50": 745.0680017089844,
           "status": "ok",
           "symbol": "SPY",
-          "volume": 41480799.0,
-          "volume_20d_avg": 47880114.95,
-          "volume_ratio": 0.8663471055430287
+          "volume": 44725600.0,
+          "volume_20d_avg": 48042355.0,
+          "volume_ratio": 0.9309618564701918
         },
         "TLT": {
           "breakout_20d": false,
@@ -124,9 +123,9 @@
           "sma50": 85.08099990844727,
           "status": "ok",
           "symbol": "TLT",
-          "volume": 14405082.0,
-          "volume_20d_avg": 21206844.1,
-          "volume_ratio": 0.6792657093188137
+          "volume": 15056100.0,
+          "volume_20d_avg": 21239395.0,
+          "volume_ratio": 0.708876123825561
         },
         "UUP": {
           "breakout_20d": true,
@@ -140,9 +139,9 @@
           "sma50": 28.12160011291504,
           "status": "ok",
           "symbol": "UUP",
-          "volume": 1108327.0,
-          "volume_20d_avg": 1906356.35,
-          "volume_ratio": 0.581385007058098
+          "volume": 1111000.0,
+          "volume_20d_avg": 1906490.0,
+          "volume_ratio": 0.5827463034162256
         }
       },
       "regime": "mixed"
@@ -156,7 +155,7 @@
     "score": 40,
     "source": "https://finance.yahoo.com",
     "summary": "La cesta de proxies apunta a un regimen mixed. Vigilar confirmacion en credito, duracion y dolar.",
-    "time_utc": "2026-07-24T21:33:41.393594+00:00",
+    "time_utc": "2026-07-25T08:30:00.064859+00:00",
     "title": "Regimen macro: mixed"
   }
 ]
