@@ -1,23 +1,159 @@
 [
   {
     "agent": "intraday_cashout",
-    "ai_brief": "Todos los activos analizados presentan estado NO_TRADE con setups WAIT y validación INVALID debido a mercado cerrado y falta de datos clave. Se recomienda mantener vigilancia activa y no abrir posiciones hasta confirmar setups válidos y datos completos. Priorizar control de riesgo ante la ausencia de señales claras y volumen pre-market insuficiente.",
+    "ai_brief": "Todos los activos analizados presentan estado NO_TRADE con setups WAIT y validación INVALID debido a mercado cerrado y falta de datos críticos. Se recomienda mantener vigilancia activa y no iniciar posiciones hasta confirmar condiciones de mercado y datos completos. La gestión del riesgo debe priorizar la limitación de pérdidas diarias y evitar exposición innecesaria en fases de incertidumbre.",
     "ai_risk_notes": [
-      "Riesgo elevado por operar con setups NO_TRADE y validación INVALID, lo que implica falta de confirmación técnica y datos incompletos.",
-      "Volumen pre-market nulo o muy bajo limita la liquidez y puede aumentar el spread y la volatilidad inesperada.",
-      "Falta de stop loss y take profit definidos incrementa la exposición a movimientos adversos sin control de pérdidas."
+      "Riesgo elevado por falta de datos y mercado cerrado que impide establecer niveles de entrada, stop loss y take profit.",
+      "Posible incremento de volatilidad y spread no cuantificado que puede afectar la ejecución y gestión de órdenes."
     ],
     "ai_watch_items": [
-      "Confirmación de apertura de mercado y disponibilidad de datos actuales (precio, bid, ask, volumen pre-market).",
-      "Evolución del volumen y comportamiento relativo frente a índices QQQ y SPY para detectar cambios en fuerza relativa.",
-      "Actualización de setups y validación para evitar operar en condiciones de riesgo/beneficio insuficiente o setups inválidos."
+      "Evolución del volumen pre-market y confirmación de datos de precio (current_price, bid, ask).",
+      "Cambios en la validación del setup para pasar de NO_TRADE a condiciones operativas válidas.",
+      "Indicadores técnicos clave como RSI, SMA20 y SMA50 para detectar posibles señales de cambio de tendencia."
+    ],
+    "asset": "TSLA",
+    "level": "NO_TRADE",
+    "metrics": {
+      "action_state": "NO_TRADE",
+      "ask": null,
+      "avg_source_score": 83.5,
+      "bid": null,
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "classification": "NO_TRADE",
+      "current_price": null,
+      "direction": "WAIT",
+      "entry_zone": "N/A",
+      "filing_date": "2026-07-22",
+      "form": "8-K",
+      "form4_details": {},
+      "gap_pct": null,
+      "invalid_reasons": [
+        "mercado cerrado",
+        "faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close",
+        "sin timestamp de precio",
+        "volumen pre-market bajo 0",
+        "ningun setup minimo confirma",
+        "riesgo/beneficio insuficiente N/A"
+      ],
+      "market_state": null,
+      "max_hold_hours": 8,
+      "max_source_score": 100.0,
+      "perf_20d": -14.869649966555244,
+      "perf_5d": -18.250395223943585,
+      "perf_60d": -15.57556946546651,
+      "previous_close": null,
+      "price": 319.69000244140625,
+      "quote_age_seconds": null,
+      "quote_timestamp": null,
+      "regular_volume": null,
+      "relative_strength_vs_qqq": 0,
+      "relative_strength_vs_spy": 0,
+      "risk_context": {
+        "leverage": 5.0,
+        "max_buying_power_pct_with_leverage": 20.0,
+        "max_position_pct": 20.0,
+        "risk_per_trade_pct": 1.0
+      },
+      "risk_plan": {
+        "margin_required": 0,
+        "max_daily_loss_amount": 30.0,
+        "max_trades_per_day": 3,
+        "net_risk_reward": null,
+        "notional": 0,
+        "position_size": 0,
+        "risk_amount": 10.0,
+        "spread_cost_to_reward_pct": null
+      },
+      "risk_reward": null,
+      "rsi": 29.101056756090244,
+      "session": {
+        "is_holiday": false,
+        "is_weekend": true,
+        "minutes_to_regular_open": 0,
+        "now_madrid": "2026-07-26T16:42:36.540137+02:00",
+        "now_ny": "2026-07-26T10:42:36.540137-04:00",
+        "now_utc": "2026-07-26T14:42:36.540137+00:00",
+        "phase": "NO_TRADE",
+        "seconds_to_regular_open": 0,
+        "state": "cerrado",
+        "trade_date": "2026-07-26"
+      },
+      "setup": "NO_TRADE",
+      "sma20": 391.82799835205077,
+      "sma50": 404.9663983154297,
+      "source_count": 2,
+      "source_times": [
+        "2026-07-26T08:40:40.708581+00:00",
+        "2026-07-25T21:35:36.750772+00:00"
+      ],
+      "sources": [
+        "SEC e insiders",
+        "Volumen inusual"
+      ],
+      "spread_pct": null,
+      "status": "ok",
+      "stop_loss": null,
+      "symbol": "TSLA",
+      "take_profit": null,
+      "validation_status": "INVALID",
+      "volume": 115606400.0,
+      "volume_20d_avg": 42885730.0,
+      "volume_ratio": 2.695684555212188,
+      "warnings": [
+        "fase NO_TRADE: no abrir posicion automaticamente"
+      ]
+    },
+    "reasons": [
+      "Estado: INVALID",
+      "Accion: NO_TRADE",
+      "Setup: NO_TRADE WAIT",
+      "Entrada: N/A",
+      "SL N/A / TP N/A",
+      "R/R bruto N/A / neto N/A",
+      "Tamano teorico 0.0000 acciones",
+      "Margen aprox. $0.00",
+      "Invalidacion: mercado cerrado; faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close; sin timestamp de precio",
+      "Avisos: fase NO_TRADE: no abrir posicion automaticamente",
+      "Confluencia: 2 fuentes",
+      "Score maximo previo: 100/100",
+      "Score medio previo: 84/100",
+      "Spread N/A",
+      "Gap N/A",
+      "VWAP pre-market N/A",
+      "Volumen pre-market 0",
+      "RS vs QQQ +0.00%",
+      "RS vs SPY +0.00%",
+      "Horizonte: salida el mismo dia, maximo 8h",
+      "formulario SEC 8-K",
+      "presentado 2026-07-22",
+      "hecho relevante comunicado",
+      "volume 2.7x avg"
+    ],
+    "score": 13,
+    "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049213/tsla-20260722.htm",
+    "summary": "TSLA queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
+    "time_utc": "2026-07-26T14:42:37.801232+00:00",
+    "title": "TSLA NO_TRADE NO_TRADE"
+  },
+  {
+    "agent": "intraday_cashout",
+    "ai_brief": "Todos los activos analizados presentan estado NO_TRADE con setups WAIT y validación INVALID debido a mercado cerrado y falta de datos críticos. Se recomienda mantener vigilancia activa y no iniciar posiciones hasta confirmar condiciones de mercado y datos completos. La gestión del riesgo debe priorizar la limitación de pérdidas diarias y evitar exposición innecesaria en fases de incertidumbre.",
+    "ai_risk_notes": [
+      "Riesgo elevado por falta de datos y mercado cerrado que impide establecer niveles de entrada, stop loss y take profit.",
+      "Posible incremento de volatilidad y spread no cuantificado que puede afectar la ejecución y gestión de órdenes."
+    ],
+    "ai_watch_items": [
+      "Evolución del volumen pre-market y confirmación de datos de precio (current_price, bid, ask).",
+      "Cambios en la validación del setup para pasar de NO_TRADE a condiciones operativas válidas.",
+      "Indicadores técnicos clave como RSI, SMA20 y SMA50 para detectar posibles señales de cambio de tendencia."
     ],
     "asset": "AMD",
     "level": "NO_TRADE",
     "metrics": {
       "action_state": "NO_TRADE",
       "ask": null,
-      "avg_source_score": 65.5,
+      "avg_source_score": 67.5,
       "bid": null,
       "breakout_20d": false,
       "breakout_50d": false,
@@ -40,11 +176,11 @@
       "market_state": null,
       "max_hold_hours": 8,
       "max_source_score": 78.0,
-      "perf_20d": -1.994103117174273,
-      "perf_5d": 5.282798516521692,
-      "perf_60d": 61.48944216026049,
+      "perf_20d": 3.838460111186537,
+      "perf_5d": 7.735457302500515,
+      "perf_60d": 61.279620645615985,
       "previous_close": null,
-      "price": 521.9500122070312,
+      "price": 539.6900024414062,
       "quote_age_seconds": null,
       "quote_timestamp": null,
       "regular_volume": null,
@@ -67,26 +203,26 @@
         "spread_cost_to_reward_pct": null
       },
       "risk_reward": null,
-      "rsi": 50.04443070157733,
+      "rsi": 53.515452518725304,
       "session": {
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-25T16:41:01.015146+02:00",
-        "now_ny": "2026-07-25T10:41:01.015146-04:00",
-        "now_utc": "2026-07-25T14:41:01.015146+00:00",
+        "now_madrid": "2026-07-26T16:42:36.540137+02:00",
+        "now_ny": "2026-07-26T10:42:36.540137-04:00",
+        "now_utc": "2026-07-26T14:42:36.540137+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-25"
+        "trade_date": "2026-07-26"
       },
       "setup": "NO_TRADE",
-      "sma20": 533.0595001220703,
-      "sma50": 508.48100036621094,
+      "sma20": 533.5904998779297,
+      "sma50": 507.00780029296874,
       "source_count": 2,
       "source_times": [
-        "2026-07-25T08:25:43.978212+00:00",
-        "2026-07-25T08:49:00.184456+00:00"
+        "2026-07-26T08:40:41.297418+00:00",
+        "2026-07-25T21:35:36.498094+00:00"
       ],
       "sources": [
         "SEC e insiders",
@@ -98,9 +234,9 @@
       "symbol": "AMD",
       "take_profit": null,
       "validation_status": "INVALID",
-      "volume": 27136700.0,
-      "volume_20d_avg": 28215380.0,
-      "volume_ratio": 0.9617697865490381,
+      "volume": 27155100.0,
+      "volume_20d_avg": 28210110.0,
+      "volume_ratio": 0.9626017055587518,
       "warnings": [
         "fase NO_TRADE: no abrir posicion automaticamente"
       ]
@@ -118,7 +254,7 @@
       "Avisos: fase NO_TRADE: no abrir posicion automaticamente",
       "Confluencia: 2 fuentes",
       "Score maximo previo: 78/100",
-      "Score medio previo: 66/100",
+      "Score medio previo: 68/100",
       "Spread N/A",
       "Gap N/A",
       "VWAP pre-market N/A",
@@ -134,21 +270,20 @@
     "score": 13,
     "source": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000117/xslF345X06/wk-form4_1784318998.xml",
     "summary": "AMD queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-25T14:41:03.462404+00:00",
+    "time_utc": "2026-07-26T14:42:37.886588+00:00",
     "title": "AMD NO_TRADE NO_TRADE"
   },
   {
     "agent": "intraday_cashout",
-    "ai_brief": "Todos los activos analizados presentan estado NO_TRADE con setups WAIT y validación INVALID debido a mercado cerrado y falta de datos clave. Se recomienda mantener vigilancia activa y no abrir posiciones hasta confirmar setups válidos y datos completos. Priorizar control de riesgo ante la ausencia de señales claras y volumen pre-market insuficiente.",
+    "ai_brief": "Todos los activos analizados presentan estado NO_TRADE con setups WAIT y validación INVALID debido a mercado cerrado y falta de datos críticos. Se recomienda mantener vigilancia activa y no iniciar posiciones hasta confirmar condiciones de mercado y datos completos. La gestión del riesgo debe priorizar la limitación de pérdidas diarias y evitar exposición innecesaria en fases de incertidumbre.",
     "ai_risk_notes": [
-      "Riesgo elevado por operar con setups NO_TRADE y validación INVALID, lo que implica falta de confirmación técnica y datos incompletos.",
-      "Volumen pre-market nulo o muy bajo limita la liquidez y puede aumentar el spread y la volatilidad inesperada.",
-      "Falta de stop loss y take profit definidos incrementa la exposición a movimientos adversos sin control de pérdidas."
+      "Riesgo elevado por falta de datos y mercado cerrado que impide establecer niveles de entrada, stop loss y take profit.",
+      "Posible incremento de volatilidad y spread no cuantificado que puede afectar la ejecución y gestión de órdenes."
     ],
     "ai_watch_items": [
-      "Confirmación de apertura de mercado y disponibilidad de datos actuales (precio, bid, ask, volumen pre-market).",
-      "Evolución del volumen y comportamiento relativo frente a índices QQQ y SPY para detectar cambios en fuerza relativa.",
-      "Actualización de setups y validación para evitar operar en condiciones de riesgo/beneficio insuficiente o setups inválidos."
+      "Evolución del volumen pre-market y confirmación de datos de precio (current_price, bid, ask).",
+      "Cambios en la validación del setup para pasar de NO_TRADE a condiciones operativas válidas.",
+      "Indicadores técnicos clave como RSI, SMA20 y SMA50 para detectar posibles señales de cambio de tendencia."
     ],
     "asset": "GOOGL",
     "level": "NO_TRADE",
@@ -162,8 +297,8 @@
       "classification": "NO_TRADE",
       "current_price": null,
       "direction": "WAIT",
-      "dist200": -1.812795379972143,
-      "drawdown": -21.09433056126816,
+      "dist200": -1.2849442668287803,
+      "drawdown": -20.585168617542028,
       "entry_zone": "N/A",
       "filing_date": "2026-07-23",
       "form": "4",
@@ -186,15 +321,15 @@
       "max_hold_hours": 8,
       "max_source_score": 70.0,
       "perf_20d": -6.973902946267985,
-      "perf_5d": -7.794791831951519,
+      "perf_5d": -10.373523077380042,
       "perf_60d": -8.58825794778404,
       "previous_close": null,
-      "price": 317.69000244140625,
+      "price": 319.739990234375,
       "quote_age_seconds": null,
       "quote_timestamp": null,
       "reasons": [
-        "Drawdown 52s -21.1%",
-        "RSI diario 31.0",
+        "Drawdown 52s -20.6%",
+        "RSI diario 32.5",
         "Cerca de SMA200 desde abajo"
       ],
       "regular_volume": null,
@@ -217,30 +352,30 @@
         "spread_cost_to_reward_pct": null
       },
       "risk_reward": null,
-      "rsi": 31.019850004304914,
+      "rsi": 32.45636436863063,
       "score": 60,
       "session": {
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-25T16:41:01.015146+02:00",
-        "now_ny": "2026-07-25T10:41:01.015146-04:00",
-        "now_utc": "2026-07-25T14:41:01.015146+00:00",
+        "now_madrid": "2026-07-26T16:42:36.540137+02:00",
+        "now_ny": "2026-07-26T10:42:36.540137-04:00",
+        "now_utc": "2026-07-26T14:42:36.540137+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-25"
+        "trade_date": "2026-07-26"
       },
       "setup": "NO_TRADE",
       "sma20": 352.1919998168945,
       "sma50": 364.7038000488281,
       "source_count": 3,
       "source_times": [
-        "2026-07-25T08:19:23.181499+00:00",
-        "2026-07-25T08:25:42.717545+00:00",
-        "2026-07-25T08:25:42.729291+00:00",
-        "2026-07-25T08:25:42.741696+00:00",
-        "2026-07-25T08:25:42.717645+00:00"
+        "2026-07-26T08:36:56.102856+00:00",
+        "2026-07-26T08:40:40.073930+00:00",
+        "2026-07-26T08:40:40.088686+00:00",
+        "2026-07-26T08:40:40.102441+00:00",
+        "2026-07-26T08:40:40.074013+00:00"
       ],
       "sources": [
         "Market Signal Agent",
@@ -254,9 +389,9 @@
       "take_profit": null,
       "ticker": "GOOGL",
       "validation_status": "INVALID",
-      "volume": 31740600.0,
-      "volume_20d_avg": 33748215.0,
-      "volume_ratio": 0.9405119648550301,
+      "volume": 69419700.0,
+      "volume_20d_avg": 34385755.0,
+      "volume_ratio": 2.0188505385442315,
       "warnings": [
         "fase NO_TRADE: no abrir posicion automaticamente"
       ]
@@ -282,36 +417,35 @@
       "RS vs QQQ +0.00%",
       "RS vs SPY +0.00%",
       "Horizonte: salida el mismo dia, maximo 8h",
-      "Drawdown 52s -21.1%",
-      "RSI diario 31.0",
+      "Drawdown 52s -20.6%",
+      "RSI diario 32.5",
       "Cerca de SMA200 desde abajo",
-      "17 artículos recientes"
+      "18 artículos recientes"
     ],
     "score": 13,
     "source": "https://finance.yahoo.com/quote/GOOGL",
     "summary": "GOOGL queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-25T14:41:03.526447+00:00",
+    "time_utc": "2026-07-26T14:42:37.926704+00:00",
     "title": "GOOGL NO_TRADE NO_TRADE"
   },
   {
     "agent": "intraday_cashout",
-    "ai_brief": "Todos los activos analizados presentan estado NO_TRADE con setups WAIT y validación INVALID debido a mercado cerrado y falta de datos clave. Se recomienda mantener vigilancia activa y no abrir posiciones hasta confirmar setups válidos y datos completos. Priorizar control de riesgo ante la ausencia de señales claras y volumen pre-market insuficiente.",
+    "ai_brief": "Todos los activos analizados presentan estado NO_TRADE con setups WAIT y validación INVALID debido a mercado cerrado y falta de datos críticos. Se recomienda mantener vigilancia activa y no iniciar posiciones hasta confirmar condiciones de mercado y datos completos. La gestión del riesgo debe priorizar la limitación de pérdidas diarias y evitar exposición innecesaria en fases de incertidumbre.",
     "ai_risk_notes": [
-      "Riesgo elevado por operar con setups NO_TRADE y validación INVALID, lo que implica falta de confirmación técnica y datos incompletos.",
-      "Volumen pre-market nulo o muy bajo limita la liquidez y puede aumentar el spread y la volatilidad inesperada.",
-      "Falta de stop loss y take profit definidos incrementa la exposición a movimientos adversos sin control de pérdidas."
+      "Riesgo elevado por falta de datos y mercado cerrado que impide establecer niveles de entrada, stop loss y take profit.",
+      "Posible incremento de volatilidad y spread no cuantificado que puede afectar la ejecución y gestión de órdenes."
     ],
     "ai_watch_items": [
-      "Confirmación de apertura de mercado y disponibilidad de datos actuales (precio, bid, ask, volumen pre-market).",
-      "Evolución del volumen y comportamiento relativo frente a índices QQQ y SPY para detectar cambios en fuerza relativa.",
-      "Actualización de setups y validación para evitar operar en condiciones de riesgo/beneficio insuficiente o setups inválidos."
+      "Evolución del volumen pre-market y confirmación de datos de precio (current_price, bid, ask).",
+      "Cambios en la validación del setup para pasar de NO_TRADE a condiciones operativas válidas.",
+      "Indicadores técnicos clave como RSI, SMA20 y SMA50 para detectar posibles señales de cambio de tendencia."
     ],
     "asset": "MSFT",
     "level": "NO_TRADE",
     "metrics": {
       "action_state": "NO_TRADE",
       "ask": null,
-      "avg_source_score": 60.0,
+      "avg_source_score": 61.0,
       "bid": null,
       "breakout_20d": false,
       "breakout_50d": false,
@@ -339,11 +473,11 @@
       "market_state": null,
       "max_hold_hours": 8,
       "max_source_score": 70.0,
-      "perf_20d": 8.182418369605493,
-      "perf_5d": -3.077546821334931,
-      "perf_60d": -11.077457843440596,
+      "perf_20d": 4.4108782066693,
+      "perf_5d": -4.8666215991560735,
+      "perf_60d": -10.178433220296224,
       "previous_close": null,
-      "price": 381.70001220703125,
+      "price": 381.5799865722656,
       "quote_age_seconds": null,
       "quote_timestamp": null,
       "regular_volume": null,
@@ -366,26 +500,26 @@
         "spread_cost_to_reward_pct": null
       },
       "risk_reward": null,
-      "rsi": 44.75125634654141,
+      "rsi": 44.67660286303507,
       "session": {
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-25T16:41:01.015146+02:00",
-        "now_ny": "2026-07-25T10:41:01.015146-04:00",
-        "now_utc": "2026-07-25T14:41:01.015146+00:00",
+        "now_madrid": "2026-07-26T16:42:36.540137+02:00",
+        "now_ny": "2026-07-26T10:42:36.540137-04:00",
+        "now_utc": "2026-07-26T14:42:36.540137+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-25"
+        "trade_date": "2026-07-26"
       },
       "setup": "NO_TRADE",
-      "sma20": 386.8919982910156,
-      "sma50": 399.1791979980469,
+      "sma20": 385.44849700927733,
+      "sma50": 399.7005975341797,
       "source_count": 2,
       "source_times": [
-        "2026-07-25T08:25:41.744896+00:00",
-        "2026-07-25T08:49:00.047180+00:00"
+        "2026-07-26T08:40:39.097487+00:00",
+        "2026-07-25T21:35:36.378626+00:00"
       ],
       "sources": [
         "SEC e insiders",
@@ -397,9 +531,9 @@
       "symbol": "MSFT",
       "take_profit": null,
       "validation_status": "INVALID",
-      "volume": 27624500.0,
-      "volume_20d_avg": 40951045.0,
-      "volume_ratio": 0.6745737501936764,
+      "volume": 30351800.0,
+      "volume_20d_avg": 42878770.0,
+      "volume_ratio": 0.7078514612242842,
       "warnings": [
         "fase NO_TRADE: no abrir posicion automaticamente"
       ]
@@ -417,7 +551,7 @@
       "Avisos: fase NO_TRADE: no abrir posicion automaticamente",
       "Confluencia: 2 fuentes",
       "Score maximo previo: 70/100",
-      "Score medio previo: 60/100",
+      "Score medio previo: 61/100",
       "Spread N/A",
       "Gap N/A",
       "VWAP pre-market N/A",
@@ -428,26 +562,25 @@
       "formulario SEC 4",
       "presentado 2026-07-15",
       "operacion declarada por insider",
-      "Reacción del precio y volumen en AMD tras presentación reciente con operaciones declaradas."
+      "Revisión detallada de las operaciones declaradas en los formularios SEC 4, especialmente en AMD donde hay actividad reciente."
     ],
     "score": 13,
     "source": "https://www.sec.gov/Archives/edgar/data/789019/000078901926000139/xslF345X06/form4.xml",
     "summary": "MSFT queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-25T14:41:03.583347+00:00",
+    "time_utc": "2026-07-26T14:42:37.966773+00:00",
     "title": "MSFT NO_TRADE NO_TRADE"
   },
   {
     "agent": "intraday_cashout",
-    "ai_brief": "Todos los activos analizados presentan estado NO_TRADE con setups WAIT y validación INVALID debido a mercado cerrado y falta de datos clave. Se recomienda mantener vigilancia activa y no abrir posiciones hasta confirmar setups válidos y datos completos. Priorizar control de riesgo ante la ausencia de señales claras y volumen pre-market insuficiente.",
+    "ai_brief": "Todos los activos analizados presentan estado NO_TRADE con setups WAIT y validación INVALID debido a mercado cerrado y falta de datos críticos. Se recomienda mantener vigilancia activa y no iniciar posiciones hasta confirmar condiciones de mercado y datos completos. La gestión del riesgo debe priorizar la limitación de pérdidas diarias y evitar exposición innecesaria en fases de incertidumbre.",
     "ai_risk_notes": [
-      "Riesgo elevado por operar con setups NO_TRADE y validación INVALID, lo que implica falta de confirmación técnica y datos incompletos.",
-      "Volumen pre-market nulo o muy bajo limita la liquidez y puede aumentar el spread y la volatilidad inesperada.",
-      "Falta de stop loss y take profit definidos incrementa la exposición a movimientos adversos sin control de pérdidas."
+      "Riesgo elevado por falta de datos y mercado cerrado que impide establecer niveles de entrada, stop loss y take profit.",
+      "Posible incremento de volatilidad y spread no cuantificado que puede afectar la ejecución y gestión de órdenes."
     ],
     "ai_watch_items": [
-      "Confirmación de apertura de mercado y disponibilidad de datos actuales (precio, bid, ask, volumen pre-market).",
-      "Evolución del volumen y comportamiento relativo frente a índices QQQ y SPY para detectar cambios en fuerza relativa.",
-      "Actualización de setups y validación para evitar operar en condiciones de riesgo/beneficio insuficiente o setups inválidos."
+      "Evolución del volumen pre-market y confirmación de datos de precio (current_price, bid, ask).",
+      "Cambios en la validación del setup para pasar de NO_TRADE a condiciones operativas válidas.",
+      "Indicadores técnicos clave como RSI, SMA20 y SMA50 para detectar posibles señales de cambio de tendencia."
     ],
     "asset": "META",
     "level": "NO_TRADE",
@@ -482,11 +615,11 @@
       "market_state": null,
       "max_hold_hours": 8,
       "max_source_score": 70.0,
-      "perf_20d": 9.637667912171977,
-      "perf_5d": -7.866752303521807,
-      "perf_60d": -11.342988853315706,
+      "perf_20d": 8.684346326666748,
+      "perf_5d": -8.794053687316561,
+      "perf_60d": -10.686395928950908,
       "previous_close": null,
-      "price": 595.1900024414062,
+      "price": 606.0999755859375,
       "quote_age_seconds": null,
       "quote_timestamp": null,
       "regular_volume": null,
@@ -509,26 +642,26 @@
         "spread_cost_to_reward_pct": null
       },
       "risk_reward": null,
-      "rsi": 43.81889285926703,
+      "rsi": 46.29740672585472,
       "session": {
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-25T16:41:01.015146+02:00",
-        "now_ny": "2026-07-25T10:41:01.015146-04:00",
-        "now_utc": "2026-07-25T14:41:01.015146+00:00",
+        "now_madrid": "2026-07-26T16:42:36.540137+02:00",
+        "now_ny": "2026-07-26T10:42:36.540137-04:00",
+        "now_utc": "2026-07-26T14:42:36.540137+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-25"
+        "trade_date": "2026-07-26"
       },
       "setup": "NO_TRADE",
-      "sma20": 620.9689910888671,
-      "sma50": 606.0737951660157,
+      "sma20": 618.3529907226563,
+      "sma50": 606.2299951171875,
       "source_count": 1,
       "source_times": [
-        "2026-07-25T08:25:43.078212+00:00",
-        "2026-07-25T08:25:43.078333+00:00"
+        "2026-07-26T08:40:40.413019+00:00",
+        "2026-07-26T08:40:40.413080+00:00"
       ],
       "sources": [
         "SEC e insiders"
@@ -539,9 +672,9 @@
       "symbol": "META",
       "take_profit": null,
       "validation_status": "INVALID",
-      "volume": 11474900.0,
-      "volume_20d_avg": 19364680.0,
-      "volume_ratio": 0.5925685319871022,
+      "volume": 15494800.0,
+      "volume_20d_avg": 19639365.0,
+      "volume_ratio": 0.7889664457073842,
       "warnings": [
         "fase NO_TRADE: no abrir posicion automaticamente"
       ]
@@ -570,33 +703,32 @@
       "formulario SEC 4",
       "presentado 2026-07-22",
       "operacion declarada por insider",
-      "Reacción del precio y volumen en AMD tras presentación reciente con operaciones declaradas."
+      "Revisión detallada de las operaciones declaradas en los formularios SEC 4, especialmente en AMD donde hay actividad reciente."
     ],
     "score": 13,
     "source": "https://www.sec.gov/Archives/edgar/data/1326801/000095010326011028/xslF345X06/ownership.xml",
     "summary": "META queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-25T14:41:03.634353+00:00",
+    "time_utc": "2026-07-26T14:42:38.007527+00:00",
     "title": "META NO_TRADE NO_TRADE"
   },
   {
     "agent": "intraday_cashout",
-    "ai_brief": "Todos los activos analizados presentan estado NO_TRADE con setups WAIT y validación INVALID debido a mercado cerrado y falta de datos clave. Se recomienda mantener vigilancia activa y no abrir posiciones hasta confirmar setups válidos y datos completos. Priorizar control de riesgo ante la ausencia de señales claras y volumen pre-market insuficiente.",
+    "ai_brief": "Todos los activos analizados presentan estado NO_TRADE con setups WAIT y validación INVALID debido a mercado cerrado y falta de datos críticos. Se recomienda mantener vigilancia activa y no iniciar posiciones hasta confirmar condiciones de mercado y datos completos. La gestión del riesgo debe priorizar la limitación de pérdidas diarias y evitar exposición innecesaria en fases de incertidumbre.",
     "ai_risk_notes": [
-      "Riesgo elevado por operar con setups NO_TRADE y validación INVALID, lo que implica falta de confirmación técnica y datos incompletos.",
-      "Volumen pre-market nulo o muy bajo limita la liquidez y puede aumentar el spread y la volatilidad inesperada.",
-      "Falta de stop loss y take profit definidos incrementa la exposición a movimientos adversos sin control de pérdidas."
+      "Riesgo elevado por falta de datos y mercado cerrado que impide establecer niveles de entrada, stop loss y take profit.",
+      "Posible incremento de volatilidad y spread no cuantificado que puede afectar la ejecución y gestión de órdenes."
     ],
     "ai_watch_items": [
-      "Confirmación de apertura de mercado y disponibilidad de datos actuales (precio, bid, ask, volumen pre-market).",
-      "Evolución del volumen y comportamiento relativo frente a índices QQQ y SPY para detectar cambios en fuerza relativa.",
-      "Actualización de setups y validación para evitar operar en condiciones de riesgo/beneficio insuficiente o setups inválidos."
+      "Evolución del volumen pre-market y confirmación de datos de precio (current_price, bid, ask).",
+      "Cambios en la validación del setup para pasar de NO_TRADE a condiciones operativas válidas.",
+      "Indicadores técnicos clave como RSI, SMA20 y SMA50 para detectar posibles señales de cambio de tendencia."
     ],
     "asset": "PLTR",
     "level": "NO_TRADE",
     "metrics": {
       "action_state": "NO_TRADE",
       "ask": null,
-      "avg_source_score": 65.33333333333333,
+      "avg_source_score": 65.66666666666667,
       "bid": null,
       "breakout_20d": false,
       "breakout_50d": false,
@@ -619,11 +751,11 @@
       "market_state": null,
       "max_hold_hours": 8,
       "max_source_score": 70.0,
-      "perf_20d": 14.589355845654794,
-      "perf_5d": -7.146099384300165,
-      "perf_60d": -12.93384010067905,
+      "perf_20d": 8.696037662186807,
+      "perf_5d": -8.234156124512804,
+      "perf_60d": -13.787562903848738,
       "previous_close": null,
-      "price": 122.91999816894531,
+      "price": 123.37000274658203,
       "quote_age_seconds": null,
       "quote_timestamp": null,
       "regular_volume": null,
@@ -646,27 +778,27 @@
         "spread_cost_to_reward_pct": null
       },
       "risk_reward": null,
-      "rsi": 42.07543788489828,
+      "rsi": 42.531730259404995,
       "session": {
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-25T16:41:01.015146+02:00",
-        "now_ny": "2026-07-25T10:41:01.015146-04:00",
-        "now_utc": "2026-07-25T14:41:01.015146+00:00",
+        "now_madrid": "2026-07-26T16:42:36.540137+02:00",
+        "now_ny": "2026-07-26T10:42:36.540137-04:00",
+        "now_utc": "2026-07-26T14:42:36.540137+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-25"
+        "trade_date": "2026-07-26"
       },
       "setup": "NO_TRADE",
-      "sma20": 127.89999961853027,
-      "sma50": 131.61409957885743,
+      "sma20": 127.11749954223633,
+      "sma50": 131.8756996154785,
       "source_count": 2,
       "source_times": [
-        "2026-07-25T08:25:43.679057+00:00",
-        "2026-07-25T08:25:43.679087+00:00",
-        "2026-07-25T08:49:00.354108+00:00"
+        "2026-07-26T08:40:41.004125+00:00",
+        "2026-07-26T08:40:41.004151+00:00",
+        "2026-07-25T21:35:36.697045+00:00"
       ],
       "sources": [
         "SEC e insiders",
@@ -678,9 +810,9 @@
       "symbol": "PLTR",
       "take_profit": null,
       "validation_status": "INVALID",
-      "volume": 21090100.0,
-      "volume_20d_avg": 39021390.0,
-      "volume_ratio": 0.5404753649216494,
+      "volume": 29757900.0,
+      "volume_20d_avg": 41058890.0,
+      "volume_ratio": 0.724761434125472,
       "warnings": [
         "fase NO_TRADE: no abrir posicion automaticamente"
       ]
@@ -698,7 +830,7 @@
       "Avisos: fase NO_TRADE: no abrir posicion automaticamente",
       "Confluencia: 2 fuentes",
       "Score maximo previo: 70/100",
-      "Score medio previo: 65/100",
+      "Score medio previo: 66/100",
       "Spread N/A",
       "Gap N/A",
       "VWAP pre-market N/A",
@@ -709,33 +841,32 @@
       "formulario SEC 4",
       "presentado 2026-07-24",
       "operacion declarada por insider",
-      "Reacción del precio y volumen en AMD tras presentación reciente con operaciones declaradas."
+      "Revisión detallada de las operaciones declaradas en los formularios SEC 4, especialmente en AMD donde hay actividad reciente."
     ],
     "score": 13,
     "source": "https://www.sec.gov/Archives/edgar/data/1321655/000170518926000013/xslF345X06/wk-form4_1784937605.xml",
     "summary": "PLTR queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-25T14:41:03.689125+00:00",
+    "time_utc": "2026-07-26T14:42:38.046575+00:00",
     "title": "PLTR NO_TRADE NO_TRADE"
   },
   {
     "agent": "intraday_cashout",
-    "ai_brief": "Todos los activos analizados presentan estado NO_TRADE con setups WAIT y validación INVALID debido a mercado cerrado y falta de datos clave. Se recomienda mantener vigilancia activa y no abrir posiciones hasta confirmar setups válidos y datos completos. Priorizar control de riesgo ante la ausencia de señales claras y volumen pre-market insuficiente.",
+    "ai_brief": "Todos los activos analizados presentan estado NO_TRADE con setups WAIT y validación INVALID debido a mercado cerrado y falta de datos críticos. Se recomienda mantener vigilancia activa y no iniciar posiciones hasta confirmar condiciones de mercado y datos completos. La gestión del riesgo debe priorizar la limitación de pérdidas diarias y evitar exposición innecesaria en fases de incertidumbre.",
     "ai_risk_notes": [
-      "Riesgo elevado por operar con setups NO_TRADE y validación INVALID, lo que implica falta de confirmación técnica y datos incompletos.",
-      "Volumen pre-market nulo o muy bajo limita la liquidez y puede aumentar el spread y la volatilidad inesperada.",
-      "Falta de stop loss y take profit definidos incrementa la exposición a movimientos adversos sin control de pérdidas."
+      "Riesgo elevado por falta de datos y mercado cerrado que impide establecer niveles de entrada, stop loss y take profit.",
+      "Posible incremento de volatilidad y spread no cuantificado que puede afectar la ejecución y gestión de órdenes."
     ],
     "ai_watch_items": [
-      "Confirmación de apertura de mercado y disponibilidad de datos actuales (precio, bid, ask, volumen pre-market).",
-      "Evolución del volumen y comportamiento relativo frente a índices QQQ y SPY para detectar cambios en fuerza relativa.",
-      "Actualización de setups y validación para evitar operar en condiciones de riesgo/beneficio insuficiente o setups inválidos."
+      "Evolución del volumen pre-market y confirmación de datos de precio (current_price, bid, ask).",
+      "Cambios en la validación del setup para pasar de NO_TRADE a condiciones operativas válidas.",
+      "Indicadores técnicos clave como RSI, SMA20 y SMA50 para detectar posibles señales de cambio de tendencia."
     ],
     "asset": "AVGO",
     "level": "NO_TRADE",
     "metrics": {
       "action_state": "NO_TRADE",
       "ask": null,
-      "avg_source_score": 70.0,
+      "avg_source_score": 64.0,
       "bid": null,
       "breakout_20d": false,
       "breakout_50d": false,
@@ -758,11 +889,11 @@
       "market_state": null,
       "max_hold_hours": 8,
       "max_source_score": 70.0,
-      "perf_20d": 0.7943864602501183,
-      "perf_5d": 2.990596029727377,
-      "perf_60d": -4.479397180304834,
+      "perf_20d": 2.7220126409082557,
+      "perf_5d": 4.8123884166703546,
+      "perf_60d": -6.152561031870651,
       "previous_close": null,
-      "price": 381.9200134277344,
+      "price": 392.4700012207031,
       "quote_age_seconds": null,
       "quote_timestamp": null,
       "regular_volume": null,
@@ -785,29 +916,31 @@
         "spread_cost_to_reward_pct": null
       },
       "risk_reward": null,
-      "rsi": 47.83159932421311,
+      "rsi": 51.8568667020793,
       "session": {
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-25T16:41:01.015146+02:00",
-        "now_ny": "2026-07-25T10:41:01.015146-04:00",
-        "now_utc": "2026-07-25T14:41:01.015146+00:00",
+        "now_madrid": "2026-07-26T16:42:36.540137+02:00",
+        "now_ny": "2026-07-26T10:42:36.540137-04:00",
+        "now_utc": "2026-07-26T14:42:36.540137+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-25"
+        "trade_date": "2026-07-26"
       },
       "setup": "NO_TRADE",
-      "sma20": 381.40199890136716,
-      "sma50": 399.3470013427734,
-      "source_count": 1,
+      "sma20": 381.2514984130859,
+      "sma50": 400.09460083007815,
+      "source_count": 2,
       "source_times": [
-        "2026-07-25T08:25:44.299690+00:00",
-        "2026-07-25T08:25:44.299719+00:00"
+        "2026-07-26T08:40:41.608597+00:00",
+        "2026-07-26T08:40:41.608624+00:00",
+        "2026-07-25T21:35:36.557833+00:00"
       ],
       "sources": [
-        "SEC e insiders"
+        "SEC e insiders",
+        "Volumen inusual"
       ],
       "spread_pct": null,
       "status": "ok",
@@ -815,9 +948,9 @@
       "symbol": "AVGO",
       "take_profit": null,
       "validation_status": "INVALID",
-      "volume": 15130500.0,
-      "volume_20d_avg": 22281620.0,
-      "volume_ratio": 0.6790574473489809,
+      "volume": 16348700.0,
+      "volume_20d_avg": 22692780.0,
+      "volume_ratio": 0.7204361915992664,
       "warnings": [
         "fase NO_TRADE: no abrir posicion automaticamente"
       ]
@@ -833,9 +966,9 @@
       "Margen aprox. $0.00",
       "Invalidacion: mercado cerrado; faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close; sin timestamp de precio",
       "Avisos: fase NO_TRADE: no abrir posicion automaticamente",
-      "Confluencia: 1 fuentes",
+      "Confluencia: 2 fuentes",
       "Score maximo previo: 70/100",
-      "Score medio previo: 70/100",
+      "Score medio previo: 64/100",
       "Spread N/A",
       "Gap N/A",
       "VWAP pre-market N/A",
@@ -845,26 +978,26 @@
       "Horizonte: salida el mismo dia, maximo 8h",
       "formulario SEC 4",
       "presentado 2026-07-14",
-      "operacion declarada por insider"
+      "operacion declarada por insider",
+      "volume 0.7x avg"
     ],
     "score": 13,
     "source": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000072/xslF345X06/wk-form4_1784075275.xml",
     "summary": "AVGO queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-25T14:41:03.748594+00:00",
+    "time_utc": "2026-07-26T14:42:38.087798+00:00",
     "title": "AVGO NO_TRADE NO_TRADE"
   },
   {
     "agent": "intraday_cashout",
-    "ai_brief": "Todos los activos analizados presentan estado NO_TRADE con setups WAIT y validación INVALID debido a mercado cerrado y falta de datos clave. Se recomienda mantener vigilancia activa y no abrir posiciones hasta confirmar setups válidos y datos completos. Priorizar control de riesgo ante la ausencia de señales claras y volumen pre-market insuficiente.",
+    "ai_brief": "Todos los activos analizados presentan estado NO_TRADE con setups WAIT y validación INVALID debido a mercado cerrado y falta de datos críticos. Se recomienda mantener vigilancia activa y no iniciar posiciones hasta confirmar condiciones de mercado y datos completos. La gestión del riesgo debe priorizar la limitación de pérdidas diarias y evitar exposición innecesaria en fases de incertidumbre.",
     "ai_risk_notes": [
-      "Riesgo elevado por operar con setups NO_TRADE y validación INVALID, lo que implica falta de confirmación técnica y datos incompletos.",
-      "Volumen pre-market nulo o muy bajo limita la liquidez y puede aumentar el spread y la volatilidad inesperada.",
-      "Falta de stop loss y take profit definidos incrementa la exposición a movimientos adversos sin control de pérdidas."
+      "Riesgo elevado por falta de datos y mercado cerrado que impide establecer niveles de entrada, stop loss y take profit.",
+      "Posible incremento de volatilidad y spread no cuantificado que puede afectar la ejecución y gestión de órdenes."
     ],
     "ai_watch_items": [
-      "Confirmación de apertura de mercado y disponibilidad de datos actuales (precio, bid, ask, volumen pre-market).",
-      "Evolución del volumen y comportamiento relativo frente a índices QQQ y SPY para detectar cambios en fuerza relativa.",
-      "Actualización de setups y validación para evitar operar en condiciones de riesgo/beneficio insuficiente o setups inválidos."
+      "Evolución del volumen pre-market y confirmación de datos de precio (current_price, bid, ask).",
+      "Cambios en la validación del setup para pasar de NO_TRADE a condiciones operativas válidas.",
+      "Indicadores técnicos clave como RSI, SMA20 y SMA50 para detectar posibles señales de cambio de tendencia."
     ],
     "asset": "CRM",
     "level": "NO_TRADE",
@@ -894,11 +1027,11 @@
       "market_state": null,
       "max_hold_hours": 8,
       "max_source_score": 70.0,
-      "perf_20d": 8.968640390000783,
-      "perf_5d": -4.163495012278428,
-      "perf_60d": -9.739688367942477,
+      "perf_20d": 2.7297710911862616,
+      "perf_5d": -9.120917690546658,
+      "perf_60d": -12.903763428293846,
       "previous_close": null,
-      "price": 163.66000366210938,
+      "price": 156.92999267578125,
       "quote_age_seconds": null,
       "quote_timestamp": null,
       "regular_volume": null,
@@ -921,26 +1054,26 @@
         "spread_cost_to_reward_pct": null
       },
       "risk_reward": null,
-      "rsi": 47.353566082392895,
+      "rsi": 40.43348911842407,
       "session": {
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-25T16:41:01.015146+02:00",
-        "now_ny": "2026-07-25T10:41:01.015146-04:00",
-        "now_utc": "2026-07-25T14:41:01.015146+00:00",
+        "now_madrid": "2026-07-26T16:42:36.540137+02:00",
+        "now_ny": "2026-07-26T10:42:36.540137-04:00",
+        "now_utc": "2026-07-26T14:42:36.540137+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-25"
+        "trade_date": "2026-07-26"
       },
       "setup": "NO_TRADE",
-      "sma20": 165.32699890136718,
-      "sma50": 170.17759979248046,
+      "sma20": 164.65349884033202,
+      "sma50": 170.33059967041015,
       "source_count": 1,
       "source_times": [
-        "2026-07-25T08:25:45.101013+00:00",
-        "2026-07-25T08:25:45.101044+00:00"
+        "2026-07-26T08:40:42.320079+00:00",
+        "2026-07-26T08:40:42.320104+00:00"
       ],
       "sources": [
         "SEC e insiders"
@@ -951,9 +1084,9 @@
       "symbol": "CRM",
       "take_profit": null,
       "validation_status": "INVALID",
-      "volume": 10896300.0,
-      "volume_20d_avg": 12656455.0,
-      "volume_ratio": 0.8609282773098786,
+      "volume": 12775000.0,
+      "volume_20d_avg": 12677875.0,
+      "volume_ratio": 1.0076609841949065,
       "warnings": [
         "fase NO_TRADE: no abrir posicion automaticamente"
       ]
@@ -986,146 +1119,8 @@
     "score": 13,
     "source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000156/xslF345X06/form4.xml",
     "summary": "CRM queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-25T14:41:03.809974+00:00",
+    "time_utc": "2026-07-26T14:42:38.126495+00:00",
     "title": "CRM NO_TRADE NO_TRADE"
-  },
-  {
-    "agent": "intraday_cashout",
-    "ai_brief": "Todos los activos analizados presentan estado NO_TRADE con setups WAIT y validación INVALID debido a mercado cerrado y falta de datos clave. Se recomienda mantener vigilancia activa y no abrir posiciones hasta confirmar setups válidos y datos completos. Priorizar control de riesgo ante la ausencia de señales claras y volumen pre-market insuficiente.",
-    "ai_risk_notes": [
-      "Riesgo elevado por operar con setups NO_TRADE y validación INVALID, lo que implica falta de confirmación técnica y datos incompletos.",
-      "Volumen pre-market nulo o muy bajo limita la liquidez y puede aumentar el spread y la volatilidad inesperada.",
-      "Falta de stop loss y take profit definidos incrementa la exposición a movimientos adversos sin control de pérdidas."
-    ],
-    "ai_watch_items": [
-      "Confirmación de apertura de mercado y disponibilidad de datos actuales (precio, bid, ask, volumen pre-market).",
-      "Evolución del volumen y comportamiento relativo frente a índices QQQ y SPY para detectar cambios en fuerza relativa.",
-      "Actualización de setups y validación para evitar operar en condiciones de riesgo/beneficio insuficiente o setups inválidos."
-    ],
-    "asset": "TSLA",
-    "level": "NO_TRADE",
-    "metrics": {
-      "action_state": "NO_TRADE",
-      "ask": null,
-      "avg_source_score": 64.5,
-      "bid": null,
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "classification": "NO_TRADE",
-      "current_price": null,
-      "direction": "WAIT",
-      "entry_zone": "N/A",
-      "filing_date": "2026-07-22",
-      "form": "8-K",
-      "form4_details": {},
-      "gap_pct": null,
-      "invalid_reasons": [
-        "mercado cerrado",
-        "faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close",
-        "sin timestamp de precio",
-        "volumen pre-market bajo 0",
-        "ningun setup minimo confirma",
-        "riesgo/beneficio insuficiente N/A"
-      ],
-      "market_state": null,
-      "max_hold_hours": 8,
-      "max_source_score": 67.0,
-      "perf_20d": -16.55203592079748,
-      "perf_5d": -17.805377116543987,
-      "perf_60d": -16.75176641529148,
-      "previous_close": null,
-      "price": 313.0299987792969,
-      "quote_age_seconds": null,
-      "quote_timestamp": null,
-      "regular_volume": null,
-      "relative_strength_vs_qqq": 0,
-      "relative_strength_vs_spy": 0,
-      "risk_context": {
-        "leverage": 5.0,
-        "max_buying_power_pct_with_leverage": 20.0,
-        "max_position_pct": 20.0,
-        "risk_per_trade_pct": 1.0
-      },
-      "risk_plan": {
-        "margin_required": 0,
-        "max_daily_loss_amount": 30.0,
-        "max_trades_per_day": 3,
-        "net_risk_reward": null,
-        "notional": 0,
-        "position_size": 0,
-        "risk_amount": 10.0,
-        "spread_cost_to_reward_pct": null
-      },
-      "risk_reward": null,
-      "rsi": 27.984952518684565,
-      "session": {
-        "is_holiday": false,
-        "is_weekend": true,
-        "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-25T16:41:01.015146+02:00",
-        "now_ny": "2026-07-25T10:41:01.015146-04:00",
-        "now_utc": "2026-07-25T14:41:01.015146+00:00",
-        "phase": "NO_TRADE",
-        "seconds_to_regular_open": 0,
-        "state": "cerrado",
-        "trade_date": "2026-07-25"
-      },
-      "setup": "NO_TRADE",
-      "sma20": 388.72349853515624,
-      "sma50": 402.557998046875,
-      "source_count": 2,
-      "source_times": [
-        "2026-07-25T08:25:43.378897+00:00",
-        "2026-07-25T08:49:00.401440+00:00"
-      ],
-      "sources": [
-        "SEC e insiders",
-        "Volumen inusual"
-      ],
-      "spread_pct": null,
-      "status": "ok",
-      "stop_loss": null,
-      "symbol": "TSLA",
-      "take_profit": null,
-      "validation_status": "INVALID",
-      "volume": 62575300.0,
-      "volume_20d_avg": 44507555.0,
-      "volume_ratio": 1.4059478216675798,
-      "warnings": [
-        "fase NO_TRADE: no abrir posicion automaticamente"
-      ]
-    },
-    "reasons": [
-      "Estado: INVALID",
-      "Accion: NO_TRADE",
-      "Setup: NO_TRADE WAIT",
-      "Entrada: N/A",
-      "SL N/A / TP N/A",
-      "R/R bruto N/A / neto N/A",
-      "Tamano teorico 0.0000 acciones",
-      "Margen aprox. $0.00",
-      "Invalidacion: mercado cerrado; faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close; sin timestamp de precio",
-      "Avisos: fase NO_TRADE: no abrir posicion automaticamente",
-      "Confluencia: 2 fuentes",
-      "Score maximo previo: 67/100",
-      "Score medio previo: 64/100",
-      "Spread N/A",
-      "Gap N/A",
-      "VWAP pre-market N/A",
-      "Volumen pre-market 0",
-      "RS vs QQQ +0.00%",
-      "RS vs SPY +0.00%",
-      "Horizonte: salida el mismo dia, maximo 8h",
-      "formulario SEC 8-K",
-      "presentado 2026-07-22",
-      "hecho relevante comunicado",
-      "volume 1.4x avg"
-    ],
-    "score": 13,
-    "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049213/tsla-20260722.htm",
-    "summary": "TSLA queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-25T14:41:03.908786+00:00",
-    "title": "TSLA NO_TRADE NO_TRADE"
   },
   {
     "agent": "intraday_cashout",
@@ -1134,7 +1129,7 @@
     "metrics": {
       "action_state": "NO_TRADE",
       "ask": null,
-      "avg_source_score": 99.0,
+      "avg_source_score": 95.0,
       "bid": null,
       "breakout_20d": false,
       "breakout_50d": false,
@@ -1147,22 +1142,23 @@
         "mercado cerrado",
         "faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close",
         "sin timestamp de precio",
+        "senal de sesion anterior",
         "volumen pre-market bajo 0",
         "ningun setup minimo confirma",
         "riesgo/beneficio insuficiente N/A"
       ],
       "market_state": null,
       "max_hold_hours": 8,
-      "max_source_score": 99.0,
-      "perf_20d": 10.845625175264573,
-      "perf_5d": 4.138899669247964,
-      "perf_60d": 4.5974997169383025,
+      "max_source_score": 95.0,
+      "perf_20d": 10.22369895303521,
+      "perf_5d": 3.3633817899527685,
+      "perf_60d": 3.309651494910537,
       "previous_close": null,
-      "price": 59.380001068115234,
+      "price": 59.619998931884766,
       "quote_age_seconds": null,
       "quote_timestamp": null,
       "regular_volume": null,
-      "relative_20d_vs_spy": 10.171902723243488,
+      "relative_20d_vs_spy": 9.59316579767884,
       "relative_strength_vs_qqq": 0,
       "relative_strength_vs_spy": 0,
       "risk_context": {
@@ -1182,25 +1178,25 @@
         "spread_cost_to_reward_pct": null
       },
       "risk_reward": null,
-      "rsi": 68.4045621264607,
+      "rsi": 69.35464502286584,
       "session": {
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-25T16:41:01.015146+02:00",
-        "now_ny": "2026-07-25T10:41:01.015146-04:00",
-        "now_utc": "2026-07-25T14:41:01.015146+00:00",
+        "now_madrid": "2026-07-26T16:42:36.540137+02:00",
+        "now_ny": "2026-07-26T10:42:36.540137-04:00",
+        "now_utc": "2026-07-26T14:42:36.540137+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-25"
+        "trade_date": "2026-07-26"
       },
       "setup": "NO_TRADE",
-      "sma20": 55.69150047302246,
-      "sma50": 56.7076001739502,
+      "sma20": 55.968000411987305,
+      "sma50": 56.7486001586914,
       "source_count": 1,
       "source_times": [
-        "2026-07-25T08:31:37.447593+00:00"
+        "2026-07-25T21:27:05.473459+00:00"
       ],
       "sources": [
         "Rotacion sectorial"
@@ -1211,9 +1207,9 @@
       "symbol": "XLE",
       "take_profit": null,
       "validation_status": "INVALID",
-      "volume": 35838600.0,
-      "volume_20d_avg": 29639415.0,
-      "volume_ratio": 1.2091534195259928,
+      "volume": 34159500.0,
+      "volume_20d_avg": 29936305.0,
+      "volume_ratio": 1.1410726874943318,
       "warnings": [
         "fase NO_TRADE: no abrir posicion automaticamente"
       ]
@@ -1230,8 +1226,8 @@
       "Invalidacion: mercado cerrado; faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close; sin timestamp de precio",
       "Avisos: fase NO_TRADE: no abrir posicion automaticamente",
       "Confluencia: 1 fuentes",
-      "Score maximo previo: 99/100",
-      "Score medio previo: 99/100",
+      "Score maximo previo: 95/100",
+      "Score medio previo: 95/100",
       "Spread N/A",
       "Gap N/A",
       "VWAP pre-market N/A",
@@ -1239,25 +1235,25 @@
       "RS vs QQQ +0.00%",
       "RS vs SPY +0.00%",
       "Horizonte: salida el mismo dia, maximo 8h",
-      "20D +10.8%",
-      "relativo vs SPY +10.2%",
-      "RSI 68.4",
-      "Persistencia de la rotación positiva en XLE y su impacto en el mercado general."
+      "20D +10.2%",
+      "relativo vs SPY +9.6%",
+      "RSI 69.4",
+      "Persistencia de la fuerza relativa en XLE y su RSI cercano a niveles de sobrecompra."
     ],
     "score": 11,
     "source": "https://finance.yahoo.com/quote/XLE",
     "summary": "XLE queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-25T14:41:03.399974+00:00",
+    "time_utc": "2026-07-26T14:42:37.841781+00:00",
     "title": "XLE NO_TRADE NO_TRADE"
   },
   {
     "agent": "intraday_cashout",
-    "asset": "XLV",
+    "asset": "XLF",
     "level": "NO_TRADE",
     "metrics": {
       "action_state": "NO_TRADE",
       "ask": null,
-      "avg_source_score": 68.0,
+      "avg_source_score": 69.0,
       "bid": null,
       "breakout_20d": false,
       "breakout_50d": false,
@@ -1270,22 +1266,23 @@
         "mercado cerrado",
         "faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close",
         "sin timestamp de precio",
+        "senal de sesion anterior",
         "volumen pre-market bajo 0",
         "ningun setup minimo confirma",
         "riesgo/beneficio insuficiente N/A"
       ],
       "market_state": null,
       "max_hold_hours": 8,
-      "max_source_score": 68.0,
-      "perf_20d": 5.2755109330935746,
-      "perf_5d": -0.2224972827944871,
-      "perf_60d": 12.5331067099421,
+      "max_source_score": 69.0,
+      "perf_20d": 5.350796201175356,
+      "perf_5d": 0.08887851626309118,
+      "perf_60d": 8.601741620871906,
       "previous_close": null,
-      "price": 161.44000244140625,
+      "price": 56.310001373291016,
       "quote_age_seconds": null,
       "quote_timestamp": null,
       "regular_volume": null,
-      "relative_20d_vs_spy": 4.6017884810724885,
+      "relative_20d_vs_spy": 4.720263045818984,
       "relative_strength_vs_qqq": 0,
       "relative_strength_vs_spy": 0,
       "risk_context": {
@@ -1305,25 +1302,149 @@
         "spread_cost_to_reward_pct": null
       },
       "risk_reward": null,
-      "rsi": 57.693147817178485,
+      "rsi": 63.3945087897165,
       "session": {
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-25T16:41:01.015146+02:00",
-        "now_ny": "2026-07-25T10:41:01.015146-04:00",
-        "now_utc": "2026-07-25T14:41:01.015146+00:00",
+        "now_madrid": "2026-07-26T16:42:36.540137+02:00",
+        "now_ny": "2026-07-26T10:42:36.540137-04:00",
+        "now_utc": "2026-07-26T14:42:36.540137+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-25"
+        "trade_date": "2026-07-26"
       },
       "setup": "NO_TRADE",
-      "sma20": 160.58050003051758,
-      "sma50": 154.16280029296874,
+      "sma20": 55.5935001373291,
+      "sma50": 53.61379997253418,
       "source_count": 1,
       "source_times": [
-        "2026-07-25T08:31:37.529912+00:00"
+        "2026-07-25T21:27:05.305600+00:00"
+      ],
+      "sources": [
+        "Rotacion sectorial"
+      ],
+      "spread_pct": null,
+      "status": "ok",
+      "stop_loss": null,
+      "symbol": "XLF",
+      "take_profit": null,
+      "validation_status": "INVALID",
+      "volume": 32205300.0,
+      "volume_20d_avg": 33722790.0,
+      "volume_ratio": 0.9550010541832393,
+      "warnings": [
+        "fase NO_TRADE: no abrir posicion automaticamente"
+      ]
+    },
+    "reasons": [
+      "Estado: INVALID",
+      "Accion: NO_TRADE",
+      "Setup: NO_TRADE WAIT",
+      "Entrada: N/A",
+      "SL N/A / TP N/A",
+      "R/R bruto N/A / neto N/A",
+      "Tamano teorico 0.0000 acciones",
+      "Margen aprox. $0.00",
+      "Invalidacion: mercado cerrado; faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close; sin timestamp de precio",
+      "Avisos: fase NO_TRADE: no abrir posicion automaticamente",
+      "Confluencia: 1 fuentes",
+      "Score maximo previo: 69/100",
+      "Score medio previo: 69/100",
+      "Spread N/A",
+      "Gap N/A",
+      "VWAP pre-market N/A",
+      "Volumen pre-market 0",
+      "RS vs QQQ +0.00%",
+      "RS vs SPY +0.00%",
+      "Horizonte: salida el mismo dia, maximo 8h",
+      "20D +5.4%",
+      "relativo vs SPY +4.7%",
+      "RSI 63.4",
+      "Persistencia de la fuerza relativa en XLE y su RSI cercano a niveles de sobrecompra."
+    ],
+    "score": 6,
+    "source": "https://finance.yahoo.com/quote/XLF",
+    "summary": "XLF queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
+    "time_utc": "2026-07-26T14:42:38.164854+00:00",
+    "title": "XLF NO_TRADE NO_TRADE"
+  },
+  {
+    "agent": "intraday_cashout",
+    "asset": "XLV",
+    "level": "NO_TRADE",
+    "metrics": {
+      "action_state": "NO_TRADE",
+      "ask": null,
+      "avg_source_score": 67.0,
+      "bid": null,
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "classification": "NO_TRADE",
+      "current_price": null,
+      "direction": "WAIT",
+      "entry_zone": "N/A",
+      "gap_pct": null,
+      "invalid_reasons": [
+        "mercado cerrado",
+        "faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close",
+        "sin timestamp de precio",
+        "senal de sesion anterior",
+        "volumen pre-market bajo 0",
+        "ningun setup minimo confirma",
+        "riesgo/beneficio insuficiente N/A"
+      ],
+      "market_state": null,
+      "max_hold_hours": 8,
+      "max_source_score": 67.0,
+      "perf_20d": 4.459295909315175,
+      "perf_5d": 0.9187479172969581,
+      "perf_60d": 13.021420650157678,
+      "previous_close": null,
+      "price": 162.57000732421875,
+      "quote_age_seconds": null,
+      "quote_timestamp": null,
+      "regular_volume": null,
+      "relative_20d_vs_spy": 3.828762753958803,
+      "relative_strength_vs_qqq": 0,
+      "relative_strength_vs_spy": 0,
+      "risk_context": {
+        "leverage": 5.0,
+        "max_buying_power_pct_with_leverage": 20.0,
+        "max_position_pct": 20.0,
+        "risk_per_trade_pct": 1.0
+      },
+      "risk_plan": {
+        "margin_required": 0,
+        "max_daily_loss_amount": 30.0,
+        "max_trades_per_day": 3,
+        "net_risk_reward": null,
+        "notional": 0,
+        "position_size": 0,
+        "risk_amount": 10.0,
+        "spread_cost_to_reward_pct": null
+      },
+      "risk_reward": null,
+      "rsi": 59.91109768761766,
+      "session": {
+        "is_holiday": false,
+        "is_weekend": true,
+        "minutes_to_regular_open": 0,
+        "now_madrid": "2026-07-26T16:42:36.540137+02:00",
+        "now_ny": "2026-07-26T10:42:36.540137-04:00",
+        "now_utc": "2026-07-26T14:42:36.540137+00:00",
+        "phase": "NO_TRADE",
+        "seconds_to_regular_open": 0,
+        "state": "cerrado",
+        "trade_date": "2026-07-26"
+      },
+      "setup": "NO_TRADE",
+      "sma20": 160.9275001525879,
+      "sma50": 154.4972003173828,
+      "source_count": 1,
+      "source_times": [
+        "2026-07-25T21:27:05.627283+00:00"
       ],
       "sources": [
         "Rotacion sectorial"
@@ -1334,9 +1455,9 @@
       "symbol": "XLV",
       "take_profit": null,
       "validation_status": "INVALID",
-      "volume": 6448200.0,
-      "volume_20d_avg": 10374675.0,
-      "volume_ratio": 0.6215327227117958,
+      "volume": 7645700.0,
+      "volume_20d_avg": 10286000.0,
+      "volume_ratio": 0.7433112969084192,
       "warnings": [
         "fase NO_TRADE: no abrir posicion automaticamente"
       ]
@@ -1353,8 +1474,8 @@
       "Invalidacion: mercado cerrado; faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close; sin timestamp de precio",
       "Avisos: fase NO_TRADE: no abrir posicion automaticamente",
       "Confluencia: 1 fuentes",
-      "Score maximo previo: 68/100",
-      "Score medio previo: 68/100",
+      "Score maximo previo: 67/100",
+      "Score medio previo: 67/100",
       "Spread N/A",
       "Gap N/A",
       "VWAP pre-market N/A",
@@ -1362,139 +1483,16 @@
       "RS vs QQQ +0.00%",
       "RS vs SPY +0.00%",
       "Horizonte: salida el mismo dia, maximo 8h",
-      "20D +5.3%",
-      "relativo vs SPY +4.6%",
-      "RSI 57.7",
-      "Persistencia de la rotación positiva en XLE y su impacto en el mercado general."
-    ],
-    "score": 6,
-    "source": "https://finance.yahoo.com/quote/XLV",
-    "summary": "XLV queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-25T14:41:03.856667+00:00",
-    "title": "XLV NO_TRADE NO_TRADE"
-  },
-  {
-    "agent": "intraday_cashout",
-    "asset": "XLU",
-    "level": "NO_TRADE",
-    "metrics": {
-      "action_state": "NO_TRADE",
-      "ask": null,
-      "avg_source_score": 66.0,
-      "bid": null,
-      "breakout_20d": true,
-      "breakout_50d": true,
-      "classification": "NO_TRADE",
-      "current_price": null,
-      "direction": "WAIT",
-      "entry_zone": "N/A",
-      "gap_pct": null,
-      "invalid_reasons": [
-        "mercado cerrado",
-        "faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close",
-        "sin timestamp de precio",
-        "volumen pre-market bajo 0",
-        "ningun setup minimo confirma",
-        "riesgo/beneficio insuficiente N/A"
-      ],
-      "market_state": null,
-      "max_hold_hours": 8,
-      "max_source_score": 66.0,
-      "perf_20d": 1.4273115900619526,
-      "perf_5d": 1.5834558756907091,
-      "perf_60d": 0.0,
-      "previous_close": null,
-      "price": 46.189998626708984,
-      "quote_age_seconds": null,
-      "quote_timestamp": null,
-      "regular_volume": null,
-      "relative_20d_vs_spy": 0.7535891380408666,
-      "relative_strength_vs_qqq": 0,
-      "relative_strength_vs_spy": 0,
-      "risk_context": {
-        "leverage": 5.0,
-        "max_buying_power_pct_with_leverage": 20.0,
-        "max_position_pct": 20.0,
-        "risk_per_trade_pct": 1.0
-      },
-      "risk_plan": {
-        "margin_required": 0,
-        "max_daily_loss_amount": 30.0,
-        "max_trades_per_day": 3,
-        "net_risk_reward": null,
-        "notional": 0,
-        "position_size": 0,
-        "risk_amount": 10.0,
-        "spread_cost_to_reward_pct": null
-      },
-      "risk_reward": null,
-      "rsi": 59.192144493614634,
-      "session": {
-        "is_holiday": false,
-        "is_weekend": true,
-        "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-25T16:41:01.015146+02:00",
-        "now_ny": "2026-07-25T10:41:01.015146-04:00",
-        "now_utc": "2026-07-25T14:41:01.015146+00:00",
-        "phase": "NO_TRADE",
-        "seconds_to_regular_open": 0,
-        "state": "cerrado",
-        "trade_date": "2026-07-25"
-      },
-      "setup": "NO_TRADE",
-      "sma20": 45.50449981689453,
-      "sma50": 44.89619972229004,
-      "source_count": 1,
-      "source_times": [
-        "2026-07-25T08:31:37.841595+00:00"
-      ],
-      "sources": [
-        "Rotacion sectorial"
-      ],
-      "spread_pct": null,
-      "status": "ok",
-      "stop_loss": null,
-      "symbol": "XLU",
-      "take_profit": null,
-      "validation_status": "INVALID",
-      "volume": 13696700.0,
-      "volume_20d_avg": 18373165.0,
-      "volume_ratio": 0.7454730853394067,
-      "warnings": [
-        "fase NO_TRADE: no abrir posicion automaticamente"
-      ]
-    },
-    "reasons": [
-      "Estado: INVALID",
-      "Accion: NO_TRADE",
-      "Setup: NO_TRADE WAIT",
-      "Entrada: N/A",
-      "SL N/A / TP N/A",
-      "R/R bruto N/A / neto N/A",
-      "Tamano teorico 0.0000 acciones",
-      "Margen aprox. $0.00",
-      "Invalidacion: mercado cerrado; faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close; sin timestamp de precio",
-      "Avisos: fase NO_TRADE: no abrir posicion automaticamente",
-      "Confluencia: 1 fuentes",
-      "Score maximo previo: 66/100",
-      "Score medio previo: 66/100",
-      "Spread N/A",
-      "Gap N/A",
-      "VWAP pre-market N/A",
-      "Volumen pre-market 0",
-      "RS vs QQQ +0.00%",
-      "RS vs SPY +0.00%",
-      "Horizonte: salida el mismo dia, maximo 8h",
-      "20D +1.4%",
-      "relativo vs SPY +0.8%",
-      "RSI 59.2",
-      "Persistencia de la rotación positiva en XLE y su impacto en el mercado general."
+      "20D +4.5%",
+      "relativo vs SPY +3.8%",
+      "RSI 59.9",
+      "Persistencia de la fuerza relativa en XLE y su RSI cercano a niveles de sobrecompra."
     ],
     "score": 5,
-    "source": "https://finance.yahoo.com/quote/XLU",
-    "summary": "XLU queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-25T14:41:03.994602+00:00",
-    "title": "XLU NO_TRADE NO_TRADE"
+    "source": "https://finance.yahoo.com/quote/XLV",
+    "summary": "XLV queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
+    "time_utc": "2026-07-26T14:42:38.201080+00:00",
+    "title": "XLV NO_TRADE NO_TRADE"
   },
   {
     "agent": "intraday_cashout",
@@ -1516,6 +1514,7 @@
         "mercado cerrado",
         "faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close",
         "sin timestamp de precio",
+        "senal de sesion anterior",
         "volumen pre-market bajo 0",
         "ningun setup minimo confirma",
         "riesgo/beneficio insuficiente N/A"
@@ -1523,11 +1522,11 @@
       "market_state": null,
       "max_hold_hours": 8,
       "max_source_score": 62.0,
-      "perf_20d": -4.987373448503152,
-      "perf_5d": 24.48304384440705,
-      "perf_60d": 10.458716996219186,
+      "perf_20d": -3.852080032699423,
+      "perf_5d": 26.418153878208518,
+      "perf_60d": 12.02872651915181,
       "previous_close": null,
-      "price": 30.100000381469727,
+      "price": 31.200000762939453,
       "quote_age_seconds": null,
       "quote_timestamp": null,
       "regular_volume": null,
@@ -1550,25 +1549,25 @@
         "spread_cost_to_reward_pct": null
       },
       "risk_reward": null,
-      "rsi": 52.3698751293543,
+      "rsi": 55.317625180962956,
       "session": {
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-25T16:41:01.015146+02:00",
-        "now_ny": "2026-07-25T10:41:01.015146-04:00",
-        "now_utc": "2026-07-25T14:41:01.015146+00:00",
+        "now_madrid": "2026-07-26T16:42:36.540137+02:00",
+        "now_ny": "2026-07-26T10:42:36.540137-04:00",
+        "now_utc": "2026-07-26T14:42:36.540137+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-25"
+        "trade_date": "2026-07-26"
       },
       "setup": "NO_TRADE",
-      "sma20": 27.66949987411499,
-      "sma50": 32.736199836730954,
+      "sma20": 27.748499870300293,
+      "sma50": 32.78999984741211,
       "source_count": 1,
       "source_times": [
-        "2026-07-25T08:49:00.316831+00:00"
+        "2026-07-25T21:35:36.650879+00:00"
       ],
       "sources": [
         "Volumen inusual"
@@ -1579,9 +1578,9 @@
       "symbol": "SMCI",
       "take_profit": null,
       "validation_status": "INVALID",
-      "volume": 49590500.0,
-      "volume_20d_avg": 48555615.0,
-      "volume_ratio": 1.0213133949595736,
+      "volume": 86788900.0,
+      "volume_20d_avg": 48379965.0,
+      "volume_ratio": 1.7939016698337835,
       "warnings": [
         "fase NO_TRADE: no abrir posicion automaticamente"
       ]
@@ -1607,265 +1606,20 @@
       "RS vs QQQ +0.00%",
       "RS vs SPY +0.00%",
       "Horizonte: salida el mismo dia, maximo 8h",
-      "volume 1.0x avg",
-      "5D +24.5%",
-      "Volumen 1.7x promedio en SMH con ligera alza en 5 días, sin breakout confirmado.",
-      "Volumen 1.4x promedio en TSLA con caída sostenida en rendimiento y RSI bajo."
+      "volume 1.8x avg",
+      "5D +26.4%",
+      "Volumen de TSLA 2.7x promedio con caída de precio significativa en 5 días",
+      "Incremento del 26.4% en 5 días en SMCI con volumen elevado"
     ],
     "score": 5,
     "source": "https://finance.yahoo.com/quote/SMCI",
     "summary": "SMCI queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-25T14:41:04.050662+00:00",
+    "time_utc": "2026-07-26T14:42:38.244305+00:00",
     "title": "SMCI NO_TRADE NO_TRADE"
   },
   {
     "agent": "intraday_cashout",
-    "asset": "XLF",
-    "level": "NO_TRADE",
-    "metrics": {
-      "action_state": "NO_TRADE",
-      "ask": null,
-      "avg_source_score": 60.0,
-      "bid": null,
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "classification": "NO_TRADE",
-      "current_price": null,
-      "direction": "WAIT",
-      "entry_zone": "N/A",
-      "gap_pct": null,
-      "invalid_reasons": [
-        "mercado cerrado",
-        "faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close",
-        "sin timestamp de precio",
-        "volumen pre-market bajo 0",
-        "ningun setup minimo confirma",
-        "riesgo/beneficio insuficiente N/A"
-      ],
-      "market_state": null,
-      "max_hold_hours": 8,
-      "max_source_score": 60.0,
-      "perf_20d": 3.9277746880213904,
-      "perf_5d": -1.6211421479212507,
-      "perf_60d": 7.75912053890826,
-      "previous_close": null,
-      "price": 55.83000183105469,
-      "quote_age_seconds": null,
-      "quote_timestamp": null,
-      "regular_volume": null,
-      "relative_20d_vs_spy": 3.2540522360003044,
-      "relative_strength_vs_qqq": 0,
-      "relative_strength_vs_spy": 0,
-      "risk_context": {
-        "leverage": 5.0,
-        "max_buying_power_pct_with_leverage": 20.0,
-        "max_position_pct": 20.0,
-        "risk_per_trade_pct": 1.0
-      },
-      "risk_plan": {
-        "margin_required": 0,
-        "max_daily_loss_amount": 30.0,
-        "max_trades_per_day": 3,
-        "net_risk_reward": null,
-        "notional": 0,
-        "position_size": 0,
-        "risk_amount": 10.0,
-        "spread_cost_to_reward_pct": null
-      },
-      "risk_reward": null,
-      "rsi": 59.24586444161895,
-      "session": {
-        "is_holiday": false,
-        "is_weekend": true,
-        "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-25T16:41:01.015146+02:00",
-        "now_ny": "2026-07-25T10:41:01.015146-04:00",
-        "now_utc": "2026-07-25T14:41:01.015146+00:00",
-        "phase": "NO_TRADE",
-        "seconds_to_regular_open": 0,
-        "state": "cerrado",
-        "trade_date": "2026-07-25"
-      },
-      "setup": "NO_TRADE",
-      "sma20": 55.450500106811525,
-      "sma50": 53.519199981689454,
-      "source_count": 1,
-      "source_times": [
-        "2026-07-25T08:31:37.367388+00:00"
-      ],
-      "sources": [
-        "Rotacion sectorial"
-      ],
-      "spread_pct": null,
-      "status": "ok",
-      "stop_loss": null,
-      "symbol": "XLF",
-      "take_profit": null,
-      "validation_status": "INVALID",
-      "volume": 24311000.0,
-      "volume_20d_avg": 33694265.0,
-      "volume_ratio": 0.7215174451794689,
-      "warnings": [
-        "fase NO_TRADE: no abrir posicion automaticamente"
-      ]
-    },
-    "reasons": [
-      "Estado: INVALID",
-      "Accion: NO_TRADE",
-      "Setup: NO_TRADE WAIT",
-      "Entrada: N/A",
-      "SL N/A / TP N/A",
-      "R/R bruto N/A / neto N/A",
-      "Tamano teorico 0.0000 acciones",
-      "Margen aprox. $0.00",
-      "Invalidacion: mercado cerrado; faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close; sin timestamp de precio",
-      "Avisos: fase NO_TRADE: no abrir posicion automaticamente",
-      "Confluencia: 1 fuentes",
-      "Score maximo previo: 60/100",
-      "Score medio previo: 60/100",
-      "Spread N/A",
-      "Gap N/A",
-      "VWAP pre-market N/A",
-      "Volumen pre-market 0",
-      "RS vs QQQ +0.00%",
-      "RS vs SPY +0.00%",
-      "Horizonte: salida el mismo dia, maximo 8h",
-      "20D +3.9%",
-      "relativo vs SPY +3.3%",
-      "RSI 59.2",
-      "Persistencia de la rotación positiva en XLE y su impacto en el mercado general."
-    ],
-    "score": 5,
-    "source": "https://finance.yahoo.com/quote/XLF",
-    "summary": "XLF queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-25T14:41:04.098086+00:00",
-    "title": "XLF NO_TRADE NO_TRADE"
-  },
-  {
-    "agent": "intraday_cashout",
-    "asset": "SMH",
-    "level": "NO_TRADE",
-    "metrics": {
-      "action_state": "NO_TRADE",
-      "ask": null,
-      "avg_source_score": 59.0,
-      "bid": null,
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "classification": "NO_TRADE",
-      "current_price": null,
-      "direction": "WAIT",
-      "entry_zone": "N/A",
-      "gap_pct": null,
-      "invalid_reasons": [
-        "mercado cerrado",
-        "faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close",
-        "sin timestamp de precio",
-        "volumen pre-market bajo 0",
-        "ningun setup minimo confirma",
-        "riesgo/beneficio insuficiente N/A"
-      ],
-      "market_state": null,
-      "max_hold_hours": 8,
-      "max_source_score": 59.0,
-      "perf_20d": -11.884499726967157,
-      "perf_5d": 0.8373264512642198,
-      "perf_60d": 14.246455121776137,
-      "previous_close": null,
-      "price": 561.1900024414062,
-      "quote_age_seconds": null,
-      "quote_timestamp": null,
-      "regular_volume": null,
-      "relative_strength_vs_qqq": 0,
-      "relative_strength_vs_spy": 0,
-      "risk_context": {
-        "leverage": 5.0,
-        "max_buying_power_pct_with_leverage": 20.0,
-        "max_position_pct": 20.0,
-        "risk_per_trade_pct": 1.0
-      },
-      "risk_plan": {
-        "margin_required": 0,
-        "max_daily_loss_amount": 30.0,
-        "max_trades_per_day": 3,
-        "net_risk_reward": null,
-        "notional": 0,
-        "position_size": 0,
-        "risk_amount": 10.0,
-        "spread_cost_to_reward_pct": null
-      },
-      "risk_reward": null,
-      "rsi": 42.92938389944049,
-      "session": {
-        "is_holiday": false,
-        "is_weekend": true,
-        "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-25T16:41:01.015146+02:00",
-        "now_ny": "2026-07-25T10:41:01.015146-04:00",
-        "now_utc": "2026-07-25T14:41:01.015146+00:00",
-        "phase": "NO_TRADE",
-        "seconds_to_regular_open": 0,
-        "state": "cerrado",
-        "trade_date": "2026-07-25"
-      },
-      "setup": "NO_TRADE",
-      "sma20": 594.1535003662109,
-      "sma50": 598.8786010742188,
-      "source_count": 1,
-      "source_times": [
-        "2026-07-25T08:49:00.709415+00:00"
-      ],
-      "sources": [
-        "Volumen inusual"
-      ],
-      "spread_pct": null,
-      "status": "ok",
-      "stop_loss": null,
-      "symbol": "SMH",
-      "take_profit": null,
-      "validation_status": "INVALID",
-      "volume": 19143000.0,
-      "volume_20d_avg": 11258050.0,
-      "volume_ratio": 1.7003832812964945,
-      "warnings": [
-        "fase NO_TRADE: no abrir posicion automaticamente"
-      ]
-    },
-    "reasons": [
-      "Estado: INVALID",
-      "Accion: NO_TRADE",
-      "Setup: NO_TRADE WAIT",
-      "Entrada: N/A",
-      "SL N/A / TP N/A",
-      "R/R bruto N/A / neto N/A",
-      "Tamano teorico 0.0000 acciones",
-      "Margen aprox. $0.00",
-      "Invalidacion: mercado cerrado; faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close; sin timestamp de precio",
-      "Avisos: fase NO_TRADE: no abrir posicion automaticamente",
-      "Confluencia: 1 fuentes",
-      "Score maximo previo: 59/100",
-      "Score medio previo: 59/100",
-      "Spread N/A",
-      "Gap N/A",
-      "VWAP pre-market N/A",
-      "Volumen pre-market 0",
-      "RS vs QQQ +0.00%",
-      "RS vs SPY +0.00%",
-      "Horizonte: salida el mismo dia, maximo 8h",
-      "volume 1.7x avg",
-      "5D +0.8%",
-      "Volumen 1.7x promedio en SMH con ligera alza en 5 días, sin breakout confirmado.",
-      "Volumen 1.4x promedio en TSLA con caída sostenida en rendimiento y RSI bajo."
-    ],
-    "score": 5,
-    "source": "https://finance.yahoo.com/quote/SMH",
-    "summary": "SMH queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-25T14:41:04.188338+00:00",
-    "title": "SMH NO_TRADE NO_TRADE"
-  },
-  {
-    "agent": "intraday_cashout",
-    "asset": "GLD",
+    "asset": "ARM",
     "level": "NO_TRADE",
     "metrics": {
       "action_state": "NO_TRADE",
@@ -1883,6 +1637,7 @@
         "mercado cerrado",
         "faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close",
         "sin timestamp de precio",
+        "senal de sesion anterior",
         "volumen pre-market bajo 0",
         "ningun setup minimo confirma",
         "riesgo/beneficio insuficiente N/A"
@@ -1890,15 +1645,14 @@
       "market_state": null,
       "max_hold_hours": 8,
       "max_source_score": 57.0,
-      "perf_20d": 1.530382427973831,
-      "perf_5d": 1.797456628722327,
-      "perf_60d": -13.577897519322569,
+      "perf_20d": -21.17633420709749,
+      "perf_5d": 8.026410440619713,
+      "perf_60d": 31.109876849672236,
       "previous_close": null,
-      "price": 371.5199890136719,
+      "price": 283.0400085449219,
       "quote_age_seconds": null,
       "quote_timestamp": null,
       "regular_volume": null,
-      "relative_20d_vs_spy": 0.8566599759527449,
       "relative_strength_vs_qqq": 0,
       "relative_strength_vs_spy": 0,
       "risk_context": {
@@ -1918,38 +1672,38 @@
         "spread_cost_to_reward_pct": null
       },
       "risk_reward": null,
-      "rsi": 44.42760261033185,
+      "rsi": 43.233358377865116,
       "session": {
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-25T16:41:01.015146+02:00",
-        "now_ny": "2026-07-25T10:41:01.015146-04:00",
-        "now_utc": "2026-07-25T14:41:01.015146+00:00",
+        "now_madrid": "2026-07-26T16:42:36.540137+02:00",
+        "now_ny": "2026-07-26T10:42:36.540137-04:00",
+        "now_utc": "2026-07-26T14:42:36.540137+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-25"
+        "trade_date": "2026-07-26"
       },
       "setup": "NO_TRADE",
-      "sma20": 372.8044998168945,
-      "sma50": 391.3269989013672,
+      "sma20": 305.95999908447266,
+      "sma50": 321.2023992919922,
       "source_count": 1,
       "source_times": [
-        "2026-07-25T08:31:37.888970+00:00"
+        "2026-07-25T21:35:36.603950+00:00"
       ],
       "sources": [
-        "Rotacion sectorial"
+        "Volumen inusual"
       ],
       "spread_pct": null,
       "status": "ok",
       "stop_loss": null,
-      "symbol": "GLD",
+      "symbol": "ARM",
       "take_profit": null,
       "validation_status": "INVALID",
-      "volume": 9820600.0,
-      "volume_20d_avg": 6597130.0,
-      "volume_ratio": 1.4886170198252877,
+      "volume": 3603200.0,
+      "volume_20d_avg": 6207560.0,
+      "volume_ratio": 0.5804535115246571,
       "warnings": [
         "fase NO_TRADE: no abrir posicion automaticamente"
       ]
@@ -1975,25 +1729,25 @@
       "RS vs QQQ +0.00%",
       "RS vs SPY +0.00%",
       "Horizonte: salida el mismo dia, maximo 8h",
-      "20D +1.5%",
-      "relativo vs SPY +0.9%",
-      "RSI 44.4",
-      "Persistencia de la rotación positiva en XLE y su impacto en el mercado general."
+      "volume 0.6x avg",
+      "5D +8.0%",
+      "Volumen de TSLA 2.7x promedio con caída de precio significativa en 5 días",
+      "Incremento del 26.4% en 5 días en SMCI con volumen elevado"
     ],
     "score": 5,
-    "source": "https://finance.yahoo.com/quote/GLD",
-    "summary": "GLD queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-25T14:41:04.238513+00:00",
-    "title": "GLD NO_TRADE NO_TRADE"
+    "source": "https://finance.yahoo.com/quote/ARM",
+    "summary": "ARM queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
+    "time_utc": "2026-07-26T14:42:38.288339+00:00",
+    "title": "ARM NO_TRADE NO_TRADE"
   },
   {
     "agent": "intraday_cashout",
-    "asset": "XLI",
+    "asset": "XLU",
     "level": "NO_TRADE",
     "metrics": {
       "action_state": "NO_TRADE",
       "ask": null,
-      "avg_source_score": 53.0,
+      "avg_source_score": 56.0,
       "bid": null,
       "breakout_20d": false,
       "breakout_50d": false,
@@ -2006,22 +1760,23 @@
         "mercado cerrado",
         "faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close",
         "sin timestamp de precio",
+        "senal de sesion anterior",
         "volumen pre-market bajo 0",
         "ningun setup minimo confirma",
         "riesgo/beneficio insuficiente N/A"
       ],
       "market_state": null,
       "max_hold_hours": 8,
-      "max_source_score": 53.0,
-      "perf_20d": 0.9599887148808106,
-      "perf_5d": 0.9936212076423478,
-      "perf_60d": 5.466354550371655,
+      "max_source_score": 56.0,
+      "perf_20d": 0.959656392692354,
+      "perf_5d": 2.479527987565966,
+      "perf_60d": 0.08648846600507465,
       "previous_close": null,
-      "price": 181.94000244140625,
+      "price": 46.290000915527344,
       "quote_age_seconds": null,
       "quote_timestamp": null,
       "regular_volume": null,
-      "relative_20d_vs_spy": 0.28626626285972456,
+      "relative_20d_vs_spy": 0.32912323733598203,
       "relative_strength_vs_qqq": 0,
       "relative_strength_vs_spy": 0,
       "risk_context": {
@@ -2041,25 +1796,25 @@
         "spread_cost_to_reward_pct": null
       },
       "risk_reward": null,
-      "rsi": 55.99131417790877,
+      "rsi": 60.02597345017775,
       "session": {
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-25T16:41:01.015146+02:00",
-        "now_ny": "2026-07-25T10:41:01.015146-04:00",
-        "now_utc": "2026-07-25T14:41:01.015146+00:00",
+        "now_madrid": "2026-07-26T16:42:36.540137+02:00",
+        "now_ny": "2026-07-26T10:42:36.540137-04:00",
+        "now_utc": "2026-07-26T14:42:36.540137+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-25"
+        "trade_date": "2026-07-26"
       },
       "setup": "NO_TRADE",
-      "sma20": 181.4989990234375,
-      "sma50": 177.44619995117188,
+      "sma20": 45.52649993896485,
+      "sma50": 44.91819976806641,
       "source_count": 1,
       "source_times": [
-        "2026-07-25T08:31:37.611737+00:00"
+        "2026-07-25T21:27:06.293780+00:00"
       ],
       "sources": [
         "Rotacion sectorial"
@@ -2067,12 +1822,12 @@
       "spread_pct": null,
       "status": "ok",
       "stop_loss": null,
-      "symbol": "XLI",
+      "symbol": "XLU",
       "take_profit": null,
       "validation_status": "INVALID",
-      "volume": 8556000.0,
-      "volume_20d_avg": 6785165.0,
-      "volume_ratio": 1.2609862840476245,
+      "volume": 16104900.0,
+      "volume_20d_avg": 18215270.0,
+      "volume_ratio": 0.8841428098512951,
       "warnings": [
         "fase NO_TRADE: no abrir posicion automaticamente"
       ]
@@ -2089,8 +1844,8 @@
       "Invalidacion: mercado cerrado; faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close; sin timestamp de precio",
       "Avisos: fase NO_TRADE: no abrir posicion automaticamente",
       "Confluencia: 1 fuentes",
-      "Score maximo previo: 53/100",
-      "Score medio previo: 53/100",
+      "Score maximo previo: 56/100",
+      "Score medio previo: 56/100",
       "Spread N/A",
       "Gap N/A",
       "VWAP pre-market N/A",
@@ -2100,23 +1855,23 @@
       "Horizonte: salida el mismo dia, maximo 8h",
       "20D +1.0%",
       "relativo vs SPY +0.3%",
-      "RSI 56.0",
-      "Persistencia de la rotación positiva en XLE y su impacto en el mercado general."
+      "RSI 60.0",
+      "Persistencia de la fuerza relativa en XLE y su RSI cercano a niveles de sobrecompra."
     ],
     "score": 5,
-    "source": "https://finance.yahoo.com/quote/XLI",
-    "summary": "XLI queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-25T14:41:04.320357+00:00",
-    "title": "XLI NO_TRADE NO_TRADE"
+    "source": "https://finance.yahoo.com/quote/XLU",
+    "summary": "XLU queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
+    "time_utc": "2026-07-26T14:42:38.321494+00:00",
+    "title": "XLU NO_TRADE NO_TRADE"
   },
   {
     "agent": "intraday_cashout",
-    "asset": "HOOD",
+    "asset": "GLD",
     "level": "NO_TRADE",
     "metrics": {
       "action_state": "NO_TRADE",
       "ask": null,
-      "avg_source_score": 53.0,
+      "avg_source_score": 52.0,
       "bid": null,
       "breakout_20d": false,
       "breakout_50d": false,
@@ -2129,18 +1884,143 @@
         "mercado cerrado",
         "faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close",
         "sin timestamp de precio",
+        "senal de sesion anterior",
         "volumen pre-market bajo 0",
         "ningun setup minimo confirma",
         "riesgo/beneficio insuficiente N/A"
       ],
       "market_state": null,
       "max_hold_hours": 8,
-      "max_source_score": 53.0,
-      "perf_20d": 1.54060385428485,
-      "perf_5d": -5.052016275125926,
-      "perf_60d": 15.645185835299703,
+      "max_source_score": 52.0,
+      "perf_20d": 0.6604239966001568,
+      "perf_5d": 0.947311473543988,
+      "perf_60d": -11.853241054145759,
       "previous_close": null,
-      "price": 94.91000366210938,
+      "price": 371.8999938964844,
+      "quote_age_seconds": null,
+      "quote_timestamp": null,
+      "regular_volume": null,
+      "relative_20d_vs_spy": 0.029890841243784827,
+      "relative_strength_vs_qqq": 0,
+      "relative_strength_vs_spy": 0,
+      "risk_context": {
+        "leverage": 5.0,
+        "max_buying_power_pct_with_leverage": 20.0,
+        "max_position_pct": 20.0,
+        "risk_per_trade_pct": 1.0
+      },
+      "risk_plan": {
+        "margin_required": 0,
+        "max_daily_loss_amount": 30.0,
+        "max_trades_per_day": 3,
+        "net_risk_reward": null,
+        "notional": 0,
+        "position_size": 0,
+        "risk_amount": 10.0,
+        "spread_cost_to_reward_pct": null
+      },
+      "risk_reward": null,
+      "rsi": 44.763383749146016,
+      "session": {
+        "is_holiday": false,
+        "is_weekend": true,
+        "minutes_to_regular_open": 0,
+        "now_madrid": "2026-07-26T16:42:36.540137+02:00",
+        "now_ny": "2026-07-26T10:42:36.540137-04:00",
+        "now_utc": "2026-07-26T14:42:36.540137+00:00",
+        "phase": "NO_TRADE",
+        "seconds_to_regular_open": 0,
+        "state": "cerrado",
+        "trade_date": "2026-07-26"
+      },
+      "setup": "NO_TRADE",
+      "sma20": 372.92649993896487,
+      "sma50": 390.10639892578126,
+      "source_count": 1,
+      "source_times": [
+        "2026-07-25T21:27:06.396362+00:00"
+      ],
+      "sources": [
+        "Rotacion sectorial"
+      ],
+      "spread_pct": null,
+      "status": "ok",
+      "stop_loss": null,
+      "symbol": "GLD",
+      "take_profit": null,
+      "validation_status": "INVALID",
+      "volume": 3839800.0,
+      "volume_20d_avg": 6332265.0,
+      "volume_ratio": 0.6063864983540644,
+      "warnings": [
+        "fase NO_TRADE: no abrir posicion automaticamente"
+      ]
+    },
+    "reasons": [
+      "Estado: INVALID",
+      "Accion: NO_TRADE",
+      "Setup: NO_TRADE WAIT",
+      "Entrada: N/A",
+      "SL N/A / TP N/A",
+      "R/R bruto N/A / neto N/A",
+      "Tamano teorico 0.0000 acciones",
+      "Margen aprox. $0.00",
+      "Invalidacion: mercado cerrado; faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close; sin timestamp de precio",
+      "Avisos: fase NO_TRADE: no abrir posicion automaticamente",
+      "Confluencia: 1 fuentes",
+      "Score maximo previo: 52/100",
+      "Score medio previo: 52/100",
+      "Spread N/A",
+      "Gap N/A",
+      "VWAP pre-market N/A",
+      "Volumen pre-market 0",
+      "RS vs QQQ +0.00%",
+      "RS vs SPY +0.00%",
+      "Horizonte: salida el mismo dia, maximo 8h",
+      "20D +0.7%",
+      "relativo vs SPY +0.0%",
+      "RSI 44.8",
+      "Persistencia de la fuerza relativa en XLE y su RSI cercano a niveles de sobrecompra."
+    ],
+    "score": 5,
+    "source": "https://finance.yahoo.com/quote/GLD",
+    "summary": "GLD queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
+    "time_utc": "2026-07-26T14:42:38.361846+00:00",
+    "title": "GLD NO_TRADE NO_TRADE"
+  },
+  {
+    "agent": "intraday_cashout",
+    "asset": "HOOD",
+    "level": "NO_TRADE",
+    "metrics": {
+      "action_state": "NO_TRADE",
+      "ask": null,
+      "avg_source_score": 51.0,
+      "bid": null,
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "classification": "NO_TRADE",
+      "current_price": null,
+      "direction": "WAIT",
+      "entry_zone": "N/A",
+      "gap_pct": null,
+      "invalid_reasons": [
+        "mercado cerrado",
+        "faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close",
+        "sin timestamp de precio",
+        "senal de sesion anterior",
+        "volumen pre-market bajo 0",
+        "ningun setup minimo confirma",
+        "riesgo/beneficio insuficiente N/A"
+      ],
+      "market_state": null,
+      "max_hold_hours": 8,
+      "max_source_score": 51.0,
+      "perf_20d": 4.51692486816746,
+      "perf_5d": -4.187884316729118,
+      "perf_60d": 21.000602172364523,
+      "previous_close": null,
+      "price": 101.58000183105469,
       "quote_age_seconds": null,
       "quote_timestamp": null,
       "regular_volume": null,
@@ -2163,25 +2043,25 @@
         "spread_cost_to_reward_pct": null
       },
       "risk_reward": null,
-      "rsi": 42.42667303936405,
+      "rsi": 48.1971833318467,
       "session": {
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-25T16:41:01.015146+02:00",
-        "now_ny": "2026-07-25T10:41:01.015146-04:00",
-        "now_utc": "2026-07-25T14:41:01.015146+00:00",
+        "now_madrid": "2026-07-26T16:42:36.540137+02:00",
+        "now_ny": "2026-07-26T10:42:36.540137-04:00",
+        "now_utc": "2026-07-26T14:42:36.540137+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-25"
+        "trade_date": "2026-07-26"
       },
       "setup": "NO_TRADE",
-      "sma20": 107.23400077819824,
-      "sma50": 95.32580062866211,
+      "sma20": 107.16200065612793,
+      "sma50": 94.99300048828125,
       "source_count": 1,
       "source_times": [
-        "2026-07-25T08:49:00.515276+00:00"
+        "2026-07-25T21:35:36.889898+00:00"
       ],
       "sources": [
         "Volumen inusual"
@@ -2192,9 +2072,9 @@
       "symbol": "HOOD",
       "take_profit": null,
       "validation_status": "INVALID",
-      "volume": 24356300.0,
-      "volume_20d_avg": 23309975.0,
-      "volume_ratio": 1.0448874355292102,
+      "volume": 16539900.0,
+      "volume_20d_avg": 23262380.0,
+      "volume_ratio": 0.7110149520384415,
       "warnings": [
         "fase NO_TRADE: no abrir posicion automaticamente"
       ]
@@ -2211,8 +2091,8 @@
       "Invalidacion: mercado cerrado; faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close; sin timestamp de precio",
       "Avisos: fase NO_TRADE: no abrir posicion automaticamente",
       "Confluencia: 1 fuentes",
-      "Score maximo previo: 53/100",
-      "Score medio previo: 53/100",
+      "Score maximo previo: 51/100",
+      "Score medio previo: 51/100",
       "Spread N/A",
       "Gap N/A",
       "VWAP pre-market N/A",
@@ -2220,16 +2100,139 @@
       "RS vs QQQ +0.00%",
       "RS vs SPY +0.00%",
       "Horizonte: salida el mismo dia, maximo 8h",
-      "volume 1.0x avg",
-      "5D -5.1%",
-      "Volumen 1.7x promedio en SMH con ligera alza en 5 días, sin breakout confirmado.",
-      "Volumen 1.4x promedio en TSLA con caída sostenida en rendimiento y RSI bajo."
+      "volume 0.7x avg",
+      "5D -4.2%",
+      "Volumen de TSLA 2.7x promedio con caída de precio significativa en 5 días",
+      "Incremento del 26.4% en 5 días en SMCI con volumen elevado"
     ],
     "score": 5,
     "source": "https://finance.yahoo.com/quote/HOOD",
     "summary": "HOOD queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-25T14:41:04.367502+00:00",
+    "time_utc": "2026-07-26T14:42:38.400356+00:00",
     "title": "HOOD NO_TRADE NO_TRADE"
+  },
+  {
+    "agent": "intraday_cashout",
+    "asset": "QQQ",
+    "level": "NO_TRADE",
+    "metrics": {
+      "action_state": "NO_TRADE",
+      "ask": null,
+      "avg_source_score": 51.0,
+      "bid": null,
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "classification": "NO_TRADE",
+      "current_price": null,
+      "direction": "WAIT",
+      "entry_zone": "N/A",
+      "gap_pct": null,
+      "invalid_reasons": [
+        "mercado cerrado",
+        "faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close",
+        "sin timestamp de precio",
+        "senal de sesion anterior",
+        "volumen pre-market bajo 0",
+        "ningun setup minimo confirma",
+        "riesgo/beneficio insuficiente N/A"
+      ],
+      "market_state": null,
+      "max_hold_hours": 8,
+      "max_source_score": 51.0,
+      "perf_20d": -2.625872234492088,
+      "perf_5d": -1.980335498824537,
+      "perf_60d": 4.174765114386592,
+      "previous_close": null,
+      "price": 691.9600219726562,
+      "quote_age_seconds": null,
+      "quote_timestamp": null,
+      "regular_volume": null,
+      "relative_strength_vs_qqq": 0,
+      "relative_strength_vs_spy": 0,
+      "risk_context": {
+        "leverage": 5.0,
+        "max_buying_power_pct_with_leverage": 20.0,
+        "max_position_pct": 20.0,
+        "risk_per_trade_pct": 1.0
+      },
+      "risk_plan": {
+        "margin_required": 0,
+        "max_daily_loss_amount": 30.0,
+        "max_trades_per_day": 3,
+        "net_risk_reward": null,
+        "notional": 0,
+        "position_size": 0,
+        "risk_amount": 10.0,
+        "spread_cost_to_reward_pct": null
+      },
+      "risk_reward": null,
+      "rsi": 41.82029953761848,
+      "session": {
+        "is_holiday": false,
+        "is_weekend": true,
+        "minutes_to_regular_open": 0,
+        "now_madrid": "2026-07-26T16:42:36.540137+02:00",
+        "now_ny": "2026-07-26T10:42:36.540137-04:00",
+        "now_utc": "2026-07-26T14:42:36.540137+00:00",
+        "phase": "NO_TRADE",
+        "seconds_to_regular_open": 0,
+        "state": "cerrado",
+        "trade_date": "2026-07-26"
+      },
+      "setup": "NO_TRADE",
+      "sma20": 713.3205017089844,
+      "sma50": 718.74740234375,
+      "source_count": 1,
+      "source_times": [
+        "2026-07-25T21:35:37.031194+00:00"
+      ],
+      "sources": [
+        "Volumen inusual"
+      ],
+      "spread_pct": null,
+      "status": "ok",
+      "stop_loss": null,
+      "symbol": "QQQ",
+      "take_profit": null,
+      "validation_status": "INVALID",
+      "volume": 44028600.0,
+      "volume_20d_avg": 38361385.0,
+      "volume_ratio": 1.1477322833886212,
+      "warnings": [
+        "fase NO_TRADE: no abrir posicion automaticamente"
+      ]
+    },
+    "reasons": [
+      "Estado: INVALID",
+      "Accion: NO_TRADE",
+      "Setup: NO_TRADE WAIT",
+      "Entrada: N/A",
+      "SL N/A / TP N/A",
+      "R/R bruto N/A / neto N/A",
+      "Tamano teorico 0.0000 acciones",
+      "Margen aprox. $0.00",
+      "Invalidacion: mercado cerrado; faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close; sin timestamp de precio",
+      "Avisos: fase NO_TRADE: no abrir posicion automaticamente",
+      "Confluencia: 1 fuentes",
+      "Score maximo previo: 51/100",
+      "Score medio previo: 51/100",
+      "Spread N/A",
+      "Gap N/A",
+      "VWAP pre-market N/A",
+      "Volumen pre-market 0",
+      "RS vs QQQ +0.00%",
+      "RS vs SPY +0.00%",
+      "Horizonte: salida el mismo dia, maximo 8h",
+      "volume 1.1x avg",
+      "5D -2.0%",
+      "Volumen de TSLA 2.7x promedio con caída de precio significativa en 5 días",
+      "Incremento del 26.4% en 5 días en SMCI con volumen elevado"
+    ],
+    "score": 5,
+    "source": "https://finance.yahoo.com/quote/QQQ",
+    "summary": "QQQ queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
+    "time_utc": "2026-07-26T14:42:38.416577+00:00",
+    "title": "QQQ NO_TRADE NO_TRADE"
   },
   {
     "agent": "intraday_cashout",
@@ -2243,8 +2246,8 @@
       "classification": "NO_TRADE",
       "current_price": null,
       "direction": "WAIT",
-      "dist200": 8.277836802959172,
-      "drawdown": -11.444816474779662,
+      "dist200": 7.222760424930885,
+      "drawdown": -12.259272283809064,
       "entry_zone": "N/A",
       "gap_pct": null,
       "invalid_reasons": [
@@ -2259,11 +2262,11 @@
       "max_hold_hours": 8,
       "max_source_score": 50.0,
       "previous_close": null,
-      "price": 208.75999450683594,
+      "price": 206.83999633789062,
       "quote_age_seconds": null,
       "quote_timestamp": null,
       "reasons": [
-        "Drawdown 52s -11.4%",
+        "Drawdown 52s -12.3%",
         "Precio sobre SMA200",
         "Recupera SMA20"
       ],
@@ -2287,24 +2290,24 @@
         "spread_cost_to_reward_pct": null
       },
       "risk_reward": null,
-      "rsi": 52.92475896270239,
+      "rsi": 51.0692139260101,
       "score": 50,
       "session": {
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-25T16:41:01.015146+02:00",
-        "now_ny": "2026-07-25T10:41:01.015146-04:00",
-        "now_utc": "2026-07-25T14:41:01.015146+00:00",
+        "now_madrid": "2026-07-26T16:42:36.540137+02:00",
+        "now_ny": "2026-07-26T10:42:36.540137-04:00",
+        "now_utc": "2026-07-26T14:42:36.540137+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-25"
+        "trade_date": "2026-07-26"
       },
       "setup": "NO_TRADE",
       "source_count": 1,
       "source_times": [
-        "2026-07-25T08:19:23.181499+00:00"
+        "2026-07-26T08:36:56.102856+00:00"
       ],
       "sources": [
         "Market Signal Agent"
@@ -2339,19 +2342,19 @@
       "RS vs QQQ +0.00%",
       "RS vs SPY +0.00%",
       "Horizonte: salida el mismo dia, maximo 8h",
-      "Drawdown 52s -11.4%",
+      "Drawdown 52s -12.3%",
       "Precio sobre SMA200",
       "Recupera SMA20"
     ],
     "score": 5,
     "source": "https://finance.yahoo.com/quote/NVDA",
     "summary": "NVDA queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-25T14:41:04.418218+00:00",
+    "time_utc": "2026-07-26T14:42:38.460206+00:00",
     "title": "NVDA NO_TRADE NO_TRADE"
   },
   {
     "agent": "intraday_cashout",
-    "asset": "MSTR",
+    "asset": "AAPL",
     "level": "NO_TRADE",
     "metrics": {
       "action_state": "NO_TRADE",
@@ -2369,6 +2372,7 @@
         "mercado cerrado",
         "faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close",
         "sin timestamp de precio",
+        "senal de sesion anterior",
         "volumen pre-market bajo 0",
         "ningun setup minimo confirma",
         "riesgo/beneficio insuficiente N/A"
@@ -2376,11 +2380,11 @@
       "market_state": null,
       "max_hold_hours": 8,
       "max_source_score": 50.0,
-      "perf_20d": 7.429973282366986,
-      "perf_5d": -3.352662473730472,
-      "perf_60d": -44.68046922040584,
+      "perf_20d": 9.751609935602579,
+      "perf_5d": -3.4807674979286163,
+      "perf_60d": 20.19730999183036,
       "previous_close": null,
-      "price": 91.66999816894531,
+      "price": 321.6600036621094,
       "quote_age_seconds": null,
       "quote_timestamp": null,
       "regular_volume": null,
@@ -2403,25 +2407,25 @@
         "spread_cost_to_reward_pct": null
       },
       "risk_reward": null,
-      "rsi": 39.137149898320494,
+      "rsi": 58.11074705171627,
       "session": {
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-25T16:41:01.015146+02:00",
-        "now_ny": "2026-07-25T10:41:01.015146-04:00",
-        "now_utc": "2026-07-25T14:41:01.015146+00:00",
+        "now_madrid": "2026-07-26T16:42:36.540137+02:00",
+        "now_ny": "2026-07-26T10:42:36.540137-04:00",
+        "now_utc": "2026-07-26T14:42:36.540137+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-25"
+        "trade_date": "2026-07-26"
       },
       "setup": "NO_TRADE",
-      "sma20": 94.8859992980957,
-      "sma50": 120.57039932250977,
+      "sma20": 311.4919998168945,
+      "sma50": 305.4670001220703,
       "source_count": 1,
       "source_times": [
-        "2026-07-25T08:49:00.477669+00:00"
+        "2026-07-25T21:35:36.301740+00:00"
       ],
       "sources": [
         "Volumen inusual"
@@ -2429,12 +2433,12 @@
       "spread_pct": null,
       "status": "ok",
       "stop_loss": null,
-      "symbol": "MSTR",
+      "symbol": "AAPL",
       "take_profit": null,
       "validation_status": "INVALID",
-      "volume": 13044000.0,
-      "volume_20d_avg": 21934740.0,
-      "volume_ratio": 0.5946731075909721,
+      "volume": 40840800.0,
+      "volume_20d_avg": 64341360.0,
+      "volume_ratio": 0.6347518920955354,
       "warnings": [
         "fase NO_TRADE: no abrir posicion automaticamente"
       ]
@@ -2461,19 +2465,19 @@
       "RS vs SPY +0.00%",
       "Horizonte: salida el mismo dia, maximo 8h",
       "volume 0.6x avg",
-      "5D -3.4%",
-      "Volumen 1.7x promedio en SMH con ligera alza en 5 días, sin breakout confirmado.",
-      "Volumen 1.4x promedio en TSLA con caída sostenida en rendimiento y RSI bajo."
+      "5D -3.5%",
+      "Volumen de TSLA 2.7x promedio con caída de precio significativa en 5 días",
+      "Incremento del 26.4% en 5 días en SMCI con volumen elevado"
     ],
     "score": 5,
-    "source": "https://finance.yahoo.com/quote/MSTR",
-    "summary": "MSTR queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-25T14:41:04.470447+00:00",
-    "title": "MSTR NO_TRADE NO_TRADE"
+    "source": "https://finance.yahoo.com/quote/AAPL",
+    "summary": "AAPL queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
+    "time_utc": "2026-07-26T14:42:38.504937+00:00",
+    "title": "AAPL NO_TRADE NO_TRADE"
   },
   {
     "agent": "intraday_cashout",
-    "asset": "QQQ",
+    "asset": "SPY",
     "level": "NO_TRADE",
     "metrics": {
       "action_state": "NO_TRADE",
@@ -2491,6 +2495,7 @@
         "mercado cerrado",
         "faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close",
         "sin timestamp de precio",
+        "senal de sesion anterior",
         "volumen pre-market bajo 0",
         "ningun setup minimo confirma",
         "riesgo/beneficio insuficiente N/A"
@@ -2498,11 +2503,11 @@
       "market_state": null,
       "max_hold_hours": 8,
       "max_source_score": 50.0,
-      "perf_20d": -4.487845025674842,
-      "perf_5d": -1.596369543709708,
-      "perf_60d": 4.057485084188239,
+      "perf_20d": 0.673722452021086,
+      "perf_5d": -1.6703935577468076,
+      "perf_60d": 3.217418280335682,
       "previous_close": null,
-      "price": 684.22998046875,
+      "price": 738.1799926757812,
       "quote_age_seconds": null,
       "quote_timestamp": null,
       "regular_volume": null,
@@ -2525,25 +2530,25 @@
         "spread_cost_to_reward_pct": null
       },
       "risk_reward": null,
-      "rsi": 39.29088702131988,
+      "rsi": 44.566960219644564,
       "session": {
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-07-25T16:41:01.015146+02:00",
-        "now_ny": "2026-07-25T10:41:01.015146-04:00",
-        "now_utc": "2026-07-25T14:41:01.015146+00:00",
+        "now_madrid": "2026-07-26T16:42:36.540137+02:00",
+        "now_ny": "2026-07-26T10:42:36.540137-04:00",
+        "now_utc": "2026-07-26T14:42:36.540137+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-07-25"
+        "trade_date": "2026-07-26"
       },
       "setup": "NO_TRADE",
-      "sma20": 711.7130004882813,
-      "sma50": 718.2872021484375,
+      "sma20": 745.9215057373046,
+      "sma50": 745.0530017089844,
       "source_count": 1,
       "source_times": [
-        "2026-07-25T08:49:00.654780+00:00"
+        "2026-07-25T21:35:36.962779+00:00"
       ],
       "sources": [
         "Volumen inusual"
@@ -2551,12 +2556,12 @@
       "spread_pct": null,
       "status": "ok",
       "stop_loss": null,
-      "symbol": "QQQ",
+      "symbol": "SPY",
       "take_profit": null,
       "validation_status": "INVALID",
-      "volume": 42783600.0,
-      "volume_20d_avg": 38017165.0,
-      "volume_ratio": 1.1253758664014004,
+      "volume": 55437300.0,
+      "volume_20d_avg": 48502795.0,
+      "volume_ratio": 1.1429712452653502,
       "warnings": [
         "fase NO_TRADE: no abrir posicion automaticamente"
       ]
@@ -2583,14 +2588,12 @@
       "RS vs SPY +0.00%",
       "Horizonte: salida el mismo dia, maximo 8h",
       "volume 1.1x avg",
-      "5D -1.6%",
-      "Volumen 1.7x promedio en SMH con ligera alza en 5 días, sin breakout confirmado.",
-      "Volumen 1.4x promedio en TSLA con caída sostenida en rendimiento y RSI bajo."
+      "5D -1.7%"
     ],
     "score": 5,
-    "source": "https://finance.yahoo.com/quote/QQQ",
-    "summary": "QQQ queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-07-25T14:41:04.483192+00:00",
-    "title": "QQQ NO_TRADE NO_TRADE"
+    "source": "https://finance.yahoo.com/quote/SPY",
+    "summary": "SPY queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
+    "time_utc": "2026-07-26T14:42:38.521378+00:00",
+    "title": "SPY NO_TRADE NO_TRADE"
   }
 ]
