@@ -1,15 +1,108 @@
 [
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 para MSFT, GOOGL, META y PLTR sin operaciones de compra o venta reportadas. Es importante vigilar la evolución del precio y volumen en los próximos días para detectar posibles movimientos derivados de información interna. La ausencia de transacciones declaradas no elimina la necesidad de monitoreo continuo ante posibles cambios en la dinámica del mercado.",
+    "ai_brief": "Se han presentado múltiples formularios SEC 4 para CRM, MSFT, GOOGL y META, indicando operaciones declaradas por insiders. Es importante vigilar los detalles específicos de cada documento y la reacción del precio en el corto plazo. La actividad de volumen y las tendencias técnicas actuales sugieren un nivel medio de atención para gestionar riesgos.",
     "ai_risk_notes": [
-      "La falta de operaciones declaradas puede ocultar movimientos futuros no reportados que afecten la valoración.",
-      "El rendimiento reciente negativo en varios activos y la ausencia de rupturas técnicas aumentan la incertidumbre en el corto plazo."
+      "La ausencia de compras o ventas declaradas en algunos formularios puede limitar la información útil para anticipar movimientos significativos.",
+      "La volatilidad y cambios en volumen pueden generar señales contradictorias, por lo que se recomienda prudencia en la interpretación.",
+      "El nivel medio de alerta implica que no hay señales claras de ruptura, pero la situación puede cambiar con nueva información o eventos externos."
     ],
     "ai_watch_items": [
-      "Revisión detallada de los formularios 4 presentados para detectar cualquier actualización o corrección.",
-      "Monitoreo de la reacción del precio y volumen en MSFT, GOOGL, META y PLTR tras las presentaciones.",
-      "Atención a posibles señales técnicas, especialmente en GOOGL y META, donde el RSI y las medias móviles indican presión bajista."
+      "Revisión detallada de las operaciones declaradas en los formularios SEC 4 para detectar posibles patrones de insider trading.",
+      "Monitoreo de la reacción del precio y volumen en CRM, que muestra un aumento significativo en volumen y rendimiento positivo reciente.",
+      "Seguimiento de la tendencia negativa y bajo volumen relativo en GOOGL y META, que podrían indicar presión vendedora o falta de interés comprador."
+    ],
+    "asset": "CRM",
+    "level": "medio",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "filing_date": "2026-07-23",
+      "form": "4",
+      "form4_details": {},
+      "perf_20d": 14.924338895276378,
+      "perf_5d": 6.727039048359762,
+      "perf_60d": 2.81538619785342,
+      "price": 181.5,
+      "rsi": 60.79764690674184,
+      "sma20": 167.26699981689453,
+      "sma50": 170.61119995117187,
+      "status": "ok",
+      "symbol": "CRM",
+      "volume": 17126230.0,
+      "volume_20d_avg": 12681906.5,
+      "volume_ratio": 1.3504460074674103
+    },
+    "reasons": [
+      "formulario SEC 4",
+      "presentado 2026-07-23",
+      "operacion declarada por insider",
+      "precio reaccionando recientemente"
+    ],
+    "score": 78,
+    "source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000156/xslF345X06/form4.xml",
+    "summary": "Salesforce publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
+    "time_utc": "2026-07-28T21:34:00.509506+00:00",
+    "title": "CRM presentacion SEC 4"
+  },
+  {
+    "agent": "sec_filing",
+    "ai_brief": "Se han presentado múltiples formularios SEC 4 para CRM, MSFT, GOOGL y META, indicando operaciones declaradas por insiders. Es importante vigilar los detalles específicos de cada documento y la reacción del precio en el corto plazo. La actividad de volumen y las tendencias técnicas actuales sugieren un nivel medio de atención para gestionar riesgos.",
+    "ai_risk_notes": [
+      "La ausencia de compras o ventas declaradas en algunos formularios puede limitar la información útil para anticipar movimientos significativos.",
+      "La volatilidad y cambios en volumen pueden generar señales contradictorias, por lo que se recomienda prudencia en la interpretación.",
+      "El nivel medio de alerta implica que no hay señales claras de ruptura, pero la situación puede cambiar con nueva información o eventos externos."
+    ],
+    "ai_watch_items": [
+      "Revisión detallada de las operaciones declaradas en los formularios SEC 4 para detectar posibles patrones de insider trading.",
+      "Monitoreo de la reacción del precio y volumen en CRM, que muestra un aumento significativo en volumen y rendimiento positivo reciente.",
+      "Seguimiento de la tendencia negativa y bajo volumen relativo en GOOGL y META, que podrían indicar presión vendedora o falta de interés comprador."
+    ],
+    "asset": "CRM",
+    "level": "medio",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "filing_date": "2026-07-23",
+      "form": "4",
+      "form4_details": {},
+      "perf_20d": 14.924338895276378,
+      "perf_5d": 6.727039048359762,
+      "perf_60d": 2.81538619785342,
+      "price": 181.5,
+      "rsi": 60.79764690674184,
+      "sma20": 167.26699981689453,
+      "sma50": 170.61119995117187,
+      "status": "ok",
+      "symbol": "CRM",
+      "volume": 17126230.0,
+      "volume_20d_avg": 12681906.5,
+      "volume_ratio": 1.3504460074674103
+    },
+    "reasons": [
+      "formulario SEC 4",
+      "presentado 2026-07-23",
+      "operacion declarada por insider",
+      "precio reaccionando recientemente"
+    ],
+    "score": 78,
+    "source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000154/xslF345X06/form4.xml",
+    "summary": "Salesforce publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
+    "time_utc": "2026-07-28T21:34:00.509536+00:00",
+    "title": "CRM presentacion SEC 4"
+  },
+  {
+    "agent": "sec_filing",
+    "ai_brief": "Se han presentado múltiples formularios SEC 4 para CRM, MSFT, GOOGL y META, indicando operaciones declaradas por insiders. Es importante vigilar los detalles específicos de cada documento y la reacción del precio en el corto plazo. La actividad de volumen y las tendencias técnicas actuales sugieren un nivel medio de atención para gestionar riesgos.",
+    "ai_risk_notes": [
+      "La ausencia de compras o ventas declaradas en algunos formularios puede limitar la información útil para anticipar movimientos significativos.",
+      "La volatilidad y cambios en volumen pueden generar señales contradictorias, por lo que se recomienda prudencia en la interpretación.",
+      "El nivel medio de alerta implica que no hay señales claras de ruptura, pero la situación puede cambiar con nueva información o eventos externos."
+    ],
+    "ai_watch_items": [
+      "Revisión detallada de las operaciones declaradas en los formularios SEC 4 para detectar posibles patrones de insider trading.",
+      "Monitoreo de la reacción del precio y volumen en CRM, que muestra un aumento significativo en volumen y rendimiento positivo reciente.",
+      "Seguimiento de la tendencia negativa y bajo volumen relativo en GOOGL y META, que podrían indicar presión vendedora o falta de interés comprador."
     ],
     "asset": "MSFT",
     "level": "medio",
@@ -24,18 +117,18 @@
         "sale_count": 0,
         "shares": 0
       },
-      "perf_20d": 4.3247459125453025,
-      "perf_5d": -3.278729812135861,
-      "perf_60d": -8.330581459596708,
-      "price": 389.1000061035156,
-      "rsi": 49.24531533944059,
-      "sma20": 387.69849853515626,
-      "sma50": 398.8569982910156,
+      "perf_20d": 6.723281408380788,
+      "perf_5d": -1.1062209670608114,
+      "perf_60d": -3.5386710282451106,
+      "price": 393.3500061035156,
+      "rsi": 51.74086293977707,
+      "sma20": 388.93749847412107,
+      "sma50": 398.5353985595703,
       "status": "ok",
       "symbol": "MSFT",
-      "volume": 27786400.0,
-      "volume_20d_avg": 33032030.0,
-      "volume_ratio": 0.8411956516145087
+      "volume": 32162591.0,
+      "volume_20d_avg": 32082154.55,
+      "volume_ratio": 1.0025072022477368
     },
     "reasons": [
       "formulario SEC 4",
@@ -45,20 +138,21 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/789019/000078901926000139/xslF345X06/form4.xml",
     "summary": "Microsoft publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-28T09:07:17.553179+00:00",
+    "time_utc": "2026-07-28T21:33:57.098741+00:00",
     "title": "MSFT presentacion SEC 4"
   },
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 para MSFT, GOOGL, META y PLTR sin operaciones de compra o venta reportadas. Es importante vigilar la evolución del precio y volumen en los próximos días para detectar posibles movimientos derivados de información interna. La ausencia de transacciones declaradas no elimina la necesidad de monitoreo continuo ante posibles cambios en la dinámica del mercado.",
+    "ai_brief": "Se han presentado múltiples formularios SEC 4 para CRM, MSFT, GOOGL y META, indicando operaciones declaradas por insiders. Es importante vigilar los detalles específicos de cada documento y la reacción del precio en el corto plazo. La actividad de volumen y las tendencias técnicas actuales sugieren un nivel medio de atención para gestionar riesgos.",
     "ai_risk_notes": [
-      "La falta de operaciones declaradas puede ocultar movimientos futuros no reportados que afecten la valoración.",
-      "El rendimiento reciente negativo en varios activos y la ausencia de rupturas técnicas aumentan la incertidumbre en el corto plazo."
+      "La ausencia de compras o ventas declaradas en algunos formularios puede limitar la información útil para anticipar movimientos significativos.",
+      "La volatilidad y cambios en volumen pueden generar señales contradictorias, por lo que se recomienda prudencia en la interpretación.",
+      "El nivel medio de alerta implica que no hay señales claras de ruptura, pero la situación puede cambiar con nueva información o eventos externos."
     ],
     "ai_watch_items": [
-      "Revisión detallada de los formularios 4 presentados para detectar cualquier actualización o corrección.",
-      "Monitoreo de la reacción del precio y volumen en MSFT, GOOGL, META y PLTR tras las presentaciones.",
-      "Atención a posibles señales técnicas, especialmente en GOOGL y META, donde el RSI y las medias móviles indican presión bajista."
+      "Revisión detallada de las operaciones declaradas en los formularios SEC 4 para detectar posibles patrones de insider trading.",
+      "Monitoreo de la reacción del precio y volumen en CRM, que muestra un aumento significativo en volumen y rendimiento positivo reciente.",
+      "Seguimiento de la tendencia negativa y bajo volumen relativo en GOOGL y META, que podrían indicar presión vendedora o falta de interés comprador."
     ],
     "asset": "GOOGL",
     "level": "medio",
@@ -73,18 +167,18 @@
         "sale_count": 0,
         "shares": 0
       },
-      "perf_20d": -3.2099400158978275,
-      "perf_5d": -7.224635183190442,
-      "perf_60d": -6.681146687917517,
-      "price": 326.55999755859375,
-      "rsi": 37.14676920718459,
-      "sma20": 351.65049896240237,
-      "sma50": 363.18260009765623,
+      "perf_20d": -5.638343782141508,
+      "perf_5d": -3.8715260485972736,
+      "perf_60d": -13.277026496523236,
+      "price": 333.7099914550781,
+      "rsi": 41.71351864985515,
+      "sma20": 350.653498840332,
+      "sma50": 361.83539978027346,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 28413900.0,
-      "volume_20d_avg": 29436895.0,
-      "volume_ratio": 0.9652478632681878
+      "volume": 27157077.0,
+      "volume_20d_avg": 29086938.85,
+      "volume_ratio": 0.933651943920527
     },
     "reasons": [
       "formulario SEC 4",
@@ -94,20 +188,21 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000116840426000039/xslF345X06/form4-07272026_100703.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-28T09:07:18.619508+00:00",
+    "time_utc": "2026-07-28T21:33:58.099965+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 para MSFT, GOOGL, META y PLTR sin operaciones de compra o venta reportadas. Es importante vigilar la evolución del precio y volumen en los próximos días para detectar posibles movimientos derivados de información interna. La ausencia de transacciones declaradas no elimina la necesidad de monitoreo continuo ante posibles cambios en la dinámica del mercado.",
+    "ai_brief": "Se han presentado múltiples formularios SEC 4 para CRM, MSFT, GOOGL y META, indicando operaciones declaradas por insiders. Es importante vigilar los detalles específicos de cada documento y la reacción del precio en el corto plazo. La actividad de volumen y las tendencias técnicas actuales sugieren un nivel medio de atención para gestionar riesgos.",
     "ai_risk_notes": [
-      "La falta de operaciones declaradas puede ocultar movimientos futuros no reportados que afecten la valoración.",
-      "El rendimiento reciente negativo en varios activos y la ausencia de rupturas técnicas aumentan la incertidumbre en el corto plazo."
+      "La ausencia de compras o ventas declaradas en algunos formularios puede limitar la información útil para anticipar movimientos significativos.",
+      "La volatilidad y cambios en volumen pueden generar señales contradictorias, por lo que se recomienda prudencia en la interpretación.",
+      "El nivel medio de alerta implica que no hay señales claras de ruptura, pero la situación puede cambiar con nueva información o eventos externos."
     ],
     "ai_watch_items": [
-      "Revisión detallada de los formularios 4 presentados para detectar cualquier actualización o corrección.",
-      "Monitoreo de la reacción del precio y volumen en MSFT, GOOGL, META y PLTR tras las presentaciones.",
-      "Atención a posibles señales técnicas, especialmente en GOOGL y META, donde el RSI y las medias móviles indican presión bajista."
+      "Revisión detallada de las operaciones declaradas en los formularios SEC 4 para detectar posibles patrones de insider trading.",
+      "Monitoreo de la reacción del precio y volumen en CRM, que muestra un aumento significativo en volumen y rendimiento positivo reciente.",
+      "Seguimiento de la tendencia negativa y bajo volumen relativo en GOOGL y META, que podrían indicar presión vendedora o falta de interés comprador."
     ],
     "asset": "GOOGL",
     "level": "medio",
@@ -122,18 +217,18 @@
         "sale_count": 0,
         "shares": 0
       },
-      "perf_20d": -3.2099400158978275,
-      "perf_5d": -7.224635183190442,
-      "perf_60d": -6.681146687917517,
-      "price": 326.55999755859375,
-      "rsi": 37.14676920718459,
-      "sma20": 351.65049896240237,
-      "sma50": 363.18260009765623,
+      "perf_20d": -5.638343782141508,
+      "perf_5d": -3.8715260485972736,
+      "perf_60d": -13.277026496523236,
+      "price": 333.7099914550781,
+      "rsi": 41.71351864985515,
+      "sma20": 350.653498840332,
+      "sma50": 361.83539978027346,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 28413900.0,
-      "volume_20d_avg": 29436895.0,
-      "volume_ratio": 0.9652478632681878
+      "volume": 27157077.0,
+      "volume_20d_avg": 29086938.85,
+      "volume_ratio": 0.933651943920527
     },
     "reasons": [
       "formulario SEC 4",
@@ -143,20 +238,21 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000116840426000036/xslF345X06/form4-07232026_080714.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-28T09:07:18.629787+00:00",
+    "time_utc": "2026-07-28T21:33:58.117443+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 para MSFT, GOOGL, META y PLTR sin operaciones de compra o venta reportadas. Es importante vigilar la evolución del precio y volumen en los próximos días para detectar posibles movimientos derivados de información interna. La ausencia de transacciones declaradas no elimina la necesidad de monitoreo continuo ante posibles cambios en la dinámica del mercado.",
+    "ai_brief": "Se han presentado múltiples formularios SEC 4 para CRM, MSFT, GOOGL y META, indicando operaciones declaradas por insiders. Es importante vigilar los detalles específicos de cada documento y la reacción del precio en el corto plazo. La actividad de volumen y las tendencias técnicas actuales sugieren un nivel medio de atención para gestionar riesgos.",
     "ai_risk_notes": [
-      "La falta de operaciones declaradas puede ocultar movimientos futuros no reportados que afecten la valoración.",
-      "El rendimiento reciente negativo en varios activos y la ausencia de rupturas técnicas aumentan la incertidumbre en el corto plazo."
+      "La ausencia de compras o ventas declaradas en algunos formularios puede limitar la información útil para anticipar movimientos significativos.",
+      "La volatilidad y cambios en volumen pueden generar señales contradictorias, por lo que se recomienda prudencia en la interpretación.",
+      "El nivel medio de alerta implica que no hay señales claras de ruptura, pero la situación puede cambiar con nueva información o eventos externos."
     ],
     "ai_watch_items": [
-      "Revisión detallada de los formularios 4 presentados para detectar cualquier actualización o corrección.",
-      "Monitoreo de la reacción del precio y volumen en MSFT, GOOGL, META y PLTR tras las presentaciones.",
-      "Atención a posibles señales técnicas, especialmente en GOOGL y META, donde el RSI y las medias móviles indican presión bajista."
+      "Revisión detallada de las operaciones declaradas en los formularios SEC 4 para detectar posibles patrones de insider trading.",
+      "Monitoreo de la reacción del precio y volumen en CRM, que muestra un aumento significativo en volumen y rendimiento positivo reciente.",
+      "Seguimiento de la tendencia negativa y bajo volumen relativo en GOOGL y META, que podrían indicar presión vendedora o falta de interés comprador."
     ],
     "asset": "GOOGL",
     "level": "medio",
@@ -171,18 +267,18 @@
         "sale_count": 0,
         "shares": 0
       },
-      "perf_20d": -3.2099400158978275,
-      "perf_5d": -7.224635183190442,
-      "perf_60d": -6.681146687917517,
-      "price": 326.55999755859375,
-      "rsi": 37.14676920718459,
-      "sma20": 351.65049896240237,
-      "sma50": 363.18260009765623,
+      "perf_20d": -5.638343782141508,
+      "perf_5d": -3.8715260485972736,
+      "perf_60d": -13.277026496523236,
+      "price": 333.7099914550781,
+      "rsi": 41.71351864985515,
+      "sma20": 350.653498840332,
+      "sma50": 361.83539978027346,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 28413900.0,
-      "volume_20d_avg": 29436895.0,
-      "volume_ratio": 0.9652478632681878
+      "volume": 27157077.0,
+      "volume_20d_avg": 29086938.85,
+      "volume_ratio": 0.933651943920527
     },
     "reasons": [
       "formulario SEC 4",
@@ -192,20 +288,21 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000116840426000031/xslF345X06/form4-07212026_090748.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-28T09:07:18.639810+00:00",
+    "time_utc": "2026-07-28T21:33:58.154365+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 para MSFT, GOOGL, META y PLTR sin operaciones de compra o venta reportadas. Es importante vigilar la evolución del precio y volumen en los próximos días para detectar posibles movimientos derivados de información interna. La ausencia de transacciones declaradas no elimina la necesidad de monitoreo continuo ante posibles cambios en la dinámica del mercado.",
+    "ai_brief": "Se han presentado múltiples formularios SEC 4 para CRM, MSFT, GOOGL y META, indicando operaciones declaradas por insiders. Es importante vigilar los detalles específicos de cada documento y la reacción del precio en el corto plazo. La actividad de volumen y las tendencias técnicas actuales sugieren un nivel medio de atención para gestionar riesgos.",
     "ai_risk_notes": [
-      "La falta de operaciones declaradas puede ocultar movimientos futuros no reportados que afecten la valoración.",
-      "El rendimiento reciente negativo en varios activos y la ausencia de rupturas técnicas aumentan la incertidumbre en el corto plazo."
+      "La ausencia de compras o ventas declaradas en algunos formularios puede limitar la información útil para anticipar movimientos significativos.",
+      "La volatilidad y cambios en volumen pueden generar señales contradictorias, por lo que se recomienda prudencia en la interpretación.",
+      "El nivel medio de alerta implica que no hay señales claras de ruptura, pero la situación puede cambiar con nueva información o eventos externos."
     ],
     "ai_watch_items": [
-      "Revisión detallada de los formularios 4 presentados para detectar cualquier actualización o corrección.",
-      "Monitoreo de la reacción del precio y volumen en MSFT, GOOGL, META y PLTR tras las presentaciones.",
-      "Atención a posibles señales técnicas, especialmente en GOOGL y META, donde el RSI y las medias móviles indican presión bajista."
+      "Revisión detallada de las operaciones declaradas en los formularios SEC 4 para detectar posibles patrones de insider trading.",
+      "Monitoreo de la reacción del precio y volumen en CRM, que muestra un aumento significativo en volumen y rendimiento positivo reciente.",
+      "Seguimiento de la tendencia negativa y bajo volumen relativo en GOOGL y META, que podrían indicar presión vendedora o falta de interés comprador."
     ],
     "asset": "GOOGL",
     "level": "medio",
@@ -220,18 +317,18 @@
         "sale_count": 0,
         "shares": 0
       },
-      "perf_20d": -3.2099400158978275,
-      "perf_5d": -7.224635183190442,
-      "perf_60d": -6.681146687917517,
-      "price": 326.55999755859375,
-      "rsi": 37.14676920718459,
-      "sma20": 351.65049896240237,
-      "sma50": 363.18260009765623,
+      "perf_20d": -5.638343782141508,
+      "perf_5d": -3.8715260485972736,
+      "perf_60d": -13.277026496523236,
+      "price": 333.7099914550781,
+      "rsi": 41.71351864985515,
+      "sma20": 350.653498840332,
+      "sma50": 361.83539978027346,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 28413900.0,
-      "volume_20d_avg": 29436895.0,
-      "volume_ratio": 0.9652478632681878
+      "volume": 27157077.0,
+      "volume_20d_avg": 29086938.85,
+      "volume_ratio": 0.933651943920527
     },
     "reasons": [
       "formulario SEC 4",
@@ -241,20 +338,21 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000116840426000029/xslF345X06/form4-07182026_120730.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-28T09:07:18.649812+00:00",
+    "time_utc": "2026-07-28T21:33:58.173200+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 para MSFT, GOOGL, META y PLTR sin operaciones de compra o venta reportadas. Es importante vigilar la evolución del precio y volumen en los próximos días para detectar posibles movimientos derivados de información interna. La ausencia de transacciones declaradas no elimina la necesidad de monitoreo continuo ante posibles cambios en la dinámica del mercado.",
+    "ai_brief": "Se han presentado múltiples formularios SEC 4 para CRM, MSFT, GOOGL y META, indicando operaciones declaradas por insiders. Es importante vigilar los detalles específicos de cada documento y la reacción del precio en el corto plazo. La actividad de volumen y las tendencias técnicas actuales sugieren un nivel medio de atención para gestionar riesgos.",
     "ai_risk_notes": [
-      "La falta de operaciones declaradas puede ocultar movimientos futuros no reportados que afecten la valoración.",
-      "El rendimiento reciente negativo en varios activos y la ausencia de rupturas técnicas aumentan la incertidumbre en el corto plazo."
+      "La ausencia de compras o ventas declaradas en algunos formularios puede limitar la información útil para anticipar movimientos significativos.",
+      "La volatilidad y cambios en volumen pueden generar señales contradictorias, por lo que se recomienda prudencia en la interpretación.",
+      "El nivel medio de alerta implica que no hay señales claras de ruptura, pero la situación puede cambiar con nueva información o eventos externos."
     ],
     "ai_watch_items": [
-      "Revisión detallada de los formularios 4 presentados para detectar cualquier actualización o corrección.",
-      "Monitoreo de la reacción del precio y volumen en MSFT, GOOGL, META y PLTR tras las presentaciones.",
-      "Atención a posibles señales técnicas, especialmente en GOOGL y META, donde el RSI y las medias móviles indican presión bajista."
+      "Revisión detallada de las operaciones declaradas en los formularios SEC 4 para detectar posibles patrones de insider trading.",
+      "Monitoreo de la reacción del precio y volumen en CRM, que muestra un aumento significativo en volumen y rendimiento positivo reciente.",
+      "Seguimiento de la tendencia negativa y bajo volumen relativo en GOOGL y META, que podrían indicar presión vendedora o falta de interés comprador."
     ],
     "asset": "META",
     "level": "medio",
@@ -264,18 +362,18 @@
       "filing_date": "2026-07-22",
       "form": "4",
       "form4_details": {},
-      "perf_20d": 7.927304882723751,
-      "perf_5d": -8.048305710872238,
-      "perf_60d": -11.246114381445283,
-      "price": 593.8699951171875,
-      "rsi": 43.5469386604727,
-      "sma20": 623.1499908447265,
-      "sma50": 605.6185949707032,
+      "perf_20d": 5.47635956196153,
+      "perf_5d": -7.828400398438296,
+      "perf_60d": -3.0233205556253195,
+      "price": 593.4099731445312,
+      "rsi": 43.391708676335476,
+      "sma20": 624.6904907226562,
+      "sma50": 605.1181945800781,
       "status": "ok",
       "symbol": "META",
-      "volume": 11146200.0,
-      "volume_20d_avg": 18980035.0,
-      "volume_ratio": 0.5872591910394265
+      "volume": 10870647.0,
+      "volume_20d_avg": 18775452.35,
+      "volume_ratio": 0.5789818960074216
     },
     "reasons": [
       "formulario SEC 4",
@@ -285,21 +383,11 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1326801/000095010326011028/xslF345X06/ownership.xml",
     "summary": "Meta Platforms publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-28T09:07:19.028881+00:00",
+    "time_utc": "2026-07-28T21:33:58.533013+00:00",
     "title": "META presentacion SEC 4"
   },
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 para MSFT, GOOGL, META y PLTR sin operaciones de compra o venta reportadas. Es importante vigilar la evolución del precio y volumen en los próximos días para detectar posibles movimientos derivados de información interna. La ausencia de transacciones declaradas no elimina la necesidad de monitoreo continuo ante posibles cambios en la dinámica del mercado.",
-    "ai_risk_notes": [
-      "La falta de operaciones declaradas puede ocultar movimientos futuros no reportados que afecten la valoración.",
-      "El rendimiento reciente negativo en varios activos y la ausencia de rupturas técnicas aumentan la incertidumbre en el corto plazo."
-    ],
-    "ai_watch_items": [
-      "Revisión detallada de los formularios 4 presentados para detectar cualquier actualización o corrección.",
-      "Monitoreo de la reacción del precio y volumen en MSFT, GOOGL, META y PLTR tras las presentaciones.",
-      "Atención a posibles señales técnicas, especialmente en GOOGL y META, donde el RSI y las medias móviles indican presión bajista."
-    ],
     "asset": "META",
     "level": "medio",
     "metrics": {
@@ -308,18 +396,18 @@
       "filing_date": "2026-07-15",
       "form": "4",
       "form4_details": {},
-      "perf_20d": 7.927304882723751,
-      "perf_5d": -8.048305710872238,
-      "perf_60d": -11.246114381445283,
-      "price": 593.8699951171875,
-      "rsi": 43.5469386604727,
-      "sma20": 623.1499908447265,
-      "sma50": 605.6185949707032,
+      "perf_20d": 5.47635956196153,
+      "perf_5d": -7.828400398438296,
+      "perf_60d": -3.0233205556253195,
+      "price": 593.4099731445312,
+      "rsi": 43.391708676335476,
+      "sma20": 624.6904907226562,
+      "sma50": 605.1181945800781,
       "status": "ok",
       "symbol": "META",
-      "volume": 11146200.0,
-      "volume_20d_avg": 18980035.0,
-      "volume_ratio": 0.5872591910394265
+      "volume": 10870647.0,
+      "volume_20d_avg": 18775452.35,
+      "volume_ratio": 0.5789818960074216
     },
     "reasons": [
       "formulario SEC 4",
@@ -329,21 +417,11 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1326801/000095010326010694/xslF345X06/ownership.xml",
     "summary": "Meta Platforms publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-28T09:07:19.028915+00:00",
+    "time_utc": "2026-07-28T21:33:58.533048+00:00",
     "title": "META presentacion SEC 4"
   },
   {
     "agent": "sec_filing",
-    "ai_brief": "Se han presentado múltiples formularios SEC 4 para MSFT, GOOGL, META y PLTR sin operaciones de compra o venta reportadas. Es importante vigilar la evolución del precio y volumen en los próximos días para detectar posibles movimientos derivados de información interna. La ausencia de transacciones declaradas no elimina la necesidad de monitoreo continuo ante posibles cambios en la dinámica del mercado.",
-    "ai_risk_notes": [
-      "La falta de operaciones declaradas puede ocultar movimientos futuros no reportados que afecten la valoración.",
-      "El rendimiento reciente negativo en varios activos y la ausencia de rupturas técnicas aumentan la incertidumbre en el corto plazo."
-    ],
-    "ai_watch_items": [
-      "Revisión detallada de los formularios 4 presentados para detectar cualquier actualización o corrección.",
-      "Monitoreo de la reacción del precio y volumen en MSFT, GOOGL, META y PLTR tras las presentaciones.",
-      "Atención a posibles señales técnicas, especialmente en GOOGL y META, donde el RSI y las medias móviles indican presión bajista."
-    ],
     "asset": "PLTR",
     "level": "medio",
     "metrics": {
@@ -352,18 +430,18 @@
       "filing_date": "2026-07-24",
       "form": "4",
       "form4_details": {},
-      "perf_20d": 16.470378485661463,
-      "perf_5d": -2.462000128995323,
-      "perf_60d": -4.667683108232001,
-      "price": 131.52999877929688,
-      "rsi": 52.556358431479666,
-      "sma20": 128.82999954223632,
-      "sma50": 131.6436994934082,
+      "perf_20d": 6.767503921851792,
+      "perf_5d": -6.882258880428649,
+      "perf_60d": -11.19977123333815,
+      "price": 123.52999877929688,
+      "rsi": 44.49694654165497,
+      "sma20": 129.22149963378905,
+      "sma50": 131.43969955444337,
       "status": "ok",
       "symbol": "PLTR",
-      "volume": 36601900.0,
-      "volume_20d_avg": 37787805.0,
-      "volume_ratio": 0.9686167270102087
+      "volume": 42804212.0,
+      "volume_20d_avg": 37682460.6,
+      "volume_ratio": 1.1359187090876968
     },
     "reasons": [
       "formulario SEC 4",
@@ -373,7 +451,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1321655/000170518926000013/xslF345X06/wk-form4_1784937605.xml",
     "summary": "Palantir publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-28T09:07:19.678289+00:00",
+    "time_utc": "2026-07-28T21:33:59.151256+00:00",
     "title": "PLTR presentacion SEC 4"
   },
   {
@@ -386,18 +464,18 @@
       "filing_date": "2026-07-17",
       "form": "4",
       "form4_details": {},
-      "perf_20d": 16.470378485661463,
-      "perf_5d": -2.462000128995323,
-      "perf_60d": -4.667683108232001,
-      "price": 131.52999877929688,
-      "rsi": 52.556358431479666,
-      "sma20": 128.82999954223632,
-      "sma50": 131.6436994934082,
+      "perf_20d": 6.767503921851792,
+      "perf_5d": -6.882258880428649,
+      "perf_60d": -11.19977123333815,
+      "price": 123.52999877929688,
+      "rsi": 44.49694654165497,
+      "sma20": 129.22149963378905,
+      "sma50": 131.43969955444337,
       "status": "ok",
       "symbol": "PLTR",
-      "volume": 36601900.0,
-      "volume_20d_avg": 37787805.0,
-      "volume_ratio": 0.9686167270102087
+      "volume": 42804212.0,
+      "volume_20d_avg": 37682460.6,
+      "volume_ratio": 1.1359187090876968
     },
     "reasons": [
       "formulario SEC 4",
@@ -407,7 +485,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1321655/000182395226000018/xslF345X06/wk-form4_1784333024.xml",
     "summary": "Palantir publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-28T09:07:19.678317+00:00",
+    "time_utc": "2026-07-28T21:33:59.151286+00:00",
     "title": "PLTR presentacion SEC 4"
   },
   {
@@ -420,18 +498,18 @@
       "filing_date": "2026-07-17",
       "form": "4",
       "form4_details": {},
-      "perf_20d": -5.105641322571108,
-      "perf_5d": -1.711776911216556,
-      "perf_60d": 46.82152226694258,
-      "price": 494.95001220703125,
-      "rsi": 45.23510441830395,
-      "sma20": 531.7279998779297,
-      "sma50": 509.4700006103516,
+      "perf_20d": -15.73152359700256,
+      "perf_5d": -16.496151712214235,
+      "perf_60d": 28.24621502474878,
+      "price": 454.6199951171875,
+      "rsi": 39.175944222958904,
+      "sma20": 527.4845001220704,
+      "sma50": 509.5684002685547,
       "status": "ok",
       "symbol": "AMD",
-      "volume": 31709200.0,
-      "volume_20d_avg": 27168785.0,
-      "volume_ratio": 1.1671188093247453
+      "volume": 35827897.0,
+      "volume_20d_avg": 27631184.85,
+      "volume_ratio": 1.296647146855883
     },
     "reasons": [
       "formulario SEC 4",
@@ -441,7 +519,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000117/xslF345X06/wk-form4_1784318998.xml",
     "summary": "Advanced Micro Devices publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-28T09:07:20.033153+00:00",
+    "time_utc": "2026-07-28T21:33:59.479853+00:00",
     "title": "AMD presentacion SEC 4"
   },
   {
@@ -454,18 +532,18 @@
       "filing_date": "2026-07-14",
       "form": "4",
       "form4_details": {},
-      "perf_20d": 4.986031657118262,
-      "perf_5d": 1.3380573063234147,
-      "perf_60d": -5.482799436932073,
-      "price": 383.2200012207031,
-      "rsi": 48.35740070288171,
-      "sma20": 382.31199951171874,
-      "sma50": 398.67560119628905,
+      "perf_20d": 2.271443462962086,
+      "perf_5d": -1.4463121184710492,
+      "perf_60d": -8.74876977084803,
+      "price": 380.9100036621094,
+      "rsi": 47.43382959052577,
+      "sma20": 382.73499908447263,
+      "sma50": 397.4980010986328,
       "status": "ok",
       "symbol": "AVGO",
-      "volume": 18473200.0,
-      "volume_20d_avg": 21464260.0,
-      "volume_ratio": 0.8606492839725199
+      "volume": 20238808.0,
+      "volume_20d_avg": 21263385.4,
+      "volume_ratio": 0.9518149447641578
     },
     "reasons": [
       "formulario SEC 4",
@@ -475,7 +553,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000072/xslF345X06/wk-form4_1784075275.xml",
     "summary": "Broadcom publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-28T09:07:20.557542+00:00",
+    "time_utc": "2026-07-28T21:33:59.838484+00:00",
     "title": "AVGO presentacion SEC 4"
   },
   {
@@ -488,18 +566,18 @@
       "filing_date": "2026-07-14",
       "form": "4",
       "form4_details": {},
-      "perf_20d": 4.986031657118262,
-      "perf_5d": 1.3380573063234147,
-      "perf_60d": -5.482799436932073,
-      "price": 383.2200012207031,
-      "rsi": 48.35740070288171,
-      "sma20": 382.31199951171874,
-      "sma50": 398.67560119628905,
+      "perf_20d": 2.271443462962086,
+      "perf_5d": -1.4463121184710492,
+      "perf_60d": -8.74876977084803,
+      "price": 380.9100036621094,
+      "rsi": 47.43382959052577,
+      "sma20": 382.73499908447263,
+      "sma50": 397.4980010986328,
       "status": "ok",
       "symbol": "AVGO",
-      "volume": 18473200.0,
-      "volume_20d_avg": 21464260.0,
-      "volume_ratio": 0.8606492839725199
+      "volume": 20238808.0,
+      "volume_20d_avg": 21263385.4,
+      "volume_ratio": 0.9518149447641578
     },
     "reasons": [
       "formulario SEC 4",
@@ -509,76 +587,42 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000070/xslF345X06/wk-form4_1784075021.xml",
     "summary": "Broadcom publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-28T09:07:20.557569+00:00",
+    "time_utc": "2026-07-28T21:33:59.838514+00:00",
     "title": "AVGO presentacion SEC 4"
   },
   {
     "agent": "sec_filing",
-    "asset": "CRM",
+    "asset": "ORCL",
     "level": "medio",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "filing_date": "2026-07-23",
+      "filing_date": "2026-07-28",
       "form": "4",
       "form4_details": {},
-      "perf_20d": 9.616727572074835,
-      "perf_5d": -0.10931997810966765,
-      "perf_60d": -4.2048311808073,
-      "price": 173.60000610351562,
-      "rsi": 55.54704024646812,
-      "sma20": 166.0884994506836,
-      "sma50": 170.33279998779298,
+      "perf_20d": -18.814291050259314,
+      "perf_5d": -5.580483114507928,
+      "perf_60d": -25.670735771644782,
+      "price": 119.95999908447266,
+      "rsi": 32.736967377119996,
+      "sma20": 131.5890007019043,
+      "sma50": 168.63620056152342,
       "status": "ok",
-      "symbol": "CRM",
-      "volume": 17312000.0,
-      "volume_20d_avg": 12458800.0,
-      "volume_ratio": 1.3895399235881465
+      "symbol": "ORCL",
+      "volume": 24924314.0,
+      "volume_20d_avg": 39348870.7,
+      "volume_ratio": 0.6334187883059119
     },
     "reasons": [
       "formulario SEC 4",
-      "presentado 2026-07-23",
+      "presentado 2026-07-28",
       "operacion declarada por insider"
     ],
     "score": 70,
-    "source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000156/xslF345X06/form4.xml",
-    "summary": "Salesforce publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-28T09:07:21.324790+00:00",
-    "title": "CRM presentacion SEC 4"
-  },
-  {
-    "agent": "sec_filing",
-    "asset": "CRM",
-    "level": "medio",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "filing_date": "2026-07-23",
-      "form": "4",
-      "form4_details": {},
-      "perf_20d": 9.616727572074835,
-      "perf_5d": -0.10931997810966765,
-      "perf_60d": -4.2048311808073,
-      "price": 173.60000610351562,
-      "rsi": 55.54704024646812,
-      "sma20": 166.0884994506836,
-      "sma50": 170.33279998779298,
-      "status": "ok",
-      "symbol": "CRM",
-      "volume": 17312000.0,
-      "volume_20d_avg": 12458800.0,
-      "volume_ratio": 1.3895399235881465
-    },
-    "reasons": [
-      "formulario SEC 4",
-      "presentado 2026-07-23",
-      "operacion declarada por insider"
-    ],
-    "score": 70,
-    "source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000154/xslF345X06/form4.xml",
-    "summary": "Salesforce publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-28T09:07:21.324819+00:00",
-    "title": "CRM presentacion SEC 4"
+    "source": "https://www.sec.gov/Archives/edgar/data/1341439/000134143926000066/xslF345X06/form4.xml",
+    "summary": "Oracle publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
+    "time_utc": "2026-07-28T21:34:00.162920+00:00",
+    "title": "ORCL presentacion SEC 4"
   },
   {
     "agent": "sec_filing",
@@ -590,18 +634,18 @@
       "filing_date": "2026-07-22",
       "form": "8-K",
       "form4_details": {},
-      "perf_20d": -3.2099400158978275,
-      "perf_5d": -7.224635183190442,
-      "perf_60d": -6.681146687917517,
-      "price": 326.55999755859375,
-      "rsi": 37.14676920718459,
-      "sma20": 351.65049896240237,
-      "sma50": 363.18260009765623,
+      "perf_20d": -5.638343782141508,
+      "perf_5d": -3.8715260485972736,
+      "perf_60d": -13.277026496523236,
+      "price": 333.7099914550781,
+      "rsi": 41.71351864985515,
+      "sma20": 350.653498840332,
+      "sma50": 361.83539978027346,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 28413900.0,
-      "volume_20d_avg": 29436895.0,
-      "volume_ratio": 0.9652478632681878
+      "volume": 27157077.0,
+      "volume_20d_avg": 29086938.85,
+      "volume_ratio": 0.933651943920527
     },
     "reasons": [
       "formulario SEC 8-K",
@@ -611,7 +655,7 @@
     "score": 67,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/goog-20260722.htm",
     "summary": "Alphabet publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-28T09:07:18.629848+00:00",
+    "time_utc": "2026-07-28T21:33:58.117543+00:00",
     "title": "GOOGL presentacion SEC 8-K"
   },
   {
@@ -624,18 +668,18 @@
       "filing_date": "2026-07-22",
       "form": "8-K",
       "form4_details": {},
-      "perf_20d": -18.564165236803987,
-      "perf_5d": -16.329790001213862,
-      "perf_60d": -17.054717986625633,
-      "price": 309.2200012207031,
-      "rsi": 27.33617294210316,
-      "sma20": 385.1989990234375,
-      "sma50": 399.8369982910156,
+      "perf_20d": -25.349649093049788,
+      "perf_5d": -18.866279158731835,
+      "perf_60d": -19.440295965247245,
+      "price": 307.44000244140625,
+      "rsi": 27.03641003701651,
+      "sma20": 379.97899932861327,
+      "sma50": 397.1197985839844,
       "status": "ok",
       "symbol": "TSLA",
-      "volume": 44754900.0,
-      "volume_20d_avg": 44082830.0,
-      "volume_ratio": 1.0152456183053584
+      "volume": 38773921.0,
+      "volume_20d_avg": 43147461.05,
+      "volume_ratio": 0.8986373718506434
     },
     "reasons": [
       "formulario SEC 8-K",
@@ -645,7 +689,7 @@
     "score": 67,
     "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049213/tsla-20260722.htm",
     "summary": "Tesla publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-28T09:07:19.382314+00:00",
+    "time_utc": "2026-07-28T21:33:58.842493+00:00",
     "title": "TSLA presentacion SEC 8-K"
   },
   {
@@ -658,18 +702,18 @@
       "filing_date": "2026-07-23",
       "form": "10-Q",
       "form4_details": {},
-      "perf_20d": -3.2099400158978275,
-      "perf_5d": -7.224635183190442,
-      "perf_60d": -6.681146687917517,
-      "price": 326.55999755859375,
-      "rsi": 37.14676920718459,
-      "sma20": 351.65049896240237,
-      "sma50": 363.18260009765623,
+      "perf_20d": -5.638343782141508,
+      "perf_5d": -3.8715260485972736,
+      "perf_60d": -13.277026496523236,
+      "price": 333.7099914550781,
+      "rsi": 41.71351864985515,
+      "sma20": 350.653498840332,
+      "sma50": 361.83539978027346,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 28413900.0,
-      "volume_20d_avg": 29436895.0,
-      "volume_ratio": 0.9652478632681878
+      "volume": 27157077.0,
+      "volume_20d_avg": 29086938.85,
+      "volume_ratio": 0.933651943920527
     },
     "reasons": [
       "formulario SEC 10-Q",
@@ -678,7 +722,7 @@
     "score": 45,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm",
     "summary": "Alphabet publico el formulario 10-Q. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-28T09:07:18.629830+00:00",
+    "time_utc": "2026-07-28T21:33:58.117522+00:00",
     "title": "GOOGL presentacion SEC 10-Q"
   },
   {
@@ -691,18 +735,18 @@
       "filing_date": "2026-07-23",
       "form": "10-Q",
       "form4_details": {},
-      "perf_20d": -18.564165236803987,
-      "perf_5d": -16.329790001213862,
-      "perf_60d": -17.054717986625633,
-      "price": 309.2200012207031,
-      "rsi": 27.33617294210316,
-      "sma20": 385.1989990234375,
-      "sma50": 399.8369982910156,
+      "perf_20d": -25.349649093049788,
+      "perf_5d": -18.866279158731835,
+      "perf_60d": -19.440295965247245,
+      "price": 307.44000244140625,
+      "rsi": 27.03641003701651,
+      "sma20": 379.97899932861327,
+      "sma50": 397.1197985839844,
       "status": "ok",
       "symbol": "TSLA",
-      "volume": 44754900.0,
-      "volume_20d_avg": 44082830.0,
-      "volume_ratio": 1.0152456183053584
+      "volume": 38773921.0,
+      "volume_20d_avg": 43147461.05,
+      "volume_ratio": 0.8986373718506434
     },
     "reasons": [
       "formulario SEC 10-Q",
@@ -711,7 +755,7 @@
     "score": 45,
     "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm",
     "summary": "Tesla publico el formulario 10-Q. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-07-28T09:07:19.382287+00:00",
+    "time_utc": "2026-07-28T21:33:58.842463+00:00",
     "title": "TSLA presentacion SEC 10-Q"
   }
 ]
