@@ -96,20 +96,14 @@
     </nav>
   </div>
   <section class="grid">
-    <div class="card span-3"><h3>Señales</h3><div class="metric">109</div><div class="submetric">normalizadas</div></div>
+    <div class="card span-3"><h3>Señales</h3><div class="metric">114</div><div class="submetric">normalizadas</div></div>
     <div class="card span-3"><h3>Activos</h3><div class="metric">56</div><div class="submetric">con decisión agregada</div></div>
-    <div class="card span-3"><h3>Win Rate</h3><div class="metric">25.2%</div><div class="submetric">sobre señales con precio</div></div>
+    <div class="card span-3"><h3>Win Rate</h3><div class="metric">24.3%</div><div class="submetric">sobre señales con precio</div></div>
     <div class="card span-3"><h3>Retorno Medio</h3><div class="metric">-0.1%</div><div class="submetric">estimado</div></div>
     <div class="card span-12">
       <h2>Decisión Agregada</h2>
       <p class="intro">Combina las señales de todos los agentes y prioriza lo que merece atención real.</p>
       <div class="table-wrap"><table><thead><tr><th>Activo</th><th>Decisión</th><th>Score</th><th>Sesgo</th><th>Resumen</th></tr></thead><tbody><tr>
-          <td><div class="company">UNI</div><div class="muted">altcoin_fundamentals</div></td>
-          <td><span class="pill hot">LOW_PRIORITY</span></td>
-          <td>72.0</td>
-          <td>MIXED</td>
-          <td>Uniswap muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.</td>
-        </tr><tr>
           <td><div class="company">BTC</div><div class="muted">cftc_positioning</div></td>
           <td><span class="pill watch">LOW_PRIORITY</span></td>
           <td>68.0</td>
@@ -149,14 +143,14 @@
           <td><div class="company">GOOGL</div><div class="muted">event_rumor, intraday_cashout, sec_filing</div></td>
           <td><span class="pill watch">NO_TRADE_INTRADIA</span></td>
           <td>64.36</td>
-          <td>MIXED</td>
+          <td>LONG</td>
           <td>Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.</td>
         </tr><tr>
-          <td><div class="company">AAVE</div><div class="muted">altcoin_fundamentals</div></td>
+          <td><div class="company">UNI</div><div class="muted">altcoin_fundamentals</div></td>
           <td><span class="pill watch">LOW_PRIORITY</span></td>
-          <td>61.0</td>
+          <td>64.0</td>
           <td>MIXED</td>
-          <td>Aave muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.</td>
+          <td>Uniswap muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.</td>
         </tr><tr>
           <td><div class="company">ETHEREUM</div><div class="muted">defi_liquidity</div></td>
           <td><span class="pill watch">LOW_PRIORITY</span></td>
@@ -164,11 +158,17 @@
           <td>MIXED</td>
           <td>Tendencia de liquidez de Ethereum segun DefiLlama. Vigilar TVL y confirmacion de actividad en la red.</td>
         </tr><tr>
-          <td><div class="company">PLTR</div><div class="muted">intraday_cashout, sec_filing, unusual_volume</div></td>
+          <td><div class="company">META</div><div class="muted">event_rumor, intraday_cashout, sec_filing</div></td>
           <td><span class="pill watch">NO_TRADE_INTRADIA</span></td>
-          <td>56.5</td>
-          <td>LONG</td>
-          <td>Palantir publico el formulario 4. Vigilar detalles del documento y reaccion del precio.</td>
+          <td>56.4</td>
+          <td>MIXED</td>
+          <td>Meta Platforms publico el formulario 4. Vigilar detalles del documento y reaccion del precio.</td>
+        </tr><tr>
+          <td><div class="company">AMZN</div><div class="muted">event_rumor, market_signal</div></td>
+          <td><span class="pill watch">LOW_PRIORITY</span></td>
+          <td>54.5</td>
+          <td>MIXED</td>
+          <td>Drawdown 52s -17.6%; RSI diario 33.3; Cerca de SMA200 desde abajo</td>
         </tr><tr>
           <td><div class="company">CRM</div><div class="muted">event_rumor, intraday_cashout, sec_filing</div></td>
           <td><span class="pill watch">NO_TRADE_INTRADIA</span></td>
@@ -176,11 +176,23 @@
           <td>MIXED</td>
           <td>Salesforce publico el formulario 4. Vigilar detalles del documento y reaccion del precio.</td>
         </tr><tr>
-          <td><div class="company">META</div><div class="muted">event_rumor, intraday_cashout, sec_filing</div></td>
+          <td><div class="company">PLTR</div><div class="muted">intraday_cashout, sec_filing, unusual_volume</div></td>
           <td><span class="pill watch">NO_TRADE_INTRADIA</span></td>
           <td>53.75</td>
+          <td>LONG</td>
+          <td>Palantir publico el formulario 4. Vigilar detalles del documento y reaccion del precio.</td>
+        </tr><tr>
+          <td><div class="company">SPY</div><div class="muted">sector_rotation, unusual_volume</div></td>
+          <td><span class="pill watch">LOW_PRIORITY</span></td>
+          <td>53.0</td>
+          <td>LONG</td>
+          <td>S&amp;P 500 ETF presenta volumen anormal o movimiento tecnico a vigilar.</td>
+        </tr><tr>
+          <td><div class="company">AAVE</div><div class="muted">altcoin_fundamentals</div></td>
+          <td><span class="pill watch">LOW_PRIORITY</span></td>
+          <td>53.0</td>
           <td>MIXED</td>
-          <td>Meta Platforms publico el formulario 4. Vigilar detalles del documento y reaccion del precio.</td>
+          <td>Aave muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.</td>
         </tr><tr>
           <td><div class="company">XLF</div><div class="muted">intraday_cashout, sector_rotation</div></td>
           <td><span class="pill watch">NO_TRADE_INTRADIA</span></td>
@@ -188,17 +200,17 @@
           <td>LONG</td>
           <td>Financials muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.</td>
         </tr><tr>
+          <td><div class="company">MSFT</div><div class="muted">event_rumor, intraday_cashout, sec_filing, unusual_volume</div></td>
+          <td><span class="pill watch">NO_TRADE_INTRADIA</span></td>
+          <td>51.17</td>
+          <td>LONG</td>
+          <td>Microsoft publico el formulario 4. Vigilar detalles del documento y reaccion del precio.</td>
+        </tr><tr>
           <td><div class="company">XLE</div><div class="muted">intraday_cashout, sector_rotation</div></td>
           <td><span class="pill watch">NO_TRADE_INTRADIA</span></td>
           <td>51.0</td>
           <td>LONG</td>
           <td>Energy muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.</td>
-        </tr><tr>
-          <td><div class="company">ETH</div><div class="muted">altcoin_fundamentals</div></td>
-          <td><span class="pill watch">LOW_PRIORITY</span></td>
-          <td>51.0</td>
-          <td>MIXED</td>
-          <td>Ethereum muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.</td>
         </tr><tr>
           <td><div class="company">TSLA</div><div class="muted">intraday_cashout, sec_filing, unusual_volume</div></td>
           <td><span class="pill watch">NO_TRADE_INTRADIA</span></td>
@@ -218,23 +230,11 @@
           <td>MIXED</td>
           <td>Tendencia de liquidez de Solana segun DefiLlama. Vigilar TVL y confirmacion de actividad en la red.</td>
         </tr><tr>
-          <td><div class="company">AVALANCHE</div><div class="muted">defi_liquidity</div></td>
-          <td><span class="pill watch">LOW_PRIORITY</span></td>
-          <td>50.0</td>
-          <td>MIXED</td>
-          <td>Tendencia de liquidez de Avalanche segun DefiLlama. Vigilar TVL y confirmacion de actividad en la red.</td>
-        </tr><tr>
           <td><div class="company">ARBITRUM</div><div class="muted">defi_liquidity</div></td>
           <td><span class="pill watch">LOW_PRIORITY</span></td>
           <td>50.0</td>
           <td>MIXED</td>
           <td>Tendencia de liquidez de Arbitrum segun DefiLlama. Vigilar TVL y confirmacion de actividad en la red.</td>
-        </tr><tr>
-          <td><div class="company">BASE</div><div class="muted">defi_liquidity</div></td>
-          <td><span class="pill watch">LOW_PRIORITY</span></td>
-          <td>50.0</td>
-          <td>MIXED</td>
-          <td>Tendencia de liquidez de Base segun DefiLlama. Vigilar TVL y confirmacion de actividad en la red.</td>
         </tr><tr>
           <td><div class="company">BSC</div><div class="muted">defi_liquidity</div></td>
           <td><span class="pill watch">LOW_PRIORITY</span></td>
@@ -242,17 +242,29 @@
           <td>MIXED</td>
           <td>Tendencia de liquidez de BSC segun DefiLlama. Vigilar TVL y confirmacion de actividad en la red.</td>
         </tr><tr>
+          <td><div class="company">AVALANCHE</div><div class="muted">defi_liquidity</div></td>
+          <td><span class="pill watch">LOW_PRIORITY</span></td>
+          <td>50.0</td>
+          <td>MIXED</td>
+          <td>Tendencia de liquidez de Avalanche segun DefiLlama. Vigilar TVL y confirmacion de actividad en la red.</td>
+        </tr><tr>
+          <td><div class="company">BASE</div><div class="muted">defi_liquidity</div></td>
+          <td><span class="pill watch">LOW_PRIORITY</span></td>
+          <td>50.0</td>
+          <td>MIXED</td>
+          <td>Tendencia de liquidez de Base segun DefiLlama. Vigilar TVL y confirmacion de actividad en la red.</td>
+        </tr><tr>
           <td><div class="company">AMD</div><div class="muted">event_rumor, intraday_cashout, sec_filing, unusual_volume</div></td>
           <td><span class="pill quiet">NO_TRADE_INTRADIA</span></td>
           <td>49.25</td>
           <td>LONG</td>
           <td>Advanced Micro Devices publico el formulario 4. Vigilar detalles del documento y reaccion del precio.</td>
         </tr><tr>
-          <td><div class="company">AMZN</div><div class="muted">event_rumor</div></td>
+          <td><div class="company">AVAX</div><div class="muted">altcoin_fundamentals</div></td>
           <td><span class="pill quiet">LOW_PRIORITY</span></td>
           <td>49.0</td>
-          <td>LONG</td>
-          <td>AWS re:Invent suele ser catalizador para lanzamientos de hardware y software AI; se recomienda monitorear rumores sobre chips Trainium y agentes AI para anticipar movimientos.</td>
+          <td>MIXED</td>
+          <td>Avalanche muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.</td>
         </tr><tr>
           <td><div class="company">GLD</div><div class="muted">sector_rotation</div></td>
           <td><span class="pill quiet">LOW_PRIORITY</span></td>
@@ -266,29 +278,11 @@
           <td>LONG</td>
           <td>Consumer staples muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.</td>
         </tr><tr>
-          <td><div class="company">SPY</div><div class="muted">sector_rotation, unusual_volume</div></td>
+          <td><div class="company">ETH</div><div class="muted">altcoin_fundamentals</div></td>
           <td><span class="pill quiet">LOW_PRIORITY</span></td>
-          <td>48.0</td>
-          <td>LONG</td>
-          <td>S&amp;P 500 muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.</td>
-        </tr><tr>
-          <td><div class="company">MSFT</div><div class="muted">event_rumor, intraday_cashout, sec_filing, unusual_volume</div></td>
-          <td><span class="pill quiet">NO_TRADE_INTRADIA</span></td>
-          <td>47.75</td>
-          <td>LONG</td>
-          <td>Microsoft publico el formulario 4. Vigilar detalles del documento y reaccion del precio.</td>
-        </tr><tr>
-          <td><div class="company">LINK</div><div class="muted">altcoin_fundamentals</div></td>
-          <td><span class="pill quiet">LOW_PRIORITY</span></td>
-          <td>47.0</td>
+          <td>46.0</td>
           <td>MIXED</td>
-          <td>Chainlink muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.</td>
-        </tr><tr>
-          <td><div class="company">MARKET</div><div class="muted">macro_regime</div></td>
-          <td><span class="pill quiet">LOW_PRIORITY</span></td>
-          <td>45.0</td>
-          <td>MIXED</td>
-          <td>La cesta de proxies apunta a un regimen mixed. Vigilar confirmacion en credito, duracion y dolar.</td>
+          <td>Ethereum muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.</td>
         </tr><tr>
           <td><div class="company">ORCL</div><div class="muted">event_rumor, intraday_cashout, sec_filing</div></td>
           <td><span class="pill quiet">NO_TRADE_INTRADIA</span></td>
@@ -296,17 +290,23 @@
           <td>MIXED</td>
           <td>Oracle publico el formulario 4. Vigilar detalles del documento y reaccion del precio.</td>
         </tr><tr>
-          <td><div class="company">AVAX</div><div class="muted">altcoin_fundamentals</div></td>
-          <td><span class="pill quiet">LOW_PRIORITY</span></td>
-          <td>43.0</td>
-          <td>MIXED</td>
-          <td>Avalanche muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.</td>
-        </tr><tr>
           <td><div class="company">XLU</div><div class="muted">sector_rotation</div></td>
           <td><span class="pill quiet">LOW_PRIORITY</span></td>
           <td>43.0</td>
           <td>LONG</td>
           <td>Utilities muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.</td>
+        </tr><tr>
+          <td><div class="company">AVGO</div><div class="muted">event_rumor, unusual_volume</div></td>
+          <td><span class="pill quiet">LOW_PRIORITY</span></td>
+          <td>42.5</td>
+          <td>LONG</td>
+          <td>Broadcom presenta volumen anormal o movimiento tecnico a vigilar.</td>
+        </tr><tr>
+          <td><div class="company">QQQ</div><div class="muted">intraday_cashout, market_signal, sector_rotation, unusual_volume</div></td>
+          <td><span class="pill quiet">NO_TRADE_INTRADIA</span></td>
+          <td>41.75</td>
+          <td>LONG</td>
+          <td>Nasdaq 100 ETF presenta volumen anormal o movimiento tecnico a vigilar.</td>
         </tr><tr>
           <td><div class="company">HOOD</div><div class="muted">intraday_cashout, unusual_volume</div></td>
           <td><span class="pill quiet">NO_TRADE_INTRADIA</span></td>
@@ -320,35 +320,210 @@
           <td>LONG</td>
           <td>Super Micro Computer presenta volumen anormal o movimiento tecnico a vigilar.</td>
         </tr><tr>
-          <td><div class="company">OP</div><div class="muted">altcoin_fundamentals</div></td>
+          <td><div class="company">LINK</div><div class="muted">altcoin_fundamentals</div></td>
           <td><span class="pill quiet">LOW_PRIORITY</span></td>
           <td>41.0</td>
           <td>MIXED</td>
-          <td>Optimism muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.</td>
-        </tr><tr>
-          <td><div class="company">ARB</div><div class="muted">altcoin_fundamentals</div></td>
-          <td><span class="pill quiet">LOW_PRIORITY</span></td>
-          <td>41.0</td>
-          <td>MIXED</td>
-          <td>Arbitrum muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.</td>
-        </tr><tr>
-          <td><div class="company">SOL</div><div class="muted">altcoin_fundamentals</div></td>
-          <td><span class="pill quiet">LOW_PRIORITY</span></td>
-          <td>41.0</td>
-          <td>MIXED</td>
-          <td>Solana muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.</td>
+          <td>Chainlink muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.</td>
         </tr><tr>
           <td><div class="company">XLV</div><div class="muted">intraday_cashout, sector_rotation</div></td>
           <td><span class="pill quiet">NO_TRADE_INTRADIA</span></td>
           <td>38.5</td>
           <td>LONG</td>
           <td>Health care muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.</td>
+        </tr><tr>
+          <td><div class="company">ARB</div><div class="muted">altcoin_fundamentals</div></td>
+          <td><span class="pill quiet">LOW_PRIORITY</span></td>
+          <td>38.0</td>
+          <td>MIXED</td>
+          <td>Arbitrum muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.</td>
+        </tr><tr>
+          <td><div class="company">MSTR</div><div class="muted">intraday_cashout, unusual_volume</div></td>
+          <td><span class="pill quiet">NO_TRADE_INTRADIA</span></td>
+          <td>37.5</td>
+          <td>LONG</td>
+          <td>MicroStrategy presenta volumen anormal o movimiento tecnico a vigilar.</td>
         </tr></tbody></table></div>
     </div>
     <div class="card span-12">
       <h2>Tracking De Señales</h2>
       <p class="intro">Seguimiento aproximado frente al último precio disponible para aprender qué agentes y setups aportan valor.</p>
       <div class="table-wrap"><table><thead><tr><th>Activo</th><th>Estado</th><th>Dirección</th><th>Entrada</th><th>Último</th><th>Retorno</th></tr></thead><tbody><tr>
+          <td><div class="company">MSFT</div><div class="muted">sec_filing</div></td>
+          <td>OPEN</td>
+          <td>WAIT</td>
+          <td>390.54</td>
+          <td>390.54</td>
+          <td>+0.0%</td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">sec_filing</div></td>
+          <td>OPEN</td>
+          <td>WAIT</td>
+          <td>336.71</td>
+          <td>336.71</td>
+          <td>+0.0%</td>
+        </tr><tr>
+          <td><div class="company">META</div><div class="muted">sec_filing</div></td>
+          <td>OPEN</td>
+          <td>WAIT</td>
+          <td>585.61</td>
+          <td>585.61</td>
+          <td>+0.0%</td>
+        </tr><tr>
+          <td><div class="company">TSLA</div><div class="muted">sec_filing</div></td>
+          <td>OPEN</td>
+          <td>WAIT</td>
+          <td>298.32</td>
+          <td>298.32</td>
+          <td>+0.0%</td>
+        </tr><tr>
+          <td><div class="company">MSFT</div><div class="muted">sec_filing</div></td>
+          <td>OPEN</td>
+          <td>WAIT</td>
+          <td>390.54</td>
+          <td>390.54</td>
+          <td>+0.0%</td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">sec_filing</div></td>
+          <td>OPEN</td>
+          <td>WAIT</td>
+          <td>336.71</td>
+          <td>336.71</td>
+          <td>+0.0%</td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">sec_filing</div></td>
+          <td>OPEN</td>
+          <td>WAIT</td>
+          <td>336.71</td>
+          <td>336.71</td>
+          <td>+0.0%</td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">sec_filing</div></td>
+          <td>OPEN</td>
+          <td>WAIT</td>
+          <td>336.71</td>
+          <td>336.71</td>
+          <td>+0.0%</td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">sec_filing</div></td>
+          <td>OPEN</td>
+          <td>WAIT</td>
+          <td>336.71</td>
+          <td>336.71</td>
+          <td>+0.0%</td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">sec_filing</div></td>
+          <td>OPEN</td>
+          <td>WAIT</td>
+          <td>336.71</td>
+          <td>336.71</td>
+          <td>+0.0%</td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">sec_filing</div></td>
+          <td>OPEN</td>
+          <td>WAIT</td>
+          <td>336.71</td>
+          <td>336.71</td>
+          <td>+0.0%</td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">sec_filing</div></td>
+          <td>OPEN</td>
+          <td>WAIT</td>
+          <td>336.71</td>
+          <td>336.71</td>
+          <td>+0.0%</td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">sec_filing</div></td>
+          <td>OPEN</td>
+          <td>WAIT</td>
+          <td>336.71</td>
+          <td>336.71</td>
+          <td>+0.0%</td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">sec_filing</div></td>
+          <td>OPEN</td>
+          <td>WAIT</td>
+          <td>336.71</td>
+          <td>336.71</td>
+          <td>+0.0%</td>
+        </tr><tr>
+          <td><div class="company">GOOGL</div><div class="muted">sec_filing</div></td>
+          <td>OPEN</td>
+          <td>WAIT</td>
+          <td>336.71</td>
+          <td>336.71</td>
+          <td>+0.0%</td>
+        </tr><tr>
+          <td><div class="company">META</div><div class="muted">sec_filing</div></td>
+          <td>OPEN</td>
+          <td>WAIT</td>
+          <td>585.61</td>
+          <td>585.61</td>
+          <td>+0.0%</td>
+        </tr><tr>
+          <td><div class="company">META</div><div class="muted">sec_filing</div></td>
+          <td>OPEN</td>
+          <td>WAIT</td>
+          <td>585.61</td>
+          <td>585.61</td>
+          <td>+0.0%</td>
+        </tr><tr>
+          <td><div class="company">PLTR</div><div class="muted">sec_filing</div></td>
+          <td>OPEN</td>
+          <td>WAIT</td>
+          <td>123.00</td>
+          <td>123.00</td>
+          <td>+0.0%</td>
+        </tr><tr>
+          <td><div class="company">PLTR</div><div class="muted">sec_filing</div></td>
+          <td>OPEN</td>
+          <td>WAIT</td>
+          <td>123.00</td>
+          <td>123.00</td>
+          <td>+0.0%</td>
+        </tr><tr>
+          <td><div class="company">AMD</div><div class="muted">sec_filing</div></td>
+          <td>OPEN</td>
+          <td>WAIT</td>
+          <td>429.56</td>
+          <td>429.56</td>
+          <td>+0.0%</td>
+        </tr><tr>
+          <td><div class="company">ORCL</div><div class="muted">sec_filing</div></td>
+          <td>OPEN</td>
+          <td>WAIT</td>
+          <td>117.74</td>
+          <td>117.74</td>
+          <td>+0.0%</td>
+        </tr><tr>
+          <td><div class="company">CRM</div><div class="muted">sec_filing</div></td>
+          <td>OPEN</td>
+          <td>WAIT</td>
+          <td>188.38</td>
+          <td>188.38</td>
+          <td>+0.0%</td>
+        </tr><tr>
+          <td><div class="company">CRM</div><div class="muted">sec_filing</div></td>
+          <td>OPEN</td>
+          <td>WAIT</td>
+          <td>188.38</td>
+          <td>188.38</td>
+          <td>+0.0%</td>
+        </tr><tr>
+          <td><div class="company">XLE</div><div class="muted">sector_rotation</div></td>
+          <td>OPEN</td>
+          <td>LONG</td>
+          <td>58.36</td>
+          <td>58.65</td>
+          <td>+0.5%</td>
+        </tr><tr>
+          <td><div class="company">XLF</div><div class="muted">sector_rotation</div></td>
+          <td>OPEN</td>
+          <td>LONG</td>
+          <td>56.88</td>
+          <td>56.68</td>
+          <td>-0.4%</td>
+        </tr><tr>
           <td><div class="company">HOOD</div><div class="muted">unusual_volume</div></td>
           <td>OPEN</td>
           <td>LONG</td>
@@ -510,20 +685,6 @@
           <td>186.80</td>
           <td>+2.9%</td>
         </tr><tr>
-          <td><div class="company">XLE</div><div class="muted">sector_rotation</div></td>
-          <td>OPEN</td>
-          <td>LONG</td>
-          <td>58.36</td>
-          <td>58.92</td>
-          <td>+1.0%</td>
-        </tr><tr>
-          <td><div class="company">XLF</div><div class="muted">sector_rotation</div></td>
-          <td>OPEN</td>
-          <td>LONG</td>
-          <td>56.88</td>
-          <td>57.15</td>
-          <td>+0.5%</td>
-        </tr><tr>
           <td><div class="company">XLI</div><div class="muted">sector_rotation</div></td>
           <td>OPEN</td>
           <td>LONG</td>
@@ -537,171 +698,10 @@
           <td>163.40</td>
           <td>167.26</td>
           <td>+2.4%</td>
-        </tr><tr>
-          <td><div class="company">GOOGL</div><div class="muted">event_rumor</div></td>
-          <td>OPEN</td>
-          <td>WAIT</td>
-          <td>333.71</td>
-          <td>333.71</td>
-          <td>+0.0%</td>
-        </tr><tr>
-          <td><div class="company">SMCI</div><div class="muted">unusual_volume</div></td>
-          <td>OPEN</td>
-          <td>LONG</td>
-          <td>29.81</td>
-          <td>28.45</td>
-          <td>-4.6%</td>
-        </tr><tr>
-          <td><div class="company">TSLA</div><div class="muted">unusual_volume</div></td>
-          <td>OPEN</td>
-          <td>LONG</td>
-          <td>309.22</td>
-          <td>307.44</td>
-          <td>-0.6%</td>
-        </tr><tr>
-          <td><div class="company">GOOGL</div><div class="muted">sec_filing</div></td>
-          <td>OPEN</td>
-          <td>WAIT</td>
-          <td>333.71</td>
-          <td>333.71</td>
-          <td>+0.0%</td>
-        </tr><tr>
-          <td><div class="company">TSLA</div><div class="muted">sec_filing</div></td>
-          <td>OPEN</td>
-          <td>WAIT</td>
-          <td>307.44</td>
-          <td>307.44</td>
-          <td>+0.0%</td>
-        </tr><tr>
-          <td><div class="company">MSFT</div><div class="muted">sec_filing</div></td>
-          <td>OPEN</td>
-          <td>WAIT</td>
-          <td>393.35</td>
-          <td>393.35</td>
-          <td>+0.0%</td>
-        </tr><tr>
-          <td><div class="company">GOOGL</div><div class="muted">sec_filing</div></td>
-          <td>OPEN</td>
-          <td>WAIT</td>
-          <td>333.71</td>
-          <td>333.71</td>
-          <td>+0.0%</td>
-        </tr><tr>
-          <td><div class="company">GOOGL</div><div class="muted">sec_filing</div></td>
-          <td>OPEN</td>
-          <td>WAIT</td>
-          <td>333.71</td>
-          <td>333.71</td>
-          <td>+0.0%</td>
-        </tr><tr>
-          <td><div class="company">GOOGL</div><div class="muted">sec_filing</div></td>
-          <td>OPEN</td>
-          <td>WAIT</td>
-          <td>333.71</td>
-          <td>333.71</td>
-          <td>+0.0%</td>
-        </tr><tr>
-          <td><div class="company">GOOGL</div><div class="muted">sec_filing</div></td>
-          <td>OPEN</td>
-          <td>WAIT</td>
-          <td>333.71</td>
-          <td>333.71</td>
-          <td>+0.0%</td>
-        </tr><tr>
-          <td><div class="company">META</div><div class="muted">sec_filing</div></td>
-          <td>OPEN</td>
-          <td>WAIT</td>
-          <td>593.41</td>
-          <td>593.41</td>
-          <td>+0.0%</td>
-        </tr><tr>
-          <td><div class="company">META</div><div class="muted">sec_filing</div></td>
-          <td>OPEN</td>
-          <td>WAIT</td>
-          <td>593.41</td>
-          <td>593.41</td>
-          <td>+0.0%</td>
-        </tr><tr>
-          <td><div class="company">PLTR</div><div class="muted">sec_filing</div></td>
-          <td>OPEN</td>
-          <td>WAIT</td>
-          <td>123.53</td>
-          <td>123.53</td>
-          <td>+0.0%</td>
-        </tr><tr>
-          <td><div class="company">PLTR</div><div class="muted">sec_filing</div></td>
-          <td>OPEN</td>
-          <td>WAIT</td>
-          <td>123.53</td>
-          <td>123.53</td>
-          <td>+0.0%</td>
-        </tr><tr>
-          <td><div class="company">AMD</div><div class="muted">sec_filing</div></td>
-          <td>OPEN</td>
-          <td>WAIT</td>
-          <td>454.62</td>
-          <td>454.62</td>
-          <td>+0.0%</td>
-        </tr><tr>
-          <td><div class="company">AVGO</div><div class="muted">sec_filing</div></td>
-          <td>OPEN</td>
-          <td>WAIT</td>
-          <td>380.91</td>
-          <td>380.91</td>
-          <td>+0.0%</td>
-        </tr><tr>
-          <td><div class="company">AVGO</div><div class="muted">sec_filing</div></td>
-          <td>OPEN</td>
-          <td>WAIT</td>
-          <td>380.91</td>
-          <td>380.91</td>
-          <td>+0.0%</td>
-        </tr><tr>
-          <td><div class="company">ORCL</div><div class="muted">sec_filing</div></td>
-          <td>OPEN</td>
-          <td>WAIT</td>
-          <td>119.96</td>
-          <td>119.96</td>
-          <td>+0.0%</td>
-        </tr><tr>
-          <td><div class="company">CRM</div><div class="muted">sec_filing</div></td>
-          <td>OPEN</td>
-          <td>WAIT</td>
-          <td>181.50</td>
-          <td>181.50</td>
-          <td>+0.0%</td>
-        </tr><tr>
-          <td><div class="company">CRM</div><div class="muted">sec_filing</div></td>
-          <td>OPEN</td>
-          <td>WAIT</td>
-          <td>181.50</td>
-          <td>181.50</td>
-          <td>+0.0%</td>
-        </tr><tr>
-          <td><div class="company">SMH</div><div class="muted">unusual_volume</div></td>
-          <td>OPEN</td>
-          <td>LONG</td>
-          <td>548.55</td>
-          <td>529.60</td>
-          <td>-3.5%</td>
-        </tr><tr>
-          <td><div class="company">NVDA</div><div class="muted">unusual_volume</div></td>
-          <td>OPEN</td>
-          <td>LONG</td>
-          <td>196.51</td>
-          <td>197.23</td>
-          <td>+0.4%</td>
-        </tr><tr>
-          <td><div class="company">GOOGL</div><div class="muted">event_rumor</div></td>
-          <td>OPEN</td>
-          <td>WAIT</td>
-          <td>326.56</td>
-          <td>333.04</td>
-          <td>+2.0%</td>
         </tr></tbody></table></div>
     </div>
   </section>
-  <footer>Generado: 2026-07-29 15:28 UTC. No es asesoramiento financiero personalizado.</footer>
+  <footer>Generado: 2026-07-29 21:43 UTC. No es asesoramiento financiero personalizado.</footer>
 </div>
 </body>
 </html>
