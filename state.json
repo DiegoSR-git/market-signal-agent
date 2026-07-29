@@ -6,27 +6,54 @@
     "btc::SCORE_WATCH::\ud83d\udfe1 BTC WATCH": "2026-06-19T11:18:57.373865+00:00",
     "btc::none::\u26aa SIN SE\u00d1AL": "2026-06-19T10:54:58.472290+00:00",
     "btc::none::\ud83d\udfe1 BTC WATCH": "2026-06-19T10:51:22.737931+00:00",
-    "stocks::opportunities": "2026-07-27T10:05:20.801702+00:00"
+    "stocks::opportunities": "2026-07-29T21:01:49.348669+00:00"
   },
-  "last_run_utc": "2026-07-29T09:38:02.558151+00:00",
+  "last_run_utc": "2026-07-29T21:01:49.348696+00:00",
   "last_snapshot": {
     "btc": {
       "etf_total": null,
       "fear": 29,
       "ibit": null,
       "oi_24h": null,
-      "price": 56493.0,
+      "price": 55333.0,
       "regime": "RISK_ON",
-      "rsi": 51.45489341074593,
+      "rsi": 47.34514490697293,
       "score": 24,
-      "sma200": 61748.493471944676,
+      "sma200": 61744.314967435595,
       "status": "\u26aa SIN SE\u00d1AL",
-      "time_utc": "2026-07-29T08:52:31.449300+00:00"
+      "time_utc": "2026-07-29T21:01:46.229279+00:00"
     },
     "stocks": {
-      "opportunities": 0,
-      "time_utc": "2026-07-29T08:52:34.058606+00:00",
-      "top": []
+      "opportunities": 2,
+      "time_utc": "2026-07-29T21:01:48.977115+00:00",
+      "top": [
+        {
+          "dist200": 2.7313520357855836,
+          "drawdown": -11.315266928614399,
+          "price": 661.72998046875,
+          "reasons": [
+            "Drawdown 52s -11.3%",
+            "RSI diario 32.4",
+            "Precio sobre SMA200"
+          ],
+          "rsi": 32.404543681671726,
+          "score": 60,
+          "symbol": "QQQ"
+        },
+        {
+          "dist200": -3.4130402805533255,
+          "drawdown": -17.578820340584134,
+          "price": 226.64999389648438,
+          "reasons": [
+            "Drawdown 52s -17.6%",
+            "RSI diario 33.3",
+            "Cerca de SMA200 desde abajo"
+          ],
+          "rsi": 33.31371940079491,
+          "score": 60,
+          "symbol": "AMZN"
+        }
+      ]
     }
   },
   "orders": {
