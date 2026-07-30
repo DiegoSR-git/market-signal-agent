@@ -1,6 +1,20 @@
 [
   {
     "agents": [
+      "altcoin_fundamentals"
+    ],
+    "asset": "UNI",
+    "best_agent": "altcoin_fundamentals",
+    "best_score": 71.0,
+    "decision": "LOW_PRIORITY",
+    "direction_bias": "MIXED",
+    "score": 71.0,
+    "signals": 1,
+    "top_summary": "Uniswap muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
+    "updated_utc": "2026-07-30T15:31:00.121611+00:00"
+  },
+  {
+    "agents": [
       "cftc_positioning"
     ],
     "asset": "BTC",
@@ -11,7 +25,7 @@
     "score": 68.0,
     "signals": 1,
     "top_summary": "Conviene revisar el posicionamiento de Bitcoin Futures para extremos y cambios semanales.",
-    "updated_utc": "2026-07-29T21:43:32.418550+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121671+00:00"
   },
   {
     "agents": [
@@ -25,7 +39,7 @@
     "score": 68.0,
     "signals": 1,
     "top_summary": "Conviene revisar el posicionamiento de Dollar Index para extremos y cambios semanales.",
-    "updated_utc": "2026-07-29T21:43:32.418556+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121677+00:00"
   },
   {
     "agents": [
@@ -39,7 +53,7 @@
     "score": 68.0,
     "signals": 1,
     "top_summary": "Conviene revisar el posicionamiento de Crude Oil para extremos y cambios semanales.",
-    "updated_utc": "2026-07-29T21:43:32.418562+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121683+00:00"
   },
   {
     "agents": [
@@ -53,7 +67,7 @@
     "score": 68.0,
     "signals": 1,
     "top_summary": "Conviene revisar el posicionamiento de Gold para extremos y cambios semanales.",
-    "updated_utc": "2026-07-29T21:43:32.418567+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121688+00:00"
   },
   {
     "agents": [
@@ -67,7 +81,7 @@
     "score": 68.0,
     "signals": 1,
     "top_summary": "Conviene revisar el posicionamiento de Nasdaq 100 para extremos y cambios semanales.",
-    "updated_utc": "2026-07-29T21:43:32.418572+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121693+00:00"
   },
   {
     "agents": [
@@ -81,7 +95,7 @@
     "score": 68.0,
     "signals": 1,
     "top_summary": "Conviene revisar el posicionamiento de S&P 500 para extremos y cambios semanales.",
-    "updated_utc": "2026-07-29T21:43:32.418578+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121698+00:00"
   },
   {
     "agents": [
@@ -93,25 +107,25 @@
     "best_agent": "sec_filing",
     "best_score": 70.0,
     "decision": "NO_TRADE_INTRADIA",
-    "direction_bias": "LONG",
-    "score": 64.36,
-    "signals": 14,
+    "direction_bias": "MIXED",
+    "score": 65.06,
+    "signals": 16,
     "top_summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "updated_utc": "2026-07-29T21:43:32.418528+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121665+00:00"
   },
   {
     "agents": [
       "altcoin_fundamentals"
     ],
-    "asset": "UNI",
+    "asset": "AAVE",
     "best_agent": "altcoin_fundamentals",
-    "best_score": 64.0,
+    "best_score": 58.0,
     "decision": "LOW_PRIORITY",
     "direction_bias": "MIXED",
-    "score": 64.0,
+    "score": 58.0,
     "signals": 1,
-    "top_summary": "Uniswap muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
-    "updated_utc": "2026-07-29T21:43:32.418592+00:00"
+    "top_summary": "Aave muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
+    "updated_utc": "2026-07-30T15:31:00.121826+00:00"
   },
   {
     "agents": [
@@ -125,7 +139,7 @@
     "score": 58.0,
     "signals": 1,
     "top_summary": "Tendencia de liquidez de Ethereum segun DefiLlama. Vigilar TVL y confirmacion de actividad en la red.",
-    "updated_utc": "2026-07-29T21:43:32.418646+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121838+00:00"
   },
   {
     "agents": [
@@ -141,22 +155,7 @@
     "score": 56.4,
     "signals": 5,
     "top_summary": "Meta Platforms publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "updated_utc": "2026-07-29T21:43:32.418493+00:00"
-  },
-  {
-    "agents": [
-      "event_rumor",
-      "market_signal"
-    ],
-    "asset": "AMZN",
-    "best_agent": "market_signal",
-    "best_score": 60.0,
-    "decision": "LOW_PRIORITY",
-    "direction_bias": "MIXED",
-    "score": 54.5,
-    "signals": 2,
-    "top_summary": "Drawdown 52s -17.6%; RSI diario 33.3; Cerca de SMA200 desde abajo",
-    "updated_utc": "2026-07-29T21:43:32.418640+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121650+00:00"
   },
   {
     "agents": [
@@ -172,7 +171,7 @@
     "score": 54.0,
     "signals": 4,
     "top_summary": "Salesforce publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "updated_utc": "2026-07-29T21:43:32.418454+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121603+00:00"
   },
   {
     "agents": [
@@ -188,36 +187,7 @@
     "score": 53.75,
     "signals": 4,
     "top_summary": "Palantir publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "updated_utc": "2026-07-29T21:43:32.418483+00:00"
-  },
-  {
-    "agents": [
-      "sector_rotation",
-      "unusual_volume"
-    ],
-    "asset": "SPY",
-    "best_agent": "unusual_volume",
-    "best_score": 57.0,
-    "decision": "LOW_PRIORITY",
-    "direction_bias": "LONG",
-    "score": 53.0,
-    "signals": 2,
-    "top_summary": "S&P 500 ETF presenta volumen anormal o movimiento tecnico a vigilar.",
-    "updated_utc": "2026-07-29T21:43:32.418652+00:00"
-  },
-  {
-    "agents": [
-      "altcoin_fundamentals"
-    ],
-    "asset": "AAVE",
-    "best_agent": "altcoin_fundamentals",
-    "best_score": 53.0,
-    "decision": "LOW_PRIORITY",
-    "direction_bias": "MIXED",
-    "score": 53.0,
-    "signals": 1,
-    "top_summary": "Aave muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
-    "updated_utc": "2026-07-29T21:43:32.418682+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121635+00:00"
   },
   {
     "agents": [
@@ -232,24 +202,7 @@
     "score": 52.5,
     "signals": 2,
     "top_summary": "Financials muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "updated_utc": "2026-07-29T21:43:32.418428+00:00"
-  },
-  {
-    "agents": [
-      "event_rumor",
-      "intraday_cashout",
-      "sec_filing",
-      "unusual_volume"
-    ],
-    "asset": "MSFT",
-    "best_agent": "sec_filing",
-    "best_score": 70.0,
-    "decision": "NO_TRADE_INTRADIA",
-    "direction_bias": "LONG",
-    "score": 51.17,
-    "signals": 6,
-    "top_summary": "Microsoft publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "updated_utc": "2026-07-29T21:43:32.418542+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121576+00:00"
   },
   {
     "agents": [
@@ -264,7 +217,7 @@
     "score": 51.0,
     "signals": 2,
     "top_summary": "Energy muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "updated_utc": "2026-07-29T21:43:32.418442+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121590+00:00"
   },
   {
     "agents": [
@@ -280,7 +233,21 @@
     "score": 50.5,
     "signals": 4,
     "top_summary": "Tesla publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
-    "updated_utc": "2026-07-29T21:43:32.418586+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121706+00:00"
+  },
+  {
+    "agents": [
+      "altcoin_fundamentals"
+    ],
+    "asset": "ETH",
+    "best_agent": "altcoin_fundamentals",
+    "best_score": 50.0,
+    "decision": "LOW_PRIORITY",
+    "direction_bias": "MIXED",
+    "score": 50.0,
+    "signals": 1,
+    "top_summary": "Ethereum muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
+    "updated_utc": "2026-07-30T15:31:00.121874+00:00"
   },
   {
     "agents": [
@@ -294,7 +261,7 @@
     "score": 50.0,
     "signals": 1,
     "top_summary": "Tendencia de liquidez de Optimism segun DefiLlama. Vigilar TVL y confirmacion de actividad en la red.",
-    "updated_utc": "2026-07-29T21:43:32.418701+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121885+00:00"
   },
   {
     "agents": [
@@ -308,7 +275,7 @@
     "score": 50.0,
     "signals": 1,
     "top_summary": "Tendencia de liquidez de Solana segun DefiLlama. Vigilar TVL y confirmacion de actividad en la red.",
-    "updated_utc": "2026-07-29T21:43:32.418706+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121890+00:00"
   },
   {
     "agents": [
@@ -322,7 +289,7 @@
     "score": 50.0,
     "signals": 1,
     "top_summary": "Tendencia de liquidez de Arbitrum segun DefiLlama. Vigilar TVL y confirmacion de actividad en la red.",
-    "updated_utc": "2026-07-29T21:43:32.418715+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121895+00:00"
   },
   {
     "agents": [
@@ -336,21 +303,7 @@
     "score": 50.0,
     "signals": 1,
     "top_summary": "Tendencia de liquidez de BSC segun DefiLlama. Vigilar TVL y confirmacion de actividad en la red.",
-    "updated_utc": "2026-07-29T21:43:32.418720+00:00"
-  },
-  {
-    "agents": [
-      "defi_liquidity"
-    ],
-    "asset": "AVALANCHE",
-    "best_agent": "defi_liquidity",
-    "best_score": 50.0,
-    "decision": "LOW_PRIORITY",
-    "direction_bias": "MIXED",
-    "score": 50.0,
-    "signals": 1,
-    "top_summary": "Tendencia de liquidez de Avalanche segun DefiLlama. Vigilar TVL y confirmacion de actividad en la red.",
-    "updated_utc": "2026-07-29T21:43:32.418725+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121900+00:00"
   },
   {
     "agents": [
@@ -364,7 +317,21 @@
     "score": 50.0,
     "signals": 1,
     "top_summary": "Tendencia de liquidez de Base segun DefiLlama. Vigilar TVL y confirmacion de actividad en la red.",
-    "updated_utc": "2026-07-29T21:43:32.418731+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121905+00:00"
+  },
+  {
+    "agents": [
+      "defi_liquidity"
+    ],
+    "asset": "AVALANCHE",
+    "best_agent": "defi_liquidity",
+    "best_score": 50.0,
+    "decision": "LOW_PRIORITY",
+    "direction_bias": "MIXED",
+    "score": 50.0,
+    "signals": 1,
+    "top_summary": "Tendencia de liquidez de Avalanche segun DefiLlama. Vigilar TVL y confirmacion de actividad en la red.",
+    "updated_utc": "2026-07-30T15:31:00.121911+00:00"
   },
   {
     "agents": [
@@ -381,21 +348,7 @@
     "score": 49.25,
     "signals": 4,
     "top_summary": "Advanced Micro Devices publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "updated_utc": "2026-07-29T21:43:32.418474+00:00"
-  },
-  {
-    "agents": [
-      "altcoin_fundamentals"
-    ],
-    "asset": "AVAX",
-    "best_agent": "altcoin_fundamentals",
-    "best_score": 49.0,
-    "decision": "LOW_PRIORITY",
-    "direction_bias": "MIXED",
-    "score": 49.0,
-    "signals": 1,
-    "top_summary": "Avalanche muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
-    "updated_utc": "2026-07-29T21:43:32.418736+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121627+00:00"
   },
   {
     "agents": [
@@ -409,7 +362,7 @@
     "score": 49.0,
     "signals": 1,
     "top_summary": "Gold muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "updated_utc": "2026-07-29T21:43:32.418741+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121919+00:00"
   },
   {
     "agents": [
@@ -423,37 +376,82 @@
     "score": 49.0,
     "signals": 1,
     "top_summary": "Consumer staples muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "updated_utc": "2026-07-29T21:43:32.418747+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121925+00:00"
+  },
+  {
+    "agents": [
+      "event_rumor",
+      "intraday_cashout",
+      "sec_filing",
+      "unusual_volume"
+    ],
+    "asset": "MSFT",
+    "best_agent": "sec_filing",
+    "best_score": 67.0,
+    "decision": "NO_TRADE_INTRADIA",
+    "direction_bias": "LONG",
+    "score": 47.6,
+    "signals": 5,
+    "top_summary": "Microsoft publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
+    "updated_utc": "2026-07-30T15:31:00.121714+00:00"
   },
   {
     "agents": [
       "altcoin_fundamentals"
     ],
-    "asset": "ETH",
+    "asset": "LINK",
     "best_agent": "altcoin_fundamentals",
     "best_score": 46.0,
     "decision": "LOW_PRIORITY",
     "direction_bias": "MIXED",
     "score": 46.0,
     "signals": 1,
-    "top_summary": "Ethereum muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
-    "updated_utc": "2026-07-29T21:43:32.418754+00:00"
+    "top_summary": "Chainlink muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
+    "updated_utc": "2026-07-30T15:31:00.121930+00:00"
+  },
+  {
+    "agents": [
+      "altcoin_fundamentals"
+    ],
+    "asset": "ARB",
+    "best_agent": "altcoin_fundamentals",
+    "best_score": 44.0,
+    "decision": "LOW_PRIORITY",
+    "direction_bias": "MIXED",
+    "score": 44.0,
+    "signals": 1,
+    "top_summary": "Arbitrum muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
+    "updated_utc": "2026-07-30T15:31:00.121935+00:00"
   },
   {
     "agents": [
       "event_rumor",
       "intraday_cashout",
-      "sec_filing"
+      "market_signal"
     ],
-    "asset": "ORCL",
-    "best_agent": "sec_filing",
-    "best_score": 70.0,
+    "asset": "AMZN",
+    "best_agent": "market_signal",
+    "best_score": 60.0,
     "decision": "NO_TRADE_INTRADIA",
     "direction_bias": "MIXED",
-    "score": 44.0,
+    "score": 43.0,
     "signals": 3,
-    "top_summary": "Oracle publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "updated_utc": "2026-07-29T21:43:32.418464+00:00"
+    "top_summary": "Drawdown 52s -17.6%; RSI diario 33.3; Cerca de SMA200 desde abajo",
+    "updated_utc": "2026-07-30T15:31:00.121820+00:00"
+  },
+  {
+    "agents": [
+      "altcoin_fundamentals"
+    ],
+    "asset": "OP",
+    "best_agent": "altcoin_fundamentals",
+    "best_score": 43.0,
+    "decision": "LOW_PRIORITY",
+    "direction_bias": "MIXED",
+    "score": 43.0,
+    "signals": 1,
+    "top_summary": "Optimism muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
+    "updated_utc": "2026-07-30T15:31:00.121942+00:00"
   },
   {
     "agents": [
@@ -467,22 +465,39 @@
     "score": 43.0,
     "signals": 1,
     "top_summary": "Utilities muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "updated_utc": "2026-07-29T21:43:32.418760+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121947+00:00"
   },
   {
     "agents": [
       "event_rumor",
+      "intraday_cashout",
+      "sec_filing"
+    ],
+    "asset": "ORCL",
+    "best_agent": "sec_filing",
+    "best_score": 70.0,
+    "decision": "NO_TRADE_INTRADIA",
+    "direction_bias": "MIXED",
+    "score": 42.67,
+    "signals": 3,
+    "top_summary": "Oracle publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
+    "updated_utc": "2026-07-30T15:31:00.121619+00:00"
+  },
+  {
+    "agents": [
+      "intraday_cashout",
+      "sector_rotation",
       "unusual_volume"
     ],
-    "asset": "AVGO",
+    "asset": "SPY",
     "best_agent": "unusual_volume",
-    "best_score": 55.0,
-    "decision": "LOW_PRIORITY",
+    "best_score": 58.0,
+    "decision": "NO_TRADE_INTRADIA",
     "direction_bias": "LONG",
-    "score": 42.5,
-    "signals": 2,
-    "top_summary": "Broadcom presenta volumen anormal o movimiento tecnico a vigilar.",
-    "updated_utc": "2026-07-29T21:43:32.418670+00:00"
+    "score": 42.33,
+    "signals": 3,
+    "top_summary": "S&P 500 ETF presenta volumen anormal o movimiento tecnico a vigilar.",
+    "updated_utc": "2026-07-30T15:31:00.121832+00:00"
   },
   {
     "agents": [
@@ -493,13 +508,27 @@
     ],
     "asset": "QQQ",
     "best_agent": "unusual_volume",
-    "best_score": 60.0,
+    "best_score": 62.0,
     "decision": "NO_TRADE_INTRADIA",
     "direction_bias": "LONG",
-    "score": 41.75,
+    "score": 42.25,
     "signals": 4,
     "top_summary": "Nasdaq 100 ETF presenta volumen anormal o movimiento tecnico a vigilar.",
-    "updated_utc": "2026-07-29T21:43:32.418634+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121785+00:00"
+  },
+  {
+    "agents": [
+      "altcoin_fundamentals"
+    ],
+    "asset": "AVAX",
+    "best_agent": "altcoin_fundamentals",
+    "best_score": 42.0,
+    "decision": "LOW_PRIORITY",
+    "direction_bias": "MIXED",
+    "score": 42.0,
+    "signals": 1,
+    "top_summary": "Avalanche muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
+    "updated_utc": "2026-07-30T15:31:00.121952+00:00"
   },
   {
     "agents": [
@@ -514,7 +543,7 @@
     "score": 41.0,
     "signals": 2,
     "top_summary": "Robinhood presenta volumen anormal o movimiento tecnico a vigilar.",
-    "updated_utc": "2026-07-29T21:43:32.418606+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121792+00:00"
   },
   {
     "agents": [
@@ -529,21 +558,37 @@
     "score": 41.0,
     "signals": 2,
     "top_summary": "Super Micro Computer presenta volumen anormal o movimiento tecnico a vigilar.",
-    "updated_utc": "2026-07-29T21:43:32.418613+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121798+00:00"
   },
   {
     "agents": [
       "altcoin_fundamentals"
     ],
-    "asset": "LINK",
+    "asset": "SOL",
     "best_agent": "altcoin_fundamentals",
-    "best_score": 41.0,
+    "best_score": 40.0,
     "decision": "LOW_PRIORITY",
     "direction_bias": "MIXED",
-    "score": 41.0,
+    "score": 40.0,
     "signals": 1,
-    "top_summary": "Chainlink muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
-    "updated_utc": "2026-07-29T21:43:32.418765+00:00"
+    "top_summary": "Solana muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
+    "updated_utc": "2026-07-30T15:31:00.121960+00:00"
+  },
+  {
+    "agents": [
+      "event_rumor",
+      "intraday_cashout",
+      "unusual_volume"
+    ],
+    "asset": "AAPL",
+    "best_agent": "unusual_volume",
+    "best_score": 53.0,
+    "decision": "NO_TRADE_INTRADIA",
+    "direction_bias": "LONG",
+    "score": 38.67,
+    "signals": 3,
+    "top_summary": "Apple presenta volumen anormal o movimiento tecnico a vigilar.",
+    "updated_utc": "2026-07-30T15:31:00.121869+00:00"
   },
   {
     "agents": [
@@ -558,21 +603,7 @@
     "score": 38.5,
     "signals": 2,
     "top_summary": "Health care muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "updated_utc": "2026-07-29T21:43:32.418658+00:00"
-  },
-  {
-    "agents": [
-      "altcoin_fundamentals"
-    ],
-    "asset": "ARB",
-    "best_agent": "altcoin_fundamentals",
-    "best_score": 38.0,
-    "decision": "LOW_PRIORITY",
-    "direction_bias": "MIXED",
-    "score": 38.0,
-    "signals": 1,
-    "top_summary": "Arbitrum muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
-    "updated_utc": "2026-07-29T21:43:32.418770+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121844+00:00"
   },
   {
     "agents": [
@@ -587,7 +618,7 @@
     "score": 37.5,
     "signals": 2,
     "top_summary": "MicroStrategy presenta volumen anormal o movimiento tecnico a vigilar.",
-    "updated_utc": "2026-07-29T21:43:32.418665+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121850+00:00"
   },
   {
     "agents": [
@@ -602,21 +633,21 @@
     "score": 37.5,
     "signals": 2,
     "top_summary": "Industrials muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "updated_utc": "2026-07-29T21:43:32.418676+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121862+00:00"
   },
   {
     "agents": [
       "altcoin_fundamentals"
     ],
-    "asset": "OP",
+    "asset": "NEAR",
     "best_agent": "altcoin_fundamentals",
     "best_score": 37.0,
     "decision": "LOW_PRIORITY",
     "direction_bias": "MIXED",
     "score": 37.0,
     "signals": 1,
-    "top_summary": "Optimism muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
-    "updated_utc": "2026-07-29T21:43:32.418776+00:00"
+    "top_summary": "NEAR Protocol muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
+    "updated_utc": "2026-07-30T15:31:00.121965+00:00"
   },
   {
     "agents": [
@@ -632,21 +663,7 @@
     "score": 36.0,
     "signals": 3,
     "top_summary": "Arm Holdings presenta volumen anormal o movimiento tecnico a vigilar.",
-    "updated_utc": "2026-07-29T21:43:32.418619+00:00"
-  },
-  {
-    "agents": [
-      "altcoin_fundamentals"
-    ],
-    "asset": "SOL",
-    "best_agent": "altcoin_fundamentals",
-    "best_score": 36.0,
-    "decision": "LOW_PRIORITY",
-    "direction_bias": "MIXED",
-    "score": 36.0,
-    "signals": 1,
-    "top_summary": "Solana muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
-    "updated_utc": "2026-07-29T21:43:32.418830+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121805+00:00"
   },
   {
     "agents": [
@@ -660,7 +677,7 @@
     "score": 36.0,
     "signals": 1,
     "top_summary": "Small caps muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "updated_utc": "2026-07-29T21:43:32.418838+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121971+00:00"
   },
   {
     "agents": [
@@ -676,7 +693,7 @@
     "score": 35.67,
     "signals": 3,
     "top_summary": "Nvidia presenta volumen anormal o movimiento tecnico a vigilar.",
-    "updated_utc": "2026-07-29T21:43:32.418626+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121813+00:00"
   },
   {
     "agents": [
@@ -684,15 +701,15 @@
       "intraday_cashout",
       "unusual_volume"
     ],
-    "asset": "AAPL",
+    "asset": "AVGO",
     "best_agent": "unusual_volume",
-    "best_score": 51.0,
+    "best_score": 55.0,
     "decision": "NO_TRADE_INTRADIA",
     "direction_bias": "LONG",
-    "score": 35.33,
+    "score": 35.0,
     "signals": 3,
-    "top_summary": "Apple presenta volumen anormal o movimiento tecnico a vigilar.",
-    "updated_utc": "2026-07-29T21:43:32.418689+00:00"
+    "top_summary": "Broadcom presenta volumen anormal o movimiento tecnico a vigilar.",
+    "updated_utc": "2026-07-30T15:31:00.121856+00:00"
   },
   {
     "agents": [
@@ -707,7 +724,7 @@
     "score": 35.0,
     "signals": 2,
     "top_summary": "Coinbase presenta volumen anormal o movimiento tecnico a vigilar.",
-    "updated_utc": "2026-07-29T21:43:32.418695+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121880+00:00"
   },
   {
     "agents": [
@@ -721,21 +738,7 @@
     "score": 35.0,
     "signals": 1,
     "top_summary": "Conviene revisar el posicionamiento de 10Y Treasuries para extremos y cambios semanales.",
-    "updated_utc": "2026-07-29T21:43:32.418843+00:00"
-  },
-  {
-    "agents": [
-      "altcoin_fundamentals"
-    ],
-    "asset": "NEAR",
-    "best_agent": "altcoin_fundamentals",
-    "best_score": 33.0,
-    "decision": "LOW_PRIORITY",
-    "direction_bias": "MIXED",
-    "score": 33.0,
-    "signals": 1,
-    "top_summary": "NEAR Protocol muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
-    "updated_utc": "2026-07-29T21:43:32.418849+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121976+00:00"
   },
   {
     "agents": [
@@ -749,7 +752,7 @@
     "score": 28.0,
     "signals": 1,
     "top_summary": "Long bonds muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "updated_utc": "2026-07-29T21:43:32.418854+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121981+00:00"
   },
   {
     "agents": [
@@ -763,7 +766,7 @@
     "score": 28.0,
     "signals": 1,
     "top_summary": "Technology muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "updated_utc": "2026-07-29T21:43:32.418859+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121986+00:00"
   },
   {
     "agents": [
@@ -779,7 +782,7 @@
     "score": 27.33,
     "signals": 3,
     "top_summary": "Semiconductor ETF presenta volumen anormal o movimiento tecnico a vigilar.",
-    "updated_utc": "2026-07-29T21:43:32.418599+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121721+00:00"
   },
   {
     "agents": [
@@ -793,7 +796,7 @@
     "score": 26.0,
     "signals": 1,
     "top_summary": "Consumer discretionary muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "updated_utc": "2026-07-29T21:43:32.418865+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121991+00:00"
   },
   {
     "agents": [
@@ -807,7 +810,7 @@
     "score": 20.0,
     "signals": 1,
     "top_summary": "Sin resumen IA concluyente.",
-    "updated_utc": "2026-07-29T21:43:32.418873+00:00"
+    "updated_utc": "2026-07-30T15:31:00.121997+00:00"
   },
   {
     "agents": [
@@ -821,6 +824,6 @@
     "score": 20.0,
     "signals": 1,
     "top_summary": "La cesta de proxies apunta a un regimen mixed. Vigilar confirmacion en credito, duracion y dolar.",
-    "updated_utc": "2026-07-29T21:43:32.418879+00:00"
+    "updated_utc": "2026-07-30T15:31:00.122002+00:00"
   }
 ]
