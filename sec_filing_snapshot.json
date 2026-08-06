@@ -1,6 +1,46 @@
 [
   {
     "agent": "sec_filing",
+    "asset": "MSFT",
+    "level": "medio",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "filing_date": "2026-08-05",
+      "form": "4",
+      "form4_details": {
+        "avg_price": null,
+        "purchase_count": 0,
+        "sale_count": 0,
+        "shares": 0
+      },
+      "perf_20d": 27.161265746299044,
+      "perf_5d": 24.81691524288683,
+      "perf_60d": 17.426285697818344,
+      "price": 487.4599914550781,
+      "rsi": 76.09243688677253,
+      "sma20": 412.3160003662109,
+      "sma50": 403.58899780273435,
+      "status": "ok",
+      "symbol": "MSFT",
+      "volume": 33273800.0,
+      "volume_20d_avg": 39299220.0,
+      "volume_ratio": 0.8466783819119056
+    },
+    "reasons": [
+      "formulario SEC 4",
+      "presentado 2026-08-05",
+      "operacion declarada por insider",
+      "precio reaccionando recientemente"
+    ],
+    "score": 78,
+    "source": "https://www.sec.gov/Archives/edgar/data/789019/000078901926000141/xslF345X06/form4.xml",
+    "summary": "Microsoft publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
+    "time_utc": "2026-08-06T09:08:08.184688+00:00",
+    "title": "MSFT presentacion SEC 4"
+  },
+  {
+    "agent": "sec_filing",
     "asset": "AMZN",
     "level": "medio",
     "metrics": {
@@ -23,9 +63,9 @@
       "sma50": 247.315,
       "status": "ok",
       "symbol": "AMZN",
-      "volume": 42366662.0,
-      "volume_20d_avg": 50184938.1,
-      "volume_ratio": 0.8442107055224205
+      "volume": 44969500.0,
+      "volume_20d_avg": 50315080.0,
+      "volume_ratio": 0.8937578952473095
     },
     "reasons": [
       "formulario SEC 4",
@@ -36,7 +76,7 @@
     "score": 78,
     "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000030/xslF345X06/wk-form4_1785962562.xml",
     "summary": "Amazon publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:57.893261+00:00",
+    "time_utc": "2026-08-06T09:08:08.845261+00:00",
     "title": "AMZN presentacion SEC 4"
   },
   {
@@ -63,9 +103,9 @@
       "sma50": 247.315,
       "status": "ok",
       "symbol": "AMZN",
-      "volume": 42366662.0,
-      "volume_20d_avg": 50184938.1,
-      "volume_ratio": 0.8442107055224205
+      "volume": 44969500.0,
+      "volume_20d_avg": 50315080.0,
+      "volume_ratio": 0.8937578952473095
     },
     "reasons": [
       "formulario SEC 4",
@@ -76,7 +116,7 @@
     "score": 78,
     "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000028/xslF345X06/wk-form4_1785962062.xml",
     "summary": "Amazon publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:57.904510+00:00",
+    "time_utc": "2026-08-06T09:08:08.871633+00:00",
     "title": "AMZN presentacion SEC 4"
   },
   {
@@ -103,9 +143,9 @@
       "sma50": 357.81879943847656,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 46331184.0,
-      "volume_20d_avg": 32398159.2,
-      "volume_ratio": 1.4300560631852195
+      "volume": 46705600.0,
+      "volume_20d_avg": 32416880.0,
+      "volume_ratio": 1.440780235482255
     },
     "reasons": [
       "formulario SEC 4",
@@ -116,7 +156,7 @@
     "score": 78,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526326284/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:58.221323+00:00",
+    "time_utc": "2026-08-06T09:08:09.194600+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -143,9 +183,9 @@
       "sma50": 357.81879943847656,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 46331184.0,
-      "volume_20d_avg": 32398159.2,
-      "volume_ratio": 1.4300560631852195
+      "volume": 46705600.0,
+      "volume_20d_avg": 32416880.0,
+      "volume_ratio": 1.440780235482255
     },
     "reasons": [
       "formulario SEC 4",
@@ -156,7 +196,7 @@
     "score": 78,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000116840426000041/xslF345X06/form4-07292026_110704.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:58.237782+00:00",
+    "time_utc": "2026-08-06T09:08:09.210511+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -168,12 +208,7 @@
       "breakout_50d": false,
       "filing_date": "2026-07-29",
       "form": "4",
-      "form4_details": {
-        "avg_price": null,
-        "purchase_count": 0,
-        "sale_count": 0,
-        "shares": 0
-      },
+      "form4_details": {},
       "perf_20d": 0.14090938028457067,
       "perf_5d": 7.638621327972839,
       "perf_60d": -9.573352366718968,
@@ -183,9 +218,9 @@
       "sma50": 357.81879943847656,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 46331184.0,
-      "volume_20d_avg": 32398159.2,
-      "volume_ratio": 1.4300560631852195
+      "volume": 46705600.0,
+      "volume_20d_avg": 32416880.0,
+      "volume_ratio": 1.440780235482255
     },
     "reasons": [
       "formulario SEC 4",
@@ -196,7 +231,7 @@
     "score": 78,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526324312/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:58.253055+00:00",
+    "time_utc": "2026-08-06T09:08:09.210586+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -218,9 +253,9 @@
       "sma50": 357.81879943847656,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 46331184.0,
-      "volume_20d_avg": 32398159.2,
-      "volume_ratio": 1.4300560631852195
+      "volume": 46705600.0,
+      "volume_20d_avg": 32416880.0,
+      "volume_ratio": 1.440780235482255
     },
     "reasons": [
       "formulario SEC 4",
@@ -231,7 +266,7 @@
     "score": 78,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526321684/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:58.253127+00:00",
+    "time_utc": "2026-08-06T09:08:09.210617+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -253,9 +288,9 @@
       "sma50": 357.81879943847656,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 46331184.0,
-      "volume_20d_avg": 32398159.2,
-      "volume_ratio": 1.4300560631852195
+      "volume": 46705600.0,
+      "volume_20d_avg": 32416880.0,
+      "volume_ratio": 1.440780235482255
     },
     "reasons": [
       "formulario SEC 4",
@@ -266,7 +301,7 @@
     "score": 78,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526321683/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:58.253156+00:00",
+    "time_utc": "2026-08-06T09:08:09.210635+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -288,9 +323,9 @@
       "sma50": 357.81879943847656,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 46331184.0,
-      "volume_20d_avg": 32398159.2,
-      "volume_ratio": 1.4300560631852195
+      "volume": 46705600.0,
+      "volume_20d_avg": 32416880.0,
+      "volume_ratio": 1.440780235482255
     },
     "reasons": [
       "formulario SEC 4",
@@ -301,7 +336,7 @@
     "score": 78,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526321678/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:58.253182+00:00",
+    "time_utc": "2026-08-06T09:08:09.210651+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -323,9 +358,9 @@
       "sma50": 357.81879943847656,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 46331184.0,
-      "volume_20d_avg": 32398159.2,
-      "volume_ratio": 1.4300560631852195
+      "volume": 46705600.0,
+      "volume_20d_avg": 32416880.0,
+      "volume_ratio": 1.440780235482255
     },
     "reasons": [
       "formulario SEC 4",
@@ -336,7 +371,7 @@
     "score": 78,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526321676/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:58.253198+00:00",
+    "time_utc": "2026-08-06T09:08:09.210666+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -358,9 +393,9 @@
       "sma50": 357.81879943847656,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 46331184.0,
-      "volume_20d_avg": 32398159.2,
-      "volume_ratio": 1.4300560631852195
+      "volume": 46705600.0,
+      "volume_20d_avg": 32416880.0,
+      "volume_ratio": 1.440780235482255
     },
     "reasons": [
       "formulario SEC 4",
@@ -371,7 +406,7 @@
     "score": 78,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526321674/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:58.253210+00:00",
+    "time_utc": "2026-08-06T09:08:09.210682+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -393,9 +428,9 @@
       "sma50": 357.81879943847656,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 46331184.0,
-      "volume_20d_avg": 32398159.2,
-      "volume_ratio": 1.4300560631852195
+      "volume": 46705600.0,
+      "volume_20d_avg": 32416880.0,
+      "volume_ratio": 1.440780235482255
     },
     "reasons": [
       "formulario SEC 4",
@@ -406,7 +441,7 @@
     "score": 78,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526321672/xslF345X06/ownership.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:58.253222+00:00",
+    "time_utc": "2026-08-06T09:08:09.210697+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -428,9 +463,9 @@
       "sma50": 357.81879943847656,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 46331184.0,
-      "volume_20d_avg": 32398159.2,
-      "volume_ratio": 1.4300560631852195
+      "volume": 46705600.0,
+      "volume_20d_avg": 32416880.0,
+      "volume_ratio": 1.440780235482255
     },
     "reasons": [
       "formulario SEC 4",
@@ -441,7 +476,7 @@
     "score": 78,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000116840426000039/xslF345X06/form4-07272026_100703.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:58.253233+00:00",
+    "time_utc": "2026-08-06T09:08:09.210715+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -463,9 +498,9 @@
       "sma50": 357.81879943847656,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 46331184.0,
-      "volume_20d_avg": 32398159.2,
-      "volume_ratio": 1.4300560631852195
+      "volume": 46705600.0,
+      "volume_20d_avg": 32416880.0,
+      "volume_ratio": 1.440780235482255
     },
     "reasons": [
       "formulario SEC 4",
@@ -476,7 +511,7 @@
     "score": 78,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000116840426000036/xslF345X06/form4-07232026_080714.xml",
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:58.253245+00:00",
+    "time_utc": "2026-08-06T09:08:09.210729+00:00",
     "title": "GOOGL presentacion SEC 4"
   },
   {
@@ -498,9 +533,9 @@
       "sma50": 131.42419967651367,
       "status": "ok",
       "symbol": "PLTR",
-      "volume": 61261948.0,
-      "volume_20d_avg": 43216307.4,
-      "volume_ratio": 1.4175655368463989
+      "volume": 63313300.0,
+      "volume_20d_avg": 43318875.0,
+      "volume_ratio": 1.4615638102328372
     },
     "reasons": [
       "formulario SEC 4",
@@ -511,7 +546,7 @@
     "score": 78,
     "source": "https://www.sec.gov/Archives/edgar/data/1321655/000170518926000013/xslF345X06/wk-form4_1784937605.xml",
     "summary": "Palantir publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:59.194238+00:00",
+    "time_utc": "2026-08-06T09:08:10.136249+00:00",
     "title": "PLTR presentacion SEC 4"
   },
   {
@@ -533,9 +568,9 @@
       "sma50": 162.1586003112793,
       "status": "ok",
       "symbol": "ORCL",
-      "volume": 18318870.0,
-      "volume_20d_avg": 38288438.5,
-      "volume_ratio": 0.4784439041566033
+      "volume": 23398500.0,
+      "volume_20d_avg": 38542420.0,
+      "volume_ratio": 0.607084350178323
     },
     "reasons": [
       "formulario SEC 4",
@@ -546,7 +581,7 @@
     "score": 78,
     "source": "https://www.sec.gov/Archives/edgar/data/1341439/000134143926000066/xslF345X06/form4.xml",
     "summary": "Oracle publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:35:00.134194+00:00",
+    "time_utc": "2026-08-06T09:08:11.128242+00:00",
     "title": "ORCL presentacion SEC 4"
   },
   {
@@ -568,9 +603,9 @@
       "sma50": 403.58899780273435,
       "status": "ok",
       "symbol": "MSFT",
-      "volume": 30476807.0,
-      "volume_20d_avg": 39159370.35,
-      "volume_ratio": 0.7782762268035293
+      "volume": 33273800.0,
+      "volume_20d_avg": 39299220.0,
+      "volume_ratio": 0.8466783819119056
     },
     "reasons": [
       "formulario SEC 8-K",
@@ -581,7 +616,7 @@
     "score": 75,
     "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323632/msft-20260729.htm",
     "summary": "Microsoft publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:57.226058+00:00",
+    "time_utc": "2026-08-06T09:08:08.184785+00:00",
     "title": "MSFT presentacion SEC 8-K"
   },
   {
@@ -603,9 +638,9 @@
       "sma50": 247.315,
       "status": "ok",
       "symbol": "AMZN",
-      "volume": 42366662.0,
-      "volume_20d_avg": 50184938.1,
-      "volume_ratio": 0.8442107055224205
+      "volume": 44969500.0,
+      "volume_20d_avg": 50315080.0,
+      "volume_ratio": 0.8937578952473095
     },
     "reasons": [
       "formulario SEC 8-K",
@@ -616,78 +651,8 @@
     "score": 75,
     "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260730.htm",
     "summary": "Amazon publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:57.904619+00:00",
+    "time_utc": "2026-08-06T09:08:08.871747+00:00",
     "title": "AMZN presentacion SEC 8-K"
-  },
-  {
-    "agent": "sec_filing",
-    "asset": "GOOGL",
-    "level": "medio",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "filing_date": "2026-07-22",
-      "form": "8-K",
-      "form4_details": {},
-      "perf_20d": 0.14090938028457067,
-      "perf_5d": 7.638621327972839,
-      "perf_60d": -9.573352366718968,
-      "price": 362.42999267578125,
-      "rsi": 54.58803460038013,
-      "sma20": 348.96299896240237,
-      "sma50": 357.81879943847656,
-      "status": "ok",
-      "symbol": "GOOGL",
-      "volume": 46331184.0,
-      "volume_20d_avg": 32398159.2,
-      "volume_ratio": 1.4300560631852195
-    },
-    "reasons": [
-      "formulario SEC 8-K",
-      "presentado 2026-07-22",
-      "hecho relevante comunicado",
-      "precio reaccionando recientemente"
-    ],
-    "score": 75,
-    "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/goog-20260722.htm",
-    "summary": "Alphabet publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:58.253276+00:00",
-    "title": "GOOGL presentacion SEC 8-K"
-  },
-  {
-    "agent": "sec_filing",
-    "asset": "TSLA",
-    "level": "medio",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "filing_date": "2026-07-22",
-      "form": "8-K",
-      "form4_details": {},
-      "perf_20d": -18.400753746856356,
-      "perf_5d": 7.786933460183021,
-      "perf_60d": -24.932885908431025,
-      "price": 321.54998779296875,
-      "rsi": 37.53701151039839,
-      "sma20": 351.64299926757815,
-      "sma50": 384.9577984619141,
-      "status": "ok",
-      "symbol": "TSLA",
-      "volume": 27506311.0,
-      "volume_20d_avg": 39662190.55,
-      "volume_ratio": 0.6935146702329582
-    },
-    "reasons": [
-      "formulario SEC 8-K",
-      "presentado 2026-07-22",
-      "hecho relevante comunicado",
-      "precio reaccionando recientemente"
-    ],
-    "score": 75,
-    "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049213/tsla-20260722.htm",
-    "summary": "Tesla publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:58.892681+00:00",
-    "title": "TSLA presentacion SEC 8-K"
   },
   {
     "agent": "sec_filing",
@@ -708,9 +673,9 @@
       "sma50": 131.42419967651367,
       "status": "ok",
       "symbol": "PLTR",
-      "volume": 61261948.0,
-      "volume_20d_avg": 43216307.4,
-      "volume_ratio": 1.4175655368463989
+      "volume": 63313300.0,
+      "volume_20d_avg": 43318875.0,
+      "volume_ratio": 1.4615638102328372
     },
     "reasons": [
       "formulario SEC 8-K",
@@ -721,7 +686,7 @@
     "score": 75,
     "source": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000039/pltr-20260803.htm",
     "summary": "Palantir publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:59.194223+00:00",
+    "time_utc": "2026-08-06T09:08:10.136234+00:00",
     "title": "PLTR presentacion SEC 8-K"
   },
   {
@@ -743,9 +708,9 @@
       "sma50": 514.6194012451172,
       "status": "ok",
       "symbol": "AMD",
-      "volume": 47435209.0,
-      "volume_20d_avg": 29735615.45,
-      "volume_ratio": 1.5952321242437912
+      "volume": 49458300.0,
+      "volume_20d_avg": 29836770.0,
+      "volume_ratio": 1.65762916026098
     },
     "reasons": [
       "formulario SEC 8-K",
@@ -756,7 +721,7 @@
     "score": 75,
     "source": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000121/amd-20260804.htm",
     "summary": "Advanced Micro Devices publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:59.498213+00:00",
+    "time_utc": "2026-08-06T09:08:10.456146+00:00",
     "title": "AMD presentacion SEC 8-K"
   },
   {
@@ -766,7 +731,7 @@
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "filing_date": "2026-08-04",
+      "filing_date": "2026-08-05",
       "form": "4",
       "form4_details": {},
       "perf_20d": -2.3792903074203786,
@@ -778,19 +743,19 @@
       "sma50": 601.0691955566406,
       "status": "ok",
       "symbol": "META",
-      "volume": 14756774.0,
-      "volume_20d_avg": 19450558.7,
-      "volume_ratio": 0.7586812403491525
+      "volume": 14824300.0,
+      "volume_20d_avg": 19453935.0,
+      "volume_ratio": 0.762020640040177
     },
     "reasons": [
       "formulario SEC 4",
-      "presentado 2026-08-04",
+      "presentado 2026-08-05",
       "operacion declarada por insider"
     ],
     "score": 70,
-    "source": "https://www.sec.gov/Archives/edgar/data/1326801/000095010326011909/xslF345X06/ownership.xml",
+    "source": "https://www.sec.gov/Archives/edgar/data/1326801/000095010326011964/xslF345X06/ownership.xml",
     "summary": "Meta Platforms publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:58.559761+00:00",
+    "time_utc": "2026-08-06T09:08:09.520428+00:00",
     "title": "META presentacion SEC 4"
   },
   {
@@ -812,9 +777,43 @@
       "sma50": 601.0691955566406,
       "status": "ok",
       "symbol": "META",
-      "volume": 14756774.0,
-      "volume_20d_avg": 19450558.7,
-      "volume_ratio": 0.7586812403491525
+      "volume": 14824300.0,
+      "volume_20d_avg": 19453935.0,
+      "volume_ratio": 0.762020640040177
+    },
+    "reasons": [
+      "formulario SEC 4",
+      "presentado 2026-08-04",
+      "operacion declarada por insider"
+    ],
+    "score": 70,
+    "source": "https://www.sec.gov/Archives/edgar/data/1326801/000095010326011909/xslF345X06/ownership.xml",
+    "summary": "Meta Platforms publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
+    "time_utc": "2026-08-06T09:08:09.520456+00:00",
+    "title": "META presentacion SEC 4"
+  },
+  {
+    "agent": "sec_filing",
+    "asset": "META",
+    "level": "medio",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "filing_date": "2026-08-04",
+      "form": "4",
+      "form4_details": {},
+      "perf_20d": -2.3792903074203786,
+      "perf_5d": 0.5396141218101613,
+      "perf_60d": -3.4217451871602633,
+      "price": 588.77001953125,
+      "rsi": 46.68777439628121,
+      "sma20": 618.2009948730469,
+      "sma50": 601.0691955566406,
+      "status": "ok",
+      "symbol": "META",
+      "volume": 14824300.0,
+      "volume_20d_avg": 19453935.0,
+      "volume_ratio": 0.762020640040177
     },
     "reasons": [
       "formulario SEC 4",
@@ -824,7 +823,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1326801/000095010326011908/xslF345X06/ownership.xml",
     "summary": "Meta Platforms publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:58.559790+00:00",
+    "time_utc": "2026-08-06T09:08:09.520470+00:00",
     "title": "META presentacion SEC 4"
   },
   {
@@ -846,9 +845,9 @@
       "sma50": 601.0691955566406,
       "status": "ok",
       "symbol": "META",
-      "volume": 14756774.0,
-      "volume_20d_avg": 19450558.7,
-      "volume_ratio": 0.7586812403491525
+      "volume": 14824300.0,
+      "volume_20d_avg": 19453935.0,
+      "volume_ratio": 0.762020640040177
     },
     "reasons": [
       "formulario SEC 4",
@@ -858,41 +857,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1326801/000095010326011342/xslF345X06/ownership.xml",
     "summary": "Meta Platforms publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:58.559832+00:00",
-    "title": "META presentacion SEC 4"
-  },
-  {
-    "agent": "sec_filing",
-    "asset": "META",
-    "level": "medio",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "filing_date": "2026-07-22",
-      "form": "4",
-      "form4_details": {},
-      "perf_20d": -2.3792903074203786,
-      "perf_5d": 0.5396141218101613,
-      "perf_60d": -3.4217451871602633,
-      "price": 588.77001953125,
-      "rsi": 46.68777439628121,
-      "sma20": 618.2009948730469,
-      "sma50": 601.0691955566406,
-      "status": "ok",
-      "symbol": "META",
-      "volume": 14756774.0,
-      "volume_20d_avg": 19450558.7,
-      "volume_ratio": 0.7586812403491525
-    },
-    "reasons": [
-      "formulario SEC 4",
-      "presentado 2026-07-22",
-      "operacion declarada por insider"
-    ],
-    "score": 70,
-    "source": "https://www.sec.gov/Archives/edgar/data/1326801/000095010326011028/xslF345X06/ownership.xml",
-    "summary": "Meta Platforms publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:58.559863+00:00",
+    "time_utc": "2026-08-06T09:08:09.520504+00:00",
     "title": "META presentacion SEC 4"
   },
   {
@@ -914,9 +879,9 @@
       "sma50": 171.69400024414062,
       "status": "ok",
       "symbol": "CRM",
-      "volume": 8279146.0,
-      "volume_20d_avg": 12622837.3,
-      "volume_ratio": 0.6558862958647181
+      "volume": 9560200.0,
+      "volume_20d_avg": 12686890.0,
+      "volume_ratio": 0.7535495302631299
     },
     "reasons": [
       "formulario SEC 4",
@@ -926,7 +891,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000156/xslF345X06/form4.xml",
     "summary": "Salesforce publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:35:00.439252+00:00",
+    "time_utc": "2026-08-06T09:08:11.438640+00:00",
     "title": "CRM presentacion SEC 4"
   },
   {
@@ -948,9 +913,9 @@
       "sma50": 171.69400024414062,
       "status": "ok",
       "symbol": "CRM",
-      "volume": 8279146.0,
-      "volume_20d_avg": 12622837.3,
-      "volume_ratio": 0.6558862958647181
+      "volume": 9560200.0,
+      "volume_20d_avg": 12686890.0,
+      "volume_ratio": 0.7535495302631299
     },
     "reasons": [
       "formulario SEC 4",
@@ -960,7 +925,7 @@
     "score": 70,
     "source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000154/xslF345X06/form4.xml",
     "summary": "Salesforce publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:35:00.439267+00:00",
+    "time_utc": "2026-08-06T09:08:11.438655+00:00",
     "title": "CRM presentacion SEC 4"
   },
   {
@@ -982,9 +947,9 @@
       "sma50": 309.6542004394531,
       "status": "ok",
       "symbol": "AAPL",
-      "volume": 44330978.0,
-      "volume_20d_avg": 56166233.9,
-      "volume_ratio": 0.7892816541505732
+      "volume": 49178700.0,
+      "volume_20d_avg": 56408620.0,
+      "volume_ratio": 0.8718295182544795
     },
     "reasons": [
       "formulario SEC 8-K",
@@ -994,7 +959,7 @@
     "score": 67,
     "source": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000018/aapl-20260730.htm",
     "summary": "Apple publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:56.898186+00:00",
+    "time_utc": "2026-08-06T09:08:07.660240+00:00",
     "title": "AAPL presentacion SEC 8-K"
   },
   {
@@ -1016,9 +981,9 @@
       "sma50": 601.0691955566406,
       "status": "ok",
       "symbol": "META",
-      "volume": 14756774.0,
-      "volume_20d_avg": 19450558.7,
-      "volume_ratio": 0.7586812403491525
+      "volume": 14824300.0,
+      "volume_20d_avg": 19453935.0,
+      "volume_ratio": 0.762020640040177
     },
     "reasons": [
       "formulario SEC 8-K",
@@ -1028,7 +993,7 @@
     "score": 67,
     "source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-20260729.htm",
     "summary": "Meta Platforms publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:58.559845+00:00",
+    "time_utc": "2026-08-06T09:08:09.520515+00:00",
     "title": "META presentacion SEC 8-K"
   },
   {
@@ -1050,9 +1015,9 @@
       "sma50": 171.69400024414062,
       "status": "ok",
       "symbol": "CRM",
-      "volume": 8279146.0,
-      "volume_20d_avg": 12622837.3,
-      "volume_ratio": 0.6558862958647181
+      "volume": 9560200.0,
+      "volume_20d_avg": 12686890.0,
+      "volume_ratio": 0.7535495302631299
     },
     "reasons": [
       "formulario SEC 8-K",
@@ -1062,7 +1027,7 @@
     "score": 67,
     "source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000160/crm-20260805.htm",
     "summary": "Salesforce publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:35:00.439222+00:00",
+    "time_utc": "2026-08-06T09:08:11.438609+00:00",
     "title": "CRM presentacion SEC 8-K"
   },
   {
@@ -1084,9 +1049,9 @@
       "sma50": 403.58899780273435,
       "status": "ok",
       "symbol": "MSFT",
-      "volume": 30476807.0,
-      "volume_20d_avg": 39159370.35,
-      "volume_ratio": 0.7782762268035293
+      "volume": 33273800.0,
+      "volume_20d_avg": 39299220.0,
+      "volume_ratio": 0.8466783819119056
     },
     "reasons": [
       "formulario SEC 10-K",
@@ -1096,7 +1061,7 @@
     "score": 53,
     "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
     "summary": "Microsoft publico el formulario 10-K. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:57.226031+00:00",
+    "time_utc": "2026-08-06T09:08:08.184768+00:00",
     "title": "MSFT presentacion SEC 10-K"
   },
   {
@@ -1118,9 +1083,9 @@
       "sma50": 247.315,
       "status": "ok",
       "symbol": "AMZN",
-      "volume": 42366662.0,
-      "volume_20d_avg": 50184938.1,
-      "volume_ratio": 0.8442107055224205
+      "volume": 44969500.0,
+      "volume_20d_avg": 50315080.0,
+      "volume_ratio": 0.8937578952473095
     },
     "reasons": [
       "formulario SEC 10-Q",
@@ -1130,7 +1095,7 @@
     "score": 53,
     "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/amzn-20260630.htm",
     "summary": "Amazon publico el formulario 10-Q. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:57.904591+00:00",
+    "time_utc": "2026-08-06T09:08:08.871726+00:00",
     "title": "AMZN presentacion SEC 10-Q"
   },
   {
@@ -1152,9 +1117,9 @@
       "sma50": 357.81879943847656,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 46331184.0,
-      "volume_20d_avg": 32398159.2,
-      "volume_ratio": 1.4300560631852195
+      "volume": 46705600.0,
+      "volume_20d_avg": 32416880.0,
+      "volume_ratio": 1.440780235482255
     },
     "reasons": [
       "formulario SEC 10-Q",
@@ -1164,7 +1129,7 @@
     "score": 53,
     "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm",
     "summary": "Alphabet publico el formulario 10-Q. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:58.253263+00:00",
+    "time_utc": "2026-08-06T09:08:09.210746+00:00",
     "title": "GOOGL presentacion SEC 10-Q"
   },
   {
@@ -1186,9 +1151,9 @@
       "sma50": 384.9577984619141,
       "status": "ok",
       "symbol": "TSLA",
-      "volume": 27506311.0,
-      "volume_20d_avg": 39662190.55,
-      "volume_ratio": 0.6935146702329582
+      "volume": 27717800.0,
+      "volume_20d_avg": 39672765.0,
+      "volume_ratio": 0.6986606554899816
     },
     "reasons": [
       "formulario SEC 10-Q",
@@ -1198,7 +1163,7 @@
     "score": 53,
     "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm",
     "summary": "Tesla publico el formulario 10-Q. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:58.892653+00:00",
+    "time_utc": "2026-08-06T09:08:09.828239+00:00",
     "title": "TSLA presentacion SEC 10-Q"
   },
   {
@@ -1220,9 +1185,9 @@
       "sma50": 131.42419967651367,
       "status": "ok",
       "symbol": "PLTR",
-      "volume": 61261948.0,
-      "volume_20d_avg": 43216307.4,
-      "volume_ratio": 1.4175655368463989
+      "volume": 63313300.0,
+      "volume_20d_avg": 43318875.0,
+      "volume_ratio": 1.4615638102328372
     },
     "reasons": [
       "formulario SEC 10-Q",
@@ -1232,7 +1197,7 @@
     "score": 53,
     "source": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000041/pltr-20260630.htm",
     "summary": "Palantir publico el formulario 10-Q. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:59.194197+00:00",
+    "time_utc": "2026-08-06T09:08:10.136207+00:00",
     "title": "PLTR presentacion SEC 10-Q"
   },
   {
@@ -1254,9 +1219,9 @@
       "sma50": 514.6194012451172,
       "status": "ok",
       "symbol": "AMD",
-      "volume": 47435209.0,
-      "volume_20d_avg": 29735615.45,
-      "volume_ratio": 1.5952321242437912
+      "volume": 49458300.0,
+      "volume_20d_avg": 29836770.0,
+      "volume_ratio": 1.65762916026098
     },
     "reasons": [
       "formulario SEC 10-Q",
@@ -1266,7 +1231,7 @@
     "score": 53,
     "source": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000123/amd-20260627.htm",
     "summary": "Advanced Micro Devices publico el formulario 10-Q. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:59.498184+00:00",
+    "time_utc": "2026-08-06T09:08:10.456117+00:00",
     "title": "AMD presentacion SEC 10-Q"
   },
   {
@@ -1288,9 +1253,9 @@
       "sma50": 309.6542004394531,
       "status": "ok",
       "symbol": "AAPL",
-      "volume": 44330978.0,
-      "volume_20d_avg": 56166233.9,
-      "volume_ratio": 0.7892816541505732
+      "volume": 49178700.0,
+      "volume_20d_avg": 56408620.0,
+      "volume_ratio": 0.8718295182544795
     },
     "reasons": [
       "formulario SEC 10-Q",
@@ -1299,7 +1264,7 @@
     "score": 45,
     "source": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm",
     "summary": "Apple publico el formulario 10-Q. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:56.898140+00:00",
+    "time_utc": "2026-08-06T09:08:07.660192+00:00",
     "title": "AAPL presentacion SEC 10-Q"
   },
   {
@@ -1321,9 +1286,9 @@
       "sma50": 601.0691955566406,
       "status": "ok",
       "symbol": "META",
-      "volume": 14756774.0,
-      "volume_20d_avg": 19450558.7,
-      "volume_ratio": 0.7586812403491525
+      "volume": 14824300.0,
+      "volume_20d_avg": 19453935.0,
+      "volume_ratio": 0.762020640040177
     },
     "reasons": [
       "formulario SEC 10-Q",
@@ -1332,7 +1297,7 @@
     "score": 45,
     "source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
     "summary": "Meta Platforms publico el formulario 10-Q. Vigilar detalles del documento y reaccion del precio.",
-    "time_utc": "2026-08-05T21:34:58.559818+00:00",
+    "time_utc": "2026-08-06T09:08:09.520493+00:00",
     "title": "META presentacion SEC 10-Q"
   }
 ]
