@@ -1,5 +1,49 @@
 [
   {
+    "agent": "unusual_volume",
+    "asset": "MSFT",
+    "confidence": "media-alta",
+    "dashboard": "unusual_volume_dashboard.html",
+    "direction": "LONG",
+    "entry_price": 499.8599853515625,
+    "horizon": "swing",
+    "id": "ab820c373d4e21f1",
+    "metrics": {
+      "breakout_20d": true,
+      "breakout_50d": true,
+      "perf_20d": 30.04995431414528,
+      "perf_5d": 10.809128483331865,
+      "perf_60d": 21.131192971357947,
+      "price": 499.8599853515625,
+      "rsi": 78.11720416872843,
+      "sma20": 418.09100036621095,
+      "sma50": 405.2655975341797,
+      "status": "ok",
+      "symbol": "MSFT",
+      "volume": 32788866.0,
+      "volume_20d_avg": 39390258.3,
+      "volume_ratio": 0.8324105353734125
+    },
+    "reasons": [
+      "volume 0.8x avg",
+      "5D +10.8%",
+      "cerca de ruptura 20D",
+      "cerca de ruptura 50D"
+    ],
+    "risk_reward": null,
+    "score": 83.0,
+    "signal_type": "MSFT volumen inusual",
+    "source": "https://finance.yahoo.com/quote/MSFT",
+    "source_label": "Volumen inusual",
+    "status": "alto",
+    "stop_loss": null,
+    "summary": "Microsoft presenta volumen anormal o movimiento tecnico a vigilar.",
+    "take_profit": null,
+    "timestamp": "2026-08-07T00:58:32.228523+00:00",
+    "title": "MSFT volumen inusual",
+    "valid_until": "2026-08-17T00:58:32.228523+00:00"
+  },
+  {
     "agent": "sec_filing",
     "asset": "ORCL",
     "confidence": "media-alta",
@@ -7,7 +51,7 @@
     "direction": "WAIT",
     "entry_price": 144.38999938964844,
     "horizon": "swing",
-    "id": "8afb8a8ec8b86f5d",
+    "id": "74c3fad6d9bc69d0",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -23,9 +67,9 @@
       "sma50": 162.1586003112793,
       "status": "ok",
       "symbol": "ORCL",
-      "volume": 18318870.0,
-      "volume_20d_avg": 38288438.5,
-      "volume_ratio": 0.4784439041566033
+      "volume": 23398500.0,
+      "volume_20d_avg": 38542420.0,
+      "volume_ratio": 0.607084350178323
     },
     "reasons": [
       "formulario SEC 4",
@@ -42,9 +86,9 @@
     "stop_loss": null,
     "summary": "Oracle publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:35:00.134194+00:00",
+    "timestamp": "2026-08-06T09:08:11.128242+00:00",
     "title": "ORCL presentacion SEC 4",
-    "valid_until": "2026-08-15T21:35:00.134194+00:00"
+    "valid_until": "2026-08-16T09:08:11.128242+00:00"
   },
   {
     "agent": "sec_filing",
@@ -54,7 +98,7 @@
     "direction": "WAIT",
     "entry_price": 158.42999267578125,
     "horizon": "swing",
-    "id": "05e9ee575bbcdcef",
+    "id": "bde00cdb3586b9dd",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -70,9 +114,9 @@
       "sma50": 131.42419967651367,
       "status": "ok",
       "symbol": "PLTR",
-      "volume": 61261948.0,
-      "volume_20d_avg": 43216307.4,
-      "volume_ratio": 1.4175655368463989
+      "volume": 63313300.0,
+      "volume_20d_avg": 43318875.0,
+      "volume_ratio": 1.4615638102328372
     },
     "reasons": [
       "formulario SEC 4",
@@ -89,9 +133,9 @@
     "stop_loss": null,
     "summary": "Palantir publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:59.194238+00:00",
+    "timestamp": "2026-08-06T09:08:10.136249+00:00",
     "title": "PLTR presentacion SEC 4",
-    "valid_until": "2026-08-15T21:34:59.194238+00:00"
+    "valid_until": "2026-08-16T09:08:10.136249+00:00"
   },
   {
     "agent": "sec_filing",
@@ -101,7 +145,7 @@
     "direction": "WAIT",
     "entry_price": 362.42999267578125,
     "horizon": "swing",
-    "id": "0e42e2c676fb63ab",
+    "id": "b24d05890550b5b2",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -117,9 +161,9 @@
       "sma50": 357.81879943847656,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 46331184.0,
-      "volume_20d_avg": 32398159.2,
-      "volume_ratio": 1.4300560631852195
+      "volume": 46705600.0,
+      "volume_20d_avg": 32416880.0,
+      "volume_ratio": 1.440780235482255
     },
     "reasons": [
       "formulario SEC 4",
@@ -136,9 +180,9 @@
     "stop_loss": null,
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:58.253245+00:00",
+    "timestamp": "2026-08-06T09:08:09.210729+00:00",
     "title": "GOOGL presentacion SEC 4",
-    "valid_until": "2026-08-15T21:34:58.253245+00:00"
+    "valid_until": "2026-08-16T09:08:09.210729+00:00"
   },
   {
     "agent": "sec_filing",
@@ -148,7 +192,7 @@
     "direction": "WAIT",
     "entry_price": 362.42999267578125,
     "horizon": "swing",
-    "id": "3456d04e453f9768",
+    "id": "ef7b9b2f37a8afa9",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -164,9 +208,9 @@
       "sma50": 357.81879943847656,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 46331184.0,
-      "volume_20d_avg": 32398159.2,
-      "volume_ratio": 1.4300560631852195
+      "volume": 46705600.0,
+      "volume_20d_avg": 32416880.0,
+      "volume_ratio": 1.440780235482255
     },
     "reasons": [
       "formulario SEC 4",
@@ -183,9 +227,9 @@
     "stop_loss": null,
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:58.253233+00:00",
+    "timestamp": "2026-08-06T09:08:09.210715+00:00",
     "title": "GOOGL presentacion SEC 4",
-    "valid_until": "2026-08-15T21:34:58.253233+00:00"
+    "valid_until": "2026-08-16T09:08:09.210715+00:00"
   },
   {
     "agent": "sec_filing",
@@ -195,7 +239,7 @@
     "direction": "WAIT",
     "entry_price": 362.42999267578125,
     "horizon": "swing",
-    "id": "a9a12f71e16d023c",
+    "id": "e8693880dd1df4e0",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -211,9 +255,9 @@
       "sma50": 357.81879943847656,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 46331184.0,
-      "volume_20d_avg": 32398159.2,
-      "volume_ratio": 1.4300560631852195
+      "volume": 46705600.0,
+      "volume_20d_avg": 32416880.0,
+      "volume_ratio": 1.440780235482255
     },
     "reasons": [
       "formulario SEC 4",
@@ -230,9 +274,9 @@
     "stop_loss": null,
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:58.253222+00:00",
+    "timestamp": "2026-08-06T09:08:09.210697+00:00",
     "title": "GOOGL presentacion SEC 4",
-    "valid_until": "2026-08-15T21:34:58.253222+00:00"
+    "valid_until": "2026-08-16T09:08:09.210697+00:00"
   },
   {
     "agent": "sec_filing",
@@ -242,7 +286,7 @@
     "direction": "WAIT",
     "entry_price": 362.42999267578125,
     "horizon": "swing",
-    "id": "dac77880e1112581",
+    "id": "21cb0554c7222f29",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -258,9 +302,9 @@
       "sma50": 357.81879943847656,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 46331184.0,
-      "volume_20d_avg": 32398159.2,
-      "volume_ratio": 1.4300560631852195
+      "volume": 46705600.0,
+      "volume_20d_avg": 32416880.0,
+      "volume_ratio": 1.440780235482255
     },
     "reasons": [
       "formulario SEC 4",
@@ -277,9 +321,9 @@
     "stop_loss": null,
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:58.253210+00:00",
+    "timestamp": "2026-08-06T09:08:09.210682+00:00",
     "title": "GOOGL presentacion SEC 4",
-    "valid_until": "2026-08-15T21:34:58.253210+00:00"
+    "valid_until": "2026-08-16T09:08:09.210682+00:00"
   },
   {
     "agent": "sec_filing",
@@ -289,7 +333,7 @@
     "direction": "WAIT",
     "entry_price": 362.42999267578125,
     "horizon": "swing",
-    "id": "7774eb8200a29092",
+    "id": "53fb9ea8a22c8a26",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -305,9 +349,9 @@
       "sma50": 357.81879943847656,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 46331184.0,
-      "volume_20d_avg": 32398159.2,
-      "volume_ratio": 1.4300560631852195
+      "volume": 46705600.0,
+      "volume_20d_avg": 32416880.0,
+      "volume_ratio": 1.440780235482255
     },
     "reasons": [
       "formulario SEC 4",
@@ -324,9 +368,9 @@
     "stop_loss": null,
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:58.253198+00:00",
+    "timestamp": "2026-08-06T09:08:09.210666+00:00",
     "title": "GOOGL presentacion SEC 4",
-    "valid_until": "2026-08-15T21:34:58.253198+00:00"
+    "valid_until": "2026-08-16T09:08:09.210666+00:00"
   },
   {
     "agent": "sec_filing",
@@ -336,7 +380,7 @@
     "direction": "WAIT",
     "entry_price": 362.42999267578125,
     "horizon": "swing",
-    "id": "9bbed0f2b0b9543a",
+    "id": "cc8ce6e39d4e8365",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -352,9 +396,9 @@
       "sma50": 357.81879943847656,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 46331184.0,
-      "volume_20d_avg": 32398159.2,
-      "volume_ratio": 1.4300560631852195
+      "volume": 46705600.0,
+      "volume_20d_avg": 32416880.0,
+      "volume_ratio": 1.440780235482255
     },
     "reasons": [
       "formulario SEC 4",
@@ -371,9 +415,9 @@
     "stop_loss": null,
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:58.253182+00:00",
+    "timestamp": "2026-08-06T09:08:09.210651+00:00",
     "title": "GOOGL presentacion SEC 4",
-    "valid_until": "2026-08-15T21:34:58.253182+00:00"
+    "valid_until": "2026-08-16T09:08:09.210651+00:00"
   },
   {
     "agent": "sec_filing",
@@ -383,7 +427,7 @@
     "direction": "WAIT",
     "entry_price": 362.42999267578125,
     "horizon": "swing",
-    "id": "bde512146444e6dc",
+    "id": "6d21f8ce73760e60",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -399,9 +443,9 @@
       "sma50": 357.81879943847656,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 46331184.0,
-      "volume_20d_avg": 32398159.2,
-      "volume_ratio": 1.4300560631852195
+      "volume": 46705600.0,
+      "volume_20d_avg": 32416880.0,
+      "volume_ratio": 1.440780235482255
     },
     "reasons": [
       "formulario SEC 4",
@@ -418,9 +462,9 @@
     "stop_loss": null,
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:58.253156+00:00",
+    "timestamp": "2026-08-06T09:08:09.210635+00:00",
     "title": "GOOGL presentacion SEC 4",
-    "valid_until": "2026-08-15T21:34:58.253156+00:00"
+    "valid_until": "2026-08-16T09:08:09.210635+00:00"
   },
   {
     "agent": "sec_filing",
@@ -430,7 +474,7 @@
     "direction": "WAIT",
     "entry_price": 362.42999267578125,
     "horizon": "swing",
-    "id": "91407e2bd803fb36",
+    "id": "04f4e6bd3d7f0155",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -446,9 +490,9 @@
       "sma50": 357.81879943847656,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 46331184.0,
-      "volume_20d_avg": 32398159.2,
-      "volume_ratio": 1.4300560631852195
+      "volume": 46705600.0,
+      "volume_20d_avg": 32416880.0,
+      "volume_ratio": 1.440780235482255
     },
     "reasons": [
       "formulario SEC 4",
@@ -465,9 +509,9 @@
     "stop_loss": null,
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:58.253127+00:00",
+    "timestamp": "2026-08-06T09:08:09.210617+00:00",
     "title": "GOOGL presentacion SEC 4",
-    "valid_until": "2026-08-15T21:34:58.253127+00:00"
+    "valid_until": "2026-08-16T09:08:09.210617+00:00"
   },
   {
     "agent": "sec_filing",
@@ -477,18 +521,13 @@
     "direction": "WAIT",
     "entry_price": 362.42999267578125,
     "horizon": "swing",
-    "id": "f7a64714deea81aa",
+    "id": "521c7e1d38544260",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
       "filing_date": "2026-07-29",
       "form": "4",
-      "form4_details": {
-        "avg_price": null,
-        "purchase_count": 0,
-        "sale_count": 0,
-        "shares": 0
-      },
+      "form4_details": {},
       "perf_20d": 0.14090938028457067,
       "perf_5d": 7.638621327972839,
       "perf_60d": -9.573352366718968,
@@ -498,9 +537,9 @@
       "sma50": 357.81879943847656,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 46331184.0,
-      "volume_20d_avg": 32398159.2,
-      "volume_ratio": 1.4300560631852195
+      "volume": 46705600.0,
+      "volume_20d_avg": 32416880.0,
+      "volume_ratio": 1.440780235482255
     },
     "reasons": [
       "formulario SEC 4",
@@ -517,9 +556,9 @@
     "stop_loss": null,
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:58.253055+00:00",
+    "timestamp": "2026-08-06T09:08:09.210586+00:00",
     "title": "GOOGL presentacion SEC 4",
-    "valid_until": "2026-08-15T21:34:58.253055+00:00"
+    "valid_until": "2026-08-16T09:08:09.210586+00:00"
   },
   {
     "agent": "sec_filing",
@@ -529,7 +568,7 @@
     "direction": "WAIT",
     "entry_price": 362.42999267578125,
     "horizon": "swing",
-    "id": "94531d029c2c3c0a",
+    "id": "7f369634a92ca4ab",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -550,9 +589,9 @@
       "sma50": 357.81879943847656,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 46331184.0,
-      "volume_20d_avg": 32398159.2,
-      "volume_ratio": 1.4300560631852195
+      "volume": 46705600.0,
+      "volume_20d_avg": 32416880.0,
+      "volume_ratio": 1.440780235482255
     },
     "reasons": [
       "formulario SEC 4",
@@ -569,9 +608,9 @@
     "stop_loss": null,
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:58.237782+00:00",
+    "timestamp": "2026-08-06T09:08:09.210511+00:00",
     "title": "GOOGL presentacion SEC 4",
-    "valid_until": "2026-08-15T21:34:58.237782+00:00"
+    "valid_until": "2026-08-16T09:08:09.210511+00:00"
   },
   {
     "agent": "sec_filing",
@@ -581,7 +620,7 @@
     "direction": "WAIT",
     "entry_price": 362.42999267578125,
     "horizon": "swing",
-    "id": "45e256d1e7a9c482",
+    "id": "9652691450322870",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -602,9 +641,9 @@
       "sma50": 357.81879943847656,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 46331184.0,
-      "volume_20d_avg": 32398159.2,
-      "volume_ratio": 1.4300560631852195
+      "volume": 46705600.0,
+      "volume_20d_avg": 32416880.0,
+      "volume_ratio": 1.440780235482255
     },
     "reasons": [
       "formulario SEC 4",
@@ -621,9 +660,9 @@
     "stop_loss": null,
     "summary": "Alphabet publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:58.221323+00:00",
+    "timestamp": "2026-08-06T09:08:09.194600+00:00",
     "title": "GOOGL presentacion SEC 4",
-    "valid_until": "2026-08-15T21:34:58.221323+00:00"
+    "valid_until": "2026-08-16T09:08:09.194600+00:00"
   },
   {
     "agent": "sec_filing",
@@ -633,7 +672,7 @@
     "direction": "WAIT",
     "entry_price": 272.6499938964844,
     "horizon": "swing",
-    "id": "7b2ce8fedf382028",
+    "id": "054b5acdc48c2622",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -654,9 +693,9 @@
       "sma50": 247.315,
       "status": "ok",
       "symbol": "AMZN",
-      "volume": 42366662.0,
-      "volume_20d_avg": 50184938.1,
-      "volume_ratio": 0.8442107055224205
+      "volume": 44969500.0,
+      "volume_20d_avg": 50315080.0,
+      "volume_ratio": 0.8937578952473095
     },
     "reasons": [
       "formulario SEC 4",
@@ -673,9 +712,9 @@
     "stop_loss": null,
     "summary": "Amazon publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:57.904510+00:00",
+    "timestamp": "2026-08-06T09:08:08.871633+00:00",
     "title": "AMZN presentacion SEC 4",
-    "valid_until": "2026-08-15T21:34:57.904510+00:00"
+    "valid_until": "2026-08-16T09:08:08.871633+00:00"
   },
   {
     "agent": "sec_filing",
@@ -685,7 +724,7 @@
     "direction": "WAIT",
     "entry_price": 272.6499938964844,
     "horizon": "swing",
-    "id": "d661f7e049315194",
+    "id": "8a15a730af0f351b",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -706,9 +745,9 @@
       "sma50": 247.315,
       "status": "ok",
       "symbol": "AMZN",
-      "volume": 42366662.0,
-      "volume_20d_avg": 50184938.1,
-      "volume_ratio": 0.8442107055224205
+      "volume": 44969500.0,
+      "volume_20d_avg": 50315080.0,
+      "volume_ratio": 0.8937578952473095
     },
     "reasons": [
       "formulario SEC 4",
@@ -725,9 +764,61 @@
     "stop_loss": null,
     "summary": "Amazon publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:57.893261+00:00",
+    "timestamp": "2026-08-06T09:08:08.845261+00:00",
     "title": "AMZN presentacion SEC 4",
-    "valid_until": "2026-08-15T21:34:57.893261+00:00"
+    "valid_until": "2026-08-16T09:08:08.845261+00:00"
+  },
+  {
+    "agent": "sec_filing",
+    "asset": "MSFT",
+    "confidence": "media-alta",
+    "dashboard": "sec_filing_dashboard.html",
+    "direction": "WAIT",
+    "entry_price": 487.4599914550781,
+    "horizon": "swing",
+    "id": "0ecb66719b6b4d14",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "filing_date": "2026-08-05",
+      "form": "4",
+      "form4_details": {
+        "avg_price": null,
+        "purchase_count": 0,
+        "sale_count": 0,
+        "shares": 0
+      },
+      "perf_20d": 27.161265746299044,
+      "perf_5d": 24.81691524288683,
+      "perf_60d": 17.426285697818344,
+      "price": 487.4599914550781,
+      "rsi": 76.09243688677253,
+      "sma20": 412.3160003662109,
+      "sma50": 403.58899780273435,
+      "status": "ok",
+      "symbol": "MSFT",
+      "volume": 33273800.0,
+      "volume_20d_avg": 39299220.0,
+      "volume_ratio": 0.8466783819119056
+    },
+    "reasons": [
+      "formulario SEC 4",
+      "presentado 2026-08-05",
+      "operacion declarada por insider",
+      "precio reaccionando recientemente"
+    ],
+    "risk_reward": null,
+    "score": 78.0,
+    "signal_type": "MSFT presentacion SEC 4",
+    "source": "https://www.sec.gov/Archives/edgar/data/789019/000078901926000141/xslF345X06/form4.xml",
+    "source_label": "SEC e insiders",
+    "status": "medio",
+    "stop_loss": null,
+    "summary": "Microsoft publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
+    "take_profit": null,
+    "timestamp": "2026-08-06T09:08:08.184688+00:00",
+    "title": "MSFT presentacion SEC 4",
+    "valid_until": "2026-08-16T09:08:08.184688+00:00"
   },
   {
     "agent": "sec_filing",
@@ -737,7 +828,7 @@
     "direction": "WAIT",
     "entry_price": 482.04998779296875,
     "horizon": "swing",
-    "id": "556e77dce98b84a4",
+    "id": "6e189a883f09bd7c",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -753,9 +844,9 @@
       "sma50": 514.6194012451172,
       "status": "ok",
       "symbol": "AMD",
-      "volume": 47435209.0,
-      "volume_20d_avg": 29735615.45,
-      "volume_ratio": 1.5952321242437912
+      "volume": 49458300.0,
+      "volume_20d_avg": 29836770.0,
+      "volume_ratio": 1.65762916026098
     },
     "reasons": [
       "formulario SEC 8-K",
@@ -772,9 +863,9 @@
     "stop_loss": null,
     "summary": "Advanced Micro Devices publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:59.498213+00:00",
+    "timestamp": "2026-08-06T09:08:10.456146+00:00",
     "title": "AMD presentacion SEC 8-K",
-    "valid_until": "2026-08-15T21:34:59.498213+00:00"
+    "valid_until": "2026-08-16T09:08:10.456146+00:00"
   },
   {
     "agent": "sec_filing",
@@ -784,7 +875,7 @@
     "direction": "WAIT",
     "entry_price": 158.42999267578125,
     "horizon": "swing",
-    "id": "df0cd4fb59c0d947",
+    "id": "64c91ed9a6e9f1dd",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -800,9 +891,9 @@
       "sma50": 131.42419967651367,
       "status": "ok",
       "symbol": "PLTR",
-      "volume": 61261948.0,
-      "volume_20d_avg": 43216307.4,
-      "volume_ratio": 1.4175655368463989
+      "volume": 63313300.0,
+      "volume_20d_avg": 43318875.0,
+      "volume_ratio": 1.4615638102328372
     },
     "reasons": [
       "formulario SEC 8-K",
@@ -819,103 +910,9 @@
     "stop_loss": null,
     "summary": "Palantir publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:59.194223+00:00",
+    "timestamp": "2026-08-06T09:08:10.136234+00:00",
     "title": "PLTR presentacion SEC 8-K",
-    "valid_until": "2026-08-15T21:34:59.194223+00:00"
-  },
-  {
-    "agent": "sec_filing",
-    "asset": "TSLA",
-    "confidence": "media-alta",
-    "dashboard": "sec_filing_dashboard.html",
-    "direction": "WAIT",
-    "entry_price": 321.54998779296875,
-    "horizon": "swing",
-    "id": "aa25c96ef7c7db2e",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "filing_date": "2026-07-22",
-      "form": "8-K",
-      "form4_details": {},
-      "perf_20d": -18.400753746856356,
-      "perf_5d": 7.786933460183021,
-      "perf_60d": -24.932885908431025,
-      "price": 321.54998779296875,
-      "rsi": 37.53701151039839,
-      "sma20": 351.64299926757815,
-      "sma50": 384.9577984619141,
-      "status": "ok",
-      "symbol": "TSLA",
-      "volume": 27506311.0,
-      "volume_20d_avg": 39662190.55,
-      "volume_ratio": 0.6935146702329582
-    },
-    "reasons": [
-      "formulario SEC 8-K",
-      "presentado 2026-07-22",
-      "hecho relevante comunicado",
-      "precio reaccionando recientemente"
-    ],
-    "risk_reward": null,
-    "score": 75.0,
-    "signal_type": "TSLA presentacion SEC 8-K",
-    "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049213/tsla-20260722.htm",
-    "source_label": "SEC e insiders",
-    "status": "medio",
-    "stop_loss": null,
-    "summary": "Tesla publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
-    "take_profit": null,
-    "timestamp": "2026-08-05T21:34:58.892681+00:00",
-    "title": "TSLA presentacion SEC 8-K",
-    "valid_until": "2026-08-15T21:34:58.892681+00:00"
-  },
-  {
-    "agent": "sec_filing",
-    "asset": "GOOGL",
-    "confidence": "media-alta",
-    "dashboard": "sec_filing_dashboard.html",
-    "direction": "WAIT",
-    "entry_price": 362.42999267578125,
-    "horizon": "swing",
-    "id": "5c696f03a26bc4b3",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "filing_date": "2026-07-22",
-      "form": "8-K",
-      "form4_details": {},
-      "perf_20d": 0.14090938028457067,
-      "perf_5d": 7.638621327972839,
-      "perf_60d": -9.573352366718968,
-      "price": 362.42999267578125,
-      "rsi": 54.58803460038013,
-      "sma20": 348.96299896240237,
-      "sma50": 357.81879943847656,
-      "status": "ok",
-      "symbol": "GOOGL",
-      "volume": 46331184.0,
-      "volume_20d_avg": 32398159.2,
-      "volume_ratio": 1.4300560631852195
-    },
-    "reasons": [
-      "formulario SEC 8-K",
-      "presentado 2026-07-22",
-      "hecho relevante comunicado",
-      "precio reaccionando recientemente"
-    ],
-    "risk_reward": null,
-    "score": 75.0,
-    "signal_type": "GOOGL presentacion SEC 8-K",
-    "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/goog-20260722.htm",
-    "source_label": "SEC e insiders",
-    "status": "medio",
-    "stop_loss": null,
-    "summary": "Alphabet publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
-    "take_profit": null,
-    "timestamp": "2026-08-05T21:34:58.253276+00:00",
-    "title": "GOOGL presentacion SEC 8-K",
-    "valid_until": "2026-08-15T21:34:58.253276+00:00"
+    "valid_until": "2026-08-16T09:08:10.136234+00:00"
   },
   {
     "agent": "sec_filing",
@@ -925,7 +922,7 @@
     "direction": "WAIT",
     "entry_price": 272.6499938964844,
     "horizon": "swing",
-    "id": "1e03fada9f8f835b",
+    "id": "53296604a6da0a6c",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -941,9 +938,9 @@
       "sma50": 247.315,
       "status": "ok",
       "symbol": "AMZN",
-      "volume": 42366662.0,
-      "volume_20d_avg": 50184938.1,
-      "volume_ratio": 0.8442107055224205
+      "volume": 44969500.0,
+      "volume_20d_avg": 50315080.0,
+      "volume_ratio": 0.8937578952473095
     },
     "reasons": [
       "formulario SEC 8-K",
@@ -960,9 +957,9 @@
     "stop_loss": null,
     "summary": "Amazon publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:57.904619+00:00",
+    "timestamp": "2026-08-06T09:08:08.871747+00:00",
     "title": "AMZN presentacion SEC 8-K",
-    "valid_until": "2026-08-15T21:34:57.904619+00:00"
+    "valid_until": "2026-08-16T09:08:08.871747+00:00"
   },
   {
     "agent": "sec_filing",
@@ -972,7 +969,7 @@
     "direction": "WAIT",
     "entry_price": 487.4599914550781,
     "horizon": "swing",
-    "id": "9a0dc84c0458968c",
+    "id": "a6d3b4ae6bd311a2",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -988,9 +985,9 @@
       "sma50": 403.58899780273435,
       "status": "ok",
       "symbol": "MSFT",
-      "volume": 30476807.0,
-      "volume_20d_avg": 39159370.35,
-      "volume_ratio": 0.7782762268035293
+      "volume": 33273800.0,
+      "volume_20d_avg": 39299220.0,
+      "volume_ratio": 0.8466783819119056
     },
     "reasons": [
       "formulario SEC 8-K",
@@ -1007,97 +1004,9 @@
     "stop_loss": null,
     "summary": "Microsoft publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:57.226058+00:00",
+    "timestamp": "2026-08-06T09:08:08.184785+00:00",
     "title": "MSFT presentacion SEC 8-K",
-    "valid_until": "2026-08-15T21:34:57.226058+00:00"
-  },
-  {
-    "agent": "sector_rotation",
-    "asset": "GLD",
-    "confidence": "media",
-    "dashboard": "sector_rotation_dashboard.html",
-    "direction": "LONG",
-    "entry_price": 389.6400146484375,
-    "horizon": "swing",
-    "id": "bb8ed91165660876",
-    "metrics": {
-      "breakout_20d": true,
-      "breakout_50d": false,
-      "perf_20d": 4.056616890429643,
-      "perf_5d": 5.001624649072101,
-      "perf_60d": -10.1735886490394,
-      "price": 389.6400146484375,
-      "relative_20d_vs_spy": 0.7845545327105796,
-      "rsi": 60.11268730589752,
-      "sma20": 373.22149963378905,
-      "sma50": 383.0293994140625,
-      "status": "ok",
-      "symbol": "GLD",
-      "volume": 14717153.0,
-      "volume_20d_avg": 6810362.65,
-      "volume_ratio": 2.1609940257733555
-    },
-    "reasons": [
-      "20D +4.1%",
-      "relativo vs SPY +0.8%",
-      "RSI 60.1"
-    ],
-    "risk_reward": null,
-    "score": 73.0,
-    "signal_type": "GLD rotacion sectorial",
-    "source": "https://finance.yahoo.com/quote/GLD",
-    "source_label": "Rotacion sectorial",
-    "status": "medio",
-    "stop_loss": null,
-    "summary": "Gold muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "take_profit": null,
-    "timestamp": "2026-08-05T21:49:06.025463+00:00",
-    "title": "GLD rotacion sectorial",
-    "valid_until": "2026-08-15T21:49:06.025463+00:00"
-  },
-  {
-    "agent": "sector_rotation",
-    "asset": "XLK",
-    "confidence": "media",
-    "dashboard": "sector_rotation_dashboard.html",
-    "direction": "LONG",
-    "entry_price": 185.91000366210938,
-    "horizon": "swing",
-    "id": "dd7a6c54536ae0c3",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": 2.48622376922385,
-      "perf_5d": 11.610731516776873,
-      "perf_60d": 5.919552835424935,
-      "price": 185.91000366210938,
-      "relative_20d_vs_spy": -0.7858385884952135,
-      "rsi": 57.29517548902252,
-      "sma20": 178.78500061035157,
-      "sma50": 183.26460052490233,
-      "status": "ok",
-      "symbol": "XLK",
-      "volume": 7500936.0,
-      "volume_20d_avg": 9083821.8,
-      "volume_ratio": 0.8257467137895637
-    },
-    "reasons": [
-      "20D +2.5%",
-      "relativo vs SPY -0.8%",
-      "RSI 57.3"
-    ],
-    "risk_reward": null,
-    "score": 70.0,
-    "signal_type": "XLK rotacion sectorial",
-    "source": "https://finance.yahoo.com/quote/XLK",
-    "source_label": "Rotacion sectorial",
-    "status": "medio",
-    "stop_loss": null,
-    "summary": "Technology muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "take_profit": null,
-    "timestamp": "2026-08-05T21:49:05.386950+00:00",
-    "title": "XLK rotacion sectorial",
-    "valid_until": "2026-08-15T21:49:05.386950+00:00"
+    "valid_until": "2026-08-16T09:08:08.184785+00:00"
   },
   {
     "agent": "sec_filing",
@@ -1107,7 +1016,7 @@
     "direction": "WAIT",
     "entry_price": 192.97999572753906,
     "horizon": "swing",
-    "id": "a50c919b553527dc",
+    "id": "9125e69031db8ce0",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -1123,9 +1032,9 @@
       "sma50": 171.69400024414062,
       "status": "ok",
       "symbol": "CRM",
-      "volume": 8279146.0,
-      "volume_20d_avg": 12622837.3,
-      "volume_ratio": 0.6558862958647181
+      "volume": 9560200.0,
+      "volume_20d_avg": 12686890.0,
+      "volume_ratio": 0.7535495302631299
     },
     "reasons": [
       "formulario SEC 4",
@@ -1141,9 +1050,9 @@
     "stop_loss": null,
     "summary": "Salesforce publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:35:00.439267+00:00",
+    "timestamp": "2026-08-06T09:08:11.438655+00:00",
     "title": "CRM presentacion SEC 4",
-    "valid_until": "2026-08-15T21:35:00.439267+00:00"
+    "valid_until": "2026-08-16T09:08:11.438655+00:00"
   },
   {
     "agent": "sec_filing",
@@ -1153,7 +1062,7 @@
     "direction": "WAIT",
     "entry_price": 192.97999572753906,
     "horizon": "swing",
-    "id": "d1af540f156de14b",
+    "id": "e6d3a80bf8c897ad",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -1169,9 +1078,9 @@
       "sma50": 171.69400024414062,
       "status": "ok",
       "symbol": "CRM",
-      "volume": 8279146.0,
-      "volume_20d_avg": 12622837.3,
-      "volume_ratio": 0.6558862958647181
+      "volume": 9560200.0,
+      "volume_20d_avg": 12686890.0,
+      "volume_ratio": 0.7535495302631299
     },
     "reasons": [
       "formulario SEC 4",
@@ -1187,9 +1096,9 @@
     "stop_loss": null,
     "summary": "Salesforce publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:35:00.439252+00:00",
+    "timestamp": "2026-08-06T09:08:11.438640+00:00",
     "title": "CRM presentacion SEC 4",
-    "valid_until": "2026-08-15T21:35:00.439252+00:00"
+    "valid_until": "2026-08-16T09:08:11.438640+00:00"
   },
   {
     "agent": "sec_filing",
@@ -1199,53 +1108,7 @@
     "direction": "WAIT",
     "entry_price": 588.77001953125,
     "horizon": "swing",
-    "id": "95dd6ebf8323d89e",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "filing_date": "2026-07-22",
-      "form": "4",
-      "form4_details": {},
-      "perf_20d": -2.3792903074203786,
-      "perf_5d": 0.5396141218101613,
-      "perf_60d": -3.4217451871602633,
-      "price": 588.77001953125,
-      "rsi": 46.68777439628121,
-      "sma20": 618.2009948730469,
-      "sma50": 601.0691955566406,
-      "status": "ok",
-      "symbol": "META",
-      "volume": 14756774.0,
-      "volume_20d_avg": 19450558.7,
-      "volume_ratio": 0.7586812403491525
-    },
-    "reasons": [
-      "formulario SEC 4",
-      "presentado 2026-07-22",
-      "operacion declarada por insider"
-    ],
-    "risk_reward": null,
-    "score": 70.0,
-    "signal_type": "META presentacion SEC 4",
-    "source": "https://www.sec.gov/Archives/edgar/data/1326801/000095010326011028/xslF345X06/ownership.xml",
-    "source_label": "SEC e insiders",
-    "status": "medio",
-    "stop_loss": null,
-    "summary": "Meta Platforms publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
-    "take_profit": null,
-    "timestamp": "2026-08-05T21:34:58.559863+00:00",
-    "title": "META presentacion SEC 4",
-    "valid_until": "2026-08-15T21:34:58.559863+00:00"
-  },
-  {
-    "agent": "sec_filing",
-    "asset": "META",
-    "confidence": "media",
-    "dashboard": "sec_filing_dashboard.html",
-    "direction": "WAIT",
-    "entry_price": 588.77001953125,
-    "horizon": "swing",
-    "id": "3a9ac5f86f6ad499",
+    "id": "615b1e0eef5c87de",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -1261,9 +1124,9 @@
       "sma50": 601.0691955566406,
       "status": "ok",
       "symbol": "META",
-      "volume": 14756774.0,
-      "volume_20d_avg": 19450558.7,
-      "volume_ratio": 0.7586812403491525
+      "volume": 14824300.0,
+      "volume_20d_avg": 19453935.0,
+      "volume_ratio": 0.762020640040177
     },
     "reasons": [
       "formulario SEC 4",
@@ -1279,9 +1142,9 @@
     "stop_loss": null,
     "summary": "Meta Platforms publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:58.559832+00:00",
+    "timestamp": "2026-08-06T09:08:09.520504+00:00",
     "title": "META presentacion SEC 4",
-    "valid_until": "2026-08-15T21:34:58.559832+00:00"
+    "valid_until": "2026-08-16T09:08:09.520504+00:00"
   },
   {
     "agent": "sec_filing",
@@ -1291,7 +1154,7 @@
     "direction": "WAIT",
     "entry_price": 588.77001953125,
     "horizon": "swing",
-    "id": "9907f7b39f12a0b9",
+    "id": "66c1c02e006f8b21",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -1307,9 +1170,9 @@
       "sma50": 601.0691955566406,
       "status": "ok",
       "symbol": "META",
-      "volume": 14756774.0,
-      "volume_20d_avg": 19450558.7,
-      "volume_ratio": 0.7586812403491525
+      "volume": 14824300.0,
+      "volume_20d_avg": 19453935.0,
+      "volume_ratio": 0.762020640040177
     },
     "reasons": [
       "formulario SEC 4",
@@ -1325,9 +1188,9 @@
     "stop_loss": null,
     "summary": "Meta Platforms publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:58.559790+00:00",
+    "timestamp": "2026-08-06T09:08:09.520470+00:00",
     "title": "META presentacion SEC 4",
-    "valid_until": "2026-08-15T21:34:58.559790+00:00"
+    "valid_until": "2026-08-16T09:08:09.520470+00:00"
   },
   {
     "agent": "sec_filing",
@@ -1337,7 +1200,7 @@
     "direction": "WAIT",
     "entry_price": 588.77001953125,
     "horizon": "swing",
-    "id": "242dd9812e93082e",
+    "id": "57a863bc1045c546",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -1353,9 +1216,9 @@
       "sma50": 601.0691955566406,
       "status": "ok",
       "symbol": "META",
-      "volume": 14756774.0,
-      "volume_20d_avg": 19450558.7,
-      "volume_ratio": 0.7586812403491525
+      "volume": 14824300.0,
+      "volume_20d_avg": 19453935.0,
+      "volume_ratio": 0.762020640040177
     },
     "reasons": [
       "formulario SEC 4",
@@ -1371,43 +1234,55 @@
     "stop_loss": null,
     "summary": "Meta Platforms publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:58.559761+00:00",
+    "timestamp": "2026-08-06T09:08:09.520456+00:00",
     "title": "META presentacion SEC 4",
-    "valid_until": "2026-08-15T21:34:58.559761+00:00"
+    "valid_until": "2026-08-16T09:08:09.520456+00:00"
   },
   {
-    "agent": "altcoin_fundamentals",
-    "asset": "UNI",
+    "agent": "sec_filing",
+    "asset": "META",
     "confidence": "media",
-    "dashboard": "altcoin_fundamentals_dashboard.html",
+    "dashboard": "sec_filing_dashboard.html",
     "direction": "WAIT",
-    "entry_price": null,
+    "entry_price": 588.77001953125,
     "horizon": "swing",
-    "id": "0d5539da0b248d2c",
+    "id": "b27f9ca39a6df103",
     "metrics": {
-      "change_30d": 27.5,
-      "change_7d": 5.4,
-      "market_cap": 2551337015.0,
-      "tvl": 0,
-      "volume": 250864451.0
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "filing_date": "2026-08-05",
+      "form": "4",
+      "form4_details": {},
+      "perf_20d": -2.3792903074203786,
+      "perf_5d": 0.5396141218101613,
+      "perf_60d": -3.4217451871602633,
+      "price": 588.77001953125,
+      "rsi": 46.68777439628121,
+      "sma20": 618.2009948730469,
+      "sma50": 601.0691955566406,
+      "status": "ok",
+      "symbol": "META",
+      "volume": 14824300.0,
+      "volume_20d_avg": 19453935.0,
+      "volume_ratio": 0.762020640040177
     },
     "reasons": [
-      "7D +5.4%",
-      "30D +27.5%",
-      "TVL no disponible"
+      "formulario SEC 4",
+      "presentado 2026-08-05",
+      "operacion declarada por insider"
     ],
     "risk_reward": null,
-    "score": 68.0,
-    "signal_type": "UNI vigilancia fundamental",
-    "source": "https://www.coingecko.com/en/coins/uniswap",
-    "source_label": "Fundamentales altcoin",
+    "score": 70.0,
+    "signal_type": "META presentacion SEC 4",
+    "source": "https://www.sec.gov/Archives/edgar/data/1326801/000095010326011964/xslF345X06/ownership.xml",
+    "source_label": "SEC e insiders",
     "status": "medio",
     "stop_loss": null,
-    "summary": "Uniswap muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
+    "summary": "Meta Platforms publico el formulario 4. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T22:00:51.852664+00:00",
-    "title": "UNI vigilancia fundamental",
-    "valid_until": "2026-08-15T22:00:51.852664+00:00"
+    "timestamp": "2026-08-06T09:08:09.520428+00:00",
+    "title": "META presentacion SEC 4",
+    "valid_until": "2026-08-16T09:08:09.520428+00:00"
   },
   {
     "agent": "cftc_positioning",
@@ -1417,7 +1292,7 @@
     "direction": "WAIT",
     "entry_price": null,
     "horizon": "swing",
-    "id": "97d364eb2442c91f",
+    "id": "d3e7de90ad0c9aee",
     "metrics": {
       "matched_public_report": true,
       "report_url": "https://www.cftc.gov/dea/newcot/deafut.txt"
@@ -1435,9 +1310,9 @@
     "stop_loss": null,
     "summary": "Conviene revisar el posicionamiento de Bitcoin Futures para extremos y cambios semanales.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:56:19.559902+00:00",
+    "timestamp": "2026-08-06T09:30:38.563899+00:00",
     "title": "Bitcoin Futures posicionamiento CFTC",
-    "valid_until": "2026-08-15T21:56:19.559902+00:00"
+    "valid_until": "2026-08-16T09:30:38.563899+00:00"
   },
   {
     "agent": "cftc_positioning",
@@ -1447,7 +1322,7 @@
     "direction": "WAIT",
     "entry_price": null,
     "horizon": "swing",
-    "id": "db7e02eb4524dec6",
+    "id": "68dfe71c7777c02b",
     "metrics": {
       "matched_public_report": true,
       "report_url": "https://www.cftc.gov/dea/newcot/deafut.txt"
@@ -1465,9 +1340,9 @@
     "stop_loss": null,
     "summary": "Conviene revisar el posicionamiento de Dollar Index para extremos y cambios semanales.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:56:19.559391+00:00",
+    "timestamp": "2026-08-06T09:30:38.563328+00:00",
     "title": "Dollar Index posicionamiento CFTC",
-    "valid_until": "2026-08-15T21:56:19.559391+00:00"
+    "valid_until": "2026-08-16T09:30:38.563328+00:00"
   },
   {
     "agent": "cftc_positioning",
@@ -1477,7 +1352,7 @@
     "direction": "WAIT",
     "entry_price": null,
     "horizon": "swing",
-    "id": "c304e061459a8ad2",
+    "id": "48cfe0424c81e8c2",
     "metrics": {
       "matched_public_report": true,
       "report_url": "https://www.cftc.gov/dea/newcot/deafut.txt"
@@ -1495,9 +1370,9 @@
     "stop_loss": null,
     "summary": "Conviene revisar el posicionamiento de Crude Oil para extremos y cambios semanales.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:56:19.559261+00:00",
+    "timestamp": "2026-08-06T09:30:38.563177+00:00",
     "title": "Crude Oil posicionamiento CFTC",
-    "valid_until": "2026-08-15T21:56:19.559261+00:00"
+    "valid_until": "2026-08-16T09:30:38.563177+00:00"
   },
   {
     "agent": "cftc_positioning",
@@ -1507,7 +1382,7 @@
     "direction": "WAIT",
     "entry_price": null,
     "horizon": "swing",
-    "id": "232f237eae7140f1",
+    "id": "8199bbfbc350c4ba",
     "metrics": {
       "matched_public_report": true,
       "report_url": "https://www.cftc.gov/dea/newcot/deafut.txt"
@@ -1525,9 +1400,9 @@
     "stop_loss": null,
     "summary": "Conviene revisar el posicionamiento de Gold para extremos y cambios semanales.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:56:19.559101+00:00",
+    "timestamp": "2026-08-06T09:30:38.562996+00:00",
     "title": "Gold posicionamiento CFTC",
-    "valid_until": "2026-08-15T21:56:19.559101+00:00"
+    "valid_until": "2026-08-16T09:30:38.562996+00:00"
   },
   {
     "agent": "cftc_positioning",
@@ -1537,7 +1412,7 @@
     "direction": "WAIT",
     "entry_price": null,
     "horizon": "swing",
-    "id": "49e5458e602ac8ab",
+    "id": "921c9a02adc59d45",
     "metrics": {
       "matched_public_report": true,
       "report_url": "https://www.cftc.gov/dea/newcot/deafut.txt"
@@ -1555,9 +1430,9 @@
     "stop_loss": null,
     "summary": "Conviene revisar el posicionamiento de Nasdaq 100 para extremos y cambios semanales.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:56:19.559023+00:00",
+    "timestamp": "2026-08-06T09:30:38.562912+00:00",
     "title": "Nasdaq 100 posicionamiento CFTC",
-    "valid_until": "2026-08-15T21:56:19.559023+00:00"
+    "valid_until": "2026-08-16T09:30:38.562912+00:00"
   },
   {
     "agent": "cftc_positioning",
@@ -1567,7 +1442,7 @@
     "direction": "WAIT",
     "entry_price": null,
     "horizon": "swing",
-    "id": "2d76f8396439cc83",
+    "id": "8241dbc61401e55d",
     "metrics": {
       "matched_public_report": true,
       "report_url": "https://www.cftc.gov/dea/newcot/deafut.txt"
@@ -1585,9 +1460,9 @@
     "stop_loss": null,
     "summary": "Conviene revisar el posicionamiento de S&P 500 para extremos y cambios semanales.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:56:19.558833+00:00",
+    "timestamp": "2026-08-06T09:30:38.562677+00:00",
     "title": "S&P 500 posicionamiento CFTC",
-    "valid_until": "2026-08-15T21:56:19.558833+00:00"
+    "valid_until": "2026-08-16T09:30:38.562677+00:00"
   },
   {
     "agent": "sec_filing",
@@ -1597,7 +1472,7 @@
     "direction": "WAIT",
     "entry_price": 192.97999572753906,
     "horizon": "swing",
-    "id": "9e6916aed4f670a1",
+    "id": "55c6500dd76daba2",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -1613,9 +1488,9 @@
       "sma50": 171.69400024414062,
       "status": "ok",
       "symbol": "CRM",
-      "volume": 8279146.0,
-      "volume_20d_avg": 12622837.3,
-      "volume_ratio": 0.6558862958647181
+      "volume": 9560200.0,
+      "volume_20d_avg": 12686890.0,
+      "volume_ratio": 0.7535495302631299
     },
     "reasons": [
       "formulario SEC 8-K",
@@ -1631,9 +1506,9 @@
     "stop_loss": null,
     "summary": "Salesforce publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:35:00.439222+00:00",
+    "timestamp": "2026-08-06T09:08:11.438609+00:00",
     "title": "CRM presentacion SEC 8-K",
-    "valid_until": "2026-08-15T21:35:00.439222+00:00"
+    "valid_until": "2026-08-16T09:08:11.438609+00:00"
   },
   {
     "agent": "sec_filing",
@@ -1643,7 +1518,7 @@
     "direction": "WAIT",
     "entry_price": 588.77001953125,
     "horizon": "swing",
-    "id": "8c1bfb7f5e861e20",
+    "id": "c57b3ff282271b6f",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -1659,9 +1534,9 @@
       "sma50": 601.0691955566406,
       "status": "ok",
       "symbol": "META",
-      "volume": 14756774.0,
-      "volume_20d_avg": 19450558.7,
-      "volume_ratio": 0.7586812403491525
+      "volume": 14824300.0,
+      "volume_20d_avg": 19453935.0,
+      "volume_ratio": 0.762020640040177
     },
     "reasons": [
       "formulario SEC 8-K",
@@ -1677,9 +1552,9 @@
     "stop_loss": null,
     "summary": "Meta Platforms publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:58.559845+00:00",
+    "timestamp": "2026-08-06T09:08:09.520515+00:00",
     "title": "META presentacion SEC 8-K",
-    "valid_until": "2026-08-15T21:34:58.559845+00:00"
+    "valid_until": "2026-08-16T09:08:09.520515+00:00"
   },
   {
     "agent": "sec_filing",
@@ -1689,7 +1564,7 @@
     "direction": "WAIT",
     "entry_price": 311.0,
     "horizon": "swing",
-    "id": "a309b84431abf94e",
+    "id": "1b2d2f07e73b2599",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -1705,9 +1580,9 @@
       "sma50": 309.6542004394531,
       "status": "ok",
       "symbol": "AAPL",
-      "volume": 44330978.0,
-      "volume_20d_avg": 56166233.9,
-      "volume_ratio": 0.7892816541505732
+      "volume": 49178700.0,
+      "volume_20d_avg": 56408620.0,
+      "volume_ratio": 0.8718295182544795
     },
     "reasons": [
       "formulario SEC 8-K",
@@ -1723,95 +1598,129 @@
     "stop_loss": null,
     "summary": "Apple publico el formulario 8-K. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:56.898186+00:00",
+    "timestamp": "2026-08-06T09:08:07.660240+00:00",
     "title": "AAPL presentacion SEC 8-K",
-    "valid_until": "2026-08-15T21:34:56.898186+00:00"
+    "valid_until": "2026-08-16T09:08:07.660240+00:00"
   },
   {
-    "agent": "sector_rotation",
-    "asset": "XLF",
+    "agent": "altcoin_fundamentals",
+    "asset": "UNI",
     "confidence": "baja",
-    "dashboard": "sector_rotation_dashboard.html",
-    "direction": "LONG",
-    "entry_price": 58.0,
+    "dashboard": "altcoin_fundamentals_dashboard.html",
+    "direction": "WAIT",
+    "entry_price": null,
     "horizon": "swing",
-    "id": "c72658b670383066",
+    "id": "09bbcd14953613b5",
     "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": 5.512095164654451,
-      "perf_5d": 2.3288632457958647,
-      "perf_60d": 13.192814402998042,
-      "price": 58.0,
-      "relative_20d_vs_spy": 2.240032806935388,
-      "rsi": 69.06011246815902,
-      "sma20": 56.58850021362305,
-      "sma50": 54.55,
-      "status": "ok",
-      "symbol": "XLF",
-      "volume": 33940726.0,
-      "volume_20d_avg": 33440296.3,
-      "volume_ratio": 1.0149648703920127
+      "change_30d": 28.4,
+      "change_7d": 1.6,
+      "market_cap": 2497416729.0,
+      "tvl": 0,
+      "volume": 259726879.0
     },
     "reasons": [
-      "20D +5.5%",
-      "relativo vs SPY +2.2%",
-      "RSI 69.1"
+      "7D +1.6%",
+      "30D +28.4%",
+      "TVL no disponible"
     ],
     "risk_reward": null,
     "score": 64.0,
-    "signal_type": "XLF rotacion sectorial",
-    "source": "https://finance.yahoo.com/quote/XLF",
-    "source_label": "Rotacion sectorial",
+    "signal_type": "UNI vigilancia fundamental",
+    "source": "https://www.coingecko.com/en/coins/uniswap",
+    "source_label": "Fundamentales altcoin",
     "status": "vigilancia",
     "stop_loss": null,
-    "summary": "Financials muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
+    "summary": "Uniswap muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:49:05.490750+00:00",
-    "title": "XLF rotacion sectorial",
-    "valid_until": "2026-08-15T21:49:05.490750+00:00"
+    "timestamp": "2026-08-06T09:32:44.529860+00:00",
+    "title": "UNI vigilancia fundamental",
+    "valid_until": "2026-08-16T09:32:44.529860+00:00"
   },
   {
-    "agent": "unusual_volume",
-    "asset": "SMH",
+    "agent": "sector_rotation",
+    "asset": "XLE",
     "confidence": "baja",
-    "dashboard": "unusual_volume_dashboard.html",
+    "dashboard": "sector_rotation_dashboard.html",
     "direction": "LONG",
-    "entry_price": 569.7000122070312,
+    "entry_price": 58.15999984741211,
     "horizon": "swing",
-    "id": "a701be16a40bcdcf",
+    "id": "f3e3028bd879651d",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": -3.92917163456471,
-      "perf_5d": 12.986396975090786,
-      "perf_60d": 0.5577777919028026,
-      "price": 569.7000122070312,
-      "rsi": 49.73907285806833,
-      "sma20": 567.238005065918,
-      "sma50": 595.8096014404297,
+      "perf_20d": 6.092667222147452,
+      "perf_5d": -1.3568508301948556,
+      "perf_60d": 1.7316804445947298,
+      "price": 58.15999984741211,
+      "relative_20d_vs_spy": 3.8511146163009435,
+      "rsi": 53.44042540035543,
+      "sma20": 58.024000358581546,
+      "sma50": 56.60040016174317,
       "status": "ok",
-      "symbol": "SMH",
-      "volume": 5861033.0,
-      "volume_20d_avg": 12600141.65,
-      "volume_ratio": 0.4651561198917156
+      "symbol": "XLE",
+      "volume": 24589433.0,
+      "volume_20d_avg": 29995991.65,
+      "volume_ratio": 0.8197572958052214
     },
     "reasons": [
-      "volume 0.5x avg",
-      "5D +13.0%"
+      "20D +6.1%",
+      "relativo vs SPY +3.9%",
+      "RSI 53.4"
+    ],
+    "risk_reward": null,
+    "score": 63.0,
+    "signal_type": "XLE rotacion sectorial",
+    "source": "https://finance.yahoo.com/quote/XLE",
+    "source_label": "Rotacion sectorial",
+    "status": "vigilancia",
+    "stop_loss": null,
+    "summary": "Energy muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
+    "take_profit": null,
+    "timestamp": "2026-08-07T00:56:52.348501+00:00",
+    "title": "XLE rotacion sectorial",
+    "valid_until": "2026-08-17T00:56:52.348501+00:00"
+  },
+  {
+    "agent": "unusual_volume",
+    "asset": "COIN",
+    "confidence": "baja",
+    "dashboard": "unusual_volume_dashboard.html",
+    "direction": "LONG",
+    "entry_price": 145.41000366210938,
+    "horizon": "swing",
+    "id": "dfab377329b14109",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": -8.223932452989946,
+      "perf_5d": -11.10771363587052,
+      "perf_60d": -32.86703621207828,
+      "price": 145.41000366210938,
+      "rsi": 40.52054113191736,
+      "sma20": 159.1229995727539,
+      "sma50": 161.20359924316406,
+      "status": "ok",
+      "symbol": "COIN",
+      "volume": 5810322.0,
+      "volume_20d_avg": 7663051.1,
+      "volume_ratio": 0.7582256628825038
+    },
+    "reasons": [
+      "volume 0.8x avg",
+      "5D -11.1%"
     ],
     "risk_reward": null,
     "score": 62.0,
-    "signal_type": "SMH volumen inusual",
-    "source": "https://finance.yahoo.com/quote/SMH",
+    "signal_type": "COIN volumen inusual",
+    "source": "https://finance.yahoo.com/quote/COIN",
     "source_label": "Volumen inusual",
     "status": "vigilancia",
     "stop_loss": null,
-    "summary": "Semiconductor ETF presenta volumen anormal o movimiento tecnico a vigilar.",
+    "summary": "Coinbase presenta volumen anormal o movimiento tecnico a vigilar.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:54:33.249814+00:00",
-    "title": "SMH volumen inusual",
-    "valid_until": "2026-08-15T21:54:33.249814+00:00"
+    "timestamp": "2026-08-07T00:58:32.548166+00:00",
+    "title": "COIN volumen inusual",
+    "valid_until": "2026-08-17T00:58:32.548166+00:00"
   },
   {
     "agent": "unusual_volume",
@@ -1819,28 +1728,28 @@
     "confidence": "baja",
     "dashboard": "unusual_volume_dashboard.html",
     "direction": "LONG",
-    "entry_price": 158.42999267578125,
+    "entry_price": 155.9199981689453,
     "horizon": "swing",
-    "id": "133d8f7c8e388774",
+    "id": "d03ff8954898ecd1",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": 19.82301558999997,
-      "perf_5d": 28.804872094131095,
-      "perf_60d": 14.970964562515142,
-      "price": 158.42999267578125,
-      "rsi": 68.74687732496645,
-      "sma20": 131.43299980163573,
-      "sma50": 131.42419967651367,
+      "perf_20d": 20.830755022753976,
+      "perf_5d": 27.531486540633754,
+      "perf_60d": 13.901672046275081,
+      "price": 155.9199981689453,
+      "rsi": 66.37085723271521,
+      "sma20": 132.77700004577636,
+      "sma50": 131.81059951782225,
       "status": "ok",
       "symbol": "PLTR",
-      "volume": 61261948.0,
-      "volume_20d_avg": 43216307.4,
-      "volume_ratio": 1.4175655368463989
+      "volume": 38397107.0,
+      "volume_20d_avg": 43484555.35,
+      "volume_ratio": 0.8830056255824172
     },
     "reasons": [
-      "volume 1.4x avg",
-      "5D +28.8%"
+      "volume 0.9x avg",
+      "5D +27.5%"
     ],
     "risk_reward": null,
     "score": 62.0,
@@ -1851,51 +1760,9 @@
     "stop_loss": null,
     "summary": "Palantir presenta volumen anormal o movimiento tecnico a vigilar.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:54:32.865273+00:00",
+    "timestamp": "2026-08-07T00:58:32.480588+00:00",
     "title": "PLTR volumen inusual",
-    "valid_until": "2026-08-15T21:54:32.865273+00:00"
-  },
-  {
-    "agent": "unusual_volume",
-    "asset": "SMCI",
-    "confidence": "baja",
-    "dashboard": "unusual_volume_dashboard.html",
-    "direction": "LONG",
-    "entry_price": 30.31999969482422,
-    "horizon": "swing",
-    "id": "3b5ada566ae586f3",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": 7.632231497008668,
-      "perf_5d": 17.97664900674638,
-      "perf_60d": -14.277634689177654,
-      "price": 30.31999969482422,
-      "rsi": 53.14934469060252,
-      "sma20": 27.976999950408935,
-      "sma50": 32.151399841308596,
-      "status": "ok",
-      "symbol": "SMCI",
-      "volume": 33789623.0,
-      "volume_20d_avg": 43711456.15,
-      "volume_ratio": 0.7730152682181923
-    },
-    "reasons": [
-      "volume 0.8x avg",
-      "5D +18.0%"
-    ],
-    "risk_reward": null,
-    "score": 62.0,
-    "signal_type": "SMCI volumen inusual",
-    "source": "https://finance.yahoo.com/quote/SMCI",
-    "source_label": "Volumen inusual",
-    "status": "vigilancia",
-    "stop_loss": null,
-    "summary": "Super Micro Computer presenta volumen anormal o movimiento tecnico a vigilar.",
-    "take_profit": null,
-    "timestamp": "2026-08-05T21:54:32.817359+00:00",
-    "title": "SMCI volumen inusual",
-    "valid_until": "2026-08-15T21:54:32.817359+00:00"
+    "valid_until": "2026-08-17T00:58:32.480588+00:00"
   },
   {
     "agent": "unusual_volume",
@@ -1903,28 +1770,28 @@
     "confidence": "baja",
     "dashboard": "unusual_volume_dashboard.html",
     "direction": "LONG",
-    "entry_price": 274.5799865722656,
+    "entry_price": 286.67999267578125,
     "horizon": "swing",
-    "id": "70c66ec07bc12408",
+    "id": "d4e9cd5afccb0e99",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": -8.546497634135452,
-      "perf_5d": 22.09524092555286,
-      "perf_60d": 28.747588067508435,
-      "price": 274.5799865722656,
-      "rsi": 48.30517584755328,
-      "sma20": 271.74050064086913,
-      "sma50": 323.29979827880857,
+      "perf_20d": -12.562906961548615,
+      "perf_5d": 18.688416264123497,
+      "perf_60d": 34.81307355002035,
+      "price": 286.67999267578125,
+      "rsi": 51.46100677692986,
+      "sma20": 269.68100051879884,
+      "sma50": 322.60899810791017,
       "status": "ok",
       "symbol": "ARM",
-      "volume": 4415917.0,
-      "volume_20d_avg": 6384945.85,
-      "volume_ratio": 0.6916138529193635
+      "volume": 4360900.0,
+      "volume_20d_avg": 6249335.0,
+      "volume_ratio": 0.6978182478615724
     },
     "reasons": [
       "volume 0.7x avg",
-      "5D +22.1%"
+      "5D +18.7%"
     ],
     "risk_reward": null,
     "score": 62.0,
@@ -1935,93 +1802,9 @@
     "stop_loss": null,
     "summary": "Arm Holdings presenta volumen anormal o movimiento tecnico a vigilar.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:54:32.756619+00:00",
+    "timestamp": "2026-08-07T00:58:32.405442+00:00",
     "title": "ARM volumen inusual",
-    "valid_until": "2026-08-15T21:54:32.756619+00:00"
-  },
-  {
-    "agent": "unusual_volume",
-    "asset": "AVGO",
-    "confidence": "baja",
-    "dashboard": "unusual_volume_dashboard.html",
-    "direction": "LONG",
-    "entry_price": 418.2799987792969,
-    "horizon": "swing",
-    "id": "b8d9652d7b2cc17e",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": 7.612749530997065,
-      "perf_5d": 12.950958767153153,
-      "perf_60d": -2.72558167923328,
-      "price": 418.2799987792969,
-      "rsi": 61.803330140777135,
-      "sma20": 389.49499969482423,
-      "sma50": 394.95140075683594,
-      "status": "ok",
-      "symbol": "AVGO",
-      "volume": 15710613.0,
-      "volume_20d_avg": 19704405.65,
-      "volume_ratio": 0.797314736565018
-    },
-    "reasons": [
-      "volume 0.8x avg",
-      "5D +13.0%"
-    ],
-    "risk_reward": null,
-    "score": 62.0,
-    "signal_type": "AVGO volumen inusual",
-    "source": "https://finance.yahoo.com/quote/AVGO",
-    "source_label": "Volumen inusual",
-    "status": "vigilancia",
-    "stop_loss": null,
-    "summary": "Broadcom presenta volumen anormal o movimiento tecnico a vigilar.",
-    "take_profit": null,
-    "timestamp": "2026-08-05T21:54:32.704920+00:00",
-    "title": "AVGO volumen inusual",
-    "valid_until": "2026-08-15T21:54:32.704920+00:00"
-  },
-  {
-    "agent": "unusual_volume",
-    "asset": "AMD",
-    "confidence": "baja",
-    "dashboard": "unusual_volume_dashboard.html",
-    "direction": "LONG",
-    "entry_price": 482.04998779296875,
-    "horizon": "swing",
-    "id": "4fdfd07168d7fab9",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": -6.834036293630774,
-      "perf_5d": 12.219478194594968,
-      "perf_60d": 5.900829369603744,
-      "price": 482.04998779296875,
-      "rsi": 46.614525575448695,
-      "sma20": 510.0440048217773,
-      "sma50": 514.6194012451172,
-      "status": "ok",
-      "symbol": "AMD",
-      "volume": 47435209.0,
-      "volume_20d_avg": 29735615.45,
-      "volume_ratio": 1.5952321242437912
-    },
-    "reasons": [
-      "volume 1.6x avg",
-      "5D +12.2%"
-    ],
-    "risk_reward": null,
-    "score": 62.0,
-    "signal_type": "AMD volumen inusual",
-    "source": "https://finance.yahoo.com/quote/AMD",
-    "source_label": "Volumen inusual",
-    "status": "vigilancia",
-    "stop_loss": null,
-    "summary": "Advanced Micro Devices presenta volumen anormal o movimiento tecnico a vigilar.",
-    "take_profit": null,
-    "timestamp": "2026-08-05T21:54:32.638338+00:00",
-    "title": "AMD volumen inusual",
-    "valid_until": "2026-08-15T21:54:32.638338+00:00"
+    "valid_until": "2026-08-17T00:58:32.405442+00:00"
   },
   {
     "agent": "unusual_volume",
@@ -2029,28 +1812,28 @@
     "confidence": "baja",
     "dashboard": "unusual_volume_dashboard.html",
     "direction": "LONG",
-    "entry_price": 219.22000122070312,
+    "entry_price": 218.99000549316406,
     "horizon": "swing",
-    "id": "b790f3ed8f98fa82",
+    "id": "cc30ce22cac8223a",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": 7.397612416581989,
-      "perf_5d": 15.372879089692471,
-      "perf_60d": 1.868031751611876,
-      "price": 219.22000122070312,
-      "rsi": 61.60183362033649,
-      "sma20": 205.35649795532225,
-      "sma50": 205.76419921875,
+      "perf_20d": 7.993888357554413,
+      "perf_5d": 12.279539085040604,
+      "perf_60d": -0.20506605141983325,
+      "price": 218.99000549316406,
+      "rsi": 61.36883197401381,
+      "sma20": 206.16699829101563,
+      "sma50": 205.84679931640625,
       "status": "ok",
       "symbol": "NVDA",
-      "volume": 156378175.0,
-      "volume_20d_avg": 130175673.75,
-      "volume_ratio": 1.201285697205773
+      "volume": 113051990.0,
+      "volume_20d_avg": 129316864.5,
+      "volume_ratio": 0.8742246453091198
     },
     "reasons": [
-      "volume 1.2x avg",
-      "5D +15.4%"
+      "volume 0.9x avg",
+      "5D +12.3%"
     ],
     "risk_reward": null,
     "score": 62.0,
@@ -2061,183 +1844,9 @@
     "stop_loss": null,
     "summary": "Nvidia presenta volumen anormal o movimiento tecnico a vigilar.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:54:32.590854+00:00",
+    "timestamp": "2026-08-07T00:58:32.278369+00:00",
     "title": "NVDA volumen inusual",
-    "valid_until": "2026-08-15T21:54:32.590854+00:00"
-  },
-  {
-    "agent": "unusual_volume",
-    "asset": "MSFT",
-    "confidence": "baja",
-    "dashboard": "unusual_volume_dashboard.html",
-    "direction": "LONG",
-    "entry_price": 487.4599914550781,
-    "horizon": "swing",
-    "id": "8fffda0f29a0d192",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": 27.161265746299044,
-      "perf_5d": 24.81691524288683,
-      "perf_60d": 17.426285697818344,
-      "price": 487.4599914550781,
-      "rsi": 76.09243688677253,
-      "sma20": 412.3160003662109,
-      "sma50": 403.58899780273435,
-      "status": "ok",
-      "symbol": "MSFT",
-      "volume": 30476807.0,
-      "volume_20d_avg": 39159370.35,
-      "volume_ratio": 0.7782762268035293
-    },
-    "reasons": [
-      "volume 0.8x avg",
-      "5D +24.8%"
-    ],
-    "risk_reward": null,
-    "score": 62.0,
-    "signal_type": "MSFT volumen inusual",
-    "source": "https://finance.yahoo.com/quote/MSFT",
-    "source_label": "Volumen inusual",
-    "status": "vigilancia",
-    "stop_loss": null,
-    "summary": "Microsoft presenta volumen anormal o movimiento tecnico a vigilar.",
-    "take_profit": null,
-    "timestamp": "2026-08-05T21:54:32.532707+00:00",
-    "title": "MSFT volumen inusual",
-    "valid_until": "2026-08-15T21:54:32.532707+00:00"
-  },
-  {
-    "agent": "sector_rotation",
-    "asset": "XLY",
-    "confidence": "baja",
-    "dashboard": "sector_rotation_dashboard.html",
-    "direction": "LONG",
-    "entry_price": 118.63999938964844,
-    "horizon": "swing",
-    "id": "c59a046c67b97c0e",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": 2.896787727222616,
-      "perf_5d": 6.298717624632699,
-      "perf_60d": -1.2978349402666622,
-      "price": 118.63999938964844,
-      "relative_20d_vs_spy": -0.37527463049644716,
-      "rsi": 59.9346159419605,
-      "sma20": 114.80149993896484,
-      "sma50": 116.07440032958985,
-      "status": "ok",
-      "symbol": "XLY",
-      "volume": 5826598.0,
-      "volume_20d_avg": 8150689.9,
-      "volume_ratio": 0.7148594869251497
-    },
-    "reasons": [
-      "20D +2.9%",
-      "relativo vs SPY -0.4%",
-      "RSI 59.9"
-    ],
-    "risk_reward": null,
-    "score": 61.0,
-    "signal_type": "XLY rotacion sectorial",
-    "source": "https://finance.yahoo.com/quote/XLY",
-    "source_label": "Rotacion sectorial",
-    "status": "vigilancia",
-    "stop_loss": null,
-    "summary": "Consumer discretionary muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "take_profit": null,
-    "timestamp": "2026-08-05T21:49:05.788032+00:00",
-    "title": "XLY rotacion sectorial",
-    "valid_until": "2026-08-15T21:49:05.788032+00:00"
-  },
-  {
-    "agent": "sector_rotation",
-    "asset": "XLI",
-    "confidence": "baja",
-    "dashboard": "sector_rotation_dashboard.html",
-    "direction": "LONG",
-    "entry_price": 186.35000610351562,
-    "horizon": "swing",
-    "id": "48602c60fa78bc6f",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": 3.286779733262968,
-      "perf_5d": 5.485113914035655,
-      "perf_60d": 7.5923841726181385,
-      "price": 186.35000610351562,
-      "relative_20d_vs_spy": 0.01471737554390451,
-      "rsi": 62.07644174805829,
-      "sma20": 181.0095001220703,
-      "sma50": 179.30120025634767,
-      "status": "ok",
-      "symbol": "XLI",
-      "volume": 5572941.0,
-      "volume_20d_avg": 6727992.05,
-      "volume_ratio": 0.8283215792444345
-    },
-    "reasons": [
-      "20D +3.3%",
-      "relativo vs SPY +0.0%",
-      "RSI 62.1"
-    ],
-    "risk_reward": null,
-    "score": 61.0,
-    "signal_type": "XLI rotacion sectorial",
-    "source": "https://finance.yahoo.com/quote/XLI",
-    "source_label": "Rotacion sectorial",
-    "status": "vigilancia",
-    "stop_loss": null,
-    "summary": "Industrials muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "take_profit": null,
-    "timestamp": "2026-08-05T21:49:05.716031+00:00",
-    "title": "XLI rotacion sectorial",
-    "valid_until": "2026-08-15T21:49:05.716031+00:00"
-  },
-  {
-    "agent": "sector_rotation",
-    "asset": "SPY",
-    "confidence": "baja",
-    "dashboard": "sector_rotation_dashboard.html",
-    "direction": "LONG",
-    "entry_price": 769.7899780273438,
-    "horizon": "swing",
-    "id": "08693b3f48fd3b1e",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": 3.2720623577190633,
-      "perf_5d": 5.5287411016198496,
-      "perf_60d": 4.361321971084231,
-      "price": 769.7899780273438,
-      "relative_20d_vs_spy": 0.0,
-      "rsi": 64.74471202518583,
-      "sma20": 748.414501953125,
-      "sma50": 746.373603515625,
-      "status": "ok",
-      "symbol": "SPY",
-      "volume": 44246082.0,
-      "volume_20d_avg": 49778179.1,
-      "volume_ratio": 0.888865016759924
-    },
-    "reasons": [
-      "20D +3.3%",
-      "relativo vs SPY +0.0%",
-      "RSI 64.7"
-    ],
-    "risk_reward": null,
-    "score": 61.0,
-    "signal_type": "SPY rotacion sectorial",
-    "source": "https://finance.yahoo.com/quote/SPY",
-    "source_label": "Rotacion sectorial",
-    "status": "vigilancia",
-    "stop_loss": null,
-    "summary": "S&P 500 muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "take_profit": null,
-    "timestamp": "2026-08-05T21:49:05.090067+00:00",
-    "title": "SPY rotacion sectorial",
-    "valid_until": "2026-08-15T21:49:05.090067+00:00"
+    "valid_until": "2026-08-17T00:58:32.278369+00:00"
   },
   {
     "agent": "event_rumor",
@@ -2247,7 +1856,7 @@
     "direction": "WAIT",
     "entry_price": 362.42999267578125,
     "horizon": "swing",
-    "id": "7fd6155b7d70d24e",
+    "id": "bd48ba3564abdc90",
     "metrics": {},
     "reasons": [
       "18 artículos recientes",
@@ -2265,85 +1874,139 @@
     "stop_loss": null,
     "summary": "Sin resumen IA concluyente.",
     "take_profit": null,
-    "timestamp": "2026-08-05T22:01:58.315423+00:00",
+    "timestamp": "2026-08-07T00:59:06.009661+00:00",
     "title": "Google Cloud Next / Made by Google",
-    "valid_until": "2026-08-15T22:01:58.315423+00:00"
+    "valid_until": "2026-08-17T00:59:06.009661+00:00"
   },
   {
-    "agent": "altcoin_fundamentals",
-    "asset": "AVAX",
+    "agent": "sector_rotation",
+    "asset": "GLD",
     "confidence": "baja",
-    "dashboard": "altcoin_fundamentals_dashboard.html",
-    "direction": "WAIT",
-    "entry_price": null,
-    "horizon": "swing",
-    "id": "d2a5c35c9c92d8e9",
-    "metrics": {
-      "change_30d": -3.7,
-      "change_7d": 5.1,
-      "market_cap": 2873715961.0,
-      "tvl": 0,
-      "volume": 181286289.0
-    },
-    "reasons": [
-      "7D +5.1%",
-      "30D -3.7%",
-      "TVL no disponible"
-    ],
-    "risk_reward": null,
-    "score": 60.0,
-    "signal_type": "AVAX vigilancia fundamental",
-    "source": "https://www.coingecko.com/en/coins/avalanche-2",
-    "source_label": "Fundamentales altcoin",
-    "status": "vigilancia",
-    "stop_loss": null,
-    "summary": "Avalanche muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
-    "take_profit": null,
-    "timestamp": "2026-08-05T22:00:51.852703+00:00",
-    "title": "AVAX vigilancia fundamental",
-    "valid_until": "2026-08-15T22:00:51.852703+00:00"
-  },
-  {
-    "agent": "unusual_volume",
-    "asset": "QQQ",
-    "confidence": "baja",
-    "dashboard": "unusual_volume_dashboard.html",
+    "dashboard": "sector_rotation_dashboard.html",
     "direction": "LONG",
-    "entry_price": 717.2999877929688,
+    "entry_price": 389.6700134277344,
     "horizon": "swing",
-    "id": "24c80aca3b49c11e",
+    "id": "5146678ad68bec73",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": 0.8236794854735718,
-      "perf_5d": 8.397686211051614,
-      "perf_60d": 0.8534521168832354,
-      "price": 717.2999877929688,
-      "rsi": 55.396491258950135,
-      "sma20": 700.8949951171875,
-      "sma50": 715.0083996582031,
+      "perf_20d": 3.0382413069121927,
+      "perf_5d": 3.316897243651651,
+      "perf_60d": -10.348551961434605,
+      "price": 389.6700134277344,
+      "relative_20d_vs_spy": 0.7966887010656842,
+      "rsi": 60.113600124091356,
+      "sma20": 373.7960006713867,
+      "sma50": 382.5427996826172,
       "status": "ok",
-      "symbol": "QQQ",
-      "volume": 32662387.0,
-      "volume_20d_avg": 41611859.35,
-      "volume_ratio": 0.7849297654612014
+      "symbol": "GLD",
+      "volume": 9624347.0,
+      "volume_20d_avg": 7055927.35,
+      "volume_ratio": 1.3640088003457123
     },
     "reasons": [
-      "volume 0.8x avg",
+      "20D +3.0%",
+      "relativo vs SPY +0.8%",
+      "RSI 60.1"
+    ],
+    "risk_reward": null,
+    "score": 60.0,
+    "signal_type": "GLD rotacion sectorial",
+    "source": "https://finance.yahoo.com/quote/GLD",
+    "source_label": "Rotacion sectorial",
+    "status": "vigilancia",
+    "stop_loss": null,
+    "summary": "Gold muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
+    "take_profit": null,
+    "timestamp": "2026-08-07T00:56:53.269351+00:00",
+    "title": "GLD rotacion sectorial",
+    "valid_until": "2026-08-17T00:56:53.269351+00:00"
+  },
+  {
+    "agent": "sector_rotation",
+    "asset": "XLF",
+    "confidence": "baja",
+    "dashboard": "sector_rotation_dashboard.html",
+    "direction": "LONG",
+    "entry_price": 57.810001373291016,
+    "horizon": "swing",
+    "id": "d039769a63700bb0",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": 4.08714515726456,
+      "perf_5d": 1.4210550408614298,
+      "perf_60d": 12.954281024974424,
+      "price": 57.810001373291016,
+      "relative_20d_vs_spy": 1.8455925514180516,
+      "rsi": 66.48778485200866,
+      "sma20": 56.70200023651123,
+      "sma50": 54.669200057983396,
+      "status": "ok",
+      "symbol": "XLF",
+      "volume": 27313966.0,
+      "volume_20d_avg": 33495638.3,
+      "volume_ratio": 0.8154484400436101
+    },
+    "reasons": [
+      "20D +4.1%",
+      "relativo vs SPY +1.8%",
+      "RSI 66.5"
+    ],
+    "risk_reward": null,
+    "score": 60.0,
+    "signal_type": "XLF rotacion sectorial",
+    "source": "https://finance.yahoo.com/quote/XLF",
+    "source_label": "Rotacion sectorial",
+    "status": "vigilancia",
+    "stop_loss": null,
+    "summary": "Financials muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
+    "take_profit": null,
+    "timestamp": "2026-08-07T00:56:52.184987+00:00",
+    "title": "XLF rotacion sectorial",
+    "valid_until": "2026-08-17T00:56:52.184987+00:00"
+  },
+  {
+    "agent": "unusual_volume",
+    "asset": "AVGO",
+    "confidence": "baja",
+    "dashboard": "unusual_volume_dashboard.html",
+    "direction": "LONG",
+    "entry_price": 420.56500244140625,
+    "horizon": "swing",
+    "id": "f1ee82c0101bb1ab",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": 4.850294881787076,
+      "perf_5d": 8.437759491675845,
+      "perf_60d": -1.8357702235676343,
+      "price": 420.56500244140625,
+      "rsi": 62.52903458624367,
+      "sma20": 390.4677505493164,
+      "sma50": 394.92250061035156,
+      "status": "ok",
+      "symbol": "AVGO",
+      "volume": 12674099.0,
+      "volume_20d_avg": 18992899.95,
+      "volume_ratio": 0.6673072060277978
+    },
+    "reasons": [
+      "volume 0.7x avg",
       "5D +8.4%"
     ],
     "risk_reward": null,
     "score": 58.0,
-    "signal_type": "QQQ volumen inusual",
-    "source": "https://finance.yahoo.com/quote/QQQ",
+    "signal_type": "AVGO volumen inusual",
+    "source": "https://finance.yahoo.com/quote/AVGO",
     "source_label": "Volumen inusual",
     "status": "vigilancia",
     "stop_loss": null,
-    "summary": "Nasdaq 100 ETF presenta volumen anormal o movimiento tecnico a vigilar.",
+    "summary": "Broadcom presenta volumen anormal o movimiento tecnico a vigilar.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:54:33.184578+00:00",
-    "title": "QQQ volumen inusual",
-    "valid_until": "2026-08-15T21:54:33.184578+00:00"
+    "timestamp": "2026-08-07T00:58:32.365814+00:00",
+    "title": "AVGO volumen inusual",
+    "valid_until": "2026-08-17T00:58:32.365814+00:00"
   },
   {
     "agent": "defi_liquidity",
@@ -2353,14 +2016,14 @@
     "direction": "WAIT",
     "entry_price": null,
     "horizon": "swing",
-    "id": "3f97a436a5fcf6ba",
+    "id": "9180588b8f1309ef",
     "metrics": {
       "change_1d": 0,
       "change_7d": 0,
-      "tvl": 40774042617.94675
+      "tvl": 41608487647.36824
     },
     "reasons": [
-      "TVL $40,774,042,618",
+      "TVL $41,608,487,647",
       "1D +0.0%",
       "7D +0.0%"
     ],
@@ -2373,340 +2036,141 @@
     "stop_loss": null,
     "summary": "Tendencia de liquidez de Ethereum segun DefiLlama. Vigilar TVL y confirmacion de actividad en la red.",
     "take_profit": null,
-    "timestamp": "2026-08-03T21:42:54.709952+00:00",
+    "timestamp": "2026-08-06T09:23:27.286513+00:00",
     "title": "Ethereum liquidez DeFi",
-    "valid_until": "2026-08-13T21:42:54.709952+00:00"
-  },
-  {
-    "agent": "unusual_volume",
-    "asset": "TSLA",
-    "confidence": "baja",
-    "dashboard": "unusual_volume_dashboard.html",
-    "direction": "LONG",
-    "entry_price": 321.54998779296875,
-    "horizon": "swing",
-    "id": "bab06b2ab2f18ebf",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": -18.400753746856356,
-      "perf_5d": 7.786933460183021,
-      "perf_60d": -24.932885908431025,
-      "price": 321.54998779296875,
-      "rsi": 37.53701151039839,
-      "sma20": 351.64299926757815,
-      "sma50": 384.9577984619141,
-      "status": "ok",
-      "symbol": "TSLA",
-      "volume": 27506311.0,
-      "volume_20d_avg": 39662190.55,
-      "volume_ratio": 0.6935146702329582
-    },
-    "reasons": [
-      "volume 0.7x avg",
-      "5D +7.8%"
-    ],
-    "risk_reward": null,
-    "score": 57.0,
-    "signal_type": "TSLA volumen inusual",
-    "source": "https://finance.yahoo.com/quote/TSLA",
-    "source_label": "Volumen inusual",
-    "status": "vigilancia",
-    "stop_loss": null,
-    "summary": "Tesla presenta volumen anormal o movimiento tecnico a vigilar.",
-    "take_profit": null,
-    "timestamp": "2026-08-05T21:54:32.906631+00:00",
-    "title": "TSLA volumen inusual",
-    "valid_until": "2026-08-15T21:54:32.906631+00:00"
-  },
-  {
-    "agent": "unusual_volume",
-    "asset": "AAPL",
-    "confidence": "baja",
-    "dashboard": "unusual_volume_dashboard.html",
-    "direction": "LONG",
-    "entry_price": 311.0,
-    "horizon": "swing",
-    "id": "1be62510544582e6",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": -0.7626326738963352,
-      "perf_5d": -8.039859914580738,
-      "perf_60d": 6.027544059154066,
-      "price": 311.0,
-      "rsi": 45.83334609271678,
-      "sma20": 323.72149963378905,
-      "sma50": 309.6542004394531,
-      "status": "ok",
-      "symbol": "AAPL",
-      "volume": 44330978.0,
-      "volume_20d_avg": 56166233.9,
-      "volume_ratio": 0.7892816541505732
-    },
-    "reasons": [
-      "volume 0.8x avg",
-      "5D -8.0%"
-    ],
-    "risk_reward": null,
-    "score": 57.0,
-    "signal_type": "AAPL volumen inusual",
-    "source": "https://finance.yahoo.com/quote/AAPL",
-    "source_label": "Volumen inusual",
-    "status": "vigilancia",
-    "stop_loss": null,
-    "summary": "Apple presenta volumen anormal o movimiento tecnico a vigilar.",
-    "take_profit": null,
-    "timestamp": "2026-08-05T21:54:32.450194+00:00",
-    "title": "AAPL volumen inusual",
-    "valid_until": "2026-08-15T21:54:32.450194+00:00"
+    "valid_until": "2026-08-16T09:23:27.286513+00:00"
   },
   {
     "agent": "sector_rotation",
-    "asset": "QQQ",
+    "asset": "SPY",
     "confidence": "baja",
     "dashboard": "sector_rotation_dashboard.html",
     "direction": "LONG",
-    "entry_price": 717.2999877929688,
+    "entry_price": 768.5599975585938,
     "horizon": "swing",
-    "id": "81bab31a1f63a744",
+    "id": "9f8cc5be6e6214f4",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": 0.8236794854735718,
-      "perf_5d": 8.397686211051614,
-      "perf_60d": 0.8534521168832354,
-      "price": 717.2999877929688,
-      "relative_20d_vs_spy": -2.4483828722454914,
-      "rsi": 55.396491258950135,
-      "sma20": 700.8949951171875,
-      "sma50": 715.0083996582031,
+      "perf_20d": 2.2415526058465085,
+      "perf_5d": 3.622806702091186,
+      "perf_60d": 3.9577993032266834,
+      "price": 768.5599975585938,
+      "relative_20d_vs_spy": 0.0,
+      "rsi": 63.69201216454159,
+      "sma20": 749.2570007324218,
+      "sma50": 746.7330029296875,
       "status": "ok",
-      "symbol": "QQQ",
-      "volume": 32662387.0,
-      "volume_20d_avg": 41611859.35,
-      "volume_ratio": 0.7849297654612014
+      "symbol": "SPY",
+      "volume": 33043052.0,
+      "volume_20d_avg": 49380397.6,
+      "volume_ratio": 0.6691532188068084
     },
     "reasons": [
-      "20D +0.8%",
-      "relativo vs SPY -2.4%",
-      "RSI 55.4"
+      "20D +2.2%",
+      "relativo vs SPY +0.0%",
+      "RSI 63.7"
     ],
     "risk_reward": null,
     "score": 57.0,
-    "signal_type": "QQQ rotacion sectorial",
-    "source": "https://finance.yahoo.com/quote/QQQ",
+    "signal_type": "SPY rotacion sectorial",
+    "source": "https://finance.yahoo.com/quote/SPY",
     "source_label": "Rotacion sectorial",
     "status": "vigilancia",
     "stop_loss": null,
-    "summary": "Nasdaq 100 muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
+    "summary": "S&P 500 muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:49:05.146010+00:00",
-    "title": "QQQ rotacion sectorial",
-    "valid_until": "2026-08-15T21:49:05.146010+00:00"
+    "timestamp": "2026-08-07T00:56:51.472825+00:00",
+    "title": "SPY rotacion sectorial",
+    "valid_until": "2026-08-17T00:56:51.472825+00:00"
   },
   {
-    "agent": "macro_regime",
-    "asset": "MARKET",
+    "agent": "sector_rotation",
+    "asset": "XLI",
     "confidence": "baja",
-    "dashboard": "macro_regime_dashboard.html",
-    "direction": "WAIT",
-    "entry_price": null,
-    "horizon": "swing",
-    "id": "98a3fe06f76e3d07",
-    "metrics": {
-      "proxies": {
-        "GLD": {
-          "breakout_20d": true,
-          "breakout_50d": false,
-          "perf_20d": 4.056616890429643,
-          "perf_5d": 5.001624649072101,
-          "perf_60d": -10.1735886490394,
-          "price": 389.6400146484375,
-          "rsi": 60.11268730589752,
-          "sma20": 373.22149963378905,
-          "sma50": 383.0293994140625,
-          "status": "ok",
-          "symbol": "GLD",
-          "volume": 14717153.0,
-          "volume_20d_avg": 6810362.65,
-          "volume_ratio": 2.1609940257733555
-        },
-        "HYG": {
-          "breakout_20d": true,
-          "breakout_50d": false,
-          "perf_20d": -0.17575572760055724,
-          "perf_5d": 0.3533553594716743,
-          "perf_60d": -0.7736495524132914,
-          "price": 79.5199966430664,
-          "rsi": 48.69925030889964,
-          "sma20": 79.52449989318848,
-          "sma50": 79.72560043334961,
-          "status": "ok",
-          "symbol": "HYG",
-          "volume": 23717347.0,
-          "volume_20d_avg": 32547307.35,
-          "volume_ratio": 0.7287038139577466
-        },
-        "IWM": {
-          "breakout_20d": false,
-          "breakout_50d": false,
-          "perf_20d": 2.1432389913726535,
-          "perf_5d": 3.8812008889300698,
-          "perf_60d": 5.489662824647268,
-          "price": 299.7699890136719,
-          "rsi": 58.07264704143151,
-          "sma20": 294.44300079345703,
-          "sma50": 293.4944006347656,
-          "status": "ok",
-          "symbol": "IWM",
-          "volume": 17688195.0,
-          "volume_20d_avg": 21628079.75,
-          "volume_ratio": 0.8178347409690867
-        },
-        "LQD": {
-          "breakout_20d": false,
-          "breakout_50d": false,
-          "perf_20d": -0.8637506464117428,
-          "perf_5d": 0.48954682460036203,
-          "perf_60d": -2.2527464773086314,
-          "price": 106.73999786376953,
-          "rsi": 44.13285472302484,
-          "sma20": 106.84850044250489,
-          "sma50": 108.03300018310547,
-          "status": "ok",
-          "symbol": "LQD",
-          "volume": 24375750.0,
-          "volume_20d_avg": 30293687.5,
-          "volume_ratio": 0.8046478329850072
-        },
-        "QQQ": {
-          "breakout_20d": false,
-          "breakout_50d": false,
-          "perf_20d": 0.8236794854735718,
-          "perf_5d": 8.397686211051614,
-          "perf_60d": 0.8534521168832354,
-          "price": 717.2999877929688,
-          "rsi": 55.396491258950135,
-          "sma20": 700.8949951171875,
-          "sma50": 715.0083996582031,
-          "status": "ok",
-          "symbol": "QQQ",
-          "volume": 32662387.0,
-          "volume_20d_avg": 41611859.35,
-          "volume_ratio": 0.7849297654612014
-        },
-        "SPY": {
-          "breakout_20d": false,
-          "breakout_50d": false,
-          "perf_20d": 3.2720623577190633,
-          "perf_5d": 5.5287411016198496,
-          "perf_60d": 4.361321971084231,
-          "price": 769.7899780273438,
-          "rsi": 64.74471202518583,
-          "sma20": 748.414501953125,
-          "sma50": 746.373603515625,
-          "status": "ok",
-          "symbol": "SPY",
-          "volume": 44246082.0,
-          "volume_20d_avg": 49778179.1,
-          "volume_ratio": 0.888865016759924
-        },
-        "TLT": {
-          "breakout_20d": false,
-          "breakout_50d": false,
-          "perf_20d": -1.6121391660880113,
-          "perf_5d": 0.18105193559629917,
-          "perf_60d": -3.578068965541692,
-          "price": 83.0,
-          "rsi": 40.937306524482686,
-          "sma20": 83.56450004577637,
-          "sma50": 84.90359985351563,
-          "status": "ok",
-          "symbol": "TLT",
-          "volume": 29229326.0,
-          "volume_20d_avg": 25812221.3,
-          "volume_ratio": 1.1323832094992925
-        },
-        "UUP": {
-          "breakout_20d": false,
-          "breakout_50d": false,
-          "perf_20d": -0.9520467276193267,
-          "perf_5d": -1.1611538452504067,
-          "perf_60d": 2.743233342407314,
-          "price": 28.09000015258789,
-          "rsi": 38.25816246054305,
-          "sma20": 28.367499923706056,
-          "sma50": 28.21580005645752,
-          "status": "ok",
-          "symbol": "UUP",
-          "volume": 1694817.0,
-          "volume_20d_avg": 2054880.85,
-          "volume_ratio": 0.8247762881239562
-        }
-      },
-      "regime": "defensive"
-    },
-    "reasons": [
-      "SPY 20D +3.3%",
-      "QQQ 20D +0.8%",
-      "HYG 20D -0.2%",
-      "TLT 20D -1.6%"
-    ],
-    "risk_reward": null,
-    "score": 57.0,
-    "signal_type": "Regimen macro: defensive",
-    "source": "https://finance.yahoo.com",
-    "source_label": "Regimen macro",
-    "status": "vigilancia",
-    "stop_loss": null,
-    "summary": "La cesta de proxies apunta a un regimen defensive. Vigilar confirmacion en credito, duracion y dolar.",
-    "take_profit": null,
-    "timestamp": "2026-08-05T21:40:50.617381+00:00",
-    "title": "Regimen macro: defensive",
-    "valid_until": "2026-08-15T21:40:50.617381+00:00"
-  },
-  {
-    "agent": "unusual_volume",
-    "asset": "COIN",
-    "confidence": "baja",
-    "dashboard": "unusual_volume_dashboard.html",
+    "dashboard": "sector_rotation_dashboard.html",
     "direction": "LONG",
-    "entry_price": 149.88999938964844,
+    "entry_price": 184.75999450683594,
     "horizon": "swing",
-    "id": "0241e7035fa86547",
+    "id": "45ed2d805906a253",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": -5.94252082356479,
-      "perf_5d": -6.371414317927638,
-      "perf_60d": -25.487176048465244,
-      "price": 149.88999938964844,
-      "rsi": 43.112408054447805,
-      "sma20": 159.77449951171874,
-      "sma50": 161.8955990600586,
+      "perf_20d": 2.0153464105701957,
+      "perf_5d": 3.5708252362700144,
+      "perf_60d": 5.5530173637599045,
+      "price": 184.75999450683594,
+      "relative_20d_vs_spy": -0.2262061952763128,
+      "rsi": 57.889084010379705,
+      "sma20": 181.19199981689454,
+      "sma50": 179.51040008544922,
       "status": "ok",
-      "symbol": "COIN",
-      "volume": 6240113.0,
-      "volume_20d_avg": 7581380.65,
-      "volume_ratio": 0.8230839853688127
+      "symbol": "XLI",
+      "volume": 5327354.0,
+      "volume_20d_avg": 6728672.7,
+      "volume_ratio": 0.7917392088338611
     },
     "reasons": [
-      "volume 0.8x avg",
-      "5D -6.4%"
+      "20D +2.0%",
+      "relativo vs SPY -0.2%",
+      "RSI 57.9"
+    ],
+    "risk_reward": null,
+    "score": 56.0,
+    "signal_type": "XLI rotacion sectorial",
+    "source": "https://finance.yahoo.com/quote/XLI",
+    "source_label": "Rotacion sectorial",
+    "status": "vigilancia",
+    "stop_loss": null,
+    "summary": "Industrials muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
+    "take_profit": null,
+    "timestamp": "2026-08-07T00:56:52.614597+00:00",
+    "title": "XLI rotacion sectorial",
+    "valid_until": "2026-08-17T00:56:52.614597+00:00"
+  },
+  {
+    "agent": "sector_rotation",
+    "asset": "XLY",
+    "confidence": "baja",
+    "dashboard": "sector_rotation_dashboard.html",
+    "direction": "LONG",
+    "entry_price": 118.0999984741211,
+    "horizon": "swing",
+    "id": "220934f4d864ffd9",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": 1.0697475535498935,
+      "perf_5d": 5.080522391210707,
+      "perf_60d": -1.063922462293232,
+      "price": 118.0999984741211,
+      "relative_20d_vs_spy": -1.171805052296615,
+      "rsi": 58.10298605069438,
+      "sma20": 114.86399993896484,
+      "sma50": 116.04740036010742,
+      "status": "ok",
+      "symbol": "XLY",
+      "volume": 4809131.0,
+      "volume_20d_avg": 7979596.55,
+      "volume_ratio": 0.6026784649908146
+    },
+    "reasons": [
+      "20D +1.1%",
+      "relativo vs SPY -1.2%",
+      "RSI 58.1"
     ],
     "risk_reward": null,
     "score": 55.0,
-    "signal_type": "COIN volumen inusual",
-    "source": "https://finance.yahoo.com/quote/COIN",
-    "source_label": "Volumen inusual",
+    "signal_type": "XLY rotacion sectorial",
+    "source": "https://finance.yahoo.com/quote/XLY",
+    "source_label": "Rotacion sectorial",
     "status": "vigilancia",
     "stop_loss": null,
-    "summary": "Coinbase presenta volumen anormal o movimiento tecnico a vigilar.",
+    "summary": "Consumer discretionary muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:54:32.953423+00:00",
-    "title": "COIN volumen inusual",
-    "valid_until": "2026-08-15T21:54:32.953423+00:00"
+    "timestamp": "2026-08-07T00:56:52.828701+00:00",
+    "title": "XLY rotacion sectorial",
+    "valid_until": "2026-08-17T00:56:52.828701+00:00"
   },
   {
     "agent": "event_rumor",
@@ -2716,7 +2180,7 @@
     "direction": "WAIT",
     "entry_price": 588.77001953125,
     "horizon": "swing",
-    "id": "a6df2f1a2327270b",
+    "id": "c59b59f65c1cf51e",
     "metrics": {},
     "reasons": [
       "13 artículos recientes",
@@ -2734,171 +2198,135 @@
     "stop_loss": null,
     "summary": "Sin resumen IA concluyente.",
     "take_profit": null,
-    "timestamp": "2026-08-05T22:01:58.315476+00:00",
+    "timestamp": "2026-08-07T00:59:06.009699+00:00",
     "title": "Meta Connect",
-    "valid_until": "2026-08-15T22:01:58.315476+00:00"
-  },
-  {
-    "agent": "altcoin_fundamentals",
-    "asset": "OP",
-    "confidence": "baja",
-    "dashboard": "altcoin_fundamentals_dashboard.html",
-    "direction": "WAIT",
-    "entry_price": null,
-    "horizon": "swing",
-    "id": "db16467cb5dfc905",
-    "metrics": {
-      "change_30d": -18.1,
-      "change_7d": 1.7,
-      "market_cap": 200971925.0,
-      "tvl": 0,
-      "volume": 27100612.0
-    },
-    "reasons": [
-      "7D +1.7%",
-      "30D -18.1%",
-      "TVL no disponible"
-    ],
-    "risk_reward": null,
-    "score": 53.0,
-    "signal_type": "OP vigilancia fundamental",
-    "source": "https://www.coingecko.com/en/coins/optimism",
-    "source_label": "Fundamentales altcoin",
-    "status": "vigilancia",
-    "stop_loss": null,
-    "summary": "Optimism muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
-    "take_profit": null,
-    "timestamp": "2026-08-05T22:00:51.852685+00:00",
-    "title": "OP vigilancia fundamental",
-    "valid_until": "2026-08-15T22:00:51.852685+00:00"
+    "valid_until": "2026-08-17T00:59:06.009699+00:00"
   },
   {
     "agent": "unusual_volume",
-    "asset": "SPY",
+    "asset": "SMH",
     "confidence": "baja",
     "dashboard": "unusual_volume_dashboard.html",
     "direction": "LONG",
-    "entry_price": 769.7899780273438,
+    "entry_price": 571.47998046875,
     "horizon": "swing",
-    "id": "0088cc1fea9fbc3b",
+    "id": "c1c101267e17ab71",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": 3.2720623577190633,
-      "perf_5d": 5.5287411016198496,
-      "perf_60d": 4.361321971084231,
-      "price": 769.7899780273438,
-      "rsi": 64.74471202518583,
-      "sma20": 748.414501953125,
-      "sma50": 746.373603515625,
+      "perf_20d": -5.9648200952732155,
+      "perf_5d": 6.0456401148081484,
+      "perf_60d": -0.8380935798971034,
+      "price": 571.47998046875,
+      "rsi": 50.15984721550364,
+      "sma20": 565.425505065918,
+      "sma50": 595.1964007568359,
       "status": "ok",
-      "symbol": "SPY",
-      "volume": 44246082.0,
-      "volume_20d_avg": 49778179.1,
-      "volume_ratio": 0.888865016759924
+      "symbol": "SMH",
+      "volume": 5839568.0,
+      "volume_20d_avg": 12457283.4,
+      "volume_ratio": 0.4687673718653619
     },
     "reasons": [
-      "volume 0.9x avg",
-      "5D +5.5%"
+      "volume 0.5x avg",
+      "5D +6.0%"
     ],
     "risk_reward": null,
-    "score": 53.0,
-    "signal_type": "SPY volumen inusual",
-    "source": "https://finance.yahoo.com/quote/SPY",
+    "score": 54.0,
+    "signal_type": "SMH volumen inusual",
+    "source": "https://finance.yahoo.com/quote/SMH",
     "source_label": "Volumen inusual",
     "status": "vigilancia",
     "stop_loss": null,
-    "summary": "S&P 500 ETF presenta volumen anormal o movimiento tecnico a vigilar.",
+    "summary": "Semiconductor ETF presenta volumen anormal o movimiento tecnico a vigilar.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:54:33.124627+00:00",
-    "title": "SPY volumen inusual",
-    "valid_until": "2026-08-15T21:54:33.124627+00:00"
+    "timestamp": "2026-08-07T00:58:32.794848+00:00",
+    "title": "SMH volumen inusual",
+    "valid_until": "2026-08-17T00:58:32.794848+00:00"
   },
   {
     "agent": "unusual_volume",
-    "asset": "MSTR",
+    "asset": "SMCI",
     "confidence": "baja",
     "dashboard": "unusual_volume_dashboard.html",
     "direction": "LONG",
-    "entry_price": 98.37000274658203,
+    "entry_price": 29.3799991607666,
     "horizon": "swing",
-    "id": "da5e6fbc6e292207",
+    "id": "7699ed21aaf899ee",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": 4.793863714000857,
-      "perf_5d": 5.400193739040859,
-      "perf_60d": -47.5611681502482,
-      "price": 98.37000274658203,
-      "rsi": 48.371026635077655,
-      "sma20": 95.98400001525879,
-      "sma50": 108.68659927368164,
+      "perf_20d": 4.036825066883831,
+      "perf_5d": 5.950233125742077,
+      "perf_60d": -12.350839022850291,
+      "price": 29.3799991607666,
+      "rsi": 50.68603308428833,
+      "sma20": 28.033999919891357,
+      "sma50": 31.996999855041505,
       "status": "ok",
-      "symbol": "MSTR",
-      "volume": 13622425.0,
-      "volume_20d_avg": 15085046.25,
-      "volume_ratio": 0.9030416462925992
+      "symbol": "SMCI",
+      "volume": 26348349.0,
+      "volume_20d_avg": 43440987.45,
+      "volume_ratio": 0.6065319999994613
     },
     "reasons": [
-      "volume 0.9x avg",
-      "5D +5.4%"
+      "volume 0.6x avg",
+      "5D +6.0%"
     ],
     "risk_reward": null,
-    "score": 53.0,
-    "signal_type": "MSTR volumen inusual",
-    "source": "https://finance.yahoo.com/quote/MSTR",
+    "score": 54.0,
+    "signal_type": "SMCI volumen inusual",
+    "source": "https://finance.yahoo.com/quote/SMCI",
     "source_label": "Volumen inusual",
     "status": "vigilancia",
     "stop_loss": null,
-    "summary": "MicroStrategy presenta volumen anormal o movimiento tecnico a vigilar.",
+    "summary": "Super Micro Computer presenta volumen anormal o movimiento tecnico a vigilar.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:54:32.995099+00:00",
-    "title": "MSTR volumen inusual",
-    "valid_until": "2026-08-15T21:54:32.995099+00:00"
+    "timestamp": "2026-08-07T00:58:32.443986+00:00",
+    "title": "SMCI volumen inusual",
+    "valid_until": "2026-08-17T00:58:32.443986+00:00"
   },
   {
-    "agent": "sector_rotation",
-    "asset": "IWM",
+    "agent": "unusual_volume",
+    "asset": "AAPL",
     "confidence": "baja",
-    "dashboard": "sector_rotation_dashboard.html",
+    "dashboard": "unusual_volume_dashboard.html",
     "direction": "LONG",
-    "entry_price": 299.7699890136719,
+    "entry_price": 312.4100036621094,
     "horizon": "swing",
-    "id": "ffe6e776739b1a9c",
+    "id": "dc240767f974a3d3",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": 2.1432389913726535,
-      "perf_5d": 3.8812008889300698,
-      "perf_60d": 5.489662824647268,
-      "price": 299.7699890136719,
-      "relative_20d_vs_spy": -1.1288233663464098,
-      "rsi": 58.07264704143151,
-      "sma20": 294.44300079345703,
-      "sma50": 293.4944006347656,
+      "perf_20d": -1.2048566010644524,
+      "perf_5d": -6.3041686337171114,
+      "perf_60d": 6.7411546672355716,
+      "price": 312.4100036621094,
+      "rsi": 46.87511552642953,
+      "sma20": 323.5309997558594,
+      "sma50": 309.73580078125,
       "status": "ok",
-      "symbol": "IWM",
-      "volume": 17688195.0,
-      "volume_20d_avg": 21628079.75,
-      "volume_ratio": 0.8178347409690867
+      "symbol": "AAPL",
+      "volume": 45392526.0,
+      "volume_20d_avg": 56285026.3,
+      "volume_ratio": 0.8064760556041528
     },
     "reasons": [
-      "20D +2.1%",
-      "relativo vs SPY -1.1%",
-      "RSI 58.1"
+      "volume 0.8x avg",
+      "5D -6.3%"
     ],
     "risk_reward": null,
-    "score": 53.0,
-    "signal_type": "IWM rotacion sectorial",
-    "source": "https://finance.yahoo.com/quote/IWM",
-    "source_label": "Rotacion sectorial",
+    "score": 54.0,
+    "signal_type": "AAPL volumen inusual",
+    "source": "https://finance.yahoo.com/quote/AAPL",
+    "source_label": "Volumen inusual",
     "status": "vigilancia",
     "stop_loss": null,
-    "summary": "Small caps muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
+    "summary": "Apple presenta volumen anormal o movimiento tecnico a vigilar.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:49:05.233216+00:00",
-    "title": "IWM rotacion sectorial",
-    "valid_until": "2026-08-15T21:49:05.233216+00:00"
+    "timestamp": "2026-08-07T00:58:32.169120+00:00",
+    "title": "AAPL volumen inusual",
+    "valid_until": "2026-08-17T00:58:32.169120+00:00"
   },
   {
     "agent": "sec_filing",
@@ -2908,7 +2336,7 @@
     "direction": "WAIT",
     "entry_price": 482.04998779296875,
     "horizon": "swing",
-    "id": "b4e14484eec1b054",
+    "id": "3850e78b49d1183c",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -2924,9 +2352,9 @@
       "sma50": 514.6194012451172,
       "status": "ok",
       "symbol": "AMD",
-      "volume": 47435209.0,
-      "volume_20d_avg": 29735615.45,
-      "volume_ratio": 1.5952321242437912
+      "volume": 49458300.0,
+      "volume_20d_avg": 29836770.0,
+      "volume_ratio": 1.65762916026098
     },
     "reasons": [
       "formulario SEC 10-Q",
@@ -2942,9 +2370,9 @@
     "stop_loss": null,
     "summary": "Advanced Micro Devices publico el formulario 10-Q. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:59.498184+00:00",
+    "timestamp": "2026-08-06T09:08:10.456117+00:00",
     "title": "AMD presentacion SEC 10-Q",
-    "valid_until": "2026-08-15T21:34:59.498184+00:00"
+    "valid_until": "2026-08-16T09:08:10.456117+00:00"
   },
   {
     "agent": "sec_filing",
@@ -2954,7 +2382,7 @@
     "direction": "WAIT",
     "entry_price": 158.42999267578125,
     "horizon": "swing",
-    "id": "2ef3c9d403a553cc",
+    "id": "d54016d74e0c6c37",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -2970,9 +2398,9 @@
       "sma50": 131.42419967651367,
       "status": "ok",
       "symbol": "PLTR",
-      "volume": 61261948.0,
-      "volume_20d_avg": 43216307.4,
-      "volume_ratio": 1.4175655368463989
+      "volume": 63313300.0,
+      "volume_20d_avg": 43318875.0,
+      "volume_ratio": 1.4615638102328372
     },
     "reasons": [
       "formulario SEC 10-Q",
@@ -2988,9 +2416,9 @@
     "stop_loss": null,
     "summary": "Palantir publico el formulario 10-Q. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:59.194197+00:00",
+    "timestamp": "2026-08-06T09:08:10.136207+00:00",
     "title": "PLTR presentacion SEC 10-Q",
-    "valid_until": "2026-08-15T21:34:59.194197+00:00"
+    "valid_until": "2026-08-16T09:08:10.136207+00:00"
   },
   {
     "agent": "sec_filing",
@@ -3000,7 +2428,7 @@
     "direction": "WAIT",
     "entry_price": 321.54998779296875,
     "horizon": "swing",
-    "id": "a6b767a82dcd76dd",
+    "id": "8627d0c6cb72b1aa",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -3016,9 +2444,9 @@
       "sma50": 384.9577984619141,
       "status": "ok",
       "symbol": "TSLA",
-      "volume": 27506311.0,
-      "volume_20d_avg": 39662190.55,
-      "volume_ratio": 0.6935146702329582
+      "volume": 27717800.0,
+      "volume_20d_avg": 39672765.0,
+      "volume_ratio": 0.6986606554899816
     },
     "reasons": [
       "formulario SEC 10-Q",
@@ -3034,9 +2462,9 @@
     "stop_loss": null,
     "summary": "Tesla publico el formulario 10-Q. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:58.892653+00:00",
+    "timestamp": "2026-08-06T09:08:09.828239+00:00",
     "title": "TSLA presentacion SEC 10-Q",
-    "valid_until": "2026-08-15T21:34:58.892653+00:00"
+    "valid_until": "2026-08-16T09:08:09.828239+00:00"
   },
   {
     "agent": "sec_filing",
@@ -3046,7 +2474,7 @@
     "direction": "WAIT",
     "entry_price": 362.42999267578125,
     "horizon": "swing",
-    "id": "02b69aa2e554e80a",
+    "id": "54f9cfb74ddb562a",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -3062,9 +2490,9 @@
       "sma50": 357.81879943847656,
       "status": "ok",
       "symbol": "GOOGL",
-      "volume": 46331184.0,
-      "volume_20d_avg": 32398159.2,
-      "volume_ratio": 1.4300560631852195
+      "volume": 46705600.0,
+      "volume_20d_avg": 32416880.0,
+      "volume_ratio": 1.440780235482255
     },
     "reasons": [
       "formulario SEC 10-Q",
@@ -3080,9 +2508,9 @@
     "stop_loss": null,
     "summary": "Alphabet publico el formulario 10-Q. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:58.253263+00:00",
+    "timestamp": "2026-08-06T09:08:09.210746+00:00",
     "title": "GOOGL presentacion SEC 10-Q",
-    "valid_until": "2026-08-15T21:34:58.253263+00:00"
+    "valid_until": "2026-08-16T09:08:09.210746+00:00"
   },
   {
     "agent": "sec_filing",
@@ -3092,7 +2520,7 @@
     "direction": "WAIT",
     "entry_price": 272.6499938964844,
     "horizon": "swing",
-    "id": "b85dba380e4ed871",
+    "id": "e984fedc7fe82010",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -3108,9 +2536,9 @@
       "sma50": 247.315,
       "status": "ok",
       "symbol": "AMZN",
-      "volume": 42366662.0,
-      "volume_20d_avg": 50184938.1,
-      "volume_ratio": 0.8442107055224205
+      "volume": 44969500.0,
+      "volume_20d_avg": 50315080.0,
+      "volume_ratio": 0.8937578952473095
     },
     "reasons": [
       "formulario SEC 10-Q",
@@ -3126,9 +2554,9 @@
     "stop_loss": null,
     "summary": "Amazon publico el formulario 10-Q. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:57.904591+00:00",
+    "timestamp": "2026-08-06T09:08:08.871726+00:00",
     "title": "AMZN presentacion SEC 10-Q",
-    "valid_until": "2026-08-15T21:34:57.904591+00:00"
+    "valid_until": "2026-08-16T09:08:08.871726+00:00"
   },
   {
     "agent": "sec_filing",
@@ -3138,7 +2566,7 @@
     "direction": "WAIT",
     "entry_price": 487.4599914550781,
     "horizon": "swing",
-    "id": "d6b4abc5618e0c8d",
+    "id": "7806e5150ad8688f",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -3154,9 +2582,9 @@
       "sma50": 403.58899780273435,
       "status": "ok",
       "symbol": "MSFT",
-      "volume": 30476807.0,
-      "volume_20d_avg": 39159370.35,
-      "volume_ratio": 0.7782762268035293
+      "volume": 33273800.0,
+      "volume_20d_avg": 39299220.0,
+      "volume_ratio": 0.8466783819119056
     },
     "reasons": [
       "formulario SEC 10-K",
@@ -3172,9 +2600,9 @@
     "stop_loss": null,
     "summary": "Microsoft publico el formulario 10-K. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:57.226031+00:00",
+    "timestamp": "2026-08-06T09:08:08.184768+00:00",
     "title": "MSFT presentacion SEC 10-K",
-    "valid_until": "2026-08-15T21:34:57.226031+00:00"
+    "valid_until": "2026-08-16T09:08:08.184768+00:00"
   },
   {
     "agent": "event_rumor",
@@ -3184,7 +2612,7 @@
     "direction": "WAIT",
     "entry_price": 311.0,
     "horizon": "swing",
-    "id": "d482e1e7b4ca5c41",
+    "id": "f3f8b1972e5aa0db",
     "metrics": {},
     "reasons": [
       "16 artículos recientes",
@@ -3202,9 +2630,298 @@
     "stop_loss": null,
     "summary": "Sin resumen IA concluyente.",
     "take_profit": null,
-    "timestamp": "2026-08-05T22:01:58.315498+00:00",
+    "timestamp": "2026-08-07T00:59:06.009715+00:00",
     "title": "WWDC / Apple product events",
-    "valid_until": "2026-08-15T22:01:58.315498+00:00"
+    "valid_until": "2026-08-17T00:59:06.009715+00:00"
+  },
+  {
+    "agent": "unusual_volume",
+    "asset": "QQQ",
+    "confidence": "baja",
+    "dashboard": "unusual_volume_dashboard.html",
+    "direction": "LONG",
+    "entry_price": 714.6500244140625,
+    "horizon": "swing",
+    "id": "41dcf93fdc308b87",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": -1.1931761604425883,
+      "perf_5d": 4.549782338744368,
+      "perf_60d": 0.19067229718832124,
+      "price": 714.6500244140625,
+      "rsi": 54.319267608582564,
+      "sma20": 700.4634948730469,
+      "sma50": 714.6957995605469,
+      "status": "ok",
+      "symbol": "QQQ",
+      "volume": 30571597.0,
+      "volume_20d_avg": 41501594.85,
+      "volume_ratio": 0.7366366789154851
+    },
+    "reasons": [
+      "volume 0.7x avg",
+      "5D +4.5%"
+    ],
+    "risk_reward": null,
+    "score": 52.0,
+    "signal_type": "QQQ volumen inusual",
+    "source": "https://finance.yahoo.com/quote/QQQ",
+    "source_label": "Volumen inusual",
+    "status": "vigilancia",
+    "stop_loss": null,
+    "summary": "Nasdaq 100 ETF presenta volumen anormal o movimiento tecnico a vigilar.",
+    "take_profit": null,
+    "timestamp": "2026-08-07T00:58:32.747432+00:00",
+    "title": "QQQ volumen inusual",
+    "valid_until": "2026-08-17T00:58:32.747432+00:00"
+  },
+  {
+    "agent": "unusual_volume",
+    "asset": "HOOD",
+    "confidence": "baja",
+    "dashboard": "unusual_volume_dashboard.html",
+    "direction": "LONG",
+    "entry_price": 90.70999908447266,
+    "horizon": "swing",
+    "id": "8b872b32fb87e8df",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": -21.19711701546518,
+      "perf_5d": 4.745959217978246,
+      "perf_60d": 12.292647258272481,
+      "price": 90.70999908447266,
+      "rsi": 42.19557565286227,
+      "sma20": 99.10900001525879,
+      "sma50": 97.99500061035157,
+      "status": "ok",
+      "symbol": "HOOD",
+      "volume": 11540585.0,
+      "volume_20d_avg": 20642989.25,
+      "volume_ratio": 0.5590559032045226
+    },
+    "reasons": [
+      "volume 0.6x avg",
+      "5D +4.7%"
+    ],
+    "risk_reward": null,
+    "score": 52.0,
+    "signal_type": "HOOD volumen inusual",
+    "source": "https://finance.yahoo.com/quote/HOOD",
+    "source_label": "Volumen inusual",
+    "status": "vigilancia",
+    "stop_loss": null,
+    "summary": "Robinhood presenta volumen anormal o movimiento tecnico a vigilar.",
+    "take_profit": null,
+    "timestamp": "2026-08-07T00:58:32.617507+00:00",
+    "title": "HOOD volumen inusual",
+    "valid_until": "2026-08-17T00:58:32.617507+00:00"
+  },
+  {
+    "agent": "sector_rotation",
+    "asset": "XLK",
+    "confidence": "baja",
+    "dashboard": "sector_rotation_dashboard.html",
+    "direction": "LONG",
+    "entry_price": 185.3300018310547,
+    "horizon": "swing",
+    "id": "24c9fa55ca54b168",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": -0.010792701269057847,
+      "perf_5d": 5.462929685834617,
+      "perf_60d": 4.188214944760227,
+      "price": 185.3300018310547,
+      "relative_20d_vs_spy": -2.2523453071155664,
+      "rsi": 56.545311657419326,
+      "sma20": 178.78400039672852,
+      "sma50": 183.26840057373047,
+      "status": "ok",
+      "symbol": "XLK",
+      "volume": 6431938.0,
+      "volume_20d_avg": 9021111.9,
+      "volume_ratio": 0.7129872759919983
+    },
+    "reasons": [
+      "20D -0.0%",
+      "relativo vs SPY -2.3%",
+      "RSI 56.5"
+    ],
+    "risk_reward": null,
+    "score": 52.0,
+    "signal_type": "XLK rotacion sectorial",
+    "source": "https://finance.yahoo.com/quote/XLK",
+    "source_label": "Rotacion sectorial",
+    "status": "vigilancia",
+    "stop_loss": null,
+    "summary": "Technology muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
+    "take_profit": null,
+    "timestamp": "2026-08-07T00:56:52.064719+00:00",
+    "title": "XLK rotacion sectorial",
+    "valid_until": "2026-08-17T00:56:52.064719+00:00"
+  },
+  {
+    "agent": "macro_regime",
+    "asset": "MARKET",
+    "confidence": "baja",
+    "dashboard": "macro_regime_dashboard.html",
+    "direction": "WAIT",
+    "entry_price": null,
+    "horizon": "swing",
+    "id": "e64251b0aaf5652d",
+    "metrics": {
+      "proxies": {
+        "GLD": {
+          "breakout_20d": false,
+          "breakout_50d": false,
+          "perf_20d": 3.0382413069121927,
+          "perf_5d": 3.316897243651651,
+          "perf_60d": -10.348551961434605,
+          "price": 389.6700134277344,
+          "rsi": 60.113600124091356,
+          "sma20": 373.7960006713867,
+          "sma50": 382.5427996826172,
+          "status": "ok",
+          "symbol": "GLD",
+          "volume": 9624347.0,
+          "volume_20d_avg": 7055927.35,
+          "volume_ratio": 1.3640088003457123
+        },
+        "HYG": {
+          "breakout_20d": true,
+          "breakout_50d": false,
+          "perf_20d": -0.3636375116330304,
+          "perf_5d": -0.01258605269514046,
+          "perf_60d": -0.6501678552578549,
+          "price": 79.45999908447266,
+          "rsi": 46.969954417562924,
+          "sma20": 79.5099998474121,
+          "sma50": 79.71120040893555,
+          "status": "ok",
+          "symbol": "HYG",
+          "volume": 23337463.0,
+          "volume_20d_avg": 32722793.15,
+          "volume_ratio": 0.7131867653541061
+        },
+        "IWM": {
+          "breakout_20d": false,
+          "breakout_50d": false,
+          "perf_20d": 0.3397960566573266,
+          "perf_5d": 1.9344487962510648,
+          "perf_60d": 4.52809520055899,
+          "price": 298.25,
+          "rsi": 55.579673528599464,
+          "sma20": 294.4935012817383,
+          "sma50": 293.6492004394531,
+          "status": "ok",
+          "symbol": "IWM",
+          "volume": 16143498.0,
+          "volume_20d_avg": 21617054.9,
+          "volume_ratio": 0.7467945136226675
+        },
+        "LQD": {
+          "breakout_20d": false,
+          "breakout_50d": false,
+          "perf_20d": -1.2533641125206385,
+          "perf_5d": -0.04699093133817556,
+          "perf_60d": -2.3593130337135504,
+          "price": 106.36000061035156,
+          "rsi": 39.92840064177432,
+          "sma20": 106.78100051879883,
+          "sma50": 107.98460021972656,
+          "status": "ok",
+          "symbol": "LQD",
+          "volume": 30384642.0,
+          "volume_20d_avg": 30593612.1,
+          "volume_ratio": 0.9931694858613965
+        },
+        "QQQ": {
+          "breakout_20d": false,
+          "breakout_50d": false,
+          "perf_20d": -1.1931761604425883,
+          "perf_5d": 4.549782338744368,
+          "perf_60d": 0.19067229718832124,
+          "price": 714.6500244140625,
+          "rsi": 54.319267608582564,
+          "sma20": 700.4634948730469,
+          "sma50": 714.6957995605469,
+          "status": "ok",
+          "symbol": "QQQ",
+          "volume": 30571597.0,
+          "volume_20d_avg": 41501594.85,
+          "volume_ratio": 0.7366366789154851
+        },
+        "SPY": {
+          "breakout_20d": false,
+          "breakout_50d": false,
+          "perf_20d": 2.2415526058465085,
+          "perf_5d": 3.622806702091186,
+          "perf_60d": 3.9577993032266834,
+          "price": 768.5599975585938,
+          "rsi": 63.69201216454159,
+          "sma20": 749.2570007324218,
+          "sma50": 746.7330029296875,
+          "status": "ok",
+          "symbol": "SPY",
+          "volume": 33043052.0,
+          "volume_20d_avg": 49380397.6,
+          "volume_ratio": 0.6691532188068084
+        },
+        "TLT": {
+          "breakout_20d": false,
+          "breakout_50d": false,
+          "perf_20d": -2.3316383838469568,
+          "perf_5d": -0.3381719787092008,
+          "perf_60d": -3.553063350014085,
+          "price": 82.5199966430664,
+          "rsi": 37.248852679543184,
+          "sma20": 83.46599998474122,
+          "sma50": 84.85199981689453,
+          "status": "ok",
+          "symbol": "TLT",
+          "volume": 27445052.0,
+          "volume_20d_avg": 26265032.6,
+          "volume_ratio": 1.0449273914093675
+        },
+        "UUP": {
+          "breakout_20d": false,
+          "breakout_50d": false,
+          "perf_20d": -0.5994360812245358,
+          "perf_5d": 0.17768708419934054,
+          "perf_60d": 3.071298504101705,
+          "price": 28.190000534057617,
+          "rsi": 44.469713540526925,
+          "sma20": 28.358999919891357,
+          "sma50": 28.22460006713867,
+          "status": "ok",
+          "symbol": "UUP",
+          "volume": 1228891.0,
+          "volume_20d_avg": 2059049.55,
+          "volume_ratio": 0.5968243940511291
+        }
+      },
+      "regime": "defensive"
+    },
+    "reasons": [
+      "SPY 20D +2.2%",
+      "QQQ 20D -1.2%",
+      "HYG 20D -0.4%",
+      "TLT 20D -2.3%"
+    ],
+    "risk_reward": null,
+    "score": 51.0,
+    "signal_type": "Regimen macro: defensive",
+    "source": "https://finance.yahoo.com",
+    "source_label": "Regimen macro",
+    "status": "vigilancia",
+    "stop_loss": null,
+    "summary": "La cesta de proxies apunta a un regimen defensive. Vigilar confirmacion en credito, duracion y dolar.",
+    "take_profit": null,
+    "timestamp": "2026-08-07T00:56:10.191441+00:00",
+    "title": "Regimen macro: defensive",
+    "valid_until": "2026-08-17T00:56:10.191441+00:00"
   },
   {
     "agent": "event_rumor",
@@ -3214,7 +2931,7 @@
     "direction": "WAIT",
     "entry_price": 272.6499938964844,
     "horizon": "swing",
-    "id": "5fb6a0986c3df98a",
+    "id": "1fe5e90181415c5d",
     "metrics": {},
     "reasons": [
       "11 artículos recientes",
@@ -3231,125 +2948,133 @@
     "stop_loss": null,
     "summary": "Sin resumen IA concluyente.",
     "take_profit": null,
-    "timestamp": "2026-08-05T22:01:58.315516+00:00",
+    "timestamp": "2026-08-07T00:59:06.009728+00:00",
     "title": "AWS re:Invent",
-    "valid_until": "2026-08-15T22:01:58.315516+00:00"
-  },
-  {
-    "agent": "altcoin_fundamentals",
-    "asset": "ARB",
-    "confidence": "baja",
-    "dashboard": "altcoin_fundamentals_dashboard.html",
-    "direction": "WAIT",
-    "entry_price": null,
-    "horizon": "swing",
-    "id": "a9fd4569b3f5b82b",
-    "metrics": {
-      "change_30d": 0.7,
-      "change_7d": 3.8,
-      "market_cap": 532226725.0,
-      "tvl": 0,
-      "volume": 26893344.0
-    },
-    "reasons": [
-      "7D +3.8%",
-      "30D +0.7%",
-      "TVL no disponible"
-    ],
-    "risk_reward": null,
-    "score": 50.0,
-    "signal_type": "ARB vigilancia fundamental",
-    "source": "https://www.coingecko.com/en/coins/arbitrum",
-    "source_label": "Fundamentales altcoin",
-    "status": "vigilancia",
-    "stop_loss": null,
-    "summary": "Arbitrum muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
-    "take_profit": null,
-    "timestamp": "2026-08-05T22:00:51.852674+00:00",
-    "title": "ARB vigilancia fundamental",
-    "valid_until": "2026-08-15T22:00:51.852674+00:00"
+    "valid_until": "2026-08-17T00:59:06.009728+00:00"
   },
   {
     "agent": "unusual_volume",
-    "asset": "HOOD",
+    "asset": "SPY",
     "confidence": "baja",
     "dashboard": "unusual_volume_dashboard.html",
     "direction": "LONG",
-    "entry_price": 92.80000305175781,
+    "entry_price": 768.5599975585938,
     "horizon": "swing",
-    "id": "c7fe2dece836abe6",
+    "id": "0c5d3aba596ac92f",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": -18.25948731650946,
-      "perf_5d": 3.2947538229348483,
-      "perf_60d": 20.47254903592104,
-      "price": 92.80000305175781,
-      "rsi": 44.3414674814356,
-      "sma20": 100.32900009155273,
-      "sma50": 97.66260055541993,
+      "perf_20d": 2.2415526058465085,
+      "perf_5d": 3.622806702091186,
+      "perf_60d": 3.9577993032266834,
+      "price": 768.5599975585938,
+      "rsi": 63.69201216454159,
+      "sma20": 749.2570007324218,
+      "sma50": 746.7330029296875,
       "status": "ok",
-      "symbol": "HOOD",
-      "volume": 13036018.0,
-      "volume_20d_avg": 20891975.9,
-      "volume_ratio": 0.6239724793096282
+      "symbol": "SPY",
+      "volume": 33043052.0,
+      "volume_20d_avg": 49380397.6,
+      "volume_ratio": 0.6691532188068084
     },
     "reasons": [
-      "volume 0.6x avg",
-      "5D +3.3%"
+      "volume 0.7x avg",
+      "5D +3.6%"
     ],
     "risk_reward": null,
     "score": 50.0,
-    "signal_type": "HOOD volumen inusual",
-    "source": "https://finance.yahoo.com/quote/HOOD",
+    "signal_type": "SPY volumen inusual",
+    "source": "https://finance.yahoo.com/quote/SPY",
     "source_label": "Volumen inusual",
     "status": "vigilancia",
     "stop_loss": null,
-    "summary": "Robinhood presenta volumen anormal o movimiento tecnico a vigilar.",
+    "summary": "S&P 500 ETF presenta volumen anormal o movimiento tecnico a vigilar.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:54:33.035286+00:00",
-    "title": "HOOD volumen inusual",
-    "valid_until": "2026-08-15T21:54:33.035286+00:00"
+    "timestamp": "2026-08-07T00:58:32.689977+00:00",
+    "title": "SPY volumen inusual",
+    "valid_until": "2026-08-17T00:58:32.689977+00:00"
+  },
+  {
+    "agent": "unusual_volume",
+    "asset": "TSLA",
+    "confidence": "baja",
+    "dashboard": "unusual_volume_dashboard.html",
+    "direction": "LONG",
+    "entry_price": 319.5299987792969,
+    "horizon": "swing",
+    "id": "3c2f55cb95901ab5",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": -21.40449923171216,
+      "perf_5d": 3.4579868754160525,
+      "perf_60d": -28.19550589229284,
+      "price": 319.5299987792969,
+      "rsi": 36.945059143242794,
+      "sma20": 347.29199981689453,
+      "sma50": 382.67659851074217,
+      "status": "ok",
+      "symbol": "TSLA",
+      "volume": 25143733.0,
+      "volume_20d_avg": 39043351.65,
+      "volume_ratio": 0.6439952498289168
+    },
+    "reasons": [
+      "volume 0.6x avg",
+      "5D +3.5%"
+    ],
+    "risk_reward": null,
+    "score": 50.0,
+    "signal_type": "TSLA volumen inusual",
+    "source": "https://finance.yahoo.com/quote/TSLA",
+    "source_label": "Volumen inusual",
+    "status": "vigilancia",
+    "stop_loss": null,
+    "summary": "Tesla presenta volumen anormal o movimiento tecnico a vigilar.",
+    "take_profit": null,
+    "timestamp": "2026-08-07T00:58:32.513059+00:00",
+    "title": "TSLA volumen inusual",
+    "valid_until": "2026-08-17T00:58:32.513059+00:00"
   },
   {
     "agent": "market_signal",
-    "asset": "MSFT",
+    "asset": "GOOGL",
     "confidence": "baja",
     "dashboard": "dashboard.html",
     "direction": "WAIT",
-    "entry_price": 487.4599914550781,
+    "entry_price": 357.75,
     "horizon": "swing",
-    "id": "57af09e518403d26",
+    "id": "86eff8a71765a68c",
     "metrics": {
-      "dist200": 12.517689408226907,
-      "drawdown": -10.074347433223274,
-      "price": 487.4599914550781,
+      "dist200": 8.863298372511652,
+      "drawdown": -11.144502424457968,
+      "price": 357.75,
       "reasons": [
-        "Drawdown 52s -10.1%",
+        "Drawdown 52s -11.1%",
         "Precio sobre SMA200",
         "Recupera SMA20"
       ],
-      "rsi": 76.0848401280069,
+      "rsi": 52.37646596947645,
       "score": 50,
-      "symbol": "MSFT"
+      "symbol": "GOOGL"
     },
     "reasons": [
-      "Drawdown 52s -10.1%",
+      "Drawdown 52s -11.1%",
       "Precio sobre SMA200",
       "Recupera SMA20"
     ],
     "risk_reward": null,
     "score": 50.0,
-    "signal_type": "MSFT oportunidad tecnica",
+    "signal_type": "GOOGL oportunidad tecnica",
     "source": null,
     "source_label": "Bolsa / ETFs",
     "status": "WATCH",
     "stop_loss": null,
-    "summary": "Drawdown 52s -10.1%; Precio sobre SMA200; Recupera SMA20",
+    "summary": "Drawdown 52s -11.1%; Precio sobre SMA200; Recupera SMA20",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:32:32.241969+00:00",
-    "title": "MSFT oportunidad tecnica",
-    "valid_until": "2026-08-15T21:32:32.241969+00:00"
+    "timestamp": "2026-08-07T00:55:28.036057+00:00",
+    "title": "GOOGL oportunidad tecnica",
+    "valid_until": "2026-08-17T00:55:28.036057+00:00"
   },
   {
     "agent": "defi_liquidity",
@@ -3359,7 +3084,7 @@
     "direction": "WAIT",
     "entry_price": null,
     "horizon": "swing",
-    "id": "4ac0bb06a5db1645",
+    "id": "dc311f18227c1260",
     "metrics": {
       "change_1d": 0,
       "change_7d": 0,
@@ -3379,9 +3104,9 @@
     "stop_loss": null,
     "summary": "Tendencia de liquidez de Optimism segun DefiLlama. Vigilar TVL y confirmacion de actividad en la red.",
     "take_profit": null,
-    "timestamp": "2026-08-03T21:42:54.710044+00:00",
+    "timestamp": "2026-08-06T09:23:27.286558+00:00",
     "title": "Optimism liquidez DeFi",
-    "valid_until": "2026-08-13T21:42:54.710044+00:00"
+    "valid_until": "2026-08-16T09:23:27.286558+00:00"
   },
   {
     "agent": "defi_liquidity",
@@ -3391,14 +3116,14 @@
     "direction": "WAIT",
     "entry_price": null,
     "horizon": "swing",
-    "id": "1b2c4ad4e58bbebc",
+    "id": "a5233509669808e0",
     "metrics": {
       "change_1d": 0,
       "change_7d": 0,
-      "tvl": 4770351268.227927
+      "tvl": 4787202569.047735
     },
     "reasons": [
-      "TVL $4,770,351,268",
+      "TVL $4,787,202,569",
       "1D +0.0%",
       "7D +0.0%"
     ],
@@ -3411,9 +3136,9 @@
     "stop_loss": null,
     "summary": "Tendencia de liquidez de Solana segun DefiLlama. Vigilar TVL y confirmacion de actividad en la red.",
     "take_profit": null,
-    "timestamp": "2026-08-03T21:42:54.709990+00:00",
+    "timestamp": "2026-08-06T09:23:27.286525+00:00",
     "title": "Solana liquidez DeFi",
-    "valid_until": "2026-08-13T21:42:54.709990+00:00"
+    "valid_until": "2026-08-16T09:23:27.286525+00:00"
   },
   {
     "agent": "defi_liquidity",
@@ -3423,14 +3148,14 @@
     "direction": "WAIT",
     "entry_price": null,
     "horizon": "swing",
-    "id": "9f67f353f3e08a55",
+    "id": "f809810db6f004b7",
     "metrics": {
       "change_1d": 0,
       "change_7d": 0,
-      "tvl": 1186706121.1886866
+      "tvl": 1195480685.839388
     },
     "reasons": [
-      "TVL $1,186,706,121",
+      "TVL $1,195,480,686",
       "1D +0.0%",
       "7D +0.0%"
     ],
@@ -3443,41 +3168,9 @@
     "stop_loss": null,
     "summary": "Tendencia de liquidez de Arbitrum segun DefiLlama. Vigilar TVL y confirmacion de actividad en la red.",
     "take_profit": null,
-    "timestamp": "2026-08-03T21:42:54.709970+00:00",
+    "timestamp": "2026-08-06T09:23:27.286503+00:00",
     "title": "Arbitrum liquidez DeFi",
-    "valid_until": "2026-08-13T21:42:54.709970+00:00"
-  },
-  {
-    "agent": "defi_liquidity",
-    "asset": "AVALANCHE",
-    "confidence": "baja",
-    "dashboard": "defi_liquidity_dashboard.html",
-    "direction": "WAIT",
-    "entry_price": null,
-    "horizon": "swing",
-    "id": "6f93c9dad87bb6a1",
-    "metrics": {
-      "change_1d": 0,
-      "change_7d": 0,
-      "tvl": 436002972.55517066
-    },
-    "reasons": [
-      "TVL $436,002,973",
-      "1D +0.0%",
-      "7D +0.0%"
-    ],
-    "risk_reward": null,
-    "score": 50.0,
-    "signal_type": "Avalanche liquidez DeFi",
-    "source": "https://defillama.com/chains",
-    "source_label": "Liquidez DeFi",
-    "status": "vigilancia",
-    "stop_loss": null,
-    "summary": "Tendencia de liquidez de Avalanche segun DefiLlama. Vigilar TVL y confirmacion de actividad en la red.",
-    "take_profit": null,
-    "timestamp": "2026-08-03T21:42:54.709938+00:00",
-    "title": "Avalanche liquidez DeFi",
-    "valid_until": "2026-08-13T21:42:54.709938+00:00"
+    "valid_until": "2026-08-16T09:23:27.286503+00:00"
   },
   {
     "agent": "defi_liquidity",
@@ -3487,14 +3180,14 @@
     "direction": "WAIT",
     "entry_price": null,
     "horizon": "swing",
-    "id": "f2f82e43700e730f",
+    "id": "5401f713fb879d94",
     "metrics": {
       "change_1d": 0,
       "change_7d": 0,
-      "tvl": 4886967942.905492
+      "tvl": 4883221451.749696
     },
     "reasons": [
-      "TVL $4,886,967,943",
+      "TVL $4,883,221,452",
       "1D +0.0%",
       "7D +0.0%"
     ],
@@ -3507,9 +3200,41 @@
     "stop_loss": null,
     "summary": "Tendencia de liquidez de BSC segun DefiLlama. Vigilar TVL y confirmacion de actividad en la red.",
     "take_profit": null,
-    "timestamp": "2026-08-03T21:42:54.709923+00:00",
+    "timestamp": "2026-08-06T09:23:27.286495+00:00",
     "title": "BSC liquidez DeFi",
-    "valid_until": "2026-08-13T21:42:54.709923+00:00"
+    "valid_until": "2026-08-16T09:23:27.286495+00:00"
+  },
+  {
+    "agent": "defi_liquidity",
+    "asset": "AVALANCHE",
+    "confidence": "baja",
+    "dashboard": "defi_liquidity_dashboard.html",
+    "direction": "WAIT",
+    "entry_price": null,
+    "horizon": "swing",
+    "id": "8064f73fca5222db",
+    "metrics": {
+      "change_1d": 0,
+      "change_7d": 0,
+      "tvl": 434834945.3415164
+    },
+    "reasons": [
+      "TVL $434,834,945",
+      "1D +0.0%",
+      "7D +0.0%"
+    ],
+    "risk_reward": null,
+    "score": 50.0,
+    "signal_type": "Avalanche liquidez DeFi",
+    "source": "https://defillama.com/chains",
+    "source_label": "Liquidez DeFi",
+    "status": "vigilancia",
+    "stop_loss": null,
+    "summary": "Tendencia de liquidez de Avalanche segun DefiLlama. Vigilar TVL y confirmacion de actividad en la red.",
+    "take_profit": null,
+    "timestamp": "2026-08-06T09:23:27.286485+00:00",
+    "title": "Avalanche liquidez DeFi",
+    "valid_until": "2026-08-16T09:23:27.286485+00:00"
   },
   {
     "agent": "defi_liquidity",
@@ -3519,14 +3244,14 @@
     "direction": "WAIT",
     "entry_price": null,
     "horizon": "swing",
-    "id": "3abd02c323d00d44",
+    "id": "030780f5d328d404",
     "metrics": {
       "change_1d": 0,
       "change_7d": 0,
-      "tvl": 4572532396.590516
+      "tvl": 4641615034.845248
     },
     "reasons": [
-      "TVL $4,572,532,397",
+      "TVL $4,641,615,035",
       "1D +0.0%",
       "7D +0.0%"
     ],
@@ -3539,43 +3264,165 @@
     "stop_loss": null,
     "summary": "Tendencia de liquidez de Base segun DefiLlama. Vigilar TVL y confirmacion de actividad en la red.",
     "take_profit": null,
-    "timestamp": "2026-08-03T21:42:54.709888+00:00",
+    "timestamp": "2026-08-06T09:23:27.286460+00:00",
     "title": "Base liquidez DeFi",
-    "valid_until": "2026-08-13T21:42:54.709888+00:00"
+    "valid_until": "2026-08-16T09:23:27.286460+00:00"
+  },
+  {
+    "agent": "sector_rotation",
+    "asset": "XLP",
+    "confidence": "baja",
+    "dashboard": "sector_rotation_dashboard.html",
+    "direction": "LONG",
+    "entry_price": 85.11000061035156,
+    "horizon": "swing",
+    "id": "a85f429f8386af1d",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": 2.2956775627017922,
+      "perf_5d": -0.42120112929676656,
+      "perf_60d": 2.0870790529521344,
+      "price": 85.11000061035156,
+      "relative_20d_vs_spy": 0.054124956855283735,
+      "rsi": 51.36611999626011,
+      "sma20": 84.91049995422364,
+      "sma50": 84.29400024414062,
+      "status": "ok",
+      "symbol": "XLP",
+      "volume": 7943805.0,
+      "volume_20d_avg": 11043815.25,
+      "volume_ratio": 0.7192989759585121
+    },
+    "reasons": [
+      "20D +2.3%",
+      "relativo vs SPY +0.1%",
+      "RSI 51.4"
+    ],
+    "risk_reward": null,
+    "score": 49.0,
+    "signal_type": "XLP rotacion sectorial",
+    "source": "https://finance.yahoo.com/quote/XLP",
+    "source_label": "Rotacion sectorial",
+    "status": "vigilancia",
+    "stop_loss": null,
+    "summary": "Consumer staples muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
+    "take_profit": null,
+    "timestamp": "2026-08-07T00:56:52.992209+00:00",
+    "title": "XLP rotacion sectorial",
+    "valid_until": "2026-08-17T00:56:52.992209+00:00"
   },
   {
     "agent": "altcoin_fundamentals",
-    "asset": "NEAR",
+    "asset": "AVAX",
     "confidence": "baja",
     "dashboard": "altcoin_fundamentals_dashboard.html",
     "direction": "WAIT",
     "entry_price": null,
     "horizon": "swing",
-    "id": "3921bc35a3f43e6d",
+    "id": "173db935a2ab7d94",
     "metrics": {
-      "change_30d": -17.9,
-      "change_7d": 7.3,
-      "market_cap": 2209340697.0,
+      "change_30d": -1.3,
+      "change_7d": 4.0,
+      "market_cap": 2853179146.0,
       "tvl": 0,
-      "volume": 102061689.0
+      "volume": 154697494.0
     },
     "reasons": [
-      "7D +7.3%",
-      "30D -17.9%",
+      "7D +4.0%",
+      "30D -1.3%",
       "TVL no disponible"
     ],
     "risk_reward": null,
     "score": 49.0,
-    "signal_type": "NEAR vigilancia fundamental",
-    "source": "https://www.coingecko.com/en/coins/near",
+    "signal_type": "AVAX vigilancia fundamental",
+    "source": "https://www.coingecko.com/en/coins/avalanche-2",
     "source_label": "Fundamentales altcoin",
     "status": "vigilancia",
     "stop_loss": null,
-    "summary": "NEAR Protocol muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
+    "summary": "Avalanche muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
     "take_profit": null,
-    "timestamp": "2026-08-05T22:00:51.852713+00:00",
-    "title": "NEAR vigilancia fundamental",
-    "valid_until": "2026-08-15T22:00:51.852713+00:00"
+    "timestamp": "2026-08-06T09:32:44.529895+00:00",
+    "title": "AVAX vigilancia fundamental",
+    "valid_until": "2026-08-16T09:32:44.529895+00:00"
+  },
+  {
+    "agent": "altcoin_fundamentals",
+    "asset": "OP",
+    "confidence": "baja",
+    "dashboard": "altcoin_fundamentals_dashboard.html",
+    "direction": "WAIT",
+    "entry_price": null,
+    "horizon": "swing",
+    "id": "de7a235e06af4e93",
+    "metrics": {
+      "change_30d": -16.0,
+      "change_7d": -2.0,
+      "market_cap": 199204319.0,
+      "tvl": 0,
+      "volume": 25347679.0
+    },
+    "reasons": [
+      "7D -2.0%",
+      "30D -16.0%",
+      "TVL no disponible"
+    ],
+    "risk_reward": null,
+    "score": 49.0,
+    "signal_type": "OP vigilancia fundamental",
+    "source": "https://www.coingecko.com/en/coins/optimism",
+    "source_label": "Fundamentales altcoin",
+    "status": "vigilancia",
+    "stop_loss": null,
+    "summary": "Optimism muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
+    "take_profit": null,
+    "timestamp": "2026-08-06T09:32:44.529878+00:00",
+    "title": "OP vigilancia fundamental",
+    "valid_until": "2026-08-16T09:32:44.529878+00:00"
+  },
+  {
+    "agent": "sector_rotation",
+    "asset": "XLV",
+    "confidence": "baja",
+    "dashboard": "sector_rotation_dashboard.html",
+    "direction": "LONG",
+    "entry_price": 164.4499969482422,
+    "horizon": "swing",
+    "id": "c3136cc48abfffa7",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": 1.4059313097615211,
+      "perf_5d": 0.568733275123745,
+      "perf_60d": 14.967844426056054,
+      "price": 164.4499969482422,
+      "relative_20d_vs_spy": -0.8356212960849874,
+      "rsi": 58.98820499933684,
+      "sma20": 162.02900009155275,
+      "sma50": 157.51240020751953,
+      "status": "ok",
+      "symbol": "XLV",
+      "volume": 9246811.0,
+      "volume_20d_avg": 9891810.55,
+      "volume_ratio": 0.9347945912692394
+    },
+    "reasons": [
+      "20D +1.4%",
+      "relativo vs SPY -0.8%",
+      "RSI 59.0"
+    ],
+    "risk_reward": null,
+    "score": 48.0,
+    "signal_type": "XLV rotacion sectorial",
+    "source": "https://finance.yahoo.com/quote/XLV",
+    "source_label": "Rotacion sectorial",
+    "status": "vigilancia",
+    "stop_loss": null,
+    "summary": "Health care muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
+    "take_profit": null,
+    "timestamp": "2026-08-07T00:56:52.464157+00:00",
+    "title": "XLV rotacion sectorial",
+    "valid_until": "2026-08-17T00:56:52.464157+00:00"
   },
   {
     "agent": "altcoin_fundamentals",
@@ -3585,17 +3432,17 @@
     "direction": "WAIT",
     "entry_price": null,
     "horizon": "swing",
-    "id": "24c5dacd7d045644",
+    "id": "da9d175005fedbd5",
     "metrics": {
-      "change_30d": 6.5,
-      "change_7d": 1.4,
-      "market_cap": 230263318261.0,
+      "change_30d": 8.2,
+      "change_7d": 0.8,
+      "market_cap": 230087813877.0,
       "tvl": 0,
-      "volume": 8735555973.0
+      "volume": 8669954024.0
     },
     "reasons": [
-      "7D +1.4%",
-      "30D +6.5%",
+      "7D +0.8%",
+      "30D +8.2%",
       "TVL no disponible"
     ],
     "risk_reward": null,
@@ -3607,87 +3454,205 @@
     "stop_loss": null,
     "summary": "Ethereum muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
     "take_profit": null,
-    "timestamp": "2026-08-05T22:00:51.852582+00:00",
+    "timestamp": "2026-08-06T09:32:44.529787+00:00",
     "title": "ETH vigilancia fundamental",
-    "valid_until": "2026-08-15T22:00:51.852582+00:00"
+    "valid_until": "2026-08-16T09:32:44.529787+00:00"
   },
   {
     "agent": "altcoin_fundamentals",
-    "asset": "AAVE",
+    "asset": "NEAR",
     "confidence": "baja",
     "dashboard": "altcoin_fundamentals_dashboard.html",
     "direction": "WAIT",
     "entry_price": null,
     "horizon": "swing",
-    "id": "a4f3508b8f16531e",
+    "id": "48fdbfc3bd66cb47",
     "metrics": {
-      "change_30d": -5.9,
-      "change_7d": -5.5,
-      "market_cap": 1388612623.0,
+      "change_30d": -15.5,
+      "change_7d": 5.2,
+      "market_cap": 2186167904.0,
       "tvl": 0,
-      "volume": 181373223.0
+      "volume": 102670758.0
     },
     "reasons": [
-      "7D -5.5%",
-      "30D -5.9%",
+      "7D +5.2%",
+      "30D -15.5%",
       "TVL no disponible"
     ],
     "risk_reward": null,
     "score": 47.0,
-    "signal_type": "AAVE vigilancia fundamental",
-    "source": "https://www.coingecko.com/en/coins/aave",
+    "signal_type": "NEAR vigilancia fundamental",
+    "source": "https://www.coingecko.com/en/coins/near",
     "source_label": "Fundamentales altcoin",
     "status": "vigilancia",
     "stop_loss": null,
-    "summary": "Aave muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
+    "summary": "NEAR Protocol muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
     "take_profit": null,
-    "timestamp": "2026-08-05T22:00:51.852637+00:00",
-    "title": "AAVE vigilancia fundamental",
-    "valid_until": "2026-08-15T22:00:51.852637+00:00"
+    "timestamp": "2026-08-06T09:32:44.529906+00:00",
+    "title": "NEAR vigilancia fundamental",
+    "valid_until": "2026-08-16T09:32:44.529906+00:00"
   },
   {
-    "agent": "sector_rotation",
-    "asset": "SMH",
+    "agent": "altcoin_fundamentals",
+    "asset": "ARB",
     "confidence": "baja",
-    "dashboard": "sector_rotation_dashboard.html",
-    "direction": "LONG",
-    "entry_price": 569.7000122070312,
+    "dashboard": "altcoin_fundamentals_dashboard.html",
+    "direction": "WAIT",
+    "entry_price": null,
     "horizon": "swing",
-    "id": "ef065647a3c232ff",
+    "id": "cb194a7271ff15d0",
     "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": -3.92917163456471,
-      "perf_5d": 12.986396975090786,
-      "perf_60d": 0.5577777919028026,
-      "price": 569.7000122070312,
-      "relative_20d_vs_spy": -7.201233992283774,
-      "rsi": 49.73907285806833,
-      "sma20": 567.238005065918,
-      "sma50": 595.8096014404297,
-      "status": "ok",
-      "symbol": "SMH",
-      "volume": 5861033.0,
-      "volume_20d_avg": 12600141.65,
-      "volume_ratio": 0.4651561198917156
+      "change_30d": 2.0,
+      "change_7d": 1.5,
+      "market_cap": 516732738.0,
+      "tvl": 0,
+      "volume": 30575914.0
     },
     "reasons": [
-      "20D -3.9%",
-      "relativo vs SPY -7.2%",
-      "RSI 49.7"
+      "7D +1.5%",
+      "30D +2.0%",
+      "TVL no disponible"
     ],
     "risk_reward": null,
     "score": 47.0,
-    "signal_type": "SMH rotacion sectorial",
-    "source": "https://finance.yahoo.com/quote/SMH",
+    "signal_type": "ARB vigilancia fundamental",
+    "source": "https://www.coingecko.com/en/coins/arbitrum",
+    "source_label": "Fundamentales altcoin",
+    "status": "vigilancia",
+    "stop_loss": null,
+    "summary": "Arbitrum muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
+    "take_profit": null,
+    "timestamp": "2026-08-06T09:32:44.529869+00:00",
+    "title": "ARB vigilancia fundamental",
+    "valid_until": "2026-08-16T09:32:44.529869+00:00"
+  },
+  {
+    "agent": "unusual_volume",
+    "asset": "MSTR",
+    "confidence": "baja",
+    "dashboard": "unusual_volume_dashboard.html",
+    "direction": "LONG",
+    "entry_price": 96.8499984741211,
+    "horizon": "swing",
+    "id": "7f3cfdd68cf61e25",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": 3.152624458104958,
+      "perf_5d": -0.9105784828120411,
+      "perf_60d": -50.57160494673207,
+      "price": 96.8499984741211,
+      "rsi": 46.812773570473006,
+      "sma20": 96.13199996948242,
+      "sma50": 107.42499938964843,
+      "status": "ok",
+      "symbol": "MSTR",
+      "volume": 9995021.0,
+      "volume_20d_avg": 14897316.05,
+      "volume_ratio": 0.67092763330345
+    },
+    "reasons": [
+      "volume 0.7x avg",
+      "5D -0.9%"
+    ],
+    "risk_reward": null,
+    "score": 46.0,
+    "signal_type": "MSTR volumen inusual",
+    "source": "https://finance.yahoo.com/quote/MSTR",
+    "source_label": "Volumen inusual",
+    "status": "vigilancia",
+    "stop_loss": null,
+    "summary": "MicroStrategy presenta volumen anormal o movimiento tecnico a vigilar.",
+    "take_profit": null,
+    "timestamp": "2026-08-07T00:58:32.582995+00:00",
+    "title": "MSTR volumen inusual",
+    "valid_until": "2026-08-17T00:58:32.582995+00:00"
+  },
+  {
+    "agent": "unusual_volume",
+    "asset": "AMD",
+    "confidence": "baja",
+    "dashboard": "unusual_volume_dashboard.html",
+    "direction": "LONG",
+    "entry_price": 489.2799987792969,
+    "horizon": "swing",
+    "id": "085e84746c6a8c1b",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": -10.506287496678745,
+      "perf_5d": 0.8014141233780414,
+      "perf_60d": 6.645739808300477,
+      "price": 489.2799987792969,
+      "rsi": 47.82579786708165,
+      "sma20": 507.17200622558596,
+      "sma50": 514.3272009277343,
+      "status": "ok",
+      "symbol": "AMD",
+      "volume": 23887374.0,
+      "volume_20d_avg": 29693973.7,
+      "volume_ratio": 0.8044519147668
+    },
+    "reasons": [
+      "volume 0.8x avg",
+      "5D +0.8%"
+    ],
+    "risk_reward": null,
+    "score": 46.0,
+    "signal_type": "AMD volumen inusual",
+    "source": "https://finance.yahoo.com/quote/AMD",
+    "source_label": "Volumen inusual",
+    "status": "vigilancia",
+    "stop_loss": null,
+    "summary": "Advanced Micro Devices presenta volumen anormal o movimiento tecnico a vigilar.",
+    "take_profit": null,
+    "timestamp": "2026-08-07T00:58:32.318254+00:00",
+    "title": "AMD volumen inusual",
+    "valid_until": "2026-08-17T00:58:32.318254+00:00"
+  },
+  {
+    "agent": "sector_rotation",
+    "asset": "IWM",
+    "confidence": "baja",
+    "dashboard": "sector_rotation_dashboard.html",
+    "direction": "LONG",
+    "entry_price": 298.25,
+    "horizon": "swing",
+    "id": "bebfc986629271bc",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": 0.3397960566573266,
+      "perf_5d": 1.9344487962510648,
+      "perf_60d": 4.52809520055899,
+      "price": 298.25,
+      "relative_20d_vs_spy": -1.901756549189182,
+      "rsi": 55.579673528599464,
+      "sma20": 294.4935012817383,
+      "sma50": 293.6492004394531,
+      "status": "ok",
+      "symbol": "IWM",
+      "volume": 16143498.0,
+      "volume_20d_avg": 21617054.9,
+      "volume_ratio": 0.7467945136226675
+    },
+    "reasons": [
+      "20D +0.3%",
+      "relativo vs SPY -1.9%",
+      "RSI 55.6"
+    ],
+    "risk_reward": null,
+    "score": 46.0,
+    "signal_type": "IWM rotacion sectorial",
+    "source": "https://finance.yahoo.com/quote/IWM",
     "source_label": "Rotacion sectorial",
     "status": "vigilancia",
     "stop_loss": null,
-    "summary": "Semiconductors muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
+    "summary": "Small caps muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:49:05.284127+00:00",
-    "title": "SMH rotacion sectorial",
-    "valid_until": "2026-08-15T21:49:05.284127+00:00"
+    "timestamp": "2026-08-07T00:56:51.782787+00:00",
+    "title": "IWM rotacion sectorial",
+    "valid_until": "2026-08-17T00:56:51.782787+00:00"
   },
   {
     "agent": "event_rumor",
@@ -3697,7 +3662,7 @@
     "direction": "WAIT",
     "entry_price": 482.04998779296875,
     "horizon": "swing",
-    "id": "1546434ee39c2bd6",
+    "id": "2f10fa313a5be490",
     "metrics": {},
     "reasons": [
       "12 artículos recientes",
@@ -3715,9 +3680,53 @@
     "stop_loss": null,
     "summary": "Sin resumen IA concluyente.",
     "take_profit": null,
-    "timestamp": "2026-08-05T22:01:58.315533+00:00",
+    "timestamp": "2026-08-07T00:59:06.009741+00:00",
     "title": "AMD AI / Computex / Advancing AI",
-    "valid_until": "2026-08-15T22:01:58.315533+00:00"
+    "valid_until": "2026-08-17T00:59:06.009741+00:00"
+  },
+  {
+    "agent": "sector_rotation",
+    "asset": "QQQ",
+    "confidence": "baja",
+    "dashboard": "sector_rotation_dashboard.html",
+    "direction": "LONG",
+    "entry_price": 714.6500244140625,
+    "horizon": "swing",
+    "id": "be0b96dced8fb81d",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": -1.1931761604425883,
+      "perf_5d": 4.549782338744368,
+      "perf_60d": 0.19067229718832124,
+      "price": 714.6500244140625,
+      "relative_20d_vs_spy": -3.434728766289097,
+      "rsi": 54.319267608582564,
+      "sma20": 700.4634948730469,
+      "sma50": 714.6957995605469,
+      "status": "ok",
+      "symbol": "QQQ",
+      "volume": 30571597.0,
+      "volume_20d_avg": 41501594.85,
+      "volume_ratio": 0.7366366789154851
+    },
+    "reasons": [
+      "20D -1.2%",
+      "relativo vs SPY -3.4%",
+      "RSI 54.3"
+    ],
+    "risk_reward": null,
+    "score": 45.0,
+    "signal_type": "QQQ rotacion sectorial",
+    "source": "https://finance.yahoo.com/quote/QQQ",
+    "source_label": "Rotacion sectorial",
+    "status": "vigilancia",
+    "stop_loss": null,
+    "summary": "Nasdaq 100 muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
+    "take_profit": null,
+    "timestamp": "2026-08-07T00:56:51.627670+00:00",
+    "title": "QQQ rotacion sectorial",
+    "valid_until": "2026-08-17T00:56:51.627670+00:00"
   },
   {
     "agent": "altcoin_fundamentals",
@@ -3727,17 +3736,17 @@
     "direction": "WAIT",
     "entry_price": null,
     "horizon": "swing",
-    "id": "8ed5e79c9e9095f5",
+    "id": "e63161ba6c8d9c0b",
     "metrics": {
-      "change_30d": 2.0,
-      "change_7d": -0.4,
-      "market_cap": 6100079471.0,
+      "change_30d": 3.6,
+      "change_7d": -1.1,
+      "market_cap": 6062843193.0,
       "tvl": 0,
-      "volume": 142144802.0
+      "volume": 145036315.0
     },
     "reasons": [
-      "7D -0.4%",
-      "30D +2.0%",
+      "7D -1.1%",
+      "30D +3.6%",
       "TVL no disponible"
     ],
     "risk_reward": null,
@@ -3749,87 +3758,9 @@
     "stop_loss": null,
     "summary": "Chainlink muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
     "take_profit": null,
-    "timestamp": "2026-08-05T22:00:51.852652+00:00",
+    "timestamp": "2026-08-06T09:32:44.529850+00:00",
     "title": "LINK vigilancia fundamental",
-    "valid_until": "2026-08-15T22:00:51.852652+00:00"
-  },
-  {
-    "agent": "altcoin_fundamentals",
-    "asset": "SOL",
-    "confidence": "baja",
-    "dashboard": "altcoin_fundamentals_dashboard.html",
-    "direction": "WAIT",
-    "entry_price": null,
-    "horizon": "swing",
-    "id": "567614642d5f0065",
-    "metrics": {
-      "change_30d": -9.7,
-      "change_7d": 2.1,
-      "market_cap": 43088050157.0,
-      "tvl": 0,
-      "volume": 1669484833.0
-    },
-    "reasons": [
-      "7D +2.1%",
-      "30D -9.7%",
-      "TVL no disponible"
-    ],
-    "risk_reward": null,
-    "score": 45.0,
-    "signal_type": "SOL vigilancia fundamental",
-    "source": "https://www.coingecko.com/en/coins/solana",
-    "source_label": "Fundamentales altcoin",
-    "status": "vigilancia",
-    "stop_loss": null,
-    "summary": "Solana muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
-    "take_profit": null,
-    "timestamp": "2026-08-05T22:00:51.852624+00:00",
-    "title": "SOL vigilancia fundamental",
-    "valid_until": "2026-08-15T22:00:51.852624+00:00"
-  },
-  {
-    "agent": "sector_rotation",
-    "asset": "XLE",
-    "confidence": "baja",
-    "dashboard": "sector_rotation_dashboard.html",
-    "direction": "LONG",
-    "entry_price": 57.310001373291016,
-    "horizon": "swing",
-    "id": "7ffe29eeb108ad9f",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": 3.0755448670845453,
-      "perf_5d": -2.284740183675227,
-      "perf_60d": 2.890485795868769,
-      "price": 57.310001373291016,
-      "relative_20d_vs_spy": -0.19651749063451796,
-      "rsi": 48.827778801263136,
-      "sma20": 57.85700035095215,
-      "sma50": 56.594200134277344,
-      "status": "ok",
-      "symbol": "XLE",
-      "volume": 33184020.0,
-      "volume_20d_avg": 29853581.0,
-      "volume_ratio": 1.1115591124562243
-    },
-    "reasons": [
-      "20D +3.1%",
-      "relativo vs SPY -0.2%",
-      "RSI 48.8"
-    ],
-    "risk_reward": null,
-    "score": 45.0,
-    "signal_type": "XLE rotacion sectorial",
-    "source": "https://finance.yahoo.com/quote/XLE",
-    "source_label": "Rotacion sectorial",
-    "status": "vigilancia",
-    "stop_loss": null,
-    "summary": "Energy muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "take_profit": null,
-    "timestamp": "2026-08-05T21:49:05.567744+00:00",
-    "title": "XLE rotacion sectorial",
-    "valid_until": "2026-08-15T21:49:05.567744+00:00"
+    "valid_until": "2026-08-16T09:32:44.529850+00:00"
   },
   {
     "agent": "sec_filing",
@@ -3839,7 +3770,7 @@
     "direction": "WAIT",
     "entry_price": 588.77001953125,
     "horizon": "swing",
-    "id": "7ee76a2c70367cdb",
+    "id": "0668ee41950cf800",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -3855,9 +3786,9 @@
       "sma50": 601.0691955566406,
       "status": "ok",
       "symbol": "META",
-      "volume": 14756774.0,
-      "volume_20d_avg": 19450558.7,
-      "volume_ratio": 0.7586812403491525
+      "volume": 14824300.0,
+      "volume_20d_avg": 19453935.0,
+      "volume_ratio": 0.762020640040177
     },
     "reasons": [
       "formulario SEC 10-Q",
@@ -3872,9 +3803,9 @@
     "stop_loss": null,
     "summary": "Meta Platforms publico el formulario 10-Q. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:58.559818+00:00",
+    "timestamp": "2026-08-06T09:08:09.520493+00:00",
     "title": "META presentacion SEC 10-Q",
-    "valid_until": "2026-08-15T21:34:58.559818+00:00"
+    "valid_until": "2026-08-16T09:08:09.520493+00:00"
   },
   {
     "agent": "sec_filing",
@@ -3884,7 +3815,7 @@
     "direction": "WAIT",
     "entry_price": 311.0,
     "horizon": "swing",
-    "id": "283899539100ce08",
+    "id": "0d2dd5e723a3ce1d",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
@@ -3900,9 +3831,9 @@
       "sma50": 309.6542004394531,
       "status": "ok",
       "symbol": "AAPL",
-      "volume": 44330978.0,
-      "volume_20d_avg": 56166233.9,
-      "volume_ratio": 0.7892816541505732
+      "volume": 49178700.0,
+      "volume_20d_avg": 56408620.0,
+      "volume_ratio": 0.8718295182544795
     },
     "reasons": [
       "formulario SEC 10-Q",
@@ -3917,53 +3848,77 @@
     "stop_loss": null,
     "summary": "Apple publico el formulario 10-Q. Vigilar detalles del documento y reaccion del precio.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:34:56.898140+00:00",
+    "timestamp": "2026-08-06T09:08:07.660192+00:00",
     "title": "AAPL presentacion SEC 10-Q",
-    "valid_until": "2026-08-15T21:34:56.898140+00:00"
+    "valid_until": "2026-08-16T09:08:07.660192+00:00"
   },
   {
-    "agent": "sector_rotation",
-    "asset": "XLV",
+    "agent": "altcoin_fundamentals",
+    "asset": "AAVE",
     "confidence": "baja",
-    "dashboard": "sector_rotation_dashboard.html",
-    "direction": "LONG",
-    "entry_price": 164.16000366210938,
+    "dashboard": "altcoin_fundamentals_dashboard.html",
+    "direction": "WAIT",
+    "entry_price": null,
     "horizon": "swing",
-    "id": "f80aba7efb458019",
+    "id": "e1441e72824bf775",
     "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": 1.14602623251856,
-      "perf_5d": -1.2512041399927787,
-      "perf_60d": 14.405183202763228,
-      "price": 164.16000366210938,
-      "relative_20d_vs_spy": -2.1260361252005033,
-      "rsi": 58.37179398988646,
-      "sma20": 161.91500015258788,
-      "sma50": 157.1936001586914,
-      "status": "ok",
-      "symbol": "XLV",
-      "volume": 15208294.0,
-      "volume_20d_avg": 9907904.7,
-      "volume_ratio": 1.5349657127808265
+      "change_30d": -5.0,
+      "change_7d": -8.1,
+      "market_cap": 1361597225.0,
+      "tvl": 0,
+      "volume": 181098598.0
     },
     "reasons": [
-      "20D +1.1%",
-      "relativo vs SPY -2.1%",
-      "RSI 58.4"
+      "7D -8.1%",
+      "30D -5.0%",
+      "TVL no disponible"
     ],
     "risk_reward": null,
-    "score": 39.0,
-    "signal_type": "XLV rotacion sectorial",
-    "source": "https://finance.yahoo.com/quote/XLV",
-    "source_label": "Rotacion sectorial",
+    "score": 44.0,
+    "signal_type": "AAVE vigilancia fundamental",
+    "source": "https://www.coingecko.com/en/coins/aave",
+    "source_label": "Fundamentales altcoin",
     "status": "vigilancia",
     "stop_loss": null,
-    "summary": "Health care muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
+    "summary": "Aave muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:49:05.649740+00:00",
-    "title": "XLV rotacion sectorial",
-    "valid_until": "2026-08-15T21:49:05.649740+00:00"
+    "timestamp": "2026-08-06T09:32:44.529837+00:00",
+    "title": "AAVE vigilancia fundamental",
+    "valid_until": "2026-08-16T09:32:44.529837+00:00"
+  },
+  {
+    "agent": "altcoin_fundamentals",
+    "asset": "SOL",
+    "confidence": "baja",
+    "dashboard": "altcoin_fundamentals_dashboard.html",
+    "direction": "WAIT",
+    "entry_price": null,
+    "horizon": "swing",
+    "id": "3b126e120370530a",
+    "metrics": {
+      "change_30d": -9.2,
+      "change_7d": 0.9,
+      "market_cap": 42689999515.0,
+      "tvl": 0,
+      "volume": 1615419002.0
+    },
+    "reasons": [
+      "7D +0.9%",
+      "30D -9.2%",
+      "TVL no disponible"
+    ],
+    "risk_reward": null,
+    "score": 44.0,
+    "signal_type": "SOL vigilancia fundamental",
+    "source": "https://www.coingecko.com/en/coins/solana",
+    "source_label": "Fundamentales altcoin",
+    "status": "vigilancia",
+    "stop_loss": null,
+    "summary": "Solana muestra metricas publicas de mercado y fundamentales a vigilar. Se excluyen senales tipo memecoin.",
+    "take_profit": null,
+    "timestamp": "2026-08-06T09:32:44.529824+00:00",
+    "title": "SOL vigilancia fundamental",
+    "valid_until": "2026-08-16T09:32:44.529824+00:00"
   },
   {
     "agent": "event_rumor",
@@ -3973,7 +3928,7 @@
     "direction": "WAIT",
     "entry_price": 144.38999938964844,
     "horizon": "swing",
-    "id": "111ba200be777202",
+    "id": "68cd340de4889203",
     "metrics": {},
     "reasons": [
       "10 artículos recientes",
@@ -3990,53 +3945,9 @@
     "stop_loss": null,
     "summary": "Sin resumen IA concluyente.",
     "take_profit": null,
-    "timestamp": "2026-08-05T22:01:58.315549+00:00",
+    "timestamp": "2026-08-07T00:59:06.009755+00:00",
     "title": "Oracle CloudWorld / earnings",
-    "valid_until": "2026-08-15T22:01:58.315549+00:00"
-  },
-  {
-    "agent": "sector_rotation",
-    "asset": "XLP",
-    "confidence": "baja",
-    "dashboard": "sector_rotation_dashboard.html",
-    "direction": "LONG",
-    "entry_price": 85.33000183105469,
-    "horizon": "swing",
-    "id": "ddfa990329c4728b",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": 1.1138789527252335,
-      "perf_5d": -2.3237165351580047,
-      "perf_60d": 1.3661220262649376,
-      "price": 85.33000183105469,
-      "relative_20d_vs_spy": -2.1581834049938298,
-      "rsi": 52.496362460594995,
-      "sma20": 84.81499977111817,
-      "sma50": 84.26440017700196,
-      "status": "ok",
-      "symbol": "XLP",
-      "volume": 7714886.0,
-      "volume_20d_avg": 11211519.3,
-      "volume_ratio": 0.6881213681717516
-    },
-    "reasons": [
-      "20D +1.1%",
-      "relativo vs SPY -2.2%",
-      "RSI 52.5"
-    ],
-    "risk_reward": null,
-    "score": 37.0,
-    "signal_type": "XLP rotacion sectorial",
-    "source": "https://finance.yahoo.com/quote/XLP",
-    "source_label": "Rotacion sectorial",
-    "status": "vigilancia",
-    "stop_loss": null,
-    "summary": "Consumer staples muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "take_profit": null,
-    "timestamp": "2026-08-05T21:49:05.882935+00:00",
-    "title": "XLP rotacion sectorial",
-    "valid_until": "2026-08-15T21:49:05.882935+00:00"
+    "valid_until": "2026-08-17T00:59:06.009755+00:00"
   },
   {
     "agent": "event_rumor",
@@ -4046,7 +3957,7 @@
     "direction": "WAIT",
     "entry_price": 192.97999572753906,
     "horizon": "swing",
-    "id": "d84f780e662cc132",
+    "id": "2235f3186fbeb634",
     "metrics": {},
     "reasons": [
       "12 artículos recientes",
@@ -4064,9 +3975,9 @@
     "stop_loss": null,
     "summary": "Sin resumen IA concluyente.",
     "take_profit": null,
-    "timestamp": "2026-08-05T22:01:58.315574+00:00",
+    "timestamp": "2026-08-07T00:59:06.009774+00:00",
     "title": "Dreamforce / Salesforce AI updates",
-    "valid_until": "2026-08-15T22:01:58.315574+00:00"
+    "valid_until": "2026-08-17T00:59:06.009774+00:00"
   },
   {
     "agent": "cftc_positioning",
@@ -4076,7 +3987,7 @@
     "direction": "WAIT",
     "entry_price": null,
     "horizon": "swing",
-    "id": "77cadede91e30b6d",
+    "id": "1357734be793edfc",
     "metrics": {
       "matched_public_report": false,
       "report_url": "https://www.cftc.gov/dea/newcot/deafut.txt"
@@ -4094,9 +4005,9 @@
     "stop_loss": null,
     "summary": "Conviene revisar el posicionamiento de 10Y Treasuries para extremos y cambios semanales.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:56:19.559733+00:00",
+    "timestamp": "2026-08-06T09:30:38.563698+00:00",
     "title": "10Y Treasuries posicionamiento CFTC",
-    "valid_until": "2026-08-15T21:56:19.559733+00:00"
+    "valid_until": "2026-08-16T09:30:38.563698+00:00"
   },
   {
     "agent": "event_rumor",
@@ -4106,7 +4017,7 @@
     "direction": "WAIT",
     "entry_price": 274.5799865722656,
     "horizon": "swing",
-    "id": "70d148b95a0f4f3e",
+    "id": "2394915f94e23b72",
     "metrics": {},
     "reasons": [
       "6 artículos recientes",
@@ -4124,9 +4035,9 @@
     "stop_loss": null,
     "summary": "Sin resumen IA concluyente.",
     "take_profit": null,
-    "timestamp": "2026-08-05T22:01:58.315601+00:00",
+    "timestamp": "2026-08-07T00:59:06.009795+00:00",
     "title": "Arm earnings / product roadmap",
-    "valid_until": "2026-08-15T22:01:58.315601+00:00"
+    "valid_until": "2026-08-17T00:59:06.009795+00:00"
   },
   {
     "agent": "sector_rotation",
@@ -4134,30 +4045,30 @@
     "confidence": "baja",
     "dashboard": "sector_rotation_dashboard.html",
     "direction": "LONG",
-    "entry_price": 83.0,
+    "entry_price": 82.5199966430664,
     "horizon": "swing",
-    "id": "0a575b2c44662646",
+    "id": "9e5ea21ad5f34ad7",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": -1.6121391660880113,
-      "perf_5d": 0.18105193559629917,
-      "perf_60d": -3.578068965541692,
-      "price": 83.0,
-      "relative_20d_vs_spy": -4.884201523807075,
-      "rsi": 40.937306524482686,
-      "sma20": 83.56450004577637,
-      "sma50": 84.90359985351563,
+      "perf_20d": -2.3316383838469568,
+      "perf_5d": -0.3381719787092008,
+      "perf_60d": -3.553063350014085,
+      "price": 82.5199966430664,
+      "relative_20d_vs_spy": -4.573190989693465,
+      "rsi": 37.248852679543184,
+      "sma20": 83.46599998474122,
+      "sma50": 84.85199981689453,
       "status": "ok",
       "symbol": "TLT",
-      "volume": 29229326.0,
-      "volume_20d_avg": 25812221.3,
-      "volume_ratio": 1.1323832094992925
+      "volume": 27445052.0,
+      "volume_20d_avg": 26265032.6,
+      "volume_ratio": 1.0449273914093675
     },
     "reasons": [
-      "20D -1.6%",
-      "relativo vs SPY -4.9%",
-      "RSI 40.9"
+      "20D -2.3%",
+      "relativo vs SPY -4.6%",
+      "RSI 37.2"
     ],
     "risk_reward": null,
     "score": 31.0,
@@ -4168,9 +4079,9 @@
     "stop_loss": null,
     "summary": "Long bonds muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
     "take_profit": null,
-    "timestamp": "2026-08-05T21:49:06.100644+00:00",
+    "timestamp": "2026-08-07T00:56:53.421319+00:00",
     "title": "TLT rotacion sectorial",
-    "valid_until": "2026-08-15T21:49:06.100644+00:00"
+    "valid_until": "2026-08-17T00:56:53.421319+00:00"
   },
   {
     "agent": "event_rumor",
@@ -4180,7 +4091,7 @@
     "direction": "WAIT",
     "entry_price": 219.22000122070312,
     "horizon": "swing",
-    "id": "2de377531217e86c",
+    "id": "9bbba59687da0536",
     "metrics": {},
     "reasons": [
       "6 artículos recientes",
@@ -4197,9 +4108,53 @@
     "stop_loss": null,
     "summary": "Sin resumen IA concluyente.",
     "take_profit": null,
-    "timestamp": "2026-08-05T22:01:58.315620+00:00",
+    "timestamp": "2026-08-07T00:59:06.009810+00:00",
     "title": "Nvidia GTC / SIGGRAPH",
-    "valid_until": "2026-08-15T22:01:58.315620+00:00"
+    "valid_until": "2026-08-17T00:59:06.009810+00:00"
+  },
+  {
+    "agent": "sector_rotation",
+    "asset": "SMH",
+    "confidence": "baja",
+    "dashboard": "sector_rotation_dashboard.html",
+    "direction": "LONG",
+    "entry_price": 571.47998046875,
+    "horizon": "swing",
+    "id": "4f2f4351a619d38b",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": -5.9648200952732155,
+      "perf_5d": 6.0456401148081484,
+      "perf_60d": -0.8380935798971034,
+      "price": 571.47998046875,
+      "relative_20d_vs_spy": -8.206372701119724,
+      "rsi": 50.15984721550364,
+      "sma20": 565.425505065918,
+      "sma50": 595.1964007568359,
+      "status": "ok",
+      "symbol": "SMH",
+      "volume": 5839568.0,
+      "volume_20d_avg": 12457283.4,
+      "volume_ratio": 0.4687673718653619
+    },
+    "reasons": [
+      "20D -6.0%",
+      "relativo vs SPY -8.2%",
+      "RSI 50.2"
+    ],
+    "risk_reward": null,
+    "score": 29.0,
+    "signal_type": "SMH rotacion sectorial",
+    "source": "https://finance.yahoo.com/quote/SMH",
+    "source_label": "Rotacion sectorial",
+    "status": "vigilancia",
+    "stop_loss": null,
+    "summary": "Semiconductors muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
+    "take_profit": null,
+    "timestamp": "2026-08-07T00:56:51.903242+00:00",
+    "title": "SMH rotacion sectorial",
+    "valid_until": "2026-08-17T00:56:51.903242+00:00"
   },
   {
     "agent": "event_rumor",
@@ -4209,7 +4164,7 @@
     "direction": "WAIT",
     "entry_price": 414.0,
     "horizon": "swing",
-    "id": "7bc26640ec4b9276",
+    "id": "1be7d51d34ea6e54",
     "metrics": {},
     "reasons": [
       "5 artículos recientes",
@@ -4226,9 +4181,9 @@
     "stop_loss": null,
     "summary": "Sin resumen IA concluyente.",
     "take_profit": null,
-    "timestamp": "2026-08-05T22:01:58.315636+00:00",
+    "timestamp": "2026-08-07T00:59:06.009822+00:00",
     "title": "TSMC earnings / technology symposium",
-    "valid_until": "2026-08-15T22:01:58.315636+00:00"
+    "valid_until": "2026-08-17T00:59:06.009822+00:00"
   },
   {
     "agent": "intraday_cashout",
@@ -5829,7 +5784,7 @@
     "direction": "WAIT",
     "entry_price": 418.2799987792969,
     "horizon": "swing",
-    "id": "fad22fcf7bd5f53f",
+    "id": "7145bd3c49d2464e",
     "metrics": {},
     "reasons": [
       "6 artículos recientes",
@@ -5845,9 +5800,9 @@
     "stop_loss": null,
     "summary": "Sin resumen IA concluyente.",
     "take_profit": null,
-    "timestamp": "2026-08-05T22:01:58.315651+00:00",
+    "timestamp": "2026-08-07T00:59:06.009836+00:00",
     "title": "Broadcom earnings / AI infrastructure updates",
-    "valid_until": "2026-08-15T22:01:58.315651+00:00"
+    "valid_until": "2026-08-17T00:59:06.009836+00:00"
   },
   {
     "agent": "intraday_cashout",
@@ -6268,6 +6223,50 @@
     "timestamp": "2026-08-05T15:23:09.677626+00:00",
     "title": "XLE NO_TRADE NO_TRADE",
     "valid_until": "2026-08-05T22:00:00+00:00"
+  },
+  {
+    "agent": "sector_rotation",
+    "asset": "XLU",
+    "confidence": "baja",
+    "dashboard": "sector_rotation_dashboard.html",
+    "direction": "LONG",
+    "entry_price": 43.380001068115234,
+    "horizon": "swing",
+    "id": "5c3280597af510ec",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": -3.8776865911407943,
+      "perf_5d": -2.8660966942906207,
+      "perf_60d": -3.898977282522531,
+      "price": 43.380001068115234,
+      "relative_20d_vs_spy": -6.119239196987303,
+      "rsi": 32.53821169450782,
+      "sma20": 45.07899990081787,
+      "sma50": 44.89259986877441,
+      "status": "ok",
+      "symbol": "XLU",
+      "volume": 26877923.0,
+      "volume_20d_avg": 19399041.15,
+      "volume_ratio": 1.3855284285532845
+    },
+    "reasons": [
+      "20D -3.9%",
+      "relativo vs SPY -6.1%",
+      "RSI 32.5"
+    ],
+    "risk_reward": null,
+    "score": 20.0,
+    "signal_type": "XLU rotacion sectorial",
+    "source": "https://finance.yahoo.com/quote/XLU",
+    "source_label": "Rotacion sectorial",
+    "status": "vigilancia",
+    "stop_loss": null,
+    "summary": "Utilities muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
+    "take_profit": null,
+    "timestamp": "2026-08-07T00:56:53.146480+00:00",
+    "title": "XLU rotacion sectorial",
+    "valid_until": "2026-08-17T00:56:53.146480+00:00"
   },
   {
     "agent": "intraday_cashout",
@@ -7667,7 +7666,7 @@
     "direction": "WAIT",
     "entry_price": 487.4599914550781,
     "horizon": "swing",
-    "id": "4005b76b725ed573",
+    "id": "10da48c1a7a41a44",
     "metrics": {},
     "reasons": [
       "13 artículos recientes",
@@ -7685,53 +7684,9 @@
     "stop_loss": null,
     "summary": "Sin resumen IA concluyente.",
     "take_profit": null,
-    "timestamp": "2026-08-05T22:01:58.315666+00:00",
+    "timestamp": "2026-08-07T00:59:06.009847+00:00",
     "title": "Microsoft Ignite",
-    "valid_until": "2026-08-15T22:01:58.315666+00:00"
-  },
-  {
-    "agent": "sector_rotation",
-    "asset": "XLU",
-    "confidence": "baja",
-    "dashboard": "sector_rotation_dashboard.html",
-    "direction": "LONG",
-    "entry_price": 43.65999984741211,
-    "horizon": "swing",
-    "id": "0a24b12daef9cd0e",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": -3.747797045998047,
-      "perf_5d": -2.7833444761679926,
-      "perf_60d": -2.3703071206543025,
-      "price": 43.65999984741211,
-      "relative_20d_vs_spy": -7.01985940371711,
-      "rsi": 34.60451057713401,
-      "sma20": 45.16649990081787,
-      "sma50": 44.931599884033204,
-      "status": "ok",
-      "symbol": "XLU",
-      "volume": 25991222.0,
-      "volume_20d_avg": 19034981.1,
-      "volume_ratio": 1.3654451172530977
-    },
-    "reasons": [
-      "20D -3.7%",
-      "relativo vs SPY -7.0%",
-      "RSI 34.6"
-    ],
-    "risk_reward": null,
-    "score": 16.0,
-    "signal_type": "XLU rotacion sectorial",
-    "source": "https://finance.yahoo.com/quote/XLU",
-    "source_label": "Rotacion sectorial",
-    "status": "vigilancia",
-    "stop_loss": null,
-    "summary": "Utilities muestra fuerza o debilidad relativa frente a SPY. Vigilar si la rotacion persiste.",
-    "take_profit": null,
-    "timestamp": "2026-08-05T21:49:05.978912+00:00",
-    "title": "XLU rotacion sectorial",
-    "valid_until": "2026-08-15T21:49:05.978912+00:00"
+    "valid_until": "2026-08-17T00:59:06.009847+00:00"
   },
   {
     "agent": "intraday_cashout",
