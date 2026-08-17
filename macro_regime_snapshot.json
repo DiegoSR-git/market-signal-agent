@@ -2,7 +2,7 @@
   {
     "agent": "macro_regime",
     "asset": "MARKET",
-    "level": "medio",
+    "level": "vigilancia",
     "metrics": {
       "proxies": {
         "GLD": {
@@ -24,18 +24,18 @@
         "HYG": {
           "breakout_20d": true,
           "breakout_50d": false,
-          "perf_20d": 0.07532650024402177,
+          "perf_20d": -0.12529567370012096,
           "perf_5d": 0.12561044260070986,
-          "perf_60d": 0.45368697829146765,
+          "perf_60d": 0.3146237136678387,
           "price": 79.70999908447266,
-          "rsi": 54.208239233851785,
-          "sma20": 79.4870002746582,
-          "sma50": 79.66360061645508,
+          "rsi": 53.793647068277025,
+          "sma20": 79.50100059509278,
+          "sma50": 79.67180068969726,
           "status": "ok",
           "symbol": "HYG",
           "volume": 26608900.0,
-          "volume_20d_avg": 31625330.0,
-          "volume_ratio": 0.8413793626817491
+          "volume_20d_avg": 32262825.0,
+          "volume_ratio": 0.8247541869008681
         },
         "IWM": {
           "breakout_20d": true,
@@ -56,18 +56,18 @@
         "LQD": {
           "breakout_20d": false,
           "breakout_50d": false,
-          "perf_20d": -1.338782860447052,
+          "perf_20d": -1.0166927965662986,
           "perf_5d": -0.40356667560760284,
-          "perf_60d": -0.9335324629945574,
+          "perf_60d": -2.238599941832453,
           "price": 106.12000274658203,
-          "rsi": 41.232097104051675,
-          "sma20": 106.4320011138916,
-          "sma50": 107.65000030517578,
+          "rsi": 40.69904343496696,
+          "sma20": 106.5755012512207,
+          "sma50": 107.78400039672852,
           "status": "ok",
           "symbol": "LQD",
           "volume": 29528400.0,
-          "volume_20d_avg": 29065910.0,
-          "volume_ratio": 1.0159117674278906
+          "volume_20d_avg": 29030940.0,
+          "volume_ratio": 1.0171355112855458
         },
         "QQQ": {
           "breakout_20d": true,
@@ -134,18 +134,18 @@
           "volume_ratio": 0.7155802335537893
         }
       },
-      "regime": "risk-on"
+      "regime": "defensive"
     },
     "reasons": [
       "SPY 20D +4.4%",
       "QQQ 20D +5.1%",
-      "HYG 20D +0.1%",
+      "HYG 20D -0.1%",
       "TLT 20D -2.9%"
     ],
-    "score": 65,
+    "score": 64,
     "source": "https://finance.yahoo.com",
-    "summary": "La cesta de proxies apunta a un regimen risk-on. Vigilar confirmacion en credito, duracion y dolar.",
-    "time_utc": "2026-08-16T20:44:27.933925+00:00",
-    "title": "Regimen macro: risk-on"
+    "summary": "La cesta de proxies apunta a un regimen defensive. Vigilar confirmacion en credito, duracion y dolar.",
+    "time_utc": "2026-08-17T07:29:41.064463+00:00",
+    "title": "Regimen macro: defensive"
   }
 ]
