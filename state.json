@@ -6,27 +6,41 @@
     "btc::SCORE_WATCH::\ud83d\udfe1 BTC WATCH": "2026-06-19T11:18:57.373865+00:00",
     "btc::none::\u26aa SIN SE\u00d1AL": "2026-06-19T10:54:58.472290+00:00",
     "btc::none::\ud83d\udfe1 BTC WATCH": "2026-06-19T10:51:22.737931+00:00",
-    "stocks::opportunities": "2026-08-26T23:09:45.548019+00:00"
+    "stocks::opportunities": "2026-08-29T02:46:17.710841+00:00"
   },
-  "last_run_utc": "2026-08-28T19:17:24.776904+00:00",
+  "last_run_utc": "2026-08-29T02:46:17.710864+00:00",
   "last_snapshot": {
     "btc": {
       "etf_total": null,
-      "fear": 73,
+      "fear": 68,
       "ibit": null,
       "oi_24h": null,
-      "price": 66982.0,
+      "price": 67001.0,
       "regime": "RISK_ON",
-      "rsi": 72.95216873385716,
+      "rsi": 71.0940704215119,
       "score": 33,
-      "sma200": 59632.28008083064,
+      "sma200": 59683.63480527823,
       "status": "\u26aa SIN SE\u00d1AL",
-      "time_utc": "2026-08-28T18:32:44.675285+00:00"
+      "time_utc": "2026-08-29T02:46:14.529023+00:00"
     },
     "stocks": {
-      "opportunities": 0,
-      "time_utc": "2026-08-28T18:32:47.479091+00:00",
-      "top": []
+      "opportunities": 1,
+      "time_utc": "2026-08-29T02:46:17.187006+00:00",
+      "top": [
+        {
+          "dist200": -7.1783987314326225,
+          "drawdown": -25.91861332505607,
+          "price": 578.02001953125,
+          "reasons": [
+            "Drawdown 52s -25.9%",
+            "Cerca de SMA200 desde abajo",
+            "Recupera SMA20"
+          ],
+          "rsi": 49.55679422257165,
+          "score": 50,
+          "symbol": "META"
+        }
+      ]
     }
   },
   "orders": {
