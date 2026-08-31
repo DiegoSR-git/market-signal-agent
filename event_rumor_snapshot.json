@@ -1,5 +1,484 @@
 [
   {
+    "ticker": "GOOGL",
+    "company": "Alphabet",
+    "score": 77,
+    "event_name": "Google Cloud Next / Made by Google",
+    "event_date": null,
+    "date_confidence": "unknown",
+    "days_until_event": null,
+    "trading_window_start": null,
+    "trading_window_end": null,
+    "window_status": "unknown",
+    "opportunity_type": "none",
+    "rumors": [],
+    "market_sentiment": "unknown",
+    "summary": "Sin resumen IA concluyente.",
+    "ai_confidence": "low",
+    "score_reasons": [
+      "18 artículos recientes",
+      "Fuentes confiables: cnbc.com",
+      "Rumores/productos: Gemini, TPU, Pixel, Google Cloud, AI agents",
+      "Evento mencionado: Google Cloud Next, Google I/O",
+      "RSI razonable: 44.1",
+      "No descontado 20D: -9.1%"
+    ],
+    "market": {
+      "ticker": "GOOGL",
+      "price": 339.3500061035156,
+      "rsi": 44.05392035715827,
+      "sma20": 348.56349792480466,
+      "sma50": 349.2039990234375,
+      "perf_20d": -9.145672878631695,
+      "perf_60d": -8.82344934642908,
+      "status": "ok"
+    },
+    "articles": [
+      {
+        "title": "Cloud Next ‘26: Momentum and innovation at Google scale - blog.google",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQZXd0dWYyRXVOVlR5UVRUYVVCR00xTWtfeW1WOVV0eUdjNDZrWmZFTmViaDdzM09ta2JiOFExdW16THZLRVF0Ry1jYXpielVTcTU4cVZ3UlpHd3pHNUVQU1Ztc1lDMERxT2JEdnI3ZTJjR0FhczFPaGQzSnhxbGdXTnpPcnE2dEY2WG0zX1Joc3RSX1RibW5fa2RHNGZqd3c4Y09sTmkzcWd1Zw?oc=5",
+        "published": "2026-04-22T07:00:00+00:00",
+        "source": "blog.google",
+        "domain": "blog.google",
+        "origin": "google_news_rss",
+        "snippet": "Cloud Next ‘26: Momentum and innovation at Google scale - blog.google"
+      },
+      {
+        "title": "Google Cloud Next 2026 is a chance to demonstrate Google’s unique advantages - IT Pro",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPdEswSkFfeFh5aEYxT1pla3otM1N2bTc0OTRVQjJPTHUyNndUU1EwZHh5b2xJX1JTcHNZZVNMYlc5UUdsT1ZPeURXR1B3akU1NVBkVHllTmF0amNJRzVPRmVNdXNkYkFDUUVnUHVtdFhyUDA5bWVDRFBPTGZ0RDVNdDk5TUhjbGxSN0VjRXlBREhTZDlYemxn?oc=5",
+        "published": "2026-04-20T07:00:00+00:00",
+        "source": "IT Pro",
+        "domain": "IT Pro",
+        "origin": "google_news_rss",
+        "snippet": "Google Cloud Next 2026 is a chance to demonstrate Google’s unique advantages - IT Pro"
+      },
+      {
+        "title": "What marketers need to know from Google Cloud Next ’26 - MarTech",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBSeEJkbmx3cWxvWlZ5Q1VlODU5VVhRcnFvcUlEbG5qVHd5MUZnSlQ4UmtWTmxDUDlqZUlmelNFLTRyVlVtdmZ2RmlmWlE0cXp1VkVkM3puUnNib29JM3VlWG9KM2tRSnlkNURfakdmZ29rNHdJZzNvdWZZREFSajQ?oc=5",
+        "published": "2026-04-27T07:00:00+00:00",
+        "source": "MarTech",
+        "domain": "MarTech",
+        "origin": "google_news_rss",
+        "snippet": "What marketers need to know from Google Cloud Next ’26 - MarTech"
+      },
+      {
+        "title": "Google Debuts 8th-Gen TPUs, Shifts to Agentic AI at Google Cloud Next to Drive Growth - TradingKey",
+        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPZzNrVE1kaF9nbEtrU1dMU1hyTU9hQURtRzRqUEt0dGJwSEdTUWhDOG80UlFSdEwtUnNuOE1JQm9meDJHb3EydU9oa1drc0toUEN6ZWtHS1FnZk5oX3RieU1ZblJfcER4MTVQaGsyVU1HbU5qWjYyLS1fZXNIRTkwTmxXOVBScXB6Y2s1cVNkUGxLTFdTWTAzNG5tZi1ncjlWUVU5WExCRFpSWnpOLUw0amFzanZIX2N2eU5rT1NmSVEtTVVKWGhjVHZR?oc=5",
+        "published": "2026-04-24T07:00:00+00:00",
+        "source": "TradingKey",
+        "domain": "TradingKey",
+        "origin": "google_news_rss",
+        "snippet": "Google Debuts 8th-Gen TPUs, Shifts to Agentic AI at Google Cloud Next to Drive Growth - TradingKey"
+      },
+      {
+        "title": "Wall Street sets Google stock price target for the next 12 months - Finbold",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOVV8zOGtfLTdCZkEya3JvcHRVRS1qczdLMnBfMG1oQ0V1TXVRbmRJQnBIQnN4eUZDWXpRaGdFS2hyb1Vyb2k2V082b3p0bVc4bDl2VXphU1hCQ3FnWnBLTEdaR1ZMQms1cHRDRXBWV3N1SDJadWExV1RRS0tfOHVFTDQwQmZuUl9QUnVzSzlZWQ?oc=5",
+        "published": "2026-04-15T07:00:00+00:00",
+        "source": "Finbold",
+        "domain": "Finbold",
+        "origin": "google_news_rss",
+        "snippet": "Wall Street sets Google stock price target for the next 12 months - Finbold"
+      },
+      {
+        "title": "Google launches Gemini subscriptions to help corporate workers build AI agents - cnbc.com",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOZGRWMVlOa3ZFemVzZjVOdXV3Q0dYRmplQ01oM2hVcTFkY1ZBN0Ftb01FVk1zTnpyczR1Qm1OcUZlRENyZW10czZ0MTZZWGNTNzhDWF8xbTI5bjhNbVpoTUFyRDBHSnJYc0ZleGpSeGVodDhDSVptRUFzME1PejBxLUF2SUpSNktzY0xFSmR2bG1PQnczMTUxVUhQZWFua0EwREHSAacBQVVfeXFMTXBfSFcyQ1JGckQ2c0ZtZjZ4MnpDMFZQOWQtTDd5NFE4ZTNfVlNCTWdjWUZ5OEI3M0dRbFVGdkhDcExoYkJ1QThyZzVYRW1ESWsyUnpaLUliT2dpc3dUMXdkWkdQb19nWHJpWXpJcDc5V1hEand4M2I4LVc3akVlYW1wZDJuUkRZdEJZMzNTYWFoaGVYOEVraVhmU2ktS1JLYUt1ZmRHYnM?oc=5",
+        "published": "2025-10-09T07:00:00+00:00",
+        "source": "cnbc.com",
+        "domain": "cnbc.com",
+        "origin": "google_news_rss",
+        "snippet": "Google launches Gemini subscriptions to help corporate workers build AI agents - cnbc.com"
+      },
+      {
+        "title": "Google I/O 2026: Everything We Expect and How to Watch - pcmag.com",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOQnBIbTNXQk84Y3FPZTRlQWItX0lFR285a3VGRVpTeUFNdUJnOTdOeTM2YjRVSXlUeVFQelNqSXRJTTJwbGJxaVoxYy1FamowT013d2Zfa1ZaSmlhMWlaVzN1VE9pbWRpTWRKRzFrczVBaG4yUjh4TzVET25Odi1KMGJpR1dpOXhJOHlCRQ?oc=5",
+        "published": "2026-05-18T07:00:00+00:00",
+        "source": "pcmag.com",
+        "domain": "pcmag.com",
+        "origin": "google_news_rss",
+        "snippet": "Google I/O 2026: Everything We Expect and How to Watch - pcmag.com"
+      },
+      {
+        "title": "2025 Q3 Earnings Call - Alphabet Inc.",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOV0JtUWtnRlRrdjNuZWNKSDAxTElHZ3ZSekdCWmszeEpJZVcxXzk5UUVHQTZLSFFTanpaajU0RlJBYUlIZmNCRkhFR3FFM05CZ1drbk13d0x1b05vVnBlQ3VmQk1DX1BiT3BsRWJuNlE0UFNFQ0ppMmNkLW1TNXBnck5ldmFDYWRTSzUwdFlvcENVUERtNnBtdnlpSFhpRHJBc1NB?oc=5",
+        "published": "2025-10-29T07:00:00+00:00",
+        "source": "Alphabet Inc.",
+        "domain": "Alphabet Inc.",
+        "origin": "google_news_rss",
+        "snippet": "2025 Q3 Earnings Call - Alphabet Inc."
+      },
+      {
+        "title": "Google I/O 2026: Here’s What We Expect From This Year’s Keynote and How to Watch - CNET",
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNczQxb1pYdUpRZ2NxbEN5NDlZRi1PS0I1a2szSGhOZlN1ZWc1TG95QUxSaHdZaXBEV1YzVGNISkx0czFxNGdycFgzMmtfNzJpZ2h4UUlMckdQeVNhZEFGVTN1M0ZXWW53Vlc0NFBJc19zTDlBSUx2ekhHNFpST0JNbFBNNF80TlJjOHc?oc=5",
+        "published": "2026-05-19T07:00:00+00:00",
+        "source": "CNET",
+        "domain": "CNET",
+        "origin": "google_news_rss",
+        "snippet": "Google I/O 2026: Here’s What We Expect From This Year’s Keynote and How to Watch - CNET"
+      },
+      {
+        "title": "Alphabet Is Getting Ready For War (NASDAQ:GOOG) - Seeking Alpha",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1BdUlRX2tfMWkzZER3WnpLaGp6MUtVU05ySzBNLTgwdE50RzRCeS1mZDQ3cldiQXQtY3JyNGVJTXdCNVJwSzluQ29tZ3NLV3RGVGtqTU01UVRuX1dTRDdmMHQzQUdER0lsV2dmLWdsdVNzUXAwNUJWQV9nU0ZJUjQ?oc=5",
+        "published": "2026-04-25T07:00:00+00:00",
+        "source": "Seeking Alpha",
+        "domain": "Seeking Alpha",
+        "origin": "google_news_rss",
+        "snippet": "Alphabet Is Getting Ready For War (NASDAQ:GOOG) - Seeking Alpha"
+      },
+      {
+        "title": "Google's 'Pixel 11' Series Pre-Orders Begin August 12; Rear LED 'Pixel Glow' Shown for First Time - finance.biggo.com",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1kcUgtQnZWcm1mbmpsR1loWUtIQjlxTjFQY2VfWlNTYjdBTlFsYmNaaXRqZ0hkNVhfcU1QTjZGRW5YX09Uc1hkME94ZjU1aHNkdFZfQURVWkIzenpjWTVqclg3WXQyOVBGX3dVVzU3ZHFnWTBqOUE?oc=5",
+        "published": "2026-07-15T07:00:00+00:00",
+        "source": "finance.biggo.com",
+        "domain": "finance.biggo.com",
+        "origin": "google_news_rss",
+        "snippet": "Google's 'Pixel 11' Series Pre-Orders Begin August 12; Rear LED 'Pixel Glow' Shown for First Time - finance.biggo.com"
+      },
+      {
+        "title": "Google spotlights AI over hardware upgrades in unveiling new smartphones - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPRE5uYjBPNnV0cVV5LV9ReEZKVERRWHpYSXcwdnJnakZYR2pmRmVVU1FJYWQ4eG90dHNBWTRnZkxRZW9rY2UtSl9zdVVUenpxWWkxV21BdlhrUUR5ZnZCblFwX2lPdU1HbzR4ZkdOZkFUaHpXSUUxSjNVM1o4dUkwOFloWmR6aTlzOUhiTjc0bkhqM25MRUpLeXI0TTZuWFNldnFVSWxwei14SEsxLUZrTlFNVzBuMWFC?oc=5",
+        "published": "2025-08-21T07:00:00+00:00",
+        "source": "Reuters",
+        "domain": "Reuters",
+        "origin": "google_news_rss",
+        "snippet": "Google spotlights AI over hardware upgrades in unveiling new smartphones - Reuters"
+      },
+      {
+        "title": "I/O 2026: Welcome to the agentic Gemini era - blog.google",
+        "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBQeDE4MmRwaEtnQUE4aWdHVENxbkpGWDZFRWhuWUdkRjZnNjhsUGtvVk4zYnc0NXdUcTJaOG5jV3piVHdBMjJock5JdVBPOWtuR2ZUMW5hUjZyNXl4RW5DSWpYZGRsUXpOcExBVA?oc=5",
+        "published": "2026-05-19T07:00:00+00:00",
+        "source": "blog.google",
+        "domain": "blog.google",
+        "origin": "google_news_rss",
+        "snippet": "I/O 2026: Welcome to the agentic Gemini era - blog.google"
+      },
+      {
+        "title": "What To Expect From Google I/O 2026 - Engadget",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNNzNPQXpTLTg4VURvVFdDbjBXSkdNOHJGTVZGU0VSVzRaLWY0cGZRUjZfaEhTemhJc3NzczhaNkc0MG9zQXFNcWVXandqRENLSUJGNE5KeWswc1NnOFMyRUkwcVdKdHVPeTEyOS11Rk5yMW9iaFF6X21tWHh5ZTRrRFN4cw?oc=5",
+        "published": "2026-04-14T07:00:00+00:00",
+        "source": "Engadget",
+        "domain": "Engadget",
+        "origin": "google_news_rss",
+        "snippet": "What To Expect From Google I/O 2026 - Engadget"
+      },
+      {
+        "title": "Google's I/O developer conference to be held May 19 and 20, says Alphabet - cnbc.com",
+        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPMkkybGlpbnVWRldGSFYwMkdyaDQwQVZQNE9FTWNrWmN0aXNiQ2VheXBWNWh5bzZabnpmVlViS1JPY0tBRXE4UV9qdWNITkx6UHNhQnZJaFZZdldJTTRMZVlObkc1ajJaLUJqRjRuTHVHOEdxZV9uQmhiNDBMQnhrQnF3UVbSAYoBQVVfeXFMTU9KY3YzVnkzWlZld1pNQnVSendRWjRPUFEzbnRJZ19SNXM0Q1dsN3JLMnFEdy1fbzkxYmx3T3BRLVlqTkhLeTh0anlxZlpqZHlWdHZnRzExaWNHbXVObmI5ZWxzQTVWRTR6dmkxQUIzVTJFYUNKNVN0WllHOGgycnpZcmZ2LTQxVnZ3?oc=5",
+        "published": "2026-02-17T08:00:00+00:00",
+        "source": "cnbc.com",
+        "domain": "cnbc.com",
+        "origin": "google_news_rss",
+        "snippet": "Google's I/O developer conference to be held May 19 and 20, says Alphabet - cnbc.com"
+      },
+      {
+        "title": "Sundar Pichai's I/O 2026 Keynote: Gemini Spark & Agentic Era - StartupHub.ai",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPWVZCVGZvVVBmOG5jbnF4SkJhSFZDS09kTXhJTUJ1XzN2TE1jTEd3c0c1YUk1M3FQb2ZPWDlvejBoZFEzNEtESEFYQ1NsTHRtUFNMUklqQUFnc1RHaC1faG5nX0w4T19uRnBfSmZEM2hJYWRYV0dWUHFGUXAzTW1mLUNDcTlkd05rdDV4b21WQWxVbVZXNUJXaXZKaWdxc25pdGdFbzhaSjhudEVtZE1V?oc=5",
+        "published": "2026-06-21T07:00:00+00:00",
+        "source": "StartupHub.ai",
+        "domain": "StartupHub.ai",
+        "origin": "google_news_rss",
+        "snippet": "Sundar Pichai's I/O 2026 Keynote: Gemini Spark & Agentic Era - StartupHub.ai"
+      },
+      {
+        "title": "Google announces new models, glasses, agents, but investors are not impressed - Sherwood News",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQNzRWMk8zTzVRaFJCOEV3dXhwbnA1ZFdhaXJSNHltU1BmTThtWFcweTYzRDNjUFJBZGFjaDREMkZNTkdVMEh2LU52VC1vMnhaa2VuWVF6dUUtcUlkUFhXX2ZMejdhWVkteFlKTU1zMk4xNkpXNzdnU2thcFJkaUxvQjJaeERBazdTaDQyaTM0aGh4bEhMTDdYOG42cGpTQVN5WXhnMw?oc=5",
+        "published": "2026-05-19T07:00:00+00:00",
+        "source": "Sherwood News",
+        "domain": "Sherwood News",
+        "origin": "google_news_rss",
+        "snippet": "Google announces new models, glasses, agents, but investors are not impressed - Sherwood News"
+      },
+      {
+        "title": "Google I/O kicks off with reveals on AI models, Gemini product expansion, and agentic features (GOOG:NASDAQ) - Seeking Alpha",
+        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQMmttSmo5S3FXdkFTZVljUjJOdTIzNjhDb1BXY3lWeHhlNlozWjRCTkk0bnYtR3BUaWk3QUhDTlVmVEp2NXREYmxfdUpRREEzN0RKMmZkRUFHMG4tcjFwSGhqZjA4VmdGbWhhdVNJNFFQdWJWM3RPYnBfeE9CeGVWOEpPTnlHdEl4NElpTHBhVmNqRWxiWnNRNUVJS0tXdWJwUWtoV1dyY2w5YUk3SkRndGtlMTA4alFfUVhDOG9Nd0RuY2xEYkw2dw?oc=5",
+        "published": "2026-05-19T07:00:00+00:00",
+        "source": "Seeking Alpha",
+        "domain": "Seeking Alpha",
+        "origin": "google_news_rss",
+        "snippet": "Google I/O kicks off with reveals on AI models, Gemini product expansion, and agentic features (GOOG:NASDAQ) - Seeking Alpha"
+      }
+    ]
+  },
+  {
+    "ticker": "AAPL",
+    "company": "Apple",
+    "score": 65,
+    "event_name": "WWDC / Apple product events",
+    "event_date": null,
+    "date_confidence": "unknown",
+    "days_until_event": null,
+    "trading_window_start": null,
+    "trading_window_end": null,
+    "window_status": "unknown",
+    "opportunity_type": "none",
+    "rumors": [],
+    "market_sentiment": "unknown",
+    "summary": "Sin resumen IA concluyente.",
+    "ai_confidence": "low",
+    "score_reasons": [
+      "13 artículos recientes",
+      "Fuentes confiables: 9to5mac.com",
+      "Rumores/productos: iPhone, Siri",
+      "Evento mencionado: WWDC, Apple event, iPhone event",
+      "RSI razonable: 54.1"
+    ],
+    "market": {
+      "ticker": "AAPL",
+      "price": 316.8500061035156,
+      "rsi": 54.07615283189903,
+      "sma20": 310.5324996948242,
+      "sma50": 312.3767993164063,
+      "perf_20d": 4.426205286876983,
+      "perf_60d": 1.8057368887328673,
+      "status": "ok"
+    },
+    "articles": [
+      {
+        "title": "Apple Event Plans: New Products Coming in 2026 - MacRumors",
+        "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFB1M0VzS2gzNDN3dndISkNSTTRKTktzOXRsT0FtSWxtRzlvTThUWmhjY0I1eWZPNGFKc0F4bEVVR2RYSGFOS2tKNVo2LVlqTVRkTkhsVUxzOA?oc=5",
+        "published": "2026-08-28T21:53:59+00:00",
+        "source": "MacRumors",
+        "domain": "MacRumors",
+        "origin": "google_news_rss",
+        "snippet": "Apple Event Plans: New Products Coming in 2026 - MacRumors"
+      },
+      {
+        "title": "Waiting for the next Apple event? Here's when it will take place - Macworld",
+        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBYQmVCTEk2RG15YllmbEQ3RktxLWp1QUxGUEloNE1Gb3pwMldjU2V3eGhGOFBKWnBhUFVma2YtNm95c0h0cDdZaFFkblVrX2J5WmlOanU0b2pUQVJ3VEYzNG81RVJKUktydGM3ajRaVGotWjFxUDNGLW9n?oc=5",
+        "published": "2026-08-26T07:00:00+00:00",
+        "source": "Macworld",
+        "domain": "Macworld",
+        "origin": "google_news_rss",
+        "snippet": "Waiting for the next Apple event? Here's when it will take place - Macworld"
+      },
+      {
+        "title": "Apple kicks off Worldwide Developers Conference on June 8 - Apple",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQZzFmZVE4dEU3MUt6Q2Voa0VHLXZvcEZKbmlqWTIzTF9GcXJqOWc4SG8teWp0SVc4ajd4emxJSXFiaVVaV2Y0VVVzLWJWRTBrUHR6MERNSzZTZUthcmtCcldVWF81RmYxWFpKZVY5YTIzTlpuVlMwUXMxeFJzTldKUjBraTNGMm5mdGs2dzNjdHFlcTNZRWJnd3hHOTJ3UQ?oc=5",
+        "published": "2026-05-18T07:00:00+00:00",
+        "source": "Apple",
+        "domain": "Apple",
+        "origin": "google_news_rss",
+        "snippet": "Apple kicks off Worldwide Developers Conference on June 8 - Apple"
+      },
+      {
+        "title": "Apple WWDC 2026: AAPL Stock Slips As Lack Of Launch Deadline For Siri AI Spooks Retail Investors - Stocktwits",
+        "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPTXZ4SGdnTl9jcWotM2hKTlVYYkpDS1FLWHNaQWdYNG43ejhsMnNlbW5panh6aTdEUjBRMXJkVWhyZHZUd25MVXV0WFl1Wmk1Z2ZuY09RcEYyUllzbVg3QTU5QnVuSUhubFJPZnQ4LXJkLWZBYzdPWFM5SHEyQktadXFpa2ZHR0loYWRDcklYSllDYXV5bnJhNEtyOW1jYjZUc2FjTDZBSzJGTng5cDNLT1hrUWYwR0pWdUpoeHMwMHJ4aGY1dTBFbnk5ODhOV1U0bHRmQlpmZVNza19Gd291VTRheThuTkFLelB4R1pwNlc?oc=5",
+        "published": "2026-08-31T09:51:46+00:00",
+        "source": "Stocktwits",
+        "domain": "Stocktwits",
+        "origin": "google_news_rss",
+        "snippet": "Apple WWDC 2026: AAPL Stock Slips As Lack Of Launch Deadline For Siri AI Spooks Retail Investors - Stocktwits"
+      },
+      {
+        "title": "Apple Stock Forecast: Apple Posted $111.2B Revenue, So Why Did AAPL Fall After WWDC? - TradingKey",
+        "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOMXV4XzlFSkVPUTRmVEdHSWd2UW0zQlVWMTc1a3JPRHU0eFZqMkxjcTBZS3NtekYwcUxYb0hjTG5PWDZRVjNnWVUzY2pqSVlEMEtCUTBBMmtBU18wUGQ3UnMtTkFsMDBPYy1ueUxmZFhMdWRyenJiV21XUS1XS09zaWI3cktiXzl1N3RPbFJNdElfeTZPQ0s5WUhIUmtUX3VJYVNBV1ZiRXhoc2YwbjRrdXRyeS1wMUFDU1FPM1FiaHF3SGw2MWt0NE9YM21zM0pJWV9rTjJ3aUtNMENwMTBqZnJnQ243eUk0R3c?oc=5",
+        "published": "2026-08-31T01:14:57+00:00",
+        "source": "TradingKey",
+        "domain": "TradingKey",
+        "origin": "google_news_rss",
+        "snippet": "Apple Stock Forecast: Apple Posted $111.2B Revenue, So Why Did AAPL Fall After WWDC? - TradingKey"
+      },
+      {
+        "title": "Apple WWDC 2026: AAPL Stock Slips As Lack Of Launch Deadline For Siri AI Spooks Retail Investors - finance.yahoo.com",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQMkh1LVpqM3JYdG5Vd0NiSVZjTHRpaUVIR24ycjVxOVRnaU5GWTd1YlhqYVdRVFhMODZHZ195QzRpcE5NZ2FPWUZSWEVGUjVvd2pZNUdJOVRhSlVJeE85UGstc2RwVWtVS0phODJRZUFzV1RiYWZRRlY0bUlncTlYMW4wZ1k1YmcxR1FVM3hxRnFCVHREQnc?oc=5",
+        "published": "2026-06-08T07:00:00+00:00",
+        "source": "finance.yahoo.com",
+        "domain": "finance.yahoo.com",
+        "origin": "google_news_rss",
+        "snippet": "Apple WWDC 2026: AAPL Stock Slips As Lack Of Launch Deadline For Siri AI Spooks Retail Investors - finance.yahoo.com"
+      },
+      {
+        "title": "What to expect at Apple WWDC 2026: AI, Siri, and iOS 27 - Mashable",
+        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBydE9PX0hkREZsOGl6SXJrNUJfNGswanRNcDdUUFFMOUpoWmVxYmE4QmRnTTlGRmtmYkdKRGhuOVVLNzJ3aXd5Tkc0cDZOT2F3SnU5V3ctZnhZM3hONHBKbXhtdnFlZUpNakoya1NQdw?oc=5",
+        "published": "2026-06-04T22:03:29+00:00",
+        "source": "Mashable",
+        "domain": "Mashable",
+        "origin": "google_news_rss",
+        "snippet": "What to expect at Apple WWDC 2026: AI, Siri, and iOS 27 - Mashable"
+      },
+      {
+        "title": "Apple will launch 10+ new products soon, with September event coming - 9to5mac.com",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQX2tZa0xCdTNpQVNSLXZ1WlN6MUMxSHNxUnBKQzVHM2lQMHFENDF3T1RYd19PaWJWN2F4R0RTeDRIclZrRmZJYjVqT1ZBUVN6U1NpZXR1TENKS1lNVlBDakg5Q3NWTXBYN2RxY29Bb1I0RnNmTklFazJQZ0ZsVHRnLUM1Qks5eV9ob0hYaUlfTVhxRm5teVE3clZJTDRsbGM?oc=5",
+        "published": "2026-08-19T07:00:00+00:00",
+        "source": "9to5mac.com",
+        "domain": "9to5mac.com",
+        "origin": "google_news_rss",
+        "snippet": "Apple will launch 10+ new products soon, with September event coming - 9to5mac.com"
+      },
+      {
+        "title": "Will Apple's iPhone 17 Launch Be a 'Sell-the-News' Event for Investors? - Investopedia",
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOc2JxZmdnV2lvTEZNTy1jajJSQUVlLWRBWWJEczZRS1BBV19pUEtrV09qZFN0MWFqTGNFMERLajMwLVdKZHhhcHUxZFFWZnBtOWhSVnhmeWdpU0hldEduM09VRnR3c3Q0cURQQUc2QXRxS3ZDSFRfUFlpTDl1MXFWNk9fMEJITTdkc1hpbGVWMzRsRnZpYndzTDhveFNoN1YzZmR5YjhKN1NvaUdkemFwZllZZHVjaGplS0RF?oc=5",
+        "published": "2025-09-08T07:00:00+00:00",
+        "source": "Investopedia",
+        "domain": "Investopedia",
+        "origin": "google_news_rss",
+        "snippet": "Will Apple's iPhone 17 Launch Be a 'Sell-the-News' Event for Investors? - Investopedia"
+      },
+      {
+        "title": "Apple's Unimpressive Event Buys It Time On AI - Maintaining Buy (NASDAQ:AAPL) - Seeking Alpha",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPc3NXQXlPckk4VnpNRVM0anJkTENQVmwzX1NWaF8wXzhKcElxbUc5bGsxemlTZ042SmJ5dGpNTFlmX3VJN2hjdGVaX3pMVng2YVBxVWlyVTJRei1mS2lDV2pSYXlCaURzajNhaHNLWkFlTjdkZHJ3bFVNY1lVSW9LTFFFa2w2WEFlLUplUkpManZmeDRCR0U0elhHNHFjUQ?oc=5",
+        "published": "2025-09-10T07:00:00+00:00",
+        "source": "Seeking Alpha",
+        "domain": "Seeking Alpha",
+        "origin": "google_news_rss",
+        "snippet": "Apple's Unimpressive Event Buys It Time On AI - Maintaining Buy (NASDAQ:AAPL) - Seeking Alpha"
+      },
+      {
+        "title": "Apple just revealed a clue about its September iPhone event date - 9to5mac.com",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQV190VWRoWktyUXVTeFk5M2FkbEpvNzItVjRyWVNMZ2Rrb0pmNlNaTnd3RWNVeU4tY3YwUVlqMEtQcUVObWtnR2MzV1ZCQVR6UmIwTWxlcHBQQjRjZzljWHdBdjJUSFhpTGpmSE1fcWs2bWFLeXRBN01QV05wdG91NFlGRWRrRVkyM2tQS21jR3pFNUJBeHVVb0lScEI?oc=5",
+        "published": "2026-08-04T07:00:00+00:00",
+        "source": "9to5mac.com",
+        "domain": "9to5mac.com",
+        "origin": "google_news_rss",
+        "snippet": "Apple just revealed a clue about its September iPhone event date - 9to5mac.com"
+      },
+      {
+        "title": "Apple just did something rare that signals big September event - 9to5mac.com",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPSWVmRElEWi1tdENVWk5NLW85bjNDdjhfWGF2aHk4VDdkR3JWSXptcElaX3owajZRZl85aFRtc1h2NWhXd0VFVEJHQXRQOG9KYVc4ZjhwYlhiNTRTRTR0YXVSUklBY09zeWg4S1Ywd0NQeHlRdUcxZ05xRFlGV3I2UkhNNlptcFhPNVk3VE1MdE1kVlJpZjhmNXJR?oc=5",
+        "published": "2026-08-26T19:57:00+00:00",
+        "source": "9to5mac.com",
+        "domain": "9to5mac.com",
+        "origin": "google_news_rss",
+        "snippet": "Apple just did something rare that signals big September event - 9to5mac.com"
+      },
+      {
+        "title": "Apple Stock Nears $319 Breakout as iPhone Event and CEO Change Approach - TradingKey",
+        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNZFUzWTFxZ0NZRWRjYjF1QTY2QnVyRkJ2dnROWWRrbld1Nk5DMVRKVXkwZTNyZHpMV29MSXQ5dGdsNjN1WVBaYWdfTkZ2YkNrQkhSdTBlOTlYMXNUMjd1OHdlRVBLUkl1YW01SDlJaUhTQXJnQ0t4S0lWaDRXSVVwOE9Mek5qc0dBWmc3V3VkSm41bnVxWGlweE16cjE2VDNtbkFvU3ZkWHpWYU5LN2xXa2JQdDdfUERrNDk2MGE3dw?oc=5",
+        "published": "2026-08-29T12:07:00+00:00",
+        "source": "TradingKey",
+        "domain": "TradingKey",
+        "origin": "google_news_rss",
+        "snippet": "Apple Stock Nears $319 Breakout as iPhone Event and CEO Change Approach - TradingKey"
+      }
+    ]
+  },
+  {
+    "ticker": "AMZN",
+    "company": "Amazon",
+    "score": 61,
+    "event_name": "AWS re:Invent",
+    "event_date": null,
+    "date_confidence": "unknown",
+    "days_until_event": null,
+    "trading_window_start": null,
+    "trading_window_end": null,
+    "window_status": "unknown",
+    "opportunity_type": "none",
+    "rumors": [],
+    "market_sentiment": "unknown",
+    "summary": "Sin resumen IA concluyente.",
+    "ai_confidence": "low",
+    "score_reasons": [
+      "10 artículos recientes",
+      "Fuentes confiables: cnbc.com",
+      "Rumores/productos: Trainium, agents, AWS",
+      "Evento mencionado: AWS re:Invent, Amazon devices event",
+      "RSI razonable: 50.1",
+      "No descontado 20D: -8.5%"
+    ],
+    "market": {
+      "ticker": "AMZN",
+      "price": 259.7699890136719,
+      "rsi": 50.08169755121171,
+      "sma20": 265.6720001220703,
+      "sma50": 251.96679931640625,
+      "perf_20d": -8.538131447794918,
+      "perf_60d": 2.3562771920628833,
+      "status": "ok"
+    },
+    "articles": [
+      {
+        "title": "Top announcements of AWS re:Invent 2025 | Amazon Web Services - Amazon Web Services (AWS)",
+        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9uOGNSaXFQTzhOS3BteDlWbTlIOV9JejBNQzdyRnNEaEFsVG01bXNKTGJ6Z1ZaRmlPYXR4YUU4YU82bXBBTXlZZXowVjQ0UVN0U1pUZjlsenlwQmlYbzRaRFBrTERGUHhiOUl1bWptVl9hcmJpaTBhUm9sdGk?oc=5",
+        "published": "2025-11-30T08:00:00+00:00",
+        "source": "Amazon Web Services (AWS)",
+        "domain": "Amazon Web Services (AWS)",
+        "origin": "google_news_rss",
+        "snippet": "Top announcements of AWS re:Invent 2025 | Amazon Web Services - Amazon Web Services (AWS)"
+      },
+      {
+        "title": "Top Black AI Conferences To Attend In 2026 - AfroTech",
+        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBjS3E3RjN1TzRqcE4zT1R2MkVUekNxRHFHcUNIb1VvanY0Z2RTQWllQ29ZdFZIbmhoQkpyZF8tTEstNHdNTHRLUFFJSk94UVhlYnd3RXQxVlhXZw?oc=5",
+        "published": "2026-08-13T07:00:00+00:00",
+        "source": "AfroTech",
+        "domain": "AfroTech",
+        "origin": "google_news_rss",
+        "snippet": "Top Black AI Conferences To Attend In 2026 - AfroTech"
+      },
+      {
+        "title": "Frontier agents, Trainium chips, and Amazon Nova: key announcements from AWS re:Invent 2025 - About Amazon",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE44MjlOYVluZ0ZoaElJa1luVkVESnZzTExyZDVIT1BWbUN6RkF6bmtWMWdkcE5CUHNQOU42bmxDOVRvTG9mUnlZOFlRTDlaOEVrYUJobkJEUjB5Xzc4eWJBalJGLUMySkQ1OE82dUtZTHMzSkZKeXIyLWc3dw?oc=5",
+        "published": "2025-12-04T08:00:00+00:00",
+        "source": "About Amazon",
+        "domain": "About Amazon",
+        "origin": "google_news_rss",
+        "snippet": "Frontier agents, Trainium chips, and Amazon Nova: key announcements from AWS re:Invent 2025 - About Amazon"
+      },
+      {
+        "title": "AWS puts $1 billion into new AI unit to embed engineers with customers, joining growing wave - cnbc.com",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQY1NpVEZHSVJDZDFHOUhUcDdjSUc4OHlxcDQtX1pfSldrWmhEc29fVUZ6ODNDSWVKX09NUExhWU1COXZiOW5FSl9XNEdhRzgtLV9YeXRVdDNEM3lGaVhfeEw3NU5rUGtJQnljcklNZTItMUV0Y2tiVzBlREJqaGZhVFpRTdIBiAFBVV95cUxQZ0hZdGx1di02TVNIdFNSZ1JVb09WTzBTbUhkekhRLVJhTWN3UXF6bW51RXVEY0tkTXBTNC1jcE1tZzNGRmRpVy1wVDF0Y0tnVy15NmVzeVBuRmV6Wm93NTRqdmtoejh6MWpLZTFGeHQ2ZDZuUGFtYWRkUkJOUElZMHNpbzk4SGdK?oc=5",
+        "published": "2026-06-30T07:00:00+00:00",
+        "source": "cnbc.com",
+        "domain": "cnbc.com",
+        "origin": "google_news_rss",
+        "snippet": "AWS puts $1 billion into new AI unit to embed engineers with customers, joining growing wave - cnbc.com"
+      },
+      {
+        "title": "Will Accelerating AWS Revenue Growth Drive AMZN Stock's 2026 Rally? - TradingView",
+        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPLXFoZk53b3VKM1BzOTNQc3puN2Vfbm0wdUpxb3hLclNSV3FEMk5mYzFCdklNYm1Id2ZDSlBNWVdSQmJwSXU3RDhNcEpfWXVHRGtMODRsSUtMcHdLc1A3SC1oYkhPN3VORkVsYk1MLWZUNVpLeWQ4YWg5ZHllbWpSdFFwTkRjMXlqdEhTLUVCODlIUFVHTDI0Rk83Y1ZhMlFPN0s2T3V2c2dqVlk1d2F4ZDVZYUpjZWR2WDRZdUxMUQ?oc=5",
+        "published": "2026-01-09T08:00:00+00:00",
+        "source": "TradingView",
+        "domain": "TradingView",
+        "origin": "google_news_rss",
+        "snippet": "Will Accelerating AWS Revenue Growth Drive AMZN Stock's 2026 Rally? - TradingView"
+      },
+      {
+        "title": "Amazon Launches New AI Chip While Teasing Future Tech Collaboration With Nvidia - Investor's Business Daily",
+        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOX2hmcmdUeTRqWTBKUmRsaEZQQm5ZLUktYWlrRF83bHc3VWloQTU3a0xDaFNwQ0Z1WDBPVHpNajlPZXA1LTFQSFBKWEZfdFJzcHRZcm1LNk8wdEdSU0UzSVpMS2dINFhBeDMxd084STBrc3FqR1I3cW40Nml3Zi1nQndnSHk1akE?oc=5",
+        "published": "2025-12-02T08:00:00+00:00",
+        "source": "Investor's Business Daily",
+        "domain": "Investor's Business Daily",
+        "origin": "google_news_rss",
+        "snippet": "Amazon Launches New AI Chip While Teasing Future Tech Collaboration With Nvidia - Investor's Business Daily"
+      },
+      {
+        "title": "Amazon Device & Services Event 2025: Date, time, and what we expect to see - Tom's Guide",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQLVNRRi0zTVQwbjY3VDJObXI3VjMwcHpnWjNyWFNINVhIcmRqWk56RWxXTGRLRzJNMWJzRG8xQ19ORndpY0l4OWZZa3R1NTlxQV9sX0dyX09aYUc5dS01ZWJLVlVWRzFKNEcwWC1FTzMtMVZxb0dTOVBDODJHV2FOZnpFWHVZMTZqR3ZRWXZwempxU2I1elZJTkRJQ0pHQXZkLWo5SW1ZNTdpNWF5Q3dKYTdXMHNzQQ?oc=5",
+        "published": "2025-09-29T07:00:00+00:00",
+        "source": "Tom's Guide",
+        "domain": "Tom's Guide",
+        "origin": "google_news_rss",
+        "snippet": "Amazon Device & Services Event 2025: Date, time, and what we expect to see - Tom's Guide"
+      },
+      {
+        "title": "Amazon Devices Event – September 2019 - About Amazon",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOTmRHRVJfMGNwSmw5RlhmTDE5MXhScktmTXA1dWtxMlBZcTNIaElyYmtTZTNqTldadTluOXJuUEktaFVmNXo0bEFWS2hMWUpKMEljOEo1cW1VWnZ4Yk1nOUpEYXM5NDRvdVJNMk9nUmp0WG5na2VBV0ppSnZkRDYwN05B?oc=5",
+        "published": "2019-09-24T07:00:00+00:00",
+        "source": "About Amazon",
+        "domain": "About Amazon",
+        "origin": "google_news_rss",
+        "snippet": "Amazon Devices Event – September 2019 - About Amazon"
+      },
+      {
+        "title": "EXCLUSIVE: Amazon loses devices VP and member of elite CEO advisory just days after launches - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPWTI3UGZ5NUF5aHJpNXdZaTRra0ZxMmhibHNjQlNVQU4tT0t1MG5YUGZoRnFoeHNtam52c1BYWVJ1bnBHZWFoaFNlYWozZTk5N0Z4YjJYbmVEVi1UV1A3WU9pRm5BSTAyVnhKN2hYZEdzak1wVXZ2bW1TbnNrdWl6cTBkNEdfVDVlanFkRTZhc1dmUDlyWWFtZGVIam1HMXBrTFFUbHdnQkJoVjE2X3kweVJJZTczQm5JYkhuMGRZb2RKZXMtRzNpREhFSE9pbXdM?oc=5",
+        "published": "2025-10-04T07:00:00+00:00",
+        "source": "Reuters",
+        "domain": "Reuters",
+        "origin": "google_news_rss",
+        "snippet": "EXCLUSIVE: Amazon loses devices VP and member of elite CEO advisory just days after launches - Reuters"
+      },
+      {
+        "title": "Retailers keep tinkering with their AI shopping assistants, in search of better service - MarketWatch",
+        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQSDFrWWF5LUFJQkItcEV3NXNFOVd6bHZSaFkwZC00cHN3ckg4SWtjS0FsYTlBdlpHRGVrNjlnRU9yMFFKenB0OVNIcjVBUThQd0ljTWdyWlE4T3E0c0tOUU5OdDQwOEVCcmNyUFh4M1A5LWZwNmN0ZFVDWVQ3dkpVcEpzMWlMcWk1UFlmdUtxMklySkVId3A1NzFHSXh6Y284cENyb3RZczhHNWdjU0dmaGtiTXdmLW0xRE85ZW9pcHBveXJmSW9oVw?oc=5",
+        "published": "2026-05-14T07:00:00+00:00",
+        "source": "MarketWatch",
+        "domain": "MarketWatch",
+        "origin": "google_news_rss",
+        "snippet": "Retailers keep tinkering with their AI shopping assistants, in search of better service - MarketWatch"
+      }
+    ]
+  },
+  {
     "ticker": "META",
     "company": "Meta Platforms",
     "score": 54,
@@ -19,17 +498,17 @@
       "13 artículos recientes",
       "Rumores/productos: AI glasses, Ray-Ban, smart glasses, metaverse",
       "Evento mencionado: Meta Connect",
-      "RSI razonable: 48.0",
-      "No descontado 20D: -2.8%"
+      "RSI razonable: 47.5",
+      "No descontado 20D: -3.0%"
     ],
     "market": {
       "ticker": "META",
-      "price": 573.7899780273438,
-      "rsi": 47.99310455276555,
-      "sma20": 574.9469970703125,
-      "sma50": 592.0755944824218,
-      "perf_20d": -2.7870040117917494,
-      "perf_60d": -8.569566529506067,
+      "price": 572.3400268554688,
+      "rsi": 47.47934163249981,
+      "sma20": 574.8744995117188,
+      "sma50": 592.0465954589844,
+      "perf_20d": -3.0326585245094018,
+      "perf_60d": -8.800608669020848,
       "status": "ok"
     },
     "articles": [
@@ -52,13 +531,13 @@
         "snippet": "Meta Connect 2026 is set for September 23–24 with Powerful AR and VR announcements - Techgenyz"
       },
       {
-        "title": "Meta Connect 2025 livestream: How to watch Mark Zuckerberg’s AI smart glasses event and keynote - Fast Company",
+        "title": "Meta Connect 2025 livestream: How to watch Mark Zuckerberg’s AI smart glasses event and keynote - fastcompany.com",
         "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPa282bEc3V3VuS1FiQTAzZUQ2R1NLUVU4LTJkZGRGWlh5MGl3bmJkd0ZteUgxanJzX3l6QVVrSWRkSGVWZzBzR2NYQkhrVlNKRHhlNzEyZ1I2X1d0VHczQzhNUDJ1bnE0MmYzcFJ2TlBvVWRYRFhnUlE4c2UyUV9BYkZVdWI2N3JKQWJpWVZSRUxXa0pSQkctYXNySDV5STFfbzBVMy00WERwME0?oc=5",
         "published": "2025-09-17T07:00:00+00:00",
-        "source": "Fast Company",
-        "domain": "Fast Company",
+        "source": "fastcompany.com",
+        "domain": "fastcompany.com",
         "origin": "google_news_rss",
-        "snippet": "Meta Connect 2025 livestream: How to watch Mark Zuckerberg’s AI smart glasses event and keynote - Fast Company"
+        "snippet": "Meta Connect 2025 livestream: How to watch Mark Zuckerberg’s AI smart glasses event and keynote - fastcompany.com"
       },
       {
         "title": "Texas AG Ken Paxton launches investigation into Meta AI glasses over privacy concerns - WFAA",
@@ -70,15 +549,6 @@
         "snippet": "Texas AG Ken Paxton launches investigation into Meta AI glasses over privacy concerns - WFAA"
       },
       {
-        "title": "Meta Connect 2025: The Evolution of AI Glasses, Metaverse Momentum, & More - Meta Store",
-        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQLVlrOXVtWmtXSnhaTzFtVkJkeGNmTFVrU2VncUoxRE5yREt4ZWdDRTg1SzZVWGxFb250S3NxTTdnajVnQU1PVlpyalRFTVZMcW5ZZVZjLXBkUlhIMDVadnRyN3lMTHZYalItaGJ5Qzl5SlE4QVI1QkFXMmtLNkxZeGpEMDdZaHNsY1VFNU1vM3U4cXA2dWV2REdubFFESlN1QW42SEZsMFJmQVlHVEE?oc=5",
-        "published": "2025-09-17T07:00:00+00:00",
-        "source": "Meta Store",
-        "domain": "Meta Store",
-        "origin": "google_news_rss",
-        "snippet": "Meta Connect 2025: The Evolution of AI Glasses, Metaverse Momentum, & More - Meta Store"
-      },
-      {
         "title": "AI Glasses' Real Battle Starts in 2028 After This Year's Second-Half Opening Skirmish - thelec.net",
         "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1sZUJNY25mXzBDdncybl90ZktHZk5QNkd5d01WU19yNlEwWVhHY2o3TTBWcTFpZDh1RmE2Q2hMR0t2SnJYMlZJczRrQVUtT1plbHFSQmMySkRXSnEtTGhWcmZuUFRtdw?oc=5",
         "published": "2026-03-13T07:00:00+00:00",
@@ -86,6 +556,15 @@
         "domain": "thelec.net",
         "origin": "google_news_rss",
         "snippet": "AI Glasses' Real Battle Starts in 2028 After This Year's Second-Half Opening Skirmish - thelec.net"
+      },
+      {
+        "title": "Meta Connect 2025: The Evolution of AI Glasses, Metaverse Momentum, & More - Meta Store",
+        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQLVlrOXVtWmtXSnhaTzFtVkJkeGNmTFVrU2VncUoxRE5yREt4ZWdDRTg1SzZVWGxFb250S3NxTTdnajVnQU1PVlpyalRFTVZMcW5ZZVZjLXBkUlhIMDVadnRyN3lMTHZYalItaGJ5Qzl5SlE4QVI1QkFXMmtLNkxZeGpEMDdZaHNsY1VFNU1vM3U4cXA2dWV2REdubFFESlN1QW42SEZsMFJmQVlHVEE?oc=5",
+        "published": "2025-09-17T07:00:00+00:00",
+        "source": "Meta Store",
+        "domain": "Meta Store",
+        "origin": "google_news_rss",
+        "snippet": "Meta Connect 2025: The Evolution of AI Glasses, Metaverse Momentum, & More - Meta Store"
       },
       {
         "title": "Meta launches latest smart glasses but Zuckerberg demo hits a glitch - Irish Examiner",
@@ -153,473 +632,6 @@
     ]
   },
   {
-    "ticker": "AMZN",
-    "company": "Amazon",
-    "score": 53,
-    "event_name": "AWS re:Invent",
-    "event_date": null,
-    "date_confidence": "unknown",
-    "days_until_event": null,
-    "trading_window_start": null,
-    "trading_window_end": null,
-    "window_status": "unknown",
-    "opportunity_type": "none",
-    "rumors": [],
-    "market_sentiment": "unknown",
-    "summary": "Sin resumen IA concluyente.",
-    "ai_confidence": "low",
-    "score_reasons": [
-      "10 artículos recientes",
-      "Rumores/productos: Trainium, agents, AWS",
-      "Evento mencionado: AWS re:Invent, Amazon devices event",
-      "RSI razonable: 52.6",
-      "No descontado 20D: -7.4%"
-    ],
-    "market": {
-      "ticker": "AMZN",
-      "price": 262.875,
-      "rsi": 52.61667270729469,
-      "sma20": 265.8272506713867,
-      "sma50": 252.02889953613283,
-      "perf_20d": -7.44489466642928,
-      "perf_60d": 3.579734014029623,
-      "status": "ok"
-    },
-    "articles": [
-      {
-        "title": "Top announcements of AWS re:Invent 2025 | Amazon Web Services - Amazon Web Services (AWS)",
-        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9uOGNSaXFQTzhOS3BteDlWbTlIOV9JejBNQzdyRnNEaEFsVG01bXNKTGJ6Z1ZaRmlPYXR4YUU4YU82bXBBTXlZZXowVjQ0UVN0U1pUZjlsenlwQmlYbzRaRFBrTERGUHhiOUl1bWptVl9hcmJpaTBhUm9sdGk?oc=5",
-        "published": "2025-11-30T08:00:00+00:00",
-        "source": "Amazon Web Services (AWS)",
-        "domain": "Amazon Web Services (AWS)",
-        "origin": "google_news_rss",
-        "snippet": "Top announcements of AWS re:Invent 2025 | Amazon Web Services - Amazon Web Services (AWS)"
-      },
-      {
-        "title": "Top Black AI Conferences To Attend In 2026 - AfroTech",
-        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBjS3E3RjN1TzRqcE4zT1R2MkVUekNxRHFHcUNIb1VvanY0Z2RTQWllQ29ZdFZIbmhoQkpyZF8tTEstNHdNTHRLUFFJSk94UVhlYnd3RXQxVlhXZw?oc=5",
-        "published": "2026-08-13T07:00:00+00:00",
-        "source": "AfroTech",
-        "domain": "AfroTech",
-        "origin": "google_news_rss",
-        "snippet": "Top Black AI Conferences To Attend In 2026 - AfroTech"
-      },
-      {
-        "title": "Frontier agents, Trainium chips, and Amazon Nova: key announcements from AWS re:Invent 2025 - About Amazon",
-        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE44MjlOYVluZ0ZoaElJa1luVkVESnZzTExyZDVIT1BWbUN6RkF6bmtWMWdkcE5CUHNQOU42bmxDOVRvTG9mUnlZOFlRTDlaOEVrYUJobkJEUjB5Xzc4eWJBalJGLUMySkQ1OE82dUtZTHMzSkZKeXIyLWc3dw?oc=5",
-        "published": "2025-12-04T08:00:00+00:00",
-        "source": "About Amazon",
-        "domain": "About Amazon",
-        "origin": "google_news_rss",
-        "snippet": "Frontier agents, Trainium chips, and Amazon Nova: key announcements from AWS re:Invent 2025 - About Amazon"
-      },
-      {
-        "title": "AWS puts $1 billion into new AI unit to embed engineers with customers, joining growing wave - CNBC",
-        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQY1NpVEZHSVJDZDFHOUhUcDdjSUc4OHlxcDQtX1pfSldrWmhEc29fVUZ6ODNDSWVKX09NUExhWU1COXZiOW5FSl9XNEdhRzgtLV9YeXRVdDNEM3lGaVhfeEw3NU5rUGtJQnljcklNZTItMUV0Y2tiVzBlREJqaGZhVFpRTdIBiAFBVV95cUxQZ0hZdGx1di02TVNIdFNSZ1JVb09WTzBTbUhkekhRLVJhTWN3UXF6bW51RXVEY0tkTXBTNC1jcE1tZzNGRmRpVy1wVDF0Y0tnVy15NmVzeVBuRmV6Wm93NTRqdmtoejh6MWpLZTFGeHQ2ZDZuUGFtYWRkUkJOUElZMHNpbzk4SGdK?oc=5",
-        "published": "2026-06-30T07:00:00+00:00",
-        "source": "CNBC",
-        "domain": "CNBC",
-        "origin": "google_news_rss",
-        "snippet": "AWS puts $1 billion into new AI unit to embed engineers with customers, joining growing wave - CNBC"
-      },
-      {
-        "title": "Will Accelerating AWS Revenue Growth Drive AMZN Stock's 2026 Rally? - TradingView",
-        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPLXFoZk53b3VKM1BzOTNQc3puN2Vfbm0wdUpxb3hLclNSV3FEMk5mYzFCdklNYm1Id2ZDSlBNWVdSQmJwSXU3RDhNcEpfWXVHRGtMODRsSUtMcHdLc1A3SC1oYkhPN3VORkVsYk1MLWZUNVpLeWQ4YWg5ZHllbWpSdFFwTkRjMXlqdEhTLUVCODlIUFVHTDI0Rk83Y1ZhMlFPN0s2T3V2c2dqVlk1d2F4ZDVZYUpjZWR2WDRZdUxMUQ?oc=5",
-        "published": "2026-01-09T08:00:00+00:00",
-        "source": "TradingView",
-        "domain": "TradingView",
-        "origin": "google_news_rss",
-        "snippet": "Will Accelerating AWS Revenue Growth Drive AMZN Stock's 2026 Rally? - TradingView"
-      },
-      {
-        "title": "Amazon Launches New AI Chip While Teasing Future Tech Collaboration With Nvidia - Investor's Business Daily",
-        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOX2hmcmdUeTRqWTBKUmRsaEZQQm5ZLUktYWlrRF83bHc3VWloQTU3a0xDaFNwQ0Z1WDBPVHpNajlPZXA1LTFQSFBKWEZfdFJzcHRZcm1LNk8wdEdSU0UzSVpMS2dINFhBeDMxd084STBrc3FqR1I3cW40Nml3Zi1nQndnSHk1akE?oc=5",
-        "published": "2025-12-02T08:00:00+00:00",
-        "source": "Investor's Business Daily",
-        "domain": "Investor's Business Daily",
-        "origin": "google_news_rss",
-        "snippet": "Amazon Launches New AI Chip While Teasing Future Tech Collaboration With Nvidia - Investor's Business Daily"
-      },
-      {
-        "title": "Amazon Device & Services Event 2025: Date, time, and what we expect to see - Tom's Guide",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQLVNRRi0zTVQwbjY3VDJObXI3VjMwcHpnWjNyWFNINVhIcmRqWk56RWxXTGRLRzJNMWJzRG8xQ19ORndpY0l4OWZZa3R1NTlxQV9sX0dyX09aYUc5dS01ZWJLVlVWRzFKNEcwWC1FTzMtMVZxb0dTOVBDODJHV2FOZnpFWHVZMTZqR3ZRWXZwempxU2I1elZJTkRJQ0pHQXZkLWo5SW1ZNTdpNWF5Q3dKYTdXMHNzQQ?oc=5",
-        "published": "2025-09-29T07:00:00+00:00",
-        "source": "Tom's Guide",
-        "domain": "Tom's Guide",
-        "origin": "google_news_rss",
-        "snippet": "Amazon Device & Services Event 2025: Date, time, and what we expect to see - Tom's Guide"
-      },
-      {
-        "title": "Amazon Devices Event – September 2019 - About Amazon",
-        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOTmRHRVJfMGNwSmw5RlhmTDE5MXhScktmTXA1dWtxMlBZcTNIaElyYmtTZTNqTldadTluOXJuUEktaFVmNXo0bEFWS2hMWUpKMEljOEo1cW1VWnZ4Yk1nOUpEYXM5NDRvdVJNMk9nUmp0WG5na2VBV0ppSnZkRDYwN05B?oc=5",
-        "published": "2019-09-24T07:00:00+00:00",
-        "source": "About Amazon",
-        "domain": "About Amazon",
-        "origin": "google_news_rss",
-        "snippet": "Amazon Devices Event – September 2019 - About Amazon"
-      },
-      {
-        "title": "EXCLUSIVE: Amazon loses devices VP and member of elite CEO advisory just days after launches - Reuters",
-        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPWTI3UGZ5NUF5aHJpNXdZaTRra0ZxMmhibHNjQlNVQU4tT0t1MG5YUGZoRnFoeHNtam52c1BYWVJ1bnBHZWFoaFNlYWozZTk5N0Z4YjJYbmVEVi1UV1A3WU9pRm5BSTAyVnhKN2hYZEdzak1wVXZ2bW1TbnNrdWl6cTBkNEdfVDVlanFkRTZhc1dmUDlyWWFtZGVIam1HMXBrTFFUbHdnQkJoVjE2X3kweVJJZTczQm5JYkhuMGRZb2RKZXMtRzNpREhFSE9pbXdM?oc=5",
-        "published": "2025-10-04T07:00:00+00:00",
-        "source": "Reuters",
-        "domain": "Reuters",
-        "origin": "google_news_rss",
-        "snippet": "EXCLUSIVE: Amazon loses devices VP and member of elite CEO advisory just days after launches - Reuters"
-      },
-      {
-        "title": "Retailers keep tinkering with their AI shopping assistants, in search of better service - MarketWatch",
-        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQSDFrWWF5LUFJQkItcEV3NXNFOVd6bHZSaFkwZC00cHN3ckg4SWtjS0FsYTlBdlpHRGVrNjlnRU9yMFFKenB0OVNIcjVBUThQd0ljTWdyWlE4T3E0c0tOUU5OdDQwOEVCcmNyUFh4M1A5LWZwNmN0ZFVDWVQ3dkpVcEpzMWlMcWk1UFlmdUtxMklySkVId3A1NzFHSXh6Y284cENyb3RZczhHNWdjU0dmaGtiTXdmLW0xRE85ZW9pcHBveXJmSW9oVw?oc=5",
-        "published": "2026-05-14T07:00:00+00:00",
-        "source": "MarketWatch",
-        "domain": "MarketWatch",
-        "origin": "google_news_rss",
-        "snippet": "Retailers keep tinkering with their AI shopping assistants, in search of better service - MarketWatch"
-      }
-    ]
-  },
-  {
-    "ticker": "GOOGL",
-    "company": "Alphabet",
-    "score": 53,
-    "event_name": "Google Cloud Next / Made by Google",
-    "event_date": null,
-    "date_confidence": "unknown",
-    "days_until_event": null,
-    "trading_window_start": null,
-    "trading_window_end": null,
-    "window_status": "unknown",
-    "opportunity_type": "none",
-    "rumors": [],
-    "market_sentiment": "unknown",
-    "summary": "Sin resumen IA concluyente.",
-    "ai_confidence": "low",
-    "score_reasons": [
-      "17 artículos recientes",
-      "Rumores/productos: Gemini, Pixel, Google Cloud",
-      "Evento mencionado: Google Cloud Next, Google I/O",
-      "RSI razonable: 46.2",
-      "No descontado 20D: -8.3%"
-    ],
-    "market": {
-      "ticker": "GOOGL",
-      "price": 342.510009765625,
-      "rsi": 46.18321542471229,
-      "sma20": 348.7214981079102,
-      "sma50": 349.2671990966797,
-      "perf_20d": -8.299643701504088,
-      "perf_60d": -7.974419646173536,
-      "status": "ok"
-    },
-    "articles": [
-      {
-        "title": "Cloud Next ‘26: Momentum and innovation at Google scale - blog.google",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQZXd0dWYyRXVOVlR5UVRUYVVCR00xTWtfeW1WOVV0eUdjNDZrWmZFTmViaDdzM09ta2JiOFExdW16THZLRVF0Ry1jYXpielVTcTU4cVZ3UlpHd3pHNUVQU1Ztc1lDMERxT2JEdnI3ZTJjR0FhczFPaGQzSnhxbGdXTnpPcnE2dEY2WG0zX1Joc3RSX1RibW5fa2RHNGZqd3c4Y09sTmkzcWd1Zw?oc=5",
-        "published": "2026-04-22T07:00:00+00:00",
-        "source": "blog.google",
-        "domain": "blog.google",
-        "origin": "google_news_rss",
-        "snippet": "Cloud Next ‘26: Momentum and innovation at Google scale - blog.google"
-      },
-      {
-        "title": "Google Cloud Next 2026 is a chance to demonstrate Google’s unique advantages - IT Pro",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPdEswSkFfeFh5aEYxT1pla3otM1N2bTc0OTRVQjJPTHUyNndUU1EwZHh5b2xJX1JTcHNZZVNMYlc5UUdsT1ZPeURXR1B3akU1NVBkVHllTmF0amNJRzVPRmVNdXNkYkFDUUVnUHVtdFhyUDA5bWVDRFBPTGZ0RDVNdDk5TUhjbGxSN0VjRXlBREhTZDlYemxn?oc=5",
-        "published": "2026-04-20T07:00:00+00:00",
-        "source": "IT Pro",
-        "domain": "IT Pro",
-        "origin": "google_news_rss",
-        "snippet": "Google Cloud Next 2026 is a chance to demonstrate Google’s unique advantages - IT Pro"
-      },
-      {
-        "title": "What marketers need to know from Google Cloud Next ’26 - MarTech",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBSeEJkbmx3cWxvWlZ5Q1VlODU5VVhRcnFvcUlEbG5qVHd5MUZnSlQ4UmtWTmxDUDlqZUlmelNFLTRyVlVtdmZ2RmlmWlE0cXp1VkVkM3puUnNib29JM3VlWG9KM2tRSnlkNURfakdmZ29rNHdJZzNvdWZZREFSajQ?oc=5",
-        "published": "2026-04-27T07:00:00+00:00",
-        "source": "MarTech",
-        "domain": "MarTech",
-        "origin": "google_news_rss",
-        "snippet": "What marketers need to know from Google Cloud Next ’26 - MarTech"
-      },
-      {
-        "title": "Sundar Pichai Google I/O 2026 Keynote: Gemini 900M Users - StartupHub.ai",
-        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQZVZEOXFjSUh3QU9SX0xNSUhTaGlndkpwSFZlWFM1Uk5Nd0VnMVJuRWdJcmNzU3lYNVdkaVBYa0F6VzB5bTZmSUhRZU94MXN5TVA4Q1JxOEVYTkE4R3V3Z21LT3NmWEg3TmlrSThxSkFwSU5EelA3RE82Q3JYaTY3bGU2STVPZTRtWnJUYk04dkE4WmRxY2VmT2tsZlFNczlOeWxaLUhTX0tQQzhDY0c4?oc=5",
-        "published": "2026-06-01T07:00:00+00:00",
-        "source": "StartupHub.ai",
-        "domain": "StartupHub.ai",
-        "origin": "google_news_rss",
-        "snippet": "Sundar Pichai Google I/O 2026 Keynote: Gemini 900M Users - StartupHub.ai"
-      },
-      {
-        "title": "Alphabet Inc Class A Stock (GOOGL) Moved Up by 3.36% on Apr 14: What Signal Does It Send? - TradingKey",
-        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOV1JDYWFfUGFOSWlzUkE1M1FkMXc2UmVUdkt4SXhSZF8zVHhOSG0wWEJzOFdSSldnelNPdTk0eHJvbUFiYzZUTFRFZHFhUkxqYkxTbWxXZGZyTXBhTnBfb1h4elZEeEh6OXp6RDU1RGsydFM5aE9xMHNwczFRQ0ZwemtxQk1ub01Pd3ltdQ?oc=5",
-        "published": "2026-04-14T07:00:00+00:00",
-        "source": "TradingKey",
-        "domain": "TradingKey",
-        "origin": "google_news_rss",
-        "snippet": "Alphabet Inc Class A Stock (GOOGL) Moved Up by 3.36% on Apr 14: What Signal Does It Send? - TradingKey"
-      },
-      {
-        "title": "Wall Street sets Google stock price target for the next 12 months - Finbold",
-        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOVV8zOGtfLTdCZkEya3JvcHRVRS1qczdLMnBfMG1oQ0V1TXVRbmRJQnBIQnN4eUZDWXpRaGdFS2hyb1Vyb2k2V082b3p0bVc4bDl2VXphU1hCQ3FnWnBLTEdaR1ZMQms1cHRDRXBWV3N1SDJadWExV1RRS0tfOHVFTDQwQmZuUl9QUnVzSzlZWQ?oc=5",
-        "published": "2026-04-15T07:00:00+00:00",
-        "source": "Finbold",
-        "domain": "Finbold",
-        "origin": "google_news_rss",
-        "snippet": "Wall Street sets Google stock price target for the next 12 months - Finbold"
-      },
-      {
-        "title": "Google I/O 2026: Everything We Expect and How to Watch - PCMag",
-        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOQnBIbTNXQk84Y3FPZTRlQWItX0lFR285a3VGRVpTeUFNdUJnOTdOeTM2YjRVSXlUeVFQelNqSXRJTTJwbGJxaVoxYy1FamowT013d2Zfa1ZaSmlhMWlaVzN1VE9pbWRpTWRKRzFrczVBaG4yUjh4TzVET25Odi1KMGJpR1dpOXhJOHlCRQ?oc=5",
-        "published": "2026-05-18T07:00:00+00:00",
-        "source": "PCMag",
-        "domain": "PCMag",
-        "origin": "google_news_rss",
-        "snippet": "Google I/O 2026: Everything We Expect and How to Watch - PCMag"
-      },
-      {
-        "title": "2025 Q3 Earnings Call - Alphabet Inc.",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOV0JtUWtnRlRrdjNuZWNKSDAxTElHZ3ZSekdCWmszeEpJZVcxXzk5UUVHQTZLSFFTanpaajU0RlJBYUlIZmNCRkhFR3FFM05CZ1drbk13d0x1b05vVnBlQ3VmQk1DX1BiT3BsRWJuNlE0UFNFQ0ppMmNkLW1TNXBnck5ldmFDYWRTSzUwdFlvcENVUERtNnBtdnlpSFhpRHJBc1NB?oc=5",
-        "published": "2025-10-29T07:00:00+00:00",
-        "source": "Alphabet Inc.",
-        "domain": "Alphabet Inc.",
-        "origin": "google_news_rss",
-        "snippet": "2025 Q3 Earnings Call - Alphabet Inc."
-      },
-      {
-        "title": "Google I/O 2026: Here’s What We Expect From This Year’s Keynote and How to Watch - CNET",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNczQxb1pYdUpRZ2NxbEN5NDlZRi1PS0I1a2szSGhOZlN1ZWc1TG95QUxSaHdZaXBEV1YzVGNISkx0czFxNGdycFgzMmtfNzJpZ2h4UUlMckdQeVNhZEFGVTN1M0ZXWW53Vlc0NFBJc19zTDlBSUx2ekhHNFpST0JNbFBNNF80TlJjOHc?oc=5",
-        "published": "2026-05-19T07:00:00+00:00",
-        "source": "CNET",
-        "domain": "CNET",
-        "origin": "google_news_rss",
-        "snippet": "Google I/O 2026: Here’s What We Expect From This Year’s Keynote and How to Watch - CNET"
-      },
-      {
-        "title": "Alphabet Is Getting Ready For War (NASDAQ:GOOG) - Seeking Alpha",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1BdUlRX2tfMWkzZER3WnpLaGp6MUtVU05ySzBNLTgwdE50RzRCeS1mZDQ3cldiQXQtY3JyNGVJTXdCNVJwSzluQ29tZ3NLV3RGVGtqTU01UVRuX1dTRDdmMHQzQUdER0lsV2dmLWdsdVNzUXAwNUJWQV9nU0ZJUjQ?oc=5",
-        "published": "2026-04-25T07:00:00+00:00",
-        "source": "Seeking Alpha",
-        "domain": "Seeking Alpha",
-        "origin": "google_news_rss",
-        "snippet": "Alphabet Is Getting Ready For War (NASDAQ:GOOG) - Seeking Alpha"
-      },
-      {
-        "title": "Google's 'Pixel 11' Series Pre-Orders Begin August 12; Rear LED 'Pixel Glow' Shown for First Time - finance.biggo.com",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1kcUgtQnZWcm1mbmpsR1loWUtIQjlxTjFQY2VfWlNTYjdBTlFsYmNaaXRqZ0hkNVhfcU1QTjZGRW5YX09Uc1hkME94ZjU1aHNkdFZfQURVWkIzenpjWTVqclg3WXQyOVBGX3dVVzU3ZHFnWTBqOUE?oc=5",
-        "published": "2026-07-15T07:00:00+00:00",
-        "source": "finance.biggo.com",
-        "domain": "finance.biggo.com",
-        "origin": "google_news_rss",
-        "snippet": "Google's 'Pixel 11' Series Pre-Orders Begin August 12; Rear LED 'Pixel Glow' Shown for First Time - finance.biggo.com"
-      },
-      {
-        "title": "Google spotlights AI over hardware upgrades in unveiling new smartphones - Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPRE5uYjBPNnV0cVV5LV9ReEZKVERRWHpYSXcwdnJnakZYR2pmRmVVU1FJYWQ4eG90dHNBWTRnZkxRZW9rY2UtSl9zdVVUenpxWWkxV21BdlhrUUR5ZnZCblFwX2lPdU1HbzR4ZkdOZkFUaHpXSUUxSjNVM1o4dUkwOFloWmR6aTlzOUhiTjc0bkhqM25MRUpLeXI0TTZuWFNldnFVSWxwei14SEsxLUZrTlFNVzBuMWFC?oc=5",
-        "published": "2025-08-21T07:00:00+00:00",
-        "source": "Reuters",
-        "domain": "Reuters",
-        "origin": "google_news_rss",
-        "snippet": "Google spotlights AI over hardware upgrades in unveiling new smartphones - Reuters"
-      },
-      {
-        "title": "I/O 2026: Welcome to the agentic Gemini era - blog.google",
-        "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBQeDE4MmRwaEtnQUE4aWdHVENxbkpGWDZFRWhuWUdkRjZnNjhsUGtvVk4zYnc0NXdUcTJaOG5jV3piVHdBMjJock5JdVBPOWtuR2ZUMW5hUjZyNXl4RW5DSWpYZGRsUXpOcExBVA?oc=5",
-        "published": "2026-05-19T07:00:00+00:00",
-        "source": "blog.google",
-        "domain": "blog.google",
-        "origin": "google_news_rss",
-        "snippet": "I/O 2026: Welcome to the agentic Gemini era - blog.google"
-      },
-      {
-        "title": "What To Expect From Google I/O 2026 - Engadget",
-        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNNzNPQXpTLTg4VURvVFdDbjBXSkdNOHJGTVZGU0VSVzRaLWY0cGZRUjZfaEhTemhJc3NzczhaNkc0MG9zQXFNcWVXandqRENLSUJGNE5KeWswc1NnOFMyRUkwcVdKdHVPeTEyOS11Rk5yMW9iaFF6X21tWHh5ZTRrRFN4cw?oc=5",
-        "published": "2026-04-14T07:00:00+00:00",
-        "source": "Engadget",
-        "domain": "Engadget",
-        "origin": "google_news_rss",
-        "snippet": "What To Expect From Google I/O 2026 - Engadget"
-      },
-      {
-        "title": "Google's I/O developer conference to be held May 19 and 20, says Alphabet - CNBC",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPMkkybGlpbnVWRldGSFYwMkdyaDQwQVZQNE9FTWNrWmN0aXNiQ2VheXBWNWh5bzZabnpmVlViS1JPY0tBRXE4UV9qdWNITkx6UHNhQnZJaFZZdldJTTRMZVlObkc1ajJaLUJqRjRuTHVHOEdxZV9uQmhiNDBMQnhrQnF3UVbSAYoBQVVfeXFMTU9KY3YzVnkzWlZld1pNQnVSendRWjRPUFEzbnRJZ19SNXM0Q1dsN3JLMnFEdy1fbzkxYmx3T3BRLVlqTkhLeTh0anlxZlpqZHlWdHZnRzExaWNHbXVObmI5ZWxzQTVWRTR6dmkxQUIzVTJFYUNKNVN0WllHOGgycnpZcmZ2LTQxVnZ3?oc=5",
-        "published": "2026-02-17T08:00:00+00:00",
-        "source": "CNBC",
-        "domain": "CNBC",
-        "origin": "google_news_rss",
-        "snippet": "Google's I/O developer conference to be held May 19 and 20, says Alphabet - CNBC"
-      },
-      {
-        "title": "Google announces new models, glasses, agents, but investors are not impressed - Sherwood News",
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQNzRWMk8zTzVRaFJCOEV3dXhwbnA1ZFdhaXJSNHltU1BmTThtWFcweTYzRDNjUFJBZGFjaDREMkZNTkdVMEh2LU52VC1vMnhaa2VuWVF6dUUtcUlkUFhXX2ZMejdhWVkteFlKTU1zMk4xNkpXNzdnU2thcFJkaUxvQjJaeERBazdTaDQyaTM0aGh4bEhMTDdYOG42cGpTQVN5WXhnMw?oc=5",
-        "published": "2026-05-19T07:00:00+00:00",
-        "source": "Sherwood News",
-        "domain": "Sherwood News",
-        "origin": "google_news_rss",
-        "snippet": "Google announces new models, glasses, agents, but investors are not impressed - Sherwood News"
-      },
-      {
-        "title": "Google I/O kicks off with reveals on AI models, Gemini product expansion, and agentic features (GOOG:NASDAQ) - Seeking Alpha",
-        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQMmttSmo5S3FXdkFTZVljUjJOdTIzNjhDb1BXY3lWeHhlNlozWjRCTkk0bnYtR3BUaWk3QUhDTlVmVEp2NXREYmxfdUpRREEzN0RKMmZkRUFHMG4tcjFwSGhqZjA4VmdGbWhhdVNJNFFQdWJWM3RPYnBfeE9CeGVWOEpPTnlHdEl4NElpTHBhVmNqRWxiWnNRNUVJS0tXdWJwUWtoV1dyY2w5YUk3SkRndGtlMTA4alFfUVhDOG9Nd0RuY2xEYkw2dw?oc=5",
-        "published": "2026-05-19T07:00:00+00:00",
-        "source": "Seeking Alpha",
-        "domain": "Seeking Alpha",
-        "origin": "google_news_rss",
-        "snippet": "Google I/O kicks off with reveals on AI models, Gemini product expansion, and agentic features (GOOG:NASDAQ) - Seeking Alpha"
-      }
-    ]
-  },
-  {
-    "ticker": "AAPL",
-    "company": "Apple",
-    "score": 45,
-    "event_name": "WWDC / Apple product events",
-    "event_date": null,
-    "date_confidence": "unknown",
-    "days_until_event": null,
-    "trading_window_start": null,
-    "trading_window_end": null,
-    "window_status": "unknown",
-    "opportunity_type": "none",
-    "rumors": [],
-    "market_sentiment": "unknown",
-    "summary": "Sin resumen IA concluyente.",
-    "ai_confidence": "low",
-    "score_reasons": [
-      "13 artículos recientes",
-      "Rumores/productos: iPhone, Siri",
-      "Evento mencionado: WWDC, Apple event, iPhone event",
-      "RSI razonable: 56.5"
-    ],
-    "market": {
-      "ticker": "AAPL",
-      "price": 318.9949951171875,
-      "rsi": 56.51510629811304,
-      "sma20": 310.63974914550784,
-      "sma50": 312.41969909667966,
-      "perf_20d": 5.133142508795863,
-      "perf_60d": 2.494934246942049,
-      "status": "ok"
-    },
-    "articles": [
-      {
-        "title": "Apple Event Plans: New Products Coming in 2026 - MacRumors",
-        "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFB1M0VzS2gzNDN3dndISkNSTTRKTktzOXRsT0FtSWxtRzlvTThUWmhjY0I1eWZPNGFKc0F4bEVVR2RYSGFOS2tKNVo2LVlqTVRkTkhsVUxzOA?oc=5",
-        "published": "2026-08-28T21:53:59+00:00",
-        "source": "MacRumors",
-        "domain": "MacRumors",
-        "origin": "google_news_rss",
-        "snippet": "Apple Event Plans: New Products Coming in 2026 - MacRumors"
-      },
-      {
-        "title": "Waiting for the next Apple event? Here's when it will take place - Macworld",
-        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBYQmVCTEk2RG15YllmbEQ3RktxLWp1QUxGUEloNE1Gb3pwMldjU2V3eGhGOFBKWnBhUFVma2YtNm95c0h0cDdZaFFkblVrX2J5WmlOanU0b2pUQVJ3VEYzNG81RVJKUktydGM3ajRaVGotWjFxUDNGLW9n?oc=5",
-        "published": "2026-08-26T07:00:00+00:00",
-        "source": "Macworld",
-        "domain": "Macworld",
-        "origin": "google_news_rss",
-        "snippet": "Waiting for the next Apple event? Here's when it will take place - Macworld"
-      },
-      {
-        "title": "Apple kicks off Worldwide Developers Conference on June 8 - Apple",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQZzFmZVE4dEU3MUt6Q2Voa0VHLXZvcEZKbmlqWTIzTF9GcXJqOWc4SG8teWp0SVc4ajd4emxJSXFiaVVaV2Y0VVVzLWJWRTBrUHR6MERNSzZTZUthcmtCcldVWF81RmYxWFpKZVY5YTIzTlpuVlMwUXMxeFJzTldKUjBraTNGMm5mdGs2dzNjdHFlcTNZRWJnd3hHOTJ3UQ?oc=5",
-        "published": "2026-05-18T07:00:00+00:00",
-        "source": "Apple",
-        "domain": "Apple",
-        "origin": "google_news_rss",
-        "snippet": "Apple kicks off Worldwide Developers Conference on June 8 - Apple"
-      },
-      {
-        "title": "Apple WWDC 2026: AAPL Stock Slips As Lack Of Launch Deadline For Siri AI Spooks Retail Investors - Stocktwits",
-        "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPTXZ4SGdnTl9jcWotM2hKTlVYYkpDS1FLWHNaQWdYNG43ejhsMnNlbW5panh6aTdEUjBRMXJkVWhyZHZUd25MVXV0WFl1Wmk1Z2ZuY09RcEYyUllzbVg3QTU5QnVuSUhubFJPZnQ4LXJkLWZBYzdPWFM5SHEyQktadXFpa2ZHR0loYWRDcklYSllDYXV5bnJhNEtyOW1jYjZUc2FjTDZBSzJGTng5cDNLT1hrUWYwR0pWdUpoeHMwMHJ4aGY1dTBFbnk5ODhOV1U0bHRmQlpmZVNza19Gd291VTRheThuTkFLelB4R1pwNlc?oc=5",
-        "published": "2026-08-31T09:51:46+00:00",
-        "source": "Stocktwits",
-        "domain": "Stocktwits",
-        "origin": "google_news_rss",
-        "snippet": "Apple WWDC 2026: AAPL Stock Slips As Lack Of Launch Deadline For Siri AI Spooks Retail Investors - Stocktwits"
-      },
-      {
-        "title": "Apple Stock Forecast: Apple Posted $111.2B Revenue, So Why Did AAPL Fall After WWDC? - TradingKey",
-        "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOMXV4XzlFSkVPUTRmVEdHSWd2UW0zQlVWMTc1a3JPRHU0eFZqMkxjcTBZS3NtekYwcUxYb0hjTG5PWDZRVjNnWVUzY2pqSVlEMEtCUTBBMmtBU18wUGQ3UnMtTkFsMDBPYy1ueUxmZFhMdWRyenJiV21XUS1XS09zaWI3cktiXzl1N3RPbFJNdElfeTZPQ0s5WUhIUmtUX3VJYVNBV1ZiRXhoc2YwbjRrdXRyeS1wMUFDU1FPM1FiaHF3SGw2MWt0NE9YM21zM0pJWV9rTjJ3aUtNMENwMTBqZnJnQ243eUk0R3c?oc=5",
-        "published": "2026-08-30T14:41:35+00:00",
-        "source": "TradingKey",
-        "domain": "TradingKey",
-        "origin": "google_news_rss",
-        "snippet": "Apple Stock Forecast: Apple Posted $111.2B Revenue, So Why Did AAPL Fall After WWDC? - TradingKey"
-      },
-      {
-        "title": "Apple WWDC 2026: AAPL Stock Slips As Lack Of Launch Deadline For Siri AI Spooks Retail Investors - Yahoo Finance",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQMkh1LVpqM3JYdG5Vd0NiSVZjTHRpaUVIR24ycjVxOVRnaU5GWTd1YlhqYVdRVFhMODZHZ195QzRpcE5NZ2FPWUZSWEVGUjVvd2pZNUdJOVRhSlVJeE85UGstc2RwVWtVS0phODJRZUFzV1RiYWZRRlY0bUlncTlYMW4wZ1k1YmcxR1FVM3hxRnFCVHREQnc?oc=5",
-        "published": "2026-06-08T07:00:00+00:00",
-        "source": "Yahoo Finance",
-        "domain": "Yahoo Finance",
-        "origin": "google_news_rss",
-        "snippet": "Apple WWDC 2026: AAPL Stock Slips As Lack Of Launch Deadline For Siri AI Spooks Retail Investors - Yahoo Finance"
-      },
-      {
-        "title": "Apple’s Worldwide Developers Conference returns the week of June 8 - Apple",
-        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOMXRhcmhJclFkdHVTMk1rTURTLTB4WFk1a2VCeVRfYjkwYlg0ZHl4aXZNbmZyLVNrMjlqd1V1RklINlZVYlphR0paNFEtRlZET1d2dXBTaC00WEQ3M0VVNmRUQ2Uxa0JZUWN2Q2JjNjN4Q3JhLVd5dUdhdHR1bjlpQ0J3TUtORUxWMjFiU1RoZmVnZ1FMcTZnU3R0SzZJbDg3WXhfQVloWEk?oc=5",
-        "published": "2026-03-23T07:00:00+00:00",
-        "source": "Apple",
-        "domain": "Apple",
-        "origin": "google_news_rss",
-        "snippet": "Apple’s Worldwide Developers Conference returns the week of June 8 - Apple"
-      },
-      {
-        "title": "Apple will launch 10+ new products soon, with September event coming - 9to5Mac",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQX2tZa0xCdTNpQVNSLXZ1WlN6MUMxSHNxUnBKQzVHM2lQMHFENDF3T1RYd19PaWJWN2F4R0RTeDRIclZrRmZJYjVqT1ZBUVN6U1NpZXR1TENKS1lNVlBDakg5Q3NWTXBYN2RxY29Bb1I0RnNmTklFazJQZ0ZsVHRnLUM1Qks5eV9ob0hYaUlfTVhxRm5teVE3clZJTDRsbGM?oc=5",
-        "published": "2026-08-19T07:00:00+00:00",
-        "source": "9to5Mac",
-        "domain": "9to5Mac",
-        "origin": "google_news_rss",
-        "snippet": "Apple will launch 10+ new products soon, with September event coming - 9to5Mac"
-      },
-      {
-        "title": "Will Apple's iPhone 17 Launch Be a 'Sell-the-News' Event for Investors? - Investopedia",
-        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOc2JxZmdnV2lvTEZNTy1jajJSQUVlLWRBWWJEczZRS1BBV19pUEtrV09qZFN0MWFqTGNFMERLajMwLVdKZHhhcHUxZFFWZnBtOWhSVnhmeWdpU0hldEduM09VRnR3c3Q0cURQQUc2QXRxS3ZDSFRfUFlpTDl1MXFWNk9fMEJITTdkc1hpbGVWMzRsRnZpYndzTDhveFNoN1YzZmR5YjhKN1NvaUdkemFwZllZZHVjaGplS0RF?oc=5",
-        "published": "2025-09-08T07:00:00+00:00",
-        "source": "Investopedia",
-        "domain": "Investopedia",
-        "origin": "google_news_rss",
-        "snippet": "Will Apple's iPhone 17 Launch Be a 'Sell-the-News' Event for Investors? - Investopedia"
-      },
-      {
-        "title": "WWDC 2026: Everything to Expect - MacRumors",
-        "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5tVXhfYUN5SzZfUUcyT3FVeTIwcWVZU1hmQUhtN2Nnd19zNDlRclF1UzhfdTRCVnZlZmVvSDdmTUpwT1o1LUtnSTk3WGVQeUdI?oc=5",
-        "published": "2026-06-26T07:00:00+00:00",
-        "source": "MacRumors",
-        "domain": "MacRumors",
-        "origin": "google_news_rss",
-        "snippet": "WWDC 2026: Everything to Expect - MacRumors"
-      },
-      {
-        "title": "Apple just revealed a clue about its September iPhone event date - 9to5Mac",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQV190VWRoWktyUXVTeFk5M2FkbEpvNzItVjRyWVNMZ2Rrb0pmNlNaTnd3RWNVeU4tY3YwUVlqMEtQcUVObWtnR2MzV1ZCQVR6UmIwTWxlcHBQQjRjZzljWHdBdjJUSFhpTGpmSE1fcWs2bWFLeXRBN01QV05wdG91NFlGRWRrRVkyM2tQS21jR3pFNUJBeHVVb0lScEI?oc=5",
-        "published": "2026-08-04T07:00:00+00:00",
-        "source": "9to5Mac",
-        "domain": "9to5Mac",
-        "origin": "google_news_rss",
-        "snippet": "Apple just revealed a clue about its September iPhone event date - 9to5Mac"
-      },
-      {
-        "title": "How to watch Apple’s September event: iPhone 18 Pro, iPhone Ultra, more - 9to5Mac",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPZ25UbW1xUHFfaElFYUI3RG5sRmtic1ZPQk11a1daOW9wcEhsOVF0bHRtdlpweEQzR1l0SGpWV2tNNE10Wm9mdGRhbDgwS2p3Z25VVUpBOUFZTjI4bXNvenFHZnVSWW8yNlU0N3lLZV9KTlBsbzZHdnhCY3RIZzIyN2hkSHdrUWNtcEFyOTVYRWJKenBFQnQwNDVFTlZtaDNk?oc=5",
-        "published": "2026-08-27T15:44:00+00:00",
-        "source": "9to5Mac",
-        "domain": "9to5Mac",
-        "origin": "google_news_rss",
-        "snippet": "How to watch Apple’s September event: iPhone 18 Pro, iPhone Ultra, more - 9to5Mac"
-      },
-      {
-        "title": "Apple just did something rare that signals big September event - 9to5Mac",
-        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPSWVmRElEWi1tdENVWk5NLW85bjNDdjhfWGF2aHk4VDdkR3JWSXptcElaX3owajZRZl85aFRtc1h2NWhXd0VFVEJHQXRQOG9KYVc4ZjhwYlhiNTRTRTR0YXVSUklBY09zeWg4S1Ywd0NQeHlRdUcxZ05xRFlGV3I2UkhNNlptcFhPNVk3VE1MdE1kVlJpZjhmNXJR?oc=5",
-        "published": "2026-08-26T19:57:00+00:00",
-        "source": "9to5Mac",
-        "domain": "9to5Mac",
-        "origin": "google_news_rss",
-        "snippet": "Apple just did something rare that signals big September event - 9to5Mac"
-      }
-    ]
-  },
-  {
     "ticker": "AMD",
     "company": "Advanced Micro Devices",
     "score": 45,
@@ -639,37 +651,37 @@
       "12 artículos recientes",
       "Rumores/productos: GPU",
       "Evento mencionado: AMD Advancing AI, AMD Computex",
-      "RSI razonable: 46.9",
-      "No descontado 20D: -2.5%"
+      "RSI razonable: 46.3",
+      "No descontado 20D: -2.9%"
     ],
     "market": {
       "ticker": "AMD",
-      "price": 472.7449951171875,
-      "rsi": 46.853775870617156,
-      "sma20": 481.44275054931643,
-      "sma50": 504.782900390625,
-      "perf_20d": -2.454403097498825,
-      "perf_60d": -9.643542796760984,
+      "price": 470.7200012207031,
+      "rsi": 46.29703180741094,
+      "sma20": 481.3415008544922,
+      "sma50": 504.7424005126953,
+      "perf_20d": -2.872237744923334,
+      "perf_60d": -10.030582905560347,
       "status": "ok"
     },
     "articles": [
       {
-        "title": "AMD Advancing AI 2026 Opens With Zen 6 Venice, Helios, and Open AI Rack Bet - Tech Times",
+        "title": "AMD Advancing AI 2026 Opens With Zen 6 Venice, Helios, and Open AI Rack Bet - techtimes.com",
         "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPLUhzNFNuYTFIbXllZmwtMWtoQ1JZeHdGUXZkdDU4ck1nM2UxZEcyajJuSy1CZy1vVHcxZGRKWHdXam9XaUpTN1BCdTBicFVzUFRDRUNqUzhYV2JNZjVpdDdvY0E3eTdUNzJYTU9VNXl3cVplRDQ4N1NEXzJVa0t3bHhwOW1kdjFwRW5iMTMwZFpNWnJRTF94MlJoR01TWWRCQWJkQnhYNW8zbUMtTDZIaTk4S3dHQjRsRmZj?oc=5",
         "published": "2026-07-22T07:00:00+00:00",
-        "source": "Tech Times",
-        "domain": "Tech Times",
+        "source": "techtimes.com",
+        "domain": "techtimes.com",
         "origin": "google_news_rss",
-        "snippet": "AMD Advancing AI 2026 Opens With Zen 6 Venice, Helios, and Open AI Rack Bet - Tech Times"
+        "snippet": "AMD Advancing AI 2026 Opens With Zen 6 Venice, Helios, and Open AI Rack Bet - techtimes.com"
       },
       {
-        "title": "Can AMD Narrow Hardware Gap With NVDA? This Analyst Sees Advancing AI 2026 Event As Key Catalyst - Yahoo Finance",
+        "title": "Can AMD Narrow Hardware Gap With NVDA? This Analyst Sees Advancing AI 2026 Event As Key Catalyst - finance.yahoo.com",
         "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNdHl5UXVTYjl6WnRkeUt1cUNRbEduZ1RydzRzMDlib2dNdjExSEVXaU51THRBQUZ0dTBQX3dPZkhMcUNMYUxQUkcwTDF4X3RXOXFQcGxZeFAwT2dTVDVYTFR4MUc2aTdpRWdfbnVvWEptVm1yTUtGR0dtT1lFNjhBLXY0eEhiSUloMnhHanNwODhqQTA5bW80?oc=5",
         "published": "2026-07-21T07:00:00+00:00",
-        "source": "Yahoo Finance",
-        "domain": "Yahoo Finance",
+        "source": "finance.yahoo.com",
+        "domain": "finance.yahoo.com",
         "origin": "google_news_rss",
-        "snippet": "Can AMD Narrow Hardware Gap With NVDA? This Analyst Sees Advancing AI 2026 Event As Key Catalyst - Yahoo Finance"
+        "snippet": "Can AMD Narrow Hardware Gap With NVDA? This Analyst Sees Advancing AI 2026 Event As Key Catalyst - finance.yahoo.com"
       },
       {
         "title": "Can AMD Narrow Hardware Gap With NVDA? This Analyst Sees Advancing AI 2026 Event As Key Catalyst - TradingView",
@@ -708,13 +720,13 @@
         "snippet": "AMD Advancing AI 2026 Keynote Live Coverage - ServeTheHome"
       },
       {
-        "title": "AMD Courts Gamers At Computex With New X3D CPUs, GPUs, And EXPO ULL RAM - HotHardware",
+        "title": "AMD Courts Gamers At Computex With New X3D CPUs, GPUs, And EXPO ULL RAM - hothardware.com",
         "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBCX05HM084ZzVuRFhJdXRpVXF0a1oyUkVfQ00tcEwxbDV2Rm82NGlhVjI3S1VGTEVQTHQ0UGo1SjE4U0R3SzNldDFzQTBkYmNWZ2lIVHlOaWgxU0FYWVFocU1EcDloZw?oc=5",
         "published": "2026-05-31T07:00:00+00:00",
-        "source": "HotHardware",
-        "domain": "HotHardware",
+        "source": "hothardware.com",
+        "domain": "hothardware.com",
         "origin": "google_news_rss",
-        "snippet": "AMD Courts Gamers At Computex With New X3D CPUs, GPUs, And EXPO ULL RAM - HotHardware"
+        "snippet": "AMD Courts Gamers At Computex With New X3D CPUs, GPUs, And EXPO ULL RAM - hothardware.com"
       },
       {
         "title": "AMD Computex 2026 Announcements: 9070 GRE/7700X3D/5800X3D/EXPO/Longevity & More - The FPS Review",
@@ -735,13 +747,13 @@
         "snippet": "From Zen 5 Refreshes To Next-Gen CPUs, Here’s What To Expect From AMD At Computex 2026 - Wccftech"
       },
       {
-        "title": "AMD 2.0 - New Sense of Urgency | MI450X Chance to Beat Nvidia | Nvidia's New Moat - SemiAnalysis",
+        "title": "AMD 2.0 - New Sense of Urgency | MI450X Chance to Beat Nvidia | Nvidia's New Moat - newsletter.semianalysis.com",
         "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOQkJuNXhsX1pIVnpIeEhlN3luemI1dkJNU3RucWtrcnY0YlVCR2pWc0VmbEtmd2ViN3drVDZnY2dRZHNyTlRlWklLajlObnRXNmJ4eDExWmliV0Z0QlpBSEw0RWlDRTNoeXkxTjhBTlNId1dINXh4a2FGYXo0MVR3ZmdwM2xwZzVnUi03TmJCRlFlbUYtSWN6SE8tOG42bUZqQzd3dGdEbUo2SVliOWdha2h3?oc=5",
         "published": "2025-04-23T07:00:00+00:00",
-        "source": "SemiAnalysis",
-        "domain": "SemiAnalysis",
+        "source": "newsletter.semianalysis.com",
+        "domain": "newsletter.semianalysis.com",
         "origin": "google_news_rss",
-        "snippet": "AMD 2.0 - New Sense of Urgency | MI450X Chance to Beat Nvidia | Nvidia's New Moat - SemiAnalysis"
+        "snippet": "AMD 2.0 - New Sense of Urgency | MI450X Chance to Beat Nvidia | Nvidia's New Moat - newsletter.semianalysis.com"
       },
       {
         "title": "AMD Stock Price Prediction 2026-2030: Forecast, Targets - techi.com",
@@ -783,16 +795,16 @@
       "9 artículos recientes",
       "Rumores/productos: Blackwell, Rubin",
       "Evento mencionado: Nvidia GTC, Nvidia AI event",
-      "RSI razonable: 52.7"
+      "RSI razonable: 54.6"
     ],
     "market": {
       "ticker": "NVDA",
-      "price": 218.02000427246094,
-      "rsi": 52.67574087326508,
-      "sma20": 218.61650161743165,
-      "sma50": 208.56659942626953,
-      "perf_20d": 5.507164593701885,
-      "perf_60d": -0.2926915663266083,
+      "price": 220.77999877929688,
+      "rsi": 54.55843734929324,
+      "sma20": 218.75450134277344,
+      "sma50": 208.62179931640625,
+      "perf_20d": 6.842818153026364,
+      "perf_60d": 0.9695395050223654,
       "status": "ok"
     },
     "articles": [
@@ -824,13 +836,13 @@
         "snippet": "NVIDIA and Microsoft Reinvent Windows PCs for the Age of Personal AI - NVIDIA Newsroom"
       },
       {
-        "title": "Nvidia GTC 2026: What to expect from Nvidia's biggest event of the year - Yahoo Finance",
+        "title": "Nvidia GTC 2026: What to expect from Nvidia's biggest event of the year - finance.yahoo.com",
         "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNY0xFUjRBam5Ec09EUm4waXZSUmJKYkV4eUJGTE1nU0lZT25OVXJMYnFfTmZNS21lbVJUNUVMUnZ1M1dGbmdyc01adjhoNFFYNXkwc0JfRlVtWndVMTVXb0xka2ZvMThTcFhEQmIwS3NCTjBWaFA0RW1LaWUxTmJJYkNkX0xtd0hKWDFlS1ZPWVJhVGhMaUlpQWd0SldsSjFYOUtzRk1QdzJkTUZqR2tMQjZZbTJZdw?oc=5",
         "published": "2026-03-16T07:00:00+00:00",
-        "source": "Yahoo Finance",
-        "domain": "Yahoo Finance",
+        "source": "finance.yahoo.com",
+        "domain": "finance.yahoo.com",
         "origin": "google_news_rss",
-        "snippet": "Nvidia GTC 2026: What to expect from Nvidia's biggest event of the year - Yahoo Finance"
+        "snippet": "Nvidia GTC 2026: What to expect from Nvidia's biggest event of the year - finance.yahoo.com"
       },
       {
         "title": "Inside NVIDIA’s four-day AI mega-conference bringing 30,000 people to San Jose - Stock Titan",
@@ -902,23 +914,23 @@
     ],
     "market": {
       "ticker": "MSFT",
-      "price": 508.0350036621094,
-      "rsi": 68.8155911853913,
-      "sma20": 494.3697479248047,
-      "sma50": 433.22529846191406,
-      "perf_20d": 4.180254284992824,
-      "perf_60d": 18.68590541995909,
+      "price": 507.2900085449219,
+      "rsi": 68.27634827863774,
+      "sma20": 494.33249816894534,
+      "sma50": 433.2103985595703,
+      "perf_20d": 4.027481778787134,
+      "perf_60d": 18.51186146751591,
       "status": "ok"
     },
     "articles": [
       {
-        "title": "2026 Microsoft Conference Calendar: For Partners, IT Pros and Developers - Redmond Channel Partner",
+        "title": "2026 Microsoft Conference Calendar: For Partners, IT Pros and Developers - rcpmag.com",
         "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQX05GYml0bFA5dGZWZkl6bUJBb3BnVWZPWVB3dGg5SFFXdm12dmdXLThqWnBIMVp3a2VUck14TWYza1AwRDhycXlfMDBCbDZudEZKbGpuV0hkMk5jcGlTSU5vRUxwUi1WaWMtUFNEYWU5eEpKLWFMeW9Ta1JSSXQ2eHFFTHM?oc=5",
         "published": "2026-02-18T08:00:00+00:00",
-        "source": "Redmond Channel Partner",
-        "domain": "Redmond Channel Partner",
+        "source": "rcpmag.com",
+        "domain": "rcpmag.com",
         "origin": "google_news_rss",
-        "snippet": "2026 Microsoft Conference Calendar: For Partners, IT Pros and Developers - Redmond Channel Partner"
+        "snippet": "2026 Microsoft Conference Calendar: For Partners, IT Pros and Developers - rcpmag.com"
       },
       {
         "title": "Actioning agentic AI: 5 ways to build with news from Microsoft Ignite 2025 - Microsoft Azure",
@@ -939,15 +951,6 @@
         "snippet": "Microsoft Ignite - TechInformed"
       },
       {
-        "title": "Microsoft Just Gave Investors 3 Dates They Can't Afford to Ignore - The Globe and Mail",
-        "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQOXUzelU0b3pIMWlDTnNBZ1R6OWVUNTA4ZVlDc3ZyX0JaUjNaUXZjZHV4OVdyTGlQT2ZWdFZzWmFza0NKVFlOd0ZzaGNXdkxSRkxSa0V2ejZpcWFwZ2xYUHJDT0RVbWJrS2FoVTh4OXZTd1BFTzRIV3BwYjdxYVdHSkxoTVJjOXVYRUFoS05pLTFSWXVNYmoyZU4yZzd2RGpyR28wNWo0SkhzVzh6TXFhZ2x6VFhsMXhvb01KWG5NeWc5RUNhbFFXWUhwR1BjalJqMWNLQWxwR01qTGlraU5wOXV4WQ?oc=5",
-        "published": "2026-06-11T07:00:00+00:00",
-        "source": "The Globe and Mail",
-        "domain": "The Globe and Mail",
-        "origin": "google_news_rss",
-        "snippet": "Microsoft Just Gave Investors 3 Dates They Can't Afford to Ignore - The Globe and Mail"
-      },
-      {
         "title": "Microsoft launches tracker to manage autonomous AI in the workplace - Reuters",
         "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNZE5tVEZXM3FRakJDUlEzOXNNN2lNVjRkaUE2eHlBMkJCSjNUTy14LXFUUzAtRzFGZjNENGY2cUtyTTFwUEJjdkNvNjlGeEs4T0IxM3c4SVRzTG1zMllOR3VKYnZlNno3UGFpdXFyWUpYdTlKZTZPR0xVOTJZcUpSb3owNjJpZTZ2SnNCUTBkSGFxaDVFQU51MkVqdHdpMU54eFJwdw?oc=5",
         "published": "2025-11-18T08:00:00+00:00",
@@ -964,6 +967,15 @@
         "domain": "TradingView",
         "origin": "google_news_rss",
         "snippet": "Does Azure AI Growth Make Microsoft Stock a Buy Ahead of Q2 Earnings? - TradingView"
+      },
+      {
+        "title": "Microsoft Stock Before Q2 Earnings: Buy Now or Wait for Results? - The Globe and Mail",
+        "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPekdQSktBbldwekNpSW9fSWFvSXhWOEFpcWZ4QmlaRkMxU3pyUERTTl9aamRfTDY2UEh1a2U0Z2p1WUlHdWFxY1F1dHZzQUE5NC1CNmt3Y1FOVzZsaHRkWG82dnpwZENtdnIxcVpXeEZHbzE3eGhuV29sS1VUMDZlYXY0dU1hZ1VsaUV5Rl9EZ0pmTkxxa2ZnYXZhRmU2M2ZReXBkR0hMMVE5R01CeGlSLTVhQkRNZmhzelFDMFJ3ZjRhZjRuQVZGMEt0bnRkam13dnVhQ3B6M3VmVml3UHdEMQ?oc=5",
+        "published": "2026-01-26T08:00:00+00:00",
+        "source": "The Globe and Mail",
+        "domain": "The Globe and Mail",
+        "origin": "google_news_rss",
+        "snippet": "Microsoft Stock Before Q2 Earnings: Buy Now or Wait for Results? - The Globe and Mail"
       },
       {
         "title": "Microsoft Build 2026: Be yourself at work - The Official Microsoft Blog",
@@ -1031,99 +1043,9 @@
     ]
   },
   {
-    "ticker": "ARM",
-    "company": "Arm Holdings",
-    "score": 34,
-    "event_name": "Arm earnings / product roadmap",
-    "event_date": null,
-    "date_confidence": "unknown",
-    "days_until_event": null,
-    "trading_window_start": null,
-    "trading_window_end": null,
-    "window_status": "unknown",
-    "opportunity_type": "none",
-    "rumors": [],
-    "market_sentiment": "unknown",
-    "summary": "Sin resumen IA concluyente.",
-    "ai_confidence": "low",
-    "score_reasons": [
-      "6 artículos recientes",
-      "Rumores/productos: CPU",
-      "Evento mencionado: Arm earnings",
-      "RSI razonable: 41.0",
-      "No descontado 20D: +0.9%"
-    ],
-    "market": {
-      "ticker": "ARM",
-      "price": 241.1999969482422,
-      "rsi": 41.0240232528989,
-      "sma20": 261.3059989929199,
-      "sma50": 283.89539916992186,
-      "perf_20d": 0.8951725138054201,
-      "perf_60d": -38.694592453352946,
-      "status": "ok"
-    },
-    "articles": [
-      {
-        "title": "Arm delivers record first-quarter for total revenue - Arm Newsroom",
-        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5fQXhHWDVEYV82Q1VZVEVzWW9RdVVOZFNwdnlmbllrSm1IeDdPV3ZPSnl2Vkg0cm4yWjdHUkNCY3BpbFdVRF9vMUZ6eDJKZkJDaDZaVXlGa29hUmtfTU9B?oc=5",
-        "published": "2026-07-29T20:09:08+00:00",
-        "source": "Arm Newsroom",
-        "domain": "Arm Newsroom",
-        "origin": "google_news_rss",
-        "snippet": "Arm delivers record first-quarter for total revenue - Arm Newsroom"
-      },
-      {
-        "title": "ARM Earnings Call: 'By 2030, the largest share of the CPU market will belong to Arm.' The number of CPUs may not surpass that of GPUs, but the core count will. - Moomoo",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNQlBxOHN0dHViWDU0b2pjNkRVM24tMVVjdTQ3ZDU3bnptM09yWU1wb0QwNlF2TXZtQU5fM2pPZHc3MnB2S0N6U3JqUGYyU20tQ3dNNjJ3Wk9JR1NRaDZtSW5WN3JOZnVzRzV5MjJzMF9QNUtaZnBTYl9Fem84Sm5MZm10c0Rud25BVHk3RkNJbTF4U0FBcnhJ?oc=5",
-        "published": "2026-05-06T07:00:00+00:00",
-        "source": "Moomoo",
-        "domain": "Moomoo",
-        "origin": "google_news_rss",
-        "snippet": "ARM Earnings Call: 'By 2030, the largest share of the CPU market will belong to Arm.' The number of CPUs may not surpass that of GPUs, but the core count will. - Moomoo"
-      },
-      {
-        "title": "Arm Q2 FYE26 revenue surpasses $1 billion for third consecutive quarter - Arm Newsroom",
-        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9VYVZYZ21SWnhrV1dwOG15SzQ0MEpkdGVPSDZxTDNUMnN5YWoxbi1VbFpoZUVydTVHV1owVmplUFNoSkUxSXRNQkhmWFdGVENhb2NHTXFQY0daLVphZUln?oc=5",
-        "published": "2025-11-05T08:00:00+00:00",
-        "source": "Arm Newsroom",
-        "domain": "Arm Newsroom",
-        "origin": "google_news_rss",
-        "snippet": "Arm Q2 FYE26 revenue surpasses $1 billion for third consecutive quarter - Arm Newsroom"
-      },
-      {
-        "title": "Arm delivers record-breaking quarter and full-year results - Arm Newsroom",
-        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9iRzJWNndNMmt6NzF3YWY2UHVRQ0gzcklGSXVSRG1pMTRHWm52UFZBeDVKd3RfeWp1OXRfR3JWd1N5MVhXMGJZX1F1YXFXc1Joby1Id211NnRzNXhEOWRF?oc=5",
-        "published": "2026-05-06T20:06:27+00:00",
-        "source": "Arm Newsroom",
-        "domain": "Arm Newsroom",
-        "origin": "google_news_rss",
-        "snippet": "Arm delivers record-breaking quarter and full-year results - Arm Newsroom"
-      },
-      {
-        "title": "New Launches & Announcements From Partners Drive ARM: Here's How - TradingView",
-        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdDFSTWxfYWREc1hSTEw5bHlrbmdMZlFXZDg1X0pXWHdPLXdBeThseHY5U0sxQnpTRTF2ZHlUd3Ixd0RDdzVGUW5DZFlkbUswRlFoRHdwb0Nfd0RxWnhEalBtVVJEOUVvVVc2VGg3RzhSN2NYSGNodllSVGxic2xKczJSYUlIWVJnbTd6dTU5U21COGJlZUlHeUNNZVl5VjZ4T045MEtYcnIwOGRvaGJuMjkzRVoyNGU1?oc=5",
-        "published": "2026-04-13T07:00:00+00:00",
-        "source": "TradingView",
-        "domain": "TradingView",
-        "origin": "google_news_rss",
-        "snippet": "New Launches & Announcements From Partners Drive ARM: Here's How - TradingView"
-      },
-      {
-        "title": "Arm delivers fourth consecutive billion-dollar revenue quarter, extending record-breaking momentum - Arm Newsroom",
-        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5RSGpwakxDZkFrZUI3TEYweEhRUGI1UERuWTRyRXpMSkJEY3pGRUpFcDB1ZmtOZTRuaFdjU0pFSkc1NEJSaDI3Y1VJcktJQ1pMRmRHa01zLXdqR3BhdEFv?oc=5",
-        "published": "2026-02-04T08:00:00+00:00",
-        "source": "Arm Newsroom",
-        "domain": "Arm Newsroom",
-        "origin": "google_news_rss",
-        "snippet": "Arm delivers fourth consecutive billion-dollar revenue quarter, extending record-breaking momentum - Arm Newsroom"
-      }
-    ]
-  },
-  {
     "ticker": "ORCL",
     "company": "Oracle",
-    "score": 33,
+    "score": 35,
     "event_name": "Oracle CloudWorld / earnings",
     "event_date": null,
     "date_confidence": "unknown",
@@ -1137,30 +1059,30 @@
     "summary": "Sin resumen IA concluyente.",
     "ai_confidence": "low",
     "score_reasons": [
-      "9 artículos recientes",
+      "10 artículos recientes",
       "Rumores/productos: cloud",
       "Evento mencionado: Oracle earnings",
-      "RSI razonable: 54.4"
+      "RSI razonable: 54.1"
     ],
     "market": {
       "ticker": "ORCL",
-      "price": 149.3699951171875,
-      "rsi": 54.396125114562615,
-      "sma20": 147.3599998474121,
-      "sma50": 140.8502003479004,
-      "perf_20d": 5.301366718436462,
-      "perf_60d": -36.798680954688614,
+      "price": 149.1199951171875,
+      "rsi": 54.12554462909589,
+      "sma20": 147.3474998474121,
+      "sma50": 140.8452003479004,
+      "perf_20d": 5.125124216326493,
+      "perf_60d": -36.904460765077786,
       "status": "ok"
     },
     "articles": [
       {
-        "title": "2026 Microsoft Conference Calendar: For Partners, IT Pros and Developers - Redmond Channel Partner",
+        "title": "2026 Microsoft Conference Calendar: For Partners, IT Pros and Developers - rcpmag.com",
         "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQX05GYml0bFA5dGZWZkl6bUJBb3BnVWZPWVB3dGg5SFFXdm12dmdXLThqWnBIMVp3a2VUck14TWYza1AwRDhycXlfMDBCbDZudEZKbGpuV0hkMk5jcGlTSU5vRUxwUi1WaWMtUFNEYWU5eEpKLWFMeW9Ta1JSSXQ2eHFFTHM?oc=5",
         "published": "2026-02-18T08:00:00+00:00",
-        "source": "Redmond Channel Partner",
-        "domain": "Redmond Channel Partner",
+        "source": "rcpmag.com",
+        "domain": "rcpmag.com",
         "origin": "google_news_rss",
-        "snippet": "2026 Microsoft Conference Calendar: For Partners, IT Pros and Developers - Redmond Channel Partner"
+        "snippet": "2026 Microsoft Conference Calendar: For Partners, IT Pros and Developers - rcpmag.com"
       },
       {
         "title": "Oracle Introduces AI Agent Studio - Oracle",
@@ -1208,13 +1130,22 @@
         "snippet": "Catalyst Watch: Eyes on oil prices, inflation reads, and Oracle earnings - Seeking Alpha"
       },
       {
-        "title": "Oracle beats expectations and stays quiet on job cut speculation - HR Executive",
+        "title": "Oracle beats expectations and stays quiet on job cut speculation - hrexecutive.com",
         "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQRzBMZlJMMVNzUUNvVF9xZUlGXzZjb1p6SHJVRl9kTkRZR0dfME9mVkd3WnhQWm4zV203MnZ3UWFkM1hnM2pRRTNvYnFNV0VhWmtSajdzTXUtZzNMTExjV24wZmZEUGcwdHhKenNFNHh1QUF6bDczVXpqcWl4Q1lJWUprY3UzS1ZhTlBET3RHTUhKVEE?oc=5",
         "published": "2026-03-13T07:00:00+00:00",
-        "source": "HR Executive",
-        "domain": "HR Executive",
+        "source": "hrexecutive.com",
+        "domain": "hrexecutive.com",
         "origin": "google_news_rss",
-        "snippet": "Oracle beats expectations and stays quiet on job cut speculation - HR Executive"
+        "snippet": "Oracle beats expectations and stays quiet on job cut speculation - hrexecutive.com"
+      },
+      {
+        "title": "Oracle Announces Fiscal Year 2026 Third Quarter Financial Results - Oracle - Investor Relations",
+        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPa3ZiRXh0VnVoSm50UXJBNnFmZk9wNVRTTjNqNUNERF9PLUQxMUlZaGpJODVldHdyMzNDRDF5ZU1Lbnh6LWVWSmMwWDdOeVd0UGt0MmVUSTM0eWtrRGRjZElycGswdzhQcEt4RW1GbDlmcWxkenZycU9uQkMyd0hRbndTaUJNaTA2MzV3M2d0QjR6ME1iY3VyX05MXzZLNFVHTTNBTDkxU2dxejlvMFBPTmo2akZXdFRFZHlFXzhPeTVYNHB4UVlha0I1Z1hRMDZ5cVhyYg?oc=5",
+        "published": "2026-03-10T07:00:00+00:00",
+        "source": "Oracle - Investor Relations",
+        "domain": "Oracle - Investor Relations",
+        "origin": "google_news_rss",
+        "snippet": "Oracle Announces Fiscal Year 2026 Third Quarter Financial Results - Oracle - Investor Relations"
       },
       {
         "title": "Oracle Earnings Could Reveal a Massive $100 Billion Spending Surge. Here Is Why You Should Still Buy ORCL Stock. - Barchart.com",
@@ -1237,6 +1168,96 @@
     ]
   },
   {
+    "ticker": "ARM",
+    "company": "Arm Holdings",
+    "score": 34,
+    "event_name": "Arm earnings / product roadmap",
+    "event_date": null,
+    "date_confidence": "unknown",
+    "days_until_event": null,
+    "trading_window_start": null,
+    "trading_window_end": null,
+    "window_status": "unknown",
+    "opportunity_type": "none",
+    "rumors": [],
+    "market_sentiment": "unknown",
+    "summary": "Sin resumen IA concluyente.",
+    "ai_confidence": "low",
+    "score_reasons": [
+      "6 artículos recientes",
+      "Rumores/productos: CPU",
+      "Evento mencionado: Arm earnings",
+      "RSI razonable: 41.4",
+      "No descontado 20D: +1.2%"
+    ],
+    "market": {
+      "ticker": "ARM",
+      "price": 241.91000366210938,
+      "rsi": 41.366954992049514,
+      "sma20": 261.3414993286133,
+      "sma50": 283.9095993041992,
+      "perf_20d": 1.192171895181704,
+      "perf_60d": -38.51413121162324,
+      "status": "ok"
+    },
+    "articles": [
+      {
+        "title": "Arm delivers record first-quarter for total revenue - newsroom.arm.com",
+        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5fQXhHWDVEYV82Q1VZVEVzWW9RdVVOZFNwdnlmbllrSm1IeDdPV3ZPSnl2Vkg0cm4yWjdHUkNCY3BpbFdVRF9vMUZ6eDJKZkJDaDZaVXlGa29hUmtfTU9B?oc=5",
+        "published": "2026-07-29T20:09:08+00:00",
+        "source": "newsroom.arm.com",
+        "domain": "newsroom.arm.com",
+        "origin": "google_news_rss",
+        "snippet": "Arm delivers record first-quarter for total revenue - newsroom.arm.com"
+      },
+      {
+        "title": "ARM Earnings Call: 'By 2030, the largest share of the CPU market will belong to Arm.' The number of CPUs may not surpass that of GPUs, but the core count will. - Moomoo",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNQlBxOHN0dHViWDU0b2pjNkRVM24tMVVjdTQ3ZDU3bnptM09yWU1wb0QwNlF2TXZtQU5fM2pPZHc3MnB2S0N6U3JqUGYyU20tQ3dNNjJ3Wk9JR1NRaDZtSW5WN3JOZnVzRzV5MjJzMF9QNUtaZnBTYl9Fem84Sm5MZm10c0Rud25BVHk3RkNJbTF4U0FBcnhJ?oc=5",
+        "published": "2026-05-06T07:00:00+00:00",
+        "source": "Moomoo",
+        "domain": "Moomoo",
+        "origin": "google_news_rss",
+        "snippet": "ARM Earnings Call: 'By 2030, the largest share of the CPU market will belong to Arm.' The number of CPUs may not surpass that of GPUs, but the core count will. - Moomoo"
+      },
+      {
+        "title": "Arm Q2 FYE26 revenue surpasses $1 billion for third consecutive quarter - newsroom.arm.com",
+        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9VYVZYZ21SWnhrV1dwOG15SzQ0MEpkdGVPSDZxTDNUMnN5YWoxbi1VbFpoZUVydTVHV1owVmplUFNoSkUxSXRNQkhmWFdGVENhb2NHTXFQY0daLVphZUln?oc=5",
+        "published": "2025-11-05T08:00:00+00:00",
+        "source": "newsroom.arm.com",
+        "domain": "newsroom.arm.com",
+        "origin": "google_news_rss",
+        "snippet": "Arm Q2 FYE26 revenue surpasses $1 billion for third consecutive quarter - newsroom.arm.com"
+      },
+      {
+        "title": "Arm delivers record-breaking quarter and full-year results - newsroom.arm.com",
+        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9iRzJWNndNMmt6NzF3YWY2UHVRQ0gzcklGSXVSRG1pMTRHWm52UFZBeDVKd3RfeWp1OXRfR3JWd1N5MVhXMGJZX1F1YXFXc1Joby1Id211NnRzNXhEOWRF?oc=5",
+        "published": "2026-05-06T20:06:27+00:00",
+        "source": "newsroom.arm.com",
+        "domain": "newsroom.arm.com",
+        "origin": "google_news_rss",
+        "snippet": "Arm delivers record-breaking quarter and full-year results - newsroom.arm.com"
+      },
+      {
+        "title": "New Launches & Announcements From Partners Drive ARM: Here's How - TradingView",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdDFSTWxfYWREc1hSTEw5bHlrbmdMZlFXZDg1X0pXWHdPLXdBeThseHY5U0sxQnpTRTF2ZHlUd3Ixd0RDdzVGUW5DZFlkbUswRlFoRHdwb0Nfd0RxWnhEalBtVVJEOUVvVVc2VGg3RzhSN2NYSGNodllSVGxic2xKczJSYUlIWVJnbTd6dTU5U21COGJlZUlHeUNNZVl5VjZ4T045MEtYcnIwOGRvaGJuMjkzRVoyNGU1?oc=5",
+        "published": "2026-04-13T07:00:00+00:00",
+        "source": "TradingView",
+        "domain": "TradingView",
+        "origin": "google_news_rss",
+        "snippet": "New Launches & Announcements From Partners Drive ARM: Here's How - TradingView"
+      },
+      {
+        "title": "Arm delivers fourth consecutive billion-dollar revenue quarter, extending record-breaking momentum - newsroom.arm.com",
+        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5RSGpwakxDZkFrZUI3TEYweEhRUGI1UERuWTRyRXpMSkJEY3pGRUpFcDB1ZmtOZTRuaFdjU0pFSkc1NEJSaDI3Y1VJcktJQ1pMRmRHa01zLXdqR3BhdEFv?oc=5",
+        "published": "2026-02-04T08:00:00+00:00",
+        "source": "newsroom.arm.com",
+        "domain": "newsroom.arm.com",
+        "origin": "google_news_rss",
+        "snippet": "Arm delivers fourth consecutive billion-dollar revenue quarter, extending record-breaking momentum - newsroom.arm.com"
+      }
+    ]
+  },
+  {
     "ticker": "AVGO",
     "company": "Broadcom",
     "score": 30,
@@ -1255,17 +1276,17 @@
     "score_reasons": [
       "6 artículos recientes",
       "Evento mencionado: Broadcom earnings",
-      "RSI razonable: 44.7",
-      "No descontado 20D: -5.1%"
+      "RSI razonable: 43.6",
+      "No descontado 20D: -5.6%"
     ],
     "market": {
       "ticker": "AVGO",
-      "price": 372.2250061035156,
-      "rsi": 44.692431230434174,
-      "sma20": 390.0572509765625,
-      "sma50": 385.3249005126953,
-      "perf_20d": -5.100324891638596,
-      "perf_60d": -11.144397877938871,
+      "price": 370.3399963378906,
+      "rsi": 43.63638221714731,
+      "sma20": 389.96300048828124,
+      "sma50": 385.2872003173828,
+      "perf_20d": -5.580912738775745,
+      "perf_60d": -11.594377527301802,
       "status": "ok"
     },
     "articles": [
@@ -1328,7 +1349,7 @@
   {
     "ticker": "TSM",
     "company": "Taiwan Semiconductor Manufacturing",
-    "score": 23,
+    "score": 30,
     "event_name": "TSMC earnings / technology symposium",
     "event_date": null,
     "date_confidence": "unknown",
@@ -1345,16 +1366,17 @@
       "4 artículos recientes",
       "Rumores/productos: Nvidia",
       "Evento mencionado: TSMC earnings",
-      "RSI razonable: 51.4"
+      "RSI razonable: 48.4",
+      "No descontado 20D: +2.3%"
     ],
     "market": {
       "ticker": "TSM",
-      "price": 420.9299011230469,
-      "rsi": 51.426984212223076,
-      "sma20": 419.9159957885742,
-      "sma50": 422.6085980224609,
-      "perf_20d": 3.6492369816159664,
-      "perf_60d": -5.3920056595934795,
+      "price": 415.32000732421875,
+      "rsi": 48.389024205348505,
+      "sma20": 419.6355010986328,
+      "sma50": 422.49640014648435,
+      "perf_20d": 2.267863954313576,
+      "perf_60d": -6.65288258792237,
       "status": "ok"
     },
     "articles": [
@@ -1368,22 +1390,13 @@
         "snippet": "TSMC earnings in focus as AI chip demand drives margins higher - Gulf Business"
       },
       {
-        "title": "TSMC Q2 Earnings Preview: Why Should You Buy TSM Stock Before July 16? - Yahoo Finance",
+        "title": "TSMC Q2 Earnings Preview: Why Should You Buy TSM Stock Before July 16? - finance.yahoo.com",
         "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNbEt1Qk5vM3VPWUo2TVJ1RC1hXzE1ZDByMjlZUUVmMm5Ld0lSdF9ubnNKbFFrNGxoVkYwUU5RRWwzTDA5YWRJUURBQVNxcDZNWDZ3WTF3SDdpei1jakdtZF9mVWdyNEw5eGF3Mk45OHk3QTBGdElMeGptOGJFa24xbDNQSlRHMER0WXZTT01PblYyd01vUHV2MA?oc=5",
         "published": "2026-07-09T07:00:00+00:00",
-        "source": "Yahoo Finance",
-        "domain": "Yahoo Finance",
+        "source": "finance.yahoo.com",
+        "domain": "finance.yahoo.com",
         "origin": "google_news_rss",
-        "snippet": "TSMC Q2 Earnings Preview: Why Should You Buy TSM Stock Before July 16? - Yahoo Finance"
-      },
-      {
-        "title": "TSMC Earnings Preview: Can It Rescue the AI Chip Trade? - Moomoo",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQekJnT3hBVHlORGdtQk9xMzFkVnBtZk1oZlJGN3hBTEkxOGNNSFlxXzhlX203dTJkeHNnb1JzRzJBRm5xTlZmM2ZuUk12RFowUDgySWFqZGdDTGNYbVhodnpzUXpnb3F4eVo3RF9Kc3VzRkRMR3ZTQmx6WXhQcWRic21EZk9NdVNnS2JIT1BfdXlLWFl2TEJvRkFzdkJnZGY0NjhpcHhSWVk3dw?oc=5",
-        "published": "2026-07-13T07:00:00+00:00",
-        "source": "Moomoo",
-        "domain": "Moomoo",
-        "origin": "google_news_rss",
-        "snippet": "TSMC Earnings Preview: Can It Rescue the AI Chip Trade? - Moomoo"
+        "snippet": "TSMC Q2 Earnings Preview: Why Should You Buy TSM Stock Before July 16? - finance.yahoo.com"
       },
       {
         "title": "Nvidia: The TSMC Earnings Release Was A Warning Shot (NASDAQ:NVDA) - Seeking Alpha",
@@ -1393,13 +1406,22 @@
         "domain": "Seeking Alpha",
         "origin": "google_news_rss",
         "snippet": "Nvidia: The TSMC Earnings Release Was A Warning Shot (NASDAQ:NVDA) - Seeking Alpha"
+      },
+      {
+        "title": "All Eyes on TSMC Earnings on April 16. Is TSM Stock A Buy Now? - Barchart.com",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPQkMzbFllQkVMc1UwYVREUktEcWZvZ0owLUtxSjYyN3BYN3FLTnN6TGppenRLaDNBcXhJM0swTzVTSnpQV2xJeUNMamh3dnd1Um5sU2xtbTdMVHdXREg2QXlBelo1dm45R2paYWdRaGdQbldQUm5xWGVMT1VkeHlrX1EzNEJrZmVyVnNybFNyYTUyR1A5bDJiZEc4cnF6bV9oRThCNkdlUQ?oc=5",
+        "published": "2026-04-10T07:00:00+00:00",
+        "source": "Barchart.com",
+        "domain": "Barchart.com",
+        "origin": "google_news_rss",
+        "snippet": "All Eyes on TSMC Earnings on April 16. Is TSM Stock A Buy Now? - Barchart.com"
       }
     ]
   },
   {
     "ticker": "CRM",
     "company": "Salesforce",
-    "score": 16,
+    "score": 14,
     "event_name": "Dreamforce / Salesforce AI updates",
     "event_date": null,
     "date_confidence": "unknown",
@@ -1413,23 +1435,32 @@
     "summary": "Sin resumen IA concluyente.",
     "ai_confidence": "low",
     "score_reasons": [
-      "10 artículos recientes",
+      "9 artículos recientes",
       "Rumores/productos: Agentforce, Slack, CRM",
       "Evento mencionado: Dreamforce, Salesforce earnings",
-      "RSI extendido: 81.0",
-      "Movimiento 20D avanzado: +38.2%"
+      "RSI extendido: 81.1",
+      "Movimiento 20D avanzado: +38.5%"
     ],
     "market": {
       "ticker": "CRM",
-      "price": 257.0299987792969,
-      "rsi": 81.01484804262115,
-      "sma20": 207.13050003051757,
-      "sma50": 182.99599975585937,
-      "perf_20d": 38.225331001666696,
-      "perf_60d": 36.174833790355954,
+      "price": 257.5400085449219,
+      "rsi": 81.12167361868035,
+      "sma20": 207.15600051879883,
+      "sma50": 183.00619995117188,
+      "perf_20d": 38.49960353406525,
+      "perf_60d": 36.44503763969371,
       "status": "ok"
     },
     "articles": [
+      {
+        "title": "Salesforce and Anthropic Announce Claudeforce: The #1 AI Meets the #1 AI CRM - Salesforce",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPcklqU2RlQWZLY3c5dG9uaF83Z0xHSHNuQzNHSGZOTWw3c2wzSmtGTE45VzlWaF80R2tON1JfcFhFVC1walRFUmRyVDA1UkdoQ3pydUdKc1hPTm9SQTV0akl4aWV6NlVqR3ZtSEhCYjJlRTJTOTJYWHU2aDJIWjl0c21ReTJDRVlKb0pwRVE3MTJLdUdVeE9tSGJuQ2hoN3RBbFMtTGJrdw?oc=5",
+        "published": "2026-08-26T20:13:05+00:00",
+        "source": "Salesforce",
+        "domain": "Salesforce",
+        "origin": "google_news_rss",
+        "snippet": "Salesforce and Anthropic Announce Claudeforce: The #1 AI Meets the #1 AI CRM - Salesforce"
+      },
       {
         "title": "What Is Dreamforce? Everything You Need To Know - Salesforce",
         "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE0wMHNQNHBKajdqVGwxR0dFTDE1blVnN01vUFpZdWhibHpSX19qaFd2TE4yLTV1Z1JoVkdxRlA1QTI1c241ZWFDNkhyNG1LRkU5aXB2cEs5V19ONU5IakxXcA?oc=5",
@@ -1449,31 +1480,13 @@
         "snippet": "Dreamforce 2026 Guide: What Enterprise Leaders Need to Know Before Salesforce’s Biggest Event - UC Today"
       },
       {
-        "title": "A Guide to Dreamforce 2026: What CX Leaders Need to Know About Salesforce AI - CX Today",
-        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1PTGFYcmhvX3VnRkF4YjNueE83SjJNMU9SU3FlRF85T3Zlei0xUjVjMXhaQmNEVFBiZEY5akRYa25INXlpWFN0NEg4Z3o5MDd3WEk4MmVOdXA1ZTE0VU9tUFUyY3VPU2VEU2hYZXdReHNQdVg3NWpKeWNfNA?oc=5",
-        "published": "2026-08-18T07:00:00+00:00",
-        "source": "CX Today",
-        "domain": "CX Today",
-        "origin": "google_news_rss",
-        "snippet": "A Guide to Dreamforce 2026: What CX Leaders Need to Know About Salesforce AI - CX Today"
-      },
-      {
-        "title": "Salesforce and Anthropic Announce Claudeforce: The #1 AI Meets the #1 AI CRM - Salesforce",
-        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPcklqU2RlQWZLY3c5dG9uaF83Z0xHSHNuQzNHSGZOTWw3c2wzSmtGTE45VzlWaF80R2tON1JfcFhFVC1walRFUmRyVDA1UkdoQ3pydUdKc1hPTm9SQTV0akl4aWV6NlVqR3ZtSEhCYjJlRTJTOTJYWHU2aDJIWjl0c21ReTJDRVlKb0pwRVE3MTJLdUdVeE9tSGJuQ2hoN3RBbFMtTGJrdw?oc=5",
-        "published": "2026-08-26T20:13:05+00:00",
-        "source": "Salesforce",
-        "domain": "Salesforce",
-        "origin": "google_news_rss",
-        "snippet": "Salesforce and Anthropic Announce Claudeforce: The #1 AI Meets the #1 AI CRM - Salesforce"
-      },
-      {
-        "title": "Dreamforce 2025: The Top Announcements, ft. Agentforce 360, The New Slack, & Apromore Acquisition - CX Today",
+        "title": "Dreamforce 2025: The Top Announcements, ft. Agentforce 360, The New Slack, & Apromore Acquisition - cxtoday.com",
         "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOZ0xkVzdtSzEtNXZGUl9hU3NnelZvUmJaaDdycWJNYjRvbkszTHM2QmlDOVJITmdJTmdWOWUtdHJZbTAxNmhTSGRrTktucWxMNkJoblJBUjNIVF9oVXJRYlJ4ZkZBMnN4VHVfUnVFb1V1bFJ2ckRjaXlFMTQ2bXhNRTd1VGMteWdLbDlFMFQ0djZtNldSQ0g1VGxrck1wZFhWUjVId3Y5VEFYVmd4OUsyNFdfeVNIMmJnMG9MMVNwUFd0eFBy?oc=5",
         "published": "2025-10-13T07:00:00+00:00",
-        "source": "CX Today",
-        "domain": "CX Today",
+        "source": "cxtoday.com",
+        "domain": "cxtoday.com",
         "origin": "google_news_rss",
-        "snippet": "Dreamforce 2025: The Top Announcements, ft. Agentforce 360, The New Slack, & Apromore Acquisition - CX Today"
+        "snippet": "Dreamforce 2025: The Top Announcements, ft. Agentforce 360, The New Slack, & Apromore Acquisition - cxtoday.com"
       },
       {
         "title": "Slack AI at Dreamforce: Introducing Native AI for Teams - Slack",
