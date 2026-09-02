@@ -1,0 +1,25 @@
+name: Alpha Intradia Tests
+
+on:
+  pull_request:
+    paths:
+      - "alpha_intraday/**"
+      - "tests/alpha_intraday/**"
+      - "config_alpha_intraday.yaml"
+      - "requirements-alpha.txt"
+      - ".github/workflows/alpha-tests.yml"
+  workflow_dispatch:
+
+jobs:
+  alpha-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt -r requirements-alpha.txt
+      - run: python -m py_compile alpha_intraday/*.py alpha_intraday/providers/*.py
+      - run: python -m alpha_intraday.cli validate-config
+      - run: python -m pytest tests/alpha_intraday

@@ -340,6 +340,7 @@ def render_premium_snapshot_dashboard(label, snapshot_path, output_path, descrip
     </div>
     <nav class="nav">
       <a class="btn primary" href="opportunities.html">Oportunidades Claras</a>
+      <a class="btn" href="alpha/">Alpha Intradia</a>
       <a class="btn" href="performance_dashboard.html">Rendimiento</a>
       <a class="btn" href="index.html">Resumen</a>
       <a class="btn" href="https://github.com/DiegoSR-git/market-signal-agent/actions">Actions</a>
@@ -412,6 +413,7 @@ def render_page(title, body):
     .btn.compact {{ min-height: 32px; padding: 6px 9px; font-size: 12px; }}
     .grid {{ display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }}
     .card {{ background: linear-gradient(180deg, rgba(255,255,255,.025), transparent), var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; min-width: 0; box-shadow: 0 14px 30px rgba(0,0,0,.18); }}
+    .card.danger {{ border-color: rgba(255,111,97,.55); background: rgba(255,111,97,.10); }}
     .span-3 {{ grid-column: span 3; }}
     .span-4 {{ grid-column: span 4; }}
     .span-5 {{ grid-column: span 5; }}
@@ -530,6 +532,7 @@ def render_home_dashboard(
     </div>
     <nav class="nav">
       <a class="btn primary" href="opportunities.html">Oportunidades Claras</a>
+      <a class="btn" href="alpha/">Alpha Intradia</a>
       <a class="btn" href="performance_dashboard.html">Rendimiento</a>
       <a class="btn" href="intraday_cashout_dashboard.html">Intradia</a>
       <a class="btn" href="dashboard.html">BTC</a>

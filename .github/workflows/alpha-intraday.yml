@@ -1,0 +1,69 @@
+name: Alpha Intradia V2
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Ejecutar aunque no sea ventana 09:25-10:20 ET"
+        required: false
+        default: "false"
+      telegram:
+        description: "Enviar resumen Telegram"
+        required: false
+        default: "false"
+  schedule:
+    - cron: "25 13 * * 1-5"
+    - cron: "25 14 * * 1-5"
+
+concurrency:
+  group: alpha-intradia-v2
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  alpha-intradia:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install -r requirements.txt -r requirements-alpha.txt
+
+      - name: Validate Alpha config
+        run: python -m alpha_intraday.cli --config config_alpha_intraday.yaml validate-config
+
+      - name: Run Alpha Intradia
+        env:
+          PYTHONUNBUFFERED: "1"
+          ALPHA_MODE: ${{ vars.ALPHA_MODE || 'development' }}
+          ALPHA_LIVE_SIGNALS: ${{ vars.ALPHA_LIVE_SIGNALS || 'false' }}
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_CHAT_IDS: ${{ vars.TELEGRAM_CHAT_IDS }}
+        run: |
+          args=""
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then args="$args --force"; fi
+          if [ "${{ github.event.inputs.telegram }}" = "true" ]; then args="$args --telegram"; fi
+          python -m alpha_intraday.cli --config config_alpha_intraday.yaml run-session $args
+
+      - name: Persist Alpha outputs
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add alpha_intraday_snapshot.json alpha_intraday_telegram_state.json alpha_intraday_journal.csv docs/alpha/index.html docs/alpha/snapshot.json docs/index.html || true
+          git diff --cached --quiet || git commit -m "Update alpha intradia dashboard [skip ci]"
+          git push || true
