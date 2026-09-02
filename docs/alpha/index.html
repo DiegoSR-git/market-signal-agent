@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alpha Intradia</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #080b10;
+      --panel: #101720;
+      --panel-2: #0d131b;
+      --panel-3: #151f2a;
+      --line: #263545;
+      --text: #eef4fb;
+      --muted: #9eacbb;
+      --green: #42d392;
+      --yellow: #f4c95d;
+      --red: #ff6f61;
+      --blue: #69b7ff;
+      --cyan: #57d6d1;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top left, rgba(87, 214, 209, .08), transparent 34rem), var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.45;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .shell { width: min(1440px, calc(100% - 40px)); margin: 0 auto; padding: 28px 0 44px; }
+    .topbar { display: flex; justify-content: space-between; gap: 18px; align-items: flex-start; margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+    h1 { margin: 0; font-size: clamp(30px, 4vw, 54px); letter-spacing: 0; line-height: 1.02; }
+    h2 { margin: 0 0 12px; font-size: 18px; }
+    h3 { margin: 0; font-size: 15px; color: var(--muted); font-weight: 650; }
+    .muted { color: var(--muted); }
+    .nav { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+    .btn { border: 1px solid var(--line); background: #172231; color: var(--text); padding: 9px 12px; border-radius: 8px; font-weight: 750; display: inline-flex; align-items: center; justify-content: center; min-height: 38px; }
+    .btn.primary { border-color: rgba(66, 211, 146, .45); background: rgba(66, 211, 146, .12); color: var(--green); }
+    .btn.compact { min-height: 32px; padding: 6px 9px; font-size: 12px; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,.025), transparent), var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; min-width: 0; box-shadow: 0 14px 30px rgba(0,0,0,.18); }
+    .card.danger { border-color: rgba(255,111,97,.55); background: rgba(255,111,97,.10); }
+    .span-3 { grid-column: span 3; }
+    .span-4 { grid-column: span 4; }
+    .span-5 { grid-column: span 5; }
+    .span-7 { grid-column: span 7; }
+    .span-8 { grid-column: span 8; }
+    .span-12 { grid-column: span 12; }
+    .metric { font-size: 34px; line-height: 1.05; font-weight: 800; margin: 8px 0 4px; }
+    .metric.small { font-size: 20px; }
+    .submetric { color: var(--muted); font-size: 13px; }
+    .intro { color: var(--muted); max-width: 920px; margin: 0 0 14px; }
+    .pill { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; padding: 4px 9px; font-size: 12px; font-weight: 800; color: var(--muted); }
+    .pill.hot { color: var(--green); border-color: rgba(61, 220, 151, .35); background: rgba(61, 220, 151, .08); }
+    .pill.watch { color: var(--yellow); border-color: rgba(247, 201, 72, .35); background: rgba(247, 201, 72, .08); }
+    .pill.quiet { color: var(--muted); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 10px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+    td { font-size: 14px; }
+    tr:last-child td { border-bottom: 0; }
+    .table-wrap { overflow-x: auto; }
+    .company { font-weight: 800; }
+    .reason { color: var(--muted); font-size: 12px; margin-top: 3px; max-width: 520px; }
+    .details { margin-top: 8px; color: var(--muted); }
+    .details summary { cursor: pointer; color: var(--blue); font-weight: 750; font-size: 12px; }
+    .detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 10px; padding: 12px; background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; }
+    .detail-grid strong { color: var(--text); display: block; margin-bottom: 4px; font-size: 12px; text-transform: uppercase; }
+    .detail-grid p { margin: 0; font-size: 13px; }
+    .status-line { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .bar { height: 8px; background: #1a2430; border-radius: 999px; overflow: hidden; margin-top: 10px; }
+    .bar > span { display: block; height: 100%; background: var(--green); width: var(--w); }
+    footer { color: var(--muted); font-size: 12px; margin-top: 20px; }
+    @media (max-width: 980px) {
+      .span-3, .span-4, .span-5, .span-7, .span-8 { grid-column: span 12; }
+      .topbar { display: block; }
+      .nav { justify-content: flex-start; margin-top: 16px; }
+      .detail-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+  <div class="topbar">
+    <div>
+      <h1>Alpha Intradia</h1>
+      <div class="muted">LONG-only sobre acciones ordinarias USA large cap. Sin ordenes reales.</div>
+    </div>
+    <nav class="nav">
+      <a class="btn primary" href="../index.html">Market Signal</a>
+      <a class="btn" href="../performance_dashboard.html">Rendimiento Legacy</a>
+      <a class="btn" href="https://github.com/DiegoSR-git/market-signal-agent/actions">Actions</a>
+    </nav>
+  </div>
+  <section class="grid">
+    <div class="card span-12 danger"><h2>MODO DESARROLLO</h2><p>DATOS IEX / COBERTURA PARCIAL. NO UTILIZAR COMO SENAL REAL DE TRADING.</p></div>
+    <div class="card span-3"><h3>Market Status</h3><div class="metric small" data-alpha-status>SELECTION_WINDOW</div><div class="submetric">2026-07-08T09:45:00-04:00</div></div>
+    <div class="card span-3"><h3>Data Feed</h3><div class="metric small">IEX</div><div class="submetric">Full coverage: false</div></div>
+    <div class="card span-3"><h3>Signals Allowed</h3><div class="metric small">NO</div><div class="submetric">DEVELOPMENT MODE: live_signal_allowed=false; PRODUCTION_READY=false: feed completo/proveedores reales no verificados</div></div>
+    <div class="card span-3"><h3>Regimen</h3><div class="metric small">WEAK_BULLISH</div><div class="submetric">SPY +0.3% · QQQ +0.5%</div></div>
+    <div class="card span-12"><h2>DATA HEALTH</h2><p class="intro">Alpaca: no configurado por defecto · Feed: iex · Coverage: PARTIAL · Supabase: opcional · SIGNALS ALLOWED: NO · Reason: DEVELOPMENT MODE</p></div>
+    <div class="card span-12"><h2>Best Operation</h2><p class='intro'>MEJOR OPERACION DEL DIA: NO OPERAR</p></div>
+    <div class="card span-12">
+      <h2>Candidatas Alpha</h2>
+      <p class="intro">Tabla de investigacion. Una candidata necesita datos frescos, filtros duros, setup condicional y B/R minimo para pasar.</p>
+      <div class="table-wrap"><table><thead><tr><th>Ticker</th><th>Score</th><th>Precio</th><th>Volumen</th><th>Analistas</th><th>Setup</th><th>Entrada</th><th>Bloqueos</th><th>Data timestamp</th></tr></thead><tbody><tr>
+      <td><div class="company">NVDA</div><div class="muted">NVIDIA Corp</div></td>
+      <td><span class="pill hot">91/100</span><div class="muted">LOW</div></td>
+      <td>128.13<div class="reason">Bid 128.10 / Ask 128.16 · Spread 0.047%</div></td>
+      <td>1.80%<div class="reason">Gap N/A · ATR usado 42.0%</div></td>
+      <td>48<div class="reason">Potencial mediano +24.9%</div></td>
+      <td>NO_SETUP<div class="reason">NO_TRADE · bloqueado por extension</div></td>
+      <td>sin entrada<div class="reason">Stop N/A · T1 N/A · T2 N/A · B/R N/A</div></td>
+      <td>OK</td>
+      <td>2026-07-08T09:44:59-04:00</td>
+    </tr><tr>
+      <td><div class="company">MSFT</div><div class="muted">Microsoft Corp</div></td>
+      <td><span class="pill hot">84/100</span><div class="muted">MEDIUM</div></td>
+      <td>420.04<div class="reason">Bid 420.00 / Ask 420.08 · Spread 0.019%</div></td>
+      <td>1.80%<div class="reason">Gap N/A · ATR usado 42.0%</div></td>
+      <td>40<div class="reason">Potencial mediano +21.4%</div></td>
+      <td>NO_SETUP<div class="reason">NO_TRADE · bloqueado por extension</div></td>
+      <td>sin entrada<div class="reason">Stop N/A · T1 N/A · T2 N/A · B/R N/A</div></td>
+      <td>OK</td>
+      <td>2026-07-08T09:44:59-04:00</td>
+    </tr></tbody></table></div>
+    </div>
+    <div class="card span-12"><h2>No-entry Scenario</h2><p class="intro">NO OPERAR si los datos son stale, falta bid/ask/VWAP/RVOL/analistas, hay contradiccion entre proveedores, el mercado esta fuera de ventana, el spread supera el maximo o el setup no confirma.</p></div>
+  </section>
+  <script src="app.js"></script>
+  <footer>Generado en 2026-07-08T09:45:00-04:00. Alpha Intradia es informativo, no ejecuta ordenes ni constituye asesoramiento personalizado.</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+mode: development
+live_signals: false
+
+data:
+  provider: mock
+  alpaca_feed: iex
+  full_market_coverage: false
+  quote_fresh_seconds: 5
+  trade_fresh_seconds: 300
+  bar_fresh_seconds: 120
+
+universe:
+  min_market_cap_usd: 10000000000
+  min_price_usd: 10
+  min_average_volume: 1000000
+  min_average_dollar_volume: 100000000
+  min_analysts: 8
+  allowed_exchanges:
+    - NYSE
+    - NASDAQ
+  allowed_security_types:
+    - COMMON_STOCK
+
+spread:
+  hard_max_spread_pct: 0.15
+  low_risk_preferred_max: 0.05
+  medium_risk_preferred_max: 0.10
+  high_risk_max: 0.15
+
+scoring:
+  minimum_general: 78
+  excellent: 88
+  low_risk_min: 85
+  medium_risk_min: 82
+  high_risk_min: 78
+
+risk:
+  account_currency: EUR
+  account_value: 5000
+  leverage: 1
+  allow_fractional_shares: false
+  min_risk_reward: 1.5
+  max_daily_risk_pct: 1.00
+  risk_pct:
+    LOW: 0.25
+    MEDIUM: 0.50
+    HIGH: 0.75
+
+setups:
+  max_rsi5: 78
+  ideal_rsi5_min: 55
+  ideal_rsi5_max: 72
+  max_distance_vwap_pct: 1.2
+  max_atr_consumed_pct: 75
+  vertical_move_max_pct_5m: 2.5
+  min_rvol: 1.5
+  breakout_buffer_pct: 0.05
+
+output:
+  snapshot: alpha_intraday_snapshot.json
+  journal: alpha_intraday_journal.csv
+  dashboard_dir: docs/alpha
