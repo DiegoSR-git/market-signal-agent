@@ -2,6 +2,7 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 
 from alpha_intraday.market_clock import classify_market_time, should_run_selection
+from alpha_intraday.market_calendar import StaticMarketCalendar
 from alpha_intraday.models import MarketStatus
 
 
@@ -21,3 +22,12 @@ def test_market_clock_uses_new_york_windows():
 def test_market_clock_holiday_weekend():
     saturday = datetime(2026, 7, 11, 9, 45, tzinfo=ZoneInfo("America/New_York"))
     assert classify_market_time(saturday).status == MarketStatus.HOLIDAY
+
+
+def test_market_calendar_early_close_and_dst():
+    calendar = StaticMarketCalendar()
+    assert calendar.day(datetime(2026, 11, 27, tzinfo=ZoneInfo("America/New_York")).date()).early_close is True
+    summer = datetime(2026, 7, 8, 9, 45, tzinfo=ZoneInfo("America/New_York"))
+    winter = datetime(2026, 1, 20, 9, 45, tzinfo=ZoneInfo("America/New_York"))
+    assert classify_market_time(summer).status == MarketStatus.SELECTION_WINDOW
+    assert classify_market_time(winter).status == MarketStatus.SELECTION_WINDOW

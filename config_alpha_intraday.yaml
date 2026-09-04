@@ -1,5 +1,6 @@
 mode: development
 live_signals: false
+telegram_enabled: false
 
 data:
   provider: mock
@@ -55,6 +56,9 @@ setups:
   vertical_move_max_pct_5m: 2.5
   min_rvol: 1.5
   breakout_buffer_pct: 0.05
+
+session:
+  cadence_seconds: 60
 
 output:
   snapshot: alpha_intraday_snapshot.json

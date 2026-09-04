@@ -25,7 +25,7 @@ permissions:
 jobs:
   alpha-intradia:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 80
     steps:
       - uses: actions/checkout@v4
         with:
@@ -53,6 +53,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TELEGRAM_CHAT_IDS: ${{ vars.TELEGRAM_CHAT_IDS }}
+          ALPHA_TELEGRAM_ENABLED: ${{ vars.ALPHA_TELEGRAM_ENABLED || 'false' }}
         run: |
           args=""
           if [ "${{ github.event.inputs.force }}" = "true" ]; then args="$args --force"; fi
@@ -64,6 +65,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add alpha_intraday_snapshot.json alpha_intraday_telegram_state.json alpha_intraday_journal.csv docs/alpha/index.html docs/alpha/snapshot.json docs/index.html || true
+          files=(alpha_intraday_snapshot.json alpha_intraday_telegram_state.json alpha_intraday_journal.csv docs/alpha/index.html docs/alpha/snapshot.json docs/alpha/app.js docs/alpha/styles.css docs/index.html)
+          existing=()
+          for file in "${files[@]}"; do
+            if [ -e "$file" ]; then existing+=("$file"); fi
+          done
+          if [ "${#existing[@]}" -gt 0 ]; then git add "${existing[@]}"; fi
           git diff --cached --quiet || git commit -m "Update alpha intradia dashboard [skip ci]"
-          git push || true
+          git push

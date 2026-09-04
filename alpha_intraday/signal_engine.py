@@ -7,21 +7,23 @@ from dashboard_utils import esc, fmt_pct, fmt_price, render_page, score_class
 
 from .config import live_signal_allowed
 from .models import AlphaSnapshot
+from .provider_factory import build_provider_bundle
 from .providers.mock import FixtureAnalystProvider, FixtureFXProvider, FixtureMacroProvider, FixtureNewsProvider, FixtureUniverseProvider, MockMarketDataProvider
+from .readiness import ProviderBundle
 from .scanner import build_snapshot
 
 
 def default_providers(config: dict, now=None) -> dict:
-    # Development defaults are synthetic fixtures. They keep tests and dashboard
-    # useful without implying that production data is connected.
-    return {
-        "market_data": MockMarketDataProvider(now=now),
-        "universe": FixtureUniverseProvider(),
-        "analysts": FixtureAnalystProvider(),
-        "news": FixtureNewsProvider(),
-        "macro": FixtureMacroProvider(),
-        "fx": FixtureFXProvider(),
-    }
+    bundle = ProviderBundle(
+        market_data=MockMarketDataProvider(now=now),
+        universe=FixtureUniverseProvider(),
+        analysts=FixtureAnalystProvider(),
+        news=FixtureNewsProvider(),
+        macro=FixtureMacroProvider(),
+        index_data=None,
+        fx=FixtureFXProvider(),
+    )
+    return bundle.as_dict()
 
 
 def render_text(snapshot: AlphaSnapshot) -> str:
@@ -98,6 +100,14 @@ def render_alpha_dashboard(snapshot: AlphaSnapshot, output_dir: str | Path) -> N
           <tr><td>B/R</td><td>{esc(round(best.setup.risk_reward1, 2) if best.setup.risk_reward1 else 'N/A')}</td></tr>
           <tr><td>Cancelacion</td><td>{esc(best.setup.invalidation)}</td></tr>
         </tbody></table>"""
+    health_html = "".join(
+        f"<tr><td>{esc(name)}</td><td><span class='pill {score_class(80 if status == 'GREEN' else 30)}'>{esc(status)}</span></td></tr>"
+        for name, status in snapshot.provider_health.items()
+    )
+    readiness_html = "".join(
+        f"<tr><td>{esc(check.name)}</td><td>{esc(check.status.value)}</td><td>{esc(check.reason)}</td></tr>"
+        for check in snapshot.production_readiness.checks
+    )
     body = f"""<div class="shell">
   <div class="topbar">
     <div>
@@ -116,7 +126,8 @@ def render_alpha_dashboard(snapshot: AlphaSnapshot, output_dir: str | Path) -> N
     <div class="card span-3"><h3>Data Feed</h3><div class="metric small">{esc(snapshot.data_feed.upper())}</div><div class="submetric">Full coverage: false</div></div>
     <div class="card span-3"><h3>Signals Allowed</h3><div class="metric small">{'SI' if snapshot.signal_allowed else 'NO'}</div><div class="submetric">{esc('; '.join(snapshot.blocking_reasons[:2]))}</div></div>
     <div class="card span-3"><h3>Regimen</h3><div class="metric small">{esc(snapshot.market_regime.regime.value)}</div><div class="submetric">SPY {fmt_pct(snapshot.market_regime.spy_change_pct)} · QQQ {fmt_pct(snapshot.market_regime.qqq_change_pct)}</div></div>
-    <div class="card span-12"><h2>DATA HEALTH</h2><p class="intro">Alpaca: no configurado por defecto · Feed: {esc(snapshot.data_feed)} · Coverage: PARTIAL · Supabase: opcional · SIGNALS ALLOWED: {'YES' if live_signal_allowed({'mode': snapshot.data_mode.value, 'live_signals': False}, snapshot.signal_allowed, False) else 'NO'} · Reason: DEVELOPMENT MODE</p></div>
+    <div class="card span-5"><h2>DATA HEALTH</h2><div class="table-wrap"><table><tbody>{health_html}</tbody></table></div></div>
+    <div class="card span-7"><h2>PRODUCTION READINESS</h2><p class="intro">Production ready: {'SI' if snapshot.production_readiness.production_ready else 'NO'} · SIGNALS ALLOWED: {'SI' if snapshot.signal_allowed else 'NO'}</p><div class="table-wrap"><table><thead><tr><th>Check</th><th>Estado</th><th>Razon</th></tr></thead><tbody>{readiness_html}</tbody></table></div></div>
     <div class="card span-12"><h2>Best Operation</h2>{best_html}</div>
     <div class="card span-12">
       <h2>Candidatas Alpha</h2>
@@ -133,7 +144,7 @@ def render_alpha_dashboard(snapshot: AlphaSnapshot, output_dir: str | Path) -> N
 
 
 def run_alpha(config: dict, providers: dict | None = None, now=None) -> AlphaSnapshot:
-    providers = providers or default_providers(config, now=now)
+    providers = providers or build_provider_bundle(config, now=now)
     snapshot = build_snapshot(providers, config, now=now)
     Path(config.get("output", {}).get("snapshot", "alpha_intraday_snapshot.json")).write_text(
         json.dumps(snapshot.to_dict(), ensure_ascii=False, indent=2),

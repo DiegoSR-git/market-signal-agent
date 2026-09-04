@@ -48,6 +48,14 @@
 - Supabase schema con RLS.
 - Dashboard Alpha en `docs/alpha/`.
 - Replay con fixture.
+- ProviderFactory `mock`/`alpaca`.
+- ProductionReadinessReport granular.
+- Alpaca bars oficial con retries, 403 entitlement, 429 y timeouts.
+- Scanner sin datos sinteticos hardcodeados.
+- OR/VWAP regular excluyen premarket.
+- Indicadores 5m sobre dataframe 5m resampleado.
+- Session runner duradero 09:25-10:20 ET con clock/sleeper inyectable.
+- Provider health real: `GREEN`, `DEGRADED`, `BLOCKED`, `NOT_CONFIGURED`, `FIXTURE`.
 
 ## 5. Tests ejecutados
 
@@ -57,24 +65,25 @@
 .venv/bin/python -m alpha_intraday.cli validate-config
 .venv/bin/python -m alpha_intraday.cli health
 .venv/bin/python -m alpha_intraday.cli replay --fixture tests/alpha_intraday/fixtures/session_sample/
+.venv/bin/python -m alpha_intraday.cli run-session --now 2026-07-08T09:25:00-04:00 --cadence-seconds 900 --max-iterations 3
 ```
 
-Ademas se ejecutaron 17 tests Alpha mediante runner local porque la venv no tenia `pytest` instalado.
+Ademas se ejecutaron 31 tests Alpha mediante runner local porque la venv no tenia `pytest` instalado.
 
 ## 6. Tests pasados/fallidos
 
-- Pasados: legacy ligero, py_compile, config, health, replay, JSON, 17 tests Alpha.
+- Pasados: legacy ligero, py_compile, config, health, replay, run-session fake, JSON, 31 tests Alpha.
 - No ejecutado con pytest local: falta `pytest` en la venv local. El workflow `Alpha Intradia Tests` instala `requirements-alpha.txt`.
 
 ## 7. Servicios externos integrados
 
 - Telegram reutiliza el adapter legacy.
-- Alpaca tiene adapter inicial para latest quote con credenciales.
+- Alpaca tiene adapter inicial para latest quote y barras intradia con credenciales.
 - Supabase tiene schema/RLS, adapter backend pendiente.
 
 ## 8. Servicios aun no configurados
 
-- Alpaca bars/trades completos.
+- Alpaca latest trade separado pendiente.
 - Finnhub/analyst provider real.
 - News provider real.
 - Macro/index providers reales.
@@ -97,6 +106,7 @@ TELEGRAM_CHAT_ID
 ```text
 ALPHA_MODE=development
 ALPHA_LIVE_SIGNALS=false
+ALPHA_TELEGRAM_ENABLED=false
 ALPACA_DATA_FEED=iex
 SUPABASE_URL=
 TELEGRAM_CHAT_IDS=
@@ -117,6 +127,7 @@ TELEGRAM_CHAT_IDS=
 ## 13. Que esta en development
 
 - Datos fixture por defecto.
+- Provider health marca fixtures como `FIXTURE`.
 - `LIVE_SIGNAL_ALLOWED = FALSE`.
 - Dashboard muestra banner de desarrollo.
 - Telegram marca DEVELOPMENT.
@@ -124,7 +135,7 @@ TELEGRAM_CHAT_IDS=
 ## 14. Que impide production-ready
 
 - Feed US completo no verificado.
-- Intraday bars/RVOL real no verificados.
+- Latest trade/RVOL real no verificados.
 - Market cap/analyst/news providers reales no configurados.
 - VIX/US10Y/indices reales no configurados.
 - EURUSD real no configurado.

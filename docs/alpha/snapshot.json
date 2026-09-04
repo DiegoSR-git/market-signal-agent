@@ -1,15 +1,89 @@
 {
-  "analysis_timestamp": "2026-07-08T09:45:00-04:00",
+  "analysis_timestamp": "2026-07-08T09:55:00-04:00",
   "timezone": "America/New_York",
   "market_status": "SELECTION_WINDOW",
   "data_mode": "development",
   "data_feed": "iex",
   "provider_health": {
-    "market_data": "GREEN",
-    "universe": "GREEN",
-    "analysts": "GREEN",
-    "news": "GREEN",
-    "macro": "GREEN"
+    "market_data": "FIXTURE",
+    "universe": "FIXTURE",
+    "analysts": "FIXTURE",
+    "news": "FIXTURE",
+    "macro": "FIXTURE",
+    "index_data": "NOT_CONFIGURED",
+    "fx": "FIXTURE",
+    "storage": "NOT_CONFIGURED"
+  },
+  "production_readiness": {
+    "production_ready": false,
+    "checks": [
+      {
+        "name": "market_data_provider_real",
+        "status": "FAIL",
+        "critical": true,
+        "reason": "FIXTURE"
+      },
+      {
+        "name": "feed_correct",
+        "status": "FAIL",
+        "critical": true,
+        "reason": "feed=iex; SIP requerido para produccion"
+      },
+      {
+        "name": "quote_available",
+        "status": "PASS",
+        "critical": true,
+        "reason": "quote verificada"
+      },
+      {
+        "name": "bars_available",
+        "status": "PASS",
+        "critical": true,
+        "reason": "bars verificadas"
+      },
+      {
+        "name": "universe_provider_real",
+        "status": "FAIL",
+        "critical": true,
+        "reason": "FIXTURE"
+      },
+      {
+        "name": "analysts_provider_real",
+        "status": "FAIL",
+        "critical": true,
+        "reason": "FIXTURE"
+      },
+      {
+        "name": "macro_critical",
+        "status": "FAIL",
+        "critical": true,
+        "reason": "FIXTURE"
+      },
+      {
+        "name": "fx",
+        "status": "FAIL",
+        "critical": true,
+        "reason": "FIXTURE"
+      },
+      {
+        "name": "absence_of_fixtures",
+        "status": "FAIL",
+        "critical": true,
+        "reason": "health={'market_data': 'FIXTURE', 'universe': 'FIXTURE', 'analysts': 'FIXTURE', 'news': 'FIXTURE', 'macro': 'FIXTURE', 'index_data': 'NOT_CONFIGURED', 'fx': 'FIXTURE', 'storage': 'NOT_CONFIGURED'}"
+      },
+      {
+        "name": "freshness",
+        "status": "PASS",
+        "critical": true,
+        "reason": "freshness ok"
+      },
+      {
+        "name": "quality_gate",
+        "status": "FAIL",
+        "critical": true,
+        "reason": "quality gate bloqueado"
+      }
+    ]
   },
   "market_regime": {
     "regime": "WEAK_BULLISH",
@@ -33,7 +107,7 @@
         "ask": 128.16,
         "bid_size": 100,
         "ask_size": 100,
-        "timestamp": "2026-07-08T09:44:59-04:00",
+        "timestamp": "2026-07-08T09:54:59-04:00",
         "provider": "mock",
         "feed": "fixture"
       },
@@ -50,7 +124,7 @@
         "active": true,
         "tradable": true,
         "source": "fixture",
-        "updated_at": "2026-09-02T11:12:41.937075-04:00"
+        "updated_at": "2026-09-04T03:51:21.872271-04:00"
       },
       "analysts": {
         "symbol": "NVDA",
@@ -78,17 +152,20 @@
       },
       "metrics": {
         "symbol": "NVDA",
+        "latest_trade": null,
+        "latest_trade_available": false,
+        "quote_mid": 128.13,
         "price": 128.13,
         "bid": 128.1,
         "ask": 128.16,
         "spread_pct": 0.04682744088035766,
-        "vwap": 126.9219204699503,
+        "vwap": 129.0623029366306,
         "vwap_slope": "rising",
-        "price_above_vwap": true,
-        "ema9_5m": 127.65000022987437,
-        "ema20_5m": 127.48577690680756,
+        "price_above_vwap": false,
+        "ema9_5m": 129.06576,
+        "ema20_5m": 128.94988723834203,
         "rsi5": 100.0,
-        "macd5_hist": 0.001859660927336776,
+        "macd5_hist": 0.060495352209613884,
         "hh_hl": true,
         "relative_strength_spy": 0.4,
         "relative_strength_qqq": 0.3,
@@ -102,49 +179,78 @@
         "daily_history_available": true,
         "bars_1m_available": true,
         "bars_5m_available": true,
-        "bars_15m_available": true,
-        "ema20": 125.56739999999999,
-        "sma50": 121.72349999999999,
-        "sma200": 115.317,
+        "bars_15m_available": false,
+        "bars_1m_quality": {
+          "ok": true,
+          "timeframe": "1m",
+          "last_bar_timestamp": "2026-07-08T09:55:00-04:00",
+          "bar_age_seconds": 0.0,
+          "bars_count": 26,
+          "bars_complete": true,
+          "blocking_reasons": []
+        },
+        "bars_5m_quality": {
+          "ok": true,
+          "timeframe": "5m",
+          "last_bar_timestamp": "2026-07-08T09:50:00-04:00",
+          "bar_age_seconds": 300.0,
+          "bars_count": 5,
+          "bars_complete": true,
+          "blocking_reasons": []
+        },
+        "bars_15m_quality": {
+          "ok": false,
+          "timeframe": "15m",
+          "last_bar_timestamp": "2026-07-08T09:30:00-04:00",
+          "bar_age_seconds": 1500.0,
+          "bars_count": 1,
+          "bars_complete": false,
+          "blocking_reasons": [
+            "barras stale: 1500.0s"
+          ]
+        },
+        "ema20": 125.0,
+        "sma50": 120.0,
+        "sma200": 110.0,
         "rsi_daily": 62,
         "macd_daily_hist": 0.2,
         "distance_to_resistance_pct": 2.5,
-        "distance_from_vwap_pct": 0.9518289083371823,
+        "distance_from_vwap_pct": -0.7223665744507612,
         "atr_consumed_pct": 42,
-        "setup_valid": true,
-        "breakout_valid": true,
+        "setup_valid": false,
+        "breakout_valid": false,
         "vwap_reclaim_valid": false,
         "controlled_pullback_valid": false,
         "trigger": "superar OR5/premarket con volumen en NVDA",
-        "entry": 128.26,
-        "entry_zone": "128.26 USD +/- buffer configurado",
-        "stop": 126.98,
-        "target1": 130.31,
-        "target2": 131.08,
+        "entry": 129.07,
+        "entry_zone": "129.07 USD +/- buffer configurado",
+        "stop": 127.78,
+        "target1": 131.13,
+        "target2": 131.91,
         "activation_conditions": [
           "spread valido",
           "volumen confirma",
           "precio mantiene VWAP",
           "no perseguir vela vertical"
         ],
-        "invalidation": "perder 126.98 USD o VWAP con volumen",
+        "invalidation": "perder 127.78 USD o VWAP con volumen",
         "spy_change_pct": 0.35,
         "qqq_change_pct": 0.52,
         "binary_event_risk": false,
         "or5": {
-          "high": 126.24000000000001,
-          "low": 125.82,
+          "high": 128.94,
+          "low": 128.51999999999998,
           "complete": true
         },
         "or15": {
-          "high": 126.54,
-          "low": 125.82,
+          "high": 129.24,
+          "low": 128.51999999999998,
           "complete": true
         }
       },
       "data_quality": {
-        "ok": true,
-        "signal_allowed": true,
+        "ok": false,
+        "signal_allowed": false,
         "quote_quality": {
           "ok": true,
           "status": "OK",
@@ -159,11 +265,13 @@
           "provider": "mock",
           "feed": "fixture"
         },
-        "blocking_reasons": [],
-        "standard_output": "OK"
+        "blocking_reasons": [
+          "bars_15m_available no disponible o no fiable"
+        ],
+        "standard_output": "NO OPERAR - datos insuficientemente actuales o inconsistentes."
       },
       "score": {
-        "total": 91,
+        "total": 81,
         "components": [
           {
             "name": "daily_technical",
@@ -181,18 +289,17 @@
           },
           {
             "name": "intraday_technical",
-            "score": 26,
+            "score": 16,
             "max_score": 30,
             "reasons_positive": [
-              "precio sobre VWAP ascendente",
               "EMA9 5m > EMA20 5m",
               "MACD5 positivo",
               "estructura HH/HL",
               "fuerza relativa vs SPY/QQQ",
-              "setup tecnico validado",
               "recorrido suficiente"
             ],
             "reasons_negative": [
+              "VWAP no confirma",
               "RSI5 persecucion"
             ],
             "missing_data": []
@@ -248,9 +355,11 @@
             "missing_data": []
           }
         ],
-        "risk_category": "LOW",
-        "candidate_valid": true,
-        "blocking_reasons": []
+        "risk_category": "HIGH",
+        "candidate_valid": false,
+        "blocking_reasons": [
+          "bars_15m_available no disponible o no fiable"
+        ]
       },
       "setup": {
         "setup_type": "NO_SETUP",
@@ -271,11 +380,11 @@
       },
       "risk": {
         "account_currency": "EUR",
-        "risk_category": "LOW",
-        "risk_eur": 12.5,
-        "risk_usd": 13.5,
-        "shares": 10,
-        "notional_usd": 1282.6,
+        "risk_category": "HIGH",
+        "risk_eur": 37.5,
+        "risk_usd": 40.5,
+        "shares": 31,
+        "notional_usd": 4001.1699999999996,
         "max_daily_risk_eur": 50.0,
         "position_size_available": true,
         "blocking_reasons": []
@@ -291,7 +400,7 @@
         "ask": 420.08,
         "bid_size": 100,
         "ask_size": 100,
-        "timestamp": "2026-07-08T09:44:59-04:00",
+        "timestamp": "2026-07-08T09:54:59-04:00",
         "provider": "mock",
         "feed": "fixture"
       },
@@ -308,7 +417,7 @@
         "active": true,
         "tradable": true,
         "source": "fixture",
-        "updated_at": "2026-09-02T11:12:41.937075-04:00"
+        "updated_at": "2026-09-04T03:51:21.872271-04:00"
       },
       "analysts": {
         "symbol": "MSFT",
@@ -336,17 +445,20 @@
       },
       "metrics": {
         "symbol": "MSFT",
+        "latest_trade": null,
+        "latest_trade_available": false,
+        "quote_mid": 420.03999999999996,
         "price": 420.03999999999996,
         "bid": 420.0,
         "ask": 420.08,
         "spread_pct": 0.019045805161409413,
-        "vwap": 100.9219204699503,
+        "vwap": 103.0623029366306,
         "vwap_slope": "rising",
         "price_above_vwap": true,
-        "ema9_5m": 101.65000022987437,
-        "ema20_5m": 101.48577690680757,
+        "ema9_5m": 103.06576,
+        "ema20_5m": 102.94988723834204,
         "rsi5": 100.0,
-        "macd5_hist": 0.001859660927348572,
+        "macd5_hist": 0.060495352209601054,
         "hh_hl": true,
         "relative_strength_spy": 0.4,
         "relative_strength_qqq": 0.3,
@@ -360,14 +472,43 @@
         "daily_history_available": true,
         "bars_1m_available": true,
         "bars_5m_available": true,
-        "bars_15m_available": true,
-        "ema20": 411.63919999999996,
-        "sma50": 399.03799999999995,
-        "sma200": 378.036,
+        "bars_15m_available": false,
+        "bars_1m_quality": {
+          "ok": true,
+          "timeframe": "1m",
+          "last_bar_timestamp": "2026-07-08T09:55:00-04:00",
+          "bar_age_seconds": 0.0,
+          "bars_count": 26,
+          "bars_complete": true,
+          "blocking_reasons": []
+        },
+        "bars_5m_quality": {
+          "ok": true,
+          "timeframe": "5m",
+          "last_bar_timestamp": "2026-07-08T09:50:00-04:00",
+          "bar_age_seconds": 300.0,
+          "bars_count": 5,
+          "bars_complete": true,
+          "blocking_reasons": []
+        },
+        "bars_15m_quality": {
+          "ok": false,
+          "timeframe": "15m",
+          "last_bar_timestamp": "2026-07-08T09:30:00-04:00",
+          "bar_age_seconds": 1500.0,
+          "bars_count": 1,
+          "bars_complete": false,
+          "blocking_reasons": [
+            "barras stale: 1500.0s"
+          ]
+        },
+        "ema20": 98.0,
+        "sma50": 95.0,
+        "sma200": 90.0,
         "rsi_daily": 62,
         "macd_daily_hist": 0.2,
         "distance_to_resistance_pct": 2.5,
-        "distance_from_vwap_pct": 316.20293990052215,
+        "distance_from_vwap_pct": 307.5592995998429,
         "atr_consumed_pct": 42,
         "setup_valid": true,
         "breakout_valid": true,
@@ -376,33 +517,33 @@
         "trigger": "superar OR5/premarket con volumen en MSFT",
         "entry": 420.46,
         "entry_zone": "420.46 USD +/- buffer configurado",
-        "stop": 416.26,
-        "target1": 427.18,
-        "target2": 429.7,
+        "stop": 102.55,
+        "target1": 929.12,
+        "target2": 1119.86,
         "activation_conditions": [
           "spread valido",
           "volumen confirma",
           "precio mantiene VWAP",
           "no perseguir vela vertical"
         ],
-        "invalidation": "perder 416.26 USD o VWAP con volumen",
+        "invalidation": "perder 102.55 USD o VWAP con volumen",
         "spy_change_pct": 0.35,
         "qqq_change_pct": 0.52,
         "binary_event_risk": false,
         "or5": {
-          "high": 100.24000000000001,
-          "low": 99.82,
+          "high": 102.94,
+          "low": 102.52,
           "complete": true
         },
         "or15": {
-          "high": 100.54,
-          "low": 99.82,
+          "high": 103.24000000000001,
+          "low": 102.52,
           "complete": true
         }
       },
       "data_quality": {
-        "ok": true,
-        "signal_allowed": true,
+        "ok": false,
+        "signal_allowed": false,
         "quote_quality": {
           "ok": true,
           "status": "OK",
@@ -417,8 +558,10 @@
           "provider": "mock",
           "feed": "fixture"
         },
-        "blocking_reasons": [],
-        "standard_output": "OK"
+        "blocking_reasons": [
+          "bars_15m_available no disponible o no fiable"
+        ],
+        "standard_output": "NO OPERAR - datos insuficientemente actuales o inconsistentes."
       },
       "score": {
         "total": 84.0,
@@ -507,8 +650,10 @@
           }
         ],
         "risk_category": "MEDIUM",
-        "candidate_valid": true,
-        "blocking_reasons": []
+        "candidate_valid": false,
+        "blocking_reasons": [
+          "bars_15m_available no disponible o no fiable"
+        ]
       },
       "setup": {
         "setup_type": "NO_SETUP",
@@ -533,11 +678,14 @@
         "risk_category": "MEDIUM",
         "risk_eur": 25.0,
         "risk_usd": 27.0,
-        "shares": 6,
-        "notional_usd": 2522.7599999999998,
+        "shares": 0,
+        "notional_usd": 0.0,
         "max_daily_risk_eur": 50.0,
-        "position_size_available": true,
-        "blocking_reasons": []
+        "position_size_available": false,
+        "blocking_reasons": [
+          "tamano inferior a 1 accion",
+          "notional excede cuenta sin apalancamiento"
+        ]
       }
     }
   ],
@@ -545,7 +693,11 @@
   "signal_allowed": false,
   "blocking_reasons": [
     "DEVELOPMENT MODE: live_signal_allowed=false",
-    "PRODUCTION_READY=false: feed completo/proveedores reales no verificados",
+    "PRODUCTION_READY=false",
+    "market_data_provider_real: FAIL - FIXTURE",
+    "feed_correct: FAIL - feed=iex; SIP requerido para produccion",
+    "universe_provider_real: FAIL - FIXTURE",
+    "analysts_provider_real: FAIL - FIXTURE",
     "1 simbolos rechazados por filtros duros"
   ]
 }

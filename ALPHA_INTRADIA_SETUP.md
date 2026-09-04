@@ -46,6 +46,7 @@ Añade:
 ```text
 ALPHA_MODE=development
 ALPHA_LIVE_SIGNALS=false
+ALPHA_TELEGRAM_ENABLED=false
 ALPACA_DATA_FEED=iex
 TELEGRAM_CHAT_IDS=123,456
 SUPABASE_URL=
@@ -102,6 +103,7 @@ python -m alpha_intraday.cli validate-config
 python -m alpha_intraday.cli health
 python -m alpha_intraday.cli snapshot --dry-run
 python -m alpha_intraday.cli replay --fixture tests/alpha_intraday/fixtures/session_sample/
+python -m alpha_intraday.cli run-session --now 2026-07-08T09:25:00-04:00 --cadence-seconds 900 --max-iterations 3
 ```
 
 ## 9. Coste

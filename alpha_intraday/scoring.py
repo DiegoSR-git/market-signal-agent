@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Any
 
 from .models import AlphaScore, CatalystSnapshot, MarketRegimeSnapshot, Regime, RiskCategory, ScoreComponent
+from .risk import classify_risk
 
 
 def clamp(value: float, maximum: float) -> float:
@@ -188,14 +189,10 @@ def build_score(metrics: dict[str, Any], analysts: dict[str, Any] | None, cataly
         score_market_sector(regime, metrics),
     ]
     total = min(100.0, sum(c.score for c in comps))
-    risk = RiskCategory.NONE
-    if total >= config.get("scoring", {}).get("low_risk_min", 85):
-        risk = RiskCategory.LOW
-    elif total >= config.get("scoring", {}).get("medium_risk_min", 82):
-        risk = RiskCategory.MEDIUM
-    elif total >= config.get("scoring", {}).get("high_risk_min", 78):
-        risk = RiskCategory.HIGH
+    risk = classify_risk(total, metrics, config)
     blocking = []
     if total < config.get("scoring", {}).get("minimum_general", 78):
         blocking.append("score < 78")
+    if risk == RiskCategory.NONE:
+        blocking.append("sin categoria de riesgo operable")
     return AlphaScore(round(total, 2), comps, risk, not blocking, blocking)

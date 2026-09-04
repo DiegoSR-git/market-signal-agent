@@ -3,6 +3,9 @@ from __future__ import annotations
 from datetime import datetime
 from typing import Any
 
+import pandas as pd
+
+from .indicators import regular_session_df
 from .models import MarketStatus, Quote
 
 
@@ -67,7 +70,7 @@ def evaluate_alpha_quality(
     quote_quality = evaluate_quote_quality(quote, now, config)
     blocking = list(quote_quality.get("blocking_reasons", []))
     required_fields = [
-        "price",
+        "quote_mid",
         "vwap",
         "rvol",
         "rvol_reliable",
@@ -92,6 +95,58 @@ def evaluate_alpha_quality(
         "quote_quality": quote_quality,
         "blocking_reasons": blocking,
         "standard_output": "OK" if not blocking else "NO OPERAR - datos insuficientemente actuales o inconsistentes.",
+    }
+
+
+def evaluate_bars_quality(df: pd.DataFrame, now: datetime, timeframe: str, min_bars: int, max_age_seconds: float, regular_session_only: bool = True) -> dict[str, Any]:
+    blocking: list[str] = []
+    if df is None or df.empty:
+        return {
+            "ok": False,
+            "timeframe": timeframe,
+            "last_bar_timestamp": None,
+            "bar_age_seconds": None,
+            "bars_count": 0,
+            "bars_complete": False,
+            "blocking_reasons": ["barras ausentes"],
+        }
+    working = regular_session_df(df, now=now) if regular_session_only else df
+    if working.empty:
+        blocking.append("sin barras de sesion regular")
+        return {
+            "ok": False,
+            "timeframe": timeframe,
+            "last_bar_timestamp": None,
+            "bar_age_seconds": None,
+            "bars_count": 0,
+            "bars_complete": False,
+            "blocking_reasons": blocking,
+        }
+    future = working[working.index > now.astimezone(working.index.tz)]
+    if not future.empty:
+        blocking.append("barras futuras detectadas")
+    count = len(working)
+    if count < min_bars:
+        blocking.append(f"barras insuficientes {count}/{min_bars}")
+    last_ts = working.index[-1] if count else None
+    age = age_seconds(last_ts.to_pydatetime() if last_ts is not None else None, now)
+    if age is None:
+        blocking.append("timestamp ultima barra ausente")
+    elif age > max_age_seconds:
+        blocking.append(f"barras stale: {age:.1f}s")
+    if count >= 2:
+        deltas = working.index.to_series().diff().dropna().dt.total_seconds()
+        expected = {"1m": 60, "5m": 300, "15m": 900}.get(timeframe)
+        if expected and not deltas.tail(min(10, len(deltas))).between(expected * 0.8, expected * 1.5).all():
+            blocking.append("continuidad de barras irregular")
+    return {
+        "ok": not blocking,
+        "timeframe": timeframe,
+        "last_bar_timestamp": last_ts.isoformat() if last_ts is not None else None,
+        "bar_age_seconds": age,
+        "bars_count": count,
+        "bars_complete": not blocking,
+        "blocking_reasons": blocking,
     }
 
 

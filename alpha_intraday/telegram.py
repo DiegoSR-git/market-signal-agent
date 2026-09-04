@@ -30,6 +30,7 @@ def save_state(state: dict) -> None:
 
 def alpha_message(snapshot) -> str:
     mode = snapshot.data_mode.value.upper()
+    footer = "DEVELOPMENT - no senal real." if mode == "DEVELOPMENT" else "Informativo - sin ejecucion de broker."
     best = snapshot.best_operation
     if not best:
         return (
@@ -37,7 +38,7 @@ def alpha_message(snapshot) -> str:
             f"Veredicto: <b>NO OPERAR</b>\n"
             f"Mercado: {snapshot.market_status.value}\n"
             f"Motivos: {'; '.join(snapshot.blocking_reasons[:5])}\n\n"
-            "DEVELOPMENT - no senal real."
+            f"{footer}"
         )
     return (
         f"<b>ALPHA INTRADIA - {mode}</b>\n"
@@ -50,7 +51,7 @@ def alpha_message(snapshot) -> str:
         f"T1: {best.setup.target1}\n"
         f"B/R: {best.setup.risk_reward1}\n"
         f"Datos: {best.quote.provider if best.quote else 'N/A'} {best.quote.feed if best.quote else ''}\n\n"
-        "DEVELOPMENT - no senal real."
+        f"{footer}"
     )
 
 

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import os
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
 import requests
@@ -14,8 +14,7 @@ from alpha_intraday.providers.base import EntitlementError, ProviderError, RateL
 class AlpacaMarketDataProvider:
     """Minimal Alpaca data adapter.
 
-    Uses the official stock latest quote endpoint:
-    https://data.alpaca.markets/v2/stocks/{symbol}/quotes/latest
+    Uses official Alpaca market-data endpoints for latest quote and bars.
     """
 
     name = "alpaca"
@@ -68,4 +67,35 @@ class AlpacaMarketDataProvider:
         return Quote(symbol, raw.get("bp"), raw.get("ap"), raw.get("bs"), raw.get("as"), ts, self.name, self.feed)
 
     def intraday_bars(self, symbol: str, timeframe: str = "1Min", limit: int = 120) -> list[Bar]:
-        raise ProviderError("Historical/intraday bars adapter pendiente de configurar con endpoint verificado")
+        now = datetime.now(ZoneInfo("UTC"))
+        start = now - timedelta(minutes=max(limit * 2, 240))
+        data = self._get(
+            f"/v2/stocks/{symbol}/bars",
+            {
+                "timeframe": timeframe,
+                "start": start.isoformat().replace("+00:00", "Z"),
+                "end": now.isoformat().replace("+00:00", "Z"),
+                "limit": limit,
+                "feed": self.feed,
+                "sort": "asc",
+            },
+        )
+        raw_bars = data.get("bars")
+        if raw_bars is None:
+            raise ProviderError("Alpaca bars response missing 'bars'")
+        bars: list[Bar] = []
+        for raw in raw_bars:
+            try:
+                bars.append(
+                    Bar(
+                        timestamp=datetime.fromisoformat(raw["t"].replace("Z", "+00:00")).astimezone(ZoneInfo("America/New_York")),
+                        open=float(raw["o"]),
+                        high=float(raw["h"]),
+                        low=float(raw["l"]),
+                        close=float(raw["c"]),
+                        volume=float(raw["v"]),
+                    )
+                )
+            except KeyError as ex:
+                raise ProviderError(f"Alpaca bars response missing field {ex}") from ex
+        return bars

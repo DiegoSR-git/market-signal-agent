@@ -25,3 +25,10 @@ Fuente Alpaca verificada para quote:
 
 - `GET https://data.alpaca.markets/v2/stocks/{symbol}/quotes/latest`
 - Campos usados: `quote.t`, `quote.bp`, `quote.ap`, `quote.bs`, `quote.as`.
+
+Fuente Alpaca verificada para barras:
+
+- `GET https://data.alpaca.markets/v2/stocks/{symbol}/bars`
+- Params usados: `timeframe`, `start`, `end`, `limit`, `feed`, `sort`.
+- Campos usados por barra: `t`, `o`, `h`, `l`, `c`, `v`.
+- No hay fallback silencioso de SIP a IEX. Un 403 se trata como problema de entitlement.

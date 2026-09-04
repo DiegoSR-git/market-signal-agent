@@ -54,6 +54,14 @@ class HealthStatus(str, Enum):
     GREEN = "GREEN"
     DEGRADED = "DEGRADED"
     BLOCKED = "BLOCKED"
+    NOT_CONFIGURED = "NOT_CONFIGURED"
+    FIXTURE = "FIXTURE"
+
+
+class ReadinessStatus(str, Enum):
+    PASS = "PASS"
+    FAIL = "FAIL"
+    NOT_CONFIGURED = "NOT_CONFIGURED"
 
 
 class Regime(str, Enum):
@@ -154,6 +162,27 @@ class MarketRegimeSnapshot:
 
 
 @dataclass(frozen=True)
+class ReadinessCheck:
+    name: str
+    status: ReadinessStatus
+    critical: bool
+    reason: str
+
+
+@dataclass(frozen=True)
+class ProductionReadinessReport:
+    production_ready: bool
+    checks: list[ReadinessCheck]
+
+    def blocking_reasons(self) -> list[str]:
+        return [
+            f"{check.name}: {check.status.value} - {check.reason}"
+            for check in self.checks
+            if check.critical and check.status != ReadinessStatus.PASS
+        ]
+
+
+@dataclass(frozen=True)
 class ScoreComponent:
     name: str
     score: float
@@ -226,6 +255,7 @@ class AlphaSnapshot:
     data_mode: AlphaMode
     data_feed: str
     provider_health: dict[str, str]
+    production_readiness: ProductionReadinessReport
     market_regime: MarketRegimeSnapshot
     candidates: list[AlphaCandidate]
     best_operation: AlphaCandidate | None

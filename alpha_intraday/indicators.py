@@ -3,6 +3,8 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
+from .market_clock import NY_TZ
+
 
 def sma(series, window: int):
     return pd.Series(series, dtype="float64").rolling(window).mean()
@@ -45,6 +47,25 @@ def vwap(df: pd.DataFrame):
     return (typical * volume).cumsum() / volume.cumsum()
 
 
+def regular_session_df(df: pd.DataFrame, now=None):
+    if df.empty:
+        return df
+    out = df.copy()
+    if out.index.tz is None:
+        raise ValueError("bar timestamps deben tener timezone")
+    out.index = out.index.tz_convert(NY_TZ)
+    session_day = (now.astimezone(NY_TZ).date() if now is not None else out.index[-1].date())
+    return out[
+        (out.index.date == session_day)
+        & (out.index.time >= pd.Timestamp("09:30").time())
+        & (out.index.time < pd.Timestamp("16:00").time())
+    ]
+
+
+def regular_session_vwap(df: pd.DataFrame, now=None):
+    return vwap(regular_session_df(df, now=now))
+
+
 def resample_ohlcv(df: pd.DataFrame, rule: str):
     return (
         df.resample(rule)
@@ -53,16 +74,21 @@ def resample_ohlcv(df: pd.DataFrame, rule: str):
     )
 
 
-def opening_range(df: pd.DataFrame, minutes: int):
+def opening_range(df: pd.DataFrame, minutes: int, now=None):
     if df.empty:
         return {"high": None, "low": None, "complete": False}
-    start = df.index[0]
+    regular = regular_session_df(df, now=now)
+    if regular.empty:
+        return {"high": None, "low": None, "complete": False}
+    session_day = (now.astimezone(NY_TZ).date() if now is not None else regular.index[-1].date())
+    start = pd.Timestamp.combine(session_day, pd.Timestamp("09:30").time()).tz_localize(NY_TZ)
     end = start + pd.Timedelta(minutes=minutes)
-    window = df[(df.index >= start) & (df.index < end)]
+    window = regular[(regular.index >= start) & (regular.index < end)]
+    complete_by_time = True if now is None else now.astimezone(NY_TZ) >= end
     return {
         "high": float(window["high"].max()) if not window.empty else None,
         "low": float(window["low"].min()) if not window.empty else None,
-        "complete": len(window) >= minutes,
+        "complete": complete_by_time and len(window) >= minutes,
     }
 
 

@@ -97,26 +97,17 @@
   </div>
   <section class="grid">
     <div class="card span-12 danger"><h2>MODO DESARROLLO</h2><p>DATOS IEX / COBERTURA PARCIAL. NO UTILIZAR COMO SENAL REAL DE TRADING.</p></div>
-    <div class="card span-3"><h3>Market Status</h3><div class="metric small" data-alpha-status>SELECTION_WINDOW</div><div class="submetric">2026-07-08T09:45:00-04:00</div></div>
+    <div class="card span-3"><h3>Market Status</h3><div class="metric small" data-alpha-status>SELECTION_WINDOW</div><div class="submetric">2026-07-08T09:55:00-04:00</div></div>
     <div class="card span-3"><h3>Data Feed</h3><div class="metric small">IEX</div><div class="submetric">Full coverage: false</div></div>
-    <div class="card span-3"><h3>Signals Allowed</h3><div class="metric small">NO</div><div class="submetric">DEVELOPMENT MODE: live_signal_allowed=false; PRODUCTION_READY=false: feed completo/proveedores reales no verificados</div></div>
+    <div class="card span-3"><h3>Signals Allowed</h3><div class="metric small">NO</div><div class="submetric">DEVELOPMENT MODE: live_signal_allowed=false; PRODUCTION_READY=false</div></div>
     <div class="card span-3"><h3>Regimen</h3><div class="metric small">WEAK_BULLISH</div><div class="submetric">SPY +0.3% · QQQ +0.5%</div></div>
-    <div class="card span-12"><h2>DATA HEALTH</h2><p class="intro">Alpaca: no configurado por defecto · Feed: iex · Coverage: PARTIAL · Supabase: opcional · SIGNALS ALLOWED: NO · Reason: DEVELOPMENT MODE</p></div>
+    <div class="card span-5"><h2>DATA HEALTH</h2><div class="table-wrap"><table><tbody><tr><td>market_data</td><td><span class='pill quiet'>FIXTURE</span></td></tr><tr><td>universe</td><td><span class='pill quiet'>FIXTURE</span></td></tr><tr><td>analysts</td><td><span class='pill quiet'>FIXTURE</span></td></tr><tr><td>news</td><td><span class='pill quiet'>FIXTURE</span></td></tr><tr><td>macro</td><td><span class='pill quiet'>FIXTURE</span></td></tr><tr><td>index_data</td><td><span class='pill quiet'>NOT_CONFIGURED</span></td></tr><tr><td>fx</td><td><span class='pill quiet'>FIXTURE</span></td></tr><tr><td>storage</td><td><span class='pill quiet'>NOT_CONFIGURED</span></td></tr></tbody></table></div></div>
+    <div class="card span-7"><h2>PRODUCTION READINESS</h2><p class="intro">Production ready: NO · SIGNALS ALLOWED: NO</p><div class="table-wrap"><table><thead><tr><th>Check</th><th>Estado</th><th>Razon</th></tr></thead><tbody><tr><td>market_data_provider_real</td><td>FAIL</td><td>FIXTURE</td></tr><tr><td>feed_correct</td><td>FAIL</td><td>feed=iex; SIP requerido para produccion</td></tr><tr><td>quote_available</td><td>PASS</td><td>quote verificada</td></tr><tr><td>bars_available</td><td>PASS</td><td>bars verificadas</td></tr><tr><td>universe_provider_real</td><td>FAIL</td><td>FIXTURE</td></tr><tr><td>analysts_provider_real</td><td>FAIL</td><td>FIXTURE</td></tr><tr><td>macro_critical</td><td>FAIL</td><td>FIXTURE</td></tr><tr><td>fx</td><td>FAIL</td><td>FIXTURE</td></tr><tr><td>absence_of_fixtures</td><td>FAIL</td><td>health={&#x27;market_data&#x27;: &#x27;FIXTURE&#x27;, &#x27;universe&#x27;: &#x27;FIXTURE&#x27;, &#x27;analysts&#x27;: &#x27;FIXTURE&#x27;, &#x27;news&#x27;: &#x27;FIXTURE&#x27;, &#x27;macro&#x27;: &#x27;FIXTURE&#x27;, &#x27;index_data&#x27;: &#x27;NOT_CONFIGURED&#x27;, &#x27;fx&#x27;: &#x27;FIXTURE&#x27;, &#x27;storage&#x27;: &#x27;NOT_CONFIGURED&#x27;}</td></tr><tr><td>freshness</td><td>PASS</td><td>freshness ok</td></tr><tr><td>quality_gate</td><td>FAIL</td><td>quality gate bloqueado</td></tr></tbody></table></div></div>
     <div class="card span-12"><h2>Best Operation</h2><p class='intro'>MEJOR OPERACION DEL DIA: NO OPERAR</p></div>
     <div class="card span-12">
       <h2>Candidatas Alpha</h2>
       <p class="intro">Tabla de investigacion. Una candidata necesita datos frescos, filtros duros, setup condicional y B/R minimo para pasar.</p>
       <div class="table-wrap"><table><thead><tr><th>Ticker</th><th>Score</th><th>Precio</th><th>Volumen</th><th>Analistas</th><th>Setup</th><th>Entrada</th><th>Bloqueos</th><th>Data timestamp</th></tr></thead><tbody><tr>
-      <td><div class="company">NVDA</div><div class="muted">NVIDIA Corp</div></td>
-      <td><span class="pill hot">91/100</span><div class="muted">LOW</div></td>
-      <td>128.13<div class="reason">Bid 128.10 / Ask 128.16 · Spread 0.047%</div></td>
-      <td>1.80%<div class="reason">Gap N/A · ATR usado 42.0%</div></td>
-      <td>48<div class="reason">Potencial mediano +24.9%</div></td>
-      <td>NO_SETUP<div class="reason">NO_TRADE · bloqueado por extension</div></td>
-      <td>sin entrada<div class="reason">Stop N/A · T1 N/A · T2 N/A · B/R N/A</div></td>
-      <td>OK</td>
-      <td>2026-07-08T09:44:59-04:00</td>
-    </tr><tr>
       <td><div class="company">MSFT</div><div class="muted">Microsoft Corp</div></td>
       <td><span class="pill hot">84/100</span><div class="muted">MEDIUM</div></td>
       <td>420.04<div class="reason">Bid 420.00 / Ask 420.08 · Spread 0.019%</div></td>
@@ -124,14 +115,24 @@
       <td>40<div class="reason">Potencial mediano +21.4%</div></td>
       <td>NO_SETUP<div class="reason">NO_TRADE · bloqueado por extension</div></td>
       <td>sin entrada<div class="reason">Stop N/A · T1 N/A · T2 N/A · B/R N/A</div></td>
-      <td>OK</td>
-      <td>2026-07-08T09:44:59-04:00</td>
+      <td>bars_15m_available no disponible o no fiable</td>
+      <td>2026-07-08T09:54:59-04:00</td>
+    </tr><tr>
+      <td><div class="company">NVDA</div><div class="muted">NVIDIA Corp</div></td>
+      <td><span class="pill hot">81/100</span><div class="muted">HIGH</div></td>
+      <td>128.13<div class="reason">Bid 128.10 / Ask 128.16 · Spread 0.047%</div></td>
+      <td>1.80%<div class="reason">Gap N/A · ATR usado 42.0%</div></td>
+      <td>48<div class="reason">Potencial mediano +24.9%</div></td>
+      <td>NO_SETUP<div class="reason">NO_TRADE · bloqueado por extension</div></td>
+      <td>sin entrada<div class="reason">Stop N/A · T1 N/A · T2 N/A · B/R N/A</div></td>
+      <td>bars_15m_available no disponible o no fiable</td>
+      <td>2026-07-08T09:54:59-04:00</td>
     </tr></tbody></table></div>
     </div>
     <div class="card span-12"><h2>No-entry Scenario</h2><p class="intro">NO OPERAR si los datos son stale, falta bid/ask/VWAP/RVOL/analistas, hay contradiccion entre proveedores, el mercado esta fuera de ventana, el spread supera el maximo o el setup no confirma.</p></div>
   </section>
   <script src="app.js"></script>
-  <footer>Generado en 2026-07-08T09:45:00-04:00. Alpha Intradia es informativo, no ejecuta ordenes ni constituye asesoramiento personalizado.</footer>
+  <footer>Generado en 2026-07-08T09:55:00-04:00. Alpha Intradia es informativo, no ejecuta ordenes ni constituye asesoramiento personalizado.</footer>
 </div>
 </body>
 </html>

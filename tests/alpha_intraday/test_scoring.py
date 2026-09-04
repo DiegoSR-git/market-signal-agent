@@ -5,7 +5,7 @@ from alpha_intraday.scoring import build_score
 
 def valid_metrics():
     return {
-        "price": 100, "ema20": 98, "sma50": 95, "sma200": 90, "rsi_daily": 62,
+        "price": 100, "quote_mid": 100, "ema20": 98, "sma50": 95, "sma200": 90, "rsi_daily": 62,
         "macd_daily_hist": 0.2, "relative_strength_daily": 1, "distance_to_resistance_pct": 3,
         "price_above_vwap": True, "vwap_slope": "rising", "ema9_5m": 101, "ema20_5m": 100,
         "rsi5": 61, "macd5_hist": 0.1, "hh_hl": True, "relative_strength_spy": 0.3,
@@ -33,3 +33,11 @@ def test_score_below_78_blocks_candidate():
     score = build_score(m, None, None, MarketRegimeSnapshot(Regime.BEARISH), DEFAULT_CONFIG)
     assert score.total < 78
     assert score.candidate_valid is False
+
+
+def test_single_authoritative_risk_category_uses_market_cap():
+    m = valid_metrics()
+    m["market_cap"] = 50_000_000_000
+    score = build_score(m, analysts(), CatalystSnapshot("NVDA", "POSITIVE", confirmed_by_price_volume=True), MarketRegimeSnapshot(Regime.BULLISH), DEFAULT_CONFIG)
+    assert score.total >= 85
+    assert score.risk_category.value == "MEDIUM"

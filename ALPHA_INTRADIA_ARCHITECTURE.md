@@ -31,6 +31,10 @@ Modulos:
 - `indicators.py`: SMA, EMA, RSI, MACD, ATR, VWAP, OR, RVOL.
 - `data_quality.py`: freshness, spread y hard gates.
 - `providers/`: interfaces, fixtures y adapter Alpaca inicial.
+- `provider_factory.py`: selecciona mock/alpaca segun config sin sustitucion silenciosa en production.
+- `readiness.py`: readiness granular `PASS/FAIL/NOT_CONFIGURED`.
+- `market_calendar.py`: abstraccion de calendario con fallback estatico de desarrollo.
+- `session.py`: sesion duradera 09:25-10:20 ET con clock/sleeper inyectable.
 - `universe.py`: filtros duros de universo.
 - `scoring.py`: score determinista 100 puntos.
 - `setups.py`: BREAKOUT, VWAP_RECLAIM, CONTROLLED_PULLBACK.
@@ -40,4 +44,4 @@ Modulos:
 - `telegram.py`: adapter con dedupe por transicion.
 - `storage.py` y `journal.py`: persistencia local y base Supabase futura.
 
-Production-ready no significa "tests pasan". Requiere proveedores reales, feed completo, RLS auditada y semanas de observacion paper.
+Production-ready no significa "tests pasan". Requiere proveedores reales, feed completo, RLS auditada y semanas de observacion paper. El scanner general no contiene datos de mercado sinteticos: si se usan fixtures, estos entran desde providers fixture/replay y aparecen como `FIXTURE` en provider health.

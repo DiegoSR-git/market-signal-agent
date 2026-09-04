@@ -101,6 +101,9 @@ def load_config(path: str | Path = "config_alpha_intraday.yaml") -> dict[str, An
     live_env = os.getenv("ALPHA_LIVE_SIGNALS")
     if live_env is not None:
         config["live_signals"] = live_env.lower() == "true"
+    telegram_env = os.getenv("ALPHA_TELEGRAM_ENABLED")
+    if telegram_env is not None:
+        config["telegram_enabled"] = telegram_env.lower() == "true"
     feed_env = os.getenv("ALPACA_DATA_FEED")
     if feed_env:
         config.setdefault("data", {})["alpaca_feed"] = feed_env

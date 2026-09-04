@@ -22,14 +22,34 @@ class MockMarketDataProvider:
         return Quote(symbol, bid, ask, 100, 100, self.now - timedelta(seconds=1), self.name, "fixture")
 
     def intraday_bars(self, symbol: str, timeframe: str = "1Min", limit: int = 120) -> list[Bar]:
-        start = self.now.replace(hour=9, minute=30, second=0, microsecond=0)
+        start = self.now.replace(hour=8, minute=0, second=0, microsecond=0)
         bars: list[Bar] = []
         price = 126.0 if symbol == "NVDA" else 100.0
-        for i in range(limit):
+        minutes_available = max(0, int((self.now - start).total_seconds() // 60) + 1)
+        for i in range(minutes_available):
             ts = start + timedelta(minutes=i)
             close = price + i * 0.03
             bars.append(Bar(ts, close - 0.08, close + 0.12, close - 0.18, close, 90000 + i * 700))
-        return bars
+        return bars[-limit:]
+
+    def synthetic_metrics(self, symbol: str) -> dict:
+        return {
+            "relative_strength_spy": 0.4,
+            "relative_strength_qqq": 0.3,
+            "relative_strength_daily": 0.5,
+            "sector_relative_strength": 0.2,
+            "rvol": 1.8,
+            "rvol_reliable": True,
+            "daily_history_available": True,
+            "ema20": 125.0 if symbol == "NVDA" else 98.0,
+            "sma50": 120.0 if symbol == "NVDA" else 95.0,
+            "sma200": 110.0 if symbol == "NVDA" else 90.0,
+            "rsi_daily": 62,
+            "macd_daily_hist": 0.2,
+            "distance_to_resistance_pct": 2.5,
+            "atr_consumed_pct": 42,
+            "binary_event_risk": False,
+        }
 
 
 class FixtureUniverseProvider:

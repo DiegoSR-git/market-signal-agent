@@ -3,6 +3,7 @@ from zoneinfo import ZoneInfo
 
 from alpha_intraday.config import DEFAULT_CONFIG
 from alpha_intraday.data_quality import evaluate_alpha_quality, evaluate_quote_quality, providers_consistent, spread_metrics
+from alpha_intraday.data_quality import evaluate_bars_quality
 from alpha_intraday.models import MarketStatus, Quote
 
 
@@ -31,3 +32,12 @@ def test_provider_conflict_blocks():
     bad = providers_consistent({"a": 100, "b": 102})
     assert ok["consistent"] is True
     assert bad["consistent"] is False
+
+
+def test_bars_stale_and_future_block():
+    import pandas as pd
+    idx = [NOW - timedelta(minutes=20), NOW + timedelta(minutes=1)]
+    df = pd.DataFrame({"open": [1, 2], "high": [1, 2], "low": [1, 2], "close": [1, 2], "volume": [1, 2]}, index=idx)
+    result = evaluate_bars_quality(df, NOW, "1m", 2, 60)
+    assert result["ok"] is False
+    assert any("futuras" in x for x in result["blocking_reasons"])
