@@ -85,7 +85,7 @@ Ademas se ejecutaron 46 tests Alpha mediante runner local porque la venv no teni
 
 - Pasados: legacy ligero, py_compile, config, replay, run-session fake, Alpaca sin credenciales como `NO OPERAR`, JSON, 46 tests Alpha.
 - No ejecutado con pytest local: falta `pytest` en la venv local. El workflow `Alpha Intradia Tests` instala `requirements-alpha.txt`.
-- CI GitHub Actions: pendiente de ejecutar sobre el head final de esta correccion.
+- CI GitHub Actions: validar `Alpha Intradia Tests` sobre el head final antes de marcar la PR como lista.
 
 ## 7. Servicios externos integrados
 
