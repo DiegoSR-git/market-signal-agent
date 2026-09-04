@@ -34,6 +34,8 @@
 
 - Skeleton modular separado.
 - Development mode por defecto.
+- Schedule Alpha desactivado por defecto: los cron solo corren si `ALPHA_SCHEDULE_ENABLED=true`; `workflow_dispatch` sigue funcionando.
+- Override operativo `ALPHA_DATA_PROVIDER=mock|alpaca`.
 - LONG-only por enums y setups.
 - Sin apalancamiento.
 - Sin broker execution.
@@ -50,10 +52,14 @@
 - Replay con fixture.
 - ProviderFactory `mock`/`alpaca`.
 - ProductionReadinessReport granular.
-- Alpaca bars oficial con retries, 403 entitlement, 429 y timeouts.
+- Alpaca bars oficial con retries, 403 entitlement, 429, timeouts, `sort=desc` y normalizacion cronologica ascendente del tramo mas reciente.
 - Scanner sin datos sinteticos hardcodeados.
+- Scanner sin targets calculados como `entry + risk * X`; entrada, stop y objetivos solo pasan si vienen como niveles tecnicos suministrados por proveedor/fixture.
 - OR/VWAP regular excluyen premarket.
-- Indicadores 5m sobre dataframe 5m resampleado.
+- Indicadores 5m sobre dataframe 5m resampleado y con warm-up historico real; si no hay suficientes barras, quedan como no disponibles.
+- RSI de series cortas queda no disponible, no se fuerza a 100.
+- Fallos por simbolo en proveedores quedan en `BLOCKED` y no tumban la sesion completa.
+- Production readiness bloquea si faltan latest trade, news/catalyst, index data verificado u otros proveedores requeridos.
 - Session runner duradero 09:25-10:20 ET con clock/sleeper inyectable.
 - Provider health real: `GREEN`, `DEGRADED`, `BLOCKED`, `NOT_CONFIGURED`, `FIXTURE`.
 
@@ -65,15 +71,17 @@
 .venv/bin/python -m alpha_intraday.cli validate-config
 .venv/bin/python -m alpha_intraday.cli health
 .venv/bin/python -m alpha_intraday.cli replay --fixture tests/alpha_intraday/fixtures/session_sample/
-.venv/bin/python -m alpha_intraday.cli run-session --now 2026-07-08T09:25:00-04:00 --cadence-seconds 900 --max-iterations 3
+.venv/bin/python -m alpha_intraday.cli run-session --now 2026-07-08T09:25:00-04:00 --cadence-seconds 900 --max-iterations 3 --force
+env -u ALPACA_API_KEY -u ALPACA_SECRET_KEY ALPHA_DATA_PROVIDER=alpaca .venv/bin/python -m alpha_intraday.cli --config config_alpha_intraday.yaml snapshot --now 2026-07-08T09:45:00-04:00
 ```
 
-Ademas se ejecutaron 31 tests Alpha mediante runner local porque la venv no tenia `pytest` instalado.
+Ademas se ejecutaron 43 tests Alpha mediante runner local porque la venv no tenia `pytest` instalado.
 
 ## 6. Tests pasados/fallidos
 
-- Pasados: legacy ligero, py_compile, config, health, replay, run-session fake, JSON, 31 tests Alpha.
+- Pasados: legacy ligero, py_compile, config, replay, run-session fake, Alpaca sin credenciales como `NO OPERAR`, JSON, 43 tests Alpha.
 - No ejecutado con pytest local: falta `pytest` en la venv local. El workflow `Alpha Intradia Tests` instala `requirements-alpha.txt`.
+- CI GitHub Actions: pendiente de ejecucion tras push de la rama.
 
 ## 7. Servicios externos integrados
 
@@ -107,6 +115,8 @@ TELEGRAM_CHAT_ID
 ALPHA_MODE=development
 ALPHA_LIVE_SIGNALS=false
 ALPHA_TELEGRAM_ENABLED=false
+ALPHA_SCHEDULE_ENABLED=false
+ALPHA_DATA_PROVIDER=mock
 ALPACA_DATA_FEED=iex
 SUPABASE_URL=
 TELEGRAM_CHAT_IDS=
@@ -145,3 +155,10 @@ TELEGRAM_CHAT_IDS=
 ## 15. Proximo paso recomendado
 
 Conectar Alpaca quotes/bars reales y un UniverseProvider fiable, manteniendo `ALPHA_MODE=development` hasta que los quality gates demuestren datos completos.
+
+## 16. Ultimo hardening PR #16
+
+- Rama: `codex/alpha-intradia-v2`.
+- Commit hardening: `f585780`.
+- Objetivo del commit: cerrar frescura/orden de barras Alpaca, warm-up real de indicadores, no fabricacion de niveles, provider health bloqueante, readiness de produccion estricta, schedule opt-in y override de proveedor.
+- Estado funcional: base de desarrollo segura. No esta marcada como production-ready y no genera senales live.
