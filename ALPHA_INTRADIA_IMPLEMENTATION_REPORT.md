@@ -81,7 +81,7 @@ Ademas se ejecutaron 43 tests Alpha mediante runner local porque la venv no teni
 
 - Pasados: legacy ligero, py_compile, config, replay, run-session fake, Alpaca sin credenciales como `NO OPERAR`, JSON, 43 tests Alpha.
 - No ejecutado con pytest local: falta `pytest` en la venv local. El workflow `Alpha Intradia Tests` instala `requirements-alpha.txt`.
-- CI GitHub Actions: pendiente de ejecucion tras push de la rama.
+- CI GitHub Actions: `Alpha Intradia Tests` ejecutado manualmente sobre la rama, run `33863835297`, resultado `success`.
 
 ## 7. Servicios externos integrados
 
@@ -160,5 +160,6 @@ Conectar Alpaca quotes/bars reales y un UniverseProvider fiable, manteniendo `AL
 
 - Rama: `codex/alpha-intradia-v2`.
 - Commit hardening: `f585780`.
+- Commit informe inicial: `b851b76`.
 - Objetivo del commit: cerrar frescura/orden de barras Alpaca, warm-up real de indicadores, no fabricacion de niveles, provider health bloqueante, readiness de produccion estricta, schedule opt-in y override de proveedor.
 - Estado funcional: base de desarrollo segura. No esta marcada como production-ready y no genera senales live.
