@@ -47,15 +47,22 @@ def metrics_from_bars(symbol: str, quote, bars, meta, macro: dict, config: dict,
     history_source = indicator_history_bars if indicator_history_bars is not None else bars
     df_history_all = bars_to_df([bar for bar in history_source if bar.timestamp <= now])
     df_history_regular = historical_regular_session_df(df_history_all, now=now)
-    df_5m = closed_resample(df_history_regular, "5min", now)
+    indicator_history_5m = closed_resample(df_history_regular, "5min", now)
+    current_session_5m = closed_resample(df_1m, "5min", now)
     df_15m = closed_resample(df_1m, "15min", now)
-    close_5m = df_5m["close"] if not df_5m.empty else pd.Series(dtype="float64")
+    close_5m = indicator_history_5m["close"] if not indicator_history_5m.empty else pd.Series(dtype="float64")
     vw = regular_session_vwap(df_all, now=now)
-    min_5m = int(config.get("data", {}).get("min_5m_bars", 20))
+    min_indicator_5m = int(config.get("data", {}).get("min_indicator_5m_bars", 20))
+    min_current_5m = int(config.get("data", {}).get("min_current_5m_bars", 2))
     min_macd = int(config.get("data", {}).get("min_macd_5m_bars", 35))
-    indicators_5m_available = len(close_5m) >= min_5m
+    indicator_cfg = config.get("indicators", {})
+    rsi_period = int(indicator_cfg.get("rsi_period", 14))
+    macd_fast = int(indicator_cfg.get("macd_fast", 12))
+    macd_slow = int(indicator_cfg.get("macd_slow", 26))
+    macd_signal_period = int(indicator_cfg.get("macd_signal", 9))
+    indicators_5m_available = len(close_5m) >= min_indicator_5m
     macd_available = len(close_5m) >= min_macd
-    macd_line, macd_signal, macd_hist = macd(close_5m) if macd_available else (pd.Series(dtype="float64"), pd.Series(dtype="float64"), pd.Series(dtype="float64"))
+    macd_line, macd_signal, macd_hist = macd(close_5m, macd_fast, macd_slow, macd_signal_period) if macd_available else (pd.Series(dtype="float64"), pd.Series(dtype="float64"), pd.Series(dtype="float64"))
     or5 = opening_range(df_all, 5, now=now)
     or15 = opening_range(df_all, 15, now=now)
     spread = spread_metrics(quote.bid, quote.ask)
@@ -66,7 +73,7 @@ def metrics_from_bars(symbol: str, quote, bars, meta, macro: dict, config: dict,
     target1 = supplied.get("target1")
     target2 = supplied.get("target2")
     bars_1m_quality = evaluate_bars_quality(df_all, now, "1m", config.get("data", {}).get("min_1m_bars", 10), config.get("data", {}).get("bar_fresh_seconds", 120))
-    bars_5m_quality = evaluate_bars_quality(df_5m, now, "5m", min_5m, 1800)
+    bars_5m_quality = evaluate_bars_quality(current_session_5m, now, "5m", min_current_5m, 1800)
     bars_15m_quality = evaluate_bars_quality(df_15m, now, "15m", config.get("data", {}).get("min_15m_bars", 1), 1800)
     metrics = {
         "symbol": symbol,
@@ -80,14 +87,15 @@ def metrics_from_bars(symbol: str, quote, bars, meta, macro: dict, config: dict,
         "vwap": safe_last(vw),
         "vwap_slope": "rising" if len(vw) >= 3 and vw.iloc[-1] > vw.iloc[-3] else None,
         "price_above_vwap": quote_mid is not None and len(vw) and quote_mid > vw.iloc[-1],
-        "indicator_history_5m_bars": len(df_5m),
+        "indicator_history_5m_bars": len(indicator_history_5m),
+        "current_session_5m_bars": len(current_session_5m),
         "indicators_5m_available": indicators_5m_available,
         "macd_5m_available": macd_available,
         "ema9_5m": safe_last(ema(close_5m, 9)) if indicators_5m_available else None,
         "ema20_5m": safe_last(ema(close_5m, 20)) if indicators_5m_available else None,
-        "rsi5": safe_last(rsi(close_5m, 5)) if indicators_5m_available else None,
+        "rsi5": safe_last(rsi(close_5m, rsi_period)) if indicators_5m_available else None,
         "macd5_hist": safe_last(macd_hist) if macd_available else None,
-        "hh_hl": bool(df_5m["high"].iloc[-1] > df_5m["high"].iloc[-2] and df_5m["low"].iloc[-1] > df_5m["low"].iloc[-2]) if len(df_5m) >= 2 else None,
+        "hh_hl": bool(current_session_5m["high"].iloc[-1] > current_session_5m["high"].iloc[-2] and current_session_5m["low"].iloc[-1] > current_session_5m["low"].iloc[-2]) if len(current_session_5m) >= 2 else None,
         "relative_strength_spy": supplied.get("relative_strength_spy"),
         "relative_strength_qqq": supplied.get("relative_strength_qqq"),
         "relative_strength_daily": supplied.get("relative_strength_daily"),

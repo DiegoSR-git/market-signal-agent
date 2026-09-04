@@ -57,7 +57,11 @@
 - Scanner sin targets calculados como `entry + risk * X`; entrada, stop y objetivos solo pasan si vienen como niveles tecnicos suministrados por proveedor/fixture.
 - OR/VWAP regular excluyen premarket.
 - Indicadores 5m sobre dataframe 5m resampleado y con warm-up historico real; si no hay suficientes barras, quedan como no disponibles.
+- Quality 5m separa warm-up historico de disponibilidad de sesion actual: `indicator_history_5m_bars` y `current_session_5m_bars`.
 - RSI de series cortas queda no disponible, no se fuerza a 100.
+- `RSI5` significa RSI calculado sobre velas de 5 minutos; el periodo por defecto es configurable y queda en 14.
+- MACD intradia usa parametros configurables `macd_fast`, `macd_slow` y `macd_signal`.
+- 15m se mantiene conservador: antes de 09:45 ET la OR15 puede estar formando y no se inventa vela cerrada; si el quality gate exige una vela 15m cerrada, la ventana efectiva de senal definitiva empieza a las 09:45 ET aunque observacion/preseleccion empiece a las 09:40 ET.
 - Fallos por simbolo en proveedores quedan en `BLOCKED` y no tumban la sesion completa.
 - Production readiness bloquea si faltan latest trade, news/catalyst, index data verificado u otros proveedores requeridos.
 - Session runner duradero 09:25-10:20 ET con clock/sleeper inyectable.
@@ -75,13 +79,13 @@
 env -u ALPACA_API_KEY -u ALPACA_SECRET_KEY ALPHA_DATA_PROVIDER=alpaca .venv/bin/python -m alpha_intraday.cli --config config_alpha_intraday.yaml snapshot --now 2026-07-08T09:45:00-04:00
 ```
 
-Ademas se ejecutaron 43 tests Alpha mediante runner local porque la venv no tenia `pytest` instalado.
+Ademas se ejecutaron 46 tests Alpha mediante runner local porque la venv no tenia `pytest` instalado.
 
 ## 6. Tests pasados/fallidos
 
-- Pasados: legacy ligero, py_compile, config, replay, run-session fake, Alpaca sin credenciales como `NO OPERAR`, JSON, 43 tests Alpha.
+- Pasados: legacy ligero, py_compile, config, replay, run-session fake, Alpaca sin credenciales como `NO OPERAR`, JSON, 46 tests Alpha.
 - No ejecutado con pytest local: falta `pytest` en la venv local. El workflow `Alpha Intradia Tests` instala `requirements-alpha.txt`.
-- CI GitHub Actions: `Alpha Intradia Tests` ejecutado manualmente sobre la rama, run `33863835297`, resultado `success`.
+- CI GitHub Actions: pendiente de ejecutar sobre el head final de esta correccion.
 
 ## 7. Servicios externos integrados
 

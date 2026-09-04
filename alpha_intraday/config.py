@@ -20,9 +20,16 @@ DEFAULT_CONFIG: dict[str, Any] = {
         "trade_fresh_seconds": 300,
         "bar_fresh_seconds": 120,
         "min_1m_bars": 10,
-        "min_5m_bars": 20,
+        "min_indicator_5m_bars": 20,
+        "min_current_5m_bars": 2,
         "min_15m_bars": 1,
         "min_macd_5m_bars": 35,
+    },
+    "indicators": {
+        "rsi_period": 14,
+        "macd_fast": 12,
+        "macd_slow": 26,
+        "macd_signal": 9,
     },
     "universe": {
         "min_market_cap_usd": 10_000_000_000,

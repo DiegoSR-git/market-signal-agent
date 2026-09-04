@@ -109,9 +109,9 @@
       },
       {
         "name": "quality_gate",
-        "status": "FAIL",
+        "status": "PASS",
         "critical": true,
-        "reason": "quality gate bloqueado"
+        "reason": "quality gate ok"
       }
     ]
   },
@@ -154,7 +154,7 @@
         "active": true,
         "tradable": true,
         "source": "fixture",
-        "updated_at": "2026-09-04T06:21:20.580698-04:00"
+        "updated_at": "2026-09-04T07:38:14.837560-04:00"
       },
       "analysts": {
         "symbol": "NVDA",
@@ -193,6 +193,7 @@
         "vwap_slope": "rising",
         "price_above_vwap": false,
         "indicator_history_5m_bars": 5,
+        "current_session_5m_bars": 5,
         "indicators_5m_available": false,
         "macd_5m_available": false,
         "ema9_5m": null,
@@ -211,7 +212,7 @@
         "market_cap": 3000000000000,
         "daily_history_available": true,
         "bars_1m_available": true,
-        "bars_5m_available": false,
+        "bars_5m_available": true,
         "bars_15m_available": true,
         "bars_1m_quality": {
           "ok": true,
@@ -223,15 +224,13 @@
           "blocking_reasons": []
         },
         "bars_5m_quality": {
-          "ok": false,
+          "ok": true,
           "timeframe": "5m",
           "last_bar_timestamp": "2026-07-08T09:50:00-04:00",
           "bar_age_seconds": 300.0,
           "bars_count": 5,
-          "bars_complete": false,
-          "blocking_reasons": [
-            "barras insuficientes 5/20"
-          ]
+          "bars_complete": true,
+          "blocking_reasons": []
         },
         "bars_15m_quality": {
           "ok": true,
@@ -282,8 +281,8 @@
         }
       },
       "data_quality": {
-        "ok": false,
-        "signal_allowed": false,
+        "ok": true,
+        "signal_allowed": true,
         "quote_quality": {
           "ok": true,
           "status": "OK",
@@ -298,10 +297,8 @@
           "provider": "mock",
           "feed": "fixture"
         },
-        "blocking_reasons": [
-          "bars_5m_available no disponible o no fiable"
-        ],
-        "standard_output": "NO OPERAR - datos insuficientemente actuales o inconsistentes."
+        "blocking_reasons": [],
+        "standard_output": "OK"
       },
       "score": {
         "total": 74,
@@ -393,8 +390,7 @@
         "candidate_valid": false,
         "blocking_reasons": [
           "score < 78",
-          "sin categoria de riesgo operable",
-          "bars_5m_available no disponible o no fiable"
+          "sin categoria de riesgo operable"
         ]
       },
       "setup": {
@@ -458,7 +454,7 @@
         "active": true,
         "tradable": true,
         "source": "fixture",
-        "updated_at": "2026-09-04T06:21:20.580698-04:00"
+        "updated_at": "2026-09-04T07:38:14.837560-04:00"
       },
       "analysts": {
         "symbol": "MSFT",
@@ -497,6 +493,7 @@
         "vwap_slope": "rising",
         "price_above_vwap": true,
         "indicator_history_5m_bars": 5,
+        "current_session_5m_bars": 5,
         "indicators_5m_available": false,
         "macd_5m_available": false,
         "ema9_5m": null,
@@ -515,7 +512,7 @@
         "market_cap": 3100000000000,
         "daily_history_available": true,
         "bars_1m_available": true,
-        "bars_5m_available": false,
+        "bars_5m_available": true,
         "bars_15m_available": true,
         "bars_1m_quality": {
           "ok": true,
@@ -527,15 +524,13 @@
           "blocking_reasons": []
         },
         "bars_5m_quality": {
-          "ok": false,
+          "ok": true,
           "timeframe": "5m",
           "last_bar_timestamp": "2026-07-08T09:50:00-04:00",
           "bar_age_seconds": 300.0,
           "bars_count": 5,
-          "bars_complete": false,
-          "blocking_reasons": [
-            "barras insuficientes 5/20"
-          ]
+          "bars_complete": true,
+          "blocking_reasons": []
         },
         "bars_15m_quality": {
           "ok": true,
@@ -586,8 +581,8 @@
         }
       },
       "data_quality": {
-        "ok": false,
-        "signal_allowed": false,
+        "ok": true,
+        "signal_allowed": true,
         "quote_quality": {
           "ok": true,
           "status": "OK",
@@ -602,10 +597,8 @@
           "provider": "mock",
           "feed": "fixture"
         },
-        "blocking_reasons": [
-          "bars_5m_available no disponible o no fiable"
-        ],
-        "standard_output": "NO OPERAR - datos insuficientemente actuales o inconsistentes."
+        "blocking_reasons": [],
+        "standard_output": "OK"
       },
       "score": {
         "total": 77.0,
@@ -697,8 +690,7 @@
         "candidate_valid": false,
         "blocking_reasons": [
           "score < 78",
-          "sin categoria de riesgo operable",
-          "bars_5m_available no disponible o no fiable"
+          "sin categoria de riesgo operable"
         ]
       },
       "setup": {
