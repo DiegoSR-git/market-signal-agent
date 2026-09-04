@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Any
 
 from .providers.alpaca import AlpacaMarketDataProvider
+from .providers.base import ProviderError
 from .providers.analysts import NotConfiguredAnalystProvider
 from .providers.fx import NotConfiguredFXProvider
 from .providers.index_data import NotConfiguredIndexDataProvider
@@ -27,8 +28,12 @@ def build_provider_bundle(config: dict[str, Any], now=None) -> ProviderBundle:
         )
     if provider == "alpaca":
         use_dev_fixtures = mode == "development"
+        try:
+            market_data = AlpacaMarketDataProvider(feed=config.get("data", {}).get("alpaca_feed", "iex"))
+        except ProviderError as ex:
+            market_data = NotConfiguredMarketDataProvider(str(ex))
         return ProviderBundle(
-            market_data=AlpacaMarketDataProvider(feed=config.get("data", {}).get("alpaca_feed", "iex")),
+            market_data=market_data,
             universe=FixtureUniverseProvider() if use_dev_fixtures else NotConfiguredUniverseProvider(),
             analysts=FixtureAnalystProvider() if use_dev_fixtures else NotConfiguredAnalystProvider(),
             news=FixtureNewsProvider() if use_dev_fixtures else NotConfiguredNewsProvider(),
@@ -44,3 +49,16 @@ class NotConfiguredUniverseProvider:
 
     def list_metadata(self):
         return []
+
+
+class NotConfiguredMarketDataProvider:
+    name = "not_configured"
+
+    def __init__(self, reason: str = "market data no configurado"):
+        self.reason = reason
+
+    def latest_quote(self, symbol: str):
+        raise ProviderError(self.reason)
+
+    def intraday_bars(self, symbol: str, timeframe: str = "1Min", limit: int = 120):
+        raise ProviderError(self.reason)

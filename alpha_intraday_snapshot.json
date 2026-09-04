@@ -36,6 +36,12 @@
         "reason": "quote verificada"
       },
       {
+        "name": "latest_trade_available",
+        "status": "FAIL",
+        "critical": true,
+        "reason": "latest trade no verificado"
+      },
+      {
         "name": "bars_available",
         "status": "PASS",
         "critical": true,
@@ -54,10 +60,28 @@
         "reason": "FIXTURE"
       },
       {
+        "name": "news_catalyst_provider_real",
+        "status": "FAIL",
+        "critical": true,
+        "reason": "FIXTURE"
+      },
+      {
         "name": "macro_critical",
         "status": "FAIL",
         "critical": true,
         "reason": "FIXTURE"
+      },
+      {
+        "name": "index_data_critical",
+        "status": "NOT_CONFIGURED",
+        "critical": true,
+        "reason": "NOT_CONFIGURED"
+      },
+      {
+        "name": "index_data_verified",
+        "status": "FAIL",
+        "critical": true,
+        "reason": "indices reales no verificados"
       },
       {
         "name": "fx",
@@ -67,6 +91,12 @@
       },
       {
         "name": "absence_of_fixtures",
+        "status": "FAIL",
+        "critical": true,
+        "reason": "health={'market_data': 'FIXTURE', 'universe': 'FIXTURE', 'analysts': 'FIXTURE', 'news': 'FIXTURE', 'macro': 'FIXTURE', 'index_data': 'NOT_CONFIGURED', 'fx': 'FIXTURE', 'storage': 'NOT_CONFIGURED'}"
+      },
+      {
+        "name": "all_critical_providers_ready",
         "status": "FAIL",
         "critical": true,
         "reason": "health={'market_data': 'FIXTURE', 'universe': 'FIXTURE', 'analysts': 'FIXTURE', 'news': 'FIXTURE', 'macro': 'FIXTURE', 'index_data': 'NOT_CONFIGURED', 'fx': 'FIXTURE', 'storage': 'NOT_CONFIGURED'}"
@@ -124,7 +154,7 @@
         "active": true,
         "tradable": true,
         "source": "fixture",
-        "updated_at": "2026-09-04T03:51:21.872271-04:00"
+        "updated_at": "2026-09-04T06:21:20.580698-04:00"
       },
       "analysts": {
         "symbol": "NVDA",
@@ -162,10 +192,13 @@
         "vwap": 129.0623029366306,
         "vwap_slope": "rising",
         "price_above_vwap": false,
-        "ema9_5m": 129.06576,
-        "ema20_5m": 128.94988723834203,
-        "rsi5": 100.0,
-        "macd5_hist": 0.060495352209613884,
+        "indicator_history_5m_bars": 5,
+        "indicators_5m_available": false,
+        "macd_5m_available": false,
+        "ema9_5m": null,
+        "ema20_5m": null,
+        "rsi5": null,
+        "macd5_hist": null,
         "hh_hl": true,
         "relative_strength_spy": 0.4,
         "relative_strength_qqq": 0.3,
@@ -178,8 +211,8 @@
         "market_cap": 3000000000000,
         "daily_history_available": true,
         "bars_1m_available": true,
-        "bars_5m_available": true,
-        "bars_15m_available": false,
+        "bars_5m_available": false,
+        "bars_15m_available": true,
         "bars_1m_quality": {
           "ok": true,
           "timeframe": "1m",
@@ -190,24 +223,24 @@
           "blocking_reasons": []
         },
         "bars_5m_quality": {
-          "ok": true,
+          "ok": false,
           "timeframe": "5m",
           "last_bar_timestamp": "2026-07-08T09:50:00-04:00",
           "bar_age_seconds": 300.0,
           "bars_count": 5,
-          "bars_complete": true,
-          "blocking_reasons": []
+          "bars_complete": false,
+          "blocking_reasons": [
+            "barras insuficientes 5/20"
+          ]
         },
         "bars_15m_quality": {
-          "ok": false,
+          "ok": true,
           "timeframe": "15m",
           "last_bar_timestamp": "2026-07-08T09:30:00-04:00",
           "bar_age_seconds": 1500.0,
           "bars_count": 1,
-          "bars_complete": false,
-          "blocking_reasons": [
-            "barras stale: 1500.0s"
-          ]
+          "bars_complete": true,
+          "blocking_reasons": []
         },
         "ema20": 125.0,
         "sma50": 120.0,
@@ -222,18 +255,18 @@
         "vwap_reclaim_valid": false,
         "controlled_pullback_valid": false,
         "trigger": "superar OR5/premarket con volumen en NVDA",
-        "entry": 129.07,
-        "entry_zone": "129.07 USD +/- buffer configurado",
-        "stop": 127.78,
-        "target1": 131.13,
-        "target2": 131.91,
+        "entry": null,
+        "entry_zone": "pendiente",
+        "stop": null,
+        "target1": null,
+        "target2": null,
         "activation_conditions": [
           "spread valido",
           "volumen confirma",
           "precio mantiene VWAP",
           "no perseguir vela vertical"
         ],
-        "invalidation": "perder 127.78 USD o VWAP con volumen",
+        "invalidation": "pendiente de stop tecnico",
         "spy_change_pct": 0.35,
         "qqq_change_pct": 0.52,
         "binary_event_risk": false,
@@ -266,12 +299,12 @@
           "feed": "fixture"
         },
         "blocking_reasons": [
-          "bars_15m_available no disponible o no fiable"
+          "bars_5m_available no disponible o no fiable"
         ],
         "standard_output": "NO OPERAR - datos insuficientemente actuales o inconsistentes."
       },
       "score": {
-        "total": 81,
+        "total": 74,
         "components": [
           {
             "name": "daily_technical",
@@ -289,20 +322,21 @@
           },
           {
             "name": "intraday_technical",
-            "score": 16,
+            "score": 9,
             "max_score": 30,
             "reasons_positive": [
-              "EMA9 5m > EMA20 5m",
-              "MACD5 positivo",
               "estructura HH/HL",
               "fuerza relativa vs SPY/QQQ",
               "recorrido suficiente"
             ],
             "reasons_negative": [
-              "VWAP no confirma",
-              "RSI5 persecucion"
+              "VWAP no confirma"
             ],
-            "missing_data": []
+            "missing_data": [
+              "EMA 5m",
+              "RSI5",
+              "MACD5"
+            ]
           },
           {
             "name": "volume_liquidity",
@@ -355,19 +389,23 @@
             "missing_data": []
           }
         ],
-        "risk_category": "HIGH",
+        "risk_category": "NONE",
         "candidate_valid": false,
         "blocking_reasons": [
-          "bars_15m_available no disponible o no fiable"
+          "score < 78",
+          "sin categoria de riesgo operable",
+          "bars_5m_available no disponible o no fiable"
         ]
       },
       "setup": {
         "setup_type": "NO_SETUP",
-        "status": "NO_TRADE",
-        "trigger": "bloqueado por extension",
-        "entry_zone": "sin entrada",
-        "activation_conditions": [],
-        "invalidation": "RSI5 demasiado extendido",
+        "status": "WAIT",
+        "trigger": "esperar condicion",
+        "entry_zone": "pendiente",
+        "activation_conditions": [
+          "breakout, VWAP reclaim o pullback controlado"
+        ],
+        "invalidation": "setup no confirmado",
         "stop": null,
         "target1": null,
         "target2": null,
@@ -375,19 +413,22 @@
         "risk_reward2": null,
         "expires_at": null,
         "evidence": [
-          "RSI5 demasiado extendido"
+          "score alto no activa entrada sin setup"
         ]
       },
       "risk": {
         "account_currency": "EUR",
-        "risk_category": "HIGH",
-        "risk_eur": 37.5,
-        "risk_usd": 40.5,
-        "shares": 31,
-        "notional_usd": 4001.1699999999996,
+        "risk_category": "NONE",
+        "risk_eur": 0.0,
+        "risk_usd": null,
+        "shares": null,
+        "notional_usd": null,
         "max_daily_risk_eur": 50.0,
-        "position_size_available": true,
-        "blocking_reasons": []
+        "position_size_available": false,
+        "blocking_reasons": [
+          "sin categoria de riesgo operable",
+          "stop invalido para LONG"
+        ]
       }
     },
     {
@@ -417,7 +458,7 @@
         "active": true,
         "tradable": true,
         "source": "fixture",
-        "updated_at": "2026-09-04T03:51:21.872271-04:00"
+        "updated_at": "2026-09-04T06:21:20.580698-04:00"
       },
       "analysts": {
         "symbol": "MSFT",
@@ -455,10 +496,13 @@
         "vwap": 103.0623029366306,
         "vwap_slope": "rising",
         "price_above_vwap": true,
-        "ema9_5m": 103.06576,
-        "ema20_5m": 102.94988723834204,
-        "rsi5": 100.0,
-        "macd5_hist": 0.060495352209601054,
+        "indicator_history_5m_bars": 5,
+        "indicators_5m_available": false,
+        "macd_5m_available": false,
+        "ema9_5m": null,
+        "ema20_5m": null,
+        "rsi5": null,
+        "macd5_hist": null,
         "hh_hl": true,
         "relative_strength_spy": 0.4,
         "relative_strength_qqq": 0.3,
@@ -471,8 +515,8 @@
         "market_cap": 3100000000000,
         "daily_history_available": true,
         "bars_1m_available": true,
-        "bars_5m_available": true,
-        "bars_15m_available": false,
+        "bars_5m_available": false,
+        "bars_15m_available": true,
         "bars_1m_quality": {
           "ok": true,
           "timeframe": "1m",
@@ -483,24 +527,24 @@
           "blocking_reasons": []
         },
         "bars_5m_quality": {
-          "ok": true,
+          "ok": false,
           "timeframe": "5m",
           "last_bar_timestamp": "2026-07-08T09:50:00-04:00",
           "bar_age_seconds": 300.0,
           "bars_count": 5,
-          "bars_complete": true,
-          "blocking_reasons": []
+          "bars_complete": false,
+          "blocking_reasons": [
+            "barras insuficientes 5/20"
+          ]
         },
         "bars_15m_quality": {
-          "ok": false,
+          "ok": true,
           "timeframe": "15m",
           "last_bar_timestamp": "2026-07-08T09:30:00-04:00",
           "bar_age_seconds": 1500.0,
           "bars_count": 1,
-          "bars_complete": false,
-          "blocking_reasons": [
-            "barras stale: 1500.0s"
-          ]
+          "bars_complete": true,
+          "blocking_reasons": []
         },
         "ema20": 98.0,
         "sma50": 95.0,
@@ -515,18 +559,18 @@
         "vwap_reclaim_valid": false,
         "controlled_pullback_valid": false,
         "trigger": "superar OR5/premarket con volumen en MSFT",
-        "entry": 420.46,
-        "entry_zone": "420.46 USD +/- buffer configurado",
-        "stop": 102.55,
-        "target1": 929.12,
-        "target2": 1119.86,
+        "entry": null,
+        "entry_zone": "pendiente",
+        "stop": null,
+        "target1": null,
+        "target2": null,
         "activation_conditions": [
           "spread valido",
           "volumen confirma",
           "precio mantiene VWAP",
           "no perseguir vela vertical"
         ],
-        "invalidation": "perder 102.55 USD o VWAP con volumen",
+        "invalidation": "pendiente de stop tecnico",
         "spy_change_pct": 0.35,
         "qqq_change_pct": 0.52,
         "binary_event_risk": false,
@@ -559,12 +603,12 @@
           "feed": "fixture"
         },
         "blocking_reasons": [
-          "bars_15m_available no disponible o no fiable"
+          "bars_5m_available no disponible o no fiable"
         ],
         "standard_output": "NO OPERAR - datos insuficientemente actuales o inconsistentes."
       },
       "score": {
-        "total": 84.0,
+        "total": 77.0,
         "components": [
           {
             "name": "daily_technical",
@@ -582,21 +626,21 @@
           },
           {
             "name": "intraday_technical",
-            "score": 26,
+            "score": 19,
             "max_score": 30,
             "reasons_positive": [
               "precio sobre VWAP ascendente",
-              "EMA9 5m > EMA20 5m",
-              "MACD5 positivo",
               "estructura HH/HL",
               "fuerza relativa vs SPY/QQQ",
               "setup tecnico validado",
               "recorrido suficiente"
             ],
-            "reasons_negative": [
-              "RSI5 persecucion"
-            ],
-            "missing_data": []
+            "reasons_negative": [],
+            "missing_data": [
+              "EMA 5m",
+              "RSI5",
+              "MACD5"
+            ]
           },
           {
             "name": "volume_liquidity",
@@ -649,10 +693,12 @@
             "missing_data": []
           }
         ],
-        "risk_category": "MEDIUM",
+        "risk_category": "NONE",
         "candidate_valid": false,
         "blocking_reasons": [
-          "bars_15m_available no disponible o no fiable"
+          "score < 78",
+          "sin categoria de riesgo operable",
+          "bars_5m_available no disponible o no fiable"
         ]
       },
       "setup": {
@@ -661,7 +707,7 @@
         "trigger": "bloqueado por extension",
         "entry_zone": "sin entrada",
         "activation_conditions": [],
-        "invalidation": "RSI5 demasiado extendido; precio demasiado lejos de VWAP",
+        "invalidation": "precio demasiado lejos de VWAP",
         "stop": null,
         "target1": null,
         "target2": null,
@@ -669,22 +715,21 @@
         "risk_reward2": null,
         "expires_at": null,
         "evidence": [
-          "RSI5 demasiado extendido",
           "precio demasiado lejos de VWAP"
         ]
       },
       "risk": {
         "account_currency": "EUR",
-        "risk_category": "MEDIUM",
-        "risk_eur": 25.0,
-        "risk_usd": 27.0,
-        "shares": 0,
-        "notional_usd": 0.0,
+        "risk_category": "NONE",
+        "risk_eur": 0.0,
+        "risk_usd": null,
+        "shares": null,
+        "notional_usd": null,
         "max_daily_risk_eur": 50.0,
         "position_size_available": false,
         "blocking_reasons": [
-          "tamano inferior a 1 accion",
-          "notional excede cuenta sin apalancamiento"
+          "sin categoria de riesgo operable",
+          "stop invalido para LONG"
         ]
       }
     }
@@ -696,8 +741,8 @@
     "PRODUCTION_READY=false",
     "market_data_provider_real: FAIL - FIXTURE",
     "feed_correct: FAIL - feed=iex; SIP requerido para produccion",
+    "latest_trade_available: FAIL - latest trade no verificado",
     "universe_provider_real: FAIL - FIXTURE",
-    "analysts_provider_real: FAIL - FIXTURE",
     "1 simbolos rechazados por filtros duros"
   ]
 }

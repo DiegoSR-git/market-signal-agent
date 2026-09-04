@@ -39,6 +39,11 @@ def test_intraday_indicators_vwap_resample_or():
     assert opening_range(df.head(10), 15, now=datetime(2026, 7, 8, 9, 40, tzinfo=ZoneInfo("America/New_York")))["complete"] is False
 
 
+def test_rsi_short_series_stays_unavailable():
+    short = pd.Series([100, 101, 102, 103, 104])
+    assert pd.isna(rsi(short, 14).iloc[-1])
+
+
 def test_gap_relative_strength_and_rvol():
     assert round(gap_pct(110, 100), 1) == 10.0
     assert relative_strength_return([100, 110], [100, 105]) > 0
@@ -62,3 +67,13 @@ def test_regular_vwap_excludes_premarket():
     now = datetime(2026, 7, 8, 9, 45, tzinfo=ZoneInfo("America/New_York"))
     regular = df[df.index >= datetime(2026, 7, 8, 9, 30, tzinfo=ZoneInfo("America/New_York"))]
     assert regular_session_vwap(df, now=now).iloc[-1] == vwap(regular).iloc[-1]
+
+
+def test_regular_vwap_resets_each_session():
+    day1 = sample_df(30, 9, 30)
+    day2 = sample_df(30, 9, 30)
+    day2.index = [ts + timedelta(days=1) for ts in day2.index]
+    day1["volume"] = 10_000
+    combined = pd.concat([day1, day2])
+    now = datetime(2026, 7, 9, 9, 59, tzinfo=ZoneInfo("America/New_York"))
+    assert regular_session_vwap(combined, now=now).iloc[-1] == vwap(day2).iloc[-1]

@@ -24,6 +24,7 @@ permissions:
 
 jobs:
   alpha-intradia:
+    if: github.event_name != 'schedule' || vars.ALPHA_SCHEDULE_ENABLED == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 80
     steps:
@@ -45,6 +46,7 @@ jobs:
           PYTHONUNBUFFERED: "1"
           ALPHA_MODE: ${{ vars.ALPHA_MODE || 'development' }}
           ALPHA_LIVE_SIGNALS: ${{ vars.ALPHA_LIVE_SIGNALS || 'false' }}
+          ALPHA_DATA_PROVIDER: ${{ vars.ALPHA_DATA_PROVIDER || 'mock' }}
           ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
           FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}

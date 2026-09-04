@@ -21,7 +21,9 @@ def rsi(series, period: int = 14):
     loss = (-delta.clip(upper=0)).rolling(period).mean()
     rs = gain / loss.replace(0, np.nan)
     out = 100 - (100 / (1 + rs))
-    return out.fillna(100).where(loss != 0, 100)
+    enough_history = s.expanding().count() > period
+    all_gain = (loss == 0) & enough_history
+    return out.where(~all_gain, 100)
 
 
 def macd(series, fast: int = 12, slow: int = 26, signal: int = 9):
@@ -58,6 +60,21 @@ def regular_session_df(df: pd.DataFrame, now=None):
     return out[
         (out.index.date == session_day)
         & (out.index.time >= pd.Timestamp("09:30").time())
+        & (out.index.time < pd.Timestamp("16:00").time())
+    ]
+
+
+def historical_regular_session_df(df: pd.DataFrame, now=None):
+    if df.empty:
+        return df
+    out = df.copy()
+    if out.index.tz is None:
+        raise ValueError("bar timestamps deben tener timezone")
+    out.index = out.index.tz_convert(NY_TZ)
+    if now is not None:
+        out = out[out.index <= now.astimezone(NY_TZ)]
+    return out[
+        (out.index.time >= pd.Timestamp("09:30").time())
         & (out.index.time < pd.Timestamp("16:00").time())
     ]
 

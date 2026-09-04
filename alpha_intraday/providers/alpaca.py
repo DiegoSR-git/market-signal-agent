@@ -68,16 +68,17 @@ class AlpacaMarketDataProvider:
 
     def intraday_bars(self, symbol: str, timeframe: str = "1Min", limit: int = 120) -> list[Bar]:
         now = datetime.now(ZoneInfo("UTC"))
-        start = now - timedelta(minutes=max(limit * 2, 240))
+        request_limit = min(max(limit * 3, 390), 10000)
+        start = now - timedelta(minutes=max(request_limit * 2, 720))
         data = self._get(
             f"/v2/stocks/{symbol}/bars",
             {
                 "timeframe": timeframe,
                 "start": start.isoformat().replace("+00:00", "Z"),
                 "end": now.isoformat().replace("+00:00", "Z"),
-                "limit": limit,
+                "limit": request_limit,
                 "feed": self.feed,
-                "sort": "asc",
+                "sort": "desc",
             },
         )
         raw_bars = data.get("bars")
@@ -98,4 +99,4 @@ class AlpacaMarketDataProvider:
                 )
             except KeyError as ex:
                 raise ProviderError(f"Alpaca bars response missing field {ex}") from ex
-        return bars
+        return sorted(bars, key=lambda bar: bar.timestamp)[-limit:]

@@ -30,9 +30,13 @@ class ProviderBundle:
         }
 
 
-def provider_health(bundle: ProviderBundle) -> dict[str, str]:
+def provider_health(bundle: ProviderBundle, provider_errors: dict[str, list[str]] | None = None) -> dict[str, str]:
+    provider_errors = provider_errors or {}
     health: dict[str, str] = {}
     for name, provider in bundle.as_dict().items():
+        if provider_errors.get(name):
+            health[name] = HealthStatus.BLOCKED.value
+            continue
         if provider is None:
             health[name] = HealthStatus.NOT_CONFIGURED.value
             continue
@@ -51,20 +55,32 @@ def _check(name: str, ok: bool, reason: str, critical: bool = True, not_configur
     return ReadinessCheck(name, status, critical, reason)
 
 
-def build_readiness_report(bundle: ProviderBundle, config: dict[str, Any], quality_ok: bool, market_data_sample: dict | None = None) -> ProductionReadinessReport:
-    health = provider_health(bundle)
+def build_readiness_report(
+    bundle: ProviderBundle,
+    config: dict[str, Any],
+    quality_ok: bool,
+    market_data_sample: dict | None = None,
+    provider_errors: dict[str, list[str]] | None = None,
+) -> ProductionReadinessReport:
+    health = provider_health(bundle, provider_errors)
     sample = market_data_sample or {}
     feed = config.get("data", {}).get("alpaca_feed")
+    missing_statuses = {HealthStatus.FIXTURE.value, HealthStatus.NOT_CONFIGURED.value, HealthStatus.BLOCKED.value}
     checks = [
-        _check("market_data_provider_real", health["market_data"] not in {HealthStatus.FIXTURE.value, HealthStatus.NOT_CONFIGURED.value}, health["market_data"]),
+        _check("market_data_provider_real", health["market_data"] == HealthStatus.GREEN.value, health["market_data"]),
         _check("feed_correct", feed == "sip", f"feed={feed}; SIP requerido para produccion"),
         _check("quote_available", bool(sample.get("quote_available")), "quote verificada" if sample.get("quote_available") else "quote no verificada"),
+        _check("latest_trade_available", bool(sample.get("latest_trade_available")), "latest trade verificado" if sample.get("latest_trade_available") else "latest trade no verificado"),
         _check("bars_available", bool(sample.get("bars_available")), "bars verificadas" if sample.get("bars_available") else "bars no verificadas"),
         _check("universe_provider_real", health["universe"] == HealthStatus.GREEN.value, health["universe"]),
         _check("analysts_provider_real", health["analysts"] == HealthStatus.GREEN.value, health["analysts"], not_configured=health["analysts"] == HealthStatus.NOT_CONFIGURED.value),
+        _check("news_catalyst_provider_real", health["news"] == HealthStatus.GREEN.value, health["news"], not_configured=health["news"] == HealthStatus.NOT_CONFIGURED.value),
         _check("macro_critical", health["macro"] == HealthStatus.GREEN.value, health["macro"], not_configured=health["macro"] == HealthStatus.NOT_CONFIGURED.value),
+        _check("index_data_critical", health["index_data"] == HealthStatus.GREEN.value, health["index_data"], not_configured=health["index_data"] == HealthStatus.NOT_CONFIGURED.value),
+        _check("index_data_verified", bool(sample.get("index_data_verified")), "indices verificados" if sample.get("index_data_verified") else "indices reales no verificados"),
         _check("fx", health["fx"] == HealthStatus.GREEN.value, health["fx"], not_configured=health["fx"] == HealthStatus.NOT_CONFIGURED.value),
         _check("absence_of_fixtures", HealthStatus.FIXTURE.value not in health.values(), f"health={health}"),
+        _check("all_critical_providers_ready", not any(status in missing_statuses for status in health.values()), f"health={health}"),
         _check("freshness", bool(sample.get("freshness_ok")), "freshness ok" if sample.get("freshness_ok") else "freshness no verificada"),
         _check("quality_gate", quality_ok, "quality gate ok" if quality_ok else "quality gate bloqueado"),
     ]

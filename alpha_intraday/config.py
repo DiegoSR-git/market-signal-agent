@@ -19,6 +19,10 @@ DEFAULT_CONFIG: dict[str, Any] = {
         "quote_fresh_seconds": 5,
         "trade_fresh_seconds": 300,
         "bar_fresh_seconds": 120,
+        "min_1m_bars": 10,
+        "min_5m_bars": 20,
+        "min_15m_bars": 1,
+        "min_macd_5m_bars": 35,
     },
     "universe": {
         "min_market_cap_usd": 10_000_000_000,
@@ -101,6 +105,9 @@ def load_config(path: str | Path = "config_alpha_intraday.yaml") -> dict[str, An
     live_env = os.getenv("ALPHA_LIVE_SIGNALS")
     if live_env is not None:
         config["live_signals"] = live_env.lower() == "true"
+    provider_env = os.getenv("ALPHA_DATA_PROVIDER")
+    if provider_env:
+        config.setdefault("data", {})["provider"] = provider_env.lower()
     telegram_env = os.getenv("ALPHA_TELEGRAM_ENABLED")
     if telegram_env is not None:
         config["telegram_enabled"] = telegram_env.lower() == "true"
