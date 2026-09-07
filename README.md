@@ -20,6 +20,36 @@ Agente gratuito de vigilancia de BTC, bolsa/ETFs y macro con alertas Telegram.
 - Reporte diario, reporte semanal, healthcheck y backtest básico.
 - Dashboard HTML en docs/dashboard.html.
 
+## Alpha Intradia V2
+
+Alpha Intradia V2 es una capa nueva y separada del sistema legacy, orientada a analisis intradia LONG-only sobre acciones ordinarias estadounidenses de gran capitalizacion.
+
+Puntos clave:
+
+- Modo seguro por defecto: `ALPHA_MODE=development` y `ALPHA_LIVE_SIGNALS=false`.
+- Sin apalancamiento, sin shorts y sin ejecucion de ordenes reales.
+- Reloj de mercado con `America/New_York` para evitar errores de DST.
+- Data-quality gates antes de cualquier `READY_LONG`.
+- Scoring determinista de 100 puntos.
+- Dashboard propio en `docs/alpha/index.html`.
+- Workflow propio: `Alpha Intradia V2`.
+
+Probar local:
+
+```bash
+pip install -r requirements.txt -r requirements-alpha.txt
+python -m alpha_intraday.cli validate-config
+python -m alpha_intraday.cli snapshot --dry-run
+python -m alpha_intraday.cli replay --fixture tests/alpha_intraday/fixtures/session_sample/
+```
+
+Documentacion:
+
+- `ALPHA_INTRADIA_SETUP.md`
+- `ALPHA_INTRADIA_ARCHITECTURE.md`
+- `ALPHA_INTRADIA_DATA_SOURCES.md`
+- `ALPHA_INTRADIA_SECURITY.md`
+
 ## Secrets obligatorios
 
 GitHub → Settings → Secrets and variables → Actions → Secrets:

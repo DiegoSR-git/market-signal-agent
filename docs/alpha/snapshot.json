@@ -1,0 +1,740 @@
+{
+  "analysis_timestamp": "2026-07-08T09:55:00-04:00",
+  "timezone": "America/New_York",
+  "market_status": "SELECTION_WINDOW",
+  "data_mode": "development",
+  "data_feed": "iex",
+  "provider_health": {
+    "market_data": "FIXTURE",
+    "universe": "FIXTURE",
+    "analysts": "FIXTURE",
+    "news": "FIXTURE",
+    "macro": "FIXTURE",
+    "index_data": "NOT_CONFIGURED",
+    "fx": "FIXTURE",
+    "storage": "NOT_CONFIGURED"
+  },
+  "production_readiness": {
+    "production_ready": false,
+    "checks": [
+      {
+        "name": "market_data_provider_real",
+        "status": "FAIL",
+        "critical": true,
+        "reason": "FIXTURE"
+      },
+      {
+        "name": "feed_correct",
+        "status": "FAIL",
+        "critical": true,
+        "reason": "feed=iex; SIP requerido para produccion"
+      },
+      {
+        "name": "quote_available",
+        "status": "PASS",
+        "critical": true,
+        "reason": "quote verificada"
+      },
+      {
+        "name": "latest_trade_available",
+        "status": "FAIL",
+        "critical": true,
+        "reason": "latest trade no verificado"
+      },
+      {
+        "name": "bars_available",
+        "status": "PASS",
+        "critical": true,
+        "reason": "bars verificadas"
+      },
+      {
+        "name": "universe_provider_real",
+        "status": "FAIL",
+        "critical": true,
+        "reason": "FIXTURE"
+      },
+      {
+        "name": "analysts_provider_real",
+        "status": "FAIL",
+        "critical": true,
+        "reason": "FIXTURE"
+      },
+      {
+        "name": "news_catalyst_provider_real",
+        "status": "FAIL",
+        "critical": true,
+        "reason": "FIXTURE"
+      },
+      {
+        "name": "macro_critical",
+        "status": "FAIL",
+        "critical": true,
+        "reason": "FIXTURE"
+      },
+      {
+        "name": "index_data_critical",
+        "status": "NOT_CONFIGURED",
+        "critical": true,
+        "reason": "NOT_CONFIGURED"
+      },
+      {
+        "name": "index_data_verified",
+        "status": "FAIL",
+        "critical": true,
+        "reason": "indices reales no verificados"
+      },
+      {
+        "name": "fx",
+        "status": "FAIL",
+        "critical": true,
+        "reason": "FIXTURE"
+      },
+      {
+        "name": "absence_of_fixtures",
+        "status": "FAIL",
+        "critical": true,
+        "reason": "health={'market_data': 'FIXTURE', 'universe': 'FIXTURE', 'analysts': 'FIXTURE', 'news': 'FIXTURE', 'macro': 'FIXTURE', 'index_data': 'NOT_CONFIGURED', 'fx': 'FIXTURE', 'storage': 'NOT_CONFIGURED'}"
+      },
+      {
+        "name": "all_critical_providers_ready",
+        "status": "FAIL",
+        "critical": true,
+        "reason": "health={'market_data': 'FIXTURE', 'universe': 'FIXTURE', 'analysts': 'FIXTURE', 'news': 'FIXTURE', 'macro': 'FIXTURE', 'index_data': 'NOT_CONFIGURED', 'fx': 'FIXTURE', 'storage': 'NOT_CONFIGURED'}"
+      },
+      {
+        "name": "freshness",
+        "status": "PASS",
+        "critical": true,
+        "reason": "freshness ok"
+      },
+      {
+        "name": "quality_gate",
+        "status": "PASS",
+        "critical": true,
+        "reason": "quality gate ok"
+      }
+    ]
+  },
+  "market_regime": {
+    "regime": "WEAK_BULLISH",
+    "spy_change_pct": 0.35,
+    "qqq_change_pct": 0.52,
+    "vix": 15.2,
+    "us10y": 4.1,
+    "actual_index_verified": false,
+    "reasons": [
+      "SPY y QQQ ligeramente positivos"
+    ]
+  },
+  "candidates": [
+    {
+      "symbol": "NVDA",
+      "company": "NVIDIA Corp",
+      "price": 128.13,
+      "quote": {
+        "symbol": "NVDA",
+        "bid": 128.1,
+        "ask": 128.16,
+        "bid_size": 100,
+        "ask_size": 100,
+        "timestamp": "2026-07-08T09:54:59-04:00",
+        "provider": "mock",
+        "feed": "fixture"
+      },
+      "metadata": {
+        "symbol": "NVDA",
+        "company": "NVIDIA Corp",
+        "exchange": "NASDAQ",
+        "security_type": "COMMON_STOCK",
+        "market_cap": 3000000000000,
+        "average_volume": 200000000,
+        "average_dollar_volume": 25000000000,
+        "sector": "Technology",
+        "industry": "Semiconductors",
+        "active": true,
+        "tradable": true,
+        "source": "fixture",
+        "updated_at": "2026-09-04T07:38:14.837560-04:00"
+      },
+      "analysts": {
+        "symbol": "NVDA",
+        "analyst_count": 48,
+        "strong_buy": 30,
+        "buy": 12,
+        "hold": 5,
+        "sell": 1,
+        "strong_sell": 0,
+        "target_median": 160.0,
+        "target_mean": 158.0,
+        "target_low": 110.0,
+        "target_high": 190.0,
+        "median_target_available": true,
+        "source": "fixture",
+        "as_of": null
+      },
+      "catalyst": {
+        "symbol": "NVDA",
+        "classification": "POSITIVE",
+        "title": "Catalizador sintetico de fixture confirmado por volumen",
+        "source": "fixture",
+        "as_of": null,
+        "confirmed_by_price_volume": true
+      },
+      "metrics": {
+        "symbol": "NVDA",
+        "latest_trade": null,
+        "latest_trade_available": false,
+        "quote_mid": 128.13,
+        "price": 128.13,
+        "bid": 128.1,
+        "ask": 128.16,
+        "spread_pct": 0.04682744088035766,
+        "vwap": 129.0623029366306,
+        "vwap_slope": "rising",
+        "price_above_vwap": false,
+        "indicator_history_5m_bars": 5,
+        "current_session_5m_bars": 5,
+        "indicators_5m_available": false,
+        "macd_5m_available": false,
+        "ema9_5m": null,
+        "ema20_5m": null,
+        "rsi5": null,
+        "macd5_hist": null,
+        "hh_hl": true,
+        "relative_strength_spy": 0.4,
+        "relative_strength_qqq": 0.3,
+        "relative_strength_daily": 0.5,
+        "sector_relative_strength": 0.2,
+        "rvol": 1.8,
+        "rvol_reliable": true,
+        "average_volume": 200000000,
+        "average_dollar_volume": 25000000000,
+        "market_cap": 3000000000000,
+        "daily_history_available": true,
+        "bars_1m_available": true,
+        "bars_5m_available": true,
+        "bars_15m_available": true,
+        "bars_1m_quality": {
+          "ok": true,
+          "timeframe": "1m",
+          "last_bar_timestamp": "2026-07-08T09:55:00-04:00",
+          "bar_age_seconds": 0.0,
+          "bars_count": 26,
+          "bars_complete": true,
+          "blocking_reasons": []
+        },
+        "bars_5m_quality": {
+          "ok": true,
+          "timeframe": "5m",
+          "last_bar_timestamp": "2026-07-08T09:50:00-04:00",
+          "bar_age_seconds": 300.0,
+          "bars_count": 5,
+          "bars_complete": true,
+          "blocking_reasons": []
+        },
+        "bars_15m_quality": {
+          "ok": true,
+          "timeframe": "15m",
+          "last_bar_timestamp": "2026-07-08T09:30:00-04:00",
+          "bar_age_seconds": 1500.0,
+          "bars_count": 1,
+          "bars_complete": true,
+          "blocking_reasons": []
+        },
+        "ema20": 125.0,
+        "sma50": 120.0,
+        "sma200": 110.0,
+        "rsi_daily": 62,
+        "macd_daily_hist": 0.2,
+        "distance_to_resistance_pct": 2.5,
+        "distance_from_vwap_pct": -0.7223665744507612,
+        "atr_consumed_pct": 42,
+        "setup_valid": false,
+        "breakout_valid": false,
+        "vwap_reclaim_valid": false,
+        "controlled_pullback_valid": false,
+        "trigger": "superar OR5/premarket con volumen en NVDA",
+        "entry": null,
+        "entry_zone": "pendiente",
+        "stop": null,
+        "target1": null,
+        "target2": null,
+        "activation_conditions": [
+          "spread valido",
+          "volumen confirma",
+          "precio mantiene VWAP",
+          "no perseguir vela vertical"
+        ],
+        "invalidation": "pendiente de stop tecnico",
+        "spy_change_pct": 0.35,
+        "qqq_change_pct": 0.52,
+        "binary_event_risk": false,
+        "or5": {
+          "high": 128.94,
+          "low": 128.51999999999998,
+          "complete": true
+        },
+        "or15": {
+          "high": 129.24,
+          "low": 128.51999999999998,
+          "complete": true
+        }
+      },
+      "data_quality": {
+        "ok": true,
+        "signal_allowed": true,
+        "quote_quality": {
+          "ok": true,
+          "status": "OK",
+          "age_seconds": 1.0,
+          "spread": {
+            "mid": 128.13,
+            "spread_abs": 0.060000000000002274,
+            "spread_pct": 0.04682744088035766
+          },
+          "blocking_reasons": [],
+          "warnings": [],
+          "provider": "mock",
+          "feed": "fixture"
+        },
+        "blocking_reasons": [],
+        "standard_output": "OK"
+      },
+      "score": {
+        "total": 74,
+        "components": [
+          {
+            "name": "daily_technical",
+            "score": 20,
+            "max_score": 20,
+            "reasons_positive": [
+              "alineacion diaria alcista",
+              "RSI diario sano",
+              "MACD diario positivo",
+              "fortaleza relativa diaria positiva",
+              "espacio a resistencia"
+            ],
+            "reasons_negative": [],
+            "missing_data": []
+          },
+          {
+            "name": "intraday_technical",
+            "score": 9,
+            "max_score": 30,
+            "reasons_positive": [
+              "estructura HH/HL",
+              "fuerza relativa vs SPY/QQQ",
+              "recorrido suficiente"
+            ],
+            "reasons_negative": [
+              "VWAP no confirma"
+            ],
+            "missing_data": [
+              "EMA 5m",
+              "RSI5",
+              "MACD5"
+            ]
+          },
+          {
+            "name": "volume_liquidity",
+            "score": 15,
+            "max_score": 15,
+            "reasons_positive": [
+              "ADV suficiente",
+              "dollar ADV suficiente",
+              "spread apto",
+              "RVOL fiable",
+              "market cap/liquidez calidad"
+            ],
+            "reasons_negative": [],
+            "missing_data": []
+          },
+          {
+            "name": "analysts",
+            "score": 13,
+            "max_score": 15,
+            "reasons_positive": [
+              "cobertura de analistas suficiente",
+              "upside mediano >20%",
+              "Buy + Strong Buy >=70%",
+              "Sell ratio <10%"
+            ],
+            "reasons_negative": [],
+            "missing_data": []
+          },
+          {
+            "name": "catalyst",
+            "score": 7,
+            "max_score": 10,
+            "reasons_positive": [
+              "catalizador positivo confirmado"
+            ],
+            "reasons_negative": [],
+            "missing_data": []
+          },
+          {
+            "name": "market_sector",
+            "score": 10,
+            "max_score": 10,
+            "reasons_positive": [
+              "regimen favorable",
+              "SPY/QQQ proxy positivos",
+              "sector fuerte",
+              "sin evento binario detectado"
+            ],
+            "reasons_negative": [],
+            "missing_data": []
+          }
+        ],
+        "risk_category": "NONE",
+        "candidate_valid": false,
+        "blocking_reasons": [
+          "score < 78",
+          "sin categoria de riesgo operable"
+        ]
+      },
+      "setup": {
+        "setup_type": "NO_SETUP",
+        "status": "WAIT",
+        "trigger": "esperar condicion",
+        "entry_zone": "pendiente",
+        "activation_conditions": [
+          "breakout, VWAP reclaim o pullback controlado"
+        ],
+        "invalidation": "setup no confirmado",
+        "stop": null,
+        "target1": null,
+        "target2": null,
+        "risk_reward1": null,
+        "risk_reward2": null,
+        "expires_at": null,
+        "evidence": [
+          "score alto no activa entrada sin setup"
+        ]
+      },
+      "risk": {
+        "account_currency": "EUR",
+        "risk_category": "NONE",
+        "risk_eur": 0.0,
+        "risk_usd": null,
+        "shares": null,
+        "notional_usd": null,
+        "max_daily_risk_eur": 50.0,
+        "position_size_available": false,
+        "blocking_reasons": [
+          "sin categoria de riesgo operable",
+          "stop invalido para LONG"
+        ]
+      }
+    },
+    {
+      "symbol": "MSFT",
+      "company": "Microsoft Corp",
+      "price": 420.03999999999996,
+      "quote": {
+        "symbol": "MSFT",
+        "bid": 420.0,
+        "ask": 420.08,
+        "bid_size": 100,
+        "ask_size": 100,
+        "timestamp": "2026-07-08T09:54:59-04:00",
+        "provider": "mock",
+        "feed": "fixture"
+      },
+      "metadata": {
+        "symbol": "MSFT",
+        "company": "Microsoft Corp",
+        "exchange": "NASDAQ",
+        "security_type": "COMMON_STOCK",
+        "market_cap": 3100000000000,
+        "average_volume": 20000000,
+        "average_dollar_volume": 8000000000,
+        "sector": "Technology",
+        "industry": "Software",
+        "active": true,
+        "tradable": true,
+        "source": "fixture",
+        "updated_at": "2026-09-04T07:38:14.837560-04:00"
+      },
+      "analysts": {
+        "symbol": "MSFT",
+        "analyst_count": 40,
+        "strong_buy": 20,
+        "buy": 12,
+        "hold": 7,
+        "sell": 1,
+        "strong_sell": 0,
+        "target_median": 510.0,
+        "target_mean": 505.0,
+        "target_low": 390.0,
+        "target_high": 600.0,
+        "median_target_available": true,
+        "source": "fixture",
+        "as_of": null
+      },
+      "catalyst": {
+        "symbol": "MSFT",
+        "classification": "NONE",
+        "title": "",
+        "source": "fixture",
+        "as_of": null,
+        "confirmed_by_price_volume": false
+      },
+      "metrics": {
+        "symbol": "MSFT",
+        "latest_trade": null,
+        "latest_trade_available": false,
+        "quote_mid": 420.03999999999996,
+        "price": 420.03999999999996,
+        "bid": 420.0,
+        "ask": 420.08,
+        "spread_pct": 0.019045805161409413,
+        "vwap": 103.0623029366306,
+        "vwap_slope": "rising",
+        "price_above_vwap": true,
+        "indicator_history_5m_bars": 5,
+        "current_session_5m_bars": 5,
+        "indicators_5m_available": false,
+        "macd_5m_available": false,
+        "ema9_5m": null,
+        "ema20_5m": null,
+        "rsi5": null,
+        "macd5_hist": null,
+        "hh_hl": true,
+        "relative_strength_spy": 0.4,
+        "relative_strength_qqq": 0.3,
+        "relative_strength_daily": 0.5,
+        "sector_relative_strength": 0.2,
+        "rvol": 1.8,
+        "rvol_reliable": true,
+        "average_volume": 20000000,
+        "average_dollar_volume": 8000000000,
+        "market_cap": 3100000000000,
+        "daily_history_available": true,
+        "bars_1m_available": true,
+        "bars_5m_available": true,
+        "bars_15m_available": true,
+        "bars_1m_quality": {
+          "ok": true,
+          "timeframe": "1m",
+          "last_bar_timestamp": "2026-07-08T09:55:00-04:00",
+          "bar_age_seconds": 0.0,
+          "bars_count": 26,
+          "bars_complete": true,
+          "blocking_reasons": []
+        },
+        "bars_5m_quality": {
+          "ok": true,
+          "timeframe": "5m",
+          "last_bar_timestamp": "2026-07-08T09:50:00-04:00",
+          "bar_age_seconds": 300.0,
+          "bars_count": 5,
+          "bars_complete": true,
+          "blocking_reasons": []
+        },
+        "bars_15m_quality": {
+          "ok": true,
+          "timeframe": "15m",
+          "last_bar_timestamp": "2026-07-08T09:30:00-04:00",
+          "bar_age_seconds": 1500.0,
+          "bars_count": 1,
+          "bars_complete": true,
+          "blocking_reasons": []
+        },
+        "ema20": 98.0,
+        "sma50": 95.0,
+        "sma200": 90.0,
+        "rsi_daily": 62,
+        "macd_daily_hist": 0.2,
+        "distance_to_resistance_pct": 2.5,
+        "distance_from_vwap_pct": 307.5592995998429,
+        "atr_consumed_pct": 42,
+        "setup_valid": true,
+        "breakout_valid": true,
+        "vwap_reclaim_valid": false,
+        "controlled_pullback_valid": false,
+        "trigger": "superar OR5/premarket con volumen en MSFT",
+        "entry": null,
+        "entry_zone": "pendiente",
+        "stop": null,
+        "target1": null,
+        "target2": null,
+        "activation_conditions": [
+          "spread valido",
+          "volumen confirma",
+          "precio mantiene VWAP",
+          "no perseguir vela vertical"
+        ],
+        "invalidation": "pendiente de stop tecnico",
+        "spy_change_pct": 0.35,
+        "qqq_change_pct": 0.52,
+        "binary_event_risk": false,
+        "or5": {
+          "high": 102.94,
+          "low": 102.52,
+          "complete": true
+        },
+        "or15": {
+          "high": 103.24000000000001,
+          "low": 102.52,
+          "complete": true
+        }
+      },
+      "data_quality": {
+        "ok": true,
+        "signal_allowed": true,
+        "quote_quality": {
+          "ok": true,
+          "status": "OK",
+          "age_seconds": 1.0,
+          "spread": {
+            "mid": 420.03999999999996,
+            "spread_abs": 0.07999999999998408,
+            "spread_pct": 0.019045805161409413
+          },
+          "blocking_reasons": [],
+          "warnings": [],
+          "provider": "mock",
+          "feed": "fixture"
+        },
+        "blocking_reasons": [],
+        "standard_output": "OK"
+      },
+      "score": {
+        "total": 77.0,
+        "components": [
+          {
+            "name": "daily_technical",
+            "score": 20,
+            "max_score": 20,
+            "reasons_positive": [
+              "alineacion diaria alcista",
+              "RSI diario sano",
+              "MACD diario positivo",
+              "fortaleza relativa diaria positiva",
+              "espacio a resistencia"
+            ],
+            "reasons_negative": [],
+            "missing_data": []
+          },
+          {
+            "name": "intraday_technical",
+            "score": 19,
+            "max_score": 30,
+            "reasons_positive": [
+              "precio sobre VWAP ascendente",
+              "estructura HH/HL",
+              "fuerza relativa vs SPY/QQQ",
+              "setup tecnico validado",
+              "recorrido suficiente"
+            ],
+            "reasons_negative": [],
+            "missing_data": [
+              "EMA 5m",
+              "RSI5",
+              "MACD5"
+            ]
+          },
+          {
+            "name": "volume_liquidity",
+            "score": 15,
+            "max_score": 15,
+            "reasons_positive": [
+              "ADV suficiente",
+              "dollar ADV suficiente",
+              "spread apto",
+              "RVOL fiable",
+              "market cap/liquidez calidad"
+            ],
+            "reasons_negative": [],
+            "missing_data": []
+          },
+          {
+            "name": "analysts",
+            "score": 13,
+            "max_score": 15,
+            "reasons_positive": [
+              "cobertura de analistas suficiente",
+              "upside mediano >20%",
+              "Buy + Strong Buy >=70%",
+              "Sell ratio <10%"
+            ],
+            "reasons_negative": [],
+            "missing_data": []
+          },
+          {
+            "name": "catalyst",
+            "score": 0.0,
+            "max_score": 10,
+            "reasons_positive": [],
+            "reasons_negative": [
+              "catalizador inexistente o negativo"
+            ],
+            "missing_data": []
+          },
+          {
+            "name": "market_sector",
+            "score": 10,
+            "max_score": 10,
+            "reasons_positive": [
+              "regimen favorable",
+              "SPY/QQQ proxy positivos",
+              "sector fuerte",
+              "sin evento binario detectado"
+            ],
+            "reasons_negative": [],
+            "missing_data": []
+          }
+        ],
+        "risk_category": "NONE",
+        "candidate_valid": false,
+        "blocking_reasons": [
+          "score < 78",
+          "sin categoria de riesgo operable"
+        ]
+      },
+      "setup": {
+        "setup_type": "NO_SETUP",
+        "status": "NO_TRADE",
+        "trigger": "bloqueado por extension",
+        "entry_zone": "sin entrada",
+        "activation_conditions": [],
+        "invalidation": "precio demasiado lejos de VWAP",
+        "stop": null,
+        "target1": null,
+        "target2": null,
+        "risk_reward1": null,
+        "risk_reward2": null,
+        "expires_at": null,
+        "evidence": [
+          "precio demasiado lejos de VWAP"
+        ]
+      },
+      "risk": {
+        "account_currency": "EUR",
+        "risk_category": "NONE",
+        "risk_eur": 0.0,
+        "risk_usd": null,
+        "shares": null,
+        "notional_usd": null,
+        "max_daily_risk_eur": 50.0,
+        "position_size_available": false,
+        "blocking_reasons": [
+          "sin categoria de riesgo operable",
+          "stop invalido para LONG"
+        ]
+      }
+    }
+  ],
+  "best_operation": null,
+  "signal_allowed": false,
+  "blocking_reasons": [
+    "DEVELOPMENT MODE: live_signal_allowed=false",
+    "PRODUCTION_READY=false",
+    "market_data_provider_real: FAIL - FIXTURE",
+    "feed_correct: FAIL - feed=iex; SIP requerido para produccion",
+    "latest_trade_available: FAIL - latest trade no verificado",
+    "universe_provider_real: FAIL - FIXTURE",
+    "1 simbolos rechazados por filtros duros"
+  ]
+}
