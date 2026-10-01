@@ -1,93 +1,35 @@
 [
   {
     "agent": "unusual_volume",
-    "asset": "ARM",
-    "level": "vigilancia",
+    "asset": "SMH",
+    "level": "medio",
     "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": 21.396390799084685,
-      "perf_5d": -11.863744697204638,
-      "perf_60d": -8.866055633213243,
-      "price": 293.6700134277344,
-      "rsi": 54.77182082861162,
-      "sma20": 272.8369995117188,
-      "sma50": 265.11999969482423,
+      "breakout_20d": true,
+      "breakout_50d": true,
+      "perf_20d": 11.442739512658973,
+      "perf_5d": 2.1564561964118045,
+      "perf_60d": 3.4519343512858347,
+      "price": 613.469970703125,
+      "rsi": 63.82955138359713,
+      "sma20": 580.0290008544922,
+      "sma50": 568.7512005615234,
       "status": "ok",
-      "symbol": "ARM",
-      "volume": 6010400.0,
-      "volume_20d_avg": 5753585.0,
-      "volume_ratio": 1.044635648904118
+      "symbol": "SMH",
+      "volume": 719330.0,
+      "volume_20d_avg": 6170831.5,
+      "volume_ratio": 0.11656937966949835
     },
     "reasons": [
-      "volume 1.0x avg",
-      "5D -11.9%"
+      "volume 0.1x avg",
+      "5D +2.2%",
+      "cerca de ruptura 20D",
+      "cerca de ruptura 50D"
     ],
-    "score": 62,
-    "source": "https://finance.yahoo.com/quote/ARM",
-    "summary": "Arm Holdings presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-09-30T13:00:34.897536+00:00",
-    "title": "ARM volumen inusual"
-  },
-  {
-    "agent": "unusual_volume",
-    "asset": "MSTR",
-    "level": "vigilancia",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": 16.34571635961617,
-      "perf_5d": -7.565889872451914,
-      "perf_60d": 53.48814460795912,
-      "price": 154.6699981689453,
-      "rsi": 60.3389277290078,
-      "sma20": 143.66950073242188,
-      "sma50": 120.04660018920899,
-      "status": "ok",
-      "symbol": "MSTR",
-      "volume": 16251200.0,
-      "volume_20d_avg": 23661835.0,
-      "volume_ratio": 0.686810638312709
-    },
-    "reasons": [
-      "volume 0.7x avg",
-      "5D -7.6%"
-    ],
-    "score": 56,
-    "source": "https://finance.yahoo.com/quote/MSTR",
-    "summary": "MicroStrategy presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-09-30T13:00:35.192799+00:00",
-    "title": "MSTR volumen inusual"
-  },
-  {
-    "agent": "unusual_volume",
-    "asset": "TSLA",
-    "level": "vigilancia",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": -4.106540390774283,
-      "perf_5d": -6.877803636416358,
-      "perf_60d": -15.944444440405514,
-      "price": 352.8399963378906,
-      "rsi": 44.81447334748234,
-      "sma20": 365.363996887207,
-      "sma50": 347.4461981201172,
-      "status": "ok",
-      "symbol": "TSLA",
-      "volume": 32408600.0,
-      "volume_20d_avg": 38521285.0,
-      "volume_ratio": 0.8413166902402139
-    },
-    "reasons": [
-      "volume 0.8x avg",
-      "5D -6.9%"
-    ],
-    "score": 55,
-    "source": "https://finance.yahoo.com/quote/TSLA",
-    "summary": "Tesla presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-09-30T13:00:35.103271+00:00",
-    "title": "TSLA volumen inusual"
+    "score": 70,
+    "source": "https://finance.yahoo.com/quote/SMH",
+    "summary": "Semiconductor ETF presenta volumen anormal o movimiento tecnico a vigilar.",
+    "time_utc": "2026-10-01T13:54:15.395640+00:00",
+    "title": "SMH volumen inusual"
   },
   {
     "agent": "unusual_volume",
@@ -96,28 +38,88 @@
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": 10.88636955241855,
-      "perf_5d": -6.462775677502519,
-      "perf_60d": -1.1314349608898655,
-      "price": 116.22000122070312,
-      "rsi": 53.611357864519725,
-      "sma20": 115.89149971008301,
-      "sma50": 104.91639984130859,
+      "perf_20d": 5.598659325884969,
+      "perf_5d": -6.4889888741048285,
+      "perf_60d": -0.484449421542299,
+      "price": 112.9800033569336,
+      "rsi": 49.88149695131123,
+      "sma20": 116.64049987792968,
+      "sma50": 105.20919982910156,
       "status": "ok",
       "symbol": "HOOD",
-      "volume": 14853800.0,
-      "volume_20d_avg": 22835540.0,
-      "volume_ratio": 0.6504685240638058
+      "volume": 3128995.0,
+      "volume_20d_avg": 22782284.75,
+      "volume_ratio": 0.1373433364711149
     },
     "reasons": [
-      "volume 0.7x avg",
+      "volume 0.1x avg",
       "5D -6.5%"
     ],
     "score": 55,
     "source": "https://finance.yahoo.com/quote/HOOD",
     "summary": "Robinhood presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-09-30T13:00:35.231922+00:00",
+    "time_utc": "2026-10-01T13:54:15.241755+00:00",
     "title": "HOOD volumen inusual"
+  },
+  {
+    "agent": "unusual_volume",
+    "asset": "TSLA",
+    "level": "vigilancia",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": -0.1568576631678753,
+      "perf_5d": -5.686085118154882,
+      "perf_60d": -9.544228184686565,
+      "price": 356.45001220703125,
+      "rsi": 47.010275489932205,
+      "sma20": 365.2719970703125,
+      "sma50": 346.61259826660154,
+      "status": "ok",
+      "symbol": "TSLA",
+      "volume": 4298186.0,
+      "volume_20d_avg": 37190999.3,
+      "volume_ratio": 0.11557059721167537
+    },
+    "reasons": [
+      "volume 0.1x avg",
+      "5D -5.7%"
+    ],
+    "score": 54,
+    "source": "https://finance.yahoo.com/quote/TSLA",
+    "summary": "Tesla presenta volumen anormal o movimiento tecnico a vigilar.",
+    "time_utc": "2026-10-01T13:54:15.146216+00:00",
+    "title": "TSLA volumen inusual"
+  },
+  {
+    "agent": "unusual_volume",
+    "asset": "ARM",
+    "level": "vigilancia",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": 23.56629201876195,
+      "perf_5d": -5.266110315756423,
+      "perf_60d": -3.34139234320201,
+      "price": 290.2077941894531,
+      "rsi": 53.618338775256646,
+      "sma20": 278.34638900756835,
+      "sma50": 265.2547555541992,
+      "status": "ok",
+      "symbol": "ARM",
+      "volume": 706779.0,
+      "volume_20d_avg": 5727928.95,
+      "volume_ratio": 0.123391719095957
+    },
+    "reasons": [
+      "volume 0.1x avg",
+      "5D -5.3%"
+    ],
+    "score": 53,
+    "source": "https://finance.yahoo.com/quote/ARM",
+    "summary": "Arm Holdings presenta volumen anormal o movimiento tecnico a vigilar.",
+    "time_utc": "2026-10-01T13:54:15.051363+00:00",
+    "title": "ARM volumen inusual"
   },
   {
     "agent": "unusual_volume",
@@ -126,58 +128,28 @@
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": 1.0099985140281653,
-      "perf_5d": -5.4955998653444365,
-      "perf_60d": 12.524432857711854,
-      "price": 190.02000427246094,
-      "rsi": 53.91957796777503,
-      "sma20": 185.14950103759764,
-      "sma50": 171.725,
+      "perf_20d": 8.584812778520213,
+      "perf_5d": -4.633306899881562,
+      "perf_60d": 19.21435429211369,
+      "price": 189.97999572753906,
+      "rsi": 53.72268326836679,
+      "sma20": 186.38000030517577,
+      "sma50": 172.4133999633789,
       "status": "ok",
       "symbol": "COIN",
-      "volume": 5801900.0,
-      "volume_20d_avg": 9661745.0,
-      "volume_ratio": 0.6005022902177609
+      "volume": 1261404.0,
+      "volume_20d_avg": 9459880.2,
+      "volume_ratio": 0.13334249201168533
     },
     "reasons": [
-      "volume 0.6x avg",
-      "5D -5.5%"
+      "volume 0.1x avg",
+      "5D -4.6%"
     ],
-    "score": 53,
+    "score": 52,
     "source": "https://finance.yahoo.com/quote/COIN",
     "summary": "Coinbase presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-09-30T13:00:35.150258+00:00",
+    "time_utc": "2026-10-01T13:54:15.174778+00:00",
     "title": "COIN volumen inusual"
-  },
-  {
-    "agent": "unusual_volume",
-    "asset": "AAPL",
-    "level": "vigilancia",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": 3.960860833585911,
-      "perf_5d": -3.046359412366628,
-      "perf_60d": 5.3540555358228215,
-      "price": 329.3999938964844,
-      "rsi": 50.88749954993644,
-      "sma20": 330.9584991455078,
-      "sma50": 321.9813995361328,
-      "status": "ok",
-      "symbol": "AAPL",
-      "volume": 38427200.0,
-      "volume_20d_avg": 42463125.0,
-      "volume_ratio": 0.9049545929556527
-    },
-    "reasons": [
-      "volume 0.9x avg",
-      "5D -3.0%"
-    ],
-    "score": 50,
-    "source": "https://finance.yahoo.com/quote/AAPL",
-    "summary": "Apple presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-09-30T13:00:34.582799+00:00",
-    "title": "AAPL volumen inusual"
   },
   {
     "agent": "unusual_volume",
@@ -186,28 +158,58 @@
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": 0.32919688581021234,
-      "perf_5d": 2.200801497003635,
-      "perf_60d": 31.60262820160762,
-      "price": 508.9599914550781,
-      "rsi": 58.39062328842035,
-      "sma20": 499.9084976196289,
-      "sma50": 480.25299865722656,
+      "perf_20d": 4.381872551489896,
+      "perf_5d": 4.149184520631977,
+      "perf_60d": 35.282003393761066,
+      "price": 518.5900268554688,
+      "rsi": 62.96127832358484,
+      "sma20": 501.59100036621095,
+      "sma50": 485.1209997558594,
       "status": "ok",
       "symbol": "MSFT",
-      "volume": 21326100.0,
-      "volume_20d_avg": 21040730.0,
-      "volume_ratio": 1.0135627423573232
+      "volume": 3754067.0,
+      "volume_20d_avg": 20769958.35,
+      "volume_ratio": 0.18074504227400146
     },
     "reasons": [
-      "volume 1.0x avg",
-      "5D +2.2%"
+      "volume 0.2x avg",
+      "5D +4.1%"
     ],
-    "score": 49,
+    "score": 51,
     "source": "https://finance.yahoo.com/quote/MSFT",
     "summary": "Microsoft presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-09-30T13:00:34.651661+00:00",
+    "time_utc": "2026-10-01T13:54:14.911817+00:00",
     "title": "MSFT volumen inusual"
+  },
+  {
+    "agent": "unusual_volume",
+    "asset": "NVDA",
+    "level": "vigilancia",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": 3.2663436172352345,
+      "perf_5d": 3.1881750840378142,
+      "perf_60d": 13.531261530806727,
+      "price": 231.74000549316406,
+      "rsi": 60.88301069024231,
+      "sma20": 223.55500030517578,
+      "sma50": 217.7920001220703,
+      "status": "ok",
+      "symbol": "NVDA",
+      "volume": 15584995.0,
+      "volume_20d_avg": 105768179.75,
+      "volume_ratio": 0.1473505078449646
+    },
+    "reasons": [
+      "volume 0.1x avg",
+      "5D +3.2%"
+    ],
+    "score": 50,
+    "source": "https://finance.yahoo.com/quote/NVDA",
+    "summary": "Nvidia presenta volumen anormal o movimiento tecnico a vigilar.",
+    "time_utc": "2026-10-01T13:54:14.952654+00:00",
+    "title": "NVDA volumen inusual"
   },
   {
     "agent": "unusual_volume",
@@ -216,58 +218,88 @@
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": 29.07248592552407,
-      "perf_5d": -2.597112990330186,
-      "perf_60d": 10.057063809241718,
-      "price": 607.5700073242188,
-      "rsi": 65.52709069241925,
-      "sma20": 542.061003112793,
-      "sma50": 509.03520263671874,
+      "perf_20d": 32.97380733663788,
+      "perf_5d": -3.415111220435396,
+      "perf_60d": 17.46392843429676,
+      "price": 607.7700805664062,
+      "rsi": 64.85147965489001,
+      "sma20": 557.2040084838867,
+      "sma50": 511.49060424804685,
       "status": "ok",
       "symbol": "AMD",
-      "volume": 16449600.0,
-      "volume_20d_avg": 22164140.0,
-      "volume_ratio": 0.7421718144714842
+      "volume": 3204186.0,
+      "volume_20d_avg": 21754269.3,
+      "volume_ratio": 0.14728998505134805
     },
     "reasons": [
-      "volume 0.7x avg",
-      "5D -2.6%"
+      "volume 0.1x avg",
+      "5D -3.4%"
     ],
-    "score": 49,
+    "score": 50,
     "source": "https://finance.yahoo.com/quote/AMD",
     "summary": "Advanced Micro Devices presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-09-30T13:00:34.797380+00:00",
+    "time_utc": "2026-10-01T13:54:14.979918+00:00",
     "title": "AMD volumen inusual"
   },
   {
     "agent": "unusual_volume",
-    "asset": "AVGO",
+    "asset": "MSTR",
     "level": "vigilancia",
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": -4.115134845027746,
-      "perf_5d": -2.5895655401684037,
-      "perf_60d": -5.028079192259516,
-      "price": 355.1000061035156,
-      "rsi": 45.97719229288221,
-      "sma20": 356.3089965820312,
-      "sma50": 375.7387994384766,
+      "perf_20d": 27.55937414069447,
+      "perf_5d": -2.7656732103874537,
+      "perf_60d": 67.40214287879715,
+      "price": 157.14039611816406,
+      "rsi": 61.333727045503764,
+      "sma20": 146.7775203704834,
+      "sma50": 122.21200805664063,
       "status": "ok",
-      "symbol": "AVGO",
-      "volume": 19144700.0,
-      "volume_20d_avg": 27507545.0,
-      "volume_ratio": 0.6959799574989335
+      "symbol": "MSTR",
+      "volume": 3488884.0,
+      "volume_20d_avg": 22858579.2,
+      "volume_ratio": 0.15262908378837475
     },
     "reasons": [
-      "volume 0.7x avg",
-      "5D -2.6%"
+      "volume 0.2x avg",
+      "5D -2.8%"
     ],
     "score": 49,
-    "source": "https://finance.yahoo.com/quote/AVGO",
-    "summary": "Broadcom presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-09-30T13:00:34.851446+00:00",
-    "title": "AVGO volumen inusual"
+    "source": "https://finance.yahoo.com/quote/MSTR",
+    "summary": "MicroStrategy presenta volumen anormal o movimiento tecnico a vigilar.",
+    "time_utc": "2026-10-01T13:54:15.206428+00:00",
+    "title": "MSTR volumen inusual"
+  },
+  {
+    "agent": "unusual_volume",
+    "asset": "AAPL",
+    "level": "vigilancia",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": 1.8402299186282445,
+      "perf_5d": -1.4824990436002938,
+      "perf_60d": 5.6000468976832085,
+      "price": 330.94000244140625,
+      "rsi": 52.07942470933618,
+      "sma20": 331.65199890136716,
+      "sma50": 322.1879992675781,
+      "status": "ok",
+      "symbol": "AAPL",
+      "volume": 4584521.0,
+      "volume_20d_avg": 40844276.05,
+      "volume_ratio": 0.1122439040023088
+    },
+    "reasons": [
+      "volume 0.1x avg",
+      "5D -1.5%"
+    ],
+    "score": 47,
+    "source": "https://finance.yahoo.com/quote/AAPL",
+    "summary": "Apple presenta volumen anormal o movimiento tecnico a vigilar.",
+    "time_utc": "2026-10-01T13:54:14.866389+00:00",
+    "title": "AAPL volumen inusual"
   },
   {
     "agent": "unusual_volume",
@@ -276,27 +308,27 @@
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": 10.032193672022792,
-      "perf_5d": -1.251806563079061,
-      "perf_60d": 50.864287061645655,
-      "price": 41.02000045776367,
-      "rsi": 56.41400211080969,
-      "sma20": 39.41299953460693,
-      "sma50": 35.72779975891113,
+      "perf_20d": 10.513511863914694,
+      "perf_5d": -1.4936134833885117,
+      "perf_60d": 45.15441703551439,
+      "price": 40.88999938964844,
+      "rsi": 55.90524188530324,
+      "sma20": 39.825499534606934,
+      "sma50": 36.24579975128174,
       "status": "ok",
       "symbol": "SMCI",
-      "volume": 25222800.0,
-      "volume_20d_avg": 38096210.0,
-      "volume_ratio": 0.6620816086429595
+      "volume": 3396989.0,
+      "volume_20d_avg": 36852999.45,
+      "volume_ratio": 0.09217673054289208
     },
     "reasons": [
-      "volume 0.7x avg",
-      "5D -1.3%"
+      "volume 0.1x avg",
+      "5D -1.5%"
     ],
     "score": 47,
     "source": "https://finance.yahoo.com/quote/SMCI",
     "summary": "Super Micro Computer presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-09-30T13:00:34.955728+00:00",
+    "time_utc": "2026-10-01T13:54:15.080151+00:00",
     "title": "SMCI volumen inusual"
   },
   {
@@ -306,28 +338,58 @@
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": 0.31655559739982575,
-      "perf_5d": 1.0703257844987935,
-      "perf_60d": 41.0668558108831,
-      "price": 186.97000122070312,
-      "rsi": 60.382654379321544,
-      "sma20": 178.4914993286133,
-      "sma50": 166.07119903564453,
+      "perf_20d": 12.07358615115024,
+      "perf_5d": -1.3864114296960328,
+      "perf_60d": 43.63931694357988,
+      "price": 189.91990661621094,
+      "rsi": 62.96993064310891,
+      "sma20": 179.8709945678711,
+      "sma50": 168.46599716186523,
       "status": "ok",
       "symbol": "PLTR",
-      "volume": 14723400.0,
-      "volume_20d_avg": 25471565.0,
-      "volume_ratio": 0.5780327985343656
+      "volume": 2549174.0,
+      "volume_20d_avg": 23220193.7,
+      "volume_ratio": 0.10978263286408331
     },
     "reasons": [
-      "volume 0.6x avg",
-      "5D +1.1%"
+      "volume 0.1x avg",
+      "5D -1.4%"
     ],
     "score": 47,
     "source": "https://finance.yahoo.com/quote/PLTR",
     "summary": "Palantir presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-09-30T13:00:35.039659+00:00",
+    "time_utc": "2026-10-01T13:54:15.118158+00:00",
     "title": "PLTR volumen inusual"
+  },
+  {
+    "agent": "unusual_volume",
+    "asset": "AVGO",
+    "level": "vigilancia",
+    "metrics": {
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "perf_20d": -4.0895583410616165,
+      "perf_5d": 0.5313138795233208,
+      "perf_60d": -9.382414168183429,
+      "price": 352.22149658203125,
+      "rsi": 44.45296340513471,
+      "sma20": 354.6335723876953,
+      "sma50": 374.1408294677734,
+      "status": "ok",
+      "symbol": "AVGO",
+      "volume": 2629620.0,
+      "volume_20d_avg": 25717696.0,
+      "volume_ratio": 0.10224943945211888
+    },
+    "reasons": [
+      "volume 0.1x avg",
+      "5D +0.5%"
+    ],
+    "score": 46,
+    "source": "https://finance.yahoo.com/quote/AVGO",
+    "summary": "Broadcom presenta volumen anormal o movimiento tecnico a vigilar.",
+    "time_utc": "2026-10-01T13:54:15.018966+00:00",
+    "title": "AVGO volumen inusual"
   },
   {
     "agent": "unusual_volume",
@@ -336,27 +398,27 @@
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": -0.3715501768193352,
-      "perf_5d": -1.1869963818333051,
-      "perf_60d": 1.7197293161443472,
-      "price": 764.2000122070312,
-      "rsi": 49.266220784140835,
-      "sma20": 765.0209991455079,
-      "sma50": 762.4543981933593,
+      "perf_20d": -0.1764305025509394,
+      "perf_5d": -0.43927046447517215,
+      "perf_60d": 2.4698111807821332,
+      "price": 763.8099975585938,
+      "rsi": 49.01359462273402,
+      "sma20": 764.9959991455078,
+      "sma50": 763.0693981933593,
       "status": "ok",
       "symbol": "SPY",
-      "volume": 36832600.0,
-      "volume_20d_avg": 43946955.0,
-      "volume_ratio": 0.838114950171178
+      "volume": 5404692.0,
+      "volume_20d_avg": 43780704.6,
+      "volume_ratio": 0.12344917811121751
     },
     "reasons": [
-      "volume 0.8x avg",
-      "5D -1.2%"
+      "volume 0.1x avg",
+      "5D -0.4%"
     ],
-    "score": 47,
+    "score": 46,
     "source": "https://finance.yahoo.com/quote/SPY",
     "summary": "S&P 500 ETF presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-09-30T13:00:35.371127+00:00",
+    "time_utc": "2026-10-01T13:54:15.302394+00:00",
     "title": "SPY volumen inusual"
   },
   {
@@ -366,87 +428,27 @@
     "metrics": {
       "breakout_20d": false,
       "breakout_50d": false,
-      "perf_20d": 2.953566412986497,
-      "perf_5d": -1.2749884966053227,
-      "perf_60d": 2.0904215708551943,
-      "price": 737.9299926757812,
-      "rsi": 59.224465630727856,
-      "sma20": 722.9379974365235,
-      "sma50": 714.3149975585937,
+      "perf_20d": 4.661327338249599,
+      "perf_5d": 0.1619231205725713,
+      "perf_60d": 4.3376792485188,
+      "price": 742.2999877929688,
+      "rsi": 61.619339927293446,
+      "sma20": 726.1974975585938,
+      "sma50": 715.6699987792969,
       "status": "ok",
       "symbol": "QQQ",
-      "volume": 26926200.0,
-      "volume_20d_avg": 33276315.0,
-      "volume_ratio": 0.8091701259589591
+      "volume": 6199851.0,
+      "volume_20d_avg": 32140567.55,
+      "volume_ratio": 0.1928979938003615
     },
     "reasons": [
-      "volume 0.8x avg",
-      "5D -1.3%"
-    ],
-    "score": 47,
-    "source": "https://finance.yahoo.com/quote/QQQ",
-    "summary": "Nasdaq 100 ETF presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-09-30T13:00:35.430892+00:00",
-    "title": "QQQ volumen inusual"
-  },
-  {
-    "agent": "unusual_volume",
-    "asset": "NVDA",
-    "level": "vigilancia",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": 2.9124050956255587,
-      "perf_5d": -0.7252975220584768,
-      "perf_60d": 16.190234297122295,
-      "price": 227.2100067138672,
-      "rsi": 56.604583363091116,
-      "sma20": 222.64150009155273,
-      "sma50": 216.9765997314453,
-      "status": "ok",
-      "symbol": "NVDA",
-      "volume": 101203000.0,
-      "volume_20d_avg": 112253915.0,
-      "volume_ratio": 0.9015543021372573
-    },
-    "reasons": [
-      "volume 0.9x avg",
-      "5D -0.7%"
-    ],
-    "score": 46,
-    "source": "https://finance.yahoo.com/quote/NVDA",
-    "summary": "Nvidia presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-09-30T13:00:34.752400+00:00",
-    "title": "NVDA volumen inusual"
-  },
-  {
-    "agent": "unusual_volume",
-    "asset": "SMH",
-    "level": "vigilancia",
-    "metrics": {
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "perf_20d": 9.031137216872342,
-      "perf_5d": -0.09218673465543059,
-      "perf_60d": 0.43025594466576944,
-      "price": 606.9000244140625,
-      "rsi": 61.77461261936564,
-      "sma20": 573.6904998779297,
-      "sma50": 567.7216009521485,
-      "status": "ok",
-      "symbol": "SMH",
-      "volume": 5651000.0,
-      "volume_20d_avg": 6479365.0,
-      "volume_ratio": 0.8721533668808594
-    },
-    "reasons": [
-      "volume 0.9x avg",
-      "5D -0.1%"
+      "volume 0.2x avg",
+      "5D +0.2%"
     ],
     "score": 45,
-    "source": "https://finance.yahoo.com/quote/SMH",
-    "summary": "Semiconductor ETF presenta volumen anormal o movimiento tecnico a vigilar.",
-    "time_utc": "2026-09-30T13:00:35.481467+00:00",
-    "title": "SMH volumen inusual"
+    "source": "https://finance.yahoo.com/quote/QQQ",
+    "summary": "Nasdaq 100 ETF presenta volumen anormal o movimiento tecnico a vigilar.",
+    "time_utc": "2026-10-01T13:54:15.354898+00:00",
+    "title": "QQQ volumen inusual"
   }
 ]
