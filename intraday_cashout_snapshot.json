@@ -61,20 +61,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-10-17T18:18:39.537993+02:00",
-        "now_ny": "2026-10-17T12:18:39.537993-04:00",
-        "now_utc": "2026-10-17T16:18:39.537993+00:00",
+        "now_madrid": "2026-10-18T18:27:49.838601+02:00",
+        "now_ny": "2026-10-18T12:27:49.838601-04:00",
+        "now_utc": "2026-10-18T16:27:49.838601+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-10-17"
+        "trade_date": "2026-10-18"
       },
       "setup": "NO_TRADE",
       "sma20": 253.2259994506836,
       "sma50": 257.0759994506836,
       "source_count": 2,
       "source_times": [
-        "2026-10-17T10:49:56.423102+00:00"
+        "2026-10-18T11:13:41.998272+00:00"
       ],
       "sources": [
         "Rumores y eventos",
@@ -123,135 +123,8 @@
     "score": 13,
     "source": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9uOGNSaXFQTzhOS3BteDlWbTlIOV9JejBNQzdyRnNEaEFsVG01bXNKTGJ6Z1ZaRmlPYXR4YUU4YU82bXBBTXlZZXowVjQ0UVN0U1pUZjlsenlwQmlYbzRaRFBrTERGUHhiOUl1bWptVl9hcmJpaTBhUm9sdGk?oc=5",
     "summary": "AMZN queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-10-17T16:18:42.418897+00:00",
+    "time_utc": "2026-10-18T16:27:52.978709+00:00",
     "title": "AMZN NO_TRADE NO_TRADE"
-  },
-  {
-    "agent": "intraday_cashout",
-    "asset": "GOOGL",
-    "level": "NO_TRADE",
-    "metrics": {
-      "action_state": "NO_TRADE",
-      "ask": null,
-      "avg_source_score": 63.5,
-      "bid": null,
-      "breakout_20d": false,
-      "breakout_50d": false,
-      "classification": "NO_TRADE",
-      "current_price": null,
-      "direction": "WAIT",
-      "entry_zone": "N/A",
-      "filing_date": "2026-10-15",
-      "form": "4",
-      "form4_details": {},
-      "gap_pct": null,
-      "invalid_reasons": [
-        "mercado cerrado",
-        "faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close",
-        "sin timestamp de precio",
-        "volumen pre-market bajo 0",
-        "ningun setup minimo confirma",
-        "riesgo/beneficio insuficiente N/A"
-      ],
-      "market_state": null,
-      "max_hold_hours": 8,
-      "max_source_score": 70.0,
-      "perf_20d": -2.560511526073561,
-      "perf_5d": -3.147929024892837,
-      "perf_60d": 7.20828282933077,
-      "previous_close": null,
-      "price": 340.5899963378906,
-      "quote_age_seconds": null,
-      "quote_timestamp": null,
-      "regular_volume": null,
-      "relative_strength_vs_qqq": 0,
-      "relative_strength_vs_spy": 0,
-      "risk_context": {
-        "leverage": 5.0,
-        "max_buying_power_pct_with_leverage": 20.0,
-        "max_position_pct": 20.0,
-        "risk_per_trade_pct": 1.0
-      },
-      "risk_plan": {
-        "margin_required": 0,
-        "max_daily_loss_amount": 30.0,
-        "max_trades_per_day": 3,
-        "net_risk_reward": null,
-        "notional": 0,
-        "position_size": 0,
-        "risk_amount": 10.0,
-        "spread_cost_to_reward_pct": null
-      },
-      "risk_reward": null,
-      "rsi": 44.43758307068796,
-      "session": {
-        "is_holiday": false,
-        "is_weekend": true,
-        "minutes_to_regular_open": 0,
-        "now_madrid": "2026-10-17T18:18:39.537993+02:00",
-        "now_ny": "2026-10-17T12:18:39.537993-04:00",
-        "now_utc": "2026-10-17T16:18:39.537993+00:00",
-        "phase": "NO_TRADE",
-        "seconds_to_regular_open": 0,
-        "state": "cerrado",
-        "trade_date": "2026-10-17"
-      },
-      "setup": "NO_TRADE",
-      "sma20": 346.4139999389648,
-      "sma50": 344.58039916992186,
-      "source_count": 2,
-      "source_times": [
-        "2026-10-17T10:49:56.813799+00:00"
-      ],
-      "sources": [
-        "Rumores y eventos",
-        "SEC e insiders"
-      ],
-      "spread_pct": null,
-      "status": "ok",
-      "stop_loss": null,
-      "symbol": "GOOGL",
-      "take_profit": null,
-      "ticker": "GOOGL",
-      "validation_status": "INVALID",
-      "volume": 28516200.0,
-      "volume_20d_avg": 25123795.0,
-      "volume_ratio": 1.1350275704765145,
-      "warnings": [
-        "fase NO_TRADE: no abrir posicion automaticamente"
-      ]
-    },
-    "reasons": [
-      "Estado: INVALID",
-      "Accion: NO_TRADE",
-      "Setup: NO_TRADE WAIT",
-      "Entrada: N/A",
-      "SL N/A / TP N/A",
-      "R/R bruto N/A / neto N/A",
-      "Tamano teorico 0.0000 acciones",
-      "Margen aprox. $0.00",
-      "Invalidacion: mercado cerrado; faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close; sin timestamp de precio",
-      "Avisos: fase NO_TRADE: no abrir posicion automaticamente",
-      "Confluencia: 2 fuentes",
-      "Score maximo previo: 70/100",
-      "Score medio previo: 64/100",
-      "Spread N/A",
-      "Gap N/A",
-      "VWAP pre-market N/A",
-      "Volumen pre-market 0",
-      "RS vs QQQ +0.00%",
-      "RS vs SPY +0.00%",
-      "Horizonte: salida el mismo dia, maximo 8h",
-      "17 artículos recientes",
-      "Rumores/productos: Gemini, TPU, Pixel, Google Cloud",
-      "Evento mencionado: Google Cloud Next, Google I/O",
-      "RSI razonable: 44.4"
-    ],
-    "score": 13,
-    "source": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQZXd0dWYyRXVOVlR5UVRUYVVCR00xTWtfeW1WOVV0eUdjNDZrWmZFTmViaDdzM09ta2JiOFExdW16THZLRVF0Ry1jYXpielVTcTU4cVZ3UlpHd3pHNUVQU1Ztc1lDMERxT2JEdnI3ZTJjR0FhczFPaGQzSnhxbGdXTnpPcnE2dEY2WG0zX1Joc3RSX1RibW5fa2RHNGZqd3c4Y09sTmkzcWd1Zw?oc=5",
-    "summary": "GOOGL queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-10-17T16:18:42.473871+00:00",
-    "title": "GOOGL NO_TRADE NO_TRADE"
   },
   {
     "agent": "intraday_cashout",
@@ -320,26 +193,26 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-10-17T18:18:39.537993+02:00",
-        "now_ny": "2026-10-17T12:18:39.537993-04:00",
-        "now_utc": "2026-10-17T16:18:39.537993+00:00",
+        "now_madrid": "2026-10-18T18:27:49.838601+02:00",
+        "now_ny": "2026-10-18T12:27:49.838601-04:00",
+        "now_utc": "2026-10-18T16:27:49.838601+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-10-17"
+        "trade_date": "2026-10-18"
       },
       "setup": "NO_TRADE",
       "sma20": 337.4240020751953,
       "sma50": 325.69940002441405,
       "source_count": 3,
       "source_times": [
-        "2026-10-17T10:49:55.089788+00:00",
-        "2026-10-17T10:49:55.122315+00:00",
-        "2026-10-17T10:49:55.152380+00:00",
-        "2026-10-17T10:49:55.190922+00:00",
-        "2026-10-17T10:49:55.222735+00:00",
-        "2026-10-17T10:49:55.222760+00:00",
-        "2026-10-17T11:10:37.339243+00:00"
+        "2026-10-18T11:13:40.557731+00:00",
+        "2026-10-18T11:13:40.584349+00:00",
+        "2026-10-18T11:13:40.744027+00:00",
+        "2026-10-18T11:13:40.863970+00:00",
+        "2026-10-18T11:13:40.930948+00:00",
+        "2026-10-18T11:13:40.931006+00:00",
+        "2026-10-18T11:43:06.799029+00:00"
       ],
       "sources": [
         "Rumores y eventos",
@@ -389,8 +262,135 @@
     "score": 13,
     "source": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBYQmVCTEk2RG15YllmbEQ3RktxLWp1QUxGUEloNE1Gb3pwMldjU2V3eGhGOFBKWnBhUFVma2YtNm95c0h0cDdZaFFkblVrX2J5WmlOanU0b2pUQVJ3VEYzNG81RVJKUktydGM3ajRaVGotWjFxUDNGLW9n?oc=5",
     "summary": "AAPL queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-10-17T16:18:42.536832+00:00",
+    "time_utc": "2026-10-18T16:27:53.065244+00:00",
     "title": "AAPL NO_TRADE NO_TRADE"
+  },
+  {
+    "agent": "intraday_cashout",
+    "asset": "GOOGL",
+    "level": "NO_TRADE",
+    "metrics": {
+      "action_state": "NO_TRADE",
+      "ask": null,
+      "avg_source_score": 61.5,
+      "bid": null,
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "classification": "NO_TRADE",
+      "current_price": null,
+      "direction": "WAIT",
+      "entry_zone": "N/A",
+      "filing_date": "2026-10-15",
+      "form": "4",
+      "form4_details": {},
+      "gap_pct": null,
+      "invalid_reasons": [
+        "mercado cerrado",
+        "faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close",
+        "sin timestamp de precio",
+        "volumen pre-market bajo 0",
+        "ningun setup minimo confirma",
+        "riesgo/beneficio insuficiente N/A"
+      ],
+      "market_state": null,
+      "max_hold_hours": 8,
+      "max_source_score": 70.0,
+      "perf_20d": -2.560511526073561,
+      "perf_5d": -3.147929024892837,
+      "perf_60d": 7.20828282933077,
+      "previous_close": null,
+      "price": 340.5899963378906,
+      "quote_age_seconds": null,
+      "quote_timestamp": null,
+      "regular_volume": null,
+      "relative_strength_vs_qqq": 0,
+      "relative_strength_vs_spy": 0,
+      "risk_context": {
+        "leverage": 5.0,
+        "max_buying_power_pct_with_leverage": 20.0,
+        "max_position_pct": 20.0,
+        "risk_per_trade_pct": 1.0
+      },
+      "risk_plan": {
+        "margin_required": 0,
+        "max_daily_loss_amount": 30.0,
+        "max_trades_per_day": 3,
+        "net_risk_reward": null,
+        "notional": 0,
+        "position_size": 0,
+        "risk_amount": 10.0,
+        "spread_cost_to_reward_pct": null
+      },
+      "risk_reward": null,
+      "rsi": 44.43758307068796,
+      "session": {
+        "is_holiday": false,
+        "is_weekend": true,
+        "minutes_to_regular_open": 0,
+        "now_madrid": "2026-10-18T18:27:49.838601+02:00",
+        "now_ny": "2026-10-18T12:27:49.838601-04:00",
+        "now_utc": "2026-10-18T16:27:49.838601+00:00",
+        "phase": "NO_TRADE",
+        "seconds_to_regular_open": 0,
+        "state": "cerrado",
+        "trade_date": "2026-10-18"
+      },
+      "setup": "NO_TRADE",
+      "sma20": 346.4139999389648,
+      "sma50": 344.58039916992186,
+      "source_count": 2,
+      "source_times": [
+        "2026-10-18T11:13:42.374707+00:00"
+      ],
+      "sources": [
+        "Rumores y eventos",
+        "SEC e insiders"
+      ],
+      "spread_pct": null,
+      "status": "ok",
+      "stop_loss": null,
+      "symbol": "GOOGL",
+      "take_profit": null,
+      "ticker": "GOOGL",
+      "validation_status": "INVALID",
+      "volume": 28516200.0,
+      "volume_20d_avg": 25123795.0,
+      "volume_ratio": 1.1350275704765145,
+      "warnings": [
+        "fase NO_TRADE: no abrir posicion automaticamente"
+      ]
+    },
+    "reasons": [
+      "Estado: INVALID",
+      "Accion: NO_TRADE",
+      "Setup: NO_TRADE WAIT",
+      "Entrada: N/A",
+      "SL N/A / TP N/A",
+      "R/R bruto N/A / neto N/A",
+      "Tamano teorico 0.0000 acciones",
+      "Margen aprox. $0.00",
+      "Invalidacion: mercado cerrado; faltan datos: current_price, bid, ask, premarket_volume, premarket_vwap, previous_close; sin timestamp de precio",
+      "Avisos: fase NO_TRADE: no abrir posicion automaticamente",
+      "Confluencia: 2 fuentes",
+      "Score maximo previo: 70/100",
+      "Score medio previo: 62/100",
+      "Spread N/A",
+      "Gap N/A",
+      "VWAP pre-market N/A",
+      "Volumen pre-market 0",
+      "RS vs QQQ +0.00%",
+      "RS vs SPY +0.00%",
+      "Horizonte: salida el mismo dia, maximo 8h",
+      "17 artículos recientes",
+      "Rumores/productos: Gemini, Pixel, Google Cloud",
+      "Evento mencionado: Google Cloud Next, Google I/O",
+      "RSI razonable: 44.4"
+    ],
+    "score": 13,
+    "source": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQZXd0dWYyRXVOVlR5UVRUYVVCR00xTWtfeW1WOVV0eUdjNDZrWmZFTmViaDdzM09ta2JiOFExdW16THZLRVF0Ry1jYXpielVTcTU4cVZ3UlpHd3pHNUVQU1Ztc1lDMERxT2JEdnI3ZTJjR0FhczFPaGQzSnhxbGdXTnpPcnE2dEY2WG0zX1Joc3RSX1RibW5fa2RHNGZqd3c4Y09sTmkzcWd1Zw?oc=5",
+    "summary": "GOOGL queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
+    "time_utc": "2026-10-18T16:27:53.139729+00:00",
+    "title": "GOOGL NO_TRADE NO_TRADE"
   },
   {
     "agent": "intraday_cashout",
@@ -454,21 +454,21 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-10-17T18:18:39.537993+02:00",
-        "now_ny": "2026-10-17T12:18:39.537993-04:00",
-        "now_utc": "2026-10-17T16:18:39.537993+00:00",
+        "now_madrid": "2026-10-18T18:27:49.838601+02:00",
+        "now_ny": "2026-10-18T12:27:49.838601-04:00",
+        "now_utc": "2026-10-18T16:27:49.838601+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-10-17"
+        "trade_date": "2026-10-18"
       },
       "setup": "NO_TRADE",
       "sma20": 520.2205001831055,
       "sma50": 505.53239990234374,
       "source_count": 1,
       "source_times": [
-        "2026-10-17T10:49:55.626336+00:00",
-        "2026-10-17T10:49:55.626358+00:00"
+        "2026-10-18T11:13:41.287075+00:00",
+        "2026-10-18T11:13:41.287106+00:00"
       ],
       "sources": [
         "SEC e insiders"
@@ -515,7 +515,7 @@
     "score": 13,
     "source": "https://www.sec.gov/Archives/edgar/data/789019/000078901926000228/xslF345X06/form4.xml",
     "summary": "MSFT queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-10-17T16:18:42.597458+00:00",
+    "time_utc": "2026-10-18T16:27:53.213251+00:00",
     "title": "MSFT NO_TRADE NO_TRADE"
   },
   {
@@ -580,21 +580,21 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-10-17T18:18:39.537993+02:00",
-        "now_ny": "2026-10-17T12:18:39.537993-04:00",
-        "now_utc": "2026-10-17T16:18:39.537993+00:00",
+        "now_madrid": "2026-10-18T18:27:49.838601+02:00",
+        "now_ny": "2026-10-18T12:27:49.838601-04:00",
+        "now_utc": "2026-10-18T16:27:49.838601+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-10-17"
+        "trade_date": "2026-10-18"
       },
       "setup": "NO_TRADE",
       "sma20": 228.17700119018554,
       "sma50": 223.07660064697265,
       "source_count": 2,
       "source_times": [
-        "2026-10-17T10:49:56.033709+00:00",
-        "2026-10-17T11:10:37.534325+00:00"
+        "2026-10-18T11:13:41.665161+00:00",
+        "2026-10-18T11:43:07.011510+00:00"
       ],
       "sources": [
         "SEC e insiders",
@@ -642,7 +642,7 @@
     "score": 13,
     "source": "https://www.sec.gov/Archives/edgar/data/1045810/000119764726000011/xslF345X06/wk-form4_1791579847.xml",
     "summary": "NVDA queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-10-17T16:18:42.669380+00:00",
+    "time_utc": "2026-10-18T16:27:53.271042+00:00",
     "title": "NVDA NO_TRADE NO_TRADE"
   },
   {
@@ -707,21 +707,21 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-10-17T18:18:39.537993+02:00",
-        "now_ny": "2026-10-17T12:18:39.537993-04:00",
-        "now_utc": "2026-10-17T16:18:39.537993+00:00",
+        "now_madrid": "2026-10-18T18:27:49.838601+02:00",
+        "now_ny": "2026-10-18T12:27:49.838601-04:00",
+        "now_utc": "2026-10-18T16:27:49.838601+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-10-17"
+        "trade_date": "2026-10-18"
       },
       "setup": "NO_TRADE",
       "sma20": 735.7749969482422,
       "sma50": 655.2401965332032,
       "source_count": 1,
       "source_times": [
-        "2026-10-17T10:49:57.205909+00:00",
-        "2026-10-17T10:49:57.205933+00:00"
+        "2026-10-18T11:13:42.724246+00:00",
+        "2026-10-18T11:13:42.724302+00:00"
       ],
       "sources": [
         "SEC e insiders"
@@ -768,7 +768,7 @@
     "score": 13,
     "source": "https://www.sec.gov/Archives/edgar/data/1326801/000095010326015598/xslF345X06/ownership.xml",
     "summary": "META queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-10-17T16:18:42.724499+00:00",
+    "time_utc": "2026-10-18T16:27:53.357534+00:00",
     "title": "META NO_TRADE NO_TRADE"
   },
   {
@@ -833,24 +833,24 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-10-17T18:18:39.537993+02:00",
-        "now_ny": "2026-10-17T12:18:39.537993-04:00",
-        "now_utc": "2026-10-17T16:18:39.537993+00:00",
+        "now_madrid": "2026-10-18T18:27:49.838601+02:00",
+        "now_ny": "2026-10-18T12:27:49.838601-04:00",
+        "now_utc": "2026-10-18T16:27:49.838601+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-10-17"
+        "trade_date": "2026-10-18"
       },
       "setup": "NO_TRADE",
       "sma20": 193.55049896240234,
       "sma50": 182.56859893798827,
       "source_count": 2,
       "source_times": [
-        "2026-10-17T10:49:57.990723+00:00",
-        "2026-10-17T10:49:57.990742+00:00",
-        "2026-10-17T10:49:57.990749+00:00",
-        "2026-10-17T10:49:57.990764+00:00",
-        "2026-10-17T11:10:38.003535+00:00"
+        "2026-10-18T11:13:43.433414+00:00",
+        "2026-10-18T11:13:43.433440+00:00",
+        "2026-10-18T11:13:43.433455+00:00",
+        "2026-10-18T11:13:43.433486+00:00",
+        "2026-10-18T11:43:07.490269+00:00"
       ],
       "sources": [
         "SEC e insiders",
@@ -898,7 +898,7 @@
     "score": 13,
     "source": "https://www.sec.gov/Archives/edgar/data/1321655/000193052626000013/xslF345X06/wk-form4_1792022535.xml",
     "summary": "PLTR queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-10-17T16:18:42.793162+00:00",
+    "time_utc": "2026-10-18T16:27:53.436227+00:00",
     "title": "PLTR NO_TRADE NO_TRADE"
   },
   {
@@ -961,20 +961,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-10-17T18:18:39.537993+02:00",
-        "now_ny": "2026-10-17T12:18:39.537993-04:00",
-        "now_utc": "2026-10-17T16:18:39.537993+00:00",
+        "now_madrid": "2026-10-18T18:27:49.838601+02:00",
+        "now_ny": "2026-10-18T12:27:49.838601-04:00",
+        "now_utc": "2026-10-18T16:27:49.838601+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-10-17"
+        "trade_date": "2026-10-18"
       },
       "setup": "NO_TRADE",
       "sma20": 63.9214994430542,
       "sma50": 63.53559967041016,
       "source_count": 1,
       "source_times": [
-        "2026-10-17T11:04:46.252814+00:00"
+        "2026-10-18T11:35:38.624774+00:00"
       ],
       "sources": [
         "Rotacion sectorial"
@@ -1020,7 +1020,7 @@
     "score": 11,
     "source": "https://finance.yahoo.com/quote/XLE",
     "summary": "XLE queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-10-17T16:18:42.056072+00:00",
+    "time_utc": "2026-10-18T16:27:52.534381+00:00",
     "title": "XLE NO_TRADE NO_TRADE"
   },
   {
@@ -1082,20 +1082,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-10-17T18:18:39.537993+02:00",
-        "now_ny": "2026-10-17T12:18:39.537993-04:00",
-        "now_utc": "2026-10-17T16:18:39.537993+00:00",
+        "now_madrid": "2026-10-18T18:27:49.838601+02:00",
+        "now_ny": "2026-10-18T12:27:49.838601-04:00",
+        "now_utc": "2026-10-18T16:27:49.838601+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-10-17"
+        "trade_date": "2026-10-18"
       },
       "setup": "NO_TRADE",
       "sma20": 601.0405059814453,
       "sma50": 579.0300012207031,
       "source_count": 1,
       "source_times": [
-        "2026-10-17T11:10:38.589630+00:00"
+        "2026-10-18T11:43:08.265851+00:00"
       ],
       "sources": [
         "Volumen inusual"
@@ -1140,7 +1140,7 @@
     "score": 9,
     "source": "https://finance.yahoo.com/quote/SMH",
     "summary": "SMH queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-10-17T16:18:42.112425+00:00",
+    "time_utc": "2026-10-18T16:27:52.629015+00:00",
     "title": "SMH NO_TRADE NO_TRADE"
   },
   {
@@ -1203,20 +1203,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-10-17T18:18:39.537993+02:00",
-        "now_ny": "2026-10-17T12:18:39.537993-04:00",
-        "now_utc": "2026-10-17T16:18:39.537993+00:00",
+        "now_madrid": "2026-10-18T18:27:49.838601+02:00",
+        "now_ny": "2026-10-18T12:27:49.838601-04:00",
+        "now_utc": "2026-10-18T16:27:49.838601+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-10-17"
+        "trade_date": "2026-10-18"
       },
       "setup": "NO_TRADE",
       "sma20": 82.83899993896485,
       "sma50": 84.08999984741212,
       "source_count": 1,
       "source_times": [
-        "2026-10-17T11:04:46.548372+00:00"
+        "2026-10-18T11:35:39.271252+00:00"
       ],
       "sources": [
         "Rotacion sectorial"
@@ -1262,7 +1262,7 @@
     "score": 7,
     "source": "https://finance.yahoo.com/quote/XLP",
     "summary": "XLP queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-10-17T16:18:42.194163+00:00",
+    "time_utc": "2026-10-18T16:27:52.713057+00:00",
     "title": "XLP NO_TRADE NO_TRADE"
   },
   {
@@ -1325,20 +1325,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-10-17T18:18:39.537993+02:00",
-        "now_ny": "2026-10-17T12:18:39.537993-04:00",
-        "now_utc": "2026-10-17T16:18:39.537993+00:00",
+        "now_madrid": "2026-10-18T18:27:49.838601+02:00",
+        "now_ny": "2026-10-18T12:27:49.838601-04:00",
+        "now_utc": "2026-10-18T16:27:49.838601+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-10-17"
+        "trade_date": "2026-10-18"
       },
       "setup": "NO_TRADE",
       "sma20": 170.14049911499023,
       "sma50": 169.9969989013672,
       "source_count": 1,
       "source_times": [
-        "2026-10-17T11:04:46.322559+00:00"
+        "2026-10-18T11:35:38.800102+00:00"
       ],
       "sources": [
         "Rotacion sectorial"
@@ -1384,7 +1384,7 @@
     "score": 7,
     "source": "https://finance.yahoo.com/quote/XLV",
     "summary": "XLV queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-10-17T16:18:42.266450+00:00",
+    "time_utc": "2026-10-18T16:27:52.820963+00:00",
     "title": "XLV NO_TRADE NO_TRADE"
   },
   {
@@ -1447,20 +1447,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-10-17T18:18:39.537993+02:00",
-        "now_ny": "2026-10-17T12:18:39.537993-04:00",
-        "now_utc": "2026-10-17T16:18:39.537993+00:00",
+        "now_madrid": "2026-10-18T18:27:49.838601+02:00",
+        "now_ny": "2026-10-18T12:27:49.838601-04:00",
+        "now_utc": "2026-10-18T16:27:49.838601+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-10-17"
+        "trade_date": "2026-10-18"
       },
       "setup": "NO_TRADE",
       "sma20": 40.57800006866455,
       "sma50": 42.01900009155273,
       "source_count": 1,
       "source_times": [
-        "2026-10-17T11:04:46.621238+00:00"
+        "2026-10-18T11:35:39.376049+00:00"
       ],
       "sources": [
         "Rotacion sectorial"
@@ -1506,7 +1506,7 @@
     "score": 7,
     "source": "https://finance.yahoo.com/quote/XLU",
     "summary": "XLU queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-10-17T16:18:42.321556+00:00",
+    "time_utc": "2026-10-18T16:27:52.900486+00:00",
     "title": "XLU NO_TRADE NO_TRADE"
   },
   {
@@ -1568,20 +1568,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-10-17T18:18:39.537993+02:00",
-        "now_ny": "2026-10-17T12:18:39.537993-04:00",
-        "now_utc": "2026-10-17T16:18:39.537993+00:00",
+        "now_madrid": "2026-10-18T18:27:49.838601+02:00",
+        "now_ny": "2026-10-18T12:27:49.838601-04:00",
+        "now_utc": "2026-10-18T16:27:49.838601+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-10-17"
+        "trade_date": "2026-10-18"
       },
       "setup": "NO_TRADE",
       "sma20": 610.4004974365234,
       "sma50": 537.1383996582031,
       "source_count": 1,
       "source_times": [
-        "2026-10-17T11:10:37.612354+00:00"
+        "2026-10-18T11:43:07.103146+00:00"
       ],
       "sources": [
         "Volumen inusual"
@@ -1626,7 +1626,7 @@
     "score": 5,
     "source": "https://finance.yahoo.com/quote/AMD",
     "summary": "AMD queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-10-17T16:18:42.850593+00:00",
+    "time_utc": "2026-10-18T16:27:53.518708+00:00",
     "title": "AMD NO_TRADE NO_TRADE"
   },
   {
@@ -1688,20 +1688,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-10-17T18:18:39.537993+02:00",
-        "now_ny": "2026-10-17T12:18:39.537993-04:00",
-        "now_utc": "2026-10-17T16:18:39.537993+00:00",
+        "now_madrid": "2026-10-18T18:27:49.838601+02:00",
+        "now_ny": "2026-10-18T12:27:49.838601-04:00",
+        "now_utc": "2026-10-18T16:27:49.838601+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-10-17"
+        "trade_date": "2026-10-18"
       },
       "setup": "NO_TRADE",
       "sma20": 355.3940032958984,
       "sma50": 365.72559997558596,
       "source_count": 1,
       "source_times": [
-        "2026-10-17T11:10:37.765685+00:00"
+        "2026-10-18T11:43:07.205579+00:00"
       ],
       "sources": [
         "Volumen inusual"
@@ -1746,7 +1746,7 @@
     "score": 5,
     "source": "https://finance.yahoo.com/quote/AVGO",
     "summary": "AVGO queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-10-17T16:18:42.920282+00:00",
+    "time_utc": "2026-10-18T16:27:53.601760+00:00",
     "title": "AVGO NO_TRADE NO_TRADE"
   },
   {
@@ -1808,20 +1808,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-10-17T18:18:39.537993+02:00",
-        "now_ny": "2026-10-17T12:18:39.537993-04:00",
-        "now_utc": "2026-10-17T16:18:39.537993+00:00",
+        "now_madrid": "2026-10-18T18:27:49.838601+02:00",
+        "now_ny": "2026-10-18T12:27:49.838601-04:00",
+        "now_utc": "2026-10-18T16:27:49.838601+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-10-17"
+        "trade_date": "2026-10-18"
       },
       "setup": "NO_TRADE",
       "sma20": 286.72199935913085,
       "sma50": 267.877399597168,
       "source_count": 1,
       "source_times": [
-        "2026-10-17T11:10:37.843674+00:00"
+        "2026-10-18T11:43:07.295588+00:00"
       ],
       "sources": [
         "Volumen inusual"
@@ -1866,7 +1866,7 @@
     "score": 5,
     "source": "https://finance.yahoo.com/quote/ARM",
     "summary": "ARM queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-10-17T16:18:42.980324+00:00",
+    "time_utc": "2026-10-18T16:27:53.681697+00:00",
     "title": "ARM NO_TRADE NO_TRADE"
   },
   {
@@ -1928,20 +1928,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-10-17T18:18:39.537993+02:00",
-        "now_ny": "2026-10-17T12:18:39.537993-04:00",
-        "now_utc": "2026-10-17T16:18:39.537993+00:00",
+        "now_madrid": "2026-10-18T18:27:49.838601+02:00",
+        "now_ny": "2026-10-18T12:27:49.838601-04:00",
+        "now_utc": "2026-10-18T16:27:49.838601+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-10-17"
+        "trade_date": "2026-10-18"
       },
       "setup": "NO_TRADE",
       "sma20": 40.80999937057495,
       "sma50": 38.66719959259033,
       "source_count": 1,
       "source_times": [
-        "2026-10-17T11:10:37.919499+00:00"
+        "2026-10-18T11:43:07.393076+00:00"
       ],
       "sources": [
         "Volumen inusual"
@@ -1986,7 +1986,7 @@
     "score": 5,
     "source": "https://finance.yahoo.com/quote/SMCI",
     "summary": "SMCI queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-10-17T16:18:43.036414+00:00",
+    "time_utc": "2026-10-18T16:27:53.762884+00:00",
     "title": "SMCI NO_TRADE NO_TRADE"
   },
   {
@@ -2048,20 +2048,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-10-17T18:18:39.537993+02:00",
-        "now_ny": "2026-10-17T12:18:39.537993-04:00",
-        "now_utc": "2026-10-17T16:18:39.537993+00:00",
+        "now_madrid": "2026-10-18T18:27:49.838601+02:00",
+        "now_ny": "2026-10-18T12:27:49.838601-04:00",
+        "now_utc": "2026-10-18T16:27:49.838601+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-10-17"
+        "trade_date": "2026-10-18"
       },
       "setup": "NO_TRADE",
       "sma20": 370.3334991455078,
       "sma50": 359.46219848632813,
       "source_count": 1,
       "source_times": [
-        "2026-10-17T11:10:38.080286+00:00"
+        "2026-10-18T11:43:07.583820+00:00"
       ],
       "sources": [
         "Volumen inusual"
@@ -2106,7 +2106,7 @@
     "score": 5,
     "source": "https://finance.yahoo.com/quote/TSLA",
     "summary": "TSLA queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-10-17T16:18:43.094738+00:00",
+    "time_utc": "2026-10-18T16:27:53.853477+00:00",
     "title": "TSLA NO_TRADE NO_TRADE"
   },
   {
@@ -2168,20 +2168,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-10-17T18:18:39.537993+02:00",
-        "now_ny": "2026-10-17T12:18:39.537993-04:00",
-        "now_utc": "2026-10-17T16:18:39.537993+00:00",
+        "now_madrid": "2026-10-18T18:27:49.838601+02:00",
+        "now_ny": "2026-10-18T12:27:49.838601-04:00",
+        "now_utc": "2026-10-18T16:27:49.838601+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-10-17"
+        "trade_date": "2026-10-18"
       },
       "setup": "NO_TRADE",
       "sma20": 156.40199813842773,
       "sma50": 134.92319946289064,
       "source_count": 1,
       "source_times": [
-        "2026-10-17T11:10:38.231417+00:00"
+        "2026-10-18T11:43:07.798616+00:00"
       ],
       "sources": [
         "Volumen inusual"
@@ -2226,7 +2226,7 @@
     "score": 5,
     "source": "https://finance.yahoo.com/quote/MSTR",
     "summary": "MSTR queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-10-17T16:18:43.166428+00:00",
+    "time_utc": "2026-10-18T16:27:53.930023+00:00",
     "title": "MSTR NO_TRADE NO_TRADE"
   },
   {
@@ -2288,20 +2288,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-10-17T18:18:39.537993+02:00",
-        "now_ny": "2026-10-17T12:18:39.537993-04:00",
-        "now_utc": "2026-10-17T16:18:39.537993+00:00",
+        "now_madrid": "2026-10-18T18:27:49.838601+02:00",
+        "now_ny": "2026-10-18T12:27:49.838601-04:00",
+        "now_utc": "2026-10-18T16:27:49.838601+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-10-17"
+        "trade_date": "2026-10-18"
       },
       "setup": "NO_TRADE",
       "sma20": 742.5190032958984,
       "sma50": 726.7734008789063,
       "source_count": 1,
       "source_times": [
-        "2026-10-17T11:10:38.504857+00:00"
+        "2026-10-18T11:43:08.092426+00:00"
       ],
       "sources": [
         "Volumen inusual"
@@ -2346,7 +2346,7 @@
     "score": 5,
     "source": "https://finance.yahoo.com/quote/QQQ",
     "summary": "QQQ queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-10-17T16:18:43.174794+00:00",
+    "time_utc": "2026-10-18T16:27:53.961019+00:00",
     "title": "QQQ NO_TRADE NO_TRADE"
   },
   {
@@ -2411,18 +2411,18 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-10-17T18:18:39.537993+02:00",
-        "now_ny": "2026-10-17T12:18:39.537993-04:00",
-        "now_utc": "2026-10-17T16:18:39.537993+00:00",
+        "now_madrid": "2026-10-18T18:27:49.838601+02:00",
+        "now_ny": "2026-10-18T12:27:49.838601-04:00",
+        "now_utc": "2026-10-18T16:27:49.838601+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-10-17"
+        "trade_date": "2026-10-18"
       },
       "setup": "NO_TRADE",
       "source_count": 1,
       "source_times": [
-        "2026-10-17T10:31:42.230214+00:00"
+        "2026-10-18T10:52:39.390467+00:00"
       ],
       "sources": [
         "Market Signal Agent"
@@ -2464,7 +2464,7 @@
     "score": 5,
     "source": "https://finance.yahoo.com/quote/IWM",
     "summary": "IWM queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-10-17T16:18:43.260291+00:00",
+    "time_utc": "2026-10-18T16:27:54.038884+00:00",
     "title": "IWM NO_TRADE NO_TRADE"
   },
   {
@@ -2526,20 +2526,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-10-17T18:18:39.537993+02:00",
-        "now_ny": "2026-10-17T12:18:39.537993-04:00",
-        "now_utc": "2026-10-17T16:18:39.537993+00:00",
+        "now_madrid": "2026-10-18T18:27:49.838601+02:00",
+        "now_ny": "2026-10-18T12:27:49.838601-04:00",
+        "now_utc": "2026-10-18T16:27:49.838601+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-10-17"
+        "trade_date": "2026-10-18"
       },
       "setup": "NO_TRADE",
       "sma20": 112.74350013732911,
       "sma50": 108.62879974365234,
       "source_count": 1,
       "source_times": [
-        "2026-10-17T11:10:38.311146+00:00"
+        "2026-10-18T11:43:07.884470+00:00"
       ],
       "sources": [
         "Volumen inusual"
@@ -2584,7 +2584,7 @@
     "score": 5,
     "source": "https://finance.yahoo.com/quote/HOOD",
     "summary": "HOOD queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-10-17T16:18:43.316967+00:00",
+    "time_utc": "2026-10-18T16:27:54.112976+00:00",
     "title": "HOOD NO_TRADE NO_TRADE"
   },
   {
@@ -2646,20 +2646,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-10-17T18:18:39.537993+02:00",
-        "now_ny": "2026-10-17T12:18:39.537993-04:00",
-        "now_utc": "2026-10-17T16:18:39.537993+00:00",
+        "now_madrid": "2026-10-18T18:27:49.838601+02:00",
+        "now_ny": "2026-10-18T12:27:49.838601-04:00",
+        "now_utc": "2026-10-18T16:27:49.838601+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-10-17"
+        "trade_date": "2026-10-18"
       },
       "setup": "NO_TRADE",
       "sma20": 771.1839965820312,
       "sma50": 768.501796875,
       "source_count": 1,
       "source_times": [
-        "2026-10-17T11:10:38.409908+00:00"
+        "2026-10-18T11:43:07.992139+00:00"
       ],
       "sources": [
         "Volumen inusual"
@@ -2704,7 +2704,7 @@
     "score": 5,
     "source": "https://finance.yahoo.com/quote/SPY",
     "summary": "SPY queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-10-17T16:18:43.325146+00:00",
+    "time_utc": "2026-10-18T16:27:54.144389+00:00",
     "title": "SPY NO_TRADE NO_TRADE"
   },
   {
@@ -2767,20 +2767,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-10-17T18:18:39.537993+02:00",
-        "now_ny": "2026-10-17T12:18:39.537993-04:00",
-        "now_utc": "2026-10-17T16:18:39.537993+00:00",
+        "now_madrid": "2026-10-18T18:27:49.838601+02:00",
+        "now_ny": "2026-10-18T12:27:49.838601-04:00",
+        "now_utc": "2026-10-18T16:27:49.838601+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-10-17"
+        "trade_date": "2026-10-18"
       },
       "setup": "NO_TRADE",
       "sma20": 111.09949989318848,
       "sma50": 113.86619934082032,
       "source_count": 1,
       "source_times": [
-        "2026-10-17T11:04:46.467731+00:00"
+        "2026-10-18T11:35:39.079360+00:00"
       ],
       "sources": [
         "Rotacion sectorial"
@@ -2826,7 +2826,7 @@
     "score": 5,
     "source": "https://finance.yahoo.com/quote/XLY",
     "summary": "XLY queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-10-17T16:18:43.381523+00:00",
+    "time_utc": "2026-10-18T16:27:54.221093+00:00",
     "title": "XLY NO_TRADE NO_TRADE"
   },
   {
@@ -2888,20 +2888,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-10-17T18:18:39.537993+02:00",
-        "now_ny": "2026-10-17T12:18:39.537993-04:00",
-        "now_utc": "2026-10-17T16:18:39.537993+00:00",
+        "now_madrid": "2026-10-18T18:27:49.838601+02:00",
+        "now_ny": "2026-10-18T12:27:49.838601-04:00",
+        "now_utc": "2026-10-18T16:27:49.838601+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-10-17"
+        "trade_date": "2026-10-18"
       },
       "setup": "NO_TRADE",
       "sma20": 186.5460006713867,
       "sma50": 177.63040008544922,
       "source_count": 1,
       "source_times": [
-        "2026-10-17T11:10:38.156300+00:00"
+        "2026-10-18T11:43:07.708811+00:00"
       ],
       "sources": [
         "Volumen inusual"
@@ -2946,7 +2946,7 @@
     "score": 5,
     "source": "https://finance.yahoo.com/quote/COIN",
     "summary": "COIN queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-10-17T16:18:43.436521+00:00",
+    "time_utc": "2026-10-18T16:27:54.300732+00:00",
     "title": "COIN NO_TRADE NO_TRADE"
   },
   {
@@ -3009,20 +3009,20 @@
         "is_holiday": false,
         "is_weekend": true,
         "minutes_to_regular_open": 0,
-        "now_madrid": "2026-10-17T18:18:39.537993+02:00",
-        "now_ny": "2026-10-17T12:18:39.537993-04:00",
-        "now_utc": "2026-10-17T16:18:39.537993+00:00",
+        "now_madrid": "2026-10-18T18:27:49.838601+02:00",
+        "now_ny": "2026-10-18T12:27:49.838601-04:00",
+        "now_utc": "2026-10-18T16:27:49.838601+00:00",
         "phase": "NO_TRADE",
         "seconds_to_regular_open": 0,
         "state": "cerrado",
-        "trade_date": "2026-10-17"
+        "trade_date": "2026-10-18"
       },
       "setup": "NO_TRADE",
       "sma20": 54.44699993133545,
       "sma50": 56.276999893188474,
       "source_count": 1,
       "source_times": [
-        "2026-10-17T11:04:46.183639+00:00"
+        "2026-10-18T11:35:38.514816+00:00"
       ],
       "sources": [
         "Rotacion sectorial"
@@ -3068,7 +3068,7 @@
     "score": 5,
     "source": "https://finance.yahoo.com/quote/XLF",
     "summary": "XLF queda como NO_TRADE. Setup NO_TRADE con direccion WAIT. Entrada N/A, SL N/A, TP N/A. NO_TRADE: spread N/A, volumen pre-market 0, VWAP N/A, RS vs QQQ +0.00%, RS vs SPY +0.00%. Cerrar antes del fin de sesion y no usar si pasa a STALE/INVALID.",
-    "time_utc": "2026-10-17T16:18:43.491653+00:00",
+    "time_utc": "2026-10-18T16:27:54.372503+00:00",
     "title": "XLF NO_TRADE NO_TRADE"
   }
 ]
