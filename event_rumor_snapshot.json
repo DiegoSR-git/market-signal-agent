@@ -1,8 +1,134 @@
 [
   {
+    "ticker": "AMZN",
+    "company": "Amazon",
+    "score": 57,
+    "event_name": "AWS re:Invent",
+    "event_date": null,
+    "date_confidence": "unknown",
+    "days_until_event": null,
+    "trading_window_start": null,
+    "trading_window_end": null,
+    "window_status": "unknown",
+    "opportunity_type": "none",
+    "rumors": [],
+    "market_sentiment": "unknown",
+    "summary": "Sin resumen IA concluyente.",
+    "ai_confidence": "low",
+    "score_reasons": [
+      "10 artículos recientes",
+      "Rumores/productos: Trainium, Alexa, agents, AWS",
+      "Evento mencionado: AWS re:Invent, Amazon devices event",
+      "RSI razonable: 57.3",
+      "No descontado 20D: +1.5%"
+    ],
+    "market": {
+      "ticker": "AMZN",
+      "price": 262.45001220703125,
+      "rsi": 57.2603952300952,
+      "sma20": 253.4259994506836,
+      "sma50": 256.83539947509763,
+      "perf_20d": 1.5476880677396831,
+      "perf_60d": 13.071393527593923,
+      "status": "ok"
+    },
+    "articles": [
+      {
+        "title": "Top announcements of AWS re:Invent 2025 | Amazon Web Services - Amazon Web Services (AWS)",
+        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9uOGNSaXFQTzhOS3BteDlWbTlIOV9JejBNQzdyRnNEaEFsVG01bXNKTGJ6Z1ZaRmlPYXR4YUU4YU82bXBBTXlZZXowVjQ0UVN0U1pUZjlsenlwQmlYbzRaRFBrTERGUHhiOUl1bWptVl9hcmJpaTBhUm9sdGk?oc=5",
+        "published": "2025-11-30T08:00:00+00:00",
+        "source": "Amazon Web Services (AWS)",
+        "domain": "Amazon Web Services (AWS)",
+        "origin": "google_news_rss",
+        "snippet": "Top announcements of AWS re:Invent 2025 | Amazon Web Services - Amazon Web Services (AWS)"
+      },
+      {
+        "title": "Frontier agents, Trainium chips, and Amazon Nova: key announcements from AWS re:Invent 2025 - About Amazon",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE44MjlOYVluZ0ZoaElJa1luVkVESnZzTExyZDVIT1BWbUN6RkF6bmtWMWdkcE5CUHNQOU42bmxDOVRvTG9mUnlZOFlRTDlaOEVrYUJobkJEUjB5Xzc4eWJBalJGLUMySkQ1OE82dUtZTHMzSkZKeXIyLWc3dw?oc=5",
+        "published": "2025-12-04T08:00:00+00:00",
+        "source": "About Amazon",
+        "domain": "About Amazon",
+        "origin": "google_news_rss",
+        "snippet": "Frontier agents, Trainium chips, and Amazon Nova: key announcements from AWS re:Invent 2025 - About Amazon"
+      },
+      {
+        "title": "Amazon Retires 4 Nova AI Models, Chases Frontier [2026] - tech-insider.org",
+        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1OdVYyeE5HMHFnUmRuRUg0M1dKLXJSZmxnMmZHUXF5aGpVM0hERjdRTExGeWh1eGxXN2paQ2Uzei1HNF9xTkFfN2NKdUJHY3ZGNXRqLUpEenltYnc5eXMtNGJUdnkwWDRMZXVicDhYRGRMZ096?oc=5",
+        "published": "2026-08-10T07:00:00+00:00",
+        "source": "tech-insider.org",
+        "domain": "tech-insider.org",
+        "origin": "google_news_rss",
+        "snippet": "Amazon Retires 4 Nova AI Models, Chases Frontier [2026] - tech-insider.org"
+      },
+      {
+        "title": "AWS puts $1 billion into new AI unit to embed engineers with customers, joining growing wave - CNBC",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQY1NpVEZHSVJDZDFHOUhUcDdjSUc4OHlxcDQtX1pfSldrWmhEc29fVUZ6ODNDSWVKX09NUExhWU1COXZiOW5FSl9XNEdhRzgtLV9YeXRVdDNEM3lGaVhfeEw3NU5rUGtJQnljcklNZTItMUV0Y2tiVzBlREJqaGZhVFpRTdIBiAFBVV95cUxQZ0hZdGx1di02TVNIdFNSZ1JVb09WTzBTbUhkekhRLVJhTWN3UXF6bW51RXVEY0tkTXBTNC1jcE1tZzNGRmRpVy1wVDF0Y0tnVy15NmVzeVBuRmV6Wm93NTRqdmtoejh6MWpLZTFGeHQ2ZDZuUGFtYWRkUkJOUElZMHNpbzk4SGdK?oc=5",
+        "published": "2026-06-30T07:00:00+00:00",
+        "source": "CNBC",
+        "domain": "CNBC",
+        "origin": "google_news_rss",
+        "snippet": "AWS puts $1 billion into new AI unit to embed engineers with customers, joining growing wave - CNBC"
+      },
+      {
+        "title": "Amazon challenges competitors with on-premises Nvidia ‘AI Factories’ - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQck0yMkdUMzdCNldOT1NmWnBHNDVJZnFnOTdsTkFaRFc0ZURXVVRRX2JsVVVwWVR2TFVJVkV3eXZDY0twdURGWWp5X1YtMkFPOHJSM2dEc2lQOVR4V2NnbzdhM3FveWZaQnBNWFpRMk9nMzI5OTU0dk5sU01Od3IyallSSm8ydHYyajB3UXN0eHVLWE1fSGc?oc=5",
+        "published": "2025-12-02T08:00:00+00:00",
+        "source": "Yahoo Finance",
+        "domain": "Yahoo Finance",
+        "origin": "google_news_rss",
+        "snippet": "Amazon challenges competitors with on-premises Nvidia ‘AI Factories’ - Yahoo Finance"
+      },
+      {
+        "title": "AWS Powers Sony's Enterprise AI and Engagement Platforms - Business Wire",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPcXpJTm5WcnZsYVVGNFhBMkpfTXVNaTFrZ3VJUWsxcnAzNHpkWUlCU1F3MWo1QWJGbm1yaWpTcXYwQl9pc1F5VmdJODBRQnM0WndKUEhnMnBOV3RiUkhMZGFDWGpIdHJxU2tPMEQxWnVlaE5NTFhwZTJIby1ITk9Lb29RMkpRVG0xQ2hmUmVrYXUwMzlsTTVZWHVWWmhKMmd1RFB4XzR4WW9DMGNzZFNuZktn?oc=5",
+        "published": "2025-12-02T08:00:00+00:00",
+        "source": "Business Wire",
+        "domain": "Business Wire",
+        "origin": "google_news_rss",
+        "snippet": "AWS Powers Sony's Enterprise AI and Engagement Platforms - Business Wire"
+      },
+      {
+        "title": "Amazon Device & Services Event 2025: Date, time, and what we expect to see - Tom's Guide",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQLVNRRi0zTVQwbjY3VDJObXI3VjMwcHpnWjNyWFNINVhIcmRqWk56RWxXTGRLRzJNMWJzRG8xQ19ORndpY0l4OWZZa3R1NTlxQV9sX0dyX09aYUc5dS01ZWJLVlVWRzFKNEcwWC1FTzMtMVZxb0dTOVBDODJHV2FOZnpFWHVZMTZqR3ZRWXZwempxU2I1elZJTkRJQ0pHQXZkLWo5SW1ZNTdpNWF5Q3dKYTdXMHNzQQ?oc=5",
+        "published": "2025-09-29T07:00:00+00:00",
+        "source": "Tom's Guide",
+        "domain": "Tom's Guide",
+        "origin": "google_news_rss",
+        "snippet": "Amazon Device & Services Event 2025: Date, time, and what we expect to see - Tom's Guide"
+      },
+      {
+        "title": "Amazon Devices Event – September 2019 - About Amazon",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOTmRHRVJfMGNwSmw5RlhmTDE5MXhScktmTXA1dWtxMlBZcTNIaElyYmtTZTNqTldadTluOXJuUEktaFVmNXo0bEFWS2hMWUpKMEljOEo1cW1VWnZ4Yk1nOUpEYXM5NDRvdVJNMk9nUmp0WG5na2VBV0ppSnZkRDYwN05B?oc=5",
+        "published": "2019-09-24T07:00:00+00:00",
+        "source": "About Amazon",
+        "domain": "About Amazon",
+        "origin": "google_news_rss",
+        "snippet": "Amazon Devices Event – September 2019 - About Amazon"
+      },
+      {
+        "title": "Amazon refreshes device lineup to integrate new AI-powered Alexa+ - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPQWdfT0w2X1lEWnc2cnl2UFZURnhzYnUyU08ybGVsTy0zYXZ3V2kxN21ZZW9jX0hzZDRCSzZNeFNkWHpWemdHbk5qNGY5R3Z5Mm5SUmZtWW16Umh0VmV4UVRmZFVSZkJnLUlDblhkb0pHQThGejlOblZ1RHdkNlJ4RlZTSXJOOWVwSm1Hb2xGdlRFRWV5UktPQlgtVmFKLUQ1eGc?oc=5",
+        "published": "2025-10-01T07:00:00+00:00",
+        "source": "Reuters",
+        "domain": "Reuters",
+        "origin": "google_news_rss",
+        "snippet": "Amazon refreshes device lineup to integrate new AI-powered Alexa+ - Reuters"
+      },
+      {
+        "title": "EXCLUSIVE: Amazon loses devices VP and member of elite CEO advisory just days after launches - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPWTI3UGZ5NUF5aHJpNXdZaTRra0ZxMmhibHNjQlNVQU4tT0t1MG5YUGZoRnFoeHNtam52c1BYWVJ1bnBHZWFoaFNlYWozZTk5N0Z4YjJYbmVEVi1UV1A3WU9pRm5BSTAyVnhKN2hYZEdzak1wVXZ2bW1TbnNrdWl6cTBkNEdfVDVlanFkRTZhc1dmUDlyWWFtZGVIam1HMXBrTFFUbHdnQkJoVjE2X3kweVJJZTczQm5JYkhuMGRZb2RKZXMtRzNpREhFSE9pbXdM?oc=5",
+        "published": "2025-10-04T07:00:00+00:00",
+        "source": "Reuters",
+        "domain": "Reuters",
+        "origin": "google_news_rss",
+        "snippet": "EXCLUSIVE: Amazon loses devices VP and member of elite CEO advisory just days after launches - Reuters"
+      }
+    ]
+  },
+  {
     "ticker": "AAPL",
     "company": "Apple",
-    "score": 64,
+    "score": 56,
     "event_name": "WWDC / Apple product events",
     "event_date": null,
     "date_confidence": "unknown",
@@ -17,7 +143,6 @@
     "ai_confidence": "low",
     "score_reasons": [
       "13 artículos recientes",
-      "Fuentes confiables: bloomberg.com",
       "Rumores/productos: iPhone, Siri, foldable",
       "Evento mencionado: WWDC, Apple event, iPhone event",
       "RSI razonable: 61.2",
@@ -125,13 +250,13 @@
         "snippet": "Apple to host 'Pro and tell' event on October 28 in LA - Reuters"
       },
       {
-        "title": "Apple Announces Oct. 28 Event for Touch-Screen MacBook Pro - Bloomberg.com",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOMVhlX0pGeThXaDUwaTlQWFZ2blJZYU9SUTVQRXo1Rm9JRjAxaE1hbFF3N1lmcHVjeHFLUTZZLVJUNnVvZ3d6WTBpd2s3bXpMN3ZpZmlJV05uT0tFdFdqSW1qUzFrTXdGcU04NUZfOEhacmhhdUZnVUg5X3hUZXE3T3pIMUZTZlRjMWx5OGZIT2JGZXlWa2pvQmlDaFE5VFVPd2xRX3BvdGNtVjRG?oc=5",
-        "published": "2026-10-19T16:10:12+00:00",
-        "source": "Bloomberg.com",
-        "domain": "Bloomberg.com",
+        "title": "Apple Announces Oct. 28 Event for Touch-Screen MacBook Pro - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQdjdZTUY4YUdFQlRWanllV3pJdUx6dzRaeFlLbkx5dEZRb1Q4VTlnU3BFOWNkYXpTaEZ4QjJYMWRCZWZCZzNYU21wVHl4akFldFY2SUdmakFScXN4VlVJLVMwSncxV295NHFwa2VqN2ZNaVBoNnk0alRzZ1ItZm9ZVElTbnlOMEc4cWxMS3pSLUlES2s?oc=5",
+        "published": "2026-10-19T16:33:02+00:00",
+        "source": "Yahoo Finance",
+        "domain": "Yahoo Finance",
         "origin": "google_news_rss",
-        "snippet": "Apple Announces Oct. 28 Event for Touch-Screen MacBook Pro - Bloomberg.com"
+        "snippet": "Apple Announces Oct. 28 Event for Touch-Screen MacBook Pro - Yahoo Finance"
       },
       {
         "title": "Apple just revealed a clue about its September iPhone event date - 9to5Mac",
@@ -143,13 +268,13 @@
         "snippet": "Apple just revealed a clue about its September iPhone event date - 9to5Mac"
       },
       {
-        "title": "Apple Announcing New Products Next Week: 'Pro and Tell' - MacRumors",
-        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBRWUhwZEc0d2FLdWQwajNCeU1TZVVmZkl2Z05KN1VXVmNneWZ0TW81ZlI0ZWNCTzFXdEVhY2hvdEFrVllHZXZQRTZZandlT1NRWmtzWkhGdnkxVjktRTFmQUxyNUd1TVE?oc=5",
-        "published": "2026-10-19T16:05:07+00:00",
+        "title": "Apple's October 28 'Pro and Tell' Launch: What's Coming - MacRumors",
+        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFA0UnUtN0wxSV9XT2E2R0VVUC1qMHRyaFoxalJTTmo2TGNtNWVXSV85NEtKVGMzNjRsZFNQbmpHUWxreXdFdmdjbk9Tb2xRdnhHaU1KR3pObUcweUF5RnIyS3VpcDRhSzlBbnZNNmIzTFVWZkVHWVJfMw?oc=5",
+        "published": "2026-10-19T23:51:00+00:00",
         "source": "MacRumors",
         "domain": "MacRumors",
         "origin": "google_news_rss",
-        "snippet": "Apple Announcing New Products Next Week: 'Pro and Tell' - MacRumors"
+        "snippet": "Apple's October 28 'Pro and Tell' Launch: What's Coming - MacRumors"
       }
     ]
   },
@@ -348,150 +473,6 @@
         "domain": "CNBC",
         "origin": "google_news_rss",
         "snippet": "Alphabet shares fall on report its most powerful AI model Gemini 3.5 Pro is delayed - CNBC"
-      }
-    ]
-  },
-  {
-    "ticker": "META",
-    "company": "Meta Platforms",
-    "score": 46,
-    "event_name": "Meta Connect",
-    "event_date": null,
-    "date_confidence": "unknown",
-    "days_until_event": null,
-    "trading_window_start": null,
-    "trading_window_end": null,
-    "window_status": "unknown",
-    "opportunity_type": "none",
-    "rumors": [],
-    "market_sentiment": "unknown",
-    "summary": "Sin resumen IA concluyente.",
-    "ai_confidence": "low",
-    "score_reasons": [
-      "12 artículos recientes",
-      "Rumores/productos: Llama, smart glasses",
-      "Evento mencionado: Meta Connect",
-      "RSI razonable: 49.2",
-      "No descontado 20D: -4.8%"
-    ],
-    "market": {
-      "ticker": "META",
-      "price": 705.4400024414062,
-      "rsi": 49.23559415754421,
-      "sma20": 733.9844970703125,
-      "sma50": 657.5069970703125,
-      "perf_20d": -4.83102833842749,
-      "perf_60d": 18.523496622551818,
-      "status": "ok"
-    },
-    "articles": [
-      {
-        "title": "Everything We Announced at Meta Connect 2026 - www.meta.com",
-        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1Jd1Zrc1RBOXgxcFEzbnlYemlFdUpfVmRHUzBMeldPRWhzM1FxZTFMRVN4aTBFT3dKLW1UV0RVMlZvdDZVUVdXTGNHZjc0a3l6ekFqcV9CVWFFYVhzOThXSlgxbUJRclVhTXVZbGFoOEpNeXZDLWRN?oc=5",
-        "published": "2026-09-23T07:00:00+00:00",
-        "source": "www.meta.com",
-        "domain": "www.meta.com",
-        "origin": "google_news_rss",
-        "snippet": "Everything We Announced at Meta Connect 2026 - www.meta.com"
-      },
-      {
-        "title": "Meta Connect 2026: The biggest news and announcements - The Verge",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOYlFUTmpyYnlVbjQzbno4WkFaWTRsSTVLVzJLck5mZ0tRZDVZUWI2M1Y4QXhJVzFlZGZ2MXkzdE1wdWdMelNUdC1KbjV4MS1XbDFUMEw0OG1RLTdaOGNwRUR4MkdkazZfbzh4d3ZMLVhPQl9nT2ZVTi1iVDBVeGFIeGJfdlp0YjY3?oc=5",
-        "published": "2026-10-01T07:00:00+00:00",
-        "source": "The Verge",
-        "domain": "The Verge",
-        "origin": "google_news_rss",
-        "snippet": "Meta Connect 2026: The biggest news and announcements - The Verge"
-      },
-      {
-        "title": "What to know about Meta’s new ‘Wonder’ AI models - Euronews.com",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQWU5yT0RkRGNIYm81NmlFcmwxMmhCbkk0MHQ2bnZMRTJ6LTd6RFRqeDBOOEJpU205ZjV6Q0RUZnBVeXpnb09HRElPUHU3bmNPOHNQNFhEcVFadERzaERpd3kyUk1vRk5aN09BS01haU1pdV9xQkx4UXI1SW1TZS1KYXVnRmZnYVlnbmRkZ25RRk1WaEloRkZJbUZqeEpZLUNjYkhPUFI3aDFkQQ?oc=5",
-        "published": "2026-10-13T11:04:05+00:00",
-        "source": "Euronews.com",
-        "domain": "Euronews.com",
-        "origin": "google_news_rss",
-        "snippet": "What to know about Meta’s new ‘Wonder’ AI models - Euronews.com"
-      },
-      {
-        "title": "Meta Spikes 7% as Wells Fargo Lifts Price Target to $796 Ahead of Connect; Alphabet Nudges Higher, Microsoft Holds Flat - 24/7 Wall St.",
-        "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNNUxJY2Y2Y3hTTDBPTkxUYW16aTlkd3FrcXNjSHF6RklrSGo1OFQyWTNuS1hDenY0b1pLSFBzeWUweE9XcGdrVTJaY3plU1A2dWtiRFFkak0xb3kxTUVUX0tibUhmTFBKQXJ5dU1ndXRTRTg4M1RKSzYwMnNLYWR6MzVmWnp3UGp4OGFkbHhTUm1TRGQxY2Q4YzROcXk4VG4zU2M5ZWdmOUpDbzk3Q0N1RWxfcDNYZUlFZGdGVHFtU2czMjQ0TXdnWm82WE5NM0phUjF5azZmdVJnSHBtdDJPczMzNEd4aVNYbWRlLXY3LUU?oc=5",
-        "published": "2026-09-21T07:00:00+00:00",
-        "source": "24/7 Wall St.",
-        "domain": "24/7 Wall St.",
-        "origin": "google_news_rss",
-        "snippet": "Meta Spikes 7% as Wells Fargo Lifts Price Target to $796 Ahead of Connect; Alphabet Nudges Higher, Microsoft Holds Flat - 24/7 Wall St."
-      },
-      {
-        "title": "Meta Stock Climbs On Muse AI Excitement. Here's The Next Potential Catalyst. - Investor's Business Daily",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPbGo0QjFGaHMyMVNkRU4tUm5RbXJMM1JUNmtYOTRFT01zTlA3ODBtTWZqT29weFo4OTRmUWJsUEhHQi1tXzdOUVdTdWdFdTdBeTlZbHRzZ2Z0UlBpOE9XX0lEai1FWks5cmFDTFhOLXM2cFRsd1VZM2tSR1M2R3RXYkVYaXZ2dDBIOVE?oc=5",
-        "published": "2026-09-17T07:00:00+00:00",
-        "source": "Investor's Business Daily",
-        "domain": "Investor's Business Daily",
-        "origin": "google_news_rss",
-        "snippet": "Meta Stock Climbs On Muse AI Excitement. Here's The Next Potential Catalyst. - Investor's Business Daily"
-      },
-      {
-        "title": "Zuckerberg's Fortune Jumps $25 Billion in a Day as Meta's Muse AI Fuels Record Rally - BigGo Finance",
-        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE53dGwzLUhoakFTYnFvc2ZuR1hDVVNlWjdKUldRcTR6aXRSRkQzaHdjTVcyb3FJWmNTSlhRaWdrR1RLaTBCVV9WWnlXcUQ1RnVjd0lEcWFkSS1HOTlKYl9oaThCeGpjTVRwX0IwandGSXd2M1RFNVE?oc=5",
-        "published": "2026-09-22T07:00:00+00:00",
-        "source": "BigGo Finance",
-        "domain": "BigGo Finance",
-        "origin": "google_news_rss",
-        "snippet": "Zuckerberg's Fortune Jumps $25 Billion in a Day as Meta's Muse AI Fuels Record Rally - BigGo Finance"
-      },
-      {
-        "title": "Meta Smartwatch Revealed: 2026 Launch With Neural AI - https://virtual.reality.news/",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOQ2o4M2k1dnVUbU9UM213VHBWdW5TeDZwNms1VllrQll0b0RneVRYejhHNUUzOE90NzBuQk5oRUFoMWZ4ZzMtbDUxMkU0blMySGF1bFMwMHpZNTZYeWhLc25WMkJwYUE1dGtTSmszWHg1M05jTjBCSXpaWEdxRUg1Z1JkRDhsOU5ZX014cXlR?oc=5",
-        "published": "2026-02-19T08:00:00+00:00",
-        "source": "https://virtual.reality.news/",
-        "domain": "https://virtual.reality.news/",
-        "origin": "google_news_rss",
-        "snippet": "Meta Smartwatch Revealed: 2026 Launch With Neural AI - https://virtual.reality.news/"
-      },
-      {
-        "title": "Goldman Sachs interprets Meta (META.US) AI paradigm shift; MuseAI ushers in a new era of intelligent agents - Bitget",
-        "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5iREx4bTJza2xtRUdNSUx2cG5RMUhZVHoxTF9OZHRlbUZYNFlTaXBsTEhNRmkybTdWYk1PZmRnWWM1bjl1XzY2UVRsS19KeFdDYXFnWGYwbW5NcHB3VGxRY0Nqb9IBY0FVX3lxTE5iREx4bTJza2xtRUdNSUx2cG5RMUhZVHoxTF9OZHRlbUZYNFlTaXBsTEhNRmkybTdWYk1PZmRnWWM1bjl1XzY2UVRsS19KeFdDYXFnWGYwbW5NcHB3VGxRY0Nqbw?oc=5",
-        "published": "2026-09-14T07:00:00+00:00",
-        "source": "Bitget",
-        "domain": "Bitget",
-        "origin": "google_news_rss",
-        "snippet": "Goldman Sachs interprets Meta (META.US) AI paradigm shift; MuseAI ushers in a new era of intelligent agents - Bitget"
-      },
-      {
-        "title": "Meta plans camera-free smart glasses for fall launch, The Information reports - Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPbG1sTzZ4d21xMVU0WlpXa3RaMWNuQjU1NUhqeUh2YjZfV2JSUDE5U2EwY1k5OVgwZGJzbUMyR2Q4anc5MzJaVVVldU5zeE1YZURGc3VnbDljSDlIYzJrQWVwMzhaUkk3VWNjeVBaLVVwVUo5OVF6ckpjVkxWRHhRQ3JoMjhqbGRQazdFSm5nOUluWUoyM19nS3RhZXNoVjAySndoTXJIVFNoanYzemFPOHo1NA?oc=5",
-        "published": "2026-09-15T07:00:00+00:00",
-        "source": "Reuters",
-        "domain": "Reuters",
-        "origin": "google_news_rss",
-        "snippet": "Meta plans camera-free smart glasses for fall launch, The Information reports - Reuters"
-      },
-      {
-        "title": "Meta’s new superintelligence team could upend the entire AI industry — here's why OpenAI should be worried - Tom's Guide",
-        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQVWR2Uk1uc0lnNEMyQlJTVC1uemtDQS1pZzRuNC1LRnRqVjBya2NCY2gyUURLQ3laQkUtTGVPLXY4Y1pEb3MtZnRRWjhXYkM4OHRqVk16X2VTM2VLZjNIT25TaTVscjFxMWF0RzRRQllFWXBVN0xWdjdtcThxS3ZUQ2NocEcyZWVpb2ZnNDFIZUk5X1Fob3dXX1VzeGN3RGFnamNjaDd5eHhvdTJEVjFGaVh5ZEFWRzNxREFMOGFUUzdEWFU1SjNlaUxkZw?oc=5",
-        "published": "2025-07-01T07:00:00+00:00",
-        "source": "Tom's Guide",
-        "domain": "Tom's Guide",
-        "origin": "google_news_rss",
-        "snippet": "Meta’s new superintelligence team could upend the entire AI industry — here's why OpenAI should be worried - Tom's Guide"
-      },
-      {
-        "title": "Mark Zuckerberg Launches Meta AI App, ChatGPT’s Competitor - Blockchain Council",
-        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPaVBoMl9DNWlSRkxlUzcwNkU1V0l1Mm9Bc2F0Y0tkTWlRNDl0cUJIMUYxWEp3M2tROHNza2lva01FcjM3bjZ1MGJsSFdwTF9qT1IzTVlpVlY2cjZjMjVtUFB1UEljeFl6Qmt3ZGNfM0JSR216Sm5lN0tScEdmbTBjQjdTMkFBUUV1bkp2Mw?oc=5",
-        "published": "2025-05-01T07:00:00+00:00",
-        "source": "Blockchain Council",
-        "domain": "Blockchain Council",
-        "origin": "google_news_rss",
-        "snippet": "Mark Zuckerberg Launches Meta AI App, ChatGPT’s Competitor - Blockchain Council"
-      },
-      {
-        "title": "Llama 4 will be Meta's next-generation AI model — here's what to expect - Tom's Guide",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQdmRFdFlJWWVnRDYxM3ZPX2pRM0FnSi1ETFotdkVWQnZYZEpNREtDVFNHdEcyd3ZnU3pZdHp3Z2FZTjZBSFBtLVVIRlJFbGhsbXZzRUFWWmttMXNWc0RqR0daTkd5aGZObGxwQVNxb0hPdk9ZblpTRGFhTl9LNS1ocEdLTXpMTHJqY0p0R2VCOHZDYjFRWXU5dkRjUW0?oc=5",
-        "published": "2025-03-19T07:00:00+00:00",
-        "source": "Tom's Guide",
-        "domain": "Tom's Guide",
-        "origin": "google_news_rss",
-        "snippet": "Llama 4 will be Meta's next-generation AI model — here's what to expect - Tom's Guide"
       }
     ]
   },
@@ -782,15 +763,6 @@
     },
     "articles": [
       {
-        "title": "The Top 5 Dreamforce Announcements for IT: AIforce, MCP Security, and More - Salesforce",
-        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9uTXdQclRSMEFpbWdQdVg1dlFuNlZ1Ylk3bzhod0NyWmFZVTBUa1BSelVzQVR4Ujl3Yk5OWWktdlJEMi1QbDdLVV9SQl9FbnFhUUFTd3ZrZ2t3Wms4bm5zYTRLV3Nid09fcmNkTDdVZll5cENHTDkyeA?oc=5",
-        "published": "2026-09-22T07:00:00+00:00",
-        "source": "Salesforce",
-        "domain": "Salesforce",
-        "origin": "google_news_rss",
-        "snippet": "The Top 5 Dreamforce Announcements for IT: AIforce, MCP Security, and More - Salesforce"
-      },
-      {
         "title": "What Is Dreamforce? Everything You Need To Know - Salesforce",
         "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE0wMHNQNHBKajdqVGwxR0dFTDE1blVnN01vUFpZdWhibHpSX19qaFd2TE4yLTV1Z1JoVkdxRlA1QTI1c241ZWFDNkhyNG1LRkU5aXB2cEs5V19ONU5IakxXcA?oc=5",
         "published": "2026-08-12T07:00:00+00:00",
@@ -809,6 +781,15 @@
         "snippet": "Build Your Dreamforce 2026 Agenda - Salesforce"
       },
       {
+        "title": "Register for Dreamforce 2026: Three days that transform every part of your business - Salesforce",
+        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE96MFlWLXFFNzJVZ2g4RklWN1VrZC10WmtyYUw3bmhzSy1XemdtUi1SY2pSZHVacFd6VG02TzAxTkxUaWVYNjhZSlFqc3E4X0pOS3pPMlZjYVBpVk5TTy1vWlJpcEV0dUE?oc=5",
+        "published": "2026-07-22T07:00:00+00:00",
+        "source": "Salesforce",
+        "domain": "Salesforce",
+        "origin": "google_news_rss",
+        "snippet": "Register for Dreamforce 2026: Three days that transform every part of your business - Salesforce"
+      },
+      {
         "title": "Salesforce Unveils AIforce, Bringing the Full Power of Its Platform to Any Interface - Salesforce",
         "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9Qc01GelpWdjE1eUZQeDg1NHB0VVNXUHJHTGJSc244b0NCTEc5V3kzWTJxQVlaSm1LOU9SX3VCYldST0dEYkpVZVRtaFdvT0JFbC1HWU1PTElHTVBxdjVlWnY3T2RhZXpqS2dLZWlB?oc=5",
         "published": "2026-09-15T07:00:00+00:00",
@@ -818,6 +799,15 @@
         "snippet": "Salesforce Unveils AIforce, Bringing the Full Power of Its Platform to Any Interface - Salesforce"
       },
       {
+        "title": "“The New Clippy”: Benioff Uses Salesforce’s Biggest Product Launch in Years to Challenge Microsoft - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPbFBaaERLNnd3eVJ3ODN5a2w4V0JDb1Q4MmJhbEJqaENlUnVZNmRxbkRpeldiZDZOZDkxdFBzUVJEUE5STG12Y3ozV0lYb3dOdXRfdFQ2NHM3ajZ5OW05bW5SMUw1eTVLZ2JTQ3BuZnh5Q3dGNldmd1E3VHRQZk5TVVM2aDFHdWxPOWdERUtwZnpiRVQ5M0ZJMjhMS1l2ZFRGVzZUTA?oc=5",
+        "published": "2026-09-22T07:00:00+00:00",
+        "source": "Yahoo Finance",
+        "domain": "Yahoo Finance",
+        "origin": "google_news_rss",
+        "snippet": "“The New Clippy”: Benioff Uses Salesforce’s Biggest Product Launch in Years to Challenge Microsoft - Yahoo Finance"
+      },
+      {
         "title": "Dreamforce 2026 Guide: What Enterprise Leaders Need to Know Before Salesforce’s Biggest Event - UC Today",
         "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE85cVhnVzN4TTloYlZfbFBaeGV3NU5oZF9pZHd4NWJYTkFTUWxaajJINlpWVlpXcGwxVG9pSzRnMFlGbXZ6UmRuRnA0SVczcUt6eW1Bdm9lWGNsZE0?oc=5",
         "published": "2026-08-04T07:00:00+00:00",
@@ -825,15 +815,6 @@
         "domain": "UC Today",
         "origin": "google_news_rss",
         "snippet": "Dreamforce 2026 Guide: What Enterprise Leaders Need to Know Before Salesforce’s Biggest Event - UC Today"
-      },
-      {
-        "title": "Zoom launches AI-powered revenue OS to compete in CRM market - TechTarget",
-        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPbGkyMmtaZThHTjc4QXFVSHd0NE1rTDNLUDc2OXZkRHA3U19jVkNKYWFnQ2hybnJIUTFZc0pIMDExZXh0cG16VWg1NmljYlNzcFY5R3RZZHZtc1g1ZW5hZEV2Y01obk9BbVp4dmg3Q3plTWszVGlqMFZtdnU3MGlVQ180Tjhyd01hbTRsZXU3aXRUMDBfNEJJd0NlUEx6dVFoVTBJd0Q1RHQ?oc=5",
-        "published": "2026-09-15T07:00:00+00:00",
-        "source": "TechTarget",
-        "domain": "TechTarget",
-        "origin": "google_news_rss",
-        "snippet": "Zoom launches AI-powered revenue OS to compete in CRM market - TechTarget"
       },
       {
         "title": "Salesforce Delivers Record Fourth Quarter Fiscal 2026 Results - Salesforce",
@@ -874,10 +855,10 @@
     ]
   },
   {
-    "ticker": "AMZN",
-    "company": "Amazon",
-    "score": 40,
-    "event_name": "AWS re:Invent",
+    "ticker": "META",
+    "company": "Meta Platforms",
+    "score": 42,
+    "event_name": "Meta Connect",
     "event_date": null,
     "date_confidence": "unknown",
     "days_until_event": null,
@@ -890,85 +871,157 @@
     "summary": "Sin resumen IA concluyente.",
     "ai_confidence": "low",
     "score_reasons": [
-      "7 artículos recientes",
-      "Rumores/productos: Alexa, AWS",
-      "Evento mencionado: Amazon devices event",
-      "RSI razonable: 57.3",
-      "No descontado 20D: +1.5%"
+      "15 artículos recientes",
+      "Rumores/productos: Llama",
+      "Evento mencionado: Meta Connect",
+      "RSI razonable: 49.2",
+      "No descontado 20D: -4.8%"
     ],
     "market": {
-      "ticker": "AMZN",
-      "price": 262.45001220703125,
-      "rsi": 57.2603952300952,
-      "sma20": 253.4259994506836,
-      "sma50": 256.83539947509763,
-      "perf_20d": 1.5476880677396831,
-      "perf_60d": 13.071393527593923,
+      "ticker": "META",
+      "price": 705.4400024414062,
+      "rsi": 49.23559415754421,
+      "sma20": 733.9844970703125,
+      "sma50": 657.5069970703125,
+      "perf_20d": -4.83102833842749,
+      "perf_60d": 18.523496622551818,
       "status": "ok"
     },
     "articles": [
       {
-        "title": "AWS puts $1 billion into new AI unit to embed engineers with customers, joining growing wave - CNBC",
-        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQY1NpVEZHSVJDZDFHOUhUcDdjSUc4OHlxcDQtX1pfSldrWmhEc29fVUZ6ODNDSWVKX09NUExhWU1COXZiOW5FSl9XNEdhRzgtLV9YeXRVdDNEM3lGaVhfeEw3NU5rUGtJQnljcklNZTItMUV0Y2tiVzBlREJqaGZhVFpRTdIBiAFBVV95cUxQZ0hZdGx1di02TVNIdFNSZ1JVb09WTzBTbUhkekhRLVJhTWN3UXF6bW51RXVEY0tkTXBTNC1jcE1tZzNGRmRpVy1wVDF0Y0tnVy15NmVzeVBuRmV6Wm93NTRqdmtoejh6MWpLZTFGeHQ2ZDZuUGFtYWRkUkJOUElZMHNpbzk4SGdK?oc=5",
-        "published": "2026-06-30T07:00:00+00:00",
+        "title": "Mark Zuckerberg debuts $1,299 Meta VR Glasses and Muse Charm pendant as part of AI agent push - CNBC",
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQZE4zZGJhTHNYbjFqTkFSQzctWEVRb1E0ZUZJVGVfZEdJSUpaSS1vOEpKdU9lenBqWGJUSEJ0eWhDS3lRTGZXelgyTkVjWlpxcTNZQnhVUDltWXh4RkE5VVlFNEMyc0N6dktNaEduUEN0ZzhPZUVjanY1UGszaTNTcVBOMHNIUUpaLUHSAY8BQVVfeXFMTXRHVmpoQXdRa2c1MjVscHM5WG5WVHpYa2pJRXphSnI3OVdLdE5lVEs2aGdxVE9uWXVlY1RueVlTU25nUFk4cnFIOG1hZTJ3azlxUVl0RHRoVmE4WXVrT0hBNHg5Y2JETzFRQ0EwenB5MzU5YU8wRzdZRHVtbDJIUUJ1d1lWbzlQVjJfZllGRGc?oc=5",
+        "published": "2026-09-23T07:00:00+00:00",
         "source": "CNBC",
         "domain": "CNBC",
         "origin": "google_news_rss",
-        "snippet": "AWS puts $1 billion into new AI unit to embed engineers with customers, joining growing wave - CNBC"
+        "snippet": "Mark Zuckerberg debuts $1,299 Meta VR Glasses and Muse Charm pendant as part of AI agent push - CNBC"
       },
       {
-        "title": "Amazon challenges competitors with on-premises Nvidia ‘AI Factories’ - Yahoo Finance",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQck0yMkdUMzdCNldOT1NmWnBHNDVJZnFnOTdsTkFaRFc0ZURXVVRRX2JsVVVwWVR2TFVJVkV3eXZDY0twdURGWWp5X1YtMkFPOHJSM2dEc2lQOVR4V2NnbzdhM3FveWZaQnBNWFpRMk9nMzI5OTU0dk5sU01Od3IyallSSm8ydHYyajB3UXN0eHVLWE1fSGc?oc=5",
-        "published": "2025-12-02T08:00:00+00:00",
-        "source": "Yahoo Finance",
-        "domain": "Yahoo Finance",
+        "title": "Meta Connect 2026: Everything Announced, and How It Compares With the Reporting - vr.org",
+        "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE5DMVRNSlg3aVlvVUR2SndYWS0yMDlweFdoQy1TUnVzZ21ZOVJ5Zi0yUEhQWTlWM3ZzaG1VN0VUZlhzYUFZa01v?oc=5",
+        "published": "2026-09-23T07:00:00+00:00",
+        "source": "vr.org",
+        "domain": "vr.org",
         "origin": "google_news_rss",
-        "snippet": "Amazon challenges competitors with on-premises Nvidia ‘AI Factories’ - Yahoo Finance"
+        "snippet": "Meta Connect 2026: Everything Announced, and How It Compares With the Reporting - vr.org"
       },
       {
-        "title": "AWS Powers Sony's Enterprise AI and Engagement Platforms - Business Wire",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPcXpJTm5WcnZsYVVGNFhBMkpfTXVNaTFrZ3VJUWsxcnAzNHpkWUlCU1F3MWo1QWJGbm1yaWpTcXYwQl9pc1F5VmdJODBRQnM0WndKUEhnMnBOV3RiUkhMZGFDWGpIdHJxU2tPMEQxWnVlaE5NTFhwZTJIby1ITk9Lb29RMkpRVG0xQ2hmUmVrYXUwMzlsTTVZWHVWWmhKMmd1RFB4XzR4WW9DMGNzZFNuZktn?oc=5",
-        "published": "2025-12-02T08:00:00+00:00",
-        "source": "Business Wire",
-        "domain": "Business Wire",
+        "title": "Meta Rallies Into Connect Conference. Why The Muse AI Agent Is Sending Some Stocks Lower. - Investor's Business Daily",
+        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPNldHSHlZUjQ3STV3YU5VOEdjMnoxdnBfdWxlRndTc3E5cDcxZldXWmhVOFI0X1dYN0lZVVF1MTlwMnNqNEo0ZmhCX3dHU3d1enpuZmJzUWpoTk1rLUl6d05NaGRidXE1MXNwUWZib2lHdVExb1VPUGdrNllIdmx5STR6UkRLd2M?oc=5",
+        "published": "2026-09-23T07:00:00+00:00",
+        "source": "Investor's Business Daily",
+        "domain": "Investor's Business Daily",
         "origin": "google_news_rss",
-        "snippet": "AWS Powers Sony's Enterprise AI and Engagement Platforms - Business Wire"
+        "snippet": "Meta Rallies Into Connect Conference. Why The Muse AI Agent Is Sending Some Stocks Lower. - Investor's Business Daily"
       },
       {
-        "title": "Amazon Device & Services Event 2025: Date, time, and what we expect to see - Tom's Guide",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQLVNRRi0zTVQwbjY3VDJObXI3VjMwcHpnWjNyWFNINVhIcmRqWk56RWxXTGRLRzJNMWJzRG8xQ19ORndpY0l4OWZZa3R1NTlxQV9sX0dyX09aYUc5dS01ZWJLVlVWRzFKNEcwWC1FTzMtMVZxb0dTOVBDODJHV2FOZnpFWHVZMTZqR3ZRWXZwempxU2I1elZJTkRJQ0pHQXZkLWo5SW1ZNTdpNWF5Q3dKYTdXMHNzQQ?oc=5",
-        "published": "2025-09-29T07:00:00+00:00",
+        "title": "Meta Connect 2026: The biggest news and announcements - The Verge",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOYlFUTmpyYnlVbjQzbno4WkFaWTRsSTVLVzJLck5mZ0tRZDVZUWI2M1Y4QXhJVzFlZGZ2MXkzdE1wdWdMelNUdC1KbjV4MS1XbDFUMEw0OG1RLTdaOGNwRUR4MkdkazZfbzh4d3ZMLVhPQl9nT2ZVTi1iVDBVeGFIeGJfdlp0YjY3?oc=5",
+        "published": "2026-10-01T07:00:00+00:00",
+        "source": "The Verge",
+        "domain": "The Verge",
+        "origin": "google_news_rss",
+        "snippet": "Meta Connect 2026: The biggest news and announcements - The Verge"
+      },
+      {
+        "title": "Everything We Announced at Meta Connect 2026 - www.meta.com",
+        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1Jd1Zrc1RBOXgxcFEzbnlYemlFdUpfVmRHUzBMeldPRWhzM1FxZTFMRVN4aTBFT3dKLW1UV0RVMlZvdDZVUVdXTGNHZjc0a3l6ekFqcV9CVWFFYVhzOThXSlgxbUJRclVhTXVZbGFoOEpNeXZDLWRN?oc=5",
+        "published": "2026-09-23T07:00:00+00:00",
+        "source": "www.meta.com",
+        "domain": "www.meta.com",
+        "origin": "google_news_rss",
+        "snippet": "Everything We Announced at Meta Connect 2026 - www.meta.com"
+      },
+      {
+        "title": "What to know about Meta’s new ‘Wonder’ AI models - Euronews.com",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQWU5yT0RkRGNIYm81NmlFcmwxMmhCbkk0MHQ2bnZMRTJ6LTd6RFRqeDBOOEJpU205ZjV6Q0RUZnBVeXpnb09HRElPUHU3bmNPOHNQNFhEcVFadERzaERpd3kyUk1vRk5aN09BS01haU1pdV9xQkx4UXI1SW1TZS1KYXVnRmZnYVlnbmRkZ25RRk1WaEloRkZJbUZqeEpZLUNjYkhPUFI3aDFkQQ?oc=5",
+        "published": "2026-10-13T11:04:05+00:00",
+        "source": "Euronews.com",
+        "domain": "Euronews.com",
+        "origin": "google_news_rss",
+        "snippet": "What to know about Meta’s new ‘Wonder’ AI models - Euronews.com"
+      },
+      {
+        "title": "Meta Spikes 7% as Wells Fargo Lifts Price Target to $796 Ahead of Connect; Alphabet Nudges Higher, Microsoft Holds Flat - 24/7 Wall St.",
+        "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNNUxJY2Y2Y3hTTDBPTkxUYW16aTlkd3FrcXNjSHF6RklrSGo1OFQyWTNuS1hDenY0b1pLSFBzeWUweE9XcGdrVTJaY3plU1A2dWtiRFFkak0xb3kxTUVUX0tibUhmTFBKQXJ5dU1ndXRTRTg4M1RKSzYwMnNLYWR6MzVmWnp3UGp4OGFkbHhTUm1TRGQxY2Q4YzROcXk4VG4zU2M5ZWdmOUpDbzk3Q0N1RWxfcDNYZUlFZGdGVHFtU2czMjQ0TXdnWm82WE5NM0phUjF5azZmdVJnSHBtdDJPczMzNEd4aVNYbWRlLXY3LUU?oc=5",
+        "published": "2026-09-21T07:00:00+00:00",
+        "source": "24/7 Wall St.",
+        "domain": "24/7 Wall St.",
+        "origin": "google_news_rss",
+        "snippet": "Meta Spikes 7% as Wells Fargo Lifts Price Target to $796 Ahead of Connect; Alphabet Nudges Higher, Microsoft Holds Flat - 24/7 Wall St."
+      },
+      {
+        "title": "Meta Stock Climbs On Muse AI Excitement. Here's The Next Potential Catalyst. - Investor's Business Daily",
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPbGo0QjFGaHMyMVNkRU4tUm5RbXJMM1JUNmtYOTRFT01zTlA3ODBtTWZqT29weFo4OTRmUWJsUEhHQi1tXzdOUVdTdWdFdTdBeTlZbHRzZ2Z0UlBpOE9XX0lEai1FWks5cmFDTFhOLXM2cFRsd1VZM2tSR1M2R3RXYkVYaXZ2dDBIOVE?oc=5",
+        "published": "2026-09-17T07:00:00+00:00",
+        "source": "Investor's Business Daily",
+        "domain": "Investor's Business Daily",
+        "origin": "google_news_rss",
+        "snippet": "Meta Stock Climbs On Muse AI Excitement. Here's The Next Potential Catalyst. - Investor's Business Daily"
+      },
+      {
+        "title": "Zuckerberg's Fortune Jumps $25 Billion in a Day as Meta's Muse AI Fuels Record Rally - BigGo Finance",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE53dGwzLUhoakFTYnFvc2ZuR1hDVVNlWjdKUldRcTR6aXRSRkQzaHdjTVcyb3FJWmNTSlhRaWdrR1RLaTBCVV9WWnlXcUQ1RnVjd0lEcWFkSS1HOTlKYl9oaThCeGpjTVRwX0IwandGSXd2M1RFNVE?oc=5",
+        "published": "2026-09-22T07:00:00+00:00",
+        "source": "BigGo Finance",
+        "domain": "BigGo Finance",
+        "origin": "google_news_rss",
+        "snippet": "Zuckerberg's Fortune Jumps $25 Billion in a Day as Meta's Muse AI Fuels Record Rally - BigGo Finance"
+      },
+      {
+        "title": "Meta is putting its muscle behind Muse as the AI app takes off - TechCrunch",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQdkNva2lfeUVoTzVWcWpHY0FscXh4cnBRSjZ2S2dLdWFVaG1ONEFZd2NnRHFlR2hBeTlUUDVtUXRBRU5ZMVdKRkE2a0NnVzJURFlKSTdnTExfTkhsdVdWWmx0YzN5ZWsyWVRHS1JjZVhwb1ZVdW9ZcVU0dlhVSUFFMnVpYUx5czBVZlVXeEFJSmhsbnF3VVgwRjJ2MU56Zw?oc=5",
+        "published": "2026-09-25T07:00:00+00:00",
+        "source": "TechCrunch",
+        "domain": "TechCrunch",
+        "origin": "google_news_rss",
+        "snippet": "Meta is putting its muscle behind Muse as the AI app takes off - TechCrunch"
+      },
+      {
+        "title": "Meta Smartwatch Revealed: 2026 Launch With Neural AI - https://virtual.reality.news/",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOQ2o4M2k1dnVUbU9UM213VHBWdW5TeDZwNms1VllrQll0b0RneVRYejhHNUUzOE90NzBuQk5oRUFoMWZ4ZzMtbDUxMkU0blMySGF1bFMwMHpZNTZYeWhLc25WMkJwYUE1dGtTSmszWHg1M05jTjBCSXpaWEdxRUg1Z1JkRDhsOU5ZX014cXlR?oc=5",
+        "published": "2026-02-19T08:00:00+00:00",
+        "source": "https://virtual.reality.news/",
+        "domain": "https://virtual.reality.news/",
+        "origin": "google_news_rss",
+        "snippet": "Meta Smartwatch Revealed: 2026 Launch With Neural AI - https://virtual.reality.news/"
+      },
+      {
+        "title": "Goldman Sachs interprets Meta (META.US) AI paradigm shift; MuseAI ushers in a new era of intelligent agents - Bitget",
+        "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5iREx4bTJza2xtRUdNSUx2cG5RMUhZVHoxTF9OZHRlbUZYNFlTaXBsTEhNRmkybTdWYk1PZmRnWWM1bjl1XzY2UVRsS19KeFdDYXFnWGYwbW5NcHB3VGxRY0Nqb9IBY0FVX3lxTE5iREx4bTJza2xtRUdNSUx2cG5RMUhZVHoxTF9OZHRlbUZYNFlTaXBsTEhNRmkybTdWYk1PZmRnWWM1bjl1XzY2UVRsS19KeFdDYXFnWGYwbW5NcHB3VGxRY0Nqbw?oc=5",
+        "published": "2026-09-14T07:00:00+00:00",
+        "source": "Bitget",
+        "domain": "Bitget",
+        "origin": "google_news_rss",
+        "snippet": "Goldman Sachs interprets Meta (META.US) AI paradigm shift; MuseAI ushers in a new era of intelligent agents - Bitget"
+      },
+      {
+        "title": "I read all 233 pages of Meta’s $1.4 trillion lawsuit — here’s why Facebook and Instagram may never be the same - Tom's Guide",
+        "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPSU8tQXNpS2JlLVBqTzFRWnBoYnBnUkUyRWt5VUdWRGlwZUdnb0w0dUNjNEFoN2FWVlhibFFxUlR1NHIySUk0SE5CRXNSaHNrT1k3STl4LXd4OFNKWGhPdjdRMXAtMmdWU2JYalVtdGUtelQ2LUx2cUY2VXNWVGx4V1VscE9WRmV2bVFMblo4aWFibjNXdG1fWEVwX1lQYk12d3dqSVdGTjhKbUFSaEUxcXhGeENsQUQwX3JWZWhyeGtBZjZxWldjdEhocWFmS09nX1ctS2lmVnJNNUdaZ1RGd2NMdjVKWVkwWjBIVXZR?oc=5",
+        "published": "2026-08-18T07:00:00+00:00",
         "source": "Tom's Guide",
         "domain": "Tom's Guide",
         "origin": "google_news_rss",
-        "snippet": "Amazon Device & Services Event 2025: Date, time, and what we expect to see - Tom's Guide"
+        "snippet": "I read all 233 pages of Meta’s $1.4 trillion lawsuit — here’s why Facebook and Instagram may never be the same - Tom's Guide"
       },
       {
-        "title": "Amazon Devices Event – September 2019 - About Amazon",
-        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOTmRHRVJfMGNwSmw5RlhmTDE5MXhScktmTXA1dWtxMlBZcTNIaElyYmtTZTNqTldadTluOXJuUEktaFVmNXo0bEFWS2hMWUpKMEljOEo1cW1VWnZ4Yk1nOUpEYXM5NDRvdVJNMk9nUmp0WG5na2VBV0ppSnZkRDYwN05B?oc=5",
-        "published": "2019-09-24T07:00:00+00:00",
-        "source": "About Amazon",
-        "domain": "About Amazon",
+        "title": "Mark Zuckerberg Launches Meta AI App, ChatGPT’s Competitor - Blockchain Council",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPaVBoMl9DNWlSRkxlUzcwNkU1V0l1Mm9Bc2F0Y0tkTWlRNDl0cUJIMUYxWEp3M2tROHNza2lva01FcjM3bjZ1MGJsSFdwTF9qT1IzTVlpVlY2cjZjMjVtUFB1UEljeFl6Qmt3ZGNfM0JSR216Sm5lN0tScEdmbTBjQjdTMkFBUUV1bkp2Mw?oc=5",
+        "published": "2025-05-01T07:00:00+00:00",
+        "source": "Blockchain Council",
+        "domain": "Blockchain Council",
         "origin": "google_news_rss",
-        "snippet": "Amazon Devices Event – September 2019 - About Amazon"
+        "snippet": "Mark Zuckerberg Launches Meta AI App, ChatGPT’s Competitor - Blockchain Council"
       },
       {
-        "title": "Amazon refreshes device lineup to integrate new AI-powered Alexa+ - Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPQWdfT0w2X1lEWnc2cnl2UFZURnhzYnUyU08ybGVsTy0zYXZ3V2kxN21ZZW9jX0hzZDRCSzZNeFNkWHpWemdHbk5qNGY5R3Z5Mm5SUmZtWW16Umh0VmV4UVRmZFVSZkJnLUlDblhkb0pHQThGejlOblZ1RHdkNlJ4RlZTSXJOOWVwSm1Hb2xGdlRFRWV5UktPQlgtVmFKLUQ1eGc?oc=5",
-        "published": "2025-10-01T07:00:00+00:00",
-        "source": "Reuters",
-        "domain": "Reuters",
+        "title": "Llama 4 will be Meta's next-generation AI model — here's what to expect - Tom's Guide",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQdmRFdFlJWWVnRDYxM3ZPX2pRM0FnSi1ETFotdkVWQnZYZEpNREtDVFNHdEcyd3ZnU3pZdHp3Z2FZTjZBSFBtLVVIRlJFbGhsbXZzRUFWWmttMXNWc0RqR0daTkd5aGZObGxwQVNxb0hPdk9ZblpTRGFhTl9LNS1ocEdLTXpMTHJqY0p0R2VCOHZDYjFRWXU5dkRjUW0?oc=5",
+        "published": "2025-03-19T07:00:00+00:00",
+        "source": "Tom's Guide",
+        "domain": "Tom's Guide",
         "origin": "google_news_rss",
-        "snippet": "Amazon refreshes device lineup to integrate new AI-powered Alexa+ - Reuters"
-      },
-      {
-        "title": "EXCLUSIVE: Amazon loses devices VP and member of elite CEO advisory just days after launches - Reuters",
-        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPWTI3UGZ5NUF5aHJpNXdZaTRra0ZxMmhibHNjQlNVQU4tT0t1MG5YUGZoRnFoeHNtam52c1BYWVJ1bnBHZWFoaFNlYWozZTk5N0Z4YjJYbmVEVi1UV1A3WU9pRm5BSTAyVnhKN2hYZEdzak1wVXZ2bW1TbnNrdWl6cTBkNEdfVDVlanFkRTZhc1dmUDlyWWFtZGVIam1HMXBrTFFUbHdnQkJoVjE2X3kweVJJZTczQm5JYkhuMGRZb2RKZXMtRzNpREhFSE9pbXdM?oc=5",
-        "published": "2025-10-04T07:00:00+00:00",
-        "source": "Reuters",
-        "domain": "Reuters",
-        "origin": "google_news_rss",
-        "snippet": "EXCLUSIVE: Amazon loses devices VP and member of elite CEO advisory just days after launches - Reuters"
+        "snippet": "Llama 4 will be Meta's next-generation AI model — here's what to expect - Tom's Guide"
       }
     ]
   },
@@ -1239,13 +1292,13 @@
         "snippet": "Oracle earnings will show whether its expensive AI bet is starting to pay off - CNBC"
       },
       {
-        "title": "Oracle’s Sell-Off Looks More Like a Mispricing Than a Warning - TradingView",
-        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOQU50VG9SVDRsX3lsNWFhUGFhVGRSYi1fVEZVNTNUU2JXNG4tNEg4ZDQ5MWh5M1lLb08yME83YllaM2duNmlHU2hkTFlfR1paMjZ1OFlhd3FvcVpiOUc2NXVHUzJJd3V5VEdLYjNaV1Rob0EyVk5iT3VVSFQwNVlGUXVxY2U3QURQdnprcktMQ0Q0d0xfS0pyeWpRYURSZVFRWERRbHBsay1OMEpOVjlzcHBpNnRhbk9NVmhnRTI1aw?oc=5",
-        "published": "2026-06-23T07:00:00+00:00",
+        "title": "Oracle stock may be one AI slowdown away from disaster - TradingView",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPREdPZ3d3TFAzckRXTW1kY1BYWml2T3B5U2pwMmU4X3JWbVRZVjBJcWloaVBFWTVHMUtqYXVFcE1CNVJUXzMzUUE5SXdDOWxHUGNGc3k5X2hTdGN0UHpINjRnUXJSSzQzTFBteDQ0TDBrOEsyQ2kyWmdfNVVOVWdfSXZacGVfQWFsay1qQ3VFWUZ6bXh0TVZIQjhacmNjSkt3cWM5UkY5TGg5aGVjQ09HYw?oc=5",
+        "published": "2026-06-10T07:00:00+00:00",
         "source": "TradingView",
         "domain": "TradingView",
         "origin": "google_news_rss",
-        "snippet": "Oracle’s Sell-Off Looks More Like a Mispricing Than a Warning - TradingView"
+        "snippet": "Oracle stock may be one AI slowdown away from disaster - TradingView"
       },
       {
         "title": "This Week's Earnings & Economic Calendar (9/7–9/11): Focus on US CPI and Apple's New Product Launch! Oracle Earnings: Will the Selection Process in the AI/Semiconductor Market Intensify? - Moomoo",
@@ -1341,7 +1394,7 @@
   {
     "ticker": "AVGO",
     "company": "Broadcom",
-    "score": 19,
+    "score": 22,
     "event_name": "Broadcom earnings / AI infrastructure updates",
     "event_date": null,
     "date_confidence": "unknown",
@@ -1356,6 +1409,7 @@
     "ai_confidence": "low",
     "score_reasons": [
       "6 artículos recientes",
+      "Evento mencionado: Broadcom earnings",
       "No descontado 20D: -7.7%"
     ],
     "market": {
@@ -1379,15 +1433,6 @@
         "snippet": "What are the key events for US stocks to watch in September? Keep an eye on the US FOMC meeting, employment data, CPI, Broadcom's earnings, OpenAI DevDay, Tesla's Cybercab, and Apple's new products! Who will be the main driver of the autumn mark - Moomoo"
       },
       {
-        "title": "Broadcom (AVGO) Q2 2026 Earnings Transcript - The Globe and Mail",
-        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNc0xiSGFsUFhkNmpPUFhfY2RiT2NtX2ZOZndobE41djBhd0VzWjFoeFZaYTZZT3dIanhtTWpFY2lEeURxTFJLVUtqN3dzQlhocWdYVmJJeWdoeDlYeFFGNUhPSnJTSS1hUkhtQjR4aEhiRmhQMjZLcFl0WUVzbzBQUzBoSy03cExsRlZmT2RSTG5GbUJtekdTR0tSX01TQkpPMm5DQVlJa2JfME90eFR5RjllNkJpRTFhQ09XWDRCUFl5NFlo?oc=5",
-        "published": "2026-06-03T07:00:00+00:00",
-        "source": "The Globe and Mail",
-        "domain": "The Globe and Mail",
-        "origin": "google_news_rss",
-        "snippet": "Broadcom (AVGO) Q2 2026 Earnings Transcript - The Globe and Mail"
-      },
-      {
         "title": "Broadcom Q3 2026 Earnings Results and Report - MarketBeat",
         "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBlbmtxOU4tSWJDZnVjN2FjZjc3bWVTWU5LR3J6SjY3QTRtSTNETFAwclJsRkZISzVYNy04T3p1X3VDTjFSUDBZMkpZUUxNLXl3cXlaTVB1Ynd4TWtNTlJCT0ZHYU1rOXpYRWxCV3RaYnRpdlg5dVJScV9Mb1Y?oc=5",
         "published": "2026-09-02T07:00:00+00:00",
@@ -1395,6 +1440,15 @@
         "domain": "MarketBeat",
         "origin": "google_news_rss",
         "snippet": "Broadcom Q3 2026 Earnings Results and Report - MarketBeat"
+      },
+      {
+        "title": "The Week Ahead: ISM data, Broadcom earnings, US jobs - CMC Markets",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPSGt1NTBhbk90bEVnZmtSUjlhalBCTUs1NE02eUZDMk1VeWRvX1R6WW8zaXBpTWJBZmVjM2hiMlM4REFDdzVXZ0xkU0VXNlFMN3ZmZkZuUUNTR21DYms4XzNlMTdCcFVaVkZad1FhNlUtTFNBTVJ0UERUalRqZm5oWFE2Rlc3XzdBZEdNZWxZSUV1UHBIQ2o2V0RnTnRFZjNDbXc?oc=5",
+        "published": "2026-05-29T07:00:00+00:00",
+        "source": "CMC Markets",
+        "domain": "CMC Markets",
+        "origin": "google_news_rss",
+        "snippet": "The Week Ahead: ISM data, Broadcom earnings, US jobs - CMC Markets"
       },
       {
         "title": "Broadcom (AVGO) Stock May Trade At A Discount After AI Debt Concerns - Yahoo Finance",
@@ -1428,7 +1482,7 @@
   {
     "ticker": "TSM",
     "company": "Taiwan Semiconductor Manufacturing",
-    "score": 15,
+    "score": 20,
     "event_name": "TSMC earnings / technology symposium",
     "event_date": null,
     "date_confidence": "unknown",
@@ -1442,7 +1496,8 @@
     "summary": "Sin resumen IA concluyente.",
     "ai_confidence": "low",
     "score_reasons": [
-      "4 artículos recientes",
+      "5 artículos recientes",
+      "Evento mencionado: TSMC earnings",
       "No descontado 20D: -5.6%"
     ],
     "market": {
@@ -1457,31 +1512,40 @@
     },
     "articles": [
       {
-        "title": "Taiwan Semiconductor Just Proved Why It's a Top AI Investment - Yahoo Finance",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQa0ZGRG9wamx4dEdRSldQbFh4eGFNQ183RGtSeG9OeVA4SEkwQUtfN25BOTR4ZTR5dmdZZG8wd3JySmtBQzAyb3ZKb1dnZ3dHRnVuZ3BuRHlzbTBnNXdvdjgzc1ozQU9lU2tKTXZ0VjhJNWVXaVB3UzNZVjhkRC0tQ2VPZ2txa3c1bTF4bmN5bEx1bzhnemtWNHQ5VlVPbWdTdnc?oc=5",
-        "published": "2026-10-18T19:43:00+00:00",
-        "source": "Yahoo Finance",
-        "domain": "Yahoo Finance",
+        "title": "Taiwan Semiconductor Manufacturing (NYSE:TSM) - Stock Analysis - Simply Wall Street",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPMnBEY1FnUnVLSldXZU12RzB1UW9IUnpwOFlSOVZUc01IVzc4cjZhRTdSVDhQb00ybUlfX1l5QkYxVHF1Z21OOENZU1pjc3BueV9hUVZpbVg5Y2p4Tmd3TUdiX2hscThyNEsyOFVSRXdldTFtLWwwVkpjMnM1N2hEbmM3RmU5OHRaTVRQdWhKU3A2TV8t?oc=5",
+        "published": "2017-12-01T10:06:42+00:00",
+        "source": "Simply Wall Street",
+        "domain": "Simply Wall Street",
         "origin": "google_news_rss",
-        "snippet": "Taiwan Semiconductor Just Proved Why It's a Top AI Investment - Yahoo Finance"
+        "snippet": "Taiwan Semiconductor Manufacturing (NYSE:TSM) - Stock Analysis - Simply Wall Street"
       },
       {
-        "title": "TSMC: The Easy Money Is Gone (NYSE:TSM) - Seeking Alpha",
-        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9UMVJuNEMzQ2Q3aGFzZS01cHp6YkdUMHFzNlQyREw5NFJRR3pqb05yVVg2TVc0Ylg5QmZIU2VYUG9MLWVfUjVScGFFaWZSSVpaeDhUWVpwSDNiRm5zR3B4ZWJfRnhBQmV5WE80ZzNrN1BOelRlQldn?oc=5",
-        "published": "2026-10-18T16:00:00+00:00",
-        "source": "Seeking Alpha",
-        "domain": "Seeking Alpha",
+        "title": "TSMC Q2 Earnings Preview: Why Should You Buy TSM Stock Before July 16? - TradingView",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOMnpnVGFXaW8tVkNQVGU0WUVwVDU4emtSck5GQ2F6eUpxcWxQVDlYZEtUMVNZR2hNWXF4OVpTQjIwbHhyTUtBQzFrLUVpb043Sm1Cc29Ydk9Eci1tQ0F0dHMtclZ6U0ZaZXl5VmNKZEZVLTZhZ2JQSHZ0MmZSdkp6SUlRal9VbkVBQ3puNDZJZmRHcVN0OEU1RU1IbkcxSkFGNHJwSWNRMHZVTTRUSUhMQlNCc2NvazFlb2d5NEFOcElLdw?oc=5",
+        "published": "2026-07-09T07:00:00+00:00",
+        "source": "TradingView",
+        "domain": "TradingView",
         "origin": "google_news_rss",
-        "snippet": "TSMC: The Easy Money Is Gone (NYSE:TSM) - Seeking Alpha"
+        "snippet": "TSMC Q2 Earnings Preview: Why Should You Buy TSM Stock Before July 16? - TradingView"
       },
       {
-        "title": "Taiwan Semiconductor Could Partner With Elon Musk’s Terafab, but It Has 1 Condition - Barchart.com",
-        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxObW4xMDdQcFRMSlFNNUNvQURLWGphYTVNRGdLMmhESUlnU2FIQXJndGRtUmRlc1lFMHdxR1hNTmdibVVBZUxMcjFJZl93NnhYMnpoOFdGdWpqUlk4LVdtQjQyVmtDbXdjNzVtQVhWXzU1VmQ3Y1R1Zl9wTERlUlFKTlJacXJXcXpsb1g4NXRJeUVoRk45Y09TbEo0eHctbEU5QjJMQzBUM245aEp0WDV3YnVsemN2MFFIRzBxeXJnWVdueUU?oc=5",
-        "published": "2026-10-18T20:30:03+00:00",
-        "source": "Barchart.com",
-        "domain": "Barchart.com",
+        "title": "TSMC Earnings Preview: Can It Rescue the AI Chip Trade? - Moomoo",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQekJnT3hBVHlORGdtQk9xMzFkVnBtZk1oZlJGN3hBTEkxOGNNSFlxXzhlX203dTJkeHNnb1JzRzJBRm5xTlZmM2ZuUk12RFowUDgySWFqZGdDTGNYbVhodnpzUXpnb3F4eVo3RF9Kc3VzRkRMR3ZTQmx6WXhQcWRic21EZk9NdVNnS2JIT1BfdXlLWFl2TEJvRkFzdkJnZGY0NjhpcHhSWVk3dw?oc=5",
+        "published": "2026-07-13T07:00:00+00:00",
+        "source": "Moomoo",
+        "domain": "Moomoo",
         "origin": "google_news_rss",
-        "snippet": "Taiwan Semiconductor Could Partner With Elon Musk’s Terafab, but It Has 1 Condition - Barchart.com"
+        "snippet": "TSMC Earnings Preview: Can It Rescue the AI Chip Trade? - Moomoo"
+      },
+      {
+        "title": "Taiwan Semiconductor Tops Q2 Targets On Leading-Edge Chip Demand - Investor's Business Daily",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNXzNFUDhLVlQ5bUVJZ25Rc09NaldVNEU0S0lmZUhvN1pMZzBoNlR2ME1wNkZoaHVvN1dWeDktNGVTUjJENks5Wkc0T2hjT3puSkNIQjBkNmlNZWJZQ1hIc2lGWGNoWHluc0pzd1YwcHVXbTB2SE9SNl8zZ2loTUY4SWlhNHpqV2t0dHBoZk5LU25LTWhD?oc=5",
+        "published": "2026-07-16T07:00:00+00:00",
+        "source": "Investor's Business Daily",
+        "domain": "Investor's Business Daily",
+        "origin": "google_news_rss",
+        "snippet": "Taiwan Semiconductor Tops Q2 Targets On Leading-Edge Chip Demand - Investor's Business Daily"
       },
       {
         "title": "What Do TSMC (NYSE:TSM), SOXX (NASDAQ:SOXX), Broadcom (NASDAQ:AVGO) and Applied Digital (NASDAQ:APLD) Say About the AI Chip Trade? - kalkine.ca",
