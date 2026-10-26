@@ -6,39 +6,52 @@
     "btc::SCORE_WATCH::\ud83d\udfe1 BTC WATCH": "2026-06-19T11:18:57.373865+00:00",
     "btc::none::\u26aa SIN SE\u00d1AL": "2026-06-19T10:54:58.472290+00:00",
     "btc::none::\ud83d\udfe1 BTC WATCH": "2026-06-19T10:51:22.737931+00:00",
-    "stocks::opportunities": "2026-10-26T12:46:14.293726+00:00"
+    "stocks::opportunities": "2026-10-26T23:39:37.930873+00:00"
   },
-  "last_run_utc": "2026-10-26T13:56:43.354818+00:00",
+  "last_run_utc": "2026-10-26T23:39:37.930896+00:00",
   "last_snapshot": {
     "btc": {
       "etf_total": null,
       "fear": 50,
       "ibit": null,
       "oi_24h": null,
-      "price": 71681.0,
+      "price": 71640.0,
       "regime": "RISK_ON",
-      "rsi": 43.1124229582934,
+      "rsi": 42.41749388556944,
       "score": 23,
-      "sma200": 63330.08657384893,
+      "sma200": 63329.20432942754,
       "status": "\u26aa SIN SE\u00d1AL",
-      "time_utc": "2026-10-26T12:46:11.342824+00:00"
+      "time_utc": "2026-10-26T23:39:35.154246+00:00"
     },
     "stocks": {
-      "opportunities": 1,
-      "time_utc": "2026-10-26T12:46:13.993330+00:00",
+      "opportunities": 2,
+      "time_utc": "2026-10-26T23:39:37.618966+00:00",
       "top": [
         {
-          "dist200": -6.183123808416779,
-          "drawdown": -20.468432929696633,
-          "price": 320.2099914550781,
+          "dist200": -7.170455918626894,
+          "drawdown": -21.315386310915773,
+          "price": 316.79998779296875,
           "reasons": [
-            "Drawdown 52s -20.5%",
-            "RSI diario 31.3",
+            "Drawdown 52s -21.3%",
+            "RSI diario 29.5",
             "Cerca de SMA200 desde abajo"
           ],
-          "rsi": 31.293387893546523,
+          "rsi": 29.543213427709773,
           "score": 60,
           "symbol": "GOOGL"
+        },
+        {
+          "dist200": -0.2988378058395247,
+          "drawdown": -18.90842529082534,
+          "price": 630.5599975585938,
+          "reasons": [
+            "Drawdown 52s -18.9%",
+            "RSI diario 33.6",
+            "Cerca de SMA200 desde abajo"
+          ],
+          "rsi": 33.646829537062374,
+          "score": 60,
+          "symbol": "META"
         }
       ]
     }
