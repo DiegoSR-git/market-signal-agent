@@ -6,36 +6,49 @@
     "btc::SCORE_WATCH::\ud83d\udfe1 BTC WATCH": "2026-06-19T11:18:57.373865+00:00",
     "btc::none::\u26aa SIN SE\u00d1AL": "2026-06-19T10:54:58.472290+00:00",
     "btc::none::\ud83d\udfe1 BTC WATCH": "2026-06-19T10:51:22.737931+00:00",
-    "stocks::opportunities": "2026-11-04T14:17:45.495425+00:00"
+    "stocks::opportunities": "2026-11-05T00:47:59.909824+00:00"
   },
-  "last_run_utc": "2026-11-04T15:10:38.900154+00:00",
+  "last_run_utc": "2026-11-05T00:47:59.909850+00:00",
   "last_snapshot": {
     "btc": {
       "etf_total": null,
-      "fear": 34,
+      "fear": 50,
       "ibit": null,
       "oi_24h": null,
-      "price": 69531.0,
+      "price": 71804.0,
       "regime": "RISK_ON",
-      "rsi": 42.920839509429086,
-      "score": 31,
-      "sma200": 63673.952102836716,
+      "rsi": 51.14998850103387,
+      "score": 33,
+      "sma200": 63706.65069410025,
       "status": "\u26aa SIN SE\u00d1AL",
-      "time_utc": "2026-11-04T14:17:41.875823+00:00"
+      "time_utc": "2026-11-05T00:47:57.005195+00:00"
     },
     "stocks": {
-      "opportunities": 1,
-      "time_utc": "2026-11-04T14:17:45.041464+00:00",
+      "opportunities": 2,
+      "time_utc": "2026-11-05T00:47:59.470113+00:00",
       "top": [
         {
-          "dist200": -17.671239627403523,
-          "drawdown": -30.448064632808236,
-          "price": 280.0299987792969,
+          "dist200": -2.219253654538922,
+          "drawdown": -16.34760061542846,
+          "price": 200.1300048828125,
           "reasons": [
-            "Drawdown 52s -30.4%",
-            "RSI diario 22.2"
+            "Drawdown 52s -16.3%",
+            "RSI diario 34.5",
+            "Cerca de SMA200 desde abajo"
           ],
-          "rsi": 22.158364206718588,
+          "rsi": 34.53729410921014,
+          "score": 60,
+          "symbol": "NVDA"
+        },
+        {
+          "dist200": -15.01332884065425,
+          "drawdown": -28.237545035068457,
+          "price": 288.92999267578125,
+          "reasons": [
+            "Drawdown 52s -28.2%",
+            "RSI diario 30.2"
+          ],
+          "rsi": 30.212945354558897,
           "score": 50,
           "symbol": "GOOGL"
         }
