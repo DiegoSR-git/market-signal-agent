@@ -6,51 +6,76 @@
     "btc::SCORE_WATCH::\ud83d\udfe1 BTC WATCH": "2026-06-19T11:18:57.373865+00:00",
     "btc::none::\u26aa SIN SE\u00d1AL": "2026-06-19T10:54:58.472290+00:00",
     "btc::none::\ud83d\udfe1 BTC WATCH": "2026-06-19T10:51:22.737931+00:00",
-    "stocks::opportunities": "2026-11-05T14:29:35.882027+00:00"
+    "stocks::opportunities": "2026-11-06T00:55:16.863231+00:00"
   },
-  "last_run_utc": "2026-11-05T15:12:31.160366+00:00",
+  "last_run_utc": "2026-11-06T00:55:16.863253+00:00",
   "last_snapshot": {
     "btc": {
       "etf_total": null,
-      "fear": 50,
+      "fear": 28,
       "ibit": null,
       "oi_24h": null,
-      "price": 70812.0,
-      "regime": "RISK_ON",
-      "rsi": 46.787425587021076,
+      "price": 67968.0,
+      "regime": "NEUTRAL",
+      "rsi": 39.17091181364326,
       "score": 23,
-      "sma200": 63700.825901864104,
+      "sma200": 63731.70905603455,
       "status": "\u26aa SIN SE\u00d1AL",
-      "time_utc": "2026-11-05T14:29:32.817541+00:00"
+      "time_utc": "2026-11-06T00:55:13.918591+00:00"
     },
     "stocks": {
-      "opportunities": 2,
-      "time_utc": "2026-11-05T14:29:35.548805+00:00",
+      "opportunities": 4,
+      "time_utc": "2026-11-06T00:55:16.320899+00:00",
       "top": [
         {
-          "dist200": -2.219253654538922,
-          "drawdown": -16.34760061542846,
-          "price": 200.1300048828125,
+          "dist200": -4.944734096250736,
+          "drawdown": -14.823735530704019,
+          "price": 647.0499877929688,
           "reasons": [
-            "Drawdown 52s -16.3%",
-            "RSI diario 34.5",
+            "Drawdown 52s -14.8%",
+            "RSI diario 26.9",
             "Cerca de SMA200 desde abajo"
           ],
-          "rsi": 34.53729410921014,
+          "rsi": 26.8640978727193,
           "score": 60,
-          "symbol": "NVDA"
+          "symbol": "QQQ"
         },
         {
-          "dist200": -15.01332884065425,
-          "drawdown": -28.237545035068457,
-          "price": 288.92999267578125,
+          "dist200": -4.278619688475072,
+          "drawdown": -22.185213776885227,
+          "price": 605.0800170898438,
           "reasons": [
-            "Drawdown 52s -28.2%",
-            "RSI diario 30.2"
+            "Drawdown 52s -22.2%",
+            "RSI diario 34.9",
+            "Cerca de SMA200 desde abajo"
           ],
-          "rsi": 30.212945354558897,
+          "rsi": 34.93606789872051,
+          "score": 60,
+          "symbol": "META"
+        },
+        {
+          "dist200": -16.82803683076335,
+          "drawdown": -29.81719468702162,
+          "price": 282.57000732421875,
+          "reasons": [
+            "Drawdown 52s -29.8%",
+            "RSI diario 28.0"
+          ],
+          "rsi": 27.984511119875748,
           "score": 50,
           "symbol": "GOOGL"
+        },
+        {
+          "dist200": -11.269025873332039,
+          "drawdown": -24.092960234986883,
+          "price": 181.60000610351562,
+          "reasons": [
+            "Drawdown 52s -24.1%",
+            "RSI diario 25.4"
+          ],
+          "rsi": 25.39183774568572,
+          "score": 50,
+          "symbol": "NVDA"
         }
       ]
     }
