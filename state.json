@@ -1,7 +1,7 @@
 {
   "last_alerts": {
     "btc::CAPITULATION_RSI::\ud83d\udfe0 BTC COMPRA PARCIAL": "2026-11-14T23:46:05.322260+00:00",
-    "btc::CAPITULATION_RSI::\ud83d\udfe2 BTC COMPRA FUERTE": "2026-11-15T23:52:05.012080+00:00",
+    "btc::CAPITULATION_RSI::\ud83d\udfe2 BTC COMPRA FUERTE": "2026-11-16T15:33:01.298030+00:00",
     "btc::LUMP_SUM_RECLAIM::\ud83d\udfe0 BTC COMPRA PARCIAL": "2026-11-13T14:26:35.762445+00:00",
     "btc::NO_SIGNAL::\u26aa SIN SE\u00d1AL": "2026-07-08T07:19:02.940458+00:00",
     "btc::ORDER_52000::\ud83d\udfe2 BTC STRONG BUY": "2026-07-01T07:50:20.253369+00:00",
@@ -9,51 +9,38 @@
     "btc::SCORE_WATCH::\ud83d\udfe1 BTC WATCH": "2026-06-19T11:18:57.373865+00:00",
     "btc::none::\u26aa SIN SE\u00d1AL": "2026-06-19T10:54:58.472290+00:00",
     "btc::none::\ud83d\udfe1 BTC WATCH": "2026-06-19T10:51:22.737931+00:00",
-    "stocks::opportunities": "2026-11-15T23:52:07.949225+00:00"
+    "stocks::opportunities": "2026-11-16T15:33:04.470899+00:00"
   },
-  "last_run_utc": "2026-11-16T00:47:36.750802+00:00",
+  "last_run_utc": "2026-11-16T15:33:04.470925+00:00",
   "last_snapshot": {
     "btc": {
       "etf_total": null,
       "fear": 10,
       "ibit": null,
       "oi_24h": null,
-      "price": 59203.0,
+      "price": 58421.0,
       "regime": "NEUTRAL",
-      "rsi": 22.858607301272045,
+      "rsi": 22.2724852885017,
       "score": 89,
-      "sma200": 63701.5522182992,
+      "sma200": 63664.86862836164,
       "status": "\ud83d\udfe2 BTC COMPRA FUERTE",
-      "time_utc": "2026-11-15T23:52:04.448161+00:00"
+      "time_utc": "2026-11-16T15:33:00.641768+00:00"
     },
     "stocks": {
-      "opportunities": 2,
-      "time_utc": "2026-11-15T23:52:07.445990+00:00",
+      "opportunities": 1,
+      "time_utc": "2026-11-16T15:33:03.943667+00:00",
       "top": [
         {
-          "dist200": -20.246159000690746,
-          "drawdown": -31.930278229253418,
-          "price": 162.85000610351562,
+          "dist200": -21.86041494903771,
+          "drawdown": -33.35981064407025,
+          "price": 159.42999267578125,
           "reasons": [
-            "Drawdown 52s -31.9%",
-            "RSI diario 24.9"
+            "Drawdown 52s -33.4%",
+            "RSI diario 23.7"
           ],
-          "rsi": 24.857679166332403,
+          "rsi": 23.717428652608405,
           "score": 50,
           "symbol": "NVDA"
-        },
-        {
-          "dist200": 1.731637480626902,
-          "drawdown": -17.477079144602037,
-          "price": 641.6900024414062,
-          "reasons": [
-            "Drawdown 52s -17.5%",
-            "Precio sobre SMA200",
-            "Recupera SMA20"
-          ],
-          "rsi": 47.79424623028143,
-          "score": 50,
-          "symbol": "META"
         }
       ]
     }
