@@ -1,7 +1,7 @@
 {
   "last_alerts": {
     "btc::CAPITULATION_RSI::\ud83d\udfe0 BTC COMPRA PARCIAL": "2026-11-18T15:30:11.891699+00:00",
-    "btc::CAPITULATION_RSI::\ud83d\udfe2 BTC COMPRA FUERTE": "2026-11-19T15:38:04.759103+00:00",
+    "btc::CAPITULATION_RSI::\ud83d\udfe2 BTC COMPRA FUERTE": "2026-11-20T01:43:23.332740+00:00",
     "btc::LUMP_SUM_RECLAIM::\ud83d\udfe0 BTC COMPRA PARCIAL": "2026-11-13T14:26:35.762445+00:00",
     "btc::NO_SIGNAL::\u26aa SIN SE\u00d1AL": "2026-07-08T07:19:02.940458+00:00",
     "btc::ORDER_52000::\ud83d\udfe2 BTC STRONG BUY": "2026-07-01T07:50:20.253369+00:00",
@@ -9,36 +9,48 @@
     "btc::SCORE_WATCH::\ud83d\udfe1 BTC WATCH": "2026-06-19T11:18:57.373865+00:00",
     "btc::none::\u26aa SIN SE\u00d1AL": "2026-06-19T10:54:58.472290+00:00",
     "btc::none::\ud83d\udfe1 BTC WATCH": "2026-06-19T10:51:22.737931+00:00",
-    "stocks::opportunities": "2026-11-19T15:38:07.723815+00:00"
+    "stocks::opportunities": "2026-11-20T01:43:26.474368+00:00"
   },
-  "last_run_utc": "2026-11-19T16:22:31.046700+00:00",
+  "last_run_utc": "2026-11-20T01:43:26.474391+00:00",
   "last_snapshot": {
     "btc": {
       "etf_total": null,
-      "fear": 10,
+      "fear": 12,
       "ibit": null,
       "oi_24h": null,
-      "price": 57442.0,
+      "price": 56533.0,
       "regime": "RISK_OFF",
-      "rsi": 23.579793300243963,
+      "rsi": 22.202553986832527,
       "score": 91,
-      "sma200": 63544.67032835217,
+      "sma200": 63492.13301776627,
       "status": "\ud83d\udfe2 BTC COMPRA FUERTE",
-      "time_utc": "2026-11-19T15:38:04.181499+00:00"
+      "time_utc": "2026-11-20T01:43:22.958888+00:00"
     },
     "stocks": {
-      "opportunities": 1,
-      "time_utc": "2026-11-19T15:38:07.220080+00:00",
+      "opportunities": 2,
+      "time_utc": "2026-11-20T01:43:26.156474+00:00",
       "top": [
         {
-          "dist200": -25.466348697002093,
-          "drawdown": -36.56788104063612,
-          "price": 151.7550048828125,
+          "dist200": -16.340137892703442,
+          "drawdown": -29.849484410430584,
+          "price": 282.44000244140625,
           "reasons": [
-            "Drawdown 52s -36.6%",
-            "RSI diario 22.0"
+            "Drawdown 52s -29.8%",
+            "RSI diario 34.9"
           ],
-          "rsi": 22.0258050148324,
+          "rsi": 34.91333328582007,
+          "score": 50,
+          "symbol": "GOOGL"
+        },
+        {
+          "dist200": -25.897633816457365,
+          "drawdown": -36.90018255822994,
+          "price": 150.9600067138672,
+          "reasons": [
+            "Drawdown 52s -36.9%",
+            "RSI diario 21.1"
+          ],
+          "rsi": 21.10188043639573,
           "score": 50,
           "symbol": "NVDA"
         }
